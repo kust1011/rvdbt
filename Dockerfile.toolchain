@@ -48,7 +48,7 @@ RUN git clone --depth 1 --branch 2022.09.21 https://github.com/riscv-collab/risc
       --prefix=/opt/riscv32 \
       --with-arch=rv32ia \
       --with-abi=ilp32 \
-      --enable-multilib && \
+      --disable-multilib && \
     make linux -j"$(nproc)" && \
     rm -rf /opt/src/riscv-gnu-toolchain
 

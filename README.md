@@ -41,6 +41,7 @@ Notes:
 Notes:
 - Toolchain image is intentionally separate because building riscv-gnu-toolchain is heavy.
 - Default toolchain image name can be overridden with `RVDBT_RV32_DOCKER_IMAGE`.
+- If the toolchain configuration changes, rebuild the image before rerunning examples.
 
 ### Using rvdbt
 ```sh
