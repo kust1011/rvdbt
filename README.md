@@ -10,6 +10,24 @@ mkdir build && cd build
 CC=clang CXX=clang++ cmake -GNinja -DCMAKE_BUILD_TYPE=Debug ..
 ninja
 ```
+
+### Running in Docker
+```sh
+# rvdbt targets linux/amd64 host ISA.
+# On Apple Silicon this uses Docker's amd64 emulation.
+
+cd <rvdbt>
+./scripts/docker-build-and-smoke.sh
+
+# Optional: open an interactive shell in the same image
+./scripts/docker-shell.sh
+```
+
+Notes:
+- `docker-build-and-smoke.sh` builds a dev image, initializes submodules, builds rvdbt with clang+ninja, and runs `elfrun --help` / `elfaot --help`.
+- Override defaults with env vars: `DOCKER_PLATFORM`, `RVDBT_DOCKER_IMAGE`.
+- To actually execute guest code, provide a prebuilt static `rv32` Linux ELF in `troot/` (the image verifies rvdbt itself, but does not include a full `riscv32-linux-gnu` userspace toolchain).
+
 ### Using rvdbt
 ```sh
 # First of all, rvdbt is only a proof of concept, it is quite unstable.
