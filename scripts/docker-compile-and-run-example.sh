@@ -3,17 +3,16 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PLATFORM="${DOCKER_PLATFORM:-linux/amd64}"
-IMAGE="${RVDBT_RV32_DOCKER_IMAGE:-rvdbt-dev:llvm15-rv32}"
+IMAGE="${RVDBT_RV32_DOCKER_IMAGE:-rvdbt-dev:llvm15-rv32ia}"
 BUILD_DIR="${RVDBT_BUILD_DIR:-build}"
 FSROOT_REL="${RVDBT_FSROOT_REL:-${BUILD_DIR}/troot}"
 CACHE_REL="${RVDBT_CACHE_REL:-${BUILD_DIR}/tcache}"
 EXAMPLE_SRC="${1:-examples/pi_double.c}"
 OUTPUT_NAME="${2:-a.out}"
-shift $(( $# > 2 ? 2 : $# ))
-GUEST_ARGS=("$@")
-
-if [[ "${#GUEST_ARGS[@]}" -eq 0 && "${EXAMPLE_SRC}" == "examples/pi_double.c" ]]; then
-  GUEST_ARGS=("100000")
+if [[ "$#" -gt 2 ]]; then
+  GUEST_ARGS=("${@:3}")
+else
+  GUEST_ARGS=()
 fi
 
 GUEST_ARGS_JOINED=""
@@ -43,13 +42,6 @@ docker run --rm \
 
     mkdir -p '${FSROOT_REL}' '${CACHE_REL}'
     riscv32-unknown-linux-gnu-gcc -march=rv32ia -mabi=ilp32 -fpic -fpie -static -O2 '${EXAMPLE_SRC}' -o '${FSROOT_REL}/${OUTPUT_NAME}'
-    riscv32-unknown-linux-gnu-objdump -d '${FSROOT_REL}/${OUTPUT_NAME}' > '/tmp/${OUTPUT_NAME}.dump'
-    if awk '\$2 ~ /^[0-9a-f]{4}\$/ { found=1 } END { exit found ? 0 : 1 }' '/tmp/${OUTPUT_NAME}.dump'; then
-      echo 'Detected compressed (rv32c) instruction in guest ELF. rvdbt currently requires non-compressed code path.'
-      echo 'Rebuild the toolchain image after pulling the latest Dockerfile.toolchain:'
-      echo '  ./scripts/docker-build-with-rv32-toolchain.sh'
-      exit 2
-    fi
 
     echo '[1/3] JIT run'
     './${BUILD_DIR}/bin/elfrun' --fsroot '${FSROOT_REL}' --cache '${CACHE_REL}' -- '${OUTPUT_NAME}'${GUEST_ARGS_JOINED}

@@ -35,12 +35,13 @@ Notes:
 
 # Compile an example and run:
 # JIT run -> build AOT -> AOT run
-./scripts/docker-compile-and-run-example.sh examples/pi_double.c pi_double
+./scripts/docker-compile-and-run-example.sh examples/pi_double.c pi_double 100000
 ```
 
 Notes:
 - Toolchain image is intentionally separate because building riscv-gnu-toolchain is heavy.
-- Default toolchain image name can be overridden with `RVDBT_RV32_DOCKER_IMAGE`.
+- Default toolchain image name is `rvdbt-dev:llvm15-rv32ia`.
+- You can override the image name with `RVDBT_RV32_DOCKER_IMAGE`.
 - If the toolchain configuration changes, rebuild the image before rerunning examples.
 
 ### Using rvdbt
