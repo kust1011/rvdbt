@@ -1,0 +1,59 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
+    ca-certificates \
+    clang \
+    cmake \
+    git \
+    ninja-build \
+    pkg-config \
+    build-essential \
+    libboost-all-dev \
+    llvm-15 \
+    llvm-15-dev \
+    libmd-dev \
+    libssl-dev \
+    qemu-user \
+    autoconf \
+    automake \
+    autotools-dev \
+    curl \
+    python3 \
+    python3-pip \
+    python3-tomli \
+    libmpc-dev \
+    libmpfr-dev \
+    libgmp-dev \
+    gawk \
+    bison \
+    flex \
+    texinfo \
+    gperf \
+    libtool \
+    patchutils \
+    bc \
+    zlib1g-dev \
+    libexpat-dev \
+    xz-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Build a reproducible rv32 Linux cross toolchain (GCC 12.2 baseline tag).
+RUN git clone --depth 1 --branch 2022.09.21 https://github.com/riscv-collab/riscv-gnu-toolchain.git /opt/src/riscv-gnu-toolchain && \
+    cd /opt/src/riscv-gnu-toolchain && \
+    ./configure \
+      --prefix=/opt/riscv32 \
+      --with-arch=rv32ia \
+      --with-abi=ilp32 \
+      --enable-multilib && \
+    make linux -j"$(nproc)" && \
+    rm -rf /opt/src/riscv-gnu-toolchain
+
+ENV PATH="/opt/riscv32/bin:${PATH}"
+
+WORKDIR /workspace
+
+CMD ["/bin/bash"]

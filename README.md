@@ -28,6 +28,20 @@ Notes:
 - Override defaults with env vars: `DOCKER_PLATFORM`, `RVDBT_DOCKER_IMAGE`.
 - To actually execute guest code, provide a prebuilt static `rv32` Linux ELF in `troot/` (the image verifies rvdbt itself, but does not include a full `riscv32-linux-gnu` userspace toolchain).
 
+### Running with riscv-gnu-toolchain in Docker
+```sh
+# Build image with riscv32-unknown-linux-gnu-gcc (from riscv-gnu-toolchain)
+./scripts/docker-build-with-rv32-toolchain.sh
+
+# Compile an example and run:
+# JIT run -> build AOT -> AOT run
+./scripts/docker-compile-and-run-example.sh examples/pi_double.c pi_double
+```
+
+Notes:
+- Toolchain image is intentionally separate because building riscv-gnu-toolchain is heavy.
+- Default toolchain image name can be overridden with `RVDBT_RV32_DOCKER_IMAGE`.
+
 ### Using rvdbt
 ```sh
 # First of all, rvdbt is only a proof of concept, it is quite unstable.
