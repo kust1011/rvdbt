@@ -10,13 +10,13 @@ CACHE_REL="${RVDBT_CACHE_REL:-${BUILD_DIR}/tcache}"
 EXAMPLE_SRC="${1:-examples/pi_double.c}"
 OUTPUT_NAME="${2:-a.out}"
 if [[ "$#" -gt 2 ]]; then
-  GUEST_ARGS=("${@:3}")
+  shift 2
 else
-  GUEST_ARGS=()
+  set --
 fi
 
 GUEST_ARGS_JOINED=""
-for arg in "${GUEST_ARGS[@]}"; do
+for arg in "$@"; do
   GUEST_ARGS_JOINED+=" '$(printf "%s" "${arg}" | sed "s/'/'\"'\"'/g")'"
 done
 
