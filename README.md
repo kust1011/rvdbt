@@ -1,3 +1,38 @@
+## RVV thesis continuation
+
+This repository continues [Wendell Lin's rvdbt](https://github.com/Wendell-Lin/rvdbt)
+and retains its Git history and original MIT license. The RVV research snapshot
+adds RISC-V Vector execution paths to the lightweight QCG JIT, consecutive-vector-
+instruction value retention (M1), and runtime-`vl`-based omission of eligible
+inactive high chunks (M2). The integration commit imports the implementation as
+one snapshot; it does not reconstruct the chronological development history.
+
+The evaluated thesis scope is **QCG**, not complete native lowering of every RVV
+1.0 instruction and not a claim of completed online LLVM-AOT performance. Forms
+outside a direct route may use a semantic helper. The repository contains
+experimental AOT/tiering paths; their presence does not make them evaluated
+thesis results. Benchmark guest binaries and restricted input datasets are not
+redistributed here.
+
+See [the RVV QCG design and code map](docs/rvv-qcg.md) for the translation
+path, M1/M2 legality, and focused checks.
+
+For an x86 host with AVX-512 and an installed LLVM 20 toolchain:
+
+```sh
+git submodule update --init dbt/third_party/asmjit dbt/third_party/elfio
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_C_COMPILER=clang-20 -DCMAKE_CXX_COMPILER=clang++-20 \
+  -DLLVM_PATH=/usr/lib/llvm-20 -DRVV_HOST_CHUNK_BITS=512
+ninja -C build -j2 elfrun
+```
+
+The AVX-512 host option is for running the emitted-code tests on a compatible
+machine. The same source also contains narrower host-chunk routes; do not run
+an AVX-512 build on a host without the required CPU features. See the existing
+design notes below for the base translator; the RVV work extends rather than
+replaces that architecture.
+
 ## My progress and todo
 https://hackmd.io/iDSBjMJTSTiiBJ8ODpPvTQ?both
 ## RISCV-TESTS
