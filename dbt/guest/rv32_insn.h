@@ -75,6 +75,23 @@ protected:
 	static constexpr Flags::Types gen_flags = Flags::HasRd;
 };
 
+// RVV formats. Field positions are fixed by the RVV 1.0 encoding, not by any workload.
+struct V : public Base { // OP-V / vector load / vector store
+	INSN_FIELD(rd)	 // vd (arith/load) or vs3 (store)
+	INSN_FIELD(rs1)	 // vs1 (OPIVV) or scalar base address (load/store)
+	INSN_FIELD(rs2)	 // vs2
+	INSN_FIELD(vm)	 // 0 = masked by v0, 1 = unmasked
+	INSN_FIELD(funct3) // OPIVV=000 OPIVI=011 OPIVX=100 OPMVV=010 OPMVX=110 OPCFG=111
+	INSN_FIELD(funct6)
+	INSN_FIELD(zimm11) // vsetvli vtypei
+
+protected:
+	using _vm = bf_range<u8, 25, 25>;
+	using _funct6 = bf_range<u8, 26, 31>;
+	using _zimm11 = bf_range<u16, 20, 30>;
+	static constexpr Flags::Types gen_flags = Flags::None;
+};
+
 struct S : public Base {
 	INSN_FIELD(rs1)
 	INSN_FIELD(rs2)

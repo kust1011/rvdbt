@@ -29,7 +29,7 @@ struct MemArena {
 		Destroy();
 	}
 
-	void Init(size_t size, int prot = PROT_READ | PROT_WRITE);
+	void Init(size_t size, int prot = PROT_READ | PROT_WRITE, bool prefer_huge_pages = false);
 	void Destroy();
 	void Reset()
 	{

@@ -1,6 +1,7 @@
 #include "dbt/qmc/qcg/arch_traits.h"
 #include "dbt/qmc/qcg/qcg.h"
 #include "dbt/qmc/qir_builder.h"
+#include "dbt/qmc/qir_printer.h"
 #include "dbt/execute.h"
 
 namespace dbt::qcg
@@ -95,7 +96,8 @@ public:
 
 	void visitInst(qir::Inst *ins)
 	{
-		unreachable("");
+		Panic(std::string("QSel: unhandled QIR instruction: ") +
+		      qir::GetOpNameStr(ins->GetOpcode()));
 	}
 
 	void visitInstUnop(qir::InstUnop *ins)
@@ -158,6 +160,186 @@ public:
 	}
 
 	void visitInstHcall(qir::InstHcall *ins) {}
+
+	// No QIR operands to select: every input is a translation-time constant and the vector data
+	// is addressed directly off the state register.
+	void visitInstRVVAddV(qir::InstRVVAddV *ins) {}
+	void visitInstCCRFChunk(qir::InstCCRFChunk *ins) {}
+	void visitInstCCRFComputeRegion(qir::InstCCRFComputeRegion *ins) {}
+
+	// Same: the diagnostic chunk control arm carries only translation-time constants and has no
+	// operands to select (see the block comment on InstRVVDiagChunkBegin in qir.h).
+	void visitInstRVVDiagChunkBegin(qir::InstRVVDiagChunkBegin *ins) {}
+	void visitInstRVVDiagChunkAdd(qir::InstRVVDiagChunkAdd *ins) {}
+	void visitInstRVVDiagChunkEnd(qir::InstRVVDiagChunkEnd *ins) {}
+
+	// Same for the typed group's frame: begin/end carry only translation-time constants. The
+	// typed BODY between them does go through ordinary selection, above.
+	void visitInstRVVTypedChunkBegin(qir::InstRVVTypedChunkBegin *ins) {}
+	void visitInstRVVTypedChunkEnd(qir::InstRVVTypedChunkEnd *ins) {}
+
+	// Typed V512 chunk ops, in contrast, DO carry operands and go through the ordinary selection.
+	// Both of its jobs are well defined here: the alias loop is inert (none of the three tables
+	// has an alias, because EVEX's destination is independent of its sources), and the constant
+	// loop can only ever fire on the I32 address of a load/store -- a V512 operand has no constant
+	// form to lower.
+	void visitInstVChunkLoad(qir::InstVChunkLoad *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	void visitInstVChunkAdd(qir::InstVChunkAdd *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	void visitInstVChunkMul(qir::InstVChunkMul *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	// SelectOperands never permutes an instruction's inputs -- it only rewrites an operand in
+	// place -- so routing the subtract through the same path cannot disturb the minuend/subtrahend
+	// order the emitter depends on.
+	void visitInstVChunkSub(qir::InstVChunkSub *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	// Same path again. Nothing here inspects the operation, so a bitwise body op is selected
+	// exactly as the three arithmetic ones are.
+	void visitInstVChunkXor(qir::InstVChunkXor *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	// And the second bitwise body op, on the same path. The visitor is per-opcode, so the only
+	// thing keeping the or and the xor apart at this stage is that they ARE different opcodes.
+	void visitInstVChunkOr(qir::InstVChunkOr *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	// And the third bitwise body op, on the same path. Three visitors with identical bodies is
+	// exactly what "one opcode per host instruction" costs here, and it is the price of having the
+	// operation be a NODE TYPE that dispatch can see rather than a field it cannot.
+	void visitInstVChunkAnd(qir::InstVChunkAnd *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	// P7N-B. Same path once more. These two are the first chunk ALU ops with ONE source, and
+	// nothing here notices: SelectOperands walks the operand arrays the node declares, and the
+	// shift amount is a field rather than an operand, so there is nothing for it to select.
+	void visitInstVChunkSll(qir::InstVChunkSll *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	void visitInstVChunkSrl(qir::InstVChunkSrl *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	void visitInstVChunkStore(qir::InstVChunkStore *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+
+	// vstatechunkload has one output and no inputs, so both of SelectOperands' loops are empty for
+	// it. It still goes through the ordinary path rather than being stubbed out: the call is what
+	// asserts the op has a constraint table (arch_traits.cpp CT(r)), and a stub here would be a
+	// second, silently diverging definition of "this op needs no selection".
+	void visitInstVStateChunkLoad(qir::InstVStateChunkLoad *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+
+	// Mirror image, and for the same reason: one V512 input, no output, so both of SelectOperands'
+	// loops are empty -- the alias loop because CT(rin) declares none, the constant loop because a
+	// V512 operand has no constant form. The call is still what asserts the op has a table.
+	void visitInstVStateChunkStore(qir::InstVStateChunkStore *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+
+	// Native-3. Same shape as vstatechunkload -- one V512 output, no inputs -- so both of
+	// SelectOperands' loops are empty for it, and the call is here for that op's reason: it is
+	// what asserts this opcode has a constraint table (arch_traits.cpp CT(r)).
+	void visitInstVChunkBroadcast(qir::InstVChunkBroadcast *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	void visitInstVChunkFBroadcast(qir::InstVChunkFBroadcast *ins) { sel->SelectOperands(ins); }
+	void visitInstVChunkFALU(qir::InstVChunkFALU *ins) { sel->SelectOperands(ins); }
+	void visitInstVChunkDep(qir::InstVChunkDep *ins) { sel->SelectOperands(ins); }
+	void visitInstVChunkMaskSet(qir::InstVChunkMaskSet *ins) {}
+	// S1-1: no operands, so nothing to select -- the same entry vchunkmaskset has, and present for
+	// the same reason: the visitor's default is a silent no-op, so an omission would not be a
+	// compile error.
+	void visitInstVChunkActive(qir::InstVChunkActive *ins) {}
+	void visitInstVChunkPartialAlu(qir::InstVChunkPartialAlu *ins) {}
+	void visitInstVMaskLogic(qir::InstVMaskLogic *) {}
+	void visitInstVMaskScalar(qir::InstVMaskScalar *) {}
+	void visitInstVMaskIota(qir::InstVMaskIota *) {}
+	void visitInstVScalarMove(qir::InstVScalarMove *) {}
+	void visitInstVCompress(qir::InstVCompress *) {}
+	void visitInstVReduce(qir::InstVReduce *) {}
+	void visitInstVChunkIndex(qir::InstVChunkIndex *) {}
+	void visitInstVChunkFClass(qir::InstVChunkFClass *) {}
+	void visitInstVChunkIToF(qir::InstVChunkIToF *) {}
+	void visitInstVChunkFToI(qir::InstVChunkFToI *) {}
+	void visitInstVChunkFToF(qir::InstVChunkFToF *) {}
+	void visitInstVGather(qir::InstVGather *) {}
+	void visitInstVFEstimate(qir::InstVFEstimate *) {}
+	void visitInstVMemory(qir::InstVMemory *) {}
+	void visitInstVWholeMove(qir::InstVWholeMove *) {}
+	void visitInstVFReduce(qir::InstVFReduce *) {}
+	void visitInstVMaskPrefix(qir::InstVMaskPrefix *) {}
+	void visitInstVChunkExtend(qir::InstVChunkExtend *) {}
+	void visitInstVChunkWiden(qir::InstVChunkWiden *) {}
+	void visitInstVChunkNarrowShift(qir::InstVChunkNarrowShift *) {}
+	void visitInstRVVTypedChunkPartial(qir::InstRVVTypedChunkPartial *ins) {}
+	void visitInstRVVRunScalar(qir::InstRVVRunScalar *) {}
+	// P7I. The fused three-input form takes the same ordinary path. It needs the visitor entry
+	// as much as any other node: the base visitInst is `unreachable("")`, so a missing case is
+	// not a compile error and not a Panic -- in a release build it is undefined behaviour that
+	// crashes somewhere else entirely. Both of SelectOperands' loops are inert here for the
+	// reason stated above the chunk ops: CT(vchunkfma, r_r_r_r) declares no alias, and a V512
+	// operand has no constant form to lower.
+	void visitInstVChunkFMA(qir::InstVChunkFMA *ins) { sel->SelectOperands(ins); }
+	// P8. The one-source FP form, and it needs its entry for exactly the reason stated above the
+	// fused one: the base visitInst is unreachable(), so a missing case is not a compile error --
+	// it is a Panic here in a debug build and undefined behaviour elsewhere in a release build.
+	// CT(vchunkfsqrt, r_r) declares no alias and a V512 operand has no constant form, so both of
+	// SelectOperands' loops are inert; the call is what asserts the opcode has a table at all.
+	void visitInstVChunkFSqrt(qir::InstVChunkFSqrt *ins) { sel->SelectOperands(ins); }
+	// P9. The mask-producing compare. Zero outputs, so SelectOperands' alias loop has nothing to
+	// do, and CT(vchunkfcmpstate, rin_r) declares no immediate form, so its constant loop is
+	// inert as well; the call is what asserts the opcode has a table at all.
+	void visitInstVChunkFCmpState(qir::InstVChunkFCmpState *ins) { sel->SelectOperands(ins); }
+	// P10. The widening convert; required for the reason the entries above give (the base
+	// visitInst is unreachable, so a missing case is undefined behaviour, not a diagnostic).
+	void visitInstVChunkFWidenCvt(qir::InstVChunkFWidenCvt *ins) { sel->SelectOperands(ins); }
+	void visitInstRVVQCGFPBegin(qir::InstRVVQCGFPBegin *) {}
+	void visitInstRVVQCGFPEnd(qir::InstRVVQCGFPEnd *) {}
+
+	// S2.9. Ordinary operand legalisation, and the call is doing real work here rather than being
+	// a formality: CT(rvvsetvl, r_r) declares the input register-only, so THIS is the pass that
+	// materialises a constant AVL into a register before the emitter -- whose `cmp`/`cmov` pair
+	// has no immediate-source encoding -- can ever see one. The alias loop is empty because the
+	// table declares no ALIAS: the output and the input are independent, which is what lets the
+	// emitter own its own `rd == rs1` correctness rather than depending on allocator behaviour.
+	void visitInstRVVSetVL(qir::InstRVVSetVL *ins)
+	{
+		sel->SelectOperands(ins);
+	}
+	void visitInstRVVSetVLReg(qir::InstRVVSetVLReg *ins) { sel->SelectOperands(ins); }
+
+#define RVV_SSA_QSEL_VISITOR(cls) void visit##cls(qir::cls *ins) {}
+	RVV_SSA_QSEL_VISITOR(InstRVVRead)
+	RVV_SSA_QSEL_VISITOR(InstRVVWrite)
+	RVV_SSA_QSEL_VISITOR(InstRVVSplatF)
+	RVV_SSA_QSEL_VISITOR(InstRVVLoad)
+	RVV_SSA_QSEL_VISITOR(InstRVVStore)
+	RVV_SSA_QSEL_VISITOR(InstRVVFCmp)
+	RVV_SSA_QSEL_VISITOR(InstRVVMerge)
+	RVV_SSA_QSEL_VISITOR(InstRVVFALU)
+	RVV_SSA_QSEL_VISITOR(InstRVVFMA)
+	RVV_SSA_QSEL_VISITOR(InstRVVFPBegin)
+	RVV_SSA_QSEL_VISITOR(InstRVVFPEnd)
+#undef RVV_SSA_QSEL_VISITOR
 
 	void visit_sll(qir::InstBinop *ins)
 	{

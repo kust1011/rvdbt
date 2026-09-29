@@ -1,4 +1,5 @@
 #include "dbt/aot/aot.h"
+#include "dbt/config.h"
 #include "dbt/qmc/compile.h"
 #include "dbt/tcache/objprof.h"
 #include <sstream>
@@ -113,10 +114,48 @@ void LinkAOTObject(std::vector<AOTSymbol> &aot_symbols)
 	auto obj_path = objprof::GetCachePath(AOT_O_EXTENSION);
 	auto aot_path = objprof::GetCachePath(AOT_SO_EXTENSION);
 
-	if (system(("/usr/bin/ld -z relro --hash-style=gnu -pie -m elf_x86_64 -shared -o" + aot_path + " " +
-		    obj_path)
-		       .c_str()) < 0) {
-		Panic();
+	// V-next R3: in shard-link aggregation mode, link the aottab object (obj_path) together with the N shard
+	// function-objects (obj_path.IofN). Region functions resolve by symbol name (_aot_<gip>) across all objects.
+	// -Bsymbolic: bind references to symbols DEFINED in this .so locally -> the linker relaxes cross-object PLT32
+	// calls (R_X86_64_PLT32) to direct PC-relative calls, recovering the direct-call speed that the single-object
+	// serial build gets for free (without it, cross-shard calls go through the PLT and regress runtime, e.g.
+	// libyaml +26%). Applied only when sharding; serial single-object link is unchanged.
+	std::string objects = obj_path;
+	std::string extra_flags;
+	if (dbt::config::aot_shard_link > 0) {
+		extra_flags = " -Bsymbolic";
+		for (int i = 0; i < dbt::config::aot_shard_link; ++i)
+			objects += " " + obj_path + "." + std::to_string(i) + "of" +
+				   std::to_string(dbt::config::aot_shard_link);
+	}
+	// OPAQUE_BOUNDARY diagnostic (default off): the linked-in helper bitcode (llvmaot.cpp,
+	// --aot-diag-link-bitcode) brings in __builtin_cpu_supports() call sites (host-capability
+	// gates already present in dbt/guest/rv32_vector_cascade.h and rv32_vector_fast.h) whose
+	// clang/glibc lowering references __cpu_model with a PC32 relocation even under -fPIC --
+	// harmless in the diagnostic's normal executable but rejected by `ld -shared` by default.
+	// `-z notext` permits the resulting (rare) text relocation instead of failing the link; the
+	// shipped default path (this flag unset) is byte-for-byte unaffected.
+	if (dbt::config::aot_diag_link_bitcode)
+		// -z notext: see the comment above (the __builtin_cpu_supports() text-relocation
+		// case this predates and, for the paths that remain, still guards).
+		// --defsym __dso_handle=0: the linked-in helper bitcode's translation unit brings a
+		// static-storage global that clang gives a __cxa_atexit-guarded constructor,
+		// referencing __dso_handle -- normally supplied by crtbeginS.o when a shared object
+		// is linked through the compiler driver, absent here because LinkAOTObject invokes
+		// the linker directly. This diagnostic .aot.so is never expected to run its static
+		// destructors cleanly at process exit, so a dummy definition is sufficient to satisfy
+		// the reference; the shipped (non-diagnostic) link is unaffected.
+		extra_flags += " -z notext --defsym __dso_handle=0";
+	// ld.lld rejects "-shared -pie" together (stricter than BFD ld, which silently accepts the
+	// combination for a shared object); -pie is meaningless for -shared regardless, so drop it
+	// on the lld path only -- the default /usr/bin/ld path is untouched (byte-of-behavior identical).
+	std::string linker = dbt::config::aot_use_lld ? "/usr/lib/llvm-20/bin/ld.lld" : "/usr/bin/ld";
+	std::string pie_flag = dbt::config::aot_use_lld ? "" : " -pie";
+	int link_rc = system((linker + " -z relro --hash-style=gnu" + pie_flag + " -m elf_x86_64 -shared" +
+			       extra_flags + " -o" + aot_path + " " + objects)
+				  .c_str());
+	if (link_rc != 0) {
+		Panic("linker invocation failed, rc=" + std::to_string(link_rc));
 	}
 
 	elfio::elfio elf;
@@ -172,8 +211,9 @@ void LinkAOTObject(std::vector<AOTSymbol> &aot_symbols)
 #else
 	for (auto &sym : aot_symbols) {
 		auto gip = sym.gip;
+		auto gsize = sym.gsize; // 2026-06-19 AARS: preserve region byte-extent set in LLVMAOTTranslatePage
 		// log_aot("found aottab[%08x]", gip);
-		sym = {gip, resolve_sym(MakeAotSymbol(gip)).first};
+		sym = {gip, resolve_sym(MakeAotSymbol(gip)).first, gsize};
 	}
 	AOTTabHeader aottab_header;
 	aottab_header.n_sym = aot_symbols.size();

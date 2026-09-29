@@ -296,6 +296,10 @@
 	SC(landlock_create_ruleset, 444)                                                                     \
 	SC(landlock_add_rule, 445)                                                                           \
 	SC(landlock_restrict_self, 446)                                                                      \
-	SC_ARCH(riscv_flush_icache, 244 + 15)
+	SC_ARCH(riscv_flush_icache, 244 + 15)                                                                \
+	SC(open, 1024)
 
-#define RV32_LINUX_SYSCALL_NO_END 447
+// 1024 = newlib (riscv-none-elf) legacy SYS_open, emitted by newlib _open() instead of openat(56).
+// Needed to run file-input bare-metal-newlib guests (e.g. SPEC CPU2017 reading inp.in). End bumped
+// to size the names[] array so index [1024] is valid.
+#define RV32_LINUX_SYSCALL_NO_END 1025

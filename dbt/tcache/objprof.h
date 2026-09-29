@@ -74,6 +74,12 @@ struct objprof {
 	// For clients: get associated file path
 	static std::string GetCachePath(char const *extension);
 
+	// The live profile's own path -- NOT VLEN-qualified, unlike every artifact path above (see
+	// GetCachePath's comment: one profile serves builds at both widths). Exposed for T5d2a, whose
+	// builder consumes a COPY of this file: the run holds an exclusive lock on it, so a child
+	// pointed at it directly would fail its own open.
+	static std::string GetProfilePath();
+
 private:
 	objprof() = delete;
 

@@ -14,9 +14,12 @@ namespace dbt
 	X(link_branch_aot)                                                                                   \
 	X(link_branch_llvmaot)                                                                               \
 	X(brind)                                                                                             \
+	X(brind_checked)                                                                                     \
 	X(raise)                                                                                             \
 	X(trace)                                                                                             \
 	X(trace_cache)                                                                                       \
+	X(shadow_edge_check)                                                                                 \
+	X(shadow_edge_check_k)                                                                               \
 	X(nevercalled)
 
 #define RUNTIME_STUBS(X) COMMON_RUNTIME_STUBS(X) GUEST_RUNTIME_STUBS(X)

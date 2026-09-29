@@ -33,6 +33,26 @@ struct Builder {
 		return bb->GetRegion()->GetVRegsInfo()->AddLocal(type);
 	}
 
+	// M2E: storage for a run frame's ordered member list, with the REGION's lifetime.
+	// InstRVVTypedChunkEnd borrows the array rather than copying it (qir.h), so it must not be a
+	// caller's local; this is the one place that allocation happens.
+	RVVRunMember *CreateRunMembers(u8 n) const
+	{
+		if (n == 0 || n > RVV_RUN_MAX_MEMBERS) {
+			Panic("qir: run member array size out of range");
+		}
+		auto *arena = bb->GetRegion()->GetArena();
+		auto *p = (RVVRunMember *)arena->Allocate(sizeof(RVVRunMember) * n,
+							  alignof(RVVRunMember));
+		if (!p) {
+			Panic("qir: out of arena for a run member array");
+		}
+		for (u8 i = 0; i < n; ++i) {
+			new (&p[i]) RVVRunMember();
+		}
+		return p;
+	}
+
 private:
 	using Flags = Inst::Flags;
 

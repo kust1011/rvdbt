@@ -1,5 +1,6 @@
 #include "dbt/ukernel.h"
 #include "dbt/execute.h"
+#include "dbt/qmc/ngr.h"
 #include "dbt/mmu.h"
 #include "dbt/tcache/objprof.h"
 #include "dbt/util/fsmanager.h"
@@ -59,9 +60,59 @@ struct ukernel::Process {
 	uabi_ulong brk{};
 };
 
-struct uthread {
+// S3.2 PLACEMENT CONTROL for the S3.1 measurement-validity defect.
+//
+// S3.1 established, from six sealed arms, that a semantically-null command-line token moves
+// whole-process cycles by 2.4114x at 0.9999x retired instructions, and that the ONLY runtime
+// quantity separating the two command lines is this object's placement within a page: CPUState
+// landed at page offset 0xa90 for one and 0x3e0 for the other. At a 128-byte vreg stride that put
+// guest v9's 64-byte chunk at page offset 0xfe0 in the slow layout -- so every 64-byte access to
+// v9 crossed a 4 KiB page -- and at 0x930 in the fast one, where it did not.
+//
+// The owner remains page-aligned. Its optional prefix also aligns the vector storage to a
+// 64-byte host data-cache line. This fixes placement without changing CPUState's field offsets,
+// size or ABI signature; the assertions below check those properties.
+//
+// Default ON. -DRVDBT_UTHREAD_PAGE_ALIGN=0 rebuilds the pre-intervention placement as the
+// within-session control arm.
+#ifndef RVDBT_UTHREAD_PAGE_ALIGN
+#define RVDBT_UTHREAD_PAGE_ALIGN 1
+#endif
+#if RVDBT_UTHREAD_PAGE_ALIGN
+#define RVDBT_UTHREAD_ALIGNAS alignas(4096)
+#else
+#define RVDBT_UTHREAD_ALIGNAS
+#endif
+
+#ifndef RVDBT_UTHREAD_VECTOR_ALIGN
+#define RVDBT_UTHREAD_VECTOR_ALIGN 1
+#endif
+constexpr size_t kVectorStorageAlignment = 64;
+constexpr size_t kVectorStorageOffset =
+    offsetof(rv32::CPUStateImpl, vec) + offsetof(rv32::VectorState, vreg);
+#if RVDBT_UTHREAD_VECTOR_ALIGN
+static_assert(RVDBT_UTHREAD_PAGE_ALIGN,
+              "vector-state placement requires the page-aligned owner");
+constexpr size_t kUThreadStatePrefix =
+    (kVectorStorageAlignment - kVectorStorageOffset % kVectorStorageAlignment) %
+    kVectorStorageAlignment;
+static_assert(kUThreadStatePrefix > 0 && kUThreadStatePrefix % alignof(CPUState) == 0);
+#else
+constexpr size_t kUThreadStatePrefix = 0;
+#endif
+
+struct RVDBT_UTHREAD_ALIGNAS uthread {
 	uthread() : state(this)
 	{
+		// Only the owner's prefix changes. All offsets relative to CPUState stay intact.
+		if (reinterpret_cast<uintptr_t>(&state) - reinterpret_cast<uintptr_t>(this) !=
+		    kUThreadStatePrefix) {
+			Panic("uthread CPUState placement does not match its alignment prefix");
+		}
+#if RVDBT_UTHREAD_VECTOR_ALIGN
+		if (reinterpret_cast<uintptr_t>(state.vec.vreg[0].data()) % kVectorStorageAlignment)
+			Panic("guest vector storage is not cache-line aligned");
+#endif
 		if (CPUState::Current() != nullptr) {
 			Panic("uthread is already active in this host thread");
 		}
@@ -77,11 +128,78 @@ struct uthread {
 		CPUState::SetCurrent(nullptr);
 	}
 
+#if RVDBT_UTHREAD_VECTOR_ALIGN
+	u8 vector_alignment_prefix[kUThreadStatePrefix]{};
+#endif
 	CPUState state;
 	// per-thread/task OS data
 	bool terminating{};
 	int termination_code{};
 };
+
+// S3.2 ABI INVARIANCE, PROVEN AT COMPILE TIME RATHER THAN ASSERTED IN PROSE.
+//
+// Every number below was re-measured on the build immediately BEFORE the change that last moved
+// them; they are a tripwire, not a derivation. If any of them fires, the AOT ABI signature
+// (rv32_cpu.h CPUStateAbiSignature(), which mixes exactly sizeof(CPUStateImpl), the listed member
+// offsets, sizeof(VectorState) and sizeof(FPUState)) has moved and every baked offset in every
+// artifact is suspect.
+//
+// HM.2a MOVED THEM ON PURPOSE, and this is the record of why. Raising VLEN_MAX_BITS from 1024 to
+// 4096 grows `vreg` from 4 KiB to 16 KiB, so CPUState grows by 12,288 bytes and every offset after
+// `vec` moves. Nothing else about the declaration changed -- `vec` is still at 208 and `vreg` is
+// still alignas(16) -- and the AOT ABI signature changes with the size, which is the intended
+// fail-closed outcome: an artifact built against the old CPUState is REFUSED by the centralized
+// gate rather than loaded against a different register file.
+static_assert(sizeof(rv32::CPUStateImpl) == 42672, "CPUStateImpl size changed -- AOT ABI moved");
+static_assert(sizeof(CPUState) == 42688, "CPUState size changed -- AOT ABI moved");
+static_assert(alignof(CPUState) == 16, "CPUState's own alignment changed");
+static_assert(sizeof(rv32::VectorState) == 16432, "VectorState size changed -- AOT ABI moved");
+static_assert(sizeof(rv32::FPUState) == 408, "FPUState size changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, vec) == 208, "vec offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, gpr) == 56, "gpr offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42256, "fpu offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, ip) == 184, "ip offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, trapno) == 192, "trapno offset changed -- AOT ABI moved");
+#if RVDBT_UTHREAD_PAGE_ALIGN
+static_assert(alignof(uthread) == 4096, "the page alignment did not take effect");
+
+// S3.2's placement property, recomputed rather than re-asserted, because HM.2a's wider register
+// slot invalidated the ARITHMETIC of the two assertions that used to stand here.
+//
+// They read `offsetof(vec) + n*VLEN_MAX_BYTES + 64 <= 4096` -- "guest vn's chunk lies inside page
+// 0" -- which was a sufficient condition only while the 128-byte stride kept all 32 registers
+// inside the first page. At a 512-byte stride the register file spans four pages, so that form is
+// simply false for v8/v9 even though the property it stood for still holds. The predicate below
+// asks the real question directly, for every chunk of the register, at any VLEN_MAX.
+//
+// A prefix in the private owner aligns vector storage without changing CPUState's ABI.
+// The control configuration retains the earlier page-aligned CPUState placement.
+constexpr bool chunk_crosses_page(u32 reg)
+{
+	u32 const base = (u32)(kUThreadStatePrefix + kVectorStorageOffset);
+	for (u32 c = 0; c * 64 < rv32::VLEN_MAX_BYTES; ++c) {
+		u32 const lo = base + reg * rv32::VLEN_MAX_BYTES + c * 64;
+		if (lo / 4096 != (lo + 63) / 4096)
+			return true;
+	}
+	return false;
+}
+static_assert(!chunk_crosses_page(8),
+	      "a 64-byte chunk of guest v8 would cross a 4 KiB page even when CPUState is page-aligned");
+static_assert(!chunk_crosses_page(9),
+	      "a 64-byte chunk of guest v9 would cross a 4 KiB page even when CPUState is page-aligned");
+#if RVDBT_UTHREAD_VECTOR_ALIGN
+static_assert((kUThreadStatePrefix + kVectorStorageOffset) % kVectorStorageAlignment == 0);
+static_assert(rv32::VLEN_MAX_BYTES % kVectorStorageAlignment == 0);
+static_assert([] {
+	for (u32 reg = 0; reg < rv32::VREG_NUM; ++reg)
+		if (chunk_crosses_page(reg))
+			return false;
+	return true;
+}(), "a guest vector chunk crosses a page despite aligned storage");
+#endif
+#endif
 
 ukernel::Process ukernel::process{};
 
@@ -110,6 +228,15 @@ void ukernel::Execute()
 			break;
 		case rv32::TrapCode::ILLEGAL_INSN:
 			log_ukernel("illegal instruction at %08x", state->ip);
+			// Release builds compile every log stream out (NDEBUG -> LogStreamNull), so
+			// without this the process just exits 1 with empty stderr -- indistinguishable
+			// from a harness bug. The fail-closed RVV tests need positive, machine-readable
+			// evidence of WHICH instruction was refused, so print it unconditionally. Only
+			// reachable on a trap that already terminates the guest, so no fast path or
+			// measurement is affected.
+			fprintf(stderr, "ILLEGAL_INSN ip=%08x raw=%08x\n", state->ip,
+				*(u32 const *)(mmu::base + state->ip));
+			fflush(stderr);
 			EnqueueTermination(1);
 			break;
 		default:
@@ -123,6 +250,70 @@ void ukernel::InitMainThread(CPUState *state, ElfImage *elf)
 	assert(!(elf->stack_start & 15));
 	state->gpr[2] = elf->stack_start;
 	state->ip = elf->entry;
+	// RVV: establish architectural vector state at the configured VLEN. vtype starts with
+	// vill set, so any vector op executed before a vset* traps instead of running at a
+	// stale/undefined width. The width itself is re-checked here (not only in the elfrun
+	// option parser) so every entry point that boots a guest thread -- elfaot, tests, future
+	// drivers -- gets the same fail-closed guarantee instead of running an unhonourable VLEN.
+	if (!rv32::vlen_supported(config::vlen_bits)) {
+		log_ukernel("fatal: unsupported VLEN=%u bits (ELEN=%u, max=%u)", config::vlen_bits,
+			    rv32::ELEN_BITS, rv32::VLEN_MAX_BITS);
+		Panic("unsupported guest VLEN");
+	}
+	state->vec.Reset(config::vlen_bits);
+}
+
+
+// 2026-09-17: THE MACHINE STATE AT A GUEST FAULT, so a fault in generated code can be read rather
+// than inferred. Default off (--dump-fault-state); prints to stderr from the signal handler using
+// only async-signal-safe-enough formatting (fprintf, as the rest of this handler already does).
+//
+// THE HOST REGISTERS ARE THE GROUND TRUTH. The faulting instruction is generated code; whatever it
+// dereferenced came out of a host register. CPUState is printed too, but it holds only the guest
+// values that have been MATERIALIZED -- a QCG block may keep a guest register resident and sync it
+// at a block boundary, so a zero there is not by itself evidence about the guest value. The two are
+// labelled separately for that reason.
+static void DumpFaultState(ucontext_t *uc, siginfo_t *sinfo, CPUState *state)
+{
+	auto const *g = uc->uc_mcontext.gregs;
+	auto const rip = (unsigned long long)g[REG_RIP];
+	fprintf(stderr, "FAULT_STATE host_pc=0x%llx si_addr=%p si_code=%d\n", rip, sinfo->si_addr,
+		sinfo->si_code);
+	static char const *const kNames[] = {"R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15",
+					     "RDI", "RSI", "RBP", "RBX", "RDX", "RAX", "RCX", "RSP"};
+	for (int i = 0; i < 16; ++i)
+		fprintf(stderr, "FAULT_HOSTREG %-3s 0x%016llx\n", kNames[i],
+			(unsigned long long)g[REG_R8 + i]);
+
+	// WHERE the faulting PC lives, as offsets from the anchors this process knows. A negative or
+	// huge delta says the PC is not in that region; the reader does the mapping, this only reports.
+	fprintf(stderr, "FAULT_PC_ANCHOR installed_aot_host=0x%llx delta_from_aot=%lld\n",
+		(unsigned long long)config::loop_tier_install_host,
+		(long long)(rip - (unsigned long long)config::loop_tier_install_host));
+
+	// NO RAW CODE-BYTE DUMP HERE. An earlier version read rip[-16..15] directly and claimed it
+	// could not fault; that was false. The faulting PC can sit at a page boundary, so the read
+	// could cross into an unmapped page and take a SECOND fault -- inside this handler, which is
+	// already handling one. The host PC and the anchor delta below are enough to locate the
+	// instruction, and the bytes are read offline from the artifact with objdump, which is how the
+	// gbr patch-point ABI defect was actually established.
+
+	fprintf(stderr, "FAULT_GUEST ip=%08x\n", state->ip);
+	for (unsigned i = 0; i < CPUState::gpr_num; ++i)
+		fprintf(stderr, "FAULT_GUESTREG x%-2u 0x%08x\n", i, state->gpr[i]);
+
+	// BEFORE/AFTER ACROSS THE AOT ENTRY. The installer captures the same register file at the
+	// instant it swapped the block; printing both, and only the registers that differ, is what
+	// distinguishes "the artifact changed this" from "it was already like that".
+	if (config::loop_tier_install_gpr_valid) {
+		fprintf(stderr, "FAULT_INSTALL_SNAPSHOT ip_at_capture=%08x\n",
+			config::loop_tier_install_ip_at_capture);
+		for (unsigned i = 0; i < CPUState::gpr_num; ++i)
+			if (config::loop_tier_install_gpr[i] != state->gpr[i])
+				fprintf(stderr, "FAULT_GPR_DIFF x%-2u install=0x%08x fault=0x%08x\n", i,
+					config::loop_tier_install_gpr[i], state->gpr[i]);
+	}
+	fflush(stderr);
 }
 
 static void dbt_sigaction_memory(int signo, siginfo_t *sinfo, void *uctx_raw)
@@ -153,7 +344,18 @@ static void dbt_sigaction_memory(int signo, siginfo_t *sinfo, void *uctx_raw)
 	u32 page_addr = g_faddr & mmu::PAGE_MASK;
 	log_ukernel("\tpage address: %08x", page_addr);
 	
-	Panic("Memory fault in guest address space. See logs for more details");
+	if (config::dump_fault_state)
+		DumpFaultState(uc, sinfo, state);
+
+	// Unconditional, like the ILLEGAL_INSN report: log_ukernel is compiled out under NDEBUG,
+	// so in a Release build this handler computed the guest fault address and then threw it
+	// away, leaving only "Memory fault". The address is the entire diagnostic value here.
+	// ONE FORMATTER, in mmu, because a helper that PREDICTS a fault must report it identically
+	// without being able to take one (see mmu::ReportGuestFault).
+	mmu::ReportGuestFault(state->ip, g_faddr,
+			      sinfo->si_code == SEGV_ACCERR	? "protection"
+			      : sinfo->si_code == SEGV_MAPERR	? "unmapped"
+								: "unknown");
 }
 
 // TODO: emulate signals
@@ -297,8 +499,30 @@ static int PathResolution(int dirfd, char const *path, char *resolved)
 
 	// Resolve the final path
 	if (!realpath(rp_buf, resolved)) {
-		log_ukernel("unresolved path %s: %s", rp_buf, strerror(errno));
-		return -errno;
+		// O_CREAT case: the final component may not exist yet. Resolve the PARENT directory
+		// (must exist; fsroot containment is checked below as usual) and re-append the final
+		// component. Previously `resolved` was left unset on this path, so guest file
+		// CREATION always failed with ENOENT regardless of openat flags.
+		bool recovered = false;
+		if (errno == ENOENT) {
+			char parent[PATH_MAX];
+			snprintf(parent, sizeof(parent), "%s", rp_buf);
+			char *slash = strrchr(parent, '/');
+			if (slash && slash[1] != '\0' && !strchr(slash + 1, '/')) {
+				char const *base = slash + 1;
+				char parent_res[PATH_MAX];
+				char const *pdir = (slash == parent) ? "/" : (*slash = '\0', parent);
+				if (realpath(pdir, parent_res) &&
+				    strlen(parent_res) + 1 + strlen(base) < PATH_MAX) {
+					snprintf(resolved, PATH_MAX, "%s/%s", parent_res, base);
+					recovered = true;
+				}
+			}
+		}
+		if (!recovered) {
+			log_ukernel("unresolved path %s: %s", rp_buf, strerror(errno));
+			return -errno;
+		}
 	}
 
 	// Final check that we haven't escaped fsroot
@@ -348,8 +572,24 @@ static uabi_long linux_openat(uabi_int dfd, const char __user *filename, uabi_in
 	DBT_FS_LOCK();
 	char pathbuf[PATH_MAX];
 	PathResolution(dfd, filename, pathbuf);
-	// the new path may not exist, so we don't need to check errno	
+	// the new path may not exist, so we don't need to check errno
 	return rcerrno(openat(AT_FDCWD, pathbuf, flags, mode));
+}
+
+// newlib (riscv-none-elf) legacy SYS_open (1024): same as openat with an implicit AT_FDCWD dir.
+// Lets file-input bare-metal-newlib guests (e.g. SPEC CPU2017) open their inputs under --fsroot.
+static uabi_long linux_open(const char __user *filename, uabi_int flags, mode_t mode)
+{
+	// newlib encodes open flags differently from Linux (sys/fcntl.h): translate the bits the
+	// host openat must see. Read-only opens (0) are identical, which is why file READS worked
+	// while every O_CREAT open failed (newlib 0x200 is not Linux O_CREAT 0x40).
+	uabi_int hflags = flags & 3; // O_RDONLY/O_WRONLY/O_RDWR identical
+	if (flags & 0x0008) hflags |= 02000;   // O_APPEND
+	if (flags & 0x0200) hflags |= 0100;    // O_CREAT
+	if (flags & 0x0400) hflags |= 01000;   // O_TRUNC
+	if (flags & 0x0800) hflags |= 0200;    // O_EXCL
+	if (flags & 0x4000) hflags |= 04000;   // O_NONBLOCK
+	return linux_openat(AT_FDCWD, filename, hflags, mode);
 }
 
 static uabi_long linux_close(uabi_uint fd)
@@ -389,7 +629,34 @@ static uabi_long linux_write(uabi_uint fd, const char __user *buf, uabi_size_t c
 
 static uabi_long linux_writev(uabi_uint fd, const struct iovec __user *iov, uabi_uint iovcnt)
 {
-	return rcerrno(writev(fd, iov, iovcnt));
+	// Guest (rv32 ilp32) iovec is {u32 iov_base; u32 iov_len} (8 bytes); the host struct iovec is 16 bytes and each
+	// guest iov_base is a GUEST address. The dispatch already g2h-translated the array pointer `iov`, but we must
+	// marshal each entry: translate the base via g2h and rebuild host iovecs. (Previously passed straight to host
+	// writev -> wrong layout + untranslated bases -> lost output for musl, which uses writev for stdio.)
+	if (static_cast<int>(iovcnt) < 0 || iovcnt > 1024)
+		return -EINVAL;
+	uint32_t const *gp = reinterpret_cast<uint32_t const *>(iov);
+	struct iovec hiov[1024];
+	for (uabi_uint i = 0; i < iovcnt; i++) {
+		hiov[i].iov_base = mmu::g2h(gp[2 * i]);
+		hiov[i].iov_len = gp[2 * i + 1];
+	}
+	return rcerrno(writev(fd, hiov, iovcnt));
+}
+
+static uabi_long linux_readv(uabi_uint fd, const struct iovec __user *iov, uabi_uint iovcnt)
+{
+	// Same guest-iovec marshalling as linux_writev (guest 8B {u32 base; u32 len}, host 16B, base needs g2h).
+	// musl's stdio uses readv to fill its buffer -> required for file-reading guests (e.g. xalan reads the input XML).
+	if (static_cast<int>(iovcnt) < 0 || iovcnt > 1024)
+		return -EINVAL;
+	uint32_t const *gp = reinterpret_cast<uint32_t const *>(iov);
+	struct iovec hiov[1024];
+	for (uabi_uint i = 0; i < iovcnt; i++) {
+		hiov[i].iov_base = mmu::g2h(gp[2 * i]);
+		hiov[i].iov_len = gp[2 * i + 1];
+	}
+	return rcerrno(readv(fd, hiov, iovcnt));
 }
 
 static uabi_long linux_readlinkat(uabi_int dfd, const char __user *path, char __user *buf, uabi_int bufsiz)
@@ -587,7 +854,8 @@ static uabi_long linux_munmap(uabi_ulong gaddr, uabi_size_t len)
 {
 	// TODO: implement in mmu
 	log_ukernel("munmap addr: %x", mmu::g2h(gaddr));
-	return rcerrno(munmap(mmu::g2h(gaddr), len));
+	auto rc = rcerrno(mmu::munmap(gaddr, len));
+	return rc;
 }
 
 static uabi_long linux_mremap(uabi_ulong old_addr, uabi_size_t old_size, 
@@ -623,7 +891,7 @@ static uabi_long linux_mremap(uabi_ulong old_addr, uabi_size_t old_size,
     memcpy(new_mem, mmu::g2h(old_addr), old_size);
     
     // Unmap old region
-    munmap(mmu::g2h(old_addr), aligned_old_size);
+	mmu::munmap(old_addr, aligned_old_size);
 
     uabi_long new_addr = mmu::h2g(new_mem);
     log_ukernel("mremap: result old=%x new=%x", old_addr, new_addr);
@@ -645,16 +913,24 @@ static uabi_long linux_rt_sigprocmask(int how, const sigset_t *set, sigset_t *ol
         return -EINVAL;
     }
 
+    // BUG FIX: the guest (rv32 Linux) kernel sigset is sigsetsize bytes (8 for the 64-signal kernel ABI), NOT the
+    // host userspace sizeof(sigset_t) (128 on glibc). Copying sizeof(sigset_t) over-reads the guest 'set' and, far
+    // worse, over-WRITES the guest 'oldset' by 120 bytes -> clobbers adjacent guest stack (e.g. a saved return
+    // address) -> deterministic wild jump (observed: Perl teardown sigprocmask -> guest pc=0x00007ffe fault).
+    // Marshal exactly the guest-sized sigset into/out of the low bytes of a zeroed host sigset.
+    size_t n = sigsetsize < sizeof(sigset_t) ? sigsetsize : sizeof(sigset_t);
     sigset_t host_set, host_oldset;
+    sigemptyset(&host_set);
+    sigemptyset(&host_oldset);
     if (set) {
-        memcpy(&host_set, set, sizeof(sigset_t));
+        memcpy(&host_set, set, n);
     }
 
-    int rc = sigprocmask(how, set ? &host_set : NULL, 
+    int rc = sigprocmask(how, set ? &host_set : NULL,
                         oldset ? &host_oldset : NULL);
 
     if (oldset && rc == 0) {
-        memcpy(oldset, &host_oldset, sizeof(sigset_t));
+        memcpy(oldset, &host_oldset, n);
     }
 
     return rcerrno(rc);
@@ -669,14 +945,35 @@ static uabi_long linux_mmap2(uabi_ulong gaddr, uabi_size_t len, uabi_ulong prot,
 		return uerrno(-errno);
 	}
 	uabi_long rc = mmu::h2g(ret);
+	// Mark any guest RUNTIME mmap of executable memory as gen-code (covers W+X simple allocators, and the
+	// exec view of dual-mapping/memfd allocators). The ELF .text is mapped by the loader (InitElfMappings),
+	// NOT this guest-runtime path, so static code is never marked here.
+	if (config::ngr && (prot & PROT_EXEC))
+		ngr::MarkGenCode((u32)rc, (u32)len);
 	log_ukernel("mmap addr: %x", rc);
 	return rc;
 }
 
 static uabi_long linux_mprotect(uabi_ulong start, uabi_size_t len, uabi_ulong prot)
 {
-	// TODO: implement in mmu
-	return rcerrno(mprotect(mmu::g2h(start), len, prot));
+	// W^X generators (security-hardened JITs: mmap RW, emit, mprotect R+X) don't create W+X pages, so
+	// MarkGenCode-at-mmap misses them. Mark the page gen-code here when it becomes executable — covers the
+	// W^X class (e.g. sljit with the prot allocator) in addition to the simple W+X allocator.
+	if (config::ngr && (prot & PROT_EXEC))
+		ngr::MarkGenCode((u32)start, (u32)len);
+	return rcerrno(mmu::mprotect(start, len, prot));
+}
+
+// riscv_flush_icache(start, end, flags): a guest JIT (sljit/PCRE2, LuaJIT, ...) calls this after
+// emitting code so the new instructions are visible. For fresh runtime-generated code (no overwrite of
+// an already-translated address) rvdbt translates lazily on first execution, so this is a no-op success.
+// (True self-modifying overwrite is a separate correctness axis; see V136-V140.)
+static uabi_long linux_riscv_flush_icache(uabi_ulong start, uabi_ulong end, uabi_ulong flags)
+{
+	(void)start;
+	(void)end;
+	(void)flags;
+	return 0;
 }
 
 
@@ -869,10 +1166,12 @@ void ukernel::Syscall(CPUState *state)
 	X(linux_fcntl64)                                                                                      \
 	X(linux_ioctl)                                                                                         \
 	X(linux_openat)                                                                                      \
+	X(linux_open)                                                                                        \
 	X(linux_close)                                                                                       \
 	X(linux_llseek)                                                                                      \
 	X(linux_read)                                                                                        \
 	X(linux_write)                                                                                       \
+	X(linux_readv)                                                                                       \
 	X(linux_writev)                                                                                      \
 	X(linux_readlinkat)                                                                                  \
 	X(linux_fstat64)                                                                                     \
@@ -894,6 +1193,7 @@ void ukernel::Syscall(CPUState *state)
 	X(linux_mremap)                                                                                      \
 	X(linux_mmap2)                                                                                       \
 	X(linux_mprotect)                                                                                    \
+	X(linux_riscv_flush_icache)                                                                          \
 	X(linux_prlimit64)                                                                                   \
 	X(linux_renameat2)                                                                                   \
 	X(linux_getrandom)                                                                                   \
@@ -1118,6 +1418,21 @@ void ukernel::LoadElf(int fd, ElfImage *elf)
 		auto vaddr_ps = rounddown(phdr->p_vaddr, mmu::PAGE_SIZE);
 		auto vaddr_po = vaddr - vaddr_ps;
 
+		// 2026-06-23: record ELF executable ranges so the offline AOT can skip runtime gen-code pages
+		// (--aot-skip-nonelf). Cheap, always recorded; only consumed when the flag is set.
+		if (phdr->p_flags & PF_X) {
+			config::g_elf_exec_ranges.emplace_back(
+			    (uint32_t)vaddr_ps, (uint32_t)roundup(vaddr + phdr->p_memsz, mmu::PAGE_SIZE));
+		}
+		// A-line round 32 R32.9: record genuinely non-writable (no PF_W) PT_LOAD ranges -- a
+		// byproduct of this same loop, zero extra cost -- so the in-process static jump-table
+		// resolver can certify a candidate table's memory is immutable at the OS level without a
+		// separate analysis pass or file.
+		if (!(phdr->p_flags & PF_W)) {
+			config::g_elf_nonwritable_ranges.emplace_back(
+			    (uint32_t)vaddr_ps, (uint32_t)roundup(vaddr + phdr->p_memsz, mmu::PAGE_SIZE));
+		}
+
 		if (phdr->p_filesz != 0) {
 			u32 len = roundup(phdr->p_filesz + vaddr_po, mmu::PAGE_SIZE);
 			// shared flags
@@ -1125,7 +1440,11 @@ void ukernel::LoadElf(int fd, ElfImage *elf)
 				  phdr->p_offset - vaddr_po);
 			if (phdr->p_memsz > phdr->p_filesz) {
 				auto bss_start = vaddr + phdr->p_filesz;
-				auto bss_end = vaddr_ps + phdr->p_memsz;
+				// BUG FIX: segment occupies [p_vaddr, p_vaddr + p_memsz); bss_end must use vaddr (not the
+				// page-aligned vaddr_ps), otherwise it is short by vaddr_po and the final BSS page is left
+				// unmapped when the BSS crosses a page boundary (e.g. perlbench LOAD2 ends at 0x293388 but the
+				// old vaddr_ps+memsz gave 0x2923a0 -> page 0x293000 unmapped -> guest memory fault).
+				auto bss_end = vaddr + phdr->p_memsz;
 				auto bss_start_nextp = roundup(bss_start, (u32)mmu::PAGE_SIZE);
 				auto bss_len = roundup(bss_end - bss_start, (u32)mmu::PAGE_SIZE);
 				mmu::mmap(bss_start_nextp, bss_len, prot, MAP_FIXED | MAP_PRIVATE | MAP_ANON);
