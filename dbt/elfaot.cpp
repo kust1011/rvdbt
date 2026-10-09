@@ -1610,10 +1610,12 @@ int main(int argc, char **argv)
 			(unsigned long long)s.target_verified);
 	}
 
-	dbt::fsmanager::Destroy();
 	if constexpr (dbt::config::debug) {
 		dbt::objprof::Destroy();
 		dbt::mmu::Destroy();
 	}
+	// Profile cleanup synchronously closes its descriptor on the fsmanager worker.
+	// Release owners before stopping the worker that services their cleanup.
+	dbt::fsmanager::Destroy();
 	return 0;
 }

@@ -4,6 +4,7 @@
 #include "dbt/util/logger.h"
 #include <condition_variable>
 #include <functional>
+#include <limits>
 #include <thread>
 
 #include <fcntl.h>
@@ -111,7 +112,7 @@ static bool xflock_unlock(int fd)
 }
 
 // TODO: consistency if owner killed
-static std::pair<void *, CacheState> Task_OpenCacheFile(char const *path, size_t size, bool maywrite)
+static CacheFileMapping Task_OpenCacheFile(char const *path, size_t size, bool maywrite)
 {
 	CacheState fst = CacheState::NO_FILE;
 	int fd;
@@ -122,11 +123,11 @@ static std::pair<void *, CacheState> Task_OpenCacheFile(char const *path, size_t
 		}
 		if (!maywrite) {
 			// no cache file
-			return {nullptr, CacheState::NO_FILE};
+			return {};
 		}
 		if (fd = open(path, O_RDWR | O_CREAT | O_EXCL, 0666); fd < 0) {
 			// just created by another process
-			return {nullptr, CacheState::NO_FILE};
+			return {};
 		}
 		xflock(fd, true, false);
 		if (ftruncate(fd, size) < 0) {
@@ -136,32 +137,68 @@ static std::pair<void *, CacheState> Task_OpenCacheFile(char const *path, size_t
 	} else {
 		if (!xflock(fd, maywrite, true)) {
 			close(fd);
-			return {nullptr, CacheState::NO_FILE};
+			return {};
 		}
 		if (GetFileSize(fd) == 0) { // assume we locked fresh created file
 			xflock_unlock(fd);
 			close(fd);
-			return {nullptr, CacheState::NO_FILE};
+			return {};
 		}
 		fst = maywrite ? CacheState::RDWR_OLD : CacheState::RDONLY;
 	}
 
 	bool const writable = fst == CacheState::RDWR_OLD || fst == CacheState::RDWR_NEW;
 	int const prot = PROT_READ | (writable ? PROT_WRITE : 0);
-	void *fmap = host_mmap(NULL, GetFileSize(fd), prot, MAP_SHARED, fd, 0);
+	size_t const actual_size = GetFileSize(fd);
+	void *fmap = host_mmap(NULL, actual_size, prot, MAP_SHARED, fd, 0);
 	if (fmap == MAP_FAILED) {
 		Panic();
 	}
 	// fd is opened and locked!
-	return std::make_pair(fmap, fst);
+	return {fmap, actual_size, fd, fst};
+}
+
+CacheFileMapping OpenCacheFileMapping(char const *path, size_t size, bool wmode)
+{
+	CacheFileMapping res;
+	SendTask([&res, path, size, wmode]() { res = Task_OpenCacheFile(path, size, wmode); });
+	log_fsmanager("open cache file: %s: %s", path, CacheStateToStr(res.state));
+	return res;
 }
 
 std::pair<void *, CacheState> OpenCacheFile(char const *path, size_t size, bool wmode)
 {
-	std::pair<void *, CacheState> res;
-	SendTask([&res, path, size, wmode]() { res = Task_OpenCacheFile(path, size, wmode); });
-	log_fsmanager("open cache file: %s: %s", path, CacheStateToStr(res.second));
-	return res;
+	// Preserve the old interface and its process-lifetime descriptor ownership.
+	auto res = OpenCacheFileMapping(path, size, wmode);
+	return {res.data, res.state};
+}
+
+void GrowCacheFileMapping(CacheFileMapping &mapping, size_t new_size)
+{
+	SendTask([&mapping, new_size]() {
+		if (mapping.worker_fd < 0 ||
+		    (mapping.state != CacheState::RDWR_OLD && mapping.state != CacheState::RDWR_NEW) ||
+		    new_size <= mapping.size || new_size > (size_t)std::numeric_limits<off_t>::max())
+			Panic("invalid cache mapping growth");
+		// Never close/reopen: dropping the existing flock here would permit a
+		// reader/writer race. Only this worker can use its unshared descriptor.
+		if (ftruncate(mapping.worker_fd, (off_t)new_size) < 0)
+			Panic("grow cache file: ftruncate");
+		void *next = host_mmap(nullptr, new_size, PROT_READ | PROT_WRITE,
+				      MAP_SHARED, mapping.worker_fd, 0);
+		if (next == MAP_FAILED)
+			Panic("grow cache file: mmap");
+		mapping.data = next;
+		mapping.size = new_size;
+	});
+}
+
+void CloseCacheFileDescriptor(int fd)
+{
+	SendTask([fd]() {
+		if (fd < 0 || close(fd) != 0)
+			Panic("close cache file");
+	});
 }
 
 char const *CacheStateToStr(CacheState s)

@@ -3,6 +3,7 @@
 #include "dbt/config.h"
 #include "dbt/util/fsmanager.h"
 #include <fcntl.h>
+#include <limits>
 
 namespace dbt
 {
@@ -97,29 +98,38 @@ void objprof::Announce(int elf_fd, bool jit_mode)
 	auto path = MakeCachePath(csum, ".prof");
 
 	auto &pfile = elf_prof;
-	pfile.fsize = 64_MB;
+	if (pfile.fmap)
+		Panic("profile already announced");
+	pfile.page2idx.clear();
 
 	log_prof("Lookup profile at %s", path.c_str());
-	auto [fmap, file_state] = dbt::fsmanager::OpenCacheFile(path.c_str(), pfile.fsize, jit_mode);
+	pfile.mapping = dbt::fsmanager::OpenCacheFileMapping(path.c_str(), 64_MB, jit_mode);
+	auto const file_state = pfile.mapping.state;
+	pfile.fsize = pfile.mapping.size;
 
 	if (file_state == fsmanager::CacheState::NO_FILE) {
 		log_prof("No profile available at %s", path.c_str());
 		return;
 	}
 
-	pfile.fmap = (FileHeader *)fmap;
+	if (pfile.fsize < sizeof(FileHeader))
+		Panic("truncated profile header " + path);
+	pfile.fmap = (FileHeader *)pfile.mapping.data;
 
 	if (file_state == fsmanager::CacheState::RDWR_NEW) {
 		pfile.fmap->csum = csum;
 		pfile.fmap->n_pages = 0;
 	} else {
+		if (pfile.fmap->n_pages > (pfile.fsize - sizeof(FileHeader)) / sizeof(PageData))
+			Panic("profile count exceeds file capacity " + path);
 		if (pfile.fmap->csum != csum) {
 			Panic("bad checksum " + path);
 		}
 		for (u32 idx = 0; idx < pfile.fmap->n_pages; ++idx) {
 			auto pageno = pfile.fmap->pages[idx].pageno;
 			log_prof("Found PageData for pageno=%u", pageno);
-			pfile.page2idx.insert({pageno, idx});
+			if (!pfile.page2idx.insert({pageno, idx}).second)
+				Panic("duplicate page in profile " + path);
 		}
 		if (use_aot_files) {
 			BootAOTFile();
@@ -135,27 +145,51 @@ void objprof::Announce(int elf_fd, bool jit_mode)
 void objprof::Destroy()
 {
 	auto &pfile = elf_prof;
-	int rc;
-
-	if (!elf_prof.fmap) {
+	if (!pfile.fmap)
 		return;
-	}
-	if (rc = munmap(pfile.fmap, pfile.fsize); rc != 0) {
-		Panic();
-	}
+	// No profile reader may survive Destroy. Preserve the file lock until all
+	// current/retained mappings are unmapped, then close on the fd-owning worker.
+	if (munmap(pfile.fmap, pfile.fsize) != 0)
+		Panic("unmap profile");
+	for (auto const &[base, bytes] : pfile.retained_mappings)
+		if (munmap(base, bytes) != 0)
+			Panic("unmap retained profile");
+	fsmanager::CloseCacheFileDescriptor(pfile.mapping.worker_fd);
+	pfile = ElfProfile{};
 }
 
 u32 objprof::AllocatePageData(u32 pageno)
 {
 	log_prof("Allocate PageData for pageno=%u", pageno);
 	auto &pfile = elf_prof;
-	auto fmap = pfile.fmap;
-	auto idx = fmap->n_pages++;
-	if ((uptr)&fmap->pages[fmap->n_pages] - (uptr)fmap > pfile.fsize) {
-		Panic();
+	if (pfile.mapping.state != fsmanager::CacheState::RDWR_NEW &&
+	    pfile.mapping.state != fsmanager::CacheState::RDWR_OLD)
+		Panic("cannot append to readonly profile");
+	u32 const idx = pfile.fmap->n_pages;
+	if (idx == std::numeric_limits<u32>::max() ||
+	    (size_t)idx + 1 > (std::numeric_limits<size_t>::max() - sizeof(FileHeader)) / sizeof(PageData))
+		Panic("profile record count overflow");
+	size_t const required = sizeof(FileHeader) + ((size_t)idx + 1) * sizeof(PageData);
+	if (required > pfile.fsize) {
+		// Geometric growth is a policy, not a new record cap. Clamp before
+		// multiplication so neither size_t nor off_t can overflow.
+		size_t const limit = (size_t)std::numeric_limits<off_t>::max();
+		if (required > limit)
+			Panic("profile file size overflow");
+		size_t next_size = pfile.fsize;
+		while (next_size < required)
+			next_size = next_size > limit / 2 ? limit : next_size * 2;
+		pfile.retained_mappings.emplace_back(pfile.fmap, pfile.fsize);
+		fsmanager::GrowCacheFileMapping(pfile.mapping, next_size);
+		pfile.fmap = (FileHeader *)pfile.mapping.data;
+		pfile.fsize = pfile.mapping.size;
 	}
-	auto page_data = &fmap->pages[idx];
+	auto *page_data = &pfile.fmap->pages[idx];
+	*page_data = PageData{};
 	page_data->pageno = pageno;
+	// Publish only after capacity and the new record exist. A capacity failure
+	// must never leave an out-of-range count for the next reader/reopen.
+	pfile.fmap->n_pages = idx + 1;
 	return idx;
 }
 
@@ -171,6 +205,9 @@ objprof::PageData *objprof::GetOrCreatePageData(u32 pageno)
 
 void objprof::UpdateProfile()
 {
+	if (elf_prof.mapping.state != fsmanager::CacheState::RDWR_NEW &&
+	    elf_prof.mapping.state != fsmanager::CacheState::RDWR_OLD)
+		Panic("cannot update unavailable or readonly profile");
 	if (unlikely(dbt::config::qcg_freq_edge || dbt::config::qcg_freq_entry))
 		tcache::FoldEdgeCounters(); // A-line EDGE/v3: drain arena slots into per-TB counts first
 	auto &tmap = tcache::tcache_map;

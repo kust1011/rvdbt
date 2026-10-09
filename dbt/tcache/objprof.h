@@ -4,6 +4,7 @@
 #include "dbt/mmu.h"
 #include "dbt/tcache/tcache.h"
 #include "dbt/util/logger.h"
+#include "dbt/util/fsmanager.h"
 
 #include <array>
 #include <bitset>
@@ -63,6 +64,8 @@ struct objprof {
 
 	// Access profile data
 	static bool HasProfile();
+	// Borrowed records remain mapped through growth; span length is a snapshot.
+	// Access/update is serialized on the guest host stack. Destroy invalidates all borrows.
 	static std::span<const PageData> const GetProfile();
 
 	// Walk all pages in tcache
@@ -93,6 +96,8 @@ private:
 		std::map<u32, u32> page2idx;
 		FileHeader *fmap{};
 		size_t fsize{};
+		fsmanager::CacheFileMapping mapping{};
+		std::vector<std::pair<void *, size_t>> retained_mappings;
 	};
 
 	// Walk tcache until page boundary
