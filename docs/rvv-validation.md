@@ -147,6 +147,17 @@ repository addition does not yet supply a public download of those artifacts.
 
 ## Review artifact inventory
 
+`coverage-report.tar.gz` supplies the source CSV, scoped supplements, exporter
+and generated per-form reports. Its README rebuilds all three report files from
+a separate directory; this extracted rebuild was verified byte-identical.
+This reproduces the evidence index, not the underlying ISA executions.
+
+`remaining-supplements.tar.gz` contains eight scoped cases with 32 accepted
+candidate records. Initial same-PC geometry launch errors remain in the raw
+evidence but are not accepted test results. For widening and VLEN4096, eight
+portable replay registrations relocate the recorded filesystem/cache/diagnostic
+paths; these relocated command variants have not themselves been rerun.
+
 `docs/rvv-validation-artifacts.json` identifies the local delivery archives by
 filename, byte length, digest and purpose. Obtain the named archives separately;
 the repository does not advertise an unavailable public download.

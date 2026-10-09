@@ -4,6 +4,26 @@
   "counts": "Execution records, files and instruction forms are distinct units. Packaging adds no executions.",
   "artifacts": [
     {
+      "file": "coverage-report.tar.gz",
+      "kind": "reproducible_evidence_index",
+      "sha256": "ded3cd060060b35b27b0d43a24a455c6fa7e49fdc708a0c3105254b8862374cb",
+      "bytes": 1646847,
+      "forms": 627,
+      "applicable_forms": 595,
+      "supplemental_records": 14,
+      "supplemental_forms": 18,
+      "scope": "Original per-form CSV, scoped supplements, exporter and three reports; extracted rebuild verified byte-identical; not new ISA execution"
+    },
+    {
+      "file": "remaining-supplements.tar.gz",
+      "kind": "registered_candidate_replay_and_review",
+      "sha256": "5e88db1a04533cfa25d39834191b8259c823e44a2630eeec83177e24b41fb89c",
+      "bytes": 6619885,
+      "input_ELFs": 8,
+      "candidate_records": 32,
+      "scope": "Store footprint, same-PC geometry, whole-store, directed reciprocal, widening state, VLEN4096 batching, mask-store, narrowing state; initial launch failures retained; eight relocated diagnostic commands registered but not reexecuted"
+    },
+    {
       "file": "registered-corpus.tar.gz",
       "kind": "registered_candidate_replay",
       "sha256": "cef00906c7e73f50dee05dd35efc24cfd9163fc838a4e0e74da90b32f4a2b628",
