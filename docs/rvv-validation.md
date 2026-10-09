@@ -12,6 +12,11 @@ missing executable, mismatched input, or extra output fails the run. Negative
 controls are reported separately from positive instruction tests. Existing output
 directories cannot be reused.
 
+Binary state packets use `expected_stdout_base64` instead of `expected_stdout`.
+Exactly one representation is required, and comparison uses decoded bytes. The
+registration must identify the external reference that produced the packet;
+base64 encoding is only transport, not an oracle.
+
 ```sh
 python3 scripts/rvv_tests.py \
   --manifest /path/to/bundle/manifest.json \

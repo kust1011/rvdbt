@@ -2,6 +2,7 @@
 """Harness tests only: these synthetic processes do not verify RISC-V semantics."""
 
 import contextlib
+import base64
 import csv
 import io
 import json
@@ -52,6 +53,24 @@ class RunnerTests(unittest.TestCase):
 
     def test_success(self):
         self.assertEqual(self.run_case("printf 'PASS\\n'"), (0, "PASS"))
+
+    def test_binary_reference_output(self):
+        del self.cell["expected_stdout"]
+        self.cell["expected_stdout_base64"] = base64.b64encode(b"\x00\xff\x80").decode()
+        self.register()
+        self.assertEqual(self.run_case("printf '\\000\\377\\200'"), (0, "PASS"))
+
+    def test_binary_reference_mismatch(self):
+        del self.cell["expected_stdout"]
+        self.cell["expected_stdout_base64"] = base64.b64encode(b"\x00\xff\x80").decode()
+        self.register()
+        self.assertEqual(self.run_case("printf '\\000\\377\\201'"), (1, "OUTPUT_MISMATCH"))
+
+    def test_ambiguous_output_registration(self):
+        self.cell["expected_stdout_base64"] = "AA=="
+        self.register()
+        with self.assertRaisesRegex(ValueError, "exactly one"):
+            runner.load_manifest(self.manifest)
 
     def test_pass_text_does_not_override_exit_failure(self):
         self.assertEqual(self.run_case("printf 'PASS\\n'; exit 7"), (1, "EXIT_MISMATCH"))

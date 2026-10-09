@@ -2,6 +2,7 @@
 """Replay registered RVV self-checking ELFs; this runner is not an ISA oracle."""
 
 import argparse
+import base64
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
@@ -29,6 +30,16 @@ def save(path, data):
     Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 
 
+def expected_output(cell):
+    if ("expected_stdout" in cell) == ("expected_stdout_base64" in cell):
+        raise ValueError("register exactly one text or binary expected output")
+    if "expected_stdout_base64" in cell:
+        return base64.b64decode(cell["expected_stdout_base64"], validate=True)
+    if not isinstance(cell["expected_stdout"], str):
+        raise ValueError("expected_stdout must be a string")
+    return cell["expected_stdout"].encode()
+
+
 def load_manifest(path):
     manifest = json.loads(Path(path).read_text())
     cells = manifest["cells"]
@@ -48,8 +59,7 @@ def load_manifest(path):
             raise ValueError("flags must be a string array")
         if type(cell["expected_returncode"]) is not int or cell["expected_returncode"] < 0:
             raise ValueError("host signals must not be accepted as expected traps")
-        if not isinstance(cell["expected_stdout"], str):
-            raise ValueError("expected_stdout must be a string")
+        expected_output(cell)
         if type(cell["control"]) is not bool:
             raise ValueError("control must explicitly distinguish harness controls")
         if not cell["control"] and cell["expected_returncode"] != 0:
@@ -69,7 +79,7 @@ def classify(returncode, actual, cell, timed_out=False, error=None):
         return "CRASH"
     if returncode != cell["expected_returncode"]:
         return "EXIT_MISMATCH"
-    if actual != cell["expected_stdout"].encode():
+    if actual != expected_output(cell):
         return "OUTPUT_MISMATCH"
     return "PASS"
 
