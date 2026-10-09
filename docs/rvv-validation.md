@@ -144,3 +144,29 @@ external ISA suites: those need registered fixtures, a compatible host, and a
 separately recorded DUT build. No external suite result is inferred from CI being
 green. Large raw results and third-party fixtures are separate artifacts; this
 repository addition does not yet supply a public download of those artifacts.
+
+## Review artifact inventory
+
+`docs/rvv-validation-artifacts.json` identifies the local delivery archives by
+filename, byte length, digest and purpose. Obtain the named archives separately;
+the repository does not advertise an unavailable public download.
+
+The registered replay bundles contain input ELFs, manifests, original logs and
+the runner. Their README gives the command for the exact registered executable
+and runtime library. The historical CHIPS bundle retains its original build;
+the later supplements have their own registrations. Do not combine these as if
+all were executed by one rebuilt binary.
+
+`suite-evidence.tar.gz` is instead a review bundle. It contains the files
+explicitly referenced by the ACT, Ara and RVVTS evidence index, including failed
+and unexecuted records. A row can describe one target/checker binding within a
+larger execution. Row counts must not be reported as test-execution counts.
+The bundle retains original source and checker limitations; collecting a file
+does not validate every textual anchor or make the toolchain reproducible.
+
+The NF8 and fractional-source supplements keep original CHIPS inputs and
+destination checks, but add local pre/post state observers. QEMU and Spike
+provide the comparison packets. They test preservation of specifically observed
+registers, CSRs and buffers, not all memory accesses or precise fault recovery.
+Offline modified-output controls check that these observed bytes are actually
+compared; those controls are harness checks, not additional external ISA tests.

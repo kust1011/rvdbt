@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "publication": "local review artifacts; no public download URL assigned",
+  "counts": "Execution records, files and instruction forms are distinct units. Packaging adds no executions.",
+  "artifacts": [
+    {
+      "file": "registered-corpus.tar.gz",
+      "kind": "registered_candidate_replay",
+      "sha256": "cef00906c7e73f50dee05dd35efc24cfd9163fc838a4e0e74da90b32f4a2b628",
+      "bytes": 1094784253,
+      "input_ELFs": 2931,
+      "candidate_records": 11744,
+      "positive_records": 11532,
+      "expected_failure_controls": 212,
+      "scope": "Historical CHIPS registered corpus; original build identities retained"
+    },
+    {
+      "file": "act-supplements.tar.gz",
+      "kind": "registered_candidate_replay",
+      "sha256": "d15015a878d2a106a89ed571b1f42a6d541dba1c8c1c6d3998d3e79c19273950",
+      "bytes": 7959260,
+      "input_ELFs": 4,
+      "candidate_records": 16,
+      "scope": "Three ACT integer reductions and integer-to-FP32 narrowing conversion; per-case checker limitations retained"
+    },
+    {
+      "file": "latest-supplements.tar.gz",
+      "kind": "registered_candidate_replay",
+      "sha256": "c22d979a4e46e53d53373e33e28c8b3904032403ffd0ade9b2b514a64862edf3",
+      "bytes": 1240733,
+      "input_ELFs": 2,
+      "candidate_records": 8,
+      "scope": "ACT FP32 unordered reduction and original CHIPS fractional-source preservation with local observer"
+    },
+    {
+      "file": "nf8-supplements.tar.gz",
+      "kind": "registered_candidate_replay",
+      "sha256": "fbf401ddf598c3fac76c7dbb33bba3b8191c35718b2e0c27ce60dae4e96d7687",
+      "bytes": 149442,
+      "input_ELFs": 2,
+      "candidate_records": 8,
+      "scope": "Original CHIPS unit-stride/indexed NF8 cases plus state and output-buffer observation; no fault/access-suppression claim"
+    },
+    {
+      "file": "suite-evidence.tar.gz",
+      "kind": "indexed_review_evidence",
+      "sha256": "6ae9dbb484bc9ceea977d4d697afcf245231a04be1554d598ad7527f7d0f5b8b",
+      "bytes": 276484001,
+      "files": 35612,
+      "scope": "Explicitly referenced ACT/Ara/RVVTS historical evidence; includes failed, unexecuted and unresolved-status records; not turnkey executable replay"
+    }
+  ]
+}
