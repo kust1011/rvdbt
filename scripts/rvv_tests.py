@@ -60,6 +60,8 @@ def load_manifest(path):
         if type(cell["expected_returncode"]) is not int or cell["expected_returncode"] < 0:
             raise ValueError("host signals must not be accepted as expected traps")
         expected_output(cell)
+        if "expected_stderr_base64" in cell:
+            base64.b64decode(cell["expected_stderr_base64"], validate=True)
         if type(cell["control"]) is not bool:
             raise ValueError("control must explicitly distinguish harness controls")
         if not cell["control"] and cell["expected_returncode"] != 0:
@@ -70,7 +72,7 @@ def load_manifest(path):
     return manifest
 
 
-def classify(returncode, actual, cell, timed_out=False, error=None):
+def classify(returncode, actual, cell, timed_out=False, error=None, stderr=None):
     if error:
         return "ERROR"
     if timed_out:
@@ -81,6 +83,10 @@ def classify(returncode, actual, cell, timed_out=False, error=None):
         return "EXIT_MISMATCH"
     if actual != expected_output(cell):
         return "OUTPUT_MISMATCH"
+    if "expected_stderr_base64" in cell:
+        expected = base64.b64decode(cell["expected_stderr_base64"], validate=True)
+        if stderr != expected:
+            return "STDERR_MISMATCH"
     return "PASS"
 
 
@@ -121,14 +127,15 @@ def execute(cell, engine, inputs, out, environment, timeout):
         error = str(exc)
     stdout.touch(exist_ok=True)
     stderr.touch(exist_ok=True)
-    status = classify(returncode, stdout.read_bytes(), cell, timed_out, error)
+    status = classify(returncode, stdout.read_bytes(), cell, timed_out, error,
+                      stderr.read_bytes())
     result = {
         "id": cell["id"], "status": status, "control": cell["control"],
         "returncode": returncode, "error": error,
         "elapsed_seconds_for_timeout_diagnostics_only": time.monotonic() - begin,
         "elf_sha256": cell["elf_sha256"],
         "stdout_sha256": digest(stdout), "stderr_sha256": digest(stderr),
-        "checker": "registered exit code and exact stdout of self-checking guest",
+        "checker": "registered exit code, exact stdout and optional exact stderr of self-checking guest",
         "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER",
     }
     save(directory / "result.json", result)

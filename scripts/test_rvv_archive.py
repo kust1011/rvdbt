@@ -38,6 +38,22 @@ class ArchiveTests(unittest.TestCase):
     def test_unchanged_archive(self):
         self.assertEqual(audit.audit(self.results, self.inputs)["records_checked"], 1)
 
+    def test_registered_stderr_is_checked_again(self):
+        manifest_path = self.results / "manifest.json"
+        manifest = json.loads(manifest_path.read_text())
+        manifest["cells"][0]["expected_stderr_base64"] = ""
+        runner.save(manifest_path, manifest)
+        runner.save(self.results / "one/case.json", manifest["cells"][0])
+        self.assertEqual(audit.audit(self.results, self.inputs)["records_checked"], 1)
+        raw = self.results / "one/stderr"
+        raw.write_bytes(b"FAILED\n")
+        record_path = self.results / "one/result.json"
+        record = json.loads(record_path.read_text())
+        record["stderr_sha256"] = runner.digest(raw)
+        runner.save(record_path, record)
+        with self.assertRaisesRegex(ValueError, "classification mismatch"):
+            audit.audit(self.results, self.inputs)
+
     def test_corrupt_raw(self):
         (self.results / "one/stdout").write_bytes(b"WRONG\n")
         with self.assertRaisesRegex(ValueError, "raw stream mismatch"):

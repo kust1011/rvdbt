@@ -108,6 +108,15 @@ index structure, not the underlying experimental evidence.
 
 ## Runner checks and CI
 
+For an external self-checker that reports on stderr, a cell can additionally
+register `expected_stderr_base64`. The runner then requires byte-exact stderr
+as well as the registered exit code and stdout. Missing, extra or changed
+stderr is a failure; the archive auditor applies the same rule. This is optional
+for existing fixtures and does not reinterpret their historical results.
+Diagnostic text must be kept separate from the source of numerical answers:
+ACT answers come from the reference signature embedded in the guest, not from
+a captured rvdbt diagnostic stream.
+
 Archived runs can be checked without rerunning the guest:
 
 ```sh

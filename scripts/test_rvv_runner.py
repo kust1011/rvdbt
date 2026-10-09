@@ -54,6 +54,32 @@ class RunnerTests(unittest.TestCase):
     def test_success(self):
         self.assertEqual(self.run_case("printf 'PASS\\n'"), (0, "PASS"))
 
+    def test_registered_stderr_success(self):
+        self.cell["expected_stderr_base64"] = base64.b64encode(b"CHECKED\n").decode()
+        self.register()
+        self.assertEqual(self.run_case("printf 'PASS\\n'; printf 'CHECKED\\n' >&2"), (0, "PASS"))
+
+    def test_missing_stderr_is_not_pass(self):
+        self.cell["expected_stderr_base64"] = base64.b64encode(b"CHECKED\n").decode()
+        self.register()
+        self.assertEqual(self.run_case("printf 'PASS\\n'"), (1, "STDERR_MISMATCH"))
+
+    def test_extra_stderr_is_not_ignored(self):
+        self.cell["expected_stderr_base64"] = base64.b64encode(b"CHECKED\n").decode()
+        self.register()
+        self.assertEqual(self.run_case("printf 'PASS\\n'; printf 'FAIL\\nCHECKED\\n' >&2"),
+                         (1, "STDERR_MISMATCH"))
+
+    def test_unobserved_registered_stderr_is_not_pass(self):
+        cell = dict(self.cell, expected_stderr_base64="")
+        self.assertEqual(runner.classify(0, b"PASS\n", cell), "STDERR_MISMATCH")
+
+    def test_invalid_stderr_registration(self):
+        self.cell["expected_stderr_base64"] = "not base64!"
+        self.register()
+        with self.assertRaises(ValueError):
+            runner.load_manifest(self.manifest)
+
     def test_binary_reference_output(self):
         del self.cell["expected_stdout"]
         self.cell["expected_stdout_base64"] = base64.b64encode(b"\x00\xff\x80").decode()

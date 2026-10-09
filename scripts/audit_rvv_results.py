@@ -63,7 +63,8 @@ def audit(results, inputs):
                 "command flags mismatch: " + name)
         # Preserve historical TIMEOUT: old records lack an independent timed_out field.
         status = runner.classify(record["returncode"], (directory / "stdout").read_bytes(),
-                                 cell, record["status"] == "TIMEOUT", record["error"])
+                                 cell, record["status"] == "TIMEOUT", record["error"],
+                                 (directory / "stderr").read_bytes())
         require(status == record["status"], "classification mismatch: " + name)
         checked.append(record)
     require(checked == read(results / "results.json"), "aggregate records differ")
