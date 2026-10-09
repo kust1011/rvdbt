@@ -39,6 +39,25 @@ manifest; never replace old identities to make a historical campaign appear new.
 
 ## External source reconstruction
 
+A complete external fixture is included under
+`scripts/rvv/fixtures/chips-vsmul-vv`. With the pinned CHIPS checkout and its
+environment submodule available, the following command rebuilds it, verifies
+the registered ELF, and tests B/M1/M2/Both using a newly recorded DUT identity:
+
+```sh
+python3 scripts/run_rvv_smoke.py \
+  --upstream /path/to/pinned/chips-checkout \
+  --engine /path/to/build/bin/elfrun --library-dir /path/to/build/lib \
+  --output /path/to/new-smoke-results
+```
+
+Use Clang/LLD 20 for the retained ELF identity. `--build-only` performs the
+cross-build without requiring an AVX-512 execution host or a DUT; it reports
+no ISA PASS. Obtain the upstream source with `git clone --recurse-submodules`,
+checkout the revision in `sources.lock.json`, and run `git submodule update
+--init --recursive`. The build rejects modified tracked headers/submodules.
+Do not overwrite prior results when testing a new build.
+
 `scripts/rvv/sources.lock.json` pins the CHIPS source and environment submodule.
 `scripts/build_rvv_chips.py` rebuilds a registered stage2 assembly file without
 changing its instruction body or expected values. The Linux-user adapter changes
