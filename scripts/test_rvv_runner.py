@@ -191,6 +191,28 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(family["forms_with_final_positive_records"], 1)
         self.assertEqual(family["forms_with_recorded_unverified_items"], 1)
 
+        later = dict(id="later", forms=["vadd.vv"], candidate="separate build",
+                     configuration="one configuration", checker="external oracle",
+                     result="PASS", evidence="raw path", limitations=["no restart"])
+        supplemental = self.root / "supplements.json"
+        supplemental.write_text(json.dumps([later]))
+        with contextlib.redirect_stdout(io.StringIO()):
+            coverage.export(source, self.root / "joined", supplemental)
+        merged = json.loads((self.root / "joined/forms.json").read_text())[0]
+        joined_summary = json.loads((self.root / "joined/summary.json").read_text())
+        self.assertEqual(merged["unverified"], ["tail"])
+        self.assertEqual(merged["final_unique_positive_cells"], "4")
+        self.assertEqual(merged["supplemental_evidence"], [later])
+        self.assertEqual(joined_summary["families"], summary["families"])
+        self.assertEqual(joined_summary["supplemental_records"], 1)
+        for invalid in ([dict(later, forms=["invented.form"])], [later, later],
+                        [dict(later, checker="")], [dict(later, forms=[])], {"not": "list"}):
+            with self.subTest(invalid=invalid):
+                supplemental.write_text(json.dumps(invalid))
+                with self.assertRaises(ValueError):
+                    coverage.export(source, self.root / "invalid", supplemental)
+                self.assertFalse((self.root / "invalid").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

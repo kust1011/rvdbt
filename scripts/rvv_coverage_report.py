@@ -11,7 +11,7 @@ import sys
 from rvv_tests import digest, save
 
 
-def export(source, output):
+def export(source, output, supplements=None):
     csv.field_size_limit(sys.maxsize)
     with source.open(newline="") as stream:
         rows = list(csv.DictReader(stream))
@@ -32,6 +32,30 @@ def export(source, output):
             else:
                 item[key] = value
         items.append(item)
+    supplemental_records = []
+    if supplements is not None:
+        supplemental_records = json.loads(supplements.read_text())
+        if not isinstance(supplemental_records, list):
+            raise ValueError("supplemental evidence must be a list")
+        identifiers = set()
+        for record in supplemental_records:
+            required_fields = {"id", "forms", "candidate", "configuration", "checker",
+                               "result", "evidence", "limitations"}
+            if not isinstance(record, dict) or not required_fields <= record.keys():
+                raise ValueError("incomplete supplemental evidence record")
+            if not isinstance(record["id"], str) or not record["id"] or record["id"] in identifiers:
+                raise ValueError("duplicate or empty supplemental id")
+            identifiers.add(record["id"])
+            forms = record["forms"]
+            if not isinstance(forms, list) or not forms or not all(isinstance(f, str) for f in forms):
+                raise ValueError("supplement must name instruction forms")
+            if len(forms) != len(set(forms)) or set(forms) - set(names):
+                raise ValueError("unknown or duplicate supplemental form")
+            if not all(record[k] for k in required_fields):
+                raise ValueError("supplemental evidence fields must not be empty")
+            for item in items:
+                if item["form"] in forms:
+                    item.setdefault("supplemental_evidence", []).append(record)
     families = sorted({r["family"] for r in rows})
     summary = []
     for family in families:
@@ -47,6 +71,9 @@ def export(source, output):
         "source_sha256": digest(source), "form_count": len(rows),
         "applicability": dict(Counter(r["rv32_elen64_applicability"] for r in rows)),
         "families": summary,
+        "supplements_sha256": digest(supplements) if supplements is not None else None,
+        "supplemental_records": len(supplemental_records),
+        "supplement_scope": "indexed separately; does not replace historical gaps or increment form PASS counts",
         "scope": "existing evidence index; no new DUT executions and no exhaustive-semantic claim",
     })
     lines = ["# RVV verification evidence", "",
@@ -63,6 +90,12 @@ def export(source, output):
               "original record locations, path-observation scope and unverified items.",
               "Cells, source occurrences, assertions and distinct instruction forms are different counts.",
               "The source CSV is identified in `summary.json`; all original limitations are retained.", ""]
+    if supplemental_records:
+        lines += ["## Supplemental evidence", "",
+                  "Later scoped observations are attached to the relevant forms under",
+                  "`supplemental_evidence`. Read their configuration, checker and limitations",
+                  "alongside historical records. Indexing is not independent verification",
+                  "and does not imply that every historical gap has been closed.", ""]
     (output / "README.md").write_text("\n".join(lines))
     print(json.dumps({"forms": len(rows), "families": len(families), "output": str(output)}))
 
@@ -71,9 +104,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--forms", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--supplements", type=Path, help="scoped later evidence; preserves historical records")
     args = parser.parse_args()
     try:
-        export(args.forms, args.output)
+        export(args.forms, args.output, args.supplements)
     except (OSError, ValueError, KeyError, csv.Error) as exc:
         print("RVV coverage export error: " + str(exc), file=sys.stderr)
         return 2

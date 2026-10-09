@@ -98,6 +98,14 @@ tested. It is not a universal count of RVV instructions. Runtime geometry, masks
 tail policy, restart, overlap, floating-point flags, and method admission must be
 reported independently.
 
+Use `--supplements /path/to/supplements.json` to attach later scoped evidence to
+existing instruction forms. Each record supplies `id`, `forms`, `candidate`,
+`configuration`, `checker`, `result`, `evidence`, and `limitations`. Unknown forms
+or duplicate record IDs are rejected. These observations remain separate from
+historical records: they do not overwrite gaps, relabel an old build, or increase
+the number of forms with historical positive results. The exporter validates the
+index structure, not the underlying experimental evidence.
+
 ## Runner checks and CI
 
 ```sh
