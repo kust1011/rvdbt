@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('RVV runner checks') {
             steps {
-                sh 'PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p test_rvv_runner.py -v'
+                sh 'PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p "test_rvv_*.py" -v'
             }
         }
         stage('Build') {

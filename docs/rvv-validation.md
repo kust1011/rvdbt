@@ -108,9 +108,25 @@ index structure, not the underlying experimental evidence.
 
 ## Runner checks and CI
 
+Archived runs can be checked without rerunning the guest:
+
+```sh
+python3 scripts/audit_rvv_results.py \
+  --results /path/to/archived-results --inputs /path/to/registered-inputs
+```
+
+The audit checks the recorded build identity, selected cases, input files,
+commands, raw stdout/stderr, exit/output classification, and aggregate counts.
+It rejects a recorded PASS when the raw output disagrees with the registered
+answer, even if the output digest was updated. It reports archive consistency,
+not new ISA coverage or independent proof that the recorded execution occurred.
+Historical timeout classification remains dependent on the runner record because
+older archives lack a separate timeout flag. Source/checker provenance and actual
+native-path admission still require the corresponding suite and method evidence.
+
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
-  -s scripts -p test_rvv_runner.py -v
+  -s scripts -p 'test_rvv_*.py' -v
 ```
 
 These checks use synthetic host processes to test failure handling and reporting.
