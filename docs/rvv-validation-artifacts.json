@@ -68,6 +68,38 @@
       "bytes": 276484001,
       "files": 35612,
       "scope": "Explicitly referenced ACT/Ara/RVVTS historical evidence; includes failed, unexecuted and unresolved-status records; not turnkey executable replay"
+    },
+    {
+      "file": "oct10-evidence.tar.gz",
+      "kind": "incremental_indexed_review_evidence",
+      "sha256": "d9fbb942bfb11321f0af59e73b082454e3ae8e4338eddc2531b0e8fbed88de74",
+      "bytes": 16758414,
+      "files": 7809,
+      "supplemental_records_added": 14,
+      "snapshot_supplemental_records": 28,
+      "incremental_instruction_forms": 8,
+      "accepted_candidate_executions": 60,
+      "retained_superseded_candidate_executions": 4,
+      "retained_candidate_execution_records": 64,
+      "input_ELF_files": 34,
+      "unique_input_ELF_digests": 18,
+      "new_DUT_executions": 0,
+      "scope": "ID delta from existing 14-supplement coverage bundle; actual source/input/oracle/commands/raw results, corrections, failures and review dependencies; 28-record coverage-v16 snapshot of the index, original CSV, exporter and reports (current full coverage-v21 index has 41 records) rebuilt byte-identically in fresh extraction; all payloads and declared references checked or external dependencies documented; frozen961 evidence, P4 separate; no ELF reexecution, toolchains or turnkey replay"
+    },
+    {
+      "file": "final-evidence.tar.gz",
+      "kind": "final_incremental_indexed_review_evidence",
+      "sha256": "cf844b0752eb6a818d8f84d48adc8a259be9bc6ab0fb5c395ef20e47df4ca53e",
+      "bytes": 33701721,
+      "files": 6301,
+      "supplemental_records_added": 13,
+      "snapshot_supplemental_records": 41,
+      "incremental_instruction_forms": 19,
+      "retained_raw_result_bindings": 60,
+      "historical_scalar_lane_raw_bindings": 13720,
+      "P3_38_original_FAIL_packets": 2,
+      "new_DUT_executions": 0,
+      "scope": "13-ID delta against immutable 28-record oct10 snapshot; current CSV/index, current exporter and Task42 readable coverage-v22; selected original evidence, failures, adapters, inputs/oracles/commands/raw and review dependencies; fresh extraction validates payload/navigation/raw bindings and byte-identical report JSON; historical2af5 distinct from clean961; P3-38 bounded offline observation retains original whole-test FAIL, no new PASS; P4 separate; named prior archive and remote tool dependencies explicit; no turnkey replay"
     }
   ]
 }

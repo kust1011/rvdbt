@@ -162,6 +162,29 @@ paths; these relocated command variants have not themselves been rerun.
 filename, byte length, digest and purpose. Obtain the named archives separately;
 the repository does not advertise an unavailable public download.
 
+`oct10-evidence.tar.gz` is the incremental review archive in the delivery's
+`oct10-evidence-bundle/` directory. Its 14 additions were selected by supplement
+ID against the original coverage bundle, including additions prepended to the
+index. It retains a 28-record coverage-v16 snapshot of the index, original CSV,
+exporter and reports, plus the additions' actual evidence and correction history.
+The current full index is coverage-v21 with 41 records; this archive does not
+contain that later index.
+The archive contains 7,809 files, 60 accepted candidate executions and four
+superseded candidate records; those counts are separate from its eight affected
+instruction forms. `RESULT.json`, `SCOPE.json` and `CONTENTS.json` record the
+completed fresh-extraction validation and exact scope.
+
+Extract into a new directory and follow its README to run only the coverage
+exporter and compare the three reports. For full payload/reference validation,
+run `python3 tools/verify_oct10.py . /path/to/oct10-evidence-bundle/CONTENTS.json`
+before creating additional files in the extraction. `REFERENCE_RESOLUTION.json`
+maps original absolute paths, documents external historical/tool dependencies,
+and resolves the index's `narrow-m4-overlap/runs` reference to the actual four
+arm-specific results directories. Review dependencies support inspecting saved
+evidence; this archive supplies no toolchains or turnkey build/replay and does
+not reexecute ELFs. Frozen961 evidence remains separate from P4; packaging adds
+no DUT, reference or generator execution. The seven earlier archives are unchanged.
+
 The registered replay bundles contain input ELFs, manifests, original logs and
 the runner. Their README gives the command for the exact registered executable
 and runtime library. The historical CHIPS bundle retains its original build;
@@ -181,3 +204,28 @@ provide the comparison packets. They test preservation of specifically observed
 registers, CSRs and buffers, not all memory accesses or precise fault recovery.
 Offline modified-output controls check that these observed bytes are actually
 compared; those controls are harness checks, not additional external ISA tests.
+
+`final-evidence.tar.gz` in the delivery's `final-evidence-bundle/` directory
+packages the remaining 13 supplement IDs against the immutable 28-record
+`oct10-evidence.tar.gz` snapshot. It contains the current 41-record index,
+original source CSV, current exporter, and Task42's readable coverage-v22 report
+(627 forms, 595 applicable, 647 report files). Original report JSON regenerates
+byte-identically in a fresh extraction. The eight earlier archives remain unchanged.
+
+The archive has 6301 payload files and 60 saved raw-result bindings; the historical
+ACT scalar join separately declares 13,720 lane-to-raw bindings. These units are
+not new executions or instruction-form totals. Initial failures, adapters,
+superseded attempts and original goldens/logs remain. Historical executable
+2af5 is distinct from clean961. P3-38 retains two original whole-test FAIL
+packets as bounded offline post-exit observation, with no new PASS; P4 is separate.
+
+From a fresh extraction, before adding files, run
+`python3 tools/verify_final_evidence.py . /path/to/final-evidence-bundle/CONTENTS.json`.
+`RESULT.json` records payload integrity, declared raw bindings, local navigation
+and report JSON regeneration. Transport Markdown relocates navigation; original
+Markdown bytes remain in `original-markdown/`. `REFERENCE_RESOLUTION.json` and
+`DEPENDENCIES.md` identify retained files, named prior archive members with hashes,
+and unavailable remote/tool/source/output dependencies. Obtain prior archives
+separately; original commands retain historical paths. The package includes no
+caches, virtual environments, toolchains or turnkey build/replay promise, and
+packaging performs no guest, reference, generator or build execution.

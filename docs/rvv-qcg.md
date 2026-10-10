@@ -45,8 +45,9 @@ new compiler invention.
 **M2 (active-work chunk admission).** A guest `VLEN=1024`, `SEW=32`,
 `LMUL=1` register has 32 elements. With 512-bit host chunks, indices 0--15
 belong to the low chunk and 16--31 to the high chunk. At runtime `vl=20`,
-the high chunk still contains four active elements and must execute with a
-partial lane mask. At `vl=12`, the high chunk is entirely in the tail and
+the high chunk still contains four body elements and must retain its
+partial lane mask; `vstart` and the instruction mask further determine which
+elements update. At `vl=12`, the high chunk is entirely in the tail and
 may be skipped. The planner uses destination-element geometry, so widening
 and narrowing operations cannot accidentally use source-byte offsets as
 element indices. The frame finalizer admits bounds only when omitted work is
@@ -60,12 +61,20 @@ integrated configuration (`Both`). `Both` may change run formation and which
 dynamic instructions are eligible for M2; it is not automatically a pure
 two-factor interaction on identical instruction populations.
 
+In the thesis's recorded performance configuration, Both enables promotion,
+batching and per-instruction bounds; eligible integer groups can use
+component-first emission. General floating-point grouped early-exit options
+are disabled in that configuration. Separate focused tests of that available
+path must not be used to describe every floating-point run in the measured
+Both configuration.
+
 ## Focused checks
 
-Configure with Clang and LLVM as shown in the root README. On a host without
-AVX-512, choose `-DRVV_HOST_CHUNK_BITS=128` for executable focused tests. An
-AVX-512 build is not executable on such a host, even when a test's own code
-would otherwise only inspect emitted instructions.
+Configure with Clang and LLVM as shown in the root README. The helper build
+setting `-DRVV_HOST_CHUNK_BITS=128` does not select a 128-bit native QCG
+backend or establish that every focused test can execute without AVX-512.
+Use a compatible host for tests that execute generated native code. Tests
+that only inspect plans or emitted code have different host requirements.
 
 ```sh
 ninja -C build -j2 rvv_vector_run_admission_test rvv_vector_run_codegen_test \
