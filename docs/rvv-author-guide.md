@@ -134,7 +134,21 @@ The thesis's complementary `vadd.vv` LMUL8 case is retained in the
 words, same-ELF QEMU and clean DUT comparisons. Its `README.md`,
 source, command/result records and checker audit explain that geometry.
 
-## Trace an external assertion: Ara `vfdiv.vv`
+## Trace external assertions
+
+### CHIPS guest-side comparison
+
+For the primary CHIPS corpus, the [inspection guide](rvv-validation/chips-review-task93/README.md)
+provides the source/build/assertion/raw navigation and the actual width counts.
+There are 11,532 positive executions and 212 failure controls per candidate,
+not 595 forms multiplied by every VLEN/SEW/LMUL combination. The CHIPS macro
+`TEST_CASE` loads each expected word, compares it with the observed word and
+branches to `fail` on a mismatch. The retained build commands do not enable
+`COSIM_TEST_CASE`, which would omit that comparison. Offline checking reapplies
+the recorded exit/stdout predicate; it does not execute those guest comparisons
+again. Archive download publication is pending, as recorded in the guide.
+
+### Ara `vfdiv.vv`
 
 Ara revision `34bd3bc152421b4601a7bf3d6e8e91ffb545c99e` supplies
 `apps/riscv-tests/isa/rv64uv/vfdiv.c`. Its first FP32 block sets VL16,

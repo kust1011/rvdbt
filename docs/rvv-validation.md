@@ -24,11 +24,20 @@ including retained failures. Extract it into a fresh directory and run
 are included. This offline predicate check is separate from live replay and
 does not make the other historical suites portable.
 
+The [primary CHIPS inspection guide](rvv-validation/chips-review-task93/README.md)
+indexes retained source, reference-generation records, original assertions and
+raw results for all 595 checked forms. Each candidate has 11,532 positive
+executions and 212 failure-control executions, kept separate. The licensed
+archive manifest and offline checks are committed; the approximately 627 MB
+archive payload is prepared but its download location is still pending.
+Do not mistake the committed manifest for a published data download.
+
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
 and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara422 and
-SiFive RIF200, with union595. RVVTS58, RVISmith43 and libriscv198 are coupled
-endpoints. An opcode in a successful program need not have executed or influenced
+SiFive RIF200, with union595. RVVTS58 and RVISmith43 are coupled
+endpoints; the historical libriscv198 records are retained but excluded from
+the current validation claim. An opcode in a successful program need not have executed or influenced
 its output. The clean961 candidate has its own checked union595; historical2af5
 and the performance binary remain distinct. See the [author guide](rvv-author-guide.md)
 for provenance, implementation/checker/raw-result tracing and unresolved limits.

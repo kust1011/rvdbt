@@ -40,6 +40,9 @@ builds and checks a complete external test file and a vector instruction sequenc
 against Spike, with separate checks for actual optimized-path execution.
 The [licensed Ara inspection archive](docs/rvv-validation/ara-review-task91/README.md)
 provides accepted source/assertion/raw joins and an offline producer-parser check.
+The [primary CHIPS inspection guide](docs/rvv-validation/chips-review-task93/README.md)
+records the complete primary source/result package; its large-archive download
+is pending publication, separate from the committed manifests and tools.
 The compact view can be regenerated from committed inputs; historical raw archives
 are unpublished and must be obtained separately. See
 [validation and reproducibility](docs/rvv-validation.md) and the
