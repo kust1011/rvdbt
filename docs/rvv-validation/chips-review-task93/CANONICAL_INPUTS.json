@@ -1,0 +1,10 @@
+{
+  "SUITE_RUN_MANIFEST.csv": {
+    "sha256": "8a9136f0ce53e0395ef3c8ebc058234b61fbb0fc69f539a20c48b358f7416511",
+    "bytes": 423816333
+  },
+  "ACTUAL_FORM_VALIDATION_BINDINGS.csv": {
+    "sha256": "6e1bc2547c9a51119e2eb6583564fc6a0e9c2a68eb3acd749a10ecba61c51130",
+    "bytes": 177839772
+  }
+}

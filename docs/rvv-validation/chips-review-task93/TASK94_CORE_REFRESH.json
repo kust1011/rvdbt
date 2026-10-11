@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "changed_payload_files": [
+    "tools/verify_rvv_chips_inspection.py",
+    "tools/package_rvv_chips_inspection.py",
+    "README.md",
+    "FILES.json"
+  ],
+  "noncore_archives_byte_identical": true,
+  "noncore_archives": 93,
+  "previous_core": "/home/vick/rvv-task93/revision2-archives/chips-core.tar.gz",
+  "previous_core_identity": {
+    "file": "chips-core.tar.gz",
+    "bytes": 71471988,
+    "sha256": "32ac056e3e8c03f36d07dd082fa287dd345efb0c8960f383c52d30bc50d333dc",
+    "members": 119061,
+    "raw_bytes": 639061095,
+    "batch": "core"
+  },
+  "core": {
+    "file": "chips-core.tar.gz",
+    "bytes": 71472252,
+    "sha256": "0c51fef64013ee8d5a0873806c17b5457b90182fa3882bf974fc4a2e0d44654b",
+    "members": 119061,
+    "raw_bytes": 639062251,
+    "batch": "core"
+  },
+  "compressed_bytes": 626904876,
+  "payload_files": 201757
+}

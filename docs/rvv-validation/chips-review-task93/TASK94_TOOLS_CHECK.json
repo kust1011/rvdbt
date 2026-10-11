@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/test_rvv_chips_inspection.py",
+  "tests": 7,
+  "coverage": [
+    "valid manifested file with explicit and loaded manifest",
+    "traversal, absolute and malformed paths",
+    "existing unmanifested file",
+    "file, intermediate-directory, dangling and escaping symlinks",
+    "symlink package root component",
+    "symlink FILES.json",
+    "stale equal-size destination, changed source and different equal-size source"
+  ],
+  "invocation": "Normal Python only; no -O, -OO or PYTHONOPTIMIZE",
+  "new_guest_executions": 0
+}

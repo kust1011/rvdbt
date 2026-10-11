@@ -1,0 +1,317 @@
+{
+  "status": "PASS",
+  "payload_files": 201756,
+  "primary_binding_rows": 23064,
+  "source_chains": 2980,
+  "original_TEST_CASE_assertions": 33935720,
+  "unique_receipts": 23488,
+  "forms": {
+    "clean961": 595,
+    "historical2af5": 595
+  },
+  "positive_source_cases": {
+    "clean961": 2886,
+    "historical2af5": 2886
+  },
+  "controls": {
+    "clean961": 212,
+    "historical2af5": 212
+  },
+  "receipt_configurations": [
+    {
+      "candidate": "clean961",
+      "VLEN": "1024",
+      "arm": "B",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "1024",
+      "arm": "BOTH",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "1024",
+      "arm": "M1",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "1024",
+      "arm": "M2",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "128",
+      "arm": "B",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "128",
+      "arm": "BOTH",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "128",
+      "arm": "M1",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "128",
+      "arm": "M2",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "2048",
+      "arm": "B",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "2048",
+      "arm": "BOTH",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "2048",
+      "arm": "M1",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "2048",
+      "arm": "M2",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "256",
+      "arm": "B",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "256",
+      "arm": "BOTH",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "256",
+      "arm": "M1",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "256",
+      "arm": "M2",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "4096",
+      "arm": "B",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "4096",
+      "arm": "BOTH",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "4096",
+      "arm": "M1",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "4096",
+      "arm": "M2",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "512",
+      "arm": "B",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "512",
+      "arm": "BOTH",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "512",
+      "arm": "M1",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "clean961",
+      "VLEN": "512",
+      "arm": "M2",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "1024",
+      "arm": "B",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "1024",
+      "arm": "BOTH",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "1024",
+      "arm": "M1",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "1024",
+      "arm": "M2",
+      "positive_receipts": 401
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "128",
+      "arm": "B",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "128",
+      "arm": "BOTH",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "128",
+      "arm": "M1",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "128",
+      "arm": "M2",
+      "positive_receipts": 2364
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "2048",
+      "arm": "B",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "2048",
+      "arm": "BOTH",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "2048",
+      "arm": "M1",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "2048",
+      "arm": "M2",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "256",
+      "arm": "B",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "256",
+      "arm": "BOTH",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "256",
+      "arm": "M1",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "256",
+      "arm": "M2",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "4096",
+      "arm": "B",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "4096",
+      "arm": "BOTH",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "4096",
+      "arm": "M1",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "4096",
+      "arm": "M2",
+      "positive_receipts": 37
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "512",
+      "arm": "B",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "512",
+      "arm": "BOTH",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "512",
+      "arm": "M1",
+      "positive_receipts": 27
+    },
+    {
+      "candidate": "historical2af5",
+      "VLEN": "512",
+      "arm": "M2",
+      "positive_receipts": 27
+    }
+  ],
+  "original_excluded_failure_records": 8,
+  "unsafe_original_store_sources": 8,
+  "literal_configuration_sources": 19,
+  "source_geometry_rows": 230916,
+  "source_geometry_files": 2869,
+  "geometry_scope": "source context only; no Cartesian product, runtime VL/branch or independent per-arm method admission",
+  "new_guest_executions": 0
+}

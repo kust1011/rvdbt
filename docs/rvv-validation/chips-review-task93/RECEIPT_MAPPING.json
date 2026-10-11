@@ -1,0 +1,138 @@
+{
+  "finite_extra_primary_receipt_dependencies": {
+    "clean-replay4": {
+      "physical_original_root": "/home/vick/rvv_validation_delivery_20261009-r1/clean-results",
+      "package_root": "records/clean961/receipts/clean-replay",
+      "canonical_rows": [
+        {
+          "row_id": "2d2d8d16b97b4da51e60016ba9245b2d0b7d27a084fc59dcd3fb196ed0f71c85",
+          "cell_id": "b3de7ff43a34af3773d48060f8a3c322ce7bb76e52819d7defa991163a80a73b",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/b3de7ff43a34af3773d48060f8a3c322ce7bb76e52819d7defa991163a80a73b/stdout"
+        },
+        {
+          "row_id": "8f37cac12e666d4a35ef3bf153a96d6ff00d18982e253feeb35df53a51a1f82a",
+          "cell_id": "69941813dc83af6e8d4a60f737d4333beee8086b19edb172038369fe7bfa7c63",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/69941813dc83af6e8d4a60f737d4333beee8086b19edb172038369fe7bfa7c63/stdout"
+        },
+        {
+          "row_id": "1a851f9524be9d6db9041673e995b3703863ed5d28d8c268a29f5fc9d7fce7c0",
+          "cell_id": "6a273c8022f4fe39daa47c4c7bc851ce13ed451bb6978b8430857a937b2ecda9",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/6a273c8022f4fe39daa47c4c7bc851ce13ed451bb6978b8430857a937b2ecda9/stdout"
+        },
+        {
+          "row_id": "d757eaaa68ea854e2a02343188bc6e54a5505ee402899e152fb35ce62eb3ce97",
+          "cell_id": "19a87e40a32aa13b90c1a51d463109a0d01a6c96b2b500c111f30763267a42cc",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/19a87e40a32aa13b90c1a51d463109a0d01a6c96b2b500c111f30763267a42cc/stdout"
+        },
+        {
+          "row_id": "3cea718b490069b73d13ff0709c7a56c9877f2f9cc8c65d2df102206b0d848e6",
+          "cell_id": "ae24afa08fca32355824e2491ab706bfefad4a082eab444f543d8158d8866f33",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/ae24afa08fca32355824e2491ab706bfefad4a082eab444f543d8158d8866f33/stdout"
+        },
+        {
+          "row_id": "006b63e5355336d004d5034166b54c3788de60b3aabc94fea27202571cd97d1d",
+          "cell_id": "85e36c95f7953c0e9c507af37e4d360a66955aa5a7ef27d2da54aa8d926b7160",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/85e36c95f7953c0e9c507af37e4d360a66955aa5a7ef27d2da54aa8d926b7160/stdout"
+        },
+        {
+          "row_id": "bbb34b26989af864d46e9339a5983bb102d6d44201be5049a944dd0f1fdf6c43",
+          "cell_id": "3218cc8f61fdd157b66ed46e13479b1f2a84cc839ab82590787a35663028f7e9",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/3218cc8f61fdd157b66ed46e13479b1f2a84cc839ab82590787a35663028f7e9/stdout"
+        },
+        {
+          "row_id": "6e99b494a2c85e9fa631e1c1ecf42057849a664631f61f0d51403f561550f555",
+          "cell_id": "a53f65b4a35375420fa5059449919a18333c5c658464f50fcd604784cd396d14",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/a53f65b4a35375420fa5059449919a18333c5c658464f50fcd604784cd396d14/stdout"
+        },
+        {
+          "row_id": "e020962767149044bb059f28838d727198e1d3bf1cf6703b872c21e635aedbf0",
+          "cell_id": "edeb3b3870e4dcd05ed713275f63f16b45f7e19b88578416f0a1c80bda6422a7",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/edeb3b3870e4dcd05ed713275f63f16b45f7e19b88578416f0a1c80bda6422a7/stdout"
+        },
+        {
+          "row_id": "45e3f0b57c9b46cd3dfc5525e0aaeafcdde253339371a359c41e77ca8b165be5",
+          "cell_id": "8b878caec865b4c4e491d2eafefa420231098bee182fa06eb4524db887e4473b",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/8b878caec865b4c4e491d2eafefa420231098bee182fa06eb4524db887e4473b/stdout"
+        },
+        {
+          "row_id": "e69aa5e48da4085e0767d0348dc594b768eee7de2f875a83f2604f93bc762177",
+          "cell_id": "574994f6a6f458f56229c927a29e0ea8354162ea318c477f11fb22a3b238bbea",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/574994f6a6f458f56229c927a29e0ea8354162ea318c477f11fb22a3b238bbea/stdout"
+        },
+        {
+          "row_id": "84d990df0b9f5515889c49e27b4051072588a4b4072ffe1980695286e567ae89",
+          "cell_id": "e1bbe55ad7192e41275f16a6605c8b0812bdf9244b7bc4c9156e3cb062c977e9",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/clean-replay/clean-results/e1bbe55ad7192e41275f16a6605c8b0812bdf9244b7bc4c9156e3cb062c977e9/stdout"
+        }
+      ]
+    },
+    "pilot12": {
+      "physical_original_root": "/home/vick/suite45-chips-first-b",
+      "package_root": "records/clean961/receipts/pilot",
+      "canonical_rows": [
+        {
+          "row_id": "9c8808407fcef062a86a5f3f12afd6d432b430eab2f399d4a9175db2211b42df",
+          "cell_id": "c4b8099d934c78d7835251affdc05b560219ef4409ff7e24d328025e376c8978",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/c4b8099d934c78d7835251affdc05b560219ef4409ff7e24d328025e376c8978/stdout"
+        },
+        {
+          "row_id": "f52c5f0fc666a0c43b64cab13b42aadf63c0f589dc37e4bb678b7c99b4c6d925",
+          "cell_id": "57a2e87a8c75286611555c048c68dca2c7db058c1de569e70d655b2c843710bd",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/57a2e87a8c75286611555c048c68dca2c7db058c1de569e70d655b2c843710bd/stdout"
+        },
+        {
+          "row_id": "1a9d036c20b853f17ed8e2ea78d2a5362dc3627c7eff5e04a17ca050b450e081",
+          "cell_id": "cc18f0a71cdb97a6c241ac068414300e797ecb00bf9f6188c500ed4592e05205",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/cc18f0a71cdb97a6c241ac068414300e797ecb00bf9f6188c500ed4592e05205/stdout"
+        },
+        {
+          "row_id": "4daaf7b29b99b10aa944a4f4e248966e46713825ff9484f43427142be1fd8f83",
+          "cell_id": "86caa0c75919187944a42fd367b5dfab2d0353ced7d5c28bf4ef75c2d7b194be",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/86caa0c75919187944a42fd367b5dfab2d0353ced7d5c28bf4ef75c2d7b194be/stdout"
+        },
+        {
+          "row_id": "67be0ddb37c1644103f0e3b3299d340a39d41a0a2e3c516716b49e86dd6d2e9c",
+          "cell_id": "2a8da842e49ca07ced34ddeaba7c929c3ae64726817c6100f266923944c9d3a2",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/2a8da842e49ca07ced34ddeaba7c929c3ae64726817c6100f266923944c9d3a2/stdout"
+        },
+        {
+          "row_id": "ef1254b80f84988cc986764cb03635b6f5240620a9b3da881571eb1ffd8f1576",
+          "cell_id": "bef6a440aa31c13ccb9adfa3e7258f21cf87ed8c03e6c8ff0378faf26d11d831",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/bef6a440aa31c13ccb9adfa3e7258f21cf87ed8c03e6c8ff0378faf26d11d831/stdout"
+        },
+        {
+          "row_id": "5b9feeb9432dbaa1a3695e71b97eaeb8a423d4e13db55ef7672054c32087d7b4",
+          "cell_id": "ebf104b9fd22ec1b490ec770209642eef1648fa41abd9605b49fc812e64faa59",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/ebf104b9fd22ec1b490ec770209642eef1648fa41abd9605b49fc812e64faa59/stdout"
+        },
+        {
+          "row_id": "325d5f9c1331ade18be2117dbe3cbccb66570c5f84cc4c8e75076d21a6165d87",
+          "cell_id": "f38b6f0981a62cf024446ec5e6bd6d06e35b0d751670b2d15c70180f26eba23a",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/f38b6f0981a62cf024446ec5e6bd6d06e35b0d751670b2d15c70180f26eba23a/stdout"
+        },
+        {
+          "row_id": "8ba703fb249f3d143a906d3c02166d5d8fdb138ed9617858c8a00c5b0cfe0bb3",
+          "cell_id": "5117b970a8e2a215cca9c6697114a1eae7d775d984443189c753aed4f11439f3",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/5117b970a8e2a215cca9c6697114a1eae7d775d984443189c753aed4f11439f3/stdout"
+        },
+        {
+          "row_id": "1399f5d8177b658eb3850e87107e0bd1671812e8db98ea255fddd373476ba7c8",
+          "cell_id": "04511c759080021a3ca89f59eda4c966d2fecde45d22e4d32336ac22f23e44f9",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/04511c759080021a3ca89f59eda4c966d2fecde45d22e4d32336ac22f23e44f9/stdout"
+        },
+        {
+          "row_id": "48a5d3f3d1b902a8b5e4278a1a4382284d8f2ffbe775064101b4dd2b389b09ed",
+          "cell_id": "3d3ff918d0dea4f9079ad7d9c1de3cf5cddaed4f4b484d0dd23e6fe3b4f69e55",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/3d3ff918d0dea4f9079ad7d9c1de3cf5cddaed4f4b484d0dd23e6fe3b4f69e55/stdout"
+        },
+        {
+          "row_id": "d37029a6b66f34078e9a7c900b896a5e640c162bf8fbf2c32e289172c18c6533",
+          "cell_id": "5a312ab9c0d2a49415b1cda7449c36c1b11770bbe3d93223a815c8149f58ce5b",
+          "canonical_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/pilot/5a312ab9c0d2a49415b1cda7449c36c1b11770bbe3d93223a815c8149f58ce5b/stdout"
+        }
+      ]
+    }
+  },
+  "required_missing_after_verification": [],
+  "new_guest_executions": 0
+}

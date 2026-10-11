@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "archives": 94,
+  "members": 201756,
+  "archive_hashes_verified": true,
+  "regular_package_relative_members": true,
+  "duplicate_paths": 0,
+  "destination": "/home/vick/rvv-task93/inspection-clean"
+}

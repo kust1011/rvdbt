@@ -1,0 +1,28 @@
+{"files": 83391, "bytes": 9895591051, "largest": [[50063488, "records/historical/MANIFEST.json"], [30296397, "sources/chips/geometry4096/stage2/vslideup_vi-3.S"], [28409216, "sources/chips/geometry4096/patches/vslideup_vi-3.patch"], [28409216, "sources/chips/geometry4096/logs/vslideup_vi-3-oracle.stdout"], [22159279, "sources/chips/geometry4096/stage2/vnclip_wi-8.S"], [19342797, "sources/chips/geometry4096/patches/vnclip_wi-8.patch"], [19342797, "sources/chips/geometry4096/logs/vnclip_wi-8-oracle.stdout"], [18953039, "sources/chips/geometry4096/stage2/vfadd_vv-3.S"], [17441125, "sources/chips/geometry4096/stage2/vslideup_vi-2.S"], [17016452, "sources/chips/geometry4096/stage2/vfadd_vv-2.S"]]}
+Traceback (most recent call last):
+  File "/home/user/research/materials/rvdbt-review-20261010/scripts/export_rvv_chips_inspection.py", line 62, in main
+    for p in (base/folder).rglob('*'):
+  File "/usr/lib/python3.10/tarfile.py", line 2226, in add
+    self.addfile(tarinfo, f)
+  File "/usr/lib/python3.10/tarfile.py", line 2254, in addfile
+    copyfileobj(fileobj, self.fileobj, tarinfo.size, bufsize=bufsize)
+  File "/usr/lib/python3.10/tarfile.py", line 255, in copyfileobj
+    dst.write(buf)
+  File "/usr/lib/python3.10/tarfile.py", line 441, in write
+    self.__write(s)
+  File "/usr/lib/python3.10/tarfile.py", line 449, in __write
+    self.fileobj.write(self.buf[:self.bufsize])
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/research/materials/rvdbt-review-20261010/scripts/export_rvv_chips_inspection.py", line 64, in <module>
+    files['sources/chips/'+str(p.relative_to(chips))]=p
+  File "/home/user/research/materials/rvdbt-review-20261010/scripts/export_rvv_chips_inspection.py", line 61, in main
+    for folder in ('original','original-stage1','rd_control'):
+  File "/usr/lib/python3.10/tarfile.py", line 2852, in __exit__
+    self.fileobj.close()
+  File "/usr/lib/python3.10/tarfile.py", line 465, in close
+    self.fileobj.write(self.buf)
+BrokenPipeError: [Errno 32] Broken pipe

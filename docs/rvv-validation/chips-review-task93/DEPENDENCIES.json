@@ -1,0 +1,11 @@
+{
+  "required_missing": [],
+  "excluded_reexecution": [
+    "clang20/lld, GCC toolchains",
+    "CHIPS TestFloat3 fetched at pinned upstream tree",
+    "Spike20feb9c2, pspike/merger executables",
+    "DUT executables/shared library",
+    "all guest ELFs and linked build outputs"
+  ],
+  "not_in_primary_package": "Task47 supplemental and Task54 new-output/profile receipts; canonical binding subsets beyond sealed47 are not substituted for primary evidence"
+}

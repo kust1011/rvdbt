@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "altered_receipt": "records/clean961/receipts/positive-B-carrymove128-000/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95",
+  "updated_hashes": [
+    "FILES.json payload stdout/result",
+    "result.json stdout_sha256"
+  ],
+  "checker_exit": 1,
+  "reason": "CHIPS inspection rejected: original assertion/exit acceptance rejected records/clean961/receipts/positive-B-carrymove128-000/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95 OUTPUT_MISMATCH",
+  "producer_bad_stdout": "OUTPUT_MISMATCH",
+  "producer_nonzero_exit": "EXIT_MISMATCH",
+  "original_fail_control_accepted": true,
+  "fail_control_exit0_rejected": true,
+  "new_guest_executions": 0,
+  "disposable_extraction_restored": true
+}

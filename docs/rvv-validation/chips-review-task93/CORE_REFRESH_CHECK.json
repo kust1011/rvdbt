@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "unchanged_noncore_files": 82696,
+  "unchanged_noncore_archive_hashes": true,
+  "literal_configuration_sources": 19,
+  "previous_core_preserved": "revision1-archives/chips-core.tar.gz",
+  "core": {
+    "file": "chips-core.tar.gz",
+    "bytes": 71471988,
+    "sha256": "32ac056e3e8c03f36d07dd082fa287dd345efb0c8960f383c52d30bc50d333dc",
+    "members": 119061,
+    "raw_bytes": 639061095,
+    "batch": "core"
+  },
+  "compressed_bytes": 626904612,
+  "payload_files": 201757
+}

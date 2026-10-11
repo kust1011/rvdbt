@@ -1,0 +1,15 @@
+{
+  "license_files": {
+    "licenses/TESTFLOAT_NOTICE.md": "b4307cb646cd6ab4e7fdbe0cbbed482539ed62c9cbee10640661528f4440b682",
+    "licenses/GEM5_ASMTEST_BSD.txt": "e11e5b796ef72828e7c0c19be7af28f4edc49a5d82491addc15fd484f9d7f616",
+    "licenses/LOCAL-MIT.txt": "a0d435d1cde2ea5ef04c28fa6748b337de1ce2872ef564f4be7e9b2711740bd3",
+    "upstream/chips/LICENSE": "1cef9e0aec2fe5160a75f8924a89612a985c7f6c787d0f017dd7579772d6e2ec",
+    "upstream/chips/macros/general/LICENSE": "f68a5c16f2fb180525490684ad30875d04712b8632bfaa931cb4641e8aba3c1d",
+    "upstream/chips/env/riscv-test-env/LICENSE": "43b7309213293b4323d65301a90e05472579abcd51feb260a850354bcb49ff8f"
+  },
+  "source_headers": "Original source bytes and upstream notices retained; generated CHIPS source/adaptations under CHIPS Apache2, env helpers under their original BSD, local tools under repository MIT. No blanket relicensing.",
+  "excluded": "TestFloat3, toolchain/Spike dependencies fetched separately; no RVISmith/ATG/FORCE or unrelated third-party fixtures",
+  "credential_pattern_scan": "no matches; values not emitted",
+  "upstream_revision": "f76bff121dce91b6b23e1d37be77a5e44af914c3",
+  "env_revision": "81721c126d7dd7335829948b4a19070546e465d6"
+}

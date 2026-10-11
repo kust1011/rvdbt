@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "files": {
+    "tools/rvv_tests.py": "c4ebd8f90a065bd3405fd1b5bbfb93cf3d8d0107289264e0696d7570bb43158d",
+    "tools/export_rvv_chips_inspection.py": "c7067c220c22b3725ba9cbb2d86242509fec59b4058cd70865fe68e870883c4f",
+    "tools/build_rvv_chips.py": "21f26a9c3e062d604cc2171d5b9b916a3ed788b6501071b6e0f252c9df41ec38",
+    "tools/package_rvv_chips_inspection.py": "174d55b0d5fc86545b64bbe846892329849aa416449f422266da568a77f2802b",
+    "tools/seal_rvv_chips_inspection.py": "a95585825a3a96a64d10c2162b7a55f9d586ae0ec82b9cf9d02ef1b0f6cbe89a",
+    "tools/verify_rvv_chips_inspection.py": "659baf5b7f090bf1cfa115f881a6abdd50b86300833d4bf7858f22b28c2bb29c",
+    "tools/runner.original.py": "21f8f068b964c230fe965b1e08e12276f9f109238d3b089d7e22b17a3203c41c",
+    "tools/check_rvv_chips_rejection.py": "f28e2d42e811db771db2d2ab55e7f07f188c9aa6b665c7214bbc489e5f58a02f",
+    "tools/rvv/sources.lock.json": "576a1d89833efd14bbd59ab09add281dab9768bc812487792233878f4222c04e",
+    "tools/rvv/chips_user/riscv_test.h": "22f1250e81f679de3fc36ba4c7cc549493ed921904a691913cd5da8335515033"
+  },
+  "all_match_sealed_manifest": true,
+  "positive_source_files": 2886,
+  "positive_sources_in_original_geometry": 2867,
+  "additional_literal_sources": 19,
+  "literal_headers": 2518,
+  "literal_instruction_windows": 14644,
+  "historical_geometry_sources_outside_positive_scope": [
+    "sources/chips/memory1024/stage2/vsse32_v-0.S",
+    "sources/chips/memory1024/stage2/vssseg2e32_v-0.S"
+  ],
+  "reader_queries": [
+    {
+      "form": "vadc.vim",
+      "batch": "carrymove128",
+      "case": "vadc_vim-0",
+      "VLEN": "128",
+      "arm": "B",
+      "witnesses": 1,
+      "source_geometry_rows": 86,
+      "literal_sources": 0
+    },
+    {
+      "form": "vsetvl",
+      "batch": "config_checks1024",
+      "case": "vsetvl-0",
+      "VLEN": "1024",
+      "arm": "B",
+      "witnesses": 1,
+      "source_geometry_rows": 0,
+      "literal_sources": 1
+    }
+  ],
+  "new_guest_executions": 0
+}

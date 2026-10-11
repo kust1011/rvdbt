@@ -1,0 +1,997 @@
+{
+  "archives": [
+    {
+      "file": "chips-carrymove128.tar.gz",
+      "bytes": 4045463,
+      "sha256": "6ddc95ab561f5cc7e7725a750b387ee8e595b9c1c9aaba0df3373701283a0dea",
+      "members": 1695,
+      "raw_bytes": 80553411,
+      "batch": "carrymove128"
+    },
+    {
+      "file": "chips-compare128.tar.gz",
+      "bytes": 6050090,
+      "sha256": "c54575babd932bbaa7f3d07fb769f83d4b76357c00ca3b575a00fb27b384babe",
+      "members": 2283,
+      "raw_bytes": 129527510,
+      "batch": "compare128"
+    },
+    {
+      "file": "chips-config_checks1024.tar.gz",
+      "bytes": 34251,
+      "sha256": "ef54b4242623c4f08878e6d22feb808817ef6705ca143797ec7cf55214f14b73",
+      "members": 115,
+      "raw_bytes": 491097,
+      "batch": "config_checks1024"
+    },
+    {
+      "file": "chips-core.tar.gz",
+      "bytes": 71472252,
+      "sha256": "0c51fef64013ee8d5a0873806c17b5457b90182fa3882bf974fc4a2e0d44654b",
+      "members": 119061,
+      "raw_bytes": 639062251,
+      "batch": "core"
+    },
+    {
+      "file": "chips-divcompare1024--fail256.tar.gz",
+      "bytes": 184,
+      "sha256": "084a54a69cd513bf7f2d6d51acd1bc41f55fa0efa18077e2de7a0319ffce1ccc",
+      "members": 2,
+      "raw_bytes": 0,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--fail256_B.tar.gz",
+      "bytes": 763,
+      "sha256": "210a8efc2570f27527ad93851bee2fdac68b5f494029ff16b18e780cff3d98bb",
+      "members": 3,
+      "raw_bytes": 1938,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--fail256_BOTH.tar.gz",
+      "bytes": 814,
+      "sha256": "c30b300c8baf8ea5324214fe81690a8038a0425375f0f8424cf10ffaa6e6dc57",
+      "members": 3,
+      "raw_bytes": 2055,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--fail256_M1.tar.gz",
+      "bytes": 811,
+      "sha256": "18314d64266ff5131ce871b1eb7e72eee6381b981187edf5486809e42c5ccba9",
+      "members": 3,
+      "raw_bytes": 2055,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--fail256_M2.tar.gz",
+      "bytes": 765,
+      "sha256": "23cde35122b6d189d7bd321b838de1be3dc0fbb79d044949851027815b659c9a",
+      "members": 3,
+      "raw_bytes": 1938,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--fail256_reference.tar.gz",
+      "bytes": 407,
+      "sha256": "26643ba166b3b1fd552f38cd57fa618bf815fda7dc1efe6ac30f8b4325a35cc2",
+      "members": 3,
+      "raw_bytes": 260,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--generate.stderr.tar.gz",
+      "bytes": 226,
+      "sha256": "f68a5b4b1fb87c448f93727aca0dd840766ec27525719cf868bdd1415f3d6a3a",
+      "members": 1,
+      "raw_bytes": 45,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--generate.stdout.tar.gz",
+      "bytes": 171,
+      "sha256": "6a19db891c8c22a6ecee51c7f5a4c0268aa4176e6031167cbb1ab1ccd89e28c8",
+      "members": 1,
+      "raw_bytes": 0,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--merge.stderr.tar.gz",
+      "bytes": 166,
+      "sha256": "6f9ed476372480f6bbc8ff9f71083cfd1525f832fa14a5aea4f70b29ef3e2be1",
+      "members": 1,
+      "raw_bytes": 0,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--merge.stdout.tar.gz",
+      "bytes": 166,
+      "sha256": "d78117f6ac5cab07ad87c40b2c000ed4045dfcc78109b6cce96c9292c6a3deb1",
+      "members": 1,
+      "raw_bytes": 0,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--metadata.tar.gz",
+      "bytes": 115336,
+      "sha256": "c5c5ca460008c45c35280b7e07423987b437dbc149bd1dae8c3f0a7483554913",
+      "members": 6,
+      "raw_bytes": 2953067,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vdiv_vv.tar.gz",
+      "bytes": 684260,
+      "sha256": "cf00889c4278ce4908546cf59fddd2ad0d32305632d17176b8fc34f6f62842a5",
+      "members": 84,
+      "raw_bytes": 14332407,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vdiv_vx.tar.gz",
+      "bytes": 7457156,
+      "sha256": "af6ec836960c02ea7107fdc95da2a40dbf5a4044463f0cace8b6f28fe88033e7",
+      "members": 252,
+      "raw_bytes": 114842749,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vdivu_vv.tar.gz",
+      "bytes": 683008,
+      "sha256": "6dc35b1188995716eee17530b64a8a8871bfd27cc20e57589b4b76286d0752d4",
+      "members": 84,
+      "raw_bytes": 14310253,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vdivu_vx.tar.gz",
+      "bytes": 7399063,
+      "sha256": "ba1ba6bcdb51d726014cf323460cdc6bb105aab4962ff2d09cdffaa173bc28a9",
+      "members": 252,
+      "raw_bytes": 114515525,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmseq_vi.tar.gz",
+      "bytes": 4335881,
+      "sha256": "226042682ec0f8bcf862c75d3e35d3613897eaf4a2ee013054a5d1f92042b5be",
+      "members": 140,
+      "raw_bytes": 62571706,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmseq_vv.tar.gz",
+      "bytes": 720359,
+      "sha256": "80423826519203f95530e1e8c22954a316eddfcff0322e75f5d49f033e32d01b",
+      "members": 84,
+      "raw_bytes": 14328079,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmseq_vx.tar.gz",
+      "bytes": 6577402,
+      "sha256": "fc2d7f3a8c63b817839bcc2e3e88436e322cac8c781221f604d75e3a2f2fd6ad",
+      "members": 196,
+      "raw_bytes": 94008167,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsgt_vi.tar.gz",
+      "bytes": 4353911,
+      "sha256": "c9a4f6c256a56cefa3a134811bbe57a8987ef12d293715229352c318086507b7",
+      "members": 140,
+      "raw_bytes": 62653765,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsgt_vv.tar.gz",
+      "bytes": 720894,
+      "sha256": "679f401addf228bfc7e519a2e3b41104e18ead77df99157284b1ea63f21a9da6",
+      "members": 84,
+      "raw_bytes": 14328982,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsgt_vx.tar.gz",
+      "bytes": 6609600,
+      "sha256": "2419b1c468fb8ab49d60a04cc6b264ec7bedf484c073ce937e768518e165a580",
+      "members": 196,
+      "raw_bytes": 94057463,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsgtu_vi.tar.gz",
+      "bytes": 4340417,
+      "sha256": "a41e0239688d8555d1f53aca30a78237b2aa790300b0bc1299dbe356fbb84cb4",
+      "members": 140,
+      "raw_bytes": 62620809,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsgtu_vv.tar.gz",
+      "bytes": 720908,
+      "sha256": "ba0f422394696f461cea409b23f39d960a3a53c18b848a30a5cd4d210070017b",
+      "members": 84,
+      "raw_bytes": 14331320,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsgtu_vx.tar.gz",
+      "bytes": 6592714,
+      "sha256": "52d68ccaa83303e8c722f62cab5d3f760ebd32c16b4071356053f4b8030f3a21",
+      "members": 196,
+      "raw_bytes": 94071644,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsle_vi.tar.gz",
+      "bytes": 4355693,
+      "sha256": "a53a308554eb00e8b3579332326fa31776dd2ff693c6688b8d4e44dfa5faf0ae",
+      "members": 140,
+      "raw_bytes": 62642765,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsle_vv.tar.gz",
+      "bytes": 720916,
+      "sha256": "4d4892b5862c64b1afc567421eb5677085e177e3d2f2361b25cf1ae6892f21df",
+      "members": 84,
+      "raw_bytes": 14330344,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsle_vx.tar.gz",
+      "bytes": 6611268,
+      "sha256": "8e39928c4ea0d6b3a95208f5bcadedb86effe3ae77ac669372b80b806d00e115",
+      "members": 196,
+      "raw_bytes": 94075442,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsleu_vi.tar.gz",
+      "bytes": 4340006,
+      "sha256": "254852af8b130b1326be17489097df1ddb2672971da6cdce0c61e23718067b82",
+      "members": 140,
+      "raw_bytes": 62652482,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsleu_vv.tar.gz",
+      "bytes": 721096,
+      "sha256": "5aefe34b67f6455a1be38a5eb3dfe2f0c40523334102654bd411d3bd8e7f7a43",
+      "members": 84,
+      "raw_bytes": 14328925,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsleu_vx.tar.gz",
+      "bytes": 6600002,
+      "sha256": "0888a32f7d7d6fa764d072f9430675061eb4103929c23af031da65939b5e298c",
+      "members": 196,
+      "raw_bytes": 94114721,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmslt_vv.tar.gz",
+      "bytes": 719686,
+      "sha256": "9261626a9819dc079b0acd92ca94da52f1f9bd50a6157efa894979324f77b392",
+      "members": 84,
+      "raw_bytes": 14325316,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmslt_vx.tar.gz",
+      "bytes": 6601036,
+      "sha256": "271c706925fcd9ebbb771c79743d24add784ce9db4a046669836b59c731e676d",
+      "members": 196,
+      "raw_bytes": 94051685,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsltu_vv.tar.gz",
+      "bytes": 720482,
+      "sha256": "9eabaccd819c587f8b584648ef835eb5c8cc28d84fad9d94a5aa379859f542dc",
+      "members": 84,
+      "raw_bytes": 14327110,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsltu_vx.tar.gz",
+      "bytes": 6590136,
+      "sha256": "34c950c6b043bf26bb9347537ca9c95c7fe0bf1fc3e18de62453a65f16c57932",
+      "members": 196,
+      "raw_bytes": 94098854,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsne_vi.tar.gz",
+      "bytes": 4340978,
+      "sha256": "ea2ecdede039162e0439e8bc3c2d1414fae25e14045aba4a99a57052af99d5d1",
+      "members": 140,
+      "raw_bytes": 62651564,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsne_vv.tar.gz",
+      "bytes": 720870,
+      "sha256": "bff42a7e4691c6c000a2205330f48be853f77ab1b08b119327437b457929505b",
+      "members": 84,
+      "raw_bytes": 14328904,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmsne_vx.tar.gz",
+      "bytes": 6581572,
+      "sha256": "3b7f9d5dbf6e7ca9e2152a64dece62e34f694d459ddfeb1ea481215974a5d37f",
+      "members": 196,
+      "raw_bytes": 94106273,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmulh_vv.tar.gz",
+      "bytes": 681241,
+      "sha256": "9d5950c4874150948cdce989d2cbdc16851699f2e5c3087b366654430e0c3478",
+      "members": 84,
+      "raw_bytes": 14307156,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmulh_vx.tar.gz",
+      "bytes": 7453161,
+      "sha256": "b8477ff33b019d4efa5f245f08bd08460cfe00e9d456251e25f172f1b95fdf0d",
+      "members": 252,
+      "raw_bytes": 114705227,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmulhsu_vv.tar.gz",
+      "bytes": 684872,
+      "sha256": "602a715d469e1e5fee01cc9382a8b1f80c5d6ea89f849b299d5fa7cb990ad3e4",
+      "members": 84,
+      "raw_bytes": 14339847,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmulhsu_vx.tar.gz",
+      "bytes": 7478881,
+      "sha256": "e4fb5c3e3f9972f46db41e0896f4c386d7f6e34f8743bbc841d7f8544cb0728a",
+      "members": 252,
+      "raw_bytes": 115073179,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmulhu_vv.tar.gz",
+      "bytes": 680395,
+      "sha256": "0e096a00e028551b53b3ca1676d1b7a4b598f478678a59eb7bc84d32b0573da2",
+      "members": 84,
+      "raw_bytes": 14285146,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vmulhu_vx.tar.gz",
+      "bytes": 7456321,
+      "sha256": "4c76b8b6ae8492cb829b433bbd8ccdc2a2eba388cb03285a227e039ac28c3cb8",
+      "members": 252,
+      "raw_bytes": 114348153,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vrem_vv.tar.gz",
+      "bytes": 678399,
+      "sha256": "76c66286b1bf122ec50c6c4f3698cdbb6d26f14d772063d76e73ec30e593e83c",
+      "members": 84,
+      "raw_bytes": 14268973,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vrem_vx.tar.gz",
+      "bytes": 7387123,
+      "sha256": "1cdd326d1fdd4260f0dc690172d00bbc32987a3cb0aa2c573b2993f8c5fbbdd1",
+      "members": 252,
+      "raw_bytes": 114571021,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vremu_vv.tar.gz",
+      "bytes": 679867,
+      "sha256": "e7d9b6816b0534331a04b8c229c57346056671367618539eab9ba44ffa3150f2",
+      "members": 84,
+      "raw_bytes": 14252245,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--vremu_vx.tar.gz",
+      "bytes": 7481145,
+      "sha256": "ae2e962f75bd129ec774d27ae88e9386a199ef87cf7d1b1946e69b47db7af408",
+      "members": 252,
+      "raw_bytes": 114685169,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-divcompare1024--wrong.tar.gz",
+      "bytes": 1366,
+      "sha256": "8f09cb4668f424f8cef32cec584786ae2dc55ed2259b56fbf5f583a94462aee0",
+      "members": 17,
+      "raw_bytes": 8251,
+      "batch": "divcompare1024"
+    },
+    {
+      "file": "chips-division_edges1024.tar.gz",
+      "bytes": 17511787,
+      "sha256": "89dbc0e6cb5be16d3719655e5e0feac969fde37a700ccbba532ce040aae38a32",
+      "members": 720,
+      "raw_bytes": 276157578,
+      "batch": "division_edges1024"
+    },
+    {
+      "file": "chips-elen64_fp128.tar.gz",
+      "bytes": 242181,
+      "sha256": "6d07a591a3c278c745fb472d0b04cc993dabc51f3fb073ce80edb2cd7bd7ee8a",
+      "members": 183,
+      "raw_bytes": 7957105,
+      "batch": "elen64_fp128"
+    },
+    {
+      "file": "chips-elen64_scalar1024.tar.gz",
+      "bytes": 17105601,
+      "sha256": "0a85d4b4fc62533ac11e60de5b97cf8bf38391afe990472ad71f65169fb457d1",
+      "members": 547,
+      "raw_bytes": 272475146,
+      "batch": "elen64_scalar1024"
+    },
+    {
+      "file": "chips-elen64_scalar128.tar.gz",
+      "bytes": 1703524,
+      "sha256": "eaa538f8708bd710a2809ad2d537af8a64b25f37fed80554f0e14c1218460cc1",
+      "members": 547,
+      "raw_bytes": 40295907,
+      "batch": "elen64_scalar128"
+    },
+    {
+      "file": "chips-elen64_vadd128.tar.gz",
+      "bytes": 119571,
+      "sha256": "cae14782d5c631f4f1af53c9400fc20fec7bffe0ed6eb5fdcae39b75cd47be9c",
+      "members": 127,
+      "raw_bytes": 2964723,
+      "batch": "elen64_vadd128"
+    },
+    {
+      "file": "chips-elen64_vset128.tar.gz",
+      "bytes": 39960,
+      "sha256": "00aaa5bb7a3335ea8699bb0cbc7b4d92661bd727a5f33b062cf91f5e325ea1ac",
+      "members": 72,
+      "raw_bytes": 641842,
+      "batch": "elen64_vset128"
+    },
+    {
+      "file": "chips-elen64_vsetivli1024.tar.gz",
+      "bytes": 17120,
+      "sha256": "643e8a3a6a77778cf49354a6a889a0a4a491b00464b79b651f0d474b873c1618",
+      "members": 71,
+      "raw_bytes": 237908,
+      "batch": "elen64_vsetivli1024"
+    },
+    {
+      "file": "chips-elen64_vsetivli128.tar.gz",
+      "bytes": 17139,
+      "sha256": "519c5c923d014e543ed0550ce3745730bdf452c6658aee8d64569c25676960c8",
+      "members": 71,
+      "raw_bytes": 237871,
+      "batch": "elen64_vsetivli128"
+    },
+    {
+      "file": "chips-elen64_vsetvl1024.tar.gz",
+      "bytes": 4460,
+      "sha256": "9d23f7aa63035cd775e4032e2fef6716fe726906a5386620fef587c2ce18a77c",
+      "members": 71,
+      "raw_bytes": 44435,
+      "batch": "elen64_vsetvl1024"
+    },
+    {
+      "file": "chips-elen64_vsetvl128.tar.gz",
+      "bytes": 4449,
+      "sha256": "33ad65693871e48e8e5886dc988053e587d75be9492276c9bd2e2d2957b40403",
+      "members": 71,
+      "raw_bytes": 44374,
+      "batch": "elen64_vsetvl128"
+    },
+    {
+      "file": "chips-fixed1024.tar.gz",
+      "bytes": 44798199,
+      "sha256": "24a0bda75e2c9bde4c774a4a5737f78abd3fc82b8161748f680aa104a2dfc386",
+      "members": 2310,
+      "raw_bytes": 953533194,
+      "batch": "fixed1024"
+    },
+    {
+      "file": "chips-fp1024.tar.gz",
+      "bytes": 1905827,
+      "sha256": "9e89369a84e52c08522927ae39eedca27a7508e3d95807b4bd75fc45f13a0876",
+      "members": 154,
+      "raw_bytes": 33788765,
+      "batch": "fp1024"
+    },
+    {
+      "file": "chips-fpconvert128.tar.gz",
+      "bytes": 2343331,
+      "sha256": "06c5b0b8628ef6f4485e4dfb1b796a5836892757341144d4443d3f400f2e5756",
+      "members": 1555,
+      "raw_bytes": 61608167,
+      "batch": "fpconvert128"
+    },
+    {
+      "file": "chips-fpfma128.tar.gz",
+      "bytes": 20229549,
+      "sha256": "98c7451270954e7be6a4fe4efbd545c35b766a1ae1ab58623fe897635de41ed6",
+      "members": 6539,
+      "raw_bytes": 462251799,
+      "batch": "fpfma128"
+    },
+    {
+      "file": "chips-fpmath128.tar.gz",
+      "bytes": 19562257,
+      "sha256": "31770c0ab82db6b33b37fcb513cefb152b7c4869f798af8f2c055773ac24b96a",
+      "members": 6539,
+      "raw_bytes": 476707264,
+      "batch": "fpmath128"
+    },
+    {
+      "file": "chips-fprest128.tar.gz",
+      "bytes": 22034555,
+      "sha256": "e40401aa11e16960b69725e96e08b37e16c7a9ab10f6390a454b9f51117300f3",
+      "members": 7603,
+      "raw_bytes": 540822865,
+      "batch": "fprest128"
+    },
+    {
+      "file": "chips-geometry2048.tar.gz",
+      "bytes": 26295567,
+      "sha256": "9b131bbd2030d6691e6663f9be651770bad4c47d5b1c58bcc6be60246c2bfd77",
+      "members": 712,
+      "raw_bytes": 432404781,
+      "batch": "geometry2048"
+    },
+    {
+      "file": "chips-geometry256.tar.gz",
+      "bytes": 2927953,
+      "sha256": "6ecfc784bdb34f9369ce5dbfe49fd5bbbb08cbd8f4e39dd94891209932c6ce63",
+      "members": 799,
+      "raw_bytes": 63106842,
+      "batch": "geometry256"
+    },
+    {
+      "file": "chips-geometry4096.tar.gz",
+      "bytes": 80268397,
+      "sha256": "03bb5702549bab7953891a309529f25aca8c3e03065b753199bf2f9376571f19",
+      "members": 712,
+      "raw_bytes": 857392631,
+      "batch": "geometry4096"
+    },
+    {
+      "file": "chips-geometry512.tar.gz",
+      "bytes": 5778606,
+      "sha256": "44a3ac29548413f56801391272738c4d5fd2fddd41f4c7bff3249e8cecbac8cc",
+      "members": 799,
+      "raw_bytes": 115672697,
+      "batch": "geometry512"
+    },
+    {
+      "file": "chips-indexload128.tar.gz",
+      "bytes": 4207055,
+      "sha256": "85b6654c2be2acc5e609d650ff2375a873956fee2212db0dff4c1d29b80fb7e2",
+      "members": 3235,
+      "raw_bytes": 94705508,
+      "batch": "indexload128"
+    },
+    {
+      "file": "chips-indexstore128.tar.gz",
+      "bytes": 1971639,
+      "sha256": "7ec9b5381b770a5d58b8b54a6c36d8b64b6b4e34745554ac37f4f3cbea0a73ff",
+      "members": 2731,
+      "raw_bytes": 53975674,
+      "batch": "indexstore128"
+    },
+    {
+      "file": "chips-int16_fp32_convert128.tar.gz",
+      "bytes": 451961,
+      "sha256": "ddd539eee3b5b9bf0a1d11ffab14e84a9de64f25b2ac510b538f94d30c87c79c",
+      "members": 379,
+      "raw_bytes": 11434474,
+      "batch": "int16_fp32_convert128"
+    },
+    {
+      "file": "chips-intbasic128.tar.gz",
+      "bytes": 17837578,
+      "sha256": "7fe3e32ef80f6cd8ca9b2d08fa7d0a8d875c9e852d70ac35eb801fafe8baad6f",
+      "members": 6175,
+      "raw_bytes": 374139819,
+      "batch": "intbasic128"
+    },
+    {
+      "file": "chips-intdiv128.tar.gz",
+      "bytes": 5307263,
+      "sha256": "11a3102607377f4689de3407e2df29bd3dfa106f66be04c0e2b7674b14bb2b76",
+      "members": 1611,
+      "raw_bytes": 102559889,
+      "batch": "intdiv128"
+    },
+    {
+      "file": "chips-long1024.tar.gz",
+      "bytes": 6284419,
+      "sha256": "6a335baeb4161810cbf54613efa5cbdf09161a4535c2d42be6fc46fda5f985aa",
+      "members": 490,
+      "raw_bytes": 102299240,
+      "batch": "long1024"
+    },
+    {
+      "file": "chips-long4096.tar.gz",
+      "bytes": 16625307,
+      "sha256": "dd70900a233cdd9e7e4cb4ab5d970a25636dd19ecd24fab47cf14582bebbfbea",
+      "members": 286,
+      "raw_bytes": 189771630,
+      "batch": "long4096"
+    },
+    {
+      "file": "chips-mask1024.tar.gz",
+      "bytes": 2116950,
+      "sha256": "7dd9b466ff903ad584e5ffb8989328594d13668232c07e87116e2a396bfc9817",
+      "members": 266,
+      "raw_bytes": 32993862,
+      "batch": "mask1024"
+    },
+    {
+      "file": "chips-maskaux1024.tar.gz",
+      "bytes": 1090572,
+      "sha256": "bb3604070a4d08d2855485084247002a83bb4a754349145795ed682a5b41dafd",
+      "members": 266,
+      "raw_bytes": 14981859,
+      "batch": "maskaux1024"
+    },
+    {
+      "file": "chips-memory1024.tar.gz",
+      "bytes": 4092326,
+      "sha256": "d39697b2a08c3315d84ef1161764b03c9e843eee592f7a897d62d11ac308a8a7",
+      "members": 434,
+      "raw_bytes": 74315822,
+      "batch": "memory1024"
+    },
+    {
+      "file": "chips-memory1024_storage.tar.gz",
+      "bytes": 1037280,
+      "sha256": "a1c0b5cf1b5e50039a0d8086df02b38bf3107ac1b3982f23694438fc2a033acd",
+      "members": 98,
+      "raw_bytes": 22190290,
+      "batch": "memory1024_storage"
+    },
+    {
+      "file": "chips-narrowfixed128.tar.gz",
+      "bytes": 40242635,
+      "sha256": "a16a14ddb92b931248054d8a13eb2080bd8bf6e41fe416723f60d3273603b0d9",
+      "members": 13595,
+      "raw_bytes": 1026697141,
+      "batch": "narrowfixed128"
+    },
+    {
+      "file": "chips-permute128.tar.gz",
+      "bytes": 4673011,
+      "sha256": "6868f70a1a3aca2b3441546798d99830443a1a27afb2e166f0bb68d17a117909",
+      "members": 1723,
+      "raw_bytes": 100271190,
+      "batch": "permute128"
+    },
+    {
+      "file": "chips-reduction128.tar.gz",
+      "bytes": 967967,
+      "sha256": "401df3fc0d8eceb253f7e49fba5248ec928aa7e8f7751cfa7748bb0524ebf4f2",
+      "members": 827,
+      "raw_bytes": 24513493,
+      "batch": "reduction128"
+    },
+    {
+      "file": "chips-strideload128.tar.gz",
+      "bytes": 3260101,
+      "sha256": "05c32971de173b3b5b90cc9083230b22c728572d100388352af405ef9bc9f08f",
+      "members": 2955,
+      "raw_bytes": 87077259,
+      "batch": "strideload128"
+    },
+    {
+      "file": "chips-stridestore128_storage.tar.gz",
+      "bytes": 2660079,
+      "sha256": "2f6e860867ae75ae42cc5f4a186c123eef37e06515d7e53ee5c46887ac904e74",
+      "members": 1993,
+      "raw_bytes": 71503479,
+      "batch": "stridestore128_storage"
+    },
+    {
+      "file": "chips-unitmemory128.tar.gz",
+      "bytes": 915445,
+      "sha256": "dc782d54286e5f5b1a25d0bd26548394bd2abb36294970e460a1a30e6ed479ef",
+      "members": 1835,
+      "raw_bytes": 22136235,
+      "batch": "unitmemory128"
+    },
+    {
+      "file": "chips-vssub_flags1024.tar.gz",
+      "bytes": 19390921,
+      "sha256": "bdc852a102a40f545d1ddf4b0cd22cff0d275512d474a41f94814474e1b17dae",
+      "members": 774,
+      "raw_bytes": 302894381,
+      "batch": "vssub_flags1024"
+    },
+    {
+      "file": "chips-vssub_flags_edges1024.tar.gz",
+      "bytes": 777146,
+      "sha256": "8fff9f58759e080e6fe01009ed6f8fea799514d97458ab4956bb917947671f28",
+      "members": 128,
+      "raw_bytes": 16901011,
+      "batch": "vssub_flags_edges1024"
+    },
+    {
+      "file": "chips-vssub_sticky1024.tar.gz",
+      "bytes": 199000,
+      "sha256": "fcde0decaec396b22fc7a750ffc239786b80ae14db7c235d297e4504b2850d18",
+      "members": 70,
+      "raw_bytes": 6763789,
+      "batch": "vssub_sticky1024"
+    },
+    {
+      "file": "chips-whole128.tar.gz",
+      "bytes": 106014,
+      "sha256": "725fba75396c6da7f428adc0e856e5eead491cf33adac530cfb3a166f53f4616",
+      "members": 771,
+      "raw_bytes": 1946917,
+      "batch": "whole128"
+    },
+    {
+      "file": "chips-widen128.tar.gz",
+      "bytes": 6576224,
+      "sha256": "e9b3ef47c67f9f40695877263a08171a040980659b1d24fb4c4a19f6b8fddf42",
+      "members": 2283,
+      "raw_bytes": 129583361,
+      "batch": "widen128"
+    }
+  ],
+  "compressed_bytes": 626904876,
+  "raw_bytes": 10460449465,
+  "payload_files": 201757,
+  "preflight": [
+    {
+      "group": "carrymove128",
+      "raw_bytes": 80553411,
+      "compressed_bytes": 4045463
+    },
+    {
+      "group": "compare128",
+      "raw_bytes": 129527510,
+      "compressed_bytes": 6050090
+    },
+    {
+      "group": "config_checks1024",
+      "raw_bytes": 491097,
+      "compressed_bytes": 34251
+    },
+    {
+      "group": "core",
+      "raw_bytes": 639062251,
+      "compressed_bytes": 71472252
+    },
+    {
+      "group": "divcompare1024",
+      "raw_bytes": 2148812979,
+      "compressed_bytes": 141544251
+    },
+    {
+      "group": "division_edges1024",
+      "raw_bytes": 276157578,
+      "compressed_bytes": 17511787
+    },
+    {
+      "group": "elen64_fp128",
+      "raw_bytes": 7957105,
+      "compressed_bytes": 242181
+    },
+    {
+      "group": "elen64_scalar1024",
+      "raw_bytes": 272475146,
+      "compressed_bytes": 17105601
+    },
+    {
+      "group": "elen64_scalar128",
+      "raw_bytes": 40295907,
+      "compressed_bytes": 1703524
+    },
+    {
+      "group": "elen64_vadd128",
+      "raw_bytes": 2964723,
+      "compressed_bytes": 119571
+    },
+    {
+      "group": "elen64_vset128",
+      "raw_bytes": 641842,
+      "compressed_bytes": 39960
+    },
+    {
+      "group": "elen64_vsetivli1024",
+      "raw_bytes": 237908,
+      "compressed_bytes": 17120
+    },
+    {
+      "group": "elen64_vsetivli128",
+      "raw_bytes": 237871,
+      "compressed_bytes": 17139
+    },
+    {
+      "group": "elen64_vsetvl1024",
+      "raw_bytes": 44435,
+      "compressed_bytes": 4460
+    },
+    {
+      "group": "elen64_vsetvl128",
+      "raw_bytes": 44374,
+      "compressed_bytes": 4449
+    },
+    {
+      "group": "fixed1024",
+      "raw_bytes": 953533194,
+      "compressed_bytes": 44798199
+    },
+    {
+      "group": "fp1024",
+      "raw_bytes": 33788765,
+      "compressed_bytes": 1905827
+    },
+    {
+      "group": "fpconvert128",
+      "raw_bytes": 61608167,
+      "compressed_bytes": 2343331
+    },
+    {
+      "group": "fpfma128",
+      "raw_bytes": 462251799,
+      "compressed_bytes": 20229549
+    },
+    {
+      "group": "fpmath128",
+      "raw_bytes": 476707264,
+      "compressed_bytes": 19562257
+    },
+    {
+      "group": "fprest128",
+      "raw_bytes": 540822865,
+      "compressed_bytes": 22034555
+    },
+    {
+      "group": "geometry2048",
+      "raw_bytes": 432404781,
+      "compressed_bytes": 26295567
+    },
+    {
+      "group": "geometry256",
+      "raw_bytes": 63106842,
+      "compressed_bytes": 2927953
+    },
+    {
+      "group": "geometry4096",
+      "raw_bytes": 857392631,
+      "compressed_bytes": 80268397
+    },
+    {
+      "group": "geometry512",
+      "raw_bytes": 115672697,
+      "compressed_bytes": 5778606
+    },
+    {
+      "group": "indexload128",
+      "raw_bytes": 94705508,
+      "compressed_bytes": 4207055
+    },
+    {
+      "group": "indexstore128",
+      "raw_bytes": 53975674,
+      "compressed_bytes": 1971639
+    },
+    {
+      "group": "int16_fp32_convert128",
+      "raw_bytes": 11434474,
+      "compressed_bytes": 451961
+    },
+    {
+      "group": "intbasic128",
+      "raw_bytes": 374139819,
+      "compressed_bytes": 17837578
+    },
+    {
+      "group": "intdiv128",
+      "raw_bytes": 102559889,
+      "compressed_bytes": 5307263
+    },
+    {
+      "group": "long1024",
+      "raw_bytes": 102299240,
+      "compressed_bytes": 6284419
+    },
+    {
+      "group": "long4096",
+      "raw_bytes": 189771630,
+      "compressed_bytes": 16625307
+    },
+    {
+      "group": "mask1024",
+      "raw_bytes": 32993862,
+      "compressed_bytes": 2116950
+    },
+    {
+      "group": "maskaux1024",
+      "raw_bytes": 14981859,
+      "compressed_bytes": 1090572
+    },
+    {
+      "group": "memory1024",
+      "raw_bytes": 74315822,
+      "compressed_bytes": 4092326
+    },
+    {
+      "group": "memory1024_storage",
+      "raw_bytes": 22190290,
+      "compressed_bytes": 1037280
+    },
+    {
+      "group": "narrowfixed128",
+      "raw_bytes": 1026697141,
+      "compressed_bytes": 40242635
+    },
+    {
+      "group": "permute128",
+      "raw_bytes": 100271190,
+      "compressed_bytes": 4673011
+    },
+    {
+      "group": "reduction128",
+      "raw_bytes": 24513493,
+      "compressed_bytes": 967967
+    },
+    {
+      "group": "strideload128",
+      "raw_bytes": 87077259,
+      "compressed_bytes": 3260101
+    },
+    {
+      "group": "stridestore128_storage",
+      "raw_bytes": 71503479,
+      "compressed_bytes": 2660079
+    },
+    {
+      "group": "unitmemory128",
+      "raw_bytes": 22136235,
+      "compressed_bytes": 915445
+    },
+    {
+      "group": "vssub_flags1024",
+      "raw_bytes": 302894381,
+      "compressed_bytes": 19390921
+    },
+    {
+      "group": "vssub_flags_edges1024",
+      "raw_bytes": 16901011,
+      "compressed_bytes": 777146
+    },
+    {
+      "group": "vssub_sticky1024",
+      "raw_bytes": 6763789,
+      "compressed_bytes": 199000
+    },
+    {
+      "group": "whole128",
+      "raw_bytes": 1946917,
+      "compressed_bytes": 106014
+    },
+    {
+      "group": "widen128",
+      "raw_bytes": 129583361,
+      "compressed_bytes": 6576224
+    }
+  ],
+  "split_rule": "Named retained batch, then original form family when batch exceeds90MiB; all phases and raw histories for that family stay together. Core carries index, bindings, clean/historical receipts, licenses and tools."
+}
