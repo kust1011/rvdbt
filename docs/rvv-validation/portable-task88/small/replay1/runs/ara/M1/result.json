@@ -1,0 +1,11 @@
+{
+  "returncode": 1,
+  "timeout": false,
+  "elapsed_seconds": 0.00747944600880146,
+  "stdout_sha256": "619653883860d078c62f54ba68fc453798ff48e785b7de3e375c18434a323d42",
+  "stderr_sha256": "b57fabc77909539a971815a5806b87aa85db435c7a5e08ec91cd7955ffbd009b",
+  "fixture": "ara",
+  "arm": "M1",
+  "checker_pass": false,
+  "elf_sha256": "b9ddda2c803990b6abfb2fae62850a0d3549e6fe53f7b2e766b1bcfe2e1b5d09"
+}

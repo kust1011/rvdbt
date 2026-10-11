@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "elf_sha256": "6e4c4db7f29c0120dad057f04d8e39364041c2cd3713d360b5a0d790eef93fff",
+  "symbols": {
+    "_start": 65536,
+    "_reg_f0": 65552,
+    "_reg_f1": 65560,
+    "_reg_f2": 65568,
+    "_reg_f3": 65576,
+    "_reg_f4": 65584,
+    "_reg_f5": 65592,
+    "_reg_f6": 65600,
+    "_reg_f7": 65608,
+    "_reg_f8": 65616,
+    "_reg_f9": 65624,
+    "_reg_f10": 65632,
+    "_reg_f11": 65640,
+    "_reg_f12": 65648,
+    "_reg_f13": 65656,
+    "_reg_f14": 65664,
+    "_reg_f15": 65672,
+    "_reg_f16": 65680,
+    "_reg_f17": 65688,
+    "_reg_f18": 65696,
+    "_reg_f19": 65704,
+    "_reg_f20": 65712,
+    "_reg_f21": 65720,
+    "_reg_f22": 65728,
+    "_reg_f23": 65736,
+    "_reg_f24": 65744,
+    "_reg_f25": 65752,
+    "_reg_f26": 65760,
+    "_reg_f27": 65768,
+    "_reg_f28": 65776,
+    "_reg_f29": 65784,
+    "_reg_f30": 65792,
+    "_reg_f31": 65800,
+    "_float_data_end": 65808,
+    "_reg_v0": 66208,
+    "_reg_v1": 66464,
+    "_reg_v2": 66720,
+    "_reg_v3": 66976,
+    "_reg_v4": 67232,
+    "_reg_v5": 67488,
+    "_reg_v6": 67744,
+    "_reg_v7": 68000,
+    "_reg_v8": 68256,
+    "_reg_v9": 68512,
+    "_reg_v10": 68768,
+    "_reg_v11": 69024,
+    "_reg_v12": 69280,
+    "_reg_v13": 69536,
+    "_reg_v14": 69792,
+    "_reg_v15": 70048,
+    "_reg_v16": 70304,
+    "_reg_v17": 70560,
+    "_reg_v18": 70816,
+    "_reg_v19": 71072,
+    "_reg_v20": 71328,
+    "_reg_v21": 71584,
+    "_reg_v22": 71840,
+    "_reg_v23": 72096,
+    "_reg_v24": 72352,
+    "_reg_v25": 72608,
+    "_reg_v26": 72864,
+    "_reg_v27": 73120,
+    "_reg_v28": 73376,
+    "_reg_v29": 73632,
+    "_reg_v30": 73888,
+    "_reg_v31": 74144,
+    "_vector_data_end": 74400,
+    "sequence_begin": 75196,
+    "sequence_end": 75260,
+    "write_packet": 75800,
+    "write_error": 75836,
+    "resultdata": 77824
+  },
+  "segments": [
+    {
+      "address": 65536,
+      "offset": 4096,
+      "file_bytes": 10312,
+      "bytes": 10312,
+      "flags": 5
+    },
+    {
+      "address": 77824,
+      "offset": 16384,
+      "file_bytes": 0,
+      "bytes": 8768,
+      "flags": 6
+    }
+  ],
+  "body": [
+    {
+      "ordinal": 1,
+      "pc": "0x125bc",
+      "encoding": "03691557",
+      "instruction": "vfadd.vv v10, v22, v18"
+    },
+    {
+      "ordinal": 2,
+      "pc": "0x125c0",
+      "encoding": "03821f57",
+      "instruction": "vfadd.vv v30, v24, v4"
+    },
+    {
+      "ordinal": 3,
+      "pc": "0x125c4",
+      "encoding": "02681d57",
+      "instruction": "vfadd.vv v26, v6, v16"
+    },
+    {
+      "ordinal": 4,
+      "pc": "0x125c8",
+      "encoding": "01c11657",
+      "instruction": "vfadd.vv v12, v28, v2, v0.t"
+    },
+    {
+      "ordinal": 5,
+      "pc": "0x125cc",
+      "encoding": "02841857",
+      "instruction": "vfadd.vv v16, v8, v8"
+    },
+    {
+      "ordinal": 6,
+      "pc": "0x125d0",
+      "encoding": "008c1857",
+      "instruction": "vfadd.vv v16, v8, v24, v0.t"
+    },
+    {
+      "ordinal": 7,
+      "pc": "0x125d4",
+      "encoding": "038c1457",
+      "instruction": "vfadd.vv v8, v24, v24"
+    },
+    {
+      "ordinal": 8,
+      "pc": "0x125d8",
+      "encoding": "03881857",
+      "instruction": "vfadd.vv v16, v24, v16"
+    },
+    {
+      "ordinal": 9,
+      "pc": "0x125dc",
+      "encoding": "03041c57",
+      "instruction": "vfadd.vv v24, v16, v8"
+    },
+    {
+      "ordinal": 10,
+      "pc": "0x125e0",
+      "encoding": "03841457",
+      "instruction": "vfadd.vv v8, v24, v8"
+    },
+    {
+      "ordinal": 11,
+      "pc": "0x125e4",
+      "encoding": "01881857",
+      "instruction": "vfadd.vv v16, v24, v16, v0.t"
+    },
+    {
+      "ordinal": 12,
+      "pc": "0x125e8",
+      "encoding": "01841857",
+      "instruction": "vfadd.vv v16, v24, v8, v0.t"
+    },
+    {
+      "ordinal": 13,
+      "pc": "0x125ec",
+      "encoding": "01841857",
+      "instruction": "vfadd.vv v16, v24, v8, v0.t"
+    },
+    {
+      "ordinal": 14,
+      "pc": "0x125f0",
+      "encoding": "01041157",
+      "instruction": "vfadd.vv v2, v16, v8, v0.t"
+    },
+    {
+      "ordinal": 15,
+      "pc": "0x125f4",
+      "encoding": "00cb1a57",
+      "instruction": "vfadd.vv v20, v12, v22, v0.t"
+    },
+    {
+      "ordinal": 16,
+      "pc": "0x125f8",
+      "encoding": "018f1d57",
+      "instruction": "vfadd.vv v26, v24, v30, v0.t"
+    }
+  ],
+  "input_bytes_unchanged": true,
+  "full64_fld": 32,
+  "full64_fsd": 64,
+  "vector_restore_bytes": 8192,
+  "vector_capture_bytes": 8192,
+  "packet_bytes": 8768
+}

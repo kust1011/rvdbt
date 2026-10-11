@@ -1,0 +1,11 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "elapsed_seconds": 0.11500515002990142,
+  "stdout_sha256": "ebea56daf9f8adbbdadebb80bfc6d5ec9460999a1f51c21b1f3259d8a0510919",
+  "stderr_sha256": "1591320f030a25a44afcc15ce6b05c132575d31aa50ba5212271330d6eeba94d",
+  "fixture": "rvvts",
+  "arm": "M1",
+  "checker_pass": true,
+  "elf_sha256": "6e4c4db7f29c0120dad057f04d8e39364041c2cd3713d360b5a0d790eef93fff"
+}

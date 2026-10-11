@@ -1,0 +1,1032 @@
+ninja: Entering directory `/home/vick/rvv-portable88-20261012/build'
+[1/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/util/common.cpp.o
+[2/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/util/fsmanager.cpp.o
+[3/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/util/logger.cpp.o
+[4/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/aot.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.cpp:1:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[5/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/aot_module.cpp.o
+/home/vick/rvv-portable88-20261012/repo/dbt/aot/aot_module.cpp:60:8: warning: unused variable 'end' [-Wunused-variable]
+   60 |                 auto end = ip + exec_instr_count * 4; // TODO: print this instead of exec_instr_count for easier checking
+      |                      ^~~
+1 warning generated.
+[6/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/aot_file.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot_file.cpp:1:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[7/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/aot_boot.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot_boot.cpp:1:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/aot/aot_boot.cpp:1162:24: warning: increment of object of volatile-qualified type 'volatile unsigned long' is deprecated [-Wdeprecated-volatile]
+ 1162 |         config::esc_eval_count++; // starvation detector: the keeper flushes only while we are NOT running
+      |                               ^
+4 warnings generated.
+[8/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/llvmaot_stackmaps.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/llvmaot_stackmaps.cpp:1:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[9/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/loop_region.cpp.o
+[10/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/loop_tier.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/loop_tier.cpp:1:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/loop_tier.h:14:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[11/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/loop_tier_load.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/loop_tier_load.cpp:25:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[12/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/loop_tier_install.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/loop_tier_install.cpp:63:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[13/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/loop_tier_route_census.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/loop_tier_route_census.cpp:33:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/loop_tier.h:14:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[14/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/arena.cpp.o
+[15/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/aot/llvmaot.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/llvmaot.cpp:1:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/aot/llvmaot.cpp:230:54: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  230 |                 auto *cpp = b.CreateBitCast(cp, llvm::PointerType::getUnqual(b.getInt64Ty()));
+      |                                                                    ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/aot/llvmaot.cpp:1144:26: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+ 1144 |                                     wb.getInt32Ty()->getPointerTo());
+      |                                                      ^~~~~~~~~~~~
+      |                                                      PointerType::get
+/usr/lib/llvm-22/include/llvm/IR/Type.h:487:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  487 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/lib/llvm-22/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/home/vick/rvv-portable88-20261012/repo/dbt/aot/llvmaot.cpp:1580:39: warning: 'lookupTarget' is deprecated: Use overload accepting Triple instead [-Wdeprecated-declarations]
+ 1580 |                 auto target = llvm::TargetRegistry::lookupTarget(ttriple, error);
+      |                                                     ^
+/usr/lib/llvm-22/include/llvm/MC/TargetRegistry.h:741:5: note: 'lookupTarget' has been explicitly marked deprecated here
+  741 |   [[deprecated("Use overload accepting Triple instead")]]
+      |     ^
+6 warnings generated.
+[16/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/fault_snapshot.cpp.o
+[17/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/mmu.cpp.o
+[18/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/ccrf_materializer.cpp.o
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:200:2: warning: 'SHA256_Init' is deprecated [-Wdeprecated-declarations]
+  200 |         SHA256_Init(&ctx);
+      |         ^
+/usr/include/openssl/sha.h:73:1: note: 'SHA256_Init' has been explicitly marked deprecated here
+   73 | OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:205:4: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  205 |                         SHA256_Update(&ctx, buf.data(), (size_t)in.gcount());
+      |                         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:208:2: warning: 'SHA256_Final' is deprecated [-Wdeprecated-declarations]
+  208 |         SHA256_Final(d, &ctx);
+      |         ^
+/usr/include/openssl/sha.h:76:1: note: 'SHA256_Final' has been explicitly marked deprecated here
+   76 | OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:230:2: warning: 'SHA256_Init' is deprecated [-Wdeprecated-declarations]
+  230 |         SHA256_Init(&ctx);
+      |         ^
+/usr/include/openssl/sha.h:73:1: note: 'SHA256_Init' has been explicitly marked deprecated here
+   73 | OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:231:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  231 |         SHA256_Update(&ctx, a.gpr.data(), sizeof(a.gpr));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:232:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  232 |         SHA256_Update(&ctx, &a.ip, sizeof(a.ip));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:233:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  233 |         SHA256_Update(&ctx, &a.trapno, sizeof(a.trapno));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:234:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  234 |         SHA256_Update(&ctx, a.vec.vreg.data(), sizeof(a.vec.vreg));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:235:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  235 |         SHA256_Update(&ctx, &a.vec.vl, sizeof(a.vec.vl));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:236:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  236 |         SHA256_Update(&ctx, &a.vec.vtype, sizeof(a.vec.vtype));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:237:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  237 |         SHA256_Update(&ctx, &a.vec.vstart, sizeof(a.vec.vstart));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:238:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  238 |         SHA256_Update(&ctx, &a.vec.vlenb, sizeof(a.vec.vlenb));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:239:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  239 |         SHA256_Update(&ctx, a.csr.data(), sizeof(a.csr));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:240:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  240 |         SHA256_Update(&ctx, a.fpu.f, sizeof(a.fpu.f));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:241:2: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+  241 |         SHA256_Update(&ctx, &a.fpu.fcsr, sizeof(a.fpu.fcsr));
+      |         ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ccrf_materializer.cpp:243:2: warning: 'SHA256_Final' is deprecated [-Wdeprecated-declarations]
+  243 |         SHA256_Final(d, &ctx);
+      |         ^
+/usr/include/openssl/sha.h:76:1: note: 'SHA256_Final' has been explicitly marked deprecated here
+   76 | OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+      | ^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+  182 | #   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+      |                                                 ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+   62 | #     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+      |                                                    ^
+16 warnings generated.
+[19/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/ukernel.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/ukernel.cpp:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ukernel.cpp:1181:104: warning: backslash and newline separated by space [-Wbackslash-newline-escape]
+ 1181 |         X(linux_tgkill)                                                                                      \  
+      |                                                                                                               ^
+/home/vick/rvv-portable88-20261012/repo/dbt/ukernel.cpp:1189:104: warning: backslash and newline separated by space [-Wbackslash-newline-escape]
+ 1189 |         X(linux_gettid)                                                                                      \  
+      |                                                                                                               ^
+5 warnings generated.
+[20/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/execute.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/execute.cpp:4:
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/aot/aot.h:5:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[21/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/tcache/objprof.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.cpp:1:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+3 warnings generated.
+[22/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/tcache/tcache.cpp.o
+[23/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/compile.cpp.o
+[24/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qir.cpp.o
+[25/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/ngr.cpp.o
+[26/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qir_opt.cpp.o
+[27/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/runtime_stubs.cpp.o
+[28/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qir_printer.cpp.o
+[29/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qcg/arch_traits.cpp.o
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/qcg/arch_traits.cpp:92:1: warning: unused variable 'CT_INFO_si' [-Wunused-variable]
+   92 | CT(si) = InstCt<0, 1>::Make({}, {DEF(GPR(SI))});
+      | ^~~~~~
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/qcg/arch_traits.cpp:90:40: note: expanded from macro 'CT'
+   90 | #define CT(name) static constinit auto CT_INFO_##name
+      |                                        ^~~~~~~~~~~~~~
+<scratch space>:311:1: note: expanded from here
+  311 | CT_INFO_si
+      | ^~~~~~~~~~
+1 warning generated.
+[30/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qcg/jitabi.cpp.o
+[31/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qcg/qcg.cpp.o
+[32/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qcg/qra.cpp.o
+[33/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qcg/qsel.cpp.o
+[34/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/qcg/qemit.cpp.o
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/qcg/qemit.cpp:6177:10: warning: unused variable 'prs1' [-Wunused-variable]
+ 6177 |     auto prs1 = make_gpr(ins->i(1)); //bx
+      |          ^~~~
+1 warning generated.
+[35/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_analyser.cpp.o
+[36/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_insn.cpp.o
+[37/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/qmc/llvmgen/llvmgen.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:8:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:67:36: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+   67 |         auto i8ptrty = llvm::PointerType::getUnqual(i8ty);
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:73:49: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+   73 |             llvm::FunctionType::get(llvm::PointerType::getUnqual(qcg_fnty), {i8ptrty, i32ty}, false);
+      |                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:220:36: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  220 |         auto fp_type = llvm::PointerType::getUnqual(ftype);
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:222:49: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  222 |         auto state_ep = MakeStateEP(llvm::PointerType::getUnqual(fp_type),
+      |                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:412:39: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  412 |                             MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()), offsetof(CPUState, ip));
+      |                                                            ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:499:55: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  499 |                 auto *wep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:517:56: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  517 |                         auto *hep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:542:55: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  542 |                 auto *iep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:598:57: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  598 |                         auto *cpp = ib->CreateBitCast(cp, llvm::PointerType::getUnqual(ib->getInt64Ty()));
+      |                                                                              ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:691:57: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  691 |                         auto *cep = eb.CreateBitCast(raw, llvm::PointerType::getUnqual(eb.getInt64Ty()));
+      |                                                                              ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:750:29: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  750 |                 return llvm::PointerType::getUnqual(llvm::Type::getInt8Ty(lctx));
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:752:29: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  752 |                 return llvm::PointerType::getUnqual(llvm::Type::getInt16Ty(lctx));
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:754:29: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  754 |                 return llvm::PointerType::getUnqual(llvm::Type::getInt32Ty(lctx));
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:759:29: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  759 |                 return llvm::PointerType::getUnqual(
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:762:29: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+  762 |                 return llvm::PointerType::getUnqual(llvm::Type::getInt64Ty(lctx));
+      |                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2318:55: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2318 |                     vec_ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vec_ty), offs),
+      |                                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2323:54: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2323 |                     i64ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), offs),
+      |                                                                    ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2339:48: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2339 |                             LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2410:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2410 |             out, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), dst_off),
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2452:54: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2452 |                     i64ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), off),
+      |                                                                    ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2482:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2482 |             out, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), ins->rd),
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2532:47: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2532 |                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), ins->source + c * 8u),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2619:47: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2619 |                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), ins->source + c * 8u),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2664:47: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2664 |                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), off), llvm::Align(16),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2731:54: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2731 |                     i64ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), off),
+      |                                                                    ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2736:50: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2736 |                     v, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), off),
+      |                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2869:47: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2869 |                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2884:47: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2884 |                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2991:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2991 |             ety, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ety), base + (u32)ins->seed * slot),
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:2998:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 2998 |                     vty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), off),
+      |                                                                  ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3017:46: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3017 |             LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(sty), base + (u32)ins->rd * slot),
+      |                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3065:46: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3065 |             LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rd), llvm::Align(16),
+      |                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3137:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3137 |             vty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rs), llvm::Align(16)));
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3165:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3165 |             res, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rd), llvm::Align(16),
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3227:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3227 |             ity, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ity), ins->rs), llvm::Align(16)));
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3247:57: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3247 |         auto *dst_ep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(fty), ins->rd);
+      |                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3351:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3351 |             fty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(fty), ins->rs), llvm::Align(16)));
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3460:57: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3460 |         auto *dst_ep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(dity), ins->rd);
+      |                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3552:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3552 |             sfty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(sfty), ins->rs),
+      |                                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3685:58: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3685 |                 auto *rod_ep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(dity), ins->rd);
+      |                                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3746:57: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3746 |         auto *dst_ep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(dity), ins->rd);
+      |                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3865:55: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3865 |                             i64ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), off),
+      |                                                                            ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3907:49: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3907 |                                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ivty),
+      |                                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3953:47: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 3953 |                     LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:3822:8: warning: unused variable 'i32ty' [-Wunused-variable]
+ 3822 |         auto *i32ty = lb->getInt32Ty();
+      |               ^~~~~
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4018:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4018 |             vty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rs), llvm::Align(16)));
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4157:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4157 |             res, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rd), llvm::Align(16),
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4224:64: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4224 |             lb->getInt64Ty(), LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                       ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4240:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4240 |                     vty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rs2),
+      |                                                                  ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4245:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4245 |             val, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty), ins->rd), llvm::Align(16),
+      |                                                          ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4357:48: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4357 |                             LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ivty),
+      |                                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4379:55: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4379 |                 auto *reg = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(vty),
+      |                                                                     ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4536:77: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4536 |                 return lb->CreateAlignedLoad(fty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(fty), off),
+      |                                                                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4573:70: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4573 |         lb->CreateAlignedStore(out, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ity),
+      |                                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4619:54: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4619 |                     i64ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), off + c * 8u),
+      |                                                                    ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4666:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4666 |                     out, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(i64ty), ins->rd + c * 8u),
+      |                                                                  ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4718:54: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4718 |             src_ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(src_ty), ins->rs2),
+      |                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4731:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4731 |             wide, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(dst_ty), ins->rd),
+      |                                                           ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4798:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4798 |                     ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ty), off), llvm::Align(16)));
+      |                                                                 ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4850:49: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4850 |             r, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(dst_ty), ins->rd), llvm::Align(16),
+      |                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4906:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4906 |                     ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ty), off), llvm::Align(16)));
+      |                                                                 ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4937:56: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4937 |             narrowed, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(narrow_ty), ins->rd),
+      |                                                               ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:4987:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 4987 |                     ty, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(ty), off), llvm::Align(16)));
+      |                                                                 ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:5054:56: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 5054 |             narrowed, LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(narrow_ty), ins->rd),
+      |                                                               ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:6895:50: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 6895 |                 auto *gep = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()), off);
+      |                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:6983:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 6983 |                                 auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7042:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7042 |                                 auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7072:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7072 |                                 auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7117:53: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7117 |                                         auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7174:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7174 |                                 auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7192:53: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7192 |                                         auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7226:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7226 |                                 auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7298:51: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7298 |                         auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                        ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7497:50: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7497 |                 auto *gep = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7529:52: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7529 |                                 auto *ipp = gen.MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7767:58: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7767 |                                         auto *ipp = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7814:56: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7814 |                         auto *gep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7825:58: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7825 |                                 auto *hgep = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt64Ty()),
+      |                                                                                      ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+/home/vick/rvv-portable88-20261012/repo/dbt/qmc/llvmgen/llvmgen.cpp:7831:58: warning: 'getUnqual' is deprecated: PointerType::getUnqual with pointee type is pending removal. Use Context overload. [-Wdeprecated-declarations]
+ 7831 |                                         auto *ipp = LLVMGen::MakeStateEP(llvm::PointerType::getUnqual(lb->getInt32Ty()),
+      |                                                                                             ^
+/usr/lib/llvm-22/include/llvm/IR/DerivedTypes.h:720:5: note: 'getUnqual' has been explicitly marked deprecated here
+  720 |   [[deprecated("PointerType::getUnqual with pointee type is pending removal. "
+      |     ^
+82 warnings generated.
+[38/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run_flags.cpp.o
+[39/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_lane_region.cpp.o
+[40/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_lane_region_bridge.cpp.o
+[41/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vrun.cpp.o
+[42/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run16.cpp.o
+[43/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run16fma.cpp.o
+[44/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run32.cpp.o
+[45/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_gather.cpp.o
+[46/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run64.cpp.o
+[47/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_interp.cpp.o
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_interp.cpp:464:22: warning: unused variable 'RVV_EEW32_LOG2' [-Wunused-const-variable]
+  464 | static constexpr u32 RVV_EEW32_LOG2 = 5;
+      |                      ^~~~~~~~~~~~~~
+1 warning generated.
+[48/113] Building CXX object dbt/CMakeFiles/dbtstatic.dir/guest/rv32_qir.cpp.o
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:3095:12: warning: unused variable 'rb' [-Wunused-variable]
+ 3095 |         u32 const rb = vlen / 8u, ssew = 4u, dsew = 8u;
+      |                   ^~
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:3176:12: warning: unused variable 'rb' [-Wunused-variable]
+ 3176 |         u32 const rb = vlen / 8u, ssew = vt.sew() / 8u, dsew = 2u * ssew;
+      |                   ^~
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:3284:12: warning: unused variable 'rb' [-Wunused-variable]
+ 3284 |         u32 const rb = vlen / 8u, ssew = 8u, dsew = 4u;
+      |                   ^~
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:3387:12: warning: unused variable 'rb' [-Wunused-variable]
+ 3387 |         u32 const rb = vlen / 8u, ssew = 4u, dsew = 8u;
+      |                   ^~
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:6504:17: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 6504 |                 if ((sew >= 4 && (averaging || round_shift || (saturation && (op == Kind::SatAddS || op == Kind::SatSubS))) ||
+      |                      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:6504:17: note: place parentheses around the '&&' expression to silence this warning
+ 6504 |                 if ((sew >= 4 && (averaging || round_shift || (saturation && (op == Kind::SatAddS || op == Kind::SatSubS))) ||
+      |                               ^
+      |                      (                                                                                                     )
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:16620:12: warning: unused variable 'vreg_base' [-Wunused-variable]
+ 16620 |         u32 const vreg_base = (u32)(offsetof(CPUState, vec) + offsetof(rvv::VectorState, vreg));
+       |                   ^~~~~~~~~
+/home/vick/rvv-portable88-20261012/repo/dbt/guest/rv32_qir.cpp:16621:12: warning: unused variable 'slot' [-Wunused-variable]
+ 16621 |         u32 const slot = rvv::VLEN_MAX_BYTES;
+       |                   ^~~~
+7 warnings generated.
+[49/113] Building CXX object dbt/CMakeFiles/dbtjitshared.dir/qmc/qcg/jitabi_shared.cpp.o
+[50/113] Linking CXX shared library lib/libdbtjitshared.so
+[51/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/archtraits.cpp.o
+[52/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/assembler.cpp.o
+[53/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/builder.cpp.o
+[54/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/codeholder.cpp.o
+[55/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/codewriter.cpp.o
+[56/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/compiler.cpp.o
+[57/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/constpool.cpp.o
+[58/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/cpuinfo.cpp.o
+[59/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/emithelper.cpp.o
+[60/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/emitter.cpp.o
+[61/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/emitterutils.cpp.o
+[62/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/environment.cpp.o
+[63/113] Building CXX object dbt/CMakeFiles/elfrun.dir/elfrun.cpp.o
+In file included from /home/vick/rvv-portable88-20261012/repo/dbt/elfrun.cpp:64:
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:54:14: warning: not packing field 'executed' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   54 |                 PageBitset executed{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:55:14: warning: not packing field 'brind_target' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   55 |                 PageBitset brind_target{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/tcache/objprof.h:56:14: warning: not packing field 'segment_entry' as it is non-POD for the purposes of layout [-Wpacked-non-pod]
+   56 |                 PageBitset segment_entry{};
+      |                            ^
+/home/vick/rvv-portable88-20261012/repo/dbt/elfrun.cpp:1447:34: warning: increment of object of volatile-qualified type 'volatile unsigned long' is deprecated [-Wdeprecated-volatile]
+ 1447 |                         dbt::config::inrun_flush_count++;
+      |                                                       ^
+/home/vick/rvv-portable88-20261012/repo/dbt/elfrun.cpp:1417:23: warning: variable 'bct_tick' set but not used [-Wunused-but-set-variable]
+ 1417 |         static unsigned long bct_tick = 0, last_eval_seen = 0;
+      |                              ^
+/home/vick/rvv-portable88-20261012/repo/dbt/elfrun.cpp:1545:9: warning: increment of object of volatile-qualified type 'volatile unsigned int' is deprecated [-Wdeprecated-volatile]
+ 1545 |                                 if (++dbt::config::epochs_dry >= 2)
+      |                                     ^
+6 warnings generated.
+[64/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/errorhandler.cpp.o
+[65/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/func.cpp.o
+[66/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/formatter.cpp.o
+[67/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/globals.cpp.o
+[68/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/inst.cpp.o
+[69/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/funcargscontext.cpp.o
+[70/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/instdb.cpp.o
+[71/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/jitallocator.cpp.o
+[72/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/jitruntime.cpp.o
+[73/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/operand.cpp.o
+[74/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/logger.cpp.o
+[75/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/osutils.cpp.o
+[76/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/ralocal.cpp.o
+[77/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/rapass.cpp.o
+[78/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/rastack.cpp.o
+[79/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/support.cpp.o
+[80/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/string.cpp.o
+[81/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/target.cpp.o
+[82/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/type.cpp.o
+[83/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/virtmem.cpp.o
+[84/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/zone.cpp.o
+[85/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/zonehash.cpp.o
+[86/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/zonelist.cpp.o
+[87/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/zonestack.cpp.o
+[88/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/zonetree.cpp.o
+[89/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/core/zonevector.cpp.o
+[90/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64assembler.cpp.o
+[91/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/armformatter.cpp.o
+[92/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64builder.cpp.o
+[93/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64compiler.cpp.o
+[94/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64emithelper.cpp.o
+[95/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64formatter.cpp.o
+[96/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64func.cpp.o
+[97/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64instapi.cpp.o
+[98/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64instdb.cpp.o
+[99/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64operand.cpp.o
+[100/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/arm/a64rapass.cpp.o
+[101/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86builder.cpp.o
+[102/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86compiler.cpp.o
+[103/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86emithelper.cpp.o
+[104/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86assembler.cpp.o
+[105/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86formatter.cpp.o
+[106/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86func.cpp.o
+[107/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86instdb.cpp.o
+[108/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86instapi.cpp.o
+[109/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86rapass.cpp.o
+[110/113] Building CXX object dbt/third_party/asmjit/CMakeFiles/asmjit.dir/src/asmjit/x86/x86operand.cpp.o
+[111/113] Linking CXX static library lib/libasmjit.a
+[112/113] Linking CXX static library lib/libdbtstatic.a
+[113/113] Linking CXX executable bin/elfrun

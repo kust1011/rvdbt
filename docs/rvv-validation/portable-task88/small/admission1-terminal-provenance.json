@@ -1,0 +1,8 @@
+{
+  "origin": "Exact initial stderr captured in functions.exec tool output, archived from session transcript; initial command did not redirect stderr to a filesystem file.",
+  "script_checkpoint": "9ec0d12",
+  "command": ["python", "scripts/audit_rvv_external_admission.py", "--results", "/home/vick/rvv-portable88-20261012/replay2", "--source", "/home/vick/rvv-portable88-20261012/repo"],
+  "returncode": 1,
+  "classification": "offline host-disassembly parser failure; no guest call or arithmetic result change",
+  "diagnosis": "Whitespace regex crossed objdump continuation lines, losing ten store rows. Full instruction width and horizontal whitespace repair parsing. Original12stores condition retained."
+}

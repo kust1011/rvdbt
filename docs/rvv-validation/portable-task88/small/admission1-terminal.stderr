@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-portable88-20261012/repo/scripts/audit_rvv_external_admission.py", line 26, in <module>
+    allstores=[(pc,op) for pc,op in region if re.fullmatch(r'vmovdqu64\s+%zmm\d+,0x\w+\(%r13\)',op)];assert len(allstores)==12
+                                                                                                            ^^^^^^^^^^^^^^^^^^
+AssertionError

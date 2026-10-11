@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "arm": "M1",
+      "form_begin": "0x125bc",
+      "form_end": "0x125c8",
+      "original_ordinals": [
+        1,
+        2,
+        3
+      ],
+      "members": 3,
+      "chunks": 4,
+      "frame_count": 1,
+      "tb_count": 1,
+      "guard_fallbacks": 0,
+      "batch_width": 2,
+      "batches": [
+        {
+          "loads": 12,
+          "lane_ops": 6,
+          "stores": 6,
+          "begin": "0x77349b401728",
+          "end": "0x77349b4019b0",
+          "publication_before_next_batch": true
+        },
+        {
+          "loads": 12,
+          "lane_ops": 6,
+          "stores": 6,
+          "begin": "0x77349b4019b0",
+          "end": "0x77349b401bdf",
+          "publication_before_next_batch": true
+        }
+      ],
+      "host_code_sha256": "fa3fd42d584ac37f16f02c01a38b58307382ea118641cd81bc4f4621fb75d3d9",
+      "diagnostics_sha256": "1591320f030a25a44afcc15ce6b05c132575d31aa50ba5212271330d6eeba94d",
+      "scope": "code order + executed frame/TB + valid invariant guard; no direct per-batch telemetry"
+    },
+    {
+      "arm": "BOTH",
+      "form_begin": "0x125bc",
+      "form_end": "0x125c8",
+      "original_ordinals": [
+        1,
+        2,
+        3
+      ],
+      "members": 3,
+      "chunks": 4,
+      "frame_count": 1,
+      "tb_count": 1,
+      "guard_fallbacks": 0,
+      "batch_width": 2,
+      "batches": [
+        {
+          "loads": 12,
+          "lane_ops": 6,
+          "stores": 6,
+          "begin": "0x70ac42201728",
+          "end": "0x70ac422019b0",
+          "publication_before_next_batch": true
+        },
+        {
+          "loads": 12,
+          "lane_ops": 6,
+          "stores": 6,
+          "begin": "0x70ac422019b0",
+          "end": "0x70ac42201bdf",
+          "publication_before_next_batch": true
+        }
+      ],
+      "host_code_sha256": "358e44c68ece465c895858a8504f08195a5a89a7953906ee53e68539afe491b7",
+      "diagnostics_sha256": "1591320f030a25a44afcc15ce6b05c132575d31aa50ba5212271330d6eeba94d",
+      "scope": "code order + executed frame/TB + valid invariant guard; no direct per-batch telemetry"
+    }
+  ],
+  "source": {
+    "dbt/guest/rv32_vrun.cpp": "86175e097e873acc21b666ba670da23c657f48cc6349959f49b78efac260996b",
+    "dbt/guest/rv32_vrun.h": "ecd50f2be3206696a19d5e6cf0f6cf9d0decd1adb30c55247918c29fa2c634eb",
+    "dbt/guest/rv32_qir.cpp": "795fcdb201ea58fbcfd648cf964e3286b4a6351ad90cdbb85bb67b37c02c25f3"
+  },
+  "limits": "one sequence; v26 later masked overwritten; no independent intermediate oracle, arbitrary pressure cuts, fault/retry or timing claim"
+}

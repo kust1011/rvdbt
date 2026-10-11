@@ -1,0 +1,11 @@
+test_changed_observation (test_rvv_external.ExternalChecks.test_changed_observation) ... ok
+test_exit_timeout_missing_truncated (test_rvv_external.ExternalChecks.test_exit_timeout_missing_truncated) ... ok
+test_omitted_initialization (test_rvv_external.ExternalChecks.test_omitted_initialization) ... ok
+test_original_initialization (test_rvv_external.ExternalChecks.test_original_initialization) ... ok
+test_full_observation_changes (test_rvv_external_packet.PacketChecks.test_full_observation_changes) ... ok
+test_transport (test_rvv_external_packet.PacketChecks.test_transport) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.026s
+
+OK

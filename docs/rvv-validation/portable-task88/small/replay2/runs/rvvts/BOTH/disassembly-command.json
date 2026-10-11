@@ -1,0 +1,11 @@
+[
+  "objdump",
+  "--insn-width=16",
+  "-D",
+  "-b",
+  "binary",
+  "-m",
+  "i386:x86-64",
+  "--adjust-vma=123885146084608",
+  "/home/vick/rvv-portable88-20261012/replay2/runs/rvvts/BOTH/target-host.bin"
+]

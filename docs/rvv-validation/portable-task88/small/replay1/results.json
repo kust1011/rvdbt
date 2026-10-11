@@ -1,0 +1,35 @@
+[
+  {
+    "returncode": 0,
+    "timeout": false,
+    "elapsed_seconds": 0.007474643993191421,
+    "stdout_sha256": "15bb95f7e46e489272d15e48007911a23776746cce232104649dee6aa649ec7b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixture": "ara",
+    "arm": "Spike",
+    "checker_pass": true,
+    "elf_sha256": "b9ddda2c803990b6abfb2fae62850a0d3549e6fe53f7b2e766b1bcfe2e1b5d09"
+  },
+  {
+    "returncode": 0,
+    "timeout": false,
+    "elapsed_seconds": 0.06365391099825501,
+    "stdout_sha256": "15bb95f7e46e489272d15e48007911a23776746cce232104649dee6aa649ec7b",
+    "stderr_sha256": "d709db6f3679d79ba5b36b90ba89a617dbfd13544b1715868baa1ec193e587ce",
+    "fixture": "ara",
+    "arm": "B",
+    "checker_pass": true,
+    "elf_sha256": "b9ddda2c803990b6abfb2fae62850a0d3549e6fe53f7b2e766b1bcfe2e1b5d09"
+  },
+  {
+    "returncode": 1,
+    "timeout": false,
+    "elapsed_seconds": 0.00747944600880146,
+    "stdout_sha256": "619653883860d078c62f54ba68fc453798ff48e785b7de3e375c18434a323d42",
+    "stderr_sha256": "b57fabc77909539a971815a5806b87aa85db435c7a5e08ec91cd7955ffbd009b",
+    "fixture": "ara",
+    "arm": "M1",
+    "checker_pass": false,
+    "elf_sha256": "b9ddda2c803990b6abfb2fae62850a0d3549e6fe53f7b2e766b1bcfe2e1b5d09"
+  }
+]

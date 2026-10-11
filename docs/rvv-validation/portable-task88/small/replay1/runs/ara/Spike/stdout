@@ -1,0 +1,94 @@
+ARA_CASE_BEGIN TEST_CASE1 vsets=0 assertions=0 comparisons=0
+Checking the results of the test case 1:
+PASSED.
+Checking the results of the test case 2:
+PASSED.
+Checking the results of the test case 3:
+PASSED.
+Checking the results of the test case 4:
+PASSED.
+ARA_CASE_END TEST_CASE1 failures=0 vsets=4 assertions=4 comparisons=4
+ARA_CASE_BEGIN TEST_CASE2 vsets=4 assertions=4 comparisons=4
+Checking the results of the test case 5:
+PASSED.
+Checking the results of the test case 6:
+PASSED.
+Checking the results of the test case 7:
+PASSED.
+Checking the results of the test case 8:
+PASSED.
+ARA_CASE_END TEST_CASE2 failures=0 vsets=8 assertions=8 comparisons=8
+ARA_CASE_BEGIN TEST_CASE3 vsets=8 assertions=8 comparisons=8
+Checking the results of the test case 9:
+PASSED.
+Checking the results of the test case 10:
+PASSED.
+Checking the results of the test case 11:
+PASSED.
+Checking the results of the test case 12:
+PASSED.
+ARA_CASE_END TEST_CASE3 failures=0 vsets=12 assertions=12 comparisons=72
+ARA_CASE_BEGIN TEST_CASE4 vsets=12 assertions=12 comparisons=72
+Checking the results of the test case 13:
+PASSED.
+Checking the results of the test case 14:
+PASSED.
+Checking the results of the test case 15:
+PASSED.
+Checking the results of the test case 16:
+PASSED.
+Checking the results of the test case 17:
+PASSED.
+ARA_CASE_END TEST_CASE4 failures=0 vsets=17 assertions=17 comparisons=152
+ARA_CASE_BEGIN TEST_CASE5 vsets=17 assertions=17 comparisons=152
+Checking the results of the test case 18:
+PASSED.
+Checking the results of the test case 19:
+PASSED.
+Checking the results of the test case 20:
+PASSED.
+ARA_CASE_END TEST_CASE5 failures=0 vsets=20 assertions=20 comparisons=200
+PASSED: /home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/context_original_vredsum.c!
+ARA_VSET line=11 avl=16 vl=16 vtype=192
+ARA_VSET line=17 avl=16 vl=16 vtype=200
+ARA_VSET line=23 avl=16 vl=16 vtype=208
+ARA_VSET line=29 avl=16 vl=16 vtype=216
+ARA_VSET line=38 avl=16 vl=16 vtype=192
+ARA_VSET line=46 avl=16 vl=16 vtype=200
+ARA_VSET line=54 avl=16 vl=16 vtype=208
+ARA_VSET line=62 avl=16 vl=16 vtype=216
+ARA_VSET line=73 avl=16 vl=16 vtype=192
+ARA_VSET line=80 avl=16 vl=16 vtype=200
+ARA_VSET line=87 avl=16 vl=16 vtype=208
+ARA_VSET line=94 avl=16 vl=16 vtype=216
+ARA_VSET line=104 avl=15 vl=15 vtype=192
+ARA_VSET line=111 avl=1 vl=1 vtype=200
+ARA_VSET line=118 avl=3 vl=3 vtype=208
+ARA_VSET line=125 avl=7 vl=7 vtype=216
+ARA_VSET line=132 avl=15 vl=15 vtype=216
+ARA_VSET line=142 avl=15 vl=15 vtype=192
+ARA_VSET line=150 avl=1 vl=1 vtype=200
+ARA_VSET line=158 avl=3 vl=3 vtype=208
+ARA_ASSERT id=1 elements=1 bytes=1 vl=16 vtype=192 comparisons=1 completed=1 sequence=1
+ARA_ASSERT id=2 elements=1 bytes=2 vl=16 vtype=200 comparisons=1 completed=1 sequence=2
+ARA_ASSERT id=3 elements=1 bytes=4 vl=16 vtype=208 comparisons=1 completed=1 sequence=3
+ARA_ASSERT id=4 elements=1 bytes=8 vl=16 vtype=216 comparisons=1 completed=1 sequence=4
+ARA_ASSERT id=5 elements=1 bytes=1 vl=16 vtype=192 comparisons=1 completed=1 sequence=5
+ARA_ASSERT id=6 elements=1 bytes=2 vl=16 vtype=200 comparisons=1 completed=1 sequence=6
+ARA_ASSERT id=7 elements=1 bytes=4 vl=16 vtype=208 comparisons=1 completed=1 sequence=7
+ARA_ASSERT id=8 elements=1 bytes=8 vl=16 vtype=216 comparisons=1 completed=1 sequence=8
+ARA_ASSERT id=9 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1 sequence=9
+ARA_ASSERT id=10 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1 sequence=10
+ARA_ASSERT id=11 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1 sequence=11
+ARA_ASSERT id=12 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1 sequence=12
+ARA_ASSERT id=13 elements=16 bytes=1 vl=15 vtype=192 comparisons=16 completed=1 sequence=13
+ARA_ASSERT id=14 elements=16 bytes=2 vl=1 vtype=200 comparisons=16 completed=1 sequence=14
+ARA_ASSERT id=15 elements=16 bytes=4 vl=3 vtype=208 comparisons=16 completed=1 sequence=15
+ARA_ASSERT id=16 elements=16 bytes=8 vl=7 vtype=216 comparisons=16 completed=1 sequence=16
+ARA_ASSERT id=17 elements=16 bytes=8 vl=15 vtype=216 comparisons=16 completed=1 sequence=17
+ARA_ASSERT id=18 elements=16 bytes=1 vl=15 vtype=192 comparisons=16 completed=1 sequence=18
+ARA_ASSERT id=19 elements=16 bytes=2 vl=1 vtype=200 comparisons=16 completed=1 sequence=19
+ARA_ASSERT id=20 elements=16 bytes=4 vl=3 vtype=208 comparisons=16 completed=1 sequence=20
+ARA_SUMMARY status=0 vsets=20 assertions=20 comparisons=200
+ARA_FLAG_SUMMARY reads=0 flags=0 completed=0 comparisons=0
+ARA_SCALAR_SUMMARY scalars=0 completed=0 comparisons=0

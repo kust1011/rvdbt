@@ -1,0 +1,6 @@
+[
+  "/home/vick/rvv-portable88-20261012/spike-install/bin/spike",
+  "--isa=rv32gcv_zvl1024b",
+  "/home/vick/rvv-portable88-20261012/pk-build3/pk",
+  "/home/vick/rvv-portable88-20261012/replay1/guests/ara.elf"
+]

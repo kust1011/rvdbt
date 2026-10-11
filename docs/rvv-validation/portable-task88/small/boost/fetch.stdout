@@ -1,0 +1,5 @@
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-regex1.83-dev amd64 1.83.0-2.1ubuntu3.2 [355 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-regex1.83.0 amd64 1.83.0-2.1ubuntu3.2 [340 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-system1.83-dev amd64 1.83.0-2.1ubuntu3.2 [231 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-system1.83.0 amd64 1.83.0-2.1ubuntu3.2 [236 kB]
+Fetched 1161 kB in 2s (582 kB/s)

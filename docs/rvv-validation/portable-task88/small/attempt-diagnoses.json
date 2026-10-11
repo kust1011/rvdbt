@@ -1,0 +1,12 @@
+{
+  "pk1": "missing crt0/libc in bare GCC configure probe",
+  "pk2": "freestanding configure succeeds; missing newlib headers",
+  "pk3": "configure env CFLAGS not retained by make; explicit make CFLAGS supplies private headers; build succeeds",
+  "spike1_2": "Boost headers found but system/regex shared libraries absent",
+  "spike3": "explicit names still unavailable; private package extraction required",
+  "spike4": "pinned source build succeeds against private Boost dependencies",
+  "guest_build1": "RVVTS import requires mergedeep; failure before output creation; package installed in private venv",
+  "replay1": "Ara Spike/B PASS; M1 duplicate frame-census option rejected exit1 before guest; all raw preserved",
+  "replay2": "reuses validated Ara Spike/B; remaining8 valid receipts execute and pass",
+  "admission1": "offline parser crossed objdump continuation lines; counted2 of12stores and rejected. Terminal trace in session; original host raw unchanged. insn-width16 plus horizontal whitespace fixes parser; same12store requirement passes"
+}

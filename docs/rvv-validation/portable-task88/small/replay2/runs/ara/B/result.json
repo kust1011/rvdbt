@@ -1,0 +1,12 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "elapsed_seconds": 0.06365391099825501,
+  "stdout_sha256": "15bb95f7e46e489272d15e48007911a23776746cce232104649dee6aa649ec7b",
+  "stderr_sha256": "d709db6f3679d79ba5b36b90ba89a617dbfd13544b1715868baa1ec193e587ce",
+  "fixture": "ara",
+  "arm": "B",
+  "checker_pass": true,
+  "elf_sha256": "b9ddda2c803990b6abfb2fae62850a0d3549e6fe53f7b2e766b1bcfe2e1b5d09",
+  "reused_from": "/home/vick/rvv-portable88-20261012/replay1/runs/ara/B"
+}

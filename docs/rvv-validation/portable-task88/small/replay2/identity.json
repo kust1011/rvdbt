@@ -1,0 +1,40 @@
+{
+  "files": {
+    "/home/vick/rvv-portable88-20261012/build/bin/elfrun": "9bb171b61e1f8f75b1b2779fdf368fb9fa53613546659bc1403b6744ccb31d43",
+    "/home/vick/rvv-portable88-20261012/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "/home/vick/rvv-portable88-20261012/spike-install/bin/spike": "f29340b6e14ee1f11bf3023e5ec808ab1a146cf4620bfb208f288d4d82aa348b",
+    "/home/vick/rvv-portable88-20261012/pk-build3/pk": "f9943c86f30af27adcbd402a969f56ec2c97ad404c2d70267a648c79d2c409ab",
+    "/usr/lib/gcc/riscv64-unknown-elf/13.2.0/rv32iafd/ilp32d/libgcc.a": "5604eed8308a62e7f50fa58330937bdda45aec8150ae03694ba552a0d9972d55"
+  },
+  "rvvts_revision": "ed9a96e74f9c8367ce42da5b6526b9727a18a293",
+  "compiler": "Ubuntu clang version 22.1.6 (++20260516103140+fc4aad7b5db3-1~exp1~20260516103204.74)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-22/bin\n",
+  "host": [
+    "Linux",
+    "xbd",
+    "7.0.0-38-generic",
+    "#38~24.04.4-Ubuntu SMP PREEMPT_DYNAMIC Mon Sep 14 16:37:11 UTC 2",
+    "x86_64"
+  ],
+  "argv": [
+    "/home/vick/rvv-portable88-20261012/repo/scripts/run_rvv_external.py",
+    "--rvvts",
+    "/home/vick/rvv-portable88-20261012/rvvts",
+    "--engine",
+    "/home/vick/rvv-portable88-20261012/build/bin/elfrun",
+    "--library-dir",
+    "/home/vick/rvv-portable88-20261012/build/lib",
+    "--spike",
+    "/home/vick/rvv-portable88-20261012/spike-install/bin/spike",
+    "--pk",
+    "/home/vick/rvv-portable88-20261012/pk-build3/pk",
+    "--libgcc",
+    "/usr/lib/gcc/riscv64-unknown-elf/13.2.0/rv32iafd/ilp32d/libgcc.a",
+    "--output",
+    "/home/vick/rvv-portable88-20261012/replay2",
+    "--reuse-successful-from",
+    "/home/vick/rvv-portable88-20261012/replay1"
+  ],
+  "runner_sha256": "c314d79c01acd8a50cf54266083ddce4b51d59e2a427cbf33575622f481b6c4f",
+  "checker_sha256": "390c52e26611b033f1f6d3a078447146db8a87e73ccae691c0de2b83833b3338",
+  "flags_sha256": "b6a8e0ba8fce2f70668b14c8d7bfa1194908249f21415fc1e2289bbef9dd802c"
+}

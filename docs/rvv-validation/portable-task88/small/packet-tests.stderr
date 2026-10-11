@@ -1,0 +1,7 @@
+test_full_observation_changes (test_rvv_external_packet.PacketChecks.test_full_observation_changes) ... ok
+test_transport (test_rvv_external_packet.PacketChecks.test_transport) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.008s
+
+OK

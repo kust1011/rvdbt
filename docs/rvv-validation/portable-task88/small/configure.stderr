@@ -1,0 +1,13 @@
+-- Dependency: adding libc (Linux, BSD, or other UNIX/POSIX environment)
+-- Dependency: libpthread provided by libc (not linking to libpthread)
+-- Dependency: shm_open provided by libc (not linking to librt)
+** AsmJit Summary **
+   ASMJIT_DIR=/home/vick/rvv-portable88-20261012/repo/dbt/third_party/asmjit
+   ASMJIT_TEST=FALSE
+   ASMJIT_TARGET_TYPE=STATIC
+   ASMJIT_DEPS=c
+   ASMJIT_LIBS=asmjit;c
+   ASMJIT_CFLAGS=-DASMJIT_STATIC;-DASMJIT_NO_AARCH64;-DASMJIT_NO_FOREIGN;-DASMJIT_NO_COMPILER
+   ASMJIT_PRIVATE_CFLAGS=-Wall;-Wextra;-Wconversion;-fno-math-errno;-fno-threadsafe-statics;-fno-semantic-interposition;-DASMJIT_STATIC;-DASMJIT_NO_AARCH64;-DASMJIT_NO_FOREIGN;-DASMJIT_NO_COMPILER
+   ASMJIT_PRIVATE_CFLAGS_DBG=
+   ASMJIT_PRIVATE_CFLAGS_REL=-O2;-fmerge-all-constants

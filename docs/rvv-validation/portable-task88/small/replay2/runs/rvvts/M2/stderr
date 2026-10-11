@@ -1,0 +1,23 @@
+RVV_FAST enabled=0 classes=15 chunk_bytes=64 admitted=0 chunks=0 residue_elems=0 refuse_shape=0 refuse_class=0 refuse_frm=0 fround_run_continued=0 fround_run_tb_exit_open=0 sig_checks=0 sig_hit=0 sig_miss_stale=0 sig_miss_evict=0 fuse_scan_attempted=0 fuse_scan_found=0 handler_legality_would_trap=0
+RVV_TIER bytes_t64=0 bytes_t32=0 bytes_t16=0 bytes_other=0 calls_t64=0 calls_t32=0 calls_t16=0 calls_other=0 total_bytes=0 rho_t64=0.000000
+SC_FROUND open=0 continue=0 ops=0 close_csr=0 close_mode=0 close_tbexit=0 mean_run=0.000 hist_1=0 hist_2=0 hist_3=0 hist_4=0 hist_5_8=0 hist_9_16=0 hist_17_32=0 hist_33_64=0 hist_65p=0
+RVV_STATS vlen=2048 chunk_bytes=64 chunks_per_reg=4 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0
+RVV_GATHER attempts=0 calls=0 elems=0 unmapped=0
+RVV_DIRECT enabled=1 hit_counter=1 inline_hits=80 guard_fallbacks=0
+RVV_ROUTE vsetvli handler_calls=0
+RVV_ROUTE vle32.v handler_calls=0
+RVV_ROUTE vse32.v handler_calls=0
+RVV_ROUTE vadd.vv handler_calls=0
+RVV_ROUTE vsub.vv handler_calls=0
+RVV_ROUTE vmul.vv handler_calls=0
+RVV_ROUTE vand.vv handler_calls=0
+RVV_ROUTE vor.vv handler_calls=0
+RVV_ROUTE vxor.vv handler_calls=0
+RVV_ROUTE vsll.vi handler_calls=0
+RVV_ROUTE vsrl.vi handler_calls=0
+RVV_ROUTE vmv.v.x handler_calls=0
+RVV_ROUTE vadd.vx handler_calls=0
+RVV_ROUTE vmv.v.i handler_calls=0
+RVV_ROUTE vmv.v.v handler_calls=0
+RVV_ROUTE vadd.vi handler_calls=0
+RVV_ROUTE other-vector handler_calls=0
