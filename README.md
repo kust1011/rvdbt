@@ -33,6 +33,10 @@ an AVX-512 build on a host without the required CPU features. See the existing
 design notes below for the base translator; the RVV work extends rather than
 replaces that architecture.
 
+See [validation and reproducibility](docs/rvv-validation.md) and the
+[author guide](docs/rvv-author-guide.md) for checked form scope, external evidence
+dependencies and unresolved source/signal/fault limits.
+
 ## My progress and todo
 https://hackmd.io/iDSBjMJTSTiiBJ8ODpPvTQ?both
 ## RISCV-TESTS

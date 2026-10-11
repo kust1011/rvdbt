@@ -17,3 +17,23 @@ Note that this only builds developing llvm version. There is no need to build ea
 ```bash
 ~/rvdbt$ bash scripts/benchmark.sh 19
 ```
+
+## RVV validation tools
+
+Run from the repository root with Python3.10+. See
+[validation](../docs/rvv-validation.md) for complete commands and dependencies.
+
+| Command | Action | Required external inputs |
+|---|---|---|
+| `rvv_scope_report.py` | Render frozen per-form/suite stages and select bindings | scope archive CSV/JSON |
+| `rvv_complete_inventory.py` | Recompute/check all ten canonical join outputs | complete retained evidence tree, metadata/ELFs |
+| `rvv_coverage_report.py` | Rebuild historical FORM/supplement reports | original FORM CSV and optional supplement index |
+| `verify_rvv_artifacts.py` | Verify archive sizes/digests | separately obtained named archives |
+| `audit_rvv_results.py` | Check registered saved raw records | replay archive/results and inputs |
+| `build_rvv_chips.py` | Compile retained CHIPS assembly | pinned CHIPS/environment, Clang/LLD20 |
+| `run_rvv_smoke.py --build-only` | Rebuild/verify bundled fixture | same pinned headers/toolchain |
+| `run_rvv_smoke.py` / `rvv_tests.py` | Execute registered guests, record a new DUT identity | engine/library, compatible host, fixture/manifest |
+
+`python3 -m unittest discover -s scripts -p 'test_rvv*.py'` tests host tools,
+including stage classification and failure controls. It supplies no ISA results.
+Suite-specific historical adapters are not a portable all-suite runner.

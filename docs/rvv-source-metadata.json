@@ -1,0 +1,31 @@
+{
+  "verification": "local pinned Git object metadata; project labels only, no guessed personal authors or DOI",
+  "sources": [
+    {
+      "source": "rvv_atg",
+      "origin": "https://github.com/hushenwei2000/rvv-atg.git",
+      "revision": "490714595cc6c44bc9fe31dc85a3c2bedb1cd99b",
+      "pinned_metadata_sha256": {
+        "README.md": "ccc0ec487875ab2dd971c710e4ff727e9b9c198bcb2bf1e51d46b4348caca511"
+      }
+    },
+    {
+      "source": "sifive_rif",
+      "origin": "https://github.com/sifive/riscv-vector-intrinsic-fuzzing.git",
+      "revision": "30a75c61b4678b3f3b029f77b104ca39ddbe7f8c",
+      "pinned_metadata_sha256": {
+        "README.md": "6d0aeba8f586e1610f23f4b1df293d4af9f1d439b9b20fc1b9cd58496ce56713",
+        "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    },
+    {
+      "source": "rvismith",
+      "origin": "https://github.com/yibo2000/RVISmith.git",
+      "revision": "599e005ec564a723107bc3c114dce12130947837",
+      "pinned_metadata_sha256": {
+        "README.md": "4701f14b5d7bc115d19bc23d0d6aeb18815bbd7a556c2fbaf95027991ad4865d",
+        "License.txt": "e26184502a67fec0a3458791afb4c3412a926f36c477630a6af43c11c8b8e52f"
+      }
+    }
+  ]
+}

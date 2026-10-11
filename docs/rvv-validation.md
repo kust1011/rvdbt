@@ -4,6 +4,66 @@ The validation has two separate responsibilities: external test programs check
 instruction behavior, while the runner checks that the intended program ran and
 that failures propagate. Passing the runner's unit tests is not ISA coverage.
 
+## Current scope and reproducible index
+
+The current canonical stage index separates source presence, compilation/static
+emission, program execution, target/result checking, coupled endpoints, diagnostics
+and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara301 and
+SiFive RIF194, with union595. RVVTS58, RVISmith43 and libriscv194 are coupled
+endpoints. An opcode in a successful program need not have executed or influenced
+its output. The clean961 candidate has its own checked union595; historical2af5
+and the performance binary remain distinct. See the [author guide](rvv-author-guide.md)
+for provenance, implementation/checker/raw-result tracing and unresolved limits.
+
+Obtain the immutable `scope-evidence.tar.gz` listed in the artifact manifest and
+extract it into a new directory. It contains the current canonical outputs and
+original per-form input, not new executions or a complete raw/source corpus.
+From the code checkout, render a frozen index or select exact binding rows:
+
+```sh
+python3 scripts/rvv_scope_report.py \
+  --forms "$SCOPE/FORM_VERIFICATION_EVIDENCE.csv" \
+  --summary "$SCOPE/ACTUAL_FORM_VALIDATION_SUMMARY.json" \
+  --bindings "$SCOPE/ACTUAL_FORM_VALIDATION_BINDINGS.csv" \
+  --form vsmul.vv --output new-form-report
+```
+
+`SCOPE` is the extracted archive directory. This command uses Python3.10+ and
+only reads saved index data; it reports input hashes, retains candidate scopes,
+and never treats unknown stage membership as zero coverage. Bindings retain
+original provenance paths; follow the archive's dependency record for raw data.
+
+To recompute the complete joins, obtain the separately retained evidence tree
+with its `artifacts/` layout and dependencies listed in the scope archive:
+
+```sh
+python3 scripts/rvv_complete_inventory.py --evidence-root "$EVIDENCE" --check
+python3 scripts/rvv_complete_inventory.py --evidence-root "$EVIDENCE" \
+  --output new-complete-report
+```
+
+`--check` compares all ten canonical outputs without writing. `--output` requires
+a new directory and relocates Markdown evidence links. These commands rebuild
+summaries from retained tables, metadata and ELFs; they do not execute tests or
+certify raw-result truth. Missing inputs fail or remain explicit missing joins.
+The full tree is still required; this archive does not silently supply it.
+The older `rvv_coverage_report.py` regenerates the historical FORM/supplement
+view and is not the current all-suite join.
+
+For artifact integrity, run `scripts/verify_rvv_artifacts.py --archive-root
+"$ARCHIVES"`; the archive root may contain the named delivery subdirectories.
+Digest/size verification proves transport identity, not ISA correctness.
+
+Only `rvv_tests.py` and `run_rvv_smoke.py` below actually execute registered guests.
+The latter's `--build-only` compiles one fixture, without DUT execution. Original
+suite-specific generation/campaign scripts are retained research evidence;
+no portable all-suite execution runner is supplied. The source lock documents
+pinned fetch entry points and licensing. CHIPS is the bundled runnable fixture;
+RVV-ATG lacks a redistribution license in the pinned tree, and RVISmith restricts
+redistribution/modification/use, so their fixtures are not copied into this repo.
+Obtain any required permission before reuse. Pinned fetch instructions describe
+source retrieval, not a promise of a working all-suite campaign.
+
 ## Registered test replay
 
 `scripts/rvv_tests.py` runs self-checking RV32 ELFs from a registered manifest.
@@ -167,7 +227,7 @@ the repository does not advertise an unavailable public download.
 ID against the original coverage bundle, including additions prepended to the
 index. It retains a 28-record coverage-v16 snapshot of the index, original CSV,
 exporter and reports, plus the additions' actual evidence and correction history.
-The current full index is coverage-v21 with 41 records; this archive does not
+That later historical index is coverage-v21 with 41 records; this archive does not
 contain that later index.
 The archive contains 7,809 files, 60 accepted candidate executions and four
 superseded candidate records; those counts are separate from its eight affected
@@ -207,8 +267,8 @@ compared; those controls are harness checks, not additional external ISA tests.
 
 `final-evidence.tar.gz` in the delivery's `final-evidence-bundle/` directory
 packages the remaining 13 supplement IDs against the immutable 28-record
-`oct10-evidence.tar.gz` snapshot. It contains the current 41-record index,
-original source CSV, current exporter, and Task42's readable coverage-v22 report
+`oct10-evidence.tar.gz` snapshot. It contains the 41-record historical supplement index,
+original source CSV, its exporter, and the readable coverage-v22 report
 (627 forms, 595 applicable, 647 report files). Original report JSON regenerates
 byte-identically in a fresh extraction. The eight earlier archives remain unchanged.
 

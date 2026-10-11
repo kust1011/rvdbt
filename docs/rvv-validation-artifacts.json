@@ -100,6 +100,18 @@
       "P3_38_original_FAIL_packets": 2,
       "new_DUT_executions": 0,
       "scope": "13-ID delta against immutable 28-record oct10 snapshot; current CSV/index, current exporter and Task42 readable coverage-v22; selected original evidence, failures, adapters, inputs/oracles/commands/raw and review dependencies; fresh extraction validates payload/navigation/raw bindings and byte-identical report JSON; historical2af5 distinct from clean961; P3-38 bounded offline observation retains original whole-test FAIL, no new PASS; P4 separate; named prior archive and remote tool dependencies explicit; no turnkey replay"
+    },
+    {
+      "file": "scope-evidence.tar.gz",
+      "kind": "immutable_current_stage_index",
+      "sha256": "f746486b7ea663bedafcf4b603119d41a108b979485e8fbd97e263203ea5f27d",
+      "bytes": 11978721,
+      "forms": 627,
+      "applicable_forms": 595,
+      "ledger_rows": 98359,
+      "bindings": 45814,
+      "new_DUT_executions": 0,
+      "scope": "Current canonical ten outputs/check, original FORM input, dependency hashes, preserved original exporters and portable frozen-scope renderer. Source/checker/candidate/derivative stages, missing joins and diagnostic quarantine retained. Full join regeneration/raw review require separate evidence tree. No binary replacement or restricted upstream source redistribution."
     }
   ]
 }
