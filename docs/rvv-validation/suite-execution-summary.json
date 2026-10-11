@@ -1219,6 +1219,7 @@
   ],
   "limitations": [
     "Receipt groups are registered observations, not exhaustive producer/reference calls.",
+    "CHIPS primary 11,532 positive + 212 controls per candidate are DUT executions, already counted; 60 explicit additional reference receipts are separate. Producer reference counts are not inferred.",
     "Ara85 separate 8 DUT/2 Spike reproductions are outside these overlay bindings; do not guess joins.",
     "SOURCE_SUPPORT compiler stdout is excluded; explicit same-ELF QEMU requires reference status and /qemu/ locator.",
     "SCOPED_ACCEPTANCE and source/status rows are not additional calls.",

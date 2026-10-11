@@ -20,7 +20,9 @@ cmp docs/rvv-validation/current-scope/compact-input.json /tmp/new-rvv-compact-vi
 
 Use an unused output directory. `source-manifest.json` records canonical input
 names, byte lengths and SHA256, plus the bundled projection and reproducer hashes. With permission
-and access to those original files, reproduce the projection itself:
+and access to those original files, the following `--forms`/`--summary` command
+rebuilds the original Task76 projection. It does not produce the current Ara422
+edition; use the later Task87/90 overlay procedure for that edition:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv_compact_scope.py \
@@ -72,8 +74,8 @@ binding schemas with explicit `SCOPED_ACCEPTANCE` rows; these rows are bindings,
 not new guest calls. Original rows and other-suite fields are preserved. Historical
 registration counts remain labeled separately from overlay bindings.
 
-To rebuild that derived edition from the original accepted inputs (author archive
-access required), supply the immutable Task87 bundled projection as `--input` and Task87 canonical tables as `--canonical`:
+To rebuild the current Ara422 Task90 edition through the Task87/90 overlay
+procedure (author archive access required), supply the immutable Task87 bundled projection as `--input` and Task87 canonical tables as `--canonical`:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv_compact_scope.py \

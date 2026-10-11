@@ -12,7 +12,7 @@ Original suite universes remain **UNKNOWN** for all five suites.
 |---|---|---|---|
 | CHIPS clean961 | 11,636 positive PASS | See reference rows below | 212 successful rejection calls; 32 Task54 prelaunch BLOCKED cells |
 | CHIPS historical2af5 | 11,568 positive PASS | — | 212 successful rejection calls |
-| CHIPS explicit references | — | 60 PASS: pspike17, Spike17, QEMU26 | Primary crosscheck is separate below |
+| CHIPS explicit references | — | 60 PASS: pspike17, Spike17, QEMU26 | Separate from primary DUT executions below |
 | ACT clean961 | 7,920 PASS | — | Eight Task53 prelaunch BLOCKED cells |
 | ACT historical2af5 / historical-f8123 | 256 / 160 PASS | — | Separate prior candidates |
 | ACT historical-unresolved | 6,624 retained BLOCKED diagnostic receipts | — | 8,188 further BLOCKED execution rows lack usable raw locators; candidate/ELF recovery unresolved |
@@ -107,12 +107,13 @@ overlap; do not sum them. Same-ELF QEMU registrations are611 O2 diagnostic,
 field additionally included108 compiler stdout records with reference_status
 NOT_RUN; this report excludes them without rewriting immutable inputs.
 
-References are incomplete registrations. In particular, CHIPS primary reference
-crosschecks separately establish **11,532 positive + 212 controls per candidate**
-(clean961 and historical2af5); they are not the ledger's 60 explicit additional
-reference receipts. CHIPS full local scope also has Task47 supplements and Task54
-outputs/profiles. Do not replace those cohorts with primary-package counts or add
-the primary crosscheck again as DUT calls. See [primary inspection](chips-review-task93/README.md)
+References are incomplete registrations. CHIPS primary **DUT executions** comprise
+**11,532 positive + 212 controls per candidate** (clean961 and historical2af5),
+already included in the DUT partitions above. These are not reference executions
+or crosschecks. The ledger's **60 explicit additional reference receipts** are
+separate; producer reference counts are not inferred. CHIPS full local scope also
+has Task47 supplements and Task54 outputs/profiles. Do not replace those cohorts
+with primary-package counts or count the primary DUT executions twice. See [primary inspection](chips-review-task93/README.md)
 and its `RECEIPT_MAPPING.json`, `SOURCE_CHAIN.json` and retained
 `tools/runner.original.py` (`classify`). Original upstream TEST_CASE expected words,
 selected destination/store/CSR checks, stage1/stage2 sources, captured patches and
@@ -242,6 +243,7 @@ result = dict(canonical=str(root), new_calls=0,
     ara_audits=e['batch_counts'], ara89_unique_calls=e['ara89']['unique_calls'],
     ara89_parser_controls=e['ara89']['review']['negative_parser_controls'],
     limitations=['Receipt groups are registered observations, not exhaustive producer/reference calls.',
+        'CHIPS primary 11,532 positive + 212 controls per candidate are DUT executions, already counted; 60 explicit additional reference receipts are separate. Producer reference counts are not inferred.',
         'Ara85 separate 8 DUT/2 Spike reproductions are outside these overlay bindings; do not guess joins.',
         'SOURCE_SUPPORT compiler stdout is excluded; explicit same-ELF QEMU requires reference status and /qemu/ locator.',
         'SCOPED_ACCEPTANCE and source/status rows are not additional calls.',

@@ -32,6 +32,11 @@ archive manifest and offline checks are committed; the approximately 627 MB
 archive payload is prepared but its download location is still pending.
 Do not mistake the committed manifest for a published data download.
 
+The [suite execution accounting summary](rvv-validation/suite-execution-summary.md)
+and its JSON separate distinct registered DUT/reference receipts, controls, source
+dispositions and Ara overlays. These counts preserve candidate scopes and are
+not original suite universes or exhaustive producer reference counts.
+
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
 and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara422 and
