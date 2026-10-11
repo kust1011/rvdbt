@@ -1,0 +1,2335 @@
+{
+  "task": 101,
+  "status": "PASS",
+  "release": {
+    "url": "https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012",
+    "id": 409971538,
+    "tag": "rvv-validation-20261012",
+    "target_commitish": "49c44174fe95b68d85fcecf01b2a3bf8731e74d3",
+    "tag_object": {
+      "sha": "49c44174fe95b68d85fcecf01b2a3bf8731e74d3",
+      "type": "commit",
+      "url": "https://api.github.com/repos/kust1011/rvdbt/git/commits/49c44174fe95b68d85fcecf01b2a3bf8731e74d3"
+    },
+    "published_at": "2026-10-11T22:53:55Z",
+    "draft": false,
+    "prerelease": false,
+    "assets": 97
+  },
+  "completed": {
+    "status": "PASS",
+    "completed_utc": "2026-10-11T23:03:21.563821+00:00",
+    "new_ISA_runs": 0,
+    "new_goldens": 0,
+    "archives": 95,
+    "commands": 14,
+    "original_failures_preserved": true
+  },
+  "selection": {
+    "CHIPS94_archives": 94,
+    "CHIPS94_bytes": 626904876,
+    "ACT100_archives": 1,
+    "ACT100_bytes": 334470849,
+    "total_archive_bytes": 961375725,
+    "manifests": 2,
+    "frozen_manifests": [
+      {
+        "file": "/home/vick/rvv-task101/CHIPS94_ARCHIVES.json",
+        "bytes": 29090,
+        "sha256": "e327f0a5c043f453e1a5a32b72005c886e48573cd99326cd4059b81ddc73d8a0"
+      },
+      {
+        "file": "/home/vick/rvv-task101/ACT100_MANIFEST.json",
+        "bytes": 541,
+        "sha256": "fa4944de8861e5ff4e17d798032228ce287e0ac7516c734d252c0eccec354703"
+      }
+    ],
+    "preflight": {
+      "status": "PASS",
+      "archives": 95,
+      "compressed_bytes": 961375725,
+      "scan": [
+        {
+          "file": "chips-carrymove128.tar.gz",
+          "members": 1695,
+          "raw_bytes": 80553411,
+          "licenses": []
+        },
+        {
+          "file": "chips-compare128.tar.gz",
+          "members": 2283,
+          "raw_bytes": 129527510,
+          "licenses": []
+        },
+        {
+          "file": "chips-config_checks1024.tar.gz",
+          "members": 115,
+          "raw_bytes": 491097,
+          "licenses": []
+        },
+        {
+          "file": "chips-core.tar.gz",
+          "members": 119061,
+          "raw_bytes": 639062251,
+          "licenses": [
+            "licenses/GEM5_ASMTEST_BSD.txt",
+            "licenses/LOCAL-MIT.txt",
+            "licenses/TESTFLOAT_NOTICE.md"
+          ]
+        },
+        {
+          "file": "chips-divcompare1024--fail256.tar.gz",
+          "members": 2,
+          "raw_bytes": 0,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--fail256_B.tar.gz",
+          "members": 3,
+          "raw_bytes": 1938,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--fail256_BOTH.tar.gz",
+          "members": 3,
+          "raw_bytes": 2055,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--fail256_M1.tar.gz",
+          "members": 3,
+          "raw_bytes": 2055,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--fail256_M2.tar.gz",
+          "members": 3,
+          "raw_bytes": 1938,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--fail256_reference.tar.gz",
+          "members": 3,
+          "raw_bytes": 260,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--generate.stderr.tar.gz",
+          "members": 1,
+          "raw_bytes": 45,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--generate.stdout.tar.gz",
+          "members": 1,
+          "raw_bytes": 0,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--merge.stderr.tar.gz",
+          "members": 1,
+          "raw_bytes": 0,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--merge.stdout.tar.gz",
+          "members": 1,
+          "raw_bytes": 0,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--metadata.tar.gz",
+          "members": 6,
+          "raw_bytes": 2953067,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vdiv_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14332407,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vdiv_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 114842749,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vdivu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14310253,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vdivu_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 114515525,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmseq_vi.tar.gz",
+          "members": 140,
+          "raw_bytes": 62571706,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmseq_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14328079,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmseq_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94008167,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsgt_vi.tar.gz",
+          "members": 140,
+          "raw_bytes": 62653765,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsgt_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14328982,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsgt_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94057463,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsgtu_vi.tar.gz",
+          "members": 140,
+          "raw_bytes": 62620809,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsgtu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14331320,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsgtu_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94071644,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsle_vi.tar.gz",
+          "members": 140,
+          "raw_bytes": 62642765,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsle_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14330344,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsle_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94075442,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsleu_vi.tar.gz",
+          "members": 140,
+          "raw_bytes": 62652482,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsleu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14328925,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsleu_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94114721,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmslt_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14325316,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmslt_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94051685,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsltu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14327110,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsltu_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94098854,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsne_vi.tar.gz",
+          "members": 140,
+          "raw_bytes": 62651564,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsne_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14328904,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmsne_vx.tar.gz",
+          "members": 196,
+          "raw_bytes": 94106273,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmulh_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14307156,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmulh_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 114705227,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmulhsu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14339847,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmulhsu_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 115073179,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmulhu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14285146,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vmulhu_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 114348153,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vrem_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14268973,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vrem_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 114571021,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vremu_vv.tar.gz",
+          "members": 84,
+          "raw_bytes": 14252245,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--vremu_vx.tar.gz",
+          "members": 252,
+          "raw_bytes": 114685169,
+          "licenses": []
+        },
+        {
+          "file": "chips-divcompare1024--wrong.tar.gz",
+          "members": 17,
+          "raw_bytes": 8251,
+          "licenses": []
+        },
+        {
+          "file": "chips-division_edges1024.tar.gz",
+          "members": 720,
+          "raw_bytes": 276157578,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_fp128.tar.gz",
+          "members": 183,
+          "raw_bytes": 7957105,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_scalar1024.tar.gz",
+          "members": 547,
+          "raw_bytes": 272475146,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_scalar128.tar.gz",
+          "members": 547,
+          "raw_bytes": 40295907,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_vadd128.tar.gz",
+          "members": 127,
+          "raw_bytes": 2964723,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_vset128.tar.gz",
+          "members": 72,
+          "raw_bytes": 641842,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_vsetivli1024.tar.gz",
+          "members": 71,
+          "raw_bytes": 237908,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_vsetivli128.tar.gz",
+          "members": 71,
+          "raw_bytes": 237871,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_vsetvl1024.tar.gz",
+          "members": 71,
+          "raw_bytes": 44435,
+          "licenses": []
+        },
+        {
+          "file": "chips-elen64_vsetvl128.tar.gz",
+          "members": 71,
+          "raw_bytes": 44374,
+          "licenses": []
+        },
+        {
+          "file": "chips-fixed1024.tar.gz",
+          "members": 2310,
+          "raw_bytes": 953533194,
+          "licenses": []
+        },
+        {
+          "file": "chips-fp1024.tar.gz",
+          "members": 154,
+          "raw_bytes": 33788765,
+          "licenses": []
+        },
+        {
+          "file": "chips-fpconvert128.tar.gz",
+          "members": 1555,
+          "raw_bytes": 61608167,
+          "licenses": []
+        },
+        {
+          "file": "chips-fpfma128.tar.gz",
+          "members": 6539,
+          "raw_bytes": 462251799,
+          "licenses": []
+        },
+        {
+          "file": "chips-fpmath128.tar.gz",
+          "members": 6539,
+          "raw_bytes": 476707264,
+          "licenses": []
+        },
+        {
+          "file": "chips-fprest128.tar.gz",
+          "members": 7603,
+          "raw_bytes": 540822865,
+          "licenses": []
+        },
+        {
+          "file": "chips-geometry2048.tar.gz",
+          "members": 712,
+          "raw_bytes": 432404781,
+          "licenses": []
+        },
+        {
+          "file": "chips-geometry256.tar.gz",
+          "members": 799,
+          "raw_bytes": 63106842,
+          "licenses": []
+        },
+        {
+          "file": "chips-geometry4096.tar.gz",
+          "members": 712,
+          "raw_bytes": 857392631,
+          "licenses": []
+        },
+        {
+          "file": "chips-geometry512.tar.gz",
+          "members": 799,
+          "raw_bytes": 115672697,
+          "licenses": []
+        },
+        {
+          "file": "chips-indexload128.tar.gz",
+          "members": 3235,
+          "raw_bytes": 94705508,
+          "licenses": []
+        },
+        {
+          "file": "chips-indexstore128.tar.gz",
+          "members": 2731,
+          "raw_bytes": 53975674,
+          "licenses": []
+        },
+        {
+          "file": "chips-int16_fp32_convert128.tar.gz",
+          "members": 379,
+          "raw_bytes": 11434474,
+          "licenses": []
+        },
+        {
+          "file": "chips-intbasic128.tar.gz",
+          "members": 6175,
+          "raw_bytes": 374139819,
+          "licenses": []
+        },
+        {
+          "file": "chips-intdiv128.tar.gz",
+          "members": 1611,
+          "raw_bytes": 102559889,
+          "licenses": []
+        },
+        {
+          "file": "chips-long1024.tar.gz",
+          "members": 490,
+          "raw_bytes": 102299240,
+          "licenses": []
+        },
+        {
+          "file": "chips-long4096.tar.gz",
+          "members": 286,
+          "raw_bytes": 189771630,
+          "licenses": []
+        },
+        {
+          "file": "chips-mask1024.tar.gz",
+          "members": 266,
+          "raw_bytes": 32993862,
+          "licenses": []
+        },
+        {
+          "file": "chips-maskaux1024.tar.gz",
+          "members": 266,
+          "raw_bytes": 14981859,
+          "licenses": []
+        },
+        {
+          "file": "chips-memory1024.tar.gz",
+          "members": 434,
+          "raw_bytes": 74315822,
+          "licenses": []
+        },
+        {
+          "file": "chips-memory1024_storage.tar.gz",
+          "members": 98,
+          "raw_bytes": 22190290,
+          "licenses": []
+        },
+        {
+          "file": "chips-narrowfixed128.tar.gz",
+          "members": 13595,
+          "raw_bytes": 1026697141,
+          "licenses": []
+        },
+        {
+          "file": "chips-permute128.tar.gz",
+          "members": 1723,
+          "raw_bytes": 100271190,
+          "licenses": []
+        },
+        {
+          "file": "chips-reduction128.tar.gz",
+          "members": 827,
+          "raw_bytes": 24513493,
+          "licenses": []
+        },
+        {
+          "file": "chips-strideload128.tar.gz",
+          "members": 2955,
+          "raw_bytes": 87077259,
+          "licenses": []
+        },
+        {
+          "file": "chips-stridestore128_storage.tar.gz",
+          "members": 1993,
+          "raw_bytes": 71503479,
+          "licenses": []
+        },
+        {
+          "file": "chips-unitmemory128.tar.gz",
+          "members": 1835,
+          "raw_bytes": 22136235,
+          "licenses": []
+        },
+        {
+          "file": "chips-vssub_flags1024.tar.gz",
+          "members": 774,
+          "raw_bytes": 302894381,
+          "licenses": []
+        },
+        {
+          "file": "chips-vssub_flags_edges1024.tar.gz",
+          "members": 128,
+          "raw_bytes": 16901011,
+          "licenses": []
+        },
+        {
+          "file": "chips-vssub_sticky1024.tar.gz",
+          "members": 70,
+          "raw_bytes": 6763789,
+          "licenses": []
+        },
+        {
+          "file": "chips-whole128.tar.gz",
+          "members": 771,
+          "raw_bytes": 1946917,
+          "licenses": []
+        },
+        {
+          "file": "chips-widen128.tar.gz",
+          "members": 2283,
+          "raw_bytes": 129583361,
+          "licenses": []
+        },
+        {
+          "file": "act-primary-task100.tar.gz",
+          "members": 111384,
+          "raw_bytes": 4339804150,
+          "licenses": [
+            "licenses/ACT-COPYING.APACHE",
+            "licenses/ACT-COPYING.BSD",
+            "licenses/ACT-COPYING.CC",
+            "licenses/ACT-README.md",
+            "licenses/BSD-3-Clause-Clear.txt"
+          ]
+        }
+      ],
+      "excluded": "No archive links/escaping/duplicate paths, listed restricted directories, binary suffixes or ELF magic; frozen identities matched; license members retained."
+    },
+    "old_ACT99_uploaded": false
+  },
+  "public_download": {
+    "status": "PASS",
+    "assets": [
+      {
+        "file": "act-primary-task100.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/act-primary-task100.tar.gz",
+        "bytes": 334470849,
+        "sha256": "b328dc51b6f42cb8e49dca01246319a0e0610b0acb4ef4fc7a849bfa1df10ea4",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "ACT100_MANIFEST.json",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/ACT100_MANIFEST.json",
+        "bytes": 541,
+        "sha256": "fa4944de8861e5ff4e17d798032228ce287e0ac7516c734d252c0eccec354703",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-carrymove128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-carrymove128.tar.gz",
+        "bytes": 4045463,
+        "sha256": "6ddc95ab561f5cc7e7725a750b387ee8e595b9c1c9aaba0df3373701283a0dea",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-compare128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-compare128.tar.gz",
+        "bytes": 6050090,
+        "sha256": "c54575babd932bbaa7f3d07fb769f83d4b76357c00ca3b575a00fb27b384babe",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-config_checks1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-config_checks1024.tar.gz",
+        "bytes": 34251,
+        "sha256": "ef54b4242623c4f08878e6d22feb808817ef6705ca143797ec7cf55214f14b73",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-core.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-core.tar.gz",
+        "bytes": 71472252,
+        "sha256": "0c51fef64013ee8d5a0873806c17b5457b90182fa3882bf974fc4a2e0d44654b",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--fail256.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--fail256.tar.gz",
+        "bytes": 184,
+        "sha256": "084a54a69cd513bf7f2d6d51acd1bc41f55fa0efa18077e2de7a0319ffce1ccc",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--fail256_B.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--fail256_B.tar.gz",
+        "bytes": 763,
+        "sha256": "210a8efc2570f27527ad93851bee2fdac68b5f494029ff16b18e780cff3d98bb",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--fail256_BOTH.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--fail256_BOTH.tar.gz",
+        "bytes": 814,
+        "sha256": "c30b300c8baf8ea5324214fe81690a8038a0425375f0f8424cf10ffaa6e6dc57",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--fail256_M1.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--fail256_M1.tar.gz",
+        "bytes": 811,
+        "sha256": "18314d64266ff5131ce871b1eb7e72eee6381b981187edf5486809e42c5ccba9",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--fail256_M2.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--fail256_M2.tar.gz",
+        "bytes": 765,
+        "sha256": "23cde35122b6d189d7bd321b838de1be3dc0fbb79d044949851027815b659c9a",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--fail256_reference.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--fail256_reference.tar.gz",
+        "bytes": 407,
+        "sha256": "26643ba166b3b1fd552f38cd57fa618bf815fda7dc1efe6ac30f8b4325a35cc2",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--generate.stderr.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--generate.stderr.tar.gz",
+        "bytes": 226,
+        "sha256": "f68a5b4b1fb87c448f93727aca0dd840766ec27525719cf868bdd1415f3d6a3a",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--generate.stdout.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--generate.stdout.tar.gz",
+        "bytes": 171,
+        "sha256": "6a19db891c8c22a6ecee51c7f5a4c0268aa4176e6031167cbb1ab1ccd89e28c8",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--merge.stderr.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--merge.stderr.tar.gz",
+        "bytes": 166,
+        "sha256": "6f9ed476372480f6bbc8ff9f71083cfd1525f832fa14a5aea4f70b29ef3e2be1",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--merge.stdout.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--merge.stdout.tar.gz",
+        "bytes": 166,
+        "sha256": "d78117f6ac5cab07ad87c40b2c000ed4045dfcc78109b6cce96c9292c6a3deb1",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--metadata.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--metadata.tar.gz",
+        "bytes": 115336,
+        "sha256": "c5c5ca460008c45c35280b7e07423987b437dbc149bd1dae8c3f0a7483554913",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vdivu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vdivu_vv.tar.gz",
+        "bytes": 683008,
+        "sha256": "6dc35b1188995716eee17530b64a8a8871bfd27cc20e57589b4b76286d0752d4",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vdivu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vdivu_vx.tar.gz",
+        "bytes": 7399063,
+        "sha256": "ba1ba6bcdb51d726014cf323460cdc6bb105aab4962ff2d09cdffaa173bc28a9",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vdiv_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vdiv_vv.tar.gz",
+        "bytes": 684260,
+        "sha256": "cf00889c4278ce4908546cf59fddd2ad0d32305632d17176b8fc34f6f62842a5",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vdiv_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vdiv_vx.tar.gz",
+        "bytes": 7457156,
+        "sha256": "af6ec836960c02ea7107fdc95da2a40dbf5a4044463f0cace8b6f28fe88033e7",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmseq_vi.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmseq_vi.tar.gz",
+        "bytes": 4335881,
+        "sha256": "226042682ec0f8bcf862c75d3e35d3613897eaf4a2ee013054a5d1f92042b5be",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmseq_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmseq_vv.tar.gz",
+        "bytes": 720359,
+        "sha256": "80423826519203f95530e1e8c22954a316eddfcff0322e75f5d49f033e32d01b",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmseq_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmseq_vx.tar.gz",
+        "bytes": 6577402,
+        "sha256": "fc2d7f3a8c63b817839bcc2e3e88436e322cac8c781221f604d75e3a2f2fd6ad",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsgtu_vi.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsgtu_vi.tar.gz",
+        "bytes": 4340417,
+        "sha256": "a41e0239688d8555d1f53aca30a78237b2aa790300b0bc1299dbe356fbb84cb4",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsgtu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsgtu_vv.tar.gz",
+        "bytes": 720908,
+        "sha256": "ba0f422394696f461cea409b23f39d960a3a53c18b848a30a5cd4d210070017b",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsgtu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsgtu_vx.tar.gz",
+        "bytes": 6592714,
+        "sha256": "52d68ccaa83303e8c722f62cab5d3f760ebd32c16b4071356053f4b8030f3a21",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsgt_vi.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsgt_vi.tar.gz",
+        "bytes": 4353911,
+        "sha256": "c9a4f6c256a56cefa3a134811bbe57a8987ef12d293715229352c318086507b7",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsgt_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsgt_vv.tar.gz",
+        "bytes": 720894,
+        "sha256": "679f401addf228bfc7e519a2e3b41104e18ead77df99157284b1ea63f21a9da6",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsgt_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsgt_vx.tar.gz",
+        "bytes": 6609600,
+        "sha256": "2419b1c468fb8ab49d60a04cc6b264ec7bedf484c073ce937e768518e165a580",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsleu_vi.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsleu_vi.tar.gz",
+        "bytes": 4340006,
+        "sha256": "254852af8b130b1326be17489097df1ddb2672971da6cdce0c61e23718067b82",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsleu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsleu_vv.tar.gz",
+        "bytes": 721096,
+        "sha256": "5aefe34b67f6455a1be38a5eb3dfe2f0c40523334102654bd411d3bd8e7f7a43",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsleu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsleu_vx.tar.gz",
+        "bytes": 6600002,
+        "sha256": "0888a32f7d7d6fa764d072f9430675061eb4103929c23af031da65939b5e298c",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsle_vi.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsle_vi.tar.gz",
+        "bytes": 4355693,
+        "sha256": "a53a308554eb00e8b3579332326fa31776dd2ff693c6688b8d4e44dfa5faf0ae",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsle_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsle_vv.tar.gz",
+        "bytes": 720916,
+        "sha256": "4d4892b5862c64b1afc567421eb5677085e177e3d2f2361b25cf1ae6892f21df",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsle_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsle_vx.tar.gz",
+        "bytes": 6611268,
+        "sha256": "8e39928c4ea0d6b3a95208f5bcadedb86effe3ae77ac669372b80b806d00e115",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsltu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsltu_vv.tar.gz",
+        "bytes": 720482,
+        "sha256": "9eabaccd819c587f8b584648ef835eb5c8cc28d84fad9d94a5aa379859f542dc",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsltu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsltu_vx.tar.gz",
+        "bytes": 6590136,
+        "sha256": "34c950c6b043bf26bb9347537ca9c95c7fe0bf1fc3e18de62453a65f16c57932",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmslt_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmslt_vv.tar.gz",
+        "bytes": 719686,
+        "sha256": "9261626a9819dc079b0acd92ca94da52f1f9bd50a6157efa894979324f77b392",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmslt_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmslt_vx.tar.gz",
+        "bytes": 6601036,
+        "sha256": "271c706925fcd9ebbb771c79743d24add784ce9db4a046669836b59c731e676d",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsne_vi.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsne_vi.tar.gz",
+        "bytes": 4340978,
+        "sha256": "ea2ecdede039162e0439e8bc3c2d1414fae25e14045aba4a99a57052af99d5d1",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsne_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsne_vv.tar.gz",
+        "bytes": 720870,
+        "sha256": "bff42a7e4691c6c000a2205330f48be853f77ab1b08b119327437b457929505b",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmsne_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmsne_vx.tar.gz",
+        "bytes": 6581572,
+        "sha256": "3b7f9d5dbf6e7ca9e2152a64dece62e34f694d459ddfeb1ea481215974a5d37f",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmulhsu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmulhsu_vv.tar.gz",
+        "bytes": 684872,
+        "sha256": "602a715d469e1e5fee01cc9382a8b1f80c5d6ea89f849b299d5fa7cb990ad3e4",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmulhsu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmulhsu_vx.tar.gz",
+        "bytes": 7478881,
+        "sha256": "e4fb5c3e3f9972f46db41e0896f4c386d7f6e34f8743bbc841d7f8544cb0728a",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmulhu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmulhu_vv.tar.gz",
+        "bytes": 680395,
+        "sha256": "0e096a00e028551b53b3ca1676d1b7a4b598f478678a59eb7bc84d32b0573da2",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmulhu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmulhu_vx.tar.gz",
+        "bytes": 7456321,
+        "sha256": "4c76b8b6ae8492cb829b433bbd8ccdc2a2eba388cb03285a227e039ac28c3cb8",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmulh_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmulh_vv.tar.gz",
+        "bytes": 681241,
+        "sha256": "9d5950c4874150948cdce989d2cbdc16851699f2e5c3087b366654430e0c3478",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vmulh_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vmulh_vx.tar.gz",
+        "bytes": 7453161,
+        "sha256": "b8477ff33b019d4efa5f245f08bd08460cfe00e9d456251e25f172f1b95fdf0d",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vremu_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vremu_vv.tar.gz",
+        "bytes": 679867,
+        "sha256": "e7d9b6816b0534331a04b8c229c57346056671367618539eab9ba44ffa3150f2",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vremu_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vremu_vx.tar.gz",
+        "bytes": 7481145,
+        "sha256": "ae2e962f75bd129ec774d27ae88e9386a199ef87cf7d1b1946e69b47db7af408",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vrem_vv.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vrem_vv.tar.gz",
+        "bytes": 678399,
+        "sha256": "76c66286b1bf122ec50c6c4f3698cdbb6d26f14d772063d76e73ec30e593e83c",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--vrem_vx.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--vrem_vx.tar.gz",
+        "bytes": 7387123,
+        "sha256": "1cdd326d1fdd4260f0dc690172d00bbc32987a3cb0aa2c573b2993f8c5fbbdd1",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-divcompare1024--wrong.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-divcompare1024--wrong.tar.gz",
+        "bytes": 1366,
+        "sha256": "8f09cb4668f424f8cef32cec584786ae2dc55ed2259b56fbf5f583a94462aee0",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-division_edges1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-division_edges1024.tar.gz",
+        "bytes": 17511787,
+        "sha256": "89dbc0e6cb5be16d3719655e5e0feac969fde37a700ccbba532ce040aae38a32",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_fp128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_fp128.tar.gz",
+        "bytes": 242181,
+        "sha256": "6d07a591a3c278c745fb472d0b04cc993dabc51f3fb073ce80edb2cd7bd7ee8a",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_scalar1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_scalar1024.tar.gz",
+        "bytes": 17105601,
+        "sha256": "0a85d4b4fc62533ac11e60de5b97cf8bf38391afe990472ad71f65169fb457d1",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_scalar128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_scalar128.tar.gz",
+        "bytes": 1703524,
+        "sha256": "eaa538f8708bd710a2809ad2d537af8a64b25f37fed80554f0e14c1218460cc1",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_vadd128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_vadd128.tar.gz",
+        "bytes": 119571,
+        "sha256": "cae14782d5c631f4f1af53c9400fc20fec7bffe0ed6eb5fdcae39b75cd47be9c",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_vset128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_vset128.tar.gz",
+        "bytes": 39960,
+        "sha256": "00aaa5bb7a3335ea8699bb0cbc7b4d92661bd727a5f33b062cf91f5e325ea1ac",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_vsetivli1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_vsetivli1024.tar.gz",
+        "bytes": 17120,
+        "sha256": "643e8a3a6a77778cf49354a6a889a0a4a491b00464b79b651f0d474b873c1618",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_vsetivli128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_vsetivli128.tar.gz",
+        "bytes": 17139,
+        "sha256": "519c5c923d014e543ed0550ce3745730bdf452c6658aee8d64569c25676960c8",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_vsetvl1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_vsetvl1024.tar.gz",
+        "bytes": 4460,
+        "sha256": "9d23f7aa63035cd775e4032e2fef6716fe726906a5386620fef587c2ce18a77c",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-elen64_vsetvl128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-elen64_vsetvl128.tar.gz",
+        "bytes": 4449,
+        "sha256": "33ad65693871e48e8e5886dc988053e587d75be9492276c9bd2e2d2957b40403",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-fixed1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-fixed1024.tar.gz",
+        "bytes": 44798199,
+        "sha256": "24a0bda75e2c9bde4c774a4a5737f78abd3fc82b8161748f680aa104a2dfc386",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-fp1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-fp1024.tar.gz",
+        "bytes": 1905827,
+        "sha256": "9e89369a84e52c08522927ae39eedca27a7508e3d95807b4bd75fc45f13a0876",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-fpconvert128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-fpconvert128.tar.gz",
+        "bytes": 2343331,
+        "sha256": "06c5b0b8628ef6f4485e4dfb1b796a5836892757341144d4443d3f400f2e5756",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-fpfma128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-fpfma128.tar.gz",
+        "bytes": 20229549,
+        "sha256": "98c7451270954e7be6a4fe4efbd545c35b766a1ae1ab58623fe897635de41ed6",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-fpmath128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-fpmath128.tar.gz",
+        "bytes": 19562257,
+        "sha256": "31770c0ab82db6b33b37fcb513cefb152b7c4869f798af8f2c055773ac24b96a",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-fprest128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-fprest128.tar.gz",
+        "bytes": 22034555,
+        "sha256": "e40401aa11e16960b69725e96e08b37e16c7a9ab10f6390a454b9f51117300f3",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-geometry2048.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-geometry2048.tar.gz",
+        "bytes": 26295567,
+        "sha256": "9b131bbd2030d6691e6663f9be651770bad4c47d5b1c58bcc6be60246c2bfd77",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-geometry256.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-geometry256.tar.gz",
+        "bytes": 2927953,
+        "sha256": "6ecfc784bdb34f9369ce5dbfe49fd5bbbb08cbd8f4e39dd94891209932c6ce63",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-geometry4096.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-geometry4096.tar.gz",
+        "bytes": 80268397,
+        "sha256": "03bb5702549bab7953891a309529f25aca8c3e03065b753199bf2f9376571f19",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-geometry512.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-geometry512.tar.gz",
+        "bytes": 5778606,
+        "sha256": "44a3ac29548413f56801391272738c4d5fd2fddd41f4c7bff3249e8cecbac8cc",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-indexload128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-indexload128.tar.gz",
+        "bytes": 4207055,
+        "sha256": "85b6654c2be2acc5e609d650ff2375a873956fee2212db0dff4c1d29b80fb7e2",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-indexstore128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-indexstore128.tar.gz",
+        "bytes": 1971639,
+        "sha256": "7ec9b5381b770a5d58b8b54a6c36d8b64b6b4e34745554ac37f4f3cbea0a73ff",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-int16_fp32_convert128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-int16_fp32_convert128.tar.gz",
+        "bytes": 451961,
+        "sha256": "ddd539eee3b5b9bf0a1d11ffab14e84a9de64f25b2ac510b538f94d30c87c79c",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-intbasic128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-intbasic128.tar.gz",
+        "bytes": 17837578,
+        "sha256": "7fe3e32ef80f6cd8ca9b2d08fa7d0a8d875c9e852d70ac35eb801fafe8baad6f",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-intdiv128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-intdiv128.tar.gz",
+        "bytes": 5307263,
+        "sha256": "11a3102607377f4689de3407e2df29bd3dfa106f66be04c0e2b7674b14bb2b76",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-long1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-long1024.tar.gz",
+        "bytes": 6284419,
+        "sha256": "6a335baeb4161810cbf54613efa5cbdf09161a4535c2d42be6fc46fda5f985aa",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-long4096.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-long4096.tar.gz",
+        "bytes": 16625307,
+        "sha256": "dd70900a233cdd9e7e4cb4ab5d970a25636dd19ecd24fab47cf14582bebbfbea",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-mask1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-mask1024.tar.gz",
+        "bytes": 2116950,
+        "sha256": "7dd9b466ff903ad584e5ffb8989328594d13668232c07e87116e2a396bfc9817",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-maskaux1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-maskaux1024.tar.gz",
+        "bytes": 1090572,
+        "sha256": "bb3604070a4d08d2855485084247002a83bb4a754349145795ed682a5b41dafd",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-memory1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-memory1024.tar.gz",
+        "bytes": 4092326,
+        "sha256": "d39697b2a08c3315d84ef1161764b03c9e843eee592f7a897d62d11ac308a8a7",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-memory1024_storage.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-memory1024_storage.tar.gz",
+        "bytes": 1037280,
+        "sha256": "a1c0b5cf1b5e50039a0d8086df02b38bf3107ac1b3982f23694438fc2a033acd",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-narrowfixed128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-narrowfixed128.tar.gz",
+        "bytes": 40242635,
+        "sha256": "a16a14ddb92b931248054d8a13eb2080bd8bf6e41fe416723f60d3273603b0d9",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-permute128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-permute128.tar.gz",
+        "bytes": 4673011,
+        "sha256": "6868f70a1a3aca2b3441546798d99830443a1a27afb2e166f0bb68d17a117909",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-reduction128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-reduction128.tar.gz",
+        "bytes": 967967,
+        "sha256": "401df3fc0d8eceb253f7e49fba5248ec928aa7e8f7751cfa7748bb0524ebf4f2",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-strideload128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-strideload128.tar.gz",
+        "bytes": 3260101,
+        "sha256": "05c32971de173b3b5b90cc9083230b22c728572d100388352af405ef9bc9f08f",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-stridestore128_storage.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-stridestore128_storage.tar.gz",
+        "bytes": 2660079,
+        "sha256": "2f6e860867ae75ae42cc5f4a186c123eef37e06515d7e53ee5c46887ac904e74",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-unitmemory128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-unitmemory128.tar.gz",
+        "bytes": 915445,
+        "sha256": "dc782d54286e5f5b1a25d0bd26548394bd2abb36294970e460a1a30e6ed479ef",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-vssub_flags1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-vssub_flags1024.tar.gz",
+        "bytes": 19390921,
+        "sha256": "bdc852a102a40f545d1ddf4b0cd22cff0d275512d474a41f94814474e1b17dae",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-vssub_flags_edges1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-vssub_flags_edges1024.tar.gz",
+        "bytes": 777146,
+        "sha256": "8fff9f58759e080e6fe01009ed6f8fea799514d97458ab4956bb917947671f28",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-vssub_sticky1024.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-vssub_sticky1024.tar.gz",
+        "bytes": 199000,
+        "sha256": "fcde0decaec396b22fc7a750ffc239786b80ae14db7c235d297e4504b2850d18",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-whole128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-whole128.tar.gz",
+        "bytes": 106014,
+        "sha256": "725fba75396c6da7f428adc0e856e5eead491cf33adac530cfb3a166f53f4616",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "chips-widen128.tar.gz",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/chips-widen128.tar.gz",
+        "bytes": 6576224,
+        "sha256": "e9b3ef47c67f9f40695877263a08171a040980659b1d24fb4c4a19f6b8fddf42",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      },
+      {
+        "file": "CHIPS94_ARCHIVES.json",
+        "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/CHIPS94_ARCHIVES.json",
+        "bytes": 29090,
+        "sha256": "e327f0a5c043f453e1a5a32b72005c886e48573cd99326cd4059b81ddc73d8a0",
+        "curl_exit": 0,
+        "http_status": 200,
+        "authentication": "none (public curl URL; no gh/token download)"
+      }
+    ],
+    "archives": 95,
+    "manifests": 2,
+    "archive_bytes": 961375725
+  },
+  "clean_extraction": [
+    {
+      "suite": "chips",
+      "root": "/home/vick/rvv-task101/chips-public-clean",
+      "regular_files": 201757,
+      "raw_bytes": 10460449465,
+      "status": "PASS",
+      "links_escaping_duplicates": 0
+    },
+    {
+      "suite": "act",
+      "root": "/home/vick/rvv-task101/act-public-clean",
+      "regular_files": 111384,
+      "raw_bytes": 4339804150,
+      "status": "PASS",
+      "links_escaping_duplicates": 0
+    }
+  ],
+  "commands": [
+    {
+      "label": "CHIPS_ACCEPTANCE",
+      "cwd": "/home/vick/rvv-task101/chips-public-clean",
+      "argv": [
+        "python3",
+        "tools/verify_rvv_chips_inspection.py",
+        "."
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "stdout": "/home/vick/rvv-task101/CHIPS_ACCEPTANCE.stdout",
+      "stderr": "/home/vick/rvv-task101/CHIPS_ACCEPTANCE.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/CHIPS_ACCEPTANCE.stdout",
+        "bytes": 6446,
+        "sha256": "952de6d8c5424247dae8a629358687df53487a761dfd9aeefc5db0123450a69d"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/CHIPS_ACCEPTANCE.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "CHIPS_REJECTION",
+      "cwd": "/home/vick/rvv-task101/chips-public-clean",
+      "argv": [
+        "python3",
+        "tools/check_rvv_chips_rejection.py",
+        ".",
+        "/home/vick/rvv-task101/chips-rejection"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "stdout": "/home/vick/rvv-task101/CHIPS_REJECTION.stdout",
+      "stderr": "/home/vick/rvv-task101/CHIPS_REJECTION.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/CHIPS_REJECTION.stdout",
+        "bytes": 747,
+        "sha256": "c0f7895210d3425bf0bf3d2aff20fd4539d5a47db0a6ea637b197d16af84184f"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/CHIPS_REJECTION.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "CHIPS_READER",
+      "cwd": "/home/vick/rvv-task101/chips-public-clean",
+      "argv": [
+        "python3",
+        "tools/verify_rvv_chips_inspection.py",
+        ".",
+        "--form",
+        "vadc.vim",
+        "--candidate",
+        "clean961",
+        "--vlen",
+        "128",
+        "--arm",
+        "B",
+        "--batch",
+        "carrymove128",
+        "--case",
+        "vadc_vim-0",
+        "--contexts"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "stdout": "/home/vick/rvv-task101/CHIPS_READER.stdout",
+      "stderr": "/home/vick/rvv-task101/CHIPS_READER.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/CHIPS_READER.stdout",
+        "bytes": 38988,
+        "sha256": "39c4d09e56fa0fd177a3189aa3b1819ce925607b95b8e19f7f7d4f401e48d29c"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/CHIPS_READER.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "ACT_ACCEPTANCE",
+      "cwd": "/home/vick/rvv-task101/act-public-clean",
+      "argv": [
+        "python3",
+        "tools/verify_rvv_act_inspection.py",
+        "."
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "stdout": "/home/vick/rvv-task101/ACT_ACCEPTANCE.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_ACCEPTANCE.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_ACCEPTANCE.stdout",
+        "bytes": 932,
+        "sha256": "e0ce79a03b6735f065fb308136b77190b511af5cdf0a900f91a00bea92151c91"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_ACCEPTANCE.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "ACT_REJECTION",
+      "cwd": "/home/vick/rvv-task101/act-public-clean",
+      "argv": [
+        "python3",
+        "tools/check_rvv_act_rejection.py",
+        "."
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "stdout": "/home/vick/rvv-task101/ACT_REJECTION.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_REJECTION.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_REJECTION.stdout",
+        "bytes": 428,
+        "sha256": "362a30ad076c149edad1e9b0ff573b641d0c2b045946fefd3f4de957dc66abaf"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_REJECTION.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "ACT_READER",
+      "cwd": "/home/vick/rvv-task101/act-public-clean",
+      "argv": [
+        "python3",
+        "tools/verify_rvv_act_inspection.py",
+        ".",
+        "--form",
+        "vaadd.vv",
+        "--case",
+        "Vx8-vaadd.vv-00"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "stdout": "/home/vick/rvv-task101/ACT_READER.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_READER.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_READER.stdout",
+        "bytes": 8011,
+        "sha256": "cb621abe702a03c08853a02f89cd8f4668e6260394135c8497be822e395b23a7"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_READER.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "ACT_OPT_O_executable",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "-O",
+        "verify_rvv_act_inspection.py",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_O_executable.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_O_executable.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_O_executable.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_O_executable.stderr",
+        "bytes": 506,
+        "sha256": "1d4bcd03d0cf5bd02ab3b9fbe06aaabd43972517835719c285e35ea7594968b4"
+      }
+    },
+    {
+      "label": "ACT_OPT_O_imported",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "-O",
+        "-c",
+        "from pathlib import Path; from verify_rvv_act_inspection import verify; print(verify(Path(__import__(\"sys\").argv[1])))",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_O_imported.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_O_imported.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_O_imported.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_O_imported.stderr",
+        "bytes": 386,
+        "sha256": "b71d270d4ed0c0612ef3657d4fd98848e12c8f6c5d146c43a5b6cce502158b08"
+      }
+    },
+    {
+      "label": "ACT_OPT_OO_executable",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "-OO",
+        "verify_rvv_act_inspection.py",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_OO_executable.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_OO_executable.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_OO_executable.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_OO_executable.stderr",
+        "bytes": 506,
+        "sha256": "1d4bcd03d0cf5bd02ab3b9fbe06aaabd43972517835719c285e35ea7594968b4"
+      }
+    },
+    {
+      "label": "ACT_OPT_OO_imported",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "-OO",
+        "-c",
+        "from pathlib import Path; from verify_rvv_act_inspection import verify; print(verify(Path(__import__(\"sys\").argv[1])))",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_OO_imported.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_OO_imported.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_OO_imported.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_OO_imported.stderr",
+        "bytes": 386,
+        "sha256": "b71d270d4ed0c0612ef3657d4fd98848e12c8f6c5d146c43a5b6cce502158b08"
+      }
+    },
+    {
+      "label": "ACT_OPT_1_executable",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "verify_rvv_act_inspection.py",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": "1",
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_1_executable.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_1_executable.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_1_executable.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_1_executable.stderr",
+        "bytes": 506,
+        "sha256": "1d4bcd03d0cf5bd02ab3b9fbe06aaabd43972517835719c285e35ea7594968b4"
+      }
+    },
+    {
+      "label": "ACT_OPT_1_imported",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "-c",
+        "from pathlib import Path; from verify_rvv_act_inspection import verify; print(verify(Path(__import__(\"sys\").argv[1])))",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": "1",
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_1_imported.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_1_imported.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_1_imported.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_1_imported.stderr",
+        "bytes": 386,
+        "sha256": "b71d270d4ed0c0612ef3657d4fd98848e12c8f6c5d146c43a5b6cce502158b08"
+      }
+    },
+    {
+      "label": "ACT_OPT_2_executable",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "verify_rvv_act_inspection.py",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": "2",
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_2_executable.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_2_executable.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_2_executable.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_2_executable.stderr",
+        "bytes": 506,
+        "sha256": "1d4bcd03d0cf5bd02ab3b9fbe06aaabd43972517835719c285e35ea7594968b4"
+      }
+    },
+    {
+      "label": "ACT_OPT_2_imported",
+      "cwd": "/home/vick/rvv-task101/act-public-clean/tools",
+      "argv": [
+        "python3",
+        "-c",
+        "from pathlib import Path; from verify_rvv_act_inspection import verify; print(verify(Path(__import__(\"sys\").argv[1])))",
+        "/home/vick/rvv-task101/act-public-clean"
+      ],
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONOPTIMIZE": "2",
+      "exit": 1,
+      "expected_exit": 1,
+      "stdout": "/home/vick/rvv-task101/ACT_OPT_2_imported.stdout",
+      "stderr": "/home/vick/rvv-task101/ACT_OPT_2_imported.stderr",
+      "stdout_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_2_imported.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "file": "/home/vick/rvv-task101/ACT_OPT_2_imported.stderr",
+        "bytes": 386,
+        "sha256": "b71d270d4ed0c0612ef3657d4fd98848e12c8f6c5d146c43a5b6cce502158b08"
+      }
+    }
+  ],
+  "orchestration": [
+    {
+      "argv": [
+        "python3",
+        "/home/vick/task101-publish.py"
+      ],
+      "exit": 0,
+      "script": {
+        "file": "/home/vick/task101-publish.py",
+        "bytes": 4898,
+        "sha256": "5f2a0ca4e80e3108c4547d581c0315e13d442765164d298dfb0728707fb9330f"
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "/home/vick/task101-verify.py"
+      ],
+      "exit": 0,
+      "script": {
+        "file": "/home/vick/task101-verify.py",
+        "bytes": 5070,
+        "sha256": "d541950c5be7ca82f9bcc1890d70a026e4fdb760f530b8c2342346e6fe8a5bb0"
+      }
+    }
+  ],
+  "offline_acceptance": {
+    "CHIPS": {
+      "status": "PASS",
+      "payload_files": 201756,
+      "primary_binding_rows": 23064,
+      "source_chains": 2980,
+      "original_TEST_CASE_assertions": 33935720,
+      "unique_receipts": 23488,
+      "forms": {
+        "clean961": 595,
+        "historical2af5": 595
+      },
+      "positive_source_cases": {
+        "clean961": 2886,
+        "historical2af5": 2886
+      },
+      "controls": {
+        "clean961": 212,
+        "historical2af5": 212
+      },
+      "receipt_configurations": [
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "B",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "BOTH",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "M1",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "M2",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "B",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "BOTH",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "M1",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "M2",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "B",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "BOTH",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "M1",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "M2",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "B",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "BOTH",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "M1",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "M2",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "B",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "BOTH",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "M1",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "M2",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "B",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "BOTH",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "M1",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "M2",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "M2",
+          "positive_receipts": 27
+        }
+      ],
+      "original_excluded_failure_records": 8,
+      "unsafe_original_store_sources": 8,
+      "literal_configuration_sources": 19,
+      "source_geometry_rows": 230916,
+      "source_geometry_files": 2869,
+      "geometry_scope": "source context only; no Cartesian product, runtime VL/branch or independent per-arm method admission",
+      "new_guest_executions": 0
+    },
+    "ACT": {
+      "status": "PASS",
+      "files_verified": 111383,
+      "original_identity_bindings": 109570,
+      "source_outputs": 1919,
+      "primary_signature_roundtrips": 1878,
+      "original_guest_checker_sha256": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+      "archived_DUT_receipts": 7504,
+      "primary_reference_receipts": {
+        "Sail:PASS": 1878,
+        "QEMU:PASS": 1876,
+        "QEMU:REFERENCE_ERROR": 2
+      },
+      "unlaunched_DUT_arms": 8,
+      "prelaunch_exclusions": {
+        "adapter-blocked-attempts": 5,
+        "adapter-corrections-v2": 210
+      },
+      "diagnostic_reference_repeats": 2,
+      "outside_prior_outputs": 41,
+      "outside_prior_receipts": 164,
+      "selected_ledger_rows": 15364,
+      "bindings": 7512,
+      "inspection_missing": [],
+      "new_DUT_executions": 0,
+      "new_reference_executions": 0,
+      "limitation": "Original guest assertions are inspectable; host check evaluates original retained summary predicates, not ISA results independently."
+    }
+  },
+  "wrong_result_rejection": {
+    "CHIPS": {
+      "status": "PASS",
+      "altered_receipt": "records/clean961/receipts/positive-B-carrymove128-000/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95",
+      "updated_hashes": [
+        "FILES.json payload stdout/result",
+        "result.json stdout_sha256"
+      ],
+      "checker_exit": 1,
+      "reason": "CHIPS inspection rejected: original assertion/exit acceptance rejected records/clean961/receipts/positive-B-carrymove128-000/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95 OUTPUT_MISMATCH",
+      "producer_bad_stdout": "OUTPUT_MISMATCH",
+      "producer_nonzero_exit": "EXIT_MISMATCH",
+      "original_fail_control_accepted": true,
+      "fail_control_exit0_rejected": true,
+      "new_guest_executions": 0,
+      "disposable_extraction_restored": true
+    },
+    "ACT": {
+      "status": "PASS",
+      "rejected": [
+        "wrong-result-exit0",
+        "failure-alongside-pass",
+        "duplicate-pass",
+        "nonzero-exit",
+        "wrong-case",
+        "sail-failure-alongside-success"
+      ],
+      "hash_verification_invoked": false,
+      "archived_files_modified": 0,
+      "new_ISA_executions": 0,
+      "method": "Original pure audit predicates applied to deliberately altered in-memory raw result; no hash gate can cause rejection."
+    }
+  },
+  "checker_scope": {
+    "CHIPS": "Frozen file/source/build/binding/navigation identities; retained runner.original.py classify predicate on archived stdout/exit. Rehashed bad-result control rejects through original acceptance, expected failure receipts remain accepted as controls. No host recomputation of original guest expected words. Separate clean961/historical2af5 receipts.",
+    "ACT": "Frozen identities/navigation; original sig_modify.py on temporary frozen capture copies compared byte-for-byte; original Task53 pure audit predicates on archived stdout/exit; in-memory wrong-result controls; all eight optimized-Python entry controls exit1. No guest or architectural recomputation.",
+    "limits": "Original failures, blocked arms, exclusions, UNKNOWN fields, source/checker correlation and unobserved optimized-path admission remain as recorded. Archived correctness evidence is not complete ISA conformance."
+  },
+  "preservation": {
+    "new_ISA_runs": 0,
+    "new_goldens": 0,
+    "production_changes": 0,
+    "pushes": 0,
+    "emails": 0,
+    "bulk_location": "/home/vick/rvv-task101",
+    "local_bulk_copies": 0,
+    "original_archives_modified": false
+  }
+}

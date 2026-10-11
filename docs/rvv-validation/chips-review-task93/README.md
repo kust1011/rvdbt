@@ -4,18 +4,32 @@ This is delivery gate5 packaging of the existing sealed47-batch primary scope. I
 
 `clean961` means recorded executable SHA256 `6fda0f9ab06c2c824b5301d1f302b76799842981b00a88fffa85fe43f1dbd84f`. `historical2af5` means `2af5d3e6b0d11564c1fe93cd86b4b7ec5467f8249a785b3ee4c350b440ad8de9`. Shared library identity is `1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d`. The package physically separates the candidate receipts. Historical registered-corpus.tar.gz is not clean961 proof.
 
-Archives and scratch remain on xbd `/home/vick/rvv-task93`. Compressed transport is reserved for Main's approval. `ARCHIVES.json` records exact sizes and hashes. Named batch archives share one extraction root with core; a large batch is divided by named original form family, keeping its stages, capture patches, logs and original histories together. Oversized measurement archives remain in `size-preflight/` and are not delivery files.
+The 94 current CHIPS94 archives are published in the [GitHub Release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012), targeting `49c44174fe95b68d85fcecf01b2a3bf8731e74d3`. The frozen upload inventory is [CHIPS94_ARCHIVES.json](https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/CHIPS94_ARCHIVES.json); [Task101 receipt](../release-task101/RECEIPT.json) records public downloads and offline checks. Archives and scratch remain on xbd `/home/vick/rvv-task93`. `ARCHIVES.json` records exact sizes and hashes. Named batch archives share one extraction root with core; a large batch is divided by named original form family, keeping its stages, capture patches, logs and original histories together. Oversized measurement archives remain in `size-preflight/` and are not delivery files.
 
 ## Reader workflow
 
 Run these assertion-dependent tools and the extraction snippet with normal Python: do not use `python -O`, `python -OO`, or set `PYTHONOPTIMIZE`. Optimized Python removes acceptance assertions.
 
-After obtaining the files listed in `ARCHIVES.json`, extract each listed archive into a new directory. No original author path or remote mount is needed to inspect the extracted evidence.
+Download the frozen manifest and its 94 named archives using public URLs:
+
+```sh
+mkdir chips-archives
+cd chips-archives
+curl -fL -o ARCHIVES.json https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/CHIPS94_ARCHIVES.json
+python3 - <<'DOWNLOAD'
+import json, subprocess
+base = 'https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/'
+for item in json.load(open('ARCHIVES.json'))['archives']:
+    subprocess.run(['curl', '-fL', '--retry', '3', '-o', item['file'], base + item['file']], check=True)
+DOWNLOAD
+cd ..
+```
+
+Extract each listed archive into a new directory. No original author path or remote mount is needed to inspect the extracted evidence.
 
 ```sh
 mkdir inspection
-# Substitute the archive directory supplied with ARCHIVES.json.
-python3 - /path/to/archives inspection <<'PY'
+python3 - chips-archives inspection <<'PY'
 import hashlib, json, pathlib, sys, tarfile
 archives, destination = map(pathlib.Path, sys.argv[1:])
 for item in json.loads((archives / 'ARCHIVES.json').read_text())['archives']:
@@ -29,6 +43,7 @@ for item in json.loads((archives / 'ARCHIVES.json').read_text())['archives']:
 PY
 cd inspection
 PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_rvv_chips_inspection.py .
+PYTHONDONTWRITEBYTECODE=1 python3 tools/check_rvv_chips_rejection.py . ../chips-rejection
 python3 tools/verify_rvv_chips_inspection.py . --form vadc.vim \
   --candidate clean961 --vlen 128 --arm B --batch carrymove128 --case vadc_vim-0 --contexts
 ```

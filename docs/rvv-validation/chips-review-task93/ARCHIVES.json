@@ -993,5 +993,12 @@
       "compressed_bytes": 6576224
     }
   ],
-  "split_rule": "Named retained batch, then original form family when batch exceeds90MiB; all phases and raw histories for that family stay together. Core carries index, bindings, clean/historical receipts, licenses and tools."
+  "split_rule": "Named retained batch, then original form family when batch exceeds90MiB; all phases and raw histories for that family stay together. Core carries index, bindings, clean/historical receipts, licenses and tools.",
+  "publication": {
+    "release_url": "https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012",
+    "download_base_url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/",
+    "frozen_manifest_url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/CHIPS94_ARCHIVES.json",
+    "release_target": "49c44174fe95b68d85fcecf01b2a3bf8731e74d3",
+    "acceptance_receipt": "../release-task101/RECEIPT.json"
+  }
 }

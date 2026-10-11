@@ -12,5 +12,7 @@
   "reference_diagnostic_repeats": 2,
   "ledger_rows": 15364,
   "bindings": 7512,
-  "publication": "STAGED_ON_XBD; Release upload pending authorization/authentication; no public payload URL"
+  "publication": "PUBLIC_RELEASE; independent public download and offline acceptance verified in Task101",
+  "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/act-primary-task100.tar.gz",
+  "release_target": "49c44174fe95b68d85fcecf01b2a3bf8731e74d3"
 }

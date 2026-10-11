@@ -1,8 +1,8 @@
 # ACT primary inspection — Task99, Task100 checker fix
 
-The compact archive is **staged on xbd**, at
-`/home/vick/rvv-task99/act-primary-task100.tar.gz`. Publication and a verified
-download remain pending. This page is not a payload download link.
+The current ACT Task100 archive is [publicly downloadable](https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/act-primary-task100.tar.gz) from the [GitHub Release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012), targeting `49c44174fe95b68d85fcecf01b2a3bf8731e74d3`.
+The frozen upload identity is [ACT100_MANIFEST.json](https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/ACT100_MANIFEST.json);
+[Task101 receipt](../release-task101/RECEIPT.json) records independent public downloads and offline checks.
 
 Local review receipts: [archive manifest](MANIFEST.json),
 [clean extraction](CLEAN_EXTRACTION.json),
@@ -20,12 +20,26 @@ and alias metadata only; Task49's earlier 416 receipts, other candidates and
 other suites are outside this package. Original accepted sets and counts are
 reused; packaging adds no instruction-form coverage or execution.
 
-After obtaining the staged archive through an authorized Release upload, inspect
-it in a fresh directory on a machine with Python 3.9+ and its standard library:
+Download and inspect in a fresh directory on a machine with Python 3.9+ and its standard library:
 
 ```sh
+mkdir act-public-download
+cd act-public-download
+curl -fL -O https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/ACT100_MANIFEST.json
+curl -fL --retry 3 -O https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/act-primary-task100.tar.gz
+python3 - <<'IDENTITY'
+import hashlib, json, pathlib
+item = json.load(open('ACT100_MANIFEST.json'))
+p = pathlib.Path(item['file'])
+assert p.stat().st_size == item['bytes']
+h = hashlib.sha256()
+with p.open('rb') as f:
+    for block in iter(lambda: f.read(1024 * 1024), b''):
+        h.update(block)
+assert h.hexdigest() == item['sha256']
+IDENTITY
 mkdir act-primary-inspection
-tar xzf /path/to/act-primary-task100.tar.gz -C act-primary-inspection
+tar xzf act-primary-task100.tar.gz -C act-primary-inspection
 cd act-primary-inspection
 PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_rvv_act_inspection.py .
 PYTHONDONTWRITEBYTECODE=1 python3 tools/check_rvv_act_rejection.py .
@@ -96,5 +110,4 @@ Repo tools: [packager](../../../scripts/package_rvv_act_inspection.py),
 [offline verifier](../../../scripts/verify_rvv_act_inspection.py),
 [wrong-result controls](../../../scripts/check_rvv_act_rejection.py), and
 [focused tests](../../../scripts/test_rvv_act_inspection.py).
-Main owns thesis/status/email and publication. The launcher owns the completion
-signal `rvv-act-safe-checks-20261012-100`.
+Main owns thesis/status/email. Task101 published and independently accepted the current archives; this adds no ISA executions.
