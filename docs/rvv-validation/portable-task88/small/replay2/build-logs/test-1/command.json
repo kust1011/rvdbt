@@ -1,0 +1,7 @@
+[
+  "llc-22",
+  "--no-integrated-as",
+  "/home/vick/rvv-portable88-20261012/replay2/guests/test.ll",
+  "-o",
+  "/home/vick/rvv-portable88-20261012/replay2/guests/test.s"
+]

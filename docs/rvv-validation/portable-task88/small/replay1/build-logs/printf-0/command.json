@@ -1,0 +1,22 @@
+[
+  "clang-22",
+  "--target=riscv32-unknown-elf",
+  "-mabi=ilp32d",
+  "-march=rv32g",
+  "-O0",
+  "-ffreestanding",
+  "-fno-builtin",
+  "-fno-vectorize",
+  "-fno-slp-vectorize",
+  "-msmall-data-limit=0",
+  "-I/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum",
+  "-DPRINTF_DISABLE_SUPPORT_FLOAT",
+  "-DPRINTF_DISABLE_SUPPORT_LONG_LONG",
+  "-include",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/asm_environment.h",
+  "-S",
+  "-emit-llvm",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/printf.c",
+  "-o",
+  "/home/vick/rvv-portable88-20261012/replay1/guests/printf.ll"
+]

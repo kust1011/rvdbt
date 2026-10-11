@@ -1,0 +1,12 @@
+mkdir /home/vick/rvv-portable88-20261012/spike-install
+mkdir /home/vick/rvv-portable88-20261012/spike-install/include
+mkdir /home/vick/rvv-portable88-20261012/spike-install/include/fesvr
+mkdir /home/vick/rvv-portable88-20261012/spike-install/include/riscv
+mkdir /home/vick/rvv-portable88-20261012/spike-install/include/fdt
+mkdir /home/vick/rvv-portable88-20261012/spike-install/include/softfloat
+make: Circular libriscv.so <- libriscv.so dependency dropped.
+make: Circular libcustomext.so <- libcustomext.so dependency dropped.
+make: Circular libsoftfloat.so <- libsoftfloat.so dependency dropped.
+mkdir /home/vick/rvv-portable88-20261012/spike-install/lib
+mkdir /home/vick/rvv-portable88-20261012/spike-install/bin
+mkdir /home/vick/rvv-portable88-20261012/spike-install/lib/pkgconfig

@@ -1,0 +1,18 @@
+[
+  "clang-22",
+  "--target=riscv32-unknown-elf",
+  "-mabi=ilp32d",
+  "-march=rv32gv",
+  "-static",
+  "-nostdlib",
+  "-fuse-ld=lld",
+  "-Wl,--no-relax",
+  "-Wl,-T,/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/link.ld",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/start.S",
+  "/home/vick/rvv-portable88-20261012/replay1/guests/test.o",
+  "/home/vick/rvv-portable88-20261012/replay1/guests/user_runtime.o",
+  "/home/vick/rvv-portable88-20261012/replay1/guests/printf.o",
+  "/usr/lib/gcc/riscv64-unknown-elf/13.2.0/rv32iafd/ilp32d/libgcc.a",
+  "-o",
+  "/home/vick/rvv-portable88-20261012/replay1/guests/ara.elf"
+]

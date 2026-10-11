@@ -1,0 +1,1 @@
+Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension (ignoring target-abi)

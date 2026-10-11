@@ -1,0 +1,9 @@
+../pk-source/dummy_payload/dummy_entry.S: Assembler messages:
+../pk-source/dummy_payload/dummy_entry.S:23: Warning: unterminated string; newline inserted
+../pk-source/dummy_payload/dummy_entry.S:24: Warning: unterminated string; newline inserted
+../pk-source/dummy_payload/dummy_entry.S:25: Warning: unterminated string; newline inserted
+../pk-source/dummy_payload/dummy_entry.S:26: Warning: unterminated string; newline inserted
+../pk-source/dummy_payload/dummy_entry.S:27: Warning: unterminated string; newline inserted
+../pk-source/dummy_payload/dummy_entry.S:28: Warning: unterminated string; newline inserted
+../pk-source/dummy_payload/dummy_entry.S:29: Warning: unterminated string; newline inserted
+/usr/lib/gcc/riscv64-unknown-elf/13.2.0/../../../riscv64-unknown-elf/bin/ld: warning: dummy_payload has a LOAD segment with RWX permissions

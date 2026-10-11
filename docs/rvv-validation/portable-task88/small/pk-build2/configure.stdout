@@ -1,0 +1,48 @@
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... riscv64-unknown-elf
+checking for riscv64-unknown-elf-gcc... riscv64-unknown-elf-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether riscv64-unknown-elf-gcc accepts -g... yes
+checking for riscv64-unknown-elf-gcc option to enable C11 features... none needed
+checking for riscv64-unknown-elf-g++... riscv64-unknown-elf-g++
+checking whether the compiler supports GNU C++... yes
+checking whether riscv64-unknown-elf-g++ accepts -g... yes
+checking for riscv64-unknown-elf-g++ option to enable C++11 features... none needed
+checking for riscv64-unknown-elf-ar... riscv64-unknown-elf-ar
+checking for riscv64-unknown-elf-ranlib... riscv64-unknown-elf-ranlib
+checking for riscv64-unknown-elf-readelf... riscv64-unknown-elf-readelf
+checking for riscv64-unknown-elf-objcopy... riscv64-unknown-elf-objcopy
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for stdio.h... no
+checking for stdlib.h... no
+checking for string.h... no
+checking for inttypes.h... no
+checking for stdint.h... yes
+checking for strings.h... no
+checking for sys/stat.h... no
+checking for sys/types.h... no
+checking for unistd.h... no
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for __ashldi3 in -lgcc... no
+checking for __ashlti3 in -lgcc... yes
+configure: configuring default subproject : pk
+configure: configuring default subproject : bbl
+configure: configuring default subproject : softfloat
+configure: configuring default subproject : dummy_payload
+configure: configuring default subproject : machine
+configure: configuring default subproject : util
+configure: creating ./config.status
+config.status: creating pk.mk
+config.status: creating bbl.mk
+config.status: creating softfloat.mk
+config.status: creating dummy_payload.mk
+config.status: creating machine.mk
+config.status: creating util.mk
+config.status: creating Makefile
+config.status: creating config.h

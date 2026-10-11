@@ -1,0 +1,7 @@
+make: Circular libriscv.so <- libriscv.so dependency dropped.
+make: Circular libcustomext.so <- libcustomext.so dependency dropped.
+make: Circular libsoftfloat.so <- libsoftfloat.so dependency dropped.
+../spike-source/disasm/disasm.cc: In member function ‘void disassembler_t::add_instructions(const isa_parser_t*, bool)’:
+../spike-source/disasm/disasm.cc:904:6: note: variable tracking size limit exceeded with ‘-fvar-tracking-assignments’, retrying without
+  904 | void disassembler_t::add_instructions(const isa_parser_t* isa, bool strict)
+      |      ^~~~~~~~~~~~~~

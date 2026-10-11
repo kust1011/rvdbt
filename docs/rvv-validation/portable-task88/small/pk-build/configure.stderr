@@ -1,0 +1,3 @@
+configure: error: in `/home/vick/rvv-portable88-20261012/pk-build':
+configure: error: C compiler cannot create executables
+See `config.log' for more details

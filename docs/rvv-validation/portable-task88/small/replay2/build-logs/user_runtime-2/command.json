@@ -1,0 +1,10 @@
+[
+  "clang-22",
+  "--target=riscv32-unknown-elf",
+  "-mabi=ilp32d",
+  "-march=rv32gv",
+  "-c",
+  "/home/vick/rvv-portable88-20261012/replay2/guests/user_runtime.s",
+  "-o",
+  "/home/vick/rvv-portable88-20261012/replay2/guests/user_runtime.o"
+]

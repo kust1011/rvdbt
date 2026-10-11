@@ -1,0 +1,14 @@
+[
+  "clang-22",
+  "--target=riscv32-unknown-elf",
+  "-march=rv32gv",
+  "-mabi=ilp32f",
+  "-static",
+  "-nostdlib",
+  "-fuse-ld=lld",
+  "-Wl,--no-relax",
+  "-Wl,-T,/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/rvvts-20261089/link.ld",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/rvvts-20261089/replay-ready-ported.S",
+  "-o",
+  "/home/vick/rvv-portable88-20261012/replay2/guests/rvvts.elf"
+]
