@@ -7,10 +7,13 @@ Direct chunk routes and shared semantic helpers both implement guest behavior.
 
 Source presence, compiled source, static emission, program execution,
 target/result checking and coupled endpoints are separate stages. Checked sets
-are CHIPS595, ACT590, RVV-ATG434, Ara301 and SiFive RIF194; their union is595.
-RVVTS58, RVISmith43 and libriscv194 are coupled endpoints: program success does
+are CHIPS595, ACT590, RVV-ATG434, Ara301 and SiFive RIF200; their union is595.
+RVVTS58, RVISmith43 and libriscv198 are coupled endpoints: program success does
 not independently check each contributing static opcode. Candidate-specific
-sets and original/derivative provenance remain in the canonical bindings.
+sets and original/derivative provenance remain in the canonical bindings. The
+uppercase-hex decoder correction changes RIF194 to200 and libriscv coupled194 to198
+through regenerated sets, without new execution or a changed595-form union. The
+immutable scope archive is the Task71 snapshot; current joins require the evidence tree.
 
 ## Trace one form: `vsmul.vv`
 
@@ -59,8 +62,15 @@ source, command/result records and checker audit explain that geometry.
 
 Original inputs, mechanical API derivatives, reporting adapters and added state
 observers have different provenance. RIF's1500 final roots/6000 DUT calls stay
-separate from543 O2 derivative ELFs/2172 diagnostic observations. The108 reduction
-producer errors and218 case/mapping obligations remain open. ATG's9 producer
+separate from543 O2 derivative ELFs/2172 diagnostic observations. The108 original reduction
+producer failures remain. Task75 separately retains108 source-backed derivatives/108
+same-ELF QEMU references/432 clean961 B/M1/M2/BOTH calls, all PASS with exit0/no timeout
+and unchanged goldens. The host scalar evaluator reads uninitialized storage;24
+absorbing-zero AND/unsigned-min checks lack target dependence. These derivatives receive
+scalar endpoint evidence only, with no independent form or M1/M2 admission credit.
+Task74 resolved218 mapping obligations as174 lowering absences,6 checked compound
+sequences,8 genuine vmv.v.v checker gaps and30 parser false misses; the original872-row
+CSV/views remain historical lineage. ATG's9 producer
 contracts/2 reserved source-overlap outputs, Ara macro/store/profile gaps,
 CHIPS8 unsafe store outputs, ACT profile/signature gaps and RVISmith34 compiler
 errors remain visible alongside positive derivatives. RiESCUE/FORCE observer

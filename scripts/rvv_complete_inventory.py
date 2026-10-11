@@ -540,7 +540,7 @@ class Inventory:
                     state += '；結果=' + results
                     route = x[suite + '_M1路徑'] + '；M2：' + x[suite + '_M2路徑']
                     lines.append('| ' + ' | '.join(map(md, [suite, state, x[suite + '_checker中文摘要'], route])) + ' |')
-                lines.extend(['', '**Task71 current evidence stages** (UNKNOWN means no established join; program receipt does not prove every opcode ran):', '', '| Suite | Source | Compiled source | Emitted | Program | Result checked | Coupled endpoint | Diagnostic |', '|---|---|---|---|---|---|---|---|'])
+                lines.extend(['', '**Task76 current evidence stages** (UNKNOWN means no established join; program receipt does not prove every opcode ran):', '', '| Suite | Source | Compiled source | Emitted | Program | Result checked | Coupled endpoint | Diagnostic |', '|---|---|---|---|---|---|---|---|'])
                 for suite in self.actual.suites:
                     lines.append('| '+suite+' | '+' | '.join(x[suite+'_'+k] for k in ('source_present','compiled_source','emitted','program_executed','result_checked','coupled_endpoint','diagnostic_only'))+' |')
                 lines.extend(['', '[Actual bindings](ACTUAL_FORM_VALIDATION_BINDINGS.csv): select suite and target/emitted/result_checked/coupled field containing `'+name+'`; ledger row_id retains candidate, source, checker, reference, raw and limitations.', ''])
@@ -607,10 +607,10 @@ def main(check=False, output=None):
         report['output_sha256'] = {name: hashlib.sha256(content).hexdigest()
                                    for name, content in targets.items()
                                    if name != 'COMPLETE_FORM_INVENTORY_CHECK.json'}
-        report['reproducer_sha256'] = {
-            p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in (Path(__file__), Path(__file__).with_name('rvv_actual_form_validation.py'))}
-        targets['COMPLETE_FORM_INVENTORY_CHECK.json'] = (json.dumps(report, ensure_ascii=False, indent=2) + '\n').encode()
+    report['reproducer_sha256'] = {
+        p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in (Path(__file__), Path(__file__).with_name('rvv_actual_form_validation.py'))}
+    targets['COMPLETE_FORM_INVENTORY_CHECK.json'] = (json.dumps(report, ensure_ascii=False, indent=2) + '\n').encode()
     for name, content in targets.items():
         if check: assert (R / name).read_bytes() == content, ('stale output/input identity', name)
         else: (output / name).write_bytes(content)

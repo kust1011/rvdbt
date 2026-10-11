@@ -9,14 +9,14 @@ that failures propagate. Passing the runner's unit tests is not ISA coverage.
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
 and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara301 and
-SiFive RIF194, with union595. RVVTS58, RVISmith43 and libriscv194 are coupled
+SiFive RIF200, with union595. RVVTS58, RVISmith43 and libriscv198 are coupled
 endpoints. An opcode in a successful program need not have executed or influenced
 its output. The clean961 candidate has its own checked union595; historical2af5
 and the performance binary remain distinct. See the [author guide](rvv-author-guide.md)
 for provenance, implementation/checker/raw-result tracing and unresolved limits.
 
 Obtain the immutable `scope-evidence.tar.gz` listed in the artifact manifest and
-extract it into a new directory. It contains the current canonical outputs and
+extract it into a new directory. It contains the frozen Task71 canonical outputs and
 original per-form input, not new executions or a complete raw/source corpus.
 From the code checkout, render a frozen index or select exact binding rows:
 
@@ -48,7 +48,7 @@ summaries from retained tables, metadata and ELFs; they do not execute tests or
 certify raw-result truth. Missing inputs fail or remain explicit missing joins.
 The full tree is still required; this archive does not silently supply it.
 The older `rvv_coverage_report.py` regenerates the historical FORM/supplement
-view and is not the current all-suite join.
+view and is not the current all-suite join. Task76 regenerates current joins from the separate evidence tree; the immutable scope archive keeps its earlier snapshot.
 
 For artifact integrity, run `scripts/verify_rvv_artifacts.py --archive-root
 "$ARCHIVES"`; the archive root may contain the named delivery subdirectories.

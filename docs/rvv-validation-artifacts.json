@@ -103,7 +103,7 @@
     },
     {
       "file": "scope-evidence.tar.gz",
-      "kind": "immutable_current_stage_index",
+      "kind": "immutable_Task71_stage_index",
       "sha256": "f746486b7ea663bedafcf4b603119d41a108b979485e8fbd97e263203ea5f27d",
       "bytes": 11978721,
       "forms": 627,
@@ -111,7 +111,7 @@
       "ledger_rows": 98359,
       "bindings": 45814,
       "new_DUT_executions": 0,
-      "scope": "Current canonical ten outputs/check, original FORM input, dependency hashes, preserved original exporters and portable frozen-scope renderer. Source/checker/candidate/derivative stages, missing joins and diagnostic quarantine retained. Full join regeneration/raw review require separate evidence tree. No binary replacement or restricted upstream source redistribution."
+      "scope": "Historical Task71 canonical ten outputs/check, original FORM input, dependency hashes, preserved original exporters and portable frozen-scope renderer. Source/checker/candidate/derivative stages, missing joins and diagnostic quarantine retained. Full join regeneration/raw review require separate evidence tree. No binary replacement or restricted upstream source redistribution. Task76 current outputs are regenerated separately; this archive and its prior checks are unchanged."
     }
   ]
 }
