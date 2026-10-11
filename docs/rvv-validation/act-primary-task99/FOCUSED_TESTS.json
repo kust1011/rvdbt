@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p test_rvv_act_inspection.py -v",
+  "tests_run": 7,
+  "optimized_subprocess_controls": 8,
+  "entries": [
+    "executable",
+    "imported verify(root)"
+  ],
+  "modes": [
+    "-O",
+    "-OO",
+    "PYTHONOPTIMIZE=1",
+    "PYTHONOPTIMIZE=2"
+  ],
+  "required_outcomes": [
+    "nonzero exit",
+    "explicit assertions-enabled rejection",
+    "no PASS",
+    "rejection before missing payload access"
+  ],
+  "original_path_and_predicate_tests": 6,
+  "new_ISA_executions": 0
+}

@@ -1,7 +1,7 @@
-# ACT primary inspection — Task99
+# ACT primary inspection — Task99, Task100 checker fix
 
 The compact archive is **staged on xbd**, at
-`/home/vick/rvv-task99/act-primary-task99.tar.gz`. Publication and a verified
+`/home/vick/rvv-task99/act-primary-task100.tar.gz`. Publication and a verified
 download remain pending. This page is not a payload download link.
 
 Local review receipts: [archive manifest](MANIFEST.json),
@@ -25,12 +25,24 @@ it in a fresh directory on a machine with Python 3.9+ and its standard library:
 
 ```sh
 mkdir act-primary-inspection
-tar xzf /path/to/act-primary-task99.tar.gz -C act-primary-inspection
+tar xzf /path/to/act-primary-task100.tar.gz -C act-primary-inspection
 cd act-primary-inspection
 PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_rvv_act_inspection.py .
 PYTHONDONTWRITEBYTECODE=1 python3 tools/check_rvv_act_rejection.py .
 PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_rvv_act_inspection.py . --form vaadd.vv --case Vx8-vaadd.vv-00
 ```
+
+Acceptance requires Python assertions enabled: do not use `python -O`,
+`python -OO`, or a nonzero `PYTHONOPTIMIZE`. These modes remove required
+host acceptance checks. Both the executable and imported `verify(root)` entry
+explicitly reject when `__debug__` is false, before reading payload files or
+reporting PASS. Normal checks and original source predicates are unchanged.
+Task100 refreshes only the delivery verifier, this README and `FILES.json`;
+all original source, signature and raw bytes remain identical. The previous
+Task99 archive remains at `/home/vick/rvv-task99/act-primary-task99.tar.gz`.
+Its previous identity is SHA256
+`87d603fb1300cbe8331d5e28ddc48443d702ff1c7e31b892d69b0975bd0c557a`,
+334,468,555 bytes; it is historical payload, not the current checker delivery.
 
 `FORMS.json` selects indices into `CASES.json`. `NAVIGATION.json` joins the exact
 form, case, arm, ledger row, checker, oracle and raw directory. The selected
@@ -85,4 +97,4 @@ Repo tools: [packager](../../../scripts/package_rvv_act_inspection.py),
 [wrong-result controls](../../../scripts/check_rvv_act_rejection.py), and
 [focused tests](../../../scripts/test_rvv_act_inspection.py).
 Main owns thesis/status/email and publication. The launcher owns the completion
-signal `rvv-act-inspection-20261012-99`.
+signal `rvv-act-safe-checks-20261012-100`.

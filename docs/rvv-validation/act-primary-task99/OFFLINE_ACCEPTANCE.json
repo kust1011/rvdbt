@@ -24,5 +24,22 @@
   "inspection_missing": [],
   "new_DUT_executions": 0,
   "new_reference_executions": 0,
-  "limitation": "Original guest assertions are inspectable; host check evaluates original retained summary predicates, not ISA results independently."
+  "limitation": "Original guest assertions are inspectable; host check evaluates original retained summary predicates, not ISA results independently.",
+  "archive": {
+    "file": "act-primary-task100.tar.gz",
+    "sha256": "b328dc51b6f42cb8e49dca01246319a0e0610b0acb4ef4fc7a849bfa1df10ea4",
+    "bytes": 334470849,
+    "payload_files": 111384,
+    "payload_bytes": 4339804150,
+    "included_cases": 1919,
+    "primary_cases": 1878,
+    "new_DUT_calls": 0,
+    "archived_DUT_calls": 7504,
+    "archived_primary_reference_calls": 3756,
+    "reference_diagnostic_repeats": 2,
+    "ledger_rows": 15364,
+    "bindings": 7512,
+    "publication": "STAGED_ON_XBD; Release upload pending authorization/authentication; no public payload URL"
+  },
+  "verification_runs": 1
 }

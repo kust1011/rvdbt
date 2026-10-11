@@ -59,6 +59,8 @@ def validate_receipt(predicate, result, text, case, expected=True):
 
 
 def verify(root):
+    if not __debug__:
+        raise RuntimeError('ACT acceptance requires Python assertions enabled; remove -O/-OO and PYTHONOPTIMIZE')
     root = root.resolve()
     manifest = json.loads(package_path(root, 'FILES.json').read_text())
     def path(name):

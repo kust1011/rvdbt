@@ -1,6 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
 """Focused path and original-predicate adapter controls, no guest execution."""
 import tempfile
+import os
+import subprocess
+import sys
 from pathlib import Path
 import unittest
 from verify_rvv_act_inspection import original_predicates, package_path, validate_receipt
@@ -18,6 +21,29 @@ def audit():
 
 
 class Controls(unittest.TestCase):
+    def test_optimized_acceptance_rejects_before_payload_access(self):
+        script = Path(__file__).with_name('verify_rvv_act_inspection.py').resolve()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)/'missing-payload'
+            for flags, optimize in ((['-O'], None), (['-OO'], None), ([], '1'), ([], '2')):
+                for entry in ('executable', 'imported'):
+                    with self.subTest(flags=flags, optimize=optimize, entry=entry):
+                        env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
+                        env.pop('PYTHONOPTIMIZE', None)
+                        if optimize is not None:
+                            env['PYTHONOPTIMIZE'] = optimize
+                        if entry == 'executable':
+                            args = [str(script), str(root)]
+                        else:
+                            args = ['-c', 'from pathlib import Path; from verify_rvv_act_inspection import verify; '
+                                    'print(verify(Path(__import__("sys").argv[1])))', str(root)]
+                        result = subprocess.run([sys.executable, *flags, *args], cwd=script.parent,
+                                                env=env, capture_output=True, text=True)
+                        self.assertNotEqual(result.returncode, 0)
+                        self.assertIn('ACT acceptance requires Python assertions enabled', result.stderr)
+                        self.assertNotIn('FileNotFoundError', result.stderr)
+                        self.assertNotIn('PASS', result.stdout + result.stderr)
+
     def test_original_predicates_do_not_execute_runner(self):
         accepted,sail=original_predicates(AUDIT)
         validate_receipt(accepted,{'returncode':0},'RVCP-SUMMARY: TEST PASSED - Test File "c.S"','c')

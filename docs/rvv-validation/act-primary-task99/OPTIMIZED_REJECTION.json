@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "python": "3.12.3",
+  "controls": [
+    {
+      "entry": "executable",
+      "flags": [
+        "-O"
+      ],
+      "PYTHONOPTIMIZE": null,
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "imported",
+      "flags": [
+        "-O"
+      ],
+      "PYTHONOPTIMIZE": null,
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "executable",
+      "flags": [
+        "-OO"
+      ],
+      "PYTHONOPTIMIZE": null,
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "imported",
+      "flags": [
+        "-OO"
+      ],
+      "PYTHONOPTIMIZE": null,
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "executable",
+      "flags": [],
+      "PYTHONOPTIMIZE": "1",
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "imported",
+      "flags": [],
+      "PYTHONOPTIMIZE": "1",
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "executable",
+      "flags": [],
+      "PYTHONOPTIMIZE": "2",
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    },
+    {
+      "entry": "imported",
+      "flags": [],
+      "PYTHONOPTIMIZE": "2",
+      "returncode": 1,
+      "PASS_reported": false,
+      "rejection": "ACT acceptance requires Python assertions enabled"
+    }
+  ],
+  "payload": "Fresh extraction of current archive",
+  "new_ISA_executions": 0
+}

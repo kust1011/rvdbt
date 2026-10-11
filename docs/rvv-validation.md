@@ -37,6 +37,13 @@ and its JSON separate distinct registered DUT/reference receipts, controls, sour
 dispositions and Ara overlays. These counts preserve candidate scopes and are
 not original suite universes or exhaustive producer reference counts.
 
+The [ACT primary inspection entry](rvv-validation/act-primary-task99/README.md)
+links the retained Task53 source/signature/raw chain and offline acceptance
+instructions. Python assertions must be enabled; optimized acceptance is
+explicitly rejected. The Task100 checker refresh preserves original payload
+bytes and evidence counts. Its archive remains staged on xbd, with payload
+publication and a verified download still pending.
+
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
 and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara422 and

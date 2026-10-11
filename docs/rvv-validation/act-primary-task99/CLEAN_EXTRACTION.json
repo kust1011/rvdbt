@@ -1,11 +1,11 @@
 {
   "status": "PASS",
   "archive": {
-    "file": "act-primary-task99.tar.gz",
-    "sha256": "87d603fb1300cbe8331d5e28ddc48443d702ff1c7e31b892d69b0975bd0c557a",
-    "bytes": 334468555,
+    "file": "act-primary-task100.tar.gz",
+    "sha256": "b328dc51b6f42cb8e49dca01246319a0e0610b0acb4ef4fc7a849bfa1df10ea4",
+    "bytes": 334470849,
     "payload_files": 111384,
-    "payload_bytes": 4339802856,
+    "payload_bytes": 4339804150,
     "included_cases": 1919,
     "primary_cases": 1878,
     "new_DUT_calls": 0,
@@ -16,21 +16,22 @@
     "bindings": 7512,
     "publication": "STAGED_ON_XBD; Release upload pending authorization/authentication; no public payload URL"
   },
-  "root": "/home/vick/rvv-task99/final-clean-extraction",
+  "root": "/home/vick/rvv-task99/task100-clean-extraction",
   "python": "3.12.3",
   "commands": [
-    "mkdir /home/vick/rvv-task99/final-clean-extraction",
-    "tar xzf /home/vick/rvv-task99/act-primary-task99.tar.gz -C /home/vick/rvv-task99/final-clean-extraction",
-    "PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_rvv_act_inspection.py .",
-    "PYTHONDONTWRITEBYTECODE=1 python3 tools/check_rvv_act_rejection.py ."
+    "mkdir /home/vick/rvv-task99/task100-clean-extraction",
+    "tar xzf /home/vick/rvv-task99/act-primary-task100.tar.gz -C /home/vick/rvv-task99/task100-clean-extraction",
+    "PYTHONDONTWRITEBYTECODE=1 python3 tools/verify_rvv_act_inspection.py ."
   ],
   "source_tools_sha256": {
     "package_rvv_act_inspection.py": "494e10a072e83094dd0ca77d8be0fc447204150600d4a7fb6ec4fd7b6e9bd54b",
     "check_rvv_act_rejection.py": "5a83d72bc8b36a798c667291c416c42f5dd3f0bf309ccd9c0d6811b84fe23a70",
-    "verify_rvv_act_inspection.py": "c7cfb7350bb784de164606759e11ac115f55fad42cad520e6438a039b138694d"
+    "verify_rvv_act_inspection.py": "4fc7cced32da870db6549c737627a78858e062fd8db3eda53b35ca0e3514b814"
   },
   "payload_member_count": 111384,
   "new_ISA_executions": 0,
   "new_compiler_calls": 0,
-  "public_download_verified": false
+  "public_download_verified": false,
+  "optimized_controls": "TASK100_OPTIMIZED_REJECTION.json",
+  "prior_wrong_result_controls": "Task99 REJECTION_CHECK.json retained; not repeated"
 }
