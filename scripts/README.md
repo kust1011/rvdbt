@@ -38,3 +38,9 @@ Run from the repository root with Python3.10+. See
 `python3 -m unittest discover -s scripts -p 'test_rvv*.py'` tests host tools,
 including stage classification and failure controls. It supplies no ISA results.
 Suite-specific historical adapters are not a portable all-suite runner.
+
+Portable full Ara vredsum and retained RVVTS API sequence replay: see
+[commands and dependency setup](../docs/rvv-validation/portable-external.md).
+`fetch_rvv_external.py`, `run_rvv_external.py`, `verify_rvv_external_elf.py` and
+`audit_rvv_external_admission.py` extend the existing RVV tooling; full-packet
+controls use the pinned original MachineState comparator. They do not add ISA counts.

@@ -16,9 +16,9 @@ for arm in ['M1','BOTH']:
  host,size,cnt=mapping[int(tb,16)];assert cnt==1
  codes={int(pc,16):bytes.fromhex(code) for pc,sz,code in re.findall(r'^(\w+) (\d+) (\w+)$',(d/'tbcode.txt').read_text(),re.M)};code=codes[int(tb,16)];assert len(code)==size
  binary=d/'target-host.bin';binary.write_bytes(code)
- cmd=['objdump','-D','-b','binary','-m','i386:x86-64','--adjust-vma='+str(host),str(binary)]
+ cmd=['objdump','--insn-width=16','-D','-b','binary','-m','i386:x86-64','--adjust-vma='+str(host),str(binary)]
  dis=subprocess.check_output(cmd,text=True);(d/'target-host.disassembly').write_text(dis);save(d/'disassembly-command.json',cmd)
- ins=[(int(pc,16),op.strip()) for pc,op in re.findall(r'^\s*([0-9a-f]+):\s+(?:[0-9a-f]{2}\s+)+\s*([^\n]+)',dis,re.M)]
+ ins=[(int(pc,16),op.strip()) for pc,op in re.findall(r'^[ \t]*([0-9a-f]+):[ \t]+(?:[0-9a-f]{2}[ \t]+)+([^\n]+)',dis,re.M)]
  start=next(i for i,(pc,op) in enumerate(ins) if f'$0x{begin:x},0xb8(%r13)' in op)
  stop=next(i for i in range(start+1,len(ins)) if f'$0x{end:x},0xb8(%r13)' in ins[i][1]);region=ins[start:stop]
  masks=[pc for pc,op in region if re.fullmatch(r'kmovw\s+%edx,%k[1-4]',op)];assert len(masks)==4

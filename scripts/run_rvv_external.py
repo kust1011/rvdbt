@@ -47,7 +47,7 @@ def main():
     sys.path.insert(0,str(a.rvvts.resolve()));from rvvts_packet import decode,audit_input_unchanged,compare_packet
     out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
     ids={str(x.resolve()):digest(x) for x in [a.engine,a.library_dir/'libdbtjitshared.so',a.spike,a.pk,a.libgcc]}
-    save(out/'identity.json',dict(files=ids,rvvts_revision=rev,compiler=subprocess.check_output([a.compiler,'--version'],text=True),host=list(os.uname()),argv=sys.argv,runner_sha256=digest(__file__),checker_sha256=digest(F.parent/'rvvts_packet.py'),flags_sha256=digest(F/'external-flags.json')))
+    save(out/'identity.json',dict(LD_LIBRARY_PATH=str(a.library_dir.resolve())+os.pathsep+os.environ.get('LD_LIBRARY_PATH',''),files=ids,rvvts_revision=rev,compiler=subprocess.check_output([a.compiler,'--version'],text=True),host=list(os.uname()),argv=sys.argv,runner_sha256=digest(__file__),checker_sha256=digest(F.parent/'rvvts_packet.py'),flags_sha256=digest(F/'external-flags.json')))
     ar=F/'ara-vredsum';rv=F/'rvvts-20261089';build=out/'guests';build.mkdir()
     base=[a.compiler,'--target=riscv32-unknown-elf','-mabi=ilp32d']
     for name,src in [('test',ar/'context_original_vredsum.c'),('user_runtime',ar/'user_runtime.c'),('printf',ar/'printf.c')]:
