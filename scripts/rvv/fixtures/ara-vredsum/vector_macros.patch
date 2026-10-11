@@ -1,0 +1,181 @@
+--- pinned/vector_macros.h
++++ adapter/vector_macros.h
+@@ -12,6 +12,7 @@
+ #include "rvv_debug_macros.h"
+ #include "encoding.h"
+ #include "float_conversion.h"
++#include "user_runtime.h"
+ 
+ #ifdef __SPIKE__
+ #include <stdio.h>
+@@ -40,9 +41,18 @@
+  *  Macros  *
+  ************/
+ 
+-#define read_vtype(buf) do { asm volatile ("csrr %[BUF], vtype" : [BUF] "=r" (buf)); } while (0);
+-#define read_vl(buf)    do { asm volatile ("csrr %[BUF], vl" : [BUF] "=r" (buf)); } while (0);
+-#define read_vxsat(buf) do { asm volatile ("csrr %[BUF], vxsat" : [BUF] "=r" (buf)); } while (0);
++#define read_vtype(buf) do { uintptr_t ara_value; asm volatile ("csrr %0, vtype" : "=r"(ara_value)); (buf) = ara_value; } while (0);
++#define read_vl(buf) do { uintptr_t ara_value; asm volatile ("csrr %0, vl" : "=r"(ara_value)); (buf) = ara_value; } while (0);
++/* RV32 CSR writes one XLEN register: read that width, then define the entire
++ * original uint64_t buffer by zero-extension. No masking or expected override. */
++#define read_vxsat(buf) do {                                                    \
++  uintptr_t ara_csr_value, ara_csr_pc;                                          \
++  asm volatile (".Lara_vxsat_read_%=:\ncsrr %[VAL], vxsat\n"                     \
++                "la %[PC], .Lara_vxsat_read_%="                                \
++                : [VAL] "=&r" (ara_csr_value), [PC] "=r" (ara_csr_pc));          \
++  (buf) = (uint64_t)ara_csr_value;                                              \
++  ara_note_vxsat_read(__LINE__, ara_csr_pc);                                    \
++} while (0);
+ #define reset_vxsat     do { asm volatile ("csrw vxsat, %0" :: "rK"(0)); } while (0);
+ #define set_vxrm(val) do { asm volatile ("csrw vxrm, %0" :: "rK"(val)); } while (0);
+ 
+@@ -52,6 +62,8 @@
+ // by comparing with golden_vtype value used as a reference. Also check for
+ // illegal values of vlmul and vsew which violtate: ELEN >= SEW/LMUL
+ #define check_vtype_vl(casenum, vtype, golden_vtype, avl, vl, vsew, vlmul)                                                     \
++  ara_assert_begin(casenum, 2, sizeof(uintptr_t)); \
++  ara_compare_step(casenum, 0); ara_compare_step(casenum, 1); \
+   printf("Checking vtype and vl #%d...\n", casenum); \
+   if((vlmul==5 && (vsew == 1 || vsew == 2 || vsew ==3)) || (vlmul==6 && (vsew == 2 || vsew ==3)) || (vlmul==7 && vsew==3)){   \
+   if((vtype != 0x8000000000000000) || (vl != 0)){    \
+@@ -63,16 +75,24 @@
+     num_failed++;                                                                                                  \
+     return;                                                                                                        \
+   }                                                                                                                \
+-  printf("PASSED.\n");
++  printf("PASSED.\n"); \
++  ara_assert_end(casenum);
+ 
+ #define check_vxsat(casenum, vxsat, golden_vxsat)                                                                  \
++  do {                                                                                                         \
++  uintptr_t ara_check_pc;                                                                                       \
++  asm volatile ("la %0, .Lara_vxsat_check_" #casenum : "=r" (ara_check_pc));                                     \
++  ara_flag_begin(casenum, __LINE__, (uint64_t)(vxsat), (uint64_t)(golden_vxsat), ara_check_pc);                     \
++  asm volatile (".Lara_vxsat_check_" #casenum ":" ::: "memory");                                                 \
+   printf("Checking vxsat #%d...\n", casenum);                                                               \
+   if (vxsat != golden_vxsat) {                                                                        \
+-    printf("FAILED. Got vxsat = %lx, expected vxsat = %lx.\n", vxsat, golden_vxsat); \
++    printf("FAILED. Got vxsat = %lx, expected vxsat = %lx.\n", (unsigned long)(vxsat), (unsigned long)(golden_vxsat)); \
+     num_failed++;                                                                                                  \
+     return;                                                                                                        \
+   }                                                                                                                \
+-  printf("PASSED.\n");
++  printf("PASSED.\n");                                                                                         \
++  ara_flag_end(casenum);                                                                                        \
++  } while (0);
+ 
+ // In order to avoid that scalar loads run ahead of vector stores,
+ // we use an instruction to ensure that all vector stores have been
+@@ -102,6 +122,10 @@
+ 
+ // Check the result against a scalar golden value
+ #define XCMP(casenum,act,exp)                                           \
++  do {                                                                 \
++  uintptr_t ara_scalar_pc;                                              \
++  asm volatile(".Lara_scalar_check_%=:\nla %0, .Lara_scalar_check_%=" : "=r"(ara_scalar_pc)); \
++  ara_scalar_begin(casenum, __LINE__, (uint64_t)(act), (uint64_t)(exp), ara_scalar_pc); \
+   printf("Checking the results of the test case %d:\n", casenum);       \
+   if (act != exp) {                                                     \
+     printf("Index %d FAILED. Got %d, expected %d.\n", casenum, act, exp);\
+@@ -109,62 +133,77 @@
+     return;                                                             \
+   }                                                                     \
+   printf("PASSED.\n");                                                  \
++  ara_scalar_end(casenum);                                              \
++  } while(0)
+ 
+ // Check the result against a floating-point scalar golden value
+ #define FCMP(casenum,act,exp)                                           \
++  ara_assert_begin(casenum, 1, sizeof(act)); \
++  ara_compare_step(casenum, 0); \
+   if(act != exp) {                                                      \
+     printf("Index %d FAILED. Got %lf, expected %lf.\n",casenum, act, exp);       \
+     num_failed++;                                                       \
+     return;                                                             \
+   }                                                                     \
+-  printf("PASSED.\n");
++  printf("PASSED.\n"); \
++  ara_assert_end(casenum);
+ 
+ // Check the results against a vector of golden values
+ #define VCMP(T,str,casenum,vexp,act...)                                               \
+   T vact[] = {act};                                                                   \
++  ara_assert_begin(casenum, sizeof(vact)/sizeof(T), sizeof(T));                        \
+   printf("Checking the results of the test case %d:\n", casenum);                     \
+   MEMORY_BARRIER;                                                                     \
+   for (unsigned int i = 0; i < sizeof(vact)/sizeof(T); i++) {                         \
++    ara_compare_step(casenum, i);                                                     \
+     if (vexp[i] != vact[i]) {                                                         \
+       printf("Index %d FAILED. Got "#str", expected "#str".\n", i, vexp[i], vact[i]); \
+       num_failed++;                                                                   \
+       return;                                                                         \
+     }                                                                                 \
+   }                                                                                   \
+-  printf("PASSED.\n");
++  printf("PASSED.\n");                                                             \
++  ara_assert_end(casenum);
+ 
+ //Macro used to compare large number of elements
+ #define LVCMP(T,str,casenum,elements, vexp ,vact)                                     \
++  ara_assert_begin(casenum, elements, sizeof(T)); \
+   printf("Checking the results of the test case %d:\n", casenum);                     \
+   MEMORY_BARRIER;                                                                     \
+   for (unsigned int i = 0; i < elements; i++) {                                       \
++    ara_compare_step(casenum, i); \
+     if (vexp[i] != vact[i]) {                                                         \
+       printf("Index %d FAILED. Got "#str", expected "#str".\n", i, vexp[i], vact[i]); \
+       num_failed++;                                                                   \
+       return;                                                                         \
+     }                                                                                 \
+   }                                                                                   \
+-  printf("PASSED.\n");
++  printf("PASSED.\n"); \
++  ara_assert_end(casenum);
+ 
+ 
+ // Check the results against an in-memory vector of golden values
+ #define VMCMP(T,str,casenum,vexp,vgold,size)                                          \
++  ara_assert_begin(casenum, size, sizeof(T)); \
+   printf("Checking the results of the test case %d:\n", casenum);                     \
+   MEMORY_BARRIER;                                                                     \
+   for (unsigned int i = 0; i < size; i++) {                                           \
++    ara_compare_step(casenum, i); \
+     if (vexp[i] != vgold[i]) {                                                        \
+       printf("Index %d FAILED. Got "#str", expected "#str".\n", i, vexp[i], vgold[i]);\
+       num_failed++;                                                                   \
+       return;                                                                         \
+     }                                                                                 \
+   }                                                                                   \
+-  printf("PASSED.\n");
++  printf("PASSED.\n"); \
++  ara_assert_end(casenum);
+ 
+ // Macros to set vector length, type and multiplier
+ // Don't use this to set VL == 0 since the compiler puts rs1 == x0
+ #define VSET(VLEN,VTYPE,LMUL)                                                          \
+   do {                                                                                 \
+-  asm volatile ("vsetvli t0, %[A]," #VTYPE "," #LMUL ", ta, ma \n" :: [A] "r" (VLEN)); \
++  asm volatile ("vsetvli t0, %[A]," #VTYPE "," #LMUL ", ta, ma \n" :: [A] "r" (VLEN) : "t0", "memory"); \
++  ara_trace_vset(__LINE__, VLEN);                                                       \
+   } while(0)
+ 
+ // Macros to set vector length equal to zero
+@@ -201,7 +240,7 @@
+ #define VCLEAR(register)                                                                          \
+   do {                                                                                            \
+     MEMORY_BARRIER;                                                                               \
+-    uint64_t vtype; uint64_t vl; uint64_t vlmax;                                                  \
++    uintptr_t vtype; uintptr_t vl; uintptr_t vlmax;                                               \
+     asm volatile("csrr %[vtype], vtype" : [vtype] "=r" (vtype));                                  \
+     asm volatile("csrr %[vl], vl" : [vl] "=r" (vl));                                              \
+     asm volatile("vsetvl %[vlmax], zero, %[vtype]" : [vlmax] "=r" (vlmax) : [vtype] "r" (vtype)); \
+@@ -212,7 +251,7 @@
+ #define VCLEAR_AT_ONE(register)                                                                   \
+   do {                                                                                            \
+     MEMORY_BARRIER;                                                                               \
+-    uint64_t vtype; uint64_t vl; uint64_t vlmax;                                                  \
++    uintptr_t vtype; uintptr_t vl; uintptr_t vlmax;                                               \
+     asm volatile("csrr %[vtype], vtype" : [vtype] "=r" (vtype));                                  \
+     asm volatile("csrr %[vl], vl" : [vl] "=r" (vl));                                              \
+     asm volatile("vsetvl %[vlmax], zero, %[vtype]" : [vlmax] "=r" (vlmax) : [vtype] "r" (vtype)); \

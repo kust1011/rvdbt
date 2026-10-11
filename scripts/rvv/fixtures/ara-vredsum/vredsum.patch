@@ -1,0 +1,19 @@
+--- pinned/vredsum.c
++++ adapter/vredsum.c
+@@ -168,11 +168,11 @@
+   INIT_CHECK();
+   enable_vec();
+ 
+-  TEST_CASE1();
+-  TEST_CASE2();
+-  TEST_CASE3();
+-  TEST_CASE4();
+-  TEST_CASE5();
++  ara_case_begin("TEST_CASE1"); TEST_CASE1(); ara_case_end("TEST_CASE1",num_failed);
++  ara_case_begin("TEST_CASE2"); TEST_CASE2(); ara_case_end("TEST_CASE2",num_failed);
++  ara_case_begin("TEST_CASE3"); TEST_CASE3(); ara_case_end("TEST_CASE3",num_failed);
++  ara_case_begin("TEST_CASE4"); TEST_CASE4(); ara_case_end("TEST_CASE4",num_failed);
++  ara_case_begin("TEST_CASE5"); TEST_CASE5(); ara_case_end("TEST_CASE5",num_failed);
+ 
+   EXIT_CHECK();
+ }

@@ -55,3 +55,10 @@ RVVTS_SOURCE=/path/to/new-dependencies/rvvts \
 RVVTS_PACKET=/path/to/new-replay/runs/rvvts/Spike/stdout \
 python3 -m unittest discover -s scripts -p test_rvv_external_packet.py
 ```
+
+Verify emitted input/body and complete observer transport before accepting replay:
+```sh
+python3 scripts/verify_rvv_external_elf.py --elf /path/to/new-replay/guests/rvvts.elf \
+  --nm llvm-nm-22 --output /path/to/new-replay/elf-verification.json
+python3 scripts/audit_rvv_external_admission.py --results /path/to/new-replay --source .
+```
