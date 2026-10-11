@@ -1,8 +1,22 @@
 import json,sys,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from run_rvv_external import ara_check,verify_fixtures,F
+from run_rvv_external import ara_check,verify_fixtures,F,check_reused_command
 class ExternalChecks(unittest.TestCase):
+ def test_reuse_retains_execution_options(self):
+  old=['/engine','--vlen=1024','--rvv-run=0','--dump-tbcode=/old/code','--fsroot=/old/fs','--cache=/old/cache','--','/t.elf']
+  relocated=[x.replace('/old/','/new/') for x in old]
+  check_reused_command(old,relocated)
+  for changed in ['--vlen=2048','--rvv-run=1']:
+   current=relocated.copy();current[1 if changed.startswith('--vlen') else 2]=changed
+   with self.assertRaisesRegex(ValueError,'execution options'):check_reused_command(old,current)
+  with self.assertRaisesRegex(ValueError,'execution options'):check_reused_command(old,relocated+['--extra'])
+ def test_reuse_reference_keeps_isa_and_pk(self):
+  old=['/spike','--isa=rv32gcv_zvl2048b','/pk','/old/guest.elf']
+  check_reused_command(old,old[:-1]+['/new/guest.elf'],True)
+  for index,value in [(1,'--isa=rv32gcv_zvl1024b'),(2,'/different-pk')]:
+   current=old.copy();current[index]=value
+   with self.assertRaisesRegex(ValueError,'execution options'):check_reused_command(old,current,True)
  def packet(self):
   j=json.loads((F/'ara-vredsum/expected-observations.json').read_text());lines=[]
   for i in range(5):lines+=['ARA_CASE_BEGIN TEST_CASE'+str(i+1),'ARA_CASE_END TEST_CASE'+str(i+1)]

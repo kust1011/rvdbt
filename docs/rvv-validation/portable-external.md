@@ -37,6 +37,14 @@ Raw commands/stdout/stderr/return/timeout/checker results and fresh executable
 identities remain in the new output. Bulky working caches and host dumps stay
 there; only selected small raw artifacts should be archived in Git.
 
+To resume an interrupted replay, add `--reuse-successful-from /path/to/prior-replay`
+and still choose a new output directory. Reuse requires matching executable and
+guest-ELF identities, fixture, configuration, execution options, and intact raw
+output. Output/cache directory paths may relocate; VLEN, method flags, reference
+ISA and proxy kernel may not change. Each reused output is checked again by the
+current checker. The summary separates `new_calls` from `reused_receipts`;
+rechecked receipts are not new guest executions.
+
 This replay covers two fixtures. It does not reproduce historical595-form results
 or validate general precise fault/retry, signal delivery or arbitrary configurations.
 

@@ -32,6 +32,18 @@ def verify_fixtures():
     restored=re.sub(r'ara_case_begin\("(TEST_CASE\d+)"\); (TEST_CASE\d+)\(\); ara_case_end\("TEST_CASE\d+",num_failed\);',r'\2();',adapted)
     if restored!=original:raise ValueError('Ara original functions/main initialization changed')
 
+def execution_contract(command, reference=False):
+    """Ignore relocated output paths, retaining execution options and their order."""
+    command = list(map(str, command))
+    if reference:
+        return command[:-1] + ['<verified-same-elf>']
+    relocated = ('--dump-tbcode=', '--dump-tbmap=', '--fsroot=', '--cache=')
+    return [option for option in command if not option.startswith(relocated)]
+
+def check_reused_command(saved, current, reference=False):
+    if execution_contract(saved, reference) != execution_contract(current, reference):
+        raise ValueError('changed execution options in reused receipt')
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for n in ['output','rvvts','engine','library-dir','spike','pk','libgcc']:p.add_argument('--'+n,type=Path,required=True)
@@ -75,6 +87,9 @@ def main():
             if reuse and (reuse/'result.json').exists() and json.loads((reuse/'result.json').read_text()).get('checker_pass'):
                 old=json.loads((reuse/'result.json').read_text())
                 if json.loads((a.reuse_successful_from/'identity.json').read_text())['files']!=ids or old['elf_sha256']!=digest(elf) or old['stdout_sha256']!=digest(reuse/'stdout') or old['stderr_sha256']!=digest(reuse/'stderr') or old['returncode']!=0 or old['timeout']:raise ValueError('changed reused receipt')
+                if old['fixture'] != name or old['arm'] != arm:
+                    raise ValueError('changed fixture or configuration in reused receipt')
+                check_reused_command(json.loads((reuse/'command.json').read_text()), cmd, arm == 'Spike')
                 shutil.copytree(reuse,d);r=old;r['reused_from']=str(reuse)
             else:r=call(cmd,d,env,a.timeout)
             raw=(d/'stdout').read_bytes();ok=False
@@ -89,8 +104,12 @@ def main():
             r.update(fixture=name,arm=arm,checker_pass=ok,elf_sha256=digest(elf));save(d/'result.json',r);results.append(r);save(out/'results.json',results)
             if not ok:raise RuntimeError('checker failed: '+name+'/'+arm)
     if ids!={x:digest(x) for x in ids}:raise RuntimeError('runtime identity changed')
-    save(out/'summary.json',dict(status='PASS',calls=10,results=results,scope='two fixtures; not historical595 forms'))
-    print('PASS: two fixtures, ten calls')
+    reused_count = sum('reused_from' in result for result in results)
+    new_count = len(results) - reused_count
+    save(out/'summary.json',dict(status='PASS',accepted_receipts=len(results),
+         new_calls=new_count,reused_receipts=reused_count,results=results,
+         scope='two fixtures; not historical595 forms'))
+    print(f'PASS: two fixtures, {new_count} new calls, {reused_count} reused receipts')
 if __name__=='__main__':
     try:main()
     except Exception as e:print(str(e),file=sys.stderr);sys.exit(1)
