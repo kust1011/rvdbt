@@ -2,7 +2,7 @@
 
 Generated saved index: **627 forms / 595 applicable / 32 excluded; checked union 595**.
 
-Task76 membership; static implementation classes copied from the recorded October 7 route matrix.
+Task87 accepted Ara overlay on Task76 / recorded October 7 routes; static implementation classes copied from the recorded October 7 route matrix.
 This compact index is not raw evidence, a new execution, or a measurement of semantic depth.
 Suite/stage sets overlap. A dash means no established membership in that saved set;
 it does not mean an instruction is unsupported. Candidate/configuration/checker/raw details
@@ -14,7 +14,7 @@ and the separate [Task80 real smoke](rvv-validation/smoke-task80/README.md).
 | Suite | Target/result checked | Coupled endpoint |
 |---|---:|---:|
 | ACT | 590 | 0 |
-| Ara | 301 | 0 |
+| Ara | 396 | 0 |
 | CHIPS | 595 | 0 |
 | CTK | 0 | 0 |
 | FORCE-RISCV | 0 | 0 |
@@ -47,9 +47,9 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vand.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | libriscv | vialu/1 |
 | vand.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vand_vv/1;vialu/1 |
 | vand.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vialu/1 |
-| vasub.vv | REQUIRED | fixed_point | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vavg/1 |
+| vasub.vv | REQUIRED | fixed_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vavg/1 |
 | vasub.vx | REQUIRED | fixed_point | ACT;CHIPS;RVV-ATG;SiFive RIF | RVISmith | vavg/1 |
-| vasubu.vv | REQUIRED | fixed_point | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vavg/1 |
+| vasubu.vv | REQUIRED | fixed_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vavg/1 |
 | vasubu.vx | REQUIRED | fixed_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vavg/1 |
 | vcompress.vm | REQUIRED | permutation | ACT;Ara;CHIPS;RVV-ATG | libriscv | vcompress/1 |
 | vcpop.m | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmaskpop/1 |
@@ -57,98 +57,98 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vdiv.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | — | vimul/1 |
 | vdivu.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | RVVTS | vimul/1 |
 | vdivu.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | — | vimul/1 |
-| vfadd.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVVTS;libriscv | vfalu/1 |
-| vfadd.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVVTS;libriscv | vfalu/1 |
-| vfclass.v | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfunary1/1 |
-| vfcvt.f.x.v | REQUIRED | floating_point | ACT;CHIPS | libriscv | vfcvt/1 |
-| vfcvt.f.xu.v | REQUIRED | floating_point | ACT;CHIPS | libriscv | vfcvt/1 |
-| vfcvt.rtz.x.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | libriscv | vfcvt/1 |
-| vfcvt.rtz.xu.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | libriscv | vfcvt/1 |
-| vfcvt.x.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfcvt.xu.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfdiv.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfdiv.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVVTS;libriscv | vfalu/1 |
+| vfadd.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVVTS;libriscv | vfalu/1 |
+| vfadd.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVVTS;libriscv | vfalu/1 |
+| vfclass.v | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfunary1/1 |
+| vfcvt.f.x.v | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfcvt/1 |
+| vfcvt.f.xu.v | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfcvt/1 |
+| vfcvt.rtz.x.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | libriscv | vfcvt/1 |
+| vfcvt.rtz.xu.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | libriscv | vfcvt/1 |
+| vfcvt.x.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
+| vfcvt.xu.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
+| vfdiv.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfdiv.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVVTS;libriscv | vfalu/1 |
 | vfirst.m | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmaskpop/1 |
-| vfmacc.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfmacc.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVVTS;libriscv | vfma/1 |
-| vfmadd.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfmadd.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfmax.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfmax.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfmerge.vfm | REQUIRED | floating_point | ACT;CHIPS | libriscv | vfmerge/1 |
-| vfmin.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfmin.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfmsac.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfma/1 |
-| vfmsac.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfmsub.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfma/1 |
-| vfmsub.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfmul.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfmul.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVISmith;RVVTS;libriscv | vfalu/1 |
+| vfmacc.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfmacc.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVVTS;libriscv | vfma/1 |
+| vfmadd.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfmadd.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfmax.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfmax.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfmerge.vfm | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfmerge/1 |
+| vfmin.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfmin.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfmsac.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfma/1 |
+| vfmsac.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfmsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfma/1 |
+| vfmsub.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfmul.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfmul.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVISmith;RVVTS;libriscv | vfalu/1 |
 | vfmv.f.s | REQUIRED | floating_point | Ara;CHIPS | libriscv | vfmvfs/1 |
 | vfmv.s.f | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfmvsf/1 |
-| vfmv.v.f | REQUIRED | floating_point | ACT;CHIPS | — | vfmerge/1 |
-| vfncvt.f.f.w | REQUIRED | floating_point | ACT;CHIPS | libriscv | vfcvt/1 |
-| vfncvt.f.x.w | REQUIRED | floating_point | ACT;CHIPS | — | vfcvt/1 |
-| vfncvt.f.xu.w | REQUIRED | floating_point | ACT;CHIPS | — | vfcvt/1 |
-| vfncvt.rod.f.f.w | REQUIRED | floating_point | ACT;CHIPS | — | vfcvt/1 |
+| vfmv.v.f | REQUIRED | floating_point | ACT;Ara;CHIPS | — | vfmerge/1 |
+| vfncvt.f.f.w | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfcvt/1 |
+| vfncvt.f.x.w | REQUIRED | floating_point | ACT;Ara;CHIPS | — | vfcvt/1 |
+| vfncvt.f.xu.w | REQUIRED | floating_point | ACT;Ara;CHIPS | — | vfcvt/1 |
+| vfncvt.rod.f.f.w | REQUIRED | floating_point | ACT;Ara;CHIPS | — | vfcvt/1 |
 | vfncvt.rtz.x.f.w | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | libriscv | vfcvt/1 |
 | vfncvt.rtz.xu.f.w | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
 | vfncvt.x.f.w | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
 | vfncvt.xu.f.w | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfnmacc.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfma/1 |
-| vfnmacc.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfnmadd.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfma/1 |
-| vfnmadd.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfnmsac.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfnmsac.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfnmsub.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfma/1 |
-| vfnmsub.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfma/1 |
-| vfrdiv.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfrec7.v | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfunary1/2 |
+| vfnmacc.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfma/1 |
+| vfnmacc.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfnmadd.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfma/1 |
+| vfnmadd.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfnmsac.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfnmsac.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfnmsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfma/1 |
+| vfnmsub.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
+| vfrdiv.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfrec7.v | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfunary1/2 |
 | vfredmax.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfred/1 |
 | vfredmin.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfred/1 |
 | vfredosum.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfred/1 |
 | vfredusum.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfred/1 |
-| vfrsqrt7.v | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfunary1/2 |
-| vfrsub.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfsgnj.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfsgnj.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfsgnjn.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfsgnjn.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfsgnjx.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfalu/1 |
-| vfsgnjx.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfalu/1 |
-| vfslide1down.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vslide/1 |
-| vfslide1up.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vslide/1 |
-| vfsqrt.v | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfunary1/3 |
-| vfsub.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVISmith | vfalu/1 |
-| vfsub.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | RVISmith;RVVTS;libriscv | vfalu/1 |
-| vfwadd.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwadd.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwadd.wf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfrsqrt7.v | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfunary1/2 |
+| vfrsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfsgnj.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfsgnj.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfsgnjn.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfsgnjn.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfsgnjx.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
+| vfsgnjx.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
+| vfslide1down.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vslide/1 |
+| vfslide1up.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vslide/1 |
+| vfsqrt.v | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfunary1/3 |
+| vfsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVISmith | vfalu/1 |
+| vfsub.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | RVISmith;RVVTS;libriscv | vfalu/1 |
+| vfwadd.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwadd.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwadd.wf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
 | vfwadd.wv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
-| vfwcvt.f.f.v | REQUIRED | floating_point | CHIPS | libriscv | vfcvt/1 |
+| vfwcvt.f.f.v | REQUIRED | floating_point | Ara;CHIPS | libriscv | vfcvt/1 |
 | vfwcvt.f.x.v | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfcvt/1 |
 | vfwcvt.f.xu.v | REQUIRED | floating_point | ACT;Ara;CHIPS | libriscv | vfcvt/1 |
-| vfwcvt.rtz.x.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfwcvt.rtz.xu.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfwcvt.x.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfwcvt.xu.f.v | REQUIRED | floating_point | ACT;CHIPS;SiFive RIF | — | vfcvt/1 |
-| vfwmacc.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwmacc.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwmsac.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwmsac.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
-| vfwmul.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwmul.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
-| vfwnmacc.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwnmacc.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
-| vfwnmsac.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwnmsac.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwcvt.rtz.x.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
+| vfwcvt.rtz.xu.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
+| vfwcvt.x.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
+| vfwcvt.xu.f.v | REQUIRED | floating_point | ACT;Ara;CHIPS;SiFive RIF | — | vfcvt/1 |
+| vfwmacc.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwmacc.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwmsac.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwmsac.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
+| vfwmul.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwmul.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
+| vfwnmacc.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwnmacc.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
+| vfwnmsac.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwnmsac.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
 | vfwredosum.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfwred/1 |
 | vfwredusum.vs | REQUIRED | floating_point | ACT;CHIPS | — | vfwred/1 |
-| vfwsub.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwsub.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwsub.wf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwsub.wv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwsub.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwsub.wf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
+| vfwsub.wv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
 | vid.v | REQUIRED | mask_to_integer | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;libriscv | vid/1 |
 | viota.m | REQUIRED | mask_to_integer | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vmunary/1 |
 | vl1re16.v | REQUIRED | whole_register_memory | ACT;Ara;CHIPS;RVV-ATG | SiFive RIF;libriscv | vlNre/1 |
@@ -328,7 +328,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vluxseg8ei32.v | REQUIRED | indexed_memory | ACT;Ara;CHIPS;RVV-ATG | — | vlseg/1 |
 | vluxseg8ei64.v | NOT_APPLICABLE | indexed_memory | — | — | vlseg/1 |
 | vluxseg8ei8.v | REQUIRED | indexed_memory | ACT;Ara;CHIPS;RVV-ATG | — | vlseg/1 |
-| vmacc.vv | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
+| vmacc.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
 | vmacc.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
 | vmadc.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | RVVTS | vadc/1 |
 | vmadc.vim | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | SiFive RIF | vadc/1 |
@@ -336,7 +336,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vmadc.vvm | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;SiFive RIF;libriscv | vadc/1 |
 | vmadc.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
 | vmadc.vxm | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
-| vmadd.vv | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
+| vmadd.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
 | vmadd.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/2 |
 | vmand.mm | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vmlogic/1 |
 | vmandn.mm | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmlogic/1 |
@@ -347,16 +347,16 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vmerge.vim | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | RVISmith;RVVTS;SiFive RIF;libriscv | vmerge/1 |
 | vmerge.vvm | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
 | vmerge.vxm | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
-| vmfeq.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
-| vmfeq.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
-| vmfge.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
-| vmfgt.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
-| vmfle.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
-| vmfle.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
-| vmflt.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
-| vmflt.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | RVISmith;libriscv | vfcmp/1 |
-| vmfne.vf | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
-| vmfne.vv | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
+| vmfeq.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
+| vmfeq.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
+| vmfge.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
+| vmfgt.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
+| vmfle.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
+| vmfle.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
+| vmflt.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
+| vmflt.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;libriscv | vfcmp/1 |
+| vmfne.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
+| vmfne.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
 | vmin.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1 |
 | vmin.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vialu/1 |
 | vminu.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1 |
@@ -417,9 +417,9 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vnclipu.wi | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG | — | vnclip/1 |
 | vnclipu.wv | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vnclip/1 |
 | vnclipu.wx | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vnclip/1 |
-| vnmsac.vv | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
+| vnmsac.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
 | vnmsac.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
-| vnmsub.vv | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
+| vnmsub.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
 | vnmsub.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/2 |
 | vnsra.wi | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG | — | vnshift/1 |
 | vnsra.wv | REQUIRED | integer_narrowing | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vnshift/1 |
@@ -592,10 +592,10 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vssubu.vx | REQUIRED | fixed_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vsatadd/1 |
 | vsub.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1;vsub_vv/1 |
 | vsub.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vialu/1 |
-| vsuxei16.v | REQUIRED | indexed_memory | ACT;CHIPS;RVV-ATG;SiFive RIF | RVISmith | vsxei/1 |
-| vsuxei32.v | REQUIRED | indexed_memory | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vsxei/1 |
+| vsuxei16.v | REQUIRED | indexed_memory | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith | vsxei/1 |
+| vsuxei32.v | REQUIRED | indexed_memory | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vsxei/1 |
 | vsuxei64.v | NOT_APPLICABLE | indexed_memory | — | — | vsxei/1 |
-| vsuxei8.v | REQUIRED | indexed_memory | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vsxei/1 |
+| vsuxei8.v | REQUIRED | indexed_memory | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vsxei/1 |
 | vsuxseg2ei16.v | REQUIRED | indexed_memory | ACT;CHIPS | — | vsseg/1 |
 | vsuxseg2ei32.v | REQUIRED | indexed_memory | ACT;CHIPS;RVV-ATG | — | vsseg/1 |
 | vsuxseg2ei64.v | NOT_APPLICABLE | indexed_memory | — | — | vsseg/1 |

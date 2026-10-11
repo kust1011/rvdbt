@@ -36,6 +36,39 @@
       "redistribution": "License.txt restricts use to paper artifact evaluation and prohibits redistribution/modification; obtain permission for reuse. No fixture or binary bundled.",
       "fetch": "git clone URL SOURCE; git -C SOURCE checkout --detach REVISION; git -C SOURCE submodule update --init --recursive",
       "build_entry": "README.md documents prebuilt binaries; original scripts/once_eval.py and differential output predicates; no general source-build claim"
+    },
+    "ara": {
+      "url": "https://github.com/pulp-platform/ara.git",
+      "revision": "34bd3bc152421b4601a7bf3d6e8e91ffb545c99e",
+      "license": "SHL-0.51; headers retain their own licenses; apps/common/printf MIT",
+      "paths": {
+        "printf.c": "apps/common/printf.c",
+        "printf.h": "apps/common/printf.h",
+        "dataset.h": "apps/riscv-tests/isa/macros/vector/dataset.h",
+        "encoding.h": "apps/common/encoding.h",
+        "float_conversion.h": "apps/riscv-tests/isa/macros/vector/float_conversion.h",
+        "rvv_debug_macros.h": "apps/riscv-tests/isa/macros/vector/rvv_debug_macros.h",
+        "vector_macros.h": "apps/riscv-tests/isa/macros/vector/vector_macros.h",
+        "vredsum.c": "apps/riscv-tests/isa/rv64uv/vredsum.c"
+      }
+    },
+    "rvvts": {
+      "url": "https://github.com/ics-jku/RVVTS.git",
+      "revision": "ed9a96e74f9c8367ce42da5b6526b9727a18a293",
+      "license": "BSD-3-Clause",
+      "role": "external-API derivative, not upstream canned test"
+    },
+    "spike_replay": {
+      "url": "https://github.com/riscv-software-src/riscv-isa-sim.git",
+      "revision": "20feb9c2bf2a7deab964d8190b0cbd4b4131bec3",
+      "build": "mkdir build; cd build; ../configure --prefix=INSTALL; make -j2; make install",
+      "license": "BSD-3-Clause"
+    },
+    "pk_replay": {
+      "url": "https://github.com/riscv-software-src/riscv-pk.git",
+      "revision": "9c61d29846d8521d9487a57739330f9682d5b542",
+      "build": "mkdir build; cd build; ../configure --host=riscv64-unknown-elf --with-arch=rv32gc --with-abi=ilp32d; make -j2",
+      "license": "BSD-style; preserve LICENSE"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "snapshot": "Task76 accepted canonical index at 85a51c988a07622e286ae8eb208d37ffcad7f41c",
+  "snapshot": "Task87 accepted Ara overlay on preserved Task76 membership",
   "inputs": [
     {
       "file": "external_suite_coverage_20261007/FORM_VERIFICATION_EVIDENCE.csv",
@@ -29,15 +29,17 @@
   ],
   "bundled_projection": {
     "file": "compact-input.json",
-    "bytes": 281524,
-    "sha256": "adc36979e536de376d99567d69dfbb93d885477132721a590213ca3160ab09fc"
+    "bytes": 24147409,
+    "sha256": "6a857543640c2199c46a182b5ab832776015d736eda088e943775879cef0e76c"
   },
   "retrieval": "Canonical inputs and historical archives are unpublished local research artifacts; no public URL assigned. Request access from the author. Availability and redistribution permission are not guaranteed.",
-  "limits": "Bundled projection reproduces this view without canonical inputs. It cannot reconstruct full bindings, raw evidence, candidate/configuration detail, or historical executions. Immutable scope-evidence.tar.gz is Task71, not Task76.",
+  "limits": "Saved index plus accepted Ara bindings; original other-suite provenance remains retained. Raw replay requires the author archive; no public URL is assigned. This update performs no guest executions.",
   "new_DUT_executions": 0,
   "reproducer": {
-    "scripts/rvv_compact_scope.py": "8bbdb8ad79da9efe57c6ced6566385b51e4b83289913bd42bf325515ebee833a",
+    "scripts/rvv_compact_scope.py": "23e49aae0e0e08c6febae1426cdd95a4fee8a177e70f65223001efe7fa1420f4",
     "scripts/rvv_scope_report.py": "13cde9a50ff8847ffb925c290ce9a21bc729f7934f02e51cf43977410fff5f5a",
-    "scripts/rvv_tests.py": "c4ebd8f90a065bd3405fd1b5bbfb93cf3d8d0107289264e0696d7570bb43158d"
+    "scripts/rvv_tests.py": "c4ebd8f90a065bd3405fd1b5bbfb93cf3d8d0107289264e0696d7570bb43158d",
+    "scripts/rvv_ara_accepted.py": "61078c4990e59608ec84bb90507ea213ecd6135ae7b33bc1502f7fff0610ff39",
+    "scripts/verify_rvv_ara_tables.py": "e6bcb04b8ccfd3901fcaa5777fd34f93d6f6625b1b7c4f5449a647c3bc8cb212"
   }
 }

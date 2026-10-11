@@ -41,6 +41,9 @@ def project(forms, summary, routes):
 
 
 def render(data):
+    if 'ara_evidence' in data:
+        from rvv_ara_accepted import validate_evidence
+        validate_evidence(data)
     forms = data['forms']
     names = {r['form'] for r in forms}
     if len(names) != len(forms):
@@ -63,7 +66,7 @@ def render(data):
     lines = ['# Current compact RVV scope', '',
              f"Generated saved index: **{len(forms)} forms / {len(applicable)} applicable / "
              f"{counts['excluded']} excluded; checked union {len(checked)}**.", '',
-             'Task76 membership; static implementation classes copied from the recorded October 7 route matrix.',
+             data['snapshot'] + '; static implementation classes copied from the recorded October 7 route matrix.',
              'This compact index is not raw evidence, a new execution, or a measurement of semantic depth.',
              'Suite/stage sets overlap. A dash means no established membership in that saved set;',
              'it does not mean an instruction is unsupported. Candidate/configuration/checker/raw details',
@@ -114,6 +117,9 @@ def render(data):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--input', type=Path, help='bundled compact-input.json; no historical archive needed')
+    p.add_argument('--accepted-evidence', type=Path, help='accepted Tasks82–86 evidence root; offline overlay')
+    p.add_argument('--canonical-tables', action='store_true', help='also emit versioned existing canonical table views')
+    p.add_argument('--canonical', type=Path, help='existing canonical coverage directory')
     p.add_argument('--forms', type=Path)
     p.add_argument('--summary', type=Path)
     p.add_argument('--routes', type=Path)
@@ -131,6 +137,11 @@ def main():
             data = project(list(csv.DictReader(f)), json.loads(a.summary.read_text()), list(csv.DictReader(r)))
         data['canonical_inputs'] = {path.name: {'bytes': path.stat().st_size, 'sha256': digest(path)}
                                     for path in (a.forms, a.summary, a.routes)}
+    if a.accepted_evidence:
+        if not a.canonical:
+            p.error('--accepted-evidence requires --canonical')
+        from rvv_ara_accepted import integrate
+        data = integrate(data, a.accepted_evidence, a.canonical)
     markdown, rows, counts = render(data)
     a.output.mkdir(parents=True, exist_ok=False)
     (a.output / 'compact-input.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
@@ -140,6 +151,12 @@ def main():
         writer = csv.DictWriter(f, rows[0].keys(), lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
+    if 'ara_evidence' in data:
+        from rvv_ara_accepted import render_evidence, export_canonical
+        if a.canonical_tables:
+            export_canonical(data, a.canonical, a.output)
+        (a.output / 'ara-accepted-evidence.md').write_text(render_evidence(data['ara_evidence']))
+        (a.output / 'ara-form-set-diff.json').write_text(json.dumps(data['ara_evidence']['diff'], indent=2) + '\n')
     print(json.dumps(counts))
 
 
