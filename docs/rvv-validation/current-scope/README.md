@@ -88,7 +88,10 @@ The verifier checks historical-row preservation, hashes, joins, duplicate identi
 other suites and byte-identical table regeneration. It writes only the derived
 edition and its check report. `DELIVERY` is `rvv_validation_delivery_20261009`.
 The bundled snapshot can render without archive access using the earlier `--input`
-command; raw replay still requires the archive. Portable full-file execution and
-an external sequence with actual M1/Both admission remain the next runner gap.
+command; historical raw replay still requires the corresponding archive.
+[Portable external replay](../portable-external.md) now provides a complete Ara
+file and an external sequence with actual M1/Both admission; its
+[fresh-build results](../portable-task88/README.md) retain a separate build
+identity and do not recreate the entire historical form-coverage campaign.
 
 Ara89:166 blocks in39 programs,830 block/arm bindings and195 valid receipts (156 DUT /39 reference). Eight failed preliminary Spike builds remain distinct; actual reference count47. Main reviewed166 blocks,195 receipts and390 rejection controls; Task90 reuses that review. Five remaining forms retain exact blockers; all81 incompatible blocks and inherited source limitations remain in the bundled evidence. Zero new executions, whole-file PASS, multi-member M1 or M2 fast admission credit.

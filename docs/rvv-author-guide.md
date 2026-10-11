@@ -8,12 +8,12 @@ Direct chunk routes and shared semantic helpers both implement guest behavior.
 Source presence, compiled source, static emission, program execution,
 target/result checking and coupled endpoints are separate stages. Checked sets
 are CHIPS595, ACT590, RVV-ATG434, Ara422 and SiFive RIF200; their union is595.
-RVVTS58, RVISmith43 and libriscv198 are coupled endpoints: program success does
-not independently check each contributing static opcode. Candidate-specific
-sets and original/derivative provenance remain in the canonical bindings. The
-uppercase-hex decoder correction changes RIF194 to200 and libriscv coupled194 to198
-through regenerated sets, without new execution or a changed595-form union. The
-immutable scope archive is the Task71 snapshot; current joins require the evidence tree.
+RVVTS58 and RVISmith43 are coupled endpoints: program success does not
+independently check each contributing static opcode. Candidate-specific sets
+and original/derivative provenance remain in the canonical bindings. Historical
+libriscv records remain in the archive but are not used for this validation
+claim. The immutable scope archive is the Task71 snapshot; the current scope
+and Ara review package linked below supersede its aggregate counts.
 
 ## Explaining the support claim
 
@@ -41,7 +41,57 @@ immutable scope archive is the Task71 snapshot; current joins require the eviden
   an actual fault followed by repair and retry. Additional configuration and
   intermediate-state coverage is described below, not assumed from595 forms.
 
-## Trace one form: `vsmul.vv`
+## Trace a direct body: `vadd.vv v10,v8,v9`
+
+This is a source-derived example, not a new captured execution. Fix VLEN1024,
+SEW32, LMUL1, unmasked, VL32 and vstart0, with the typed QCG route enabled and
+M1 disabled. Read these functions in order:
+
+1. [rv32_decode.h](../dbt/guest/rv32_decode.h) routes the unmasked ADD encoding
+   to `vadd_vv`. `TRANSLATOR(vadd_vv)` in
+   [rv32_qir.cpp](../dbt/guest/rv32_qir.cpp) checks the route's configuration
+   and host-feature conditions. `RvvVaddChunkShape` derives two64-byte
+   components for this example. A component is a QIR value, not a fixed ZMM.
+2. `RvvEmitTypedChunkGroup` checks that the shape covers the architectural
+   register. `RvvEmitTypedAluChunkGroupCore` constructs the guarded frame and
+   calls `RvvEmitTypedAluChunkBody`. The body constructs all source loads,
+   then both adds, then both destination stores. Its state address is
+   `offsetof(CPUState,vec) + offsetof(VectorState,vreg) + r*VLEN_MAX_BYTES + c*64`.
+   Here r is the architectural register number and c is0 or1. The slot stride
+   is the maximum reserved register size, not the current128-byte logical size.
+
+```text
+a0 = vstatechunkload state(v8,0); a1 = vstatechunkload state(v9,0)
+b0 = vstatechunkload state(v8,1); b1 = vstatechunkload state(v9,1)
+x  = vchunkadd a0,a1,SEW32
+y  = vchunkadd b0,b1,SEW32
+vstatechunkstore state(v10,0),x
+vstatechunkstore state(v10,1),y
+```
+
+3. [qra.cpp](../dbt/qmc/qcg/qra.cpp)'s `QRegAlloc` tracks vector values in a
+   separate register class. It walks QIR in order, allocates operands and
+   retires proven block-local values after their last use. `AllocPRegV`
+   prefers free registers, then registers holding retired values, then a
+   permitted spill candidate. This is the implemented allocation policy;
+   calling it an interval-based linear-scan algorithm would be misleading.
+4. [qemit.cpp](../dbt/qmc/qcg/qemit.cpp)'s `Emit_vstatechunkload` emits
+   `vmovdqu64` from the CPU-state pointer. `Emit_vchunkadd` selects `vpaddd`
+   for4-byte elements and obtains ZMM operands from the allocated512-bit
+   values. `Emit_vstatechunkstore` emits the corresponding state write.
+   This body has four state loads, two packed adds and two state stores,
+   excluding guards and completion code. These stores are architectural
+   state publication, not spills caused by register exhaustion.
+
+`Emit_rvvtypedchunkbegin` emits runtime tests; the translator does not know
+future VL values. With the integer two-arm path enabled, matching vtype,
+VL32 and vstart0 enter the full body; a shorter VL or nonzero vstart selects
+the partial body, and incompatible configuration selects the helper. The
+partial body has separate lane-mask handling. Do not extend the full-store
+example above to masked or partial updates. [rvv-qcg.md](rvv-qcg.md) explains
+where cross-instruction promotion and active-component bounds modify this path.
+
+## Trace a helper form: `vsmul.vv`
 
 1. In [rv32_qir.cpp](../dbt/guest/rv32_qir.cpp), search
    `TRANSLATOR_Helper(vsmul)`; the QCG route retains the semantic helper.
