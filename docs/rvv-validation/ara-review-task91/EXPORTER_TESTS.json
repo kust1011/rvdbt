@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_rvv_ara_accepted.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "tests": 4,
+  "status": "PASS",
+  "new_DUT_executions": 0
+}

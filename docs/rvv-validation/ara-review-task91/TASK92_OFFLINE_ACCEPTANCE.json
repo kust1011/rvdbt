@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "files_verified": 23194,
+  "bindings": 2430,
+  "unique_binding_receipts": 1785,
+  "scope_bindings": {
+    "EXTRACTED_FP32_64_BLOCK": 1465,
+    "INVALID_CONTEXT_HISTORY": 80,
+    "LEGACY_MACRO_DERIVATIVE": 30,
+    "ORIGINAL_FULL_FILE_MISSING_CONFIG": 9,
+    "TEST_CASE1_2_ONLY": 16,
+    "EXTRACTED_ORIGINAL_ARA89_BLOCK": 830
+  },
+  "ara89_blocks": 166,
+  "ara89_receipts": 195,
+  "ara89_exact_added_forms": 26,
+  "retained_preliminary_failures": 8,
+  "M2_target_admission": "UNOBSERVED",
+  "M2_fast_admission": null,
+  "new_DUT_executions": 0
+}

@@ -1,0 +1,9 @@
+{
+  "task": 91,
+  "corrects": "Task90 derived metadata only; original receipts unchanged",
+  "M2_target_admission_status": "UNOBSERVED",
+  "M2_fast_admission": null,
+  "reason": "RVV_FAST reads rvv_fast::g_fast at dbt/elfrun.cpp:2071. M2 active-VL runtime bounds use the distinct RVV_ACTIVE_CHUNKS census at 2144, which this batch never enabled. Zero FAST counters do not imply zero M2 admission.",
+  "four_DUT_configurations_original_predicates": "PASS",
+  "new_DUT_executions": 0
+}

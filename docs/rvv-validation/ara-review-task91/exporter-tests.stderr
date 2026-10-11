@@ -1,0 +1,9 @@
+test_accepted_snapshot_partition_and_other_suites (test_rvv_ara_accepted.AraAcceptanceTests) ... ok
+test_ara89_source_only_and_failed_history_excluded (test_rvv_ara_accepted.AraAcceptanceTests) ... ok
+test_complete_same_block_arms_required (test_rvv_ara_accepted.AraAcceptanceTests) ... ok
+test_duplicate_identity_rejected (test_rvv_ara_accepted.AraAcceptanceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 7.704s
+
+OK

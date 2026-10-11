@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "extraction": "/home/vick/rvv-task91-inspection-final-clean-20261012",
+  "corrupted_file": "records/ara89/remote-raw/extracted_vand_TEST_CASE3/M2/stdout",
+  "mutation": "first original PASSED. replaced by FAILED.",
+  "offline_checker_exit": 1,
+  "offline_checker_rejected": true,
+  "original_parser_corrupted_predicate_rejected": true,
+  "original_parser_nonzero_exit_rejected": true,
+  "restored_original_raw": true,
+  "new_DUT_executions": 0
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "changed_payloads": [
+    "tools/package_rvv_ara_review.py",
+    "tools/verify_rvv_ara_bundle.py"
+  ],
+  "added_payloads": [
+    "tools/test_rvv_ara_bundle.py"
+  ],
+  "preserved_original_records": true,
+  "source_notice_joins": true,
+  "dependency_notices_verified": true,
+  "legal_restorations": 327,
+  "legal_prefix_bookkeeping_unchanged": true,
+  "distribution_boundaries_verified": true,
+  "credential_pattern_scan": "no matches; values not emitted",
+  "hash_independent_assertion_rejection": {
+    "file": "records/ara89/remote-raw/extracted_vand_TEST_CASE3/M2/stdout",
+    "updated_hashes": [
+      "FILES.json",
+      "ARA_EVIDENCE.json raw_sha256"
+    ],
+    "exit": 1,
+    "reason": "failed evidence offered for acceptance"
+  },
+  "retained_producer_corrupted_assertion_rejected": true,
+  "retained_producer_nonzero_exit_rejected": true,
+  "disposable_copy_restored": true,
+  "new_DUT_executions": 0
+}
