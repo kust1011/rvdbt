@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "counts": {
+    "PASS": 4
+  },
+  "cases_executed": 4,
+  "controls": 0,
+  "positive_case_counts": {
+    "PASS": 4
+  },
+  "control_expectation_counts": {},
+  "candidate_unchanged": true,
+  "engine_files_after": {
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/bin/elfrun": "c556199719fe01d5e7eee75d86429e9687341784b9b749143bf2d2678cf34133",
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/lib/libdbtjitshared.so": "16e8d97d87a551e2d9ee1396c012957842289d4f3d49dfb2a9b0ad8ec3e09d92",
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/lib/libboost_program_options.so.1.74.0": "ea9cc5e083371770527e933345315e413dd7c460548d8f7e868004a67d88b482"
+  },
+  "instruction_coverage": "not inferred from case count"
+}

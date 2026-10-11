@@ -15,6 +15,32 @@ uppercase-hex decoder correction changes RIF194 to200 and libriscv coupled194 to
 through regenerated sets, without new execution or a changed595-form union. The
 immutable scope archive is the Task71 snapshot; current joins require the evidence tree.
 
+## Explaining the support claim
+
+- **What was implemented?** RVV decoding, vector architectural state, direct
+  vector QIR and x86 emission, semantic helpers, and the M1/M2 optimizations in
+  rvdbt's lightweight execution path. A helper is an implementation route,
+  not evidence that the instruction is unsupported or correctly implemented.
+- **What does 595 mean?** It counts applicable mnemonic/operand forms, not
+  test programs or every combination of element width, grouping and vector
+  state. The scope includes both direct and helper execution. The per-form
+  index identifies the external checker and configuration behind each count.
+- **How is a result checked?** The external assertion or separately identified
+  reference supplies the expected result. The runner checks termination and
+  output; source-to-checker bindings identify what that output actually tests.
+  The example below follows one form through that chain. The expected result
+  is not generated from the rvdbt execution being checked.
+- **What do four configurations establish?** B/M1/M2/Both observations check
+  those configured executions. An optimization may refuse a case and use a
+  fallback; generated-code or runtime admission evidence is needed to say
+  that the optimized body itself was exercised.
+- **What remains incomplete?** Precise interruption/retry is not established.
+  This is more than a Linux signal interface gap: vector memory paths do not
+  uniformly save completed elements and restart state on a fault. Normal
+  result checks, including manually supplied nonzero `vstart`, do not test
+  an actual fault followed by repair and retry. Additional configuration and
+  intermediate-state coverage is described below, not assumed from595 forms.
+
 ## Trace one form: `vsmul.vv`
 
 1. In [rv32_qir.cpp](../dbt/guest/rv32_qir.cpp), search

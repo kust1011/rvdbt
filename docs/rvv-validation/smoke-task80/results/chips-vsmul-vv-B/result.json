@@ -1,0 +1,13 @@
+{
+  "id": "chips-vsmul-vv-B",
+  "status": "PASS",
+  "control": false,
+  "returncode": 0,
+  "error": null,
+  "elapsed_seconds_for_timeout_diagnostics_only": 0.11817954800790176,
+  "elf_sha256": "94a1a592014d8d287fb17dc17fcd42e0c05e98f3fb694e253d5c87856f30440b",
+  "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+  "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+  "checker": "registered exit code, exact stdout and optional exact stderr of self-checking guest",
+  "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+}

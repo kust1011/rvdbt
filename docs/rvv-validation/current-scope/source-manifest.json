@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "snapshot": "Task76 accepted canonical index at 85a51c988a07622e286ae8eb208d37ffcad7f41c",
+  "inputs": [
+    {
+      "file": "external_suite_coverage_20261007/FORM_VERIFICATION_EVIDENCE.csv",
+      "bytes": 10222329,
+      "sha256": "6b0cb7f619f3734dd464f490391ef35c5a58f0f32c2f77505b76bfbdea86af43",
+      "role": "projection input"
+    },
+    {
+      "file": "external_suite_coverage_20261007/ACTUAL_FORM_VALIDATION_SUMMARY.json",
+      "bytes": 1393219,
+      "sha256": "b51fc85db8c06c1cfb6bbc5e864bb694531e90ea601487688e623ce91d85a923",
+      "role": "projection input"
+    },
+    {
+      "file": "external_suite_coverage_20261007/ACTUAL_FORM_VALIDATION_BINDINGS.csv",
+      "bytes": 166879153,
+      "sha256": "1cd6c4b11743a4be46a1611c87c15fb86592c3853c0225135b9ea2a09cd6ce1c",
+      "role": "binding provenance only; not imported or read by compact exporter"
+    },
+    {
+      "file": "rvv_route_matrix_20261007/tables/FORM_ROUTE_MATRIX.csv",
+      "bytes": 293671,
+      "sha256": "724e1bb608f12202d696a56880c5b519b09c8e47f66dcf98e89985aacbbcefea",
+      "role": "projection input"
+    }
+  ],
+  "bundled_projection": {
+    "file": "compact-input.json",
+    "bytes": 281524,
+    "sha256": "adc36979e536de376d99567d69dfbb93d885477132721a590213ca3160ab09fc"
+  },
+  "retrieval": "Canonical inputs and historical archives are unpublished local research artifacts; no public URL assigned. Request access from the author. Availability and redistribution permission are not guaranteed.",
+  "limits": "Bundled projection reproduces this view without canonical inputs. It cannot reconstruct full bindings, raw evidence, candidate/configuration detail, or historical executions. Immutable scope-evidence.tar.gz is Task71, not Task76.",
+  "new_DUT_executions": 0,
+  "reproducer": {
+    "scripts/rvv_compact_scope.py": "8bbdb8ad79da9efe57c6ced6566385b51e4b83289913bd42bf325515ebee833a",
+    "scripts/rvv_scope_report.py": "13cde9a50ff8847ffb925c290ce9a21bc729f7934f02e51cf43977410fff5f5a",
+    "scripts/rvv_tests.py": "c4ebd8f90a065bd3405fd1b5bbfb93cf3d8d0107289264e0696d7570bb43158d"
+  }
+}

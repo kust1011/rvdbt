@@ -1,0 +1,34 @@
+{
+  "argv": [
+    "/home/vick/rvv-clean-replay80-20261011/repo/scripts/rvv_tests.py",
+    "--manifest",
+    "/home/vick/rvv-clean-replay80-20261011/smoke/manifest.json",
+    "--inputs",
+    "/home/vick/rvv-clean-replay80-20261011/smoke/inputs",
+    "--engine",
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/bin/elfrun",
+    "--library-dir",
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/lib",
+    "--output",
+    "/home/vick/rvv-clean-replay80-20261011/smoke/results",
+    "--jobs",
+    "2"
+  ],
+  "manifest_sha256": "87f2e3f993baa0dad2324c15db7aa939c545b5c707908c1d43ac75da6c69acf2",
+  "runner_sha256": "c4ebd8f90a065bd3405fd1b5bbfb93cf3d8d0107289264e0696d7570bb43158d",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "engine_files_before": {
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/bin/elfrun": "c556199719fe01d5e7eee75d86429e9687341784b9b749143bf2d2678cf34133",
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/lib/libdbtjitshared.so": "16e8d97d87a551e2d9ee1396c012957842289d4f3d49dfb2a9b0ad8ec3e09d92",
+    "/home/vick/rvv-clean-replay80-20261011/repo/build/lib/libboost_program_options.so.1.74.0": "ea9cc5e083371770527e933345315e413dd7c460548d8f7e868004a67d88b482"
+  },
+  "selected_cases": [
+    "chips-vsmul-vv-M2",
+    "chips-vsmul-vv-BOTH",
+    "chips-vsmul-vv-M1",
+    "chips-vsmul-vv-B"
+  ],
+  "LD_LIBRARY_PATH": "/home/vick/rvv-clean-replay80-20261011/repo/build/lib",
+  "jobs": 2,
+  "scope": "correctness replay; not a performance measurement or route-coverage proof"
+}

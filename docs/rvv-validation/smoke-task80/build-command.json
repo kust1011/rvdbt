@@ -1,0 +1,16 @@
+[
+  "/usr/bin/python3",
+  "/home/vick/rvv-clean-replay80-20261011/repo/scripts/build_rvv_chips.py",
+  "--upstream",
+  "/home/vick/rvv-clean-replay80-20261011/chips",
+  "--source",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/test.S",
+  "--source-sha256",
+  "4ebf0bbde3102d66f82d76d6e52c037680c72bf440086e7a168d37976120c292",
+  "--expected-elf-sha256",
+  "94a1a592014d8d287fb17dc17fcd42e0c05e98f3fb694e253d5c87856f30440b",
+  "--compiler",
+  "clang-20",
+  "--output",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/build"
+]

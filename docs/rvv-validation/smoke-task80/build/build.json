@@ -1,0 +1,16 @@
+{
+  "status": "BUILD_SUCCESS",
+  "returncode": 0,
+  "source_sha256": "4ebf0bbde3102d66f82d76d6e52c037680c72bf440086e7a168d37976120c292",
+  "source_unmodified": true,
+  "upstream_revision": "f76bff121dce91b6b23e1d37be77a5e44af914c3",
+  "submodules": {
+    "env/riscv-test-env": "81721c126d7dd7335829948b4a19070546e465d6"
+  },
+  "adapter_sha256": "22f1250e81f679de3fc36ba4c7cc549493ed921904a691913cd5da8335515033",
+  "compiler_version": "Ubuntu clang version 20.1.8 (++20250708082409+6fb913d3e2ec-1~exp1~20250708202428.132)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /home/vick/rvv-clean-replay80-20261011/toolchain/bin\n",
+  "elf_sha256": "94a1a592014d8d287fb17dc17fcd42e0c05e98f3fb694e253d5c87856f30440b",
+  "expected_elf_sha256": "94a1a592014d8d287fb17dc17fcd42e0c05e98f3fb694e253d5c87856f30440b",
+  "oracle": "unchanged expected values in supplied stage2 source; build is not oracle validation",
+  "matches_registered_elf": true
+}

@@ -6,6 +6,15 @@ that failures propagate. Passing the runner's unit tests is not ISA coverage.
 
 ## Current scope and reproducible index
 
+Start with the [generated current 627-form table](rvv-current-scope.md), its
+[compact inputs/source manifest and reproduction command](rvv-validation/current-scope/README.md),
+and [Task80 actual four-result smoke with build -> fixture -> results workflow](rvv-validation/smoke-task80/README.md).
+The table uses Task76's exact checked/endpoint membership and already recorded
+static route classes. It is a compact index, not raw evidence or new executions.
+Its bundled projection renders without this machine; full bindings and unpublished
+historical archives still require separately authorized retrieval. No public
+reproduction of inaccessible historical archives is claimed.
+
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
 and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara301 and

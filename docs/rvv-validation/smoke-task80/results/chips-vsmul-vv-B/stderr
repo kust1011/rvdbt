@@ -1,0 +1,17 @@
+RVV_ROUTE vsetvli handler_calls=0
+RVV_ROUTE vle32.v handler_calls=0
+RVV_ROUTE vse32.v handler_calls=0
+RVV_ROUTE vadd.vv handler_calls=0
+RVV_ROUTE vsub.vv handler_calls=0
+RVV_ROUTE vmul.vv handler_calls=0
+RVV_ROUTE vand.vv handler_calls=0
+RVV_ROUTE vor.vv handler_calls=0
+RVV_ROUTE vxor.vv handler_calls=0
+RVV_ROUTE vsll.vi handler_calls=0
+RVV_ROUTE vsrl.vi handler_calls=0
+RVV_ROUTE vmv.v.x handler_calls=0
+RVV_ROUTE vadd.vx handler_calls=0
+RVV_ROUTE vmv.v.i handler_calls=0
+RVV_ROUTE vmv.v.v handler_calls=0
+RVV_ROUTE vadd.vi handler_calls=0
+RVV_ROUTE other-vector handler_calls=0

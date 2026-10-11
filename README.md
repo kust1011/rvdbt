@@ -33,7 +33,11 @@ an AVX-512 build on a host without the required CPU features. See the existing
 design notes below for the base translator; the RVV work extends rather than
 replaces that architecture.
 
-See [validation and reproducibility](docs/rvv-validation.md) and the
+Start with the [current 627-form table](docs/rvv-current-scope.md) and
+[real four-configuration CHIPS smoke records/workflow](docs/rvv-validation/smoke-task80/README.md).
+The compact view can be regenerated from committed inputs; historical raw archives
+are unpublished and must be obtained separately. See
+[validation and reproducibility](docs/rvv-validation.md) and the
 [author guide](docs/rvv-author-guide.md) for checked form scope, external evidence
 dependencies and unresolved source/signal/fault limits.
 

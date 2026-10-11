@@ -1,0 +1,70 @@
+{
+  "recorded_at": "2026-10-11T22:11:02.048877+08:00",
+  "records": {
+    "checkout": {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "cwd": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/clean-replay80/checkout",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "commit": {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/clean-replay80/checkout",
+      "exit": 0,
+      "stdout": "85a51c988a07622e286ae8eb208d37ffcad7f41c\n",
+      "stderr": ""
+    },
+    "submodules": {
+      "command": [
+        "git",
+        "submodule",
+        "status"
+      ],
+      "cwd": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/clean-replay80/checkout",
+      "exit": 0,
+      "stdout": " 029075b84bf0161a761beb63e6eda519a29020db dbt/third_party/asmjit (029075b)\n d251da09a07dff40af0b63b8f6c8ae71d2d1938d dbt/third_party/elfio (Release_3.7-257-gd251da0)\n-7de2a1f46a50cdaf5454cbf22a8c137b4ed8a54c riscv-tests\n",
+      "stderr": ""
+    },
+    "compiler": {
+      "command": [
+        "clang-20",
+        "--version"
+      ],
+      "cwd": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/clean-replay80/checkout",
+      "exit": 0,
+      "stdout": "Ubuntu clang version 20.1.8 (++20250708082409+6fb913d3e2ec-1~exp1~20250708202428.132)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-20/bin\n",
+      "stderr": ""
+    },
+    "linker": {
+      "command": [
+        "ld.lld-20",
+        "--version"
+      ],
+      "cwd": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/clean-replay80/checkout",
+      "exit": 0,
+      "stdout": "Ubuntu LLD 20.1.8 (compatible with GNU linkers)\n",
+      "stderr": ""
+    },
+    "chips": {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/user/research/third_party/riscv-vector-tests-20261007",
+      "exit": 0,
+      "stdout": "f76bff121dce91b6b23e1d37be77a5e44af914c3\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Selected Task80 provenance records; full host record omitted. Engine built locally, executed on separate AVX-512 AMD Ryzen 9 9950X3D / Ubuntu24.04.3 host. No binaries or private dependency/toolchain payloads included."
+}

@@ -1,0 +1,14 @@
+[
+  "cmake",
+  "-S",
+  ".",
+  "-B",
+  "build",
+  "-G",
+  "Ninja",
+  "-DCMAKE_BUILD_TYPE=Release",
+  "-DCMAKE_C_COMPILER=clang-20",
+  "-DCMAKE_CXX_COMPILER=clang++-20",
+  "-DLLVM_PATH=/usr/lib/llvm-20",
+  "-DRVV_HOST_CHUNK_BITS=512"
+]

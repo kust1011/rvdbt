@@ -1,0 +1,20 @@
+[
+  "/home/vick/rvv-clean-replay80-20261011/toolchain/bin/clang-20",
+  "--target=riscv32-unknown-elf",
+  "-march=rv32gv",
+  "-mabi=ilp32f",
+  "-static",
+  "-mcmodel=medany",
+  "-fvisibility=hidden",
+  "-nostdlib",
+  "-fuse-ld=lld",
+  "-DENTROPY=0xdeadbeef",
+  "-DLFSR_BITS=9",
+  "-DCHIPS_ENV_HEADER=\"/home/vick/rvv-clean-replay80-20261011/chips/env/ps/riscv_test.h\"",
+  "-I/home/vick/rvv-clean-replay80-20261011/repo/scripts/rvv/chips_user",
+  "-I/home/vick/rvv-clean-replay80-20261011/chips/macros/general",
+  "-Wl,-T,/home/vick/rvv-clean-replay80-20261011/chips/env/ps/link.ld",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/build/test.S",
+  "-o",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/build/test.elf"
+]

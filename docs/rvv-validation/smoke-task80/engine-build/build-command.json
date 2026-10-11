@@ -1,0 +1,7 @@
+[
+  "ninja",
+  "-C",
+  "build",
+  "-j2",
+  "elfrun"
+]

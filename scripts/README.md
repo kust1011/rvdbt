@@ -25,6 +25,7 @@ Run from the repository root with Python3.10+. See
 
 | Command | Action | Required external inputs |
 |---|---|---|
+| `rvv_compact_scope.py --input ...` | Regenerate compact current 627-form table/CSV | committed projection; no raw archive or execution |
 | `rvv_scope_report.py` | Render frozen per-form/suite stages and select bindings | scope archive CSV/JSON |
 | `rvv_complete_inventory.py` | Recompute/check all ten canonical join outputs | complete retained evidence tree, metadata/ELFs |
 | `rvv_coverage_report.py` | Rebuild historical FORM/supplement reports | original FORM CSV and optional supplement index |

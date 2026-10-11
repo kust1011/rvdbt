@@ -1,0 +1,16 @@
+[
+  "/usr/bin/python3",
+  "/home/vick/rvv-clean-replay80-20261011/repo/scripts/rvv_tests.py",
+  "--manifest",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/manifest.json",
+  "--inputs",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/inputs",
+  "--engine",
+  "/home/vick/rvv-clean-replay80-20261011/repo/build/bin/elfrun",
+  "--library-dir",
+  "/home/vick/rvv-clean-replay80-20261011/repo/build/lib",
+  "--output",
+  "/home/vick/rvv-clean-replay80-20261011/smoke/results",
+  "--jobs",
+  "2"
+]
