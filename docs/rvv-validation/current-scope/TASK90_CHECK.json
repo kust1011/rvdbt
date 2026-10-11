@@ -1,0 +1,16 @@
+{
+  "original_binding_rows": 48062,
+  "original_ledger_rows": 100715,
+  "scoped_overlay_binding_rows": 830,
+  "scoped_overlay_ledger_rows": 830,
+  "unique_overlay_receipts": 1785,
+  "accepted_unique_overlay_receipts": 1695,
+  "input_hashes_verified": 0,
+  "source_checks_on_author_host": true,
+  "historical_rows_preserved": true,
+  "historical_byte_prefix_preserved": true,
+  "other_suite_fields_preserved": true,
+  "canonical_regeneration_byte_identical": true,
+  "duplicate_overlay_ids": 0,
+  "new_DUT_executions": 0
+}

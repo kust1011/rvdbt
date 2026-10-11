@@ -2,7 +2,7 @@
 
 Generated saved index: **627 forms / 595 applicable / 32 excluded; checked union 595**.
 
-Task87 accepted Ara overlay on Task76 / recorded October 7 routes; static implementation classes copied from the recorded October 7 route matrix.
+Task90 reviewed Ara89 overlay on immutable Task87 / recorded October 7 routes; static implementation classes copied from the recorded October 7 route matrix.
 This compact index is not raw evidence, a new execution, or a measurement of semantic depth.
 Suite/stage sets overlap. A dash means no established membership in that saved set;
 it does not mean an instruction is unsupported. Candidate/configuration/checker/raw details
@@ -14,7 +14,7 @@ and the separate [Task80 real smoke](rvv-validation/smoke-task80/README.md).
 | Suite | Target/result checked | Coupled endpoint |
 |---|---:|---:|
 | ACT | 590 | 0 |
-| Ara | 396 | 0 |
+| Ara | 422 | 0 |
 | CHIPS | 595 | 0 |
 | CTK | 0 | 0 |
 | FORCE-RISCV | 0 | 0 |
@@ -46,7 +46,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vadd.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vadd_vx/1;vialu/1 |
 | vand.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | libriscv | vialu/1 |
 | vand.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vand_vv/1;vialu/1 |
-| vand.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vialu/1 |
+| vand.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vialu/1 |
 | vasub.vv | REQUIRED | fixed_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vavg/1 |
 | vasub.vx | REQUIRED | fixed_point | ACT;CHIPS;RVV-ATG;SiFive RIF | RVISmith | vavg/1 |
 | vasubu.vv | REQUIRED | fixed_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vavg/1 |
@@ -105,10 +105,10 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vfnmsub.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfma/1 |
 | vfrdiv.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
 | vfrec7.v | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfunary1/2 |
-| vfredmax.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfred/1 |
-| vfredmin.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfred/1 |
-| vfredosum.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfred/1 |
-| vfredusum.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | — | vfred/1 |
+| vfredmax.vs | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfred/1 |
+| vfredmin.vs | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfred/1 |
+| vfredosum.vs | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfred/1 |
+| vfredusum.vs | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfred/1 |
 | vfrsqrt7.v | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfunary1/2 |
 | vfrsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfalu/1 |
 | vfsgnj.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfalu/1 |
@@ -143,8 +143,8 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vfwnmacc.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfwarith/1 |
 | vfwnmsac.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
 | vfwnmsac.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
-| vfwredosum.vs | REQUIRED | floating_point | ACT;CHIPS;RVV-ATG | libriscv | vfwred/1 |
-| vfwredusum.vs | REQUIRED | floating_point | ACT;CHIPS | — | vfwred/1 |
+| vfwredosum.vs | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | libriscv | vfwred/1 |
+| vfwredusum.vs | REQUIRED | floating_point | ACT;Ara;CHIPS | — | vfwred/1 |
 | vfwsub.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
 | vfwsub.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
 | vfwsub.wf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG | — | vfwarith/1 |
@@ -329,15 +329,15 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vluxseg8ei64.v | NOT_APPLICABLE | indexed_memory | — | — | vlseg/1 |
 | vluxseg8ei8.v | REQUIRED | indexed_memory | ACT;Ara;CHIPS;RVV-ATG | — | vlseg/1 |
 | vmacc.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
-| vmacc.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
+| vmacc.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
 | vmadc.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | RVVTS | vadc/1 |
 | vmadc.vim | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | SiFive RIF | vadc/1 |
 | vmadc.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
 | vmadc.vvm | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;SiFive RIF;libriscv | vadc/1 |
-| vmadc.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
-| vmadc.vxm | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
+| vmadc.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
+| vmadc.vxm | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vadc/1 |
 | vmadd.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
-| vmadd.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/2 |
+| vmadd.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/2 |
 | vmand.mm | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vmlogic/1 |
 | vmandn.mm | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmlogic/1 |
 | vmax.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1 |
@@ -346,7 +346,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vmaxu.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vialu/1 |
 | vmerge.vim | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | RVISmith;RVVTS;SiFive RIF;libriscv | vmerge/1 |
 | vmerge.vvm | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
-| vmerge.vxm | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
+| vmerge.vxm | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
 | vmfeq.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
 | vmfeq.vv | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vfcmp/1 |
 | vmfge.vf | REQUIRED | floating_point | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vfcmp/1 |
@@ -372,7 +372,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vmsbf.m | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vmunary/1 |
 | vmseq.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | RVISmith;SiFive RIF;libriscv | vicmp/1 |
 | vmseq.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vicmp/1 |
-| vmseq.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vicmp/1 |
+| vmseq.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vicmp/1 |
 | vmsgt.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | libriscv | vicmp/1 |
 | vmsgt.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;SiFive RIF | vicmp/1 |
 | vmsgtu.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | — | vicmp/1 |
@@ -390,21 +390,21 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vmsltu.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vicmp/1 |
 | vmsne.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | libriscv | vicmp/1 |
 | vmsne.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;SiFive RIF | vicmp/1 |
-| vmsne.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vicmp/1 |
+| vmsne.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vicmp/1 |
 | vmsof.m | REQUIRED | mask_bits | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | libriscv | vmunary/1 |
 | vmul.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2;vmul_vv/1 |
-| vmul.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | RVISmith;SiFive RIF;libriscv | vimul/2 |
+| vmul.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;SiFive RIF;libriscv | vimul/2 |
 | vmulh.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/3 |
-| vmulh.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/3 |
+| vmulh.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/3 |
 | vmulhsu.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/3 |
-| vmulhsu.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/3 |
+| vmulhsu.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/3 |
 | vmulhu.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vimul/3 |
-| vmulhu.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vimul/3 |
-| vmv.s.x | REQUIRED | permutation | ACT;CHIPS | libriscv | vmvsx/1 |
+| vmulhu.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vimul/3 |
+| vmv.s.x | REQUIRED | permutation | ACT;Ara;CHIPS | libriscv | vmvsx/1 |
 | vmv.v.i | REQUIRED | integer_single_width | ACT;Ara;CHIPS | RVISmith;SiFive RIF;libriscv | vmerge/1 |
 | vmv.v.v | REQUIRED | integer_single_width | ACT;Ara;CHIPS | SiFive RIF;libriscv | vmerge/1 |
-| vmv.v.x | REQUIRED | integer_single_width | ACT;CHIPS;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
-| vmv.x.s | REQUIRED | permutation | ACT;CHIPS | libriscv | vmvxs/1 |
+| vmv.v.x | REQUIRED | integer_single_width | ACT;Ara;CHIPS;SiFive RIF | SiFive RIF;libriscv | vmerge/1 |
+| vmv.x.s | REQUIRED | permutation | ACT;Ara;CHIPS | libriscv | vmvxs/1 |
 | vmv1r.v | REQUIRED | whole_register_move | ACT;Ara;CHIPS;RVV-ATG | RVISmith;SiFive RIF;libriscv | vmvNr/1 |
 | vmv2r.v | REQUIRED | whole_register_move | ACT;Ara;CHIPS;RVV-ATG | libriscv | vmvNr/1 |
 | vmv4r.v | REQUIRED | whole_register_move | ACT;Ara;CHIPS;RVV-ATG | libriscv | vmvNr/1 |
@@ -418,9 +418,9 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vnclipu.wv | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vnclip/1 |
 | vnclipu.wx | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vnclip/1 |
 | vnmsac.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF | vimul/2 |
-| vnmsac.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
+| vnmsac.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
 | vnmsub.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF | vimul/2 |
-| vnmsub.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/2 |
+| vnmsub.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vimul/2 |
 | vnsra.wi | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG | — | vnshift/1 |
 | vnsra.wv | REQUIRED | integer_narrowing | ACT;CHIPS;RVV-ATG;SiFive RIF | — | vnshift/1 |
 | vnsra.wx | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vnshift/1 |
@@ -429,7 +429,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vnsrl.wx | REQUIRED | integer_narrowing | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vnshift/1 |
 | vor.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG | — | vialu/1 |
 | vor.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVISmith;RVVTS;SiFive RIF;libriscv | vialu/1;vor_vv/1 |
-| vor.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1 |
+| vor.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1 |
 | vredand.vs | REQUIRED | integer_reduction | ACT;Ara;CHIPS;RVV-ATG | SiFive RIF;libriscv | vred/1 |
 | vredmax.vs | REQUIRED | integer_reduction | ACT;Ara;CHIPS;RVV-ATG | SiFive RIF;libriscv | vred/1 |
 | vredmaxu.vs | REQUIRED | integer_reduction | ACT;Ara;CHIPS;RVV-ATG | RVISmith;SiFive RIF;libriscv | vred/1 |
@@ -561,7 +561,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vssseg2e16.v | REQUIRED | data_memory | ACT;CHIPS;RVV-ATG | — | vsseg/1 |
 | vssseg2e32.v | REQUIRED | data_memory | ACT;CHIPS;RVV-ATG | — | vsseg/1 |
 | vssseg2e64.v | REQUIRED | data_memory | ACT;Ara;CHIPS | — | vsseg/1 |
-| vssseg2e8.v | REQUIRED | data_memory | ACT;CHIPS;RVV-ATG | — | vsseg/1 |
+| vssseg2e8.v | REQUIRED | data_memory | ACT;Ara;CHIPS;RVV-ATG | — | vsseg/1 |
 | vssseg3e16.v | REQUIRED | data_memory | ACT;CHIPS;RVV-ATG | — | vsseg/1 |
 | vssseg3e32.v | REQUIRED | data_memory | ACT;CHIPS;RVV-ATG | — | vsseg/1 |
 | vssseg3e64.v | REQUIRED | data_memory | ACT;CHIPS | — | vsseg/1 |
@@ -657,7 +657,7 @@ Recorded route IDs refer to the static implementation-class legend below.
 | vwsubu.wx | REQUIRED | integer_widening | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vwint/1 |
 | vxor.vi | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | — | vialu/1 |
 | vxor.vv | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;SiFive RIF;libriscv | vialu/1;vxor_vv/1 |
-| vxor.vx | REQUIRED | integer_single_width | ACT;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vialu/1 |
+| vxor.vx | REQUIRED | integer_single_width | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | SiFive RIF;libriscv | vialu/1 |
 | vzext.vf2 | REQUIRED | integer_extension | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;libriscv | vext/1 |
 | vzext.vf4 | REQUIRED | integer_extension | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS;libriscv | vext/1 |
 | vzext.vf8 | REQUIRED | integer_extension | ACT;Ara;CHIPS;RVV-ATG;SiFive RIF | RVVTS | vext/1 |

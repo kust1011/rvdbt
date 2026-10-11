@@ -140,8 +140,8 @@ def main():
     if a.accepted_evidence:
         if not a.canonical:
             p.error('--accepted-evidence requires --canonical')
-        from rvv_ara_accepted import integrate
-        data = integrate(data, a.accepted_evidence, a.canonical)
+        from rvv_ara_accepted import integrate, integrate89
+        data = (integrate89 if 'ara_evidence' in data else integrate)(data, a.accepted_evidence, a.canonical)
     markdown, rows, counts = render(data)
     a.output.mkdir(parents=True, exist_ok=False)
     (a.output / 'compact-input.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')

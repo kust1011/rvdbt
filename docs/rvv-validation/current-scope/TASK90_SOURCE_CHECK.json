@@ -1,0 +1,17 @@
+{
+  "new_input_hashes_verified": 2146,
+  "immutable_task87_binding_prefix": 1600,
+  "task87_input_manifest_unchanged": true,
+  "non_Ara_sets_unchanged": true,
+  "accepted_block_bindings": 830,
+  "accepted_unique_receipts": 195,
+  "failed_preliminary_references": 8,
+  "recorded_DUT_calls": 156,
+  "recorded_reference_calls": 47,
+  "main_review_reused": {
+    "source_blocks": 166,
+    "raw_receipts": 195,
+    "rejection_controls": 390
+  },
+  "new_DUT_executions": 0
+}

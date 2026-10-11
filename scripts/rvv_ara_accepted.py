@@ -223,13 +223,13 @@ def integrate(data, root, canonical):
 
 def render_evidence(e):
     d=e['diff']
-    lines=['# Accepted Ara evidence integration (Task87)', '',
+    lines=[f"# Accepted Ara evidence integration (Task{e.get('version',87)})", '',
            f"Ara checked forms: {len(d['old'])} → {len(d['new'])}; added {len(d['added'])}; removed {len(d['removed'])}.", '',
            'Exact additions: '+', '.join('`'+f+'`' for f in d['added']), '',
            'Frozen source set '+str(d['frozen_source_forms'])+'; version87 derived source set '+str(d['derived_source_forms'])+'. Frozen inventory is unchanged.', '',
            '293 extracted FP blocks: 291 all-five PASS; two reserved source-EEW-overlap failures. The 16 old RTZ-omitted blocks / 80 receipts remain invalid-context history.', '',
            '\n'.join(e['limitations']), '',
-           'Bindings and content identities are in compact-input.json → ara_evidence. Raw locators require the retained research archive; these are not public downloads.', '',
+           'Bindings and content identities are in compact-input.json → ara_evidence. Accepted Ara raw/source inspection is packaged in [Task91 review bundle](../ara-review-task91/README.md); its BINDINGS.json supplies package-relative navigation. Historical absolute paths remain provenance. Canonical full-suite archives remain separate.', '',
            '| Suite | Checked forms /595 | Endpoint forms /595 | Source-case rows | Registered DUT receipts | Registered reference receipts | Ledger rows |',
            '|---|---:|---:|---:|---:|---:|---:|']
     for s in e['suite_counts']:
@@ -246,6 +246,14 @@ def render_evidence(e):
     lines += ['', 'Upstream suite case denominators are UNKNOWN. Source-case/receipt/status rows are different units. Overlay bindings are scoped acceptance records, not new call totals.', '', '| Source-only relative to old accepted set | Finite disposition | Source status | Remaining source obligation |', '|---|---|---|---|']
     for r in e['dispositions']:
         lines.append('| '+' | '.join(str(r.get(k) or 'See frozen source record').replace('|','\\|') for k in ('form','disposition','source_statuses','remaining'))+' |')
+    if 'ara89' in e:
+        a=e['ara89']
+        lines += ['', 'Task90 checkpoint: Ara396 →422; exactly26 additions, no removals. Task87 cumulative baseline remains301.', '',
+                  'Ara89:166 original blocks /39 programs;830 block/arm bindings share195 valid receipts (156 DUT +39 reference). Eight failed preliminary Spike calls remain separate:47 actual references,203 total recorded calls. Zero new calls in this integration.', '',
+                  'Ara89 exact additions: '+', '.join('`'+f+'`' for f in a['checkpoint_diff']['added']), '',
+                  'Main reviewed166 preserved blocks,195 raw receipts and390 rejection controls. These controls are reused, not rerun by Task90. Whole-file PASS, multi-member M1 and M2 fast admission are not established.', '',
+                  'M2 target admission: UNOBSERVED/null. RVV_FAST reads rvv_fast::g_fast (dbt/elfrun.cpp:2071); the distinct RVV_ACTIVE_CHUNKS census (2144) was not enabled. Zero FAST counters cannot establish zero M2 runtime-bounds admission.', '',
+                  'All247 finite block dispositions, including81 exclusions and source limitations, and eight preliminary build identities are retained in compact-input.json → ara_evidence.ara89.']
     return '\n'.join(lines)+'\n'
 
 
@@ -264,6 +272,28 @@ def validate_evidence(data):
     new=old | {b['form'] for b in e['bindings'] if b['positive']}
     if new!=set(e['diff']['new']) or new-old!=set(e['diff']['added']):
         raise ValueError('form/binding join mismatch')
+    if 'ara89' in e:
+        a=e['ara89']; checkpoint=a['checkpoint_diff']
+        selected=[b for b in e['bindings'] if b.get('task')=='ara89']
+        remaining={'vfwadd.wv','vnsra.wv','vnsrl.wv','vssseg3e8.v','vssseg3e32.v'}
+        if (len(checkpoint['old']),len(checkpoint['new']),len(checkpoint['added']),len(selected)) != (396,422,26,830):
+            raise ValueError('Ara89 exact additions/bindings mismatch')
+        if set(checkpoint['new']) != new:
+            raise ValueError('Ara89 cumulative/checkpoint mismatch')
+        if checkpoint['removed'] or set(checkpoint['new']) != set(checkpoint['old']) | set(checkpoint['added']):
+            raise ValueError('Ara89 checkpoint removal/join mismatch')
+        if set(e['diff']['source_only_new'])!=remaining or remaining & new:
+            raise ValueError('Ara89 source-only exclusion violated')
+        if len(a['failed_history'])!=8 or any(h['positive'] for h in a['failed_history']):
+            raise ValueError('Ara89 failed history admitted')
+        if any(b.get('whole_file_pass') or b.get('M2_fast_admission') is not None or b.get('M2_target_admission_status') != 'UNOBSERVED' for b in selected) or a.get('M2_fast_admission') is not None or a.get('M2_target_admission_status') != 'UNOBSERVED':
+            raise ValueError('Ara89 whole-file/optimized admission claim')
+        grouped=collections.defaultdict(list)
+        for b in selected: grouped[b['source']['block']].append(b)
+        if len(grouped)!=166 or any(len(v)!=5 or {b['arm'] for b in v}!=ARMS or not all(b['positive'] for b in v) for v in grouped.values()):
+            raise ValueError('Ara89 incomplete five-arm block bindings')
+        if len({b['raw_root'] for b in selected})!=195 or {b['form'] for b in selected} != set(checkpoint['added']):
+            raise ValueError('Ara89 call/form join mismatch')
     ara=next(s for s in data['suites'] if s['suite']=='Ara')
     if set(ara['result_checked'])!=new:
         raise ValueError('suite membership mismatch')
@@ -281,7 +311,11 @@ def export_canonical(data, canonical, output):
             w.writeheader(); w.writerows(records)
     old=load_csv('ACTUAL_FORM_VALIDATION_BINDINGS.csv')
     fields=list(old[0]); overlay=[]
+    version=e.get('version',87)
+    export_bindings=[b for b in e['bindings'] if b.get('task')=='ara89'] if version==90 else e['bindings']
     for index,b in enumerate(e['bindings']):
+        if version==90 and b.get('task')!='ara89':
+            continue
         link='compact-input.json#ara_evidence.bindings['+str(index)+']'
         base=b.get('raw_root'); result=b.get('raw_result',{}); source=b.get('source',{})
         r={k:'UNKNOWN' for k in fields}
@@ -298,6 +332,9 @@ def export_canonical(data, canonical, output):
         if 'original_binding' in b:
             for k in ('executable_sha256','library_sha256','elf_sha256','flags_json','reference_identity','configuration_known_json'):
                 r[k]=b['original_binding'][k]
+        if b.get('task')=='ara89':
+            r['adapter']=b['artifacts']['adapter']['path']
+            r['configuration_known_json']=json.dumps(dict(runtime=b['configuration'], profile=source['profile'], target=source['target']),sort_keys=True)
         runtime=b.get('retained_runtime',{}); identities=runtime.get('IDENTITY.json',{}); command=runtime.get('command.json',[])
         if isinstance(command,list) and command:
             r['executable_sha256']=identities.get(command[0],'UNKNOWN'); r['flags_json']=json.dumps(command[1:])
@@ -311,10 +348,10 @@ def export_canonical(data, canonical, output):
         reader=csv.DictReader(src); writer=csv.DictWriter(dst,reader.fieldnames,lineterminator='\n'); writer.writeheader(); writer.writerows(reader)
         for b in overlay:
             row={k:b.get(k,'UNKNOWN') for k in reader.fieldnames}
-            row.update(row_kind='SCOPED_ACCEPTANCE',row_id=b['ledger_row_id'],revision='Task87 derived accepted Tasks82–86',cohort='accepted Ara integration',dut_status=b['result'],
+            row.update(row_kind='SCOPED_ACCEPTANCE',row_id=b['ledger_row_id'],revision='Task87 derived accepted Tasks82–86' if version==87 else 'Task90 derived accepted Ara89 scoped bindings',cohort='accepted Ara integration',dut_status=b['result'],
                        accepted_historical_result=b['acceptance'],original_command=b['command_evidence'],source_inventory='compact-input.json#ara_evidence',
                        method_admission='zero multi-member-M1 admission; target-specific optimization UNOBSERVED',applicability='REQUIRED',checked_state=b['observed_state'],
-                       next_command='portable full-file and actual M1/Both sequence replay',blocker=b['remaining'],owner='Task87',last_update='2026-10-12')
+                       next_command='portable full-file and actual M1/Both sequence replay',blocker=b['remaining'],owner=f'Task{version}',last_update='2026-10-12')
             writer.writerow(row)
     summary=json.loads((canonical/'ACTUAL_FORM_VALIDATION_SUMMARY.json').read_text()); ara=next(s for s in summary['suites'] if s['suite']=='Ara')
     ara['forms']['result_checked']=e['diff']['new']; ara['counts']['result_checked']=len(e['diff']['new'])
@@ -324,23 +361,174 @@ def export_canonical(data, canonical, output):
     ara['forms']['failed_or_blocked']=sorted(set(ara['forms']['failed_or_blocked']) | {b['form'] for b in e['bindings'] if b['scope']=='EXTRACTED_FP32_64_BLOCK' and not b['positive']})
     ara['counts']['failed_or_blocked']=len(ara['forms']['failed_or_blocked'])
     stages={k:set() for k in ara['forms']}
-    for b in e['bindings']:
+    for b in export_bindings:
         if b['scope']=='INVALID_CONTEXT_HISTORY':
             stages['diagnostic_only'].add(b['form'])
             continue
         for stage in ('source_present','compiled_source','emitted','program_executed'):
             stages[stage].add(b['form'])
         stages['result_checked' if b['positive'] else 'failed_or_blocked'].add(b['form'])
-    ara['candidates'].append(dict(candidate='clean961:accepted Tasks82–86 scoped bindings',forms={k:sorted(v) for k,v in stages.items()},counts={k:len(v) if v else None for k,v in stages.items()}))
+    ara['candidates'].append(dict(candidate='clean961:accepted Tasks82–86 scoped bindings' if version==87 else 'clean961:Task90 accepted Ara89 scoped bindings',forms={k:sorted(v) for k,v in stages.items()},counts={k:len(v) if v else None for k,v in stages.items()}))
     ara['forms']['diagnostic_only']=sorted(set(ara['forms']['diagnostic_only']) | stages['diagnostic_only'])
     ara['counts']['diagnostic_only']=len(ara['forms']['diagnostic_only']) if ara['forms']['diagnostic_only'] else None
-    ara['accepted_overlay']=dict(binding_rows=len(overlay),positive_binding_rows=sum(b['positive'] for b in e['bindings']),registered_historical_counts_unchanged=True,fp_blocks=e['fp_blocks'])
-    summary['derived_edition']=dict(task=87,original_summary_sha256=sha(canonical/'ACTUAL_FORM_VALIDATION_SUMMARY.json'),form_union_is_not_configuration_completeness=True)
+    ara['accepted_overlay']=dict(binding_rows=len(e['bindings']),positive_binding_rows=sum(b['positive'] for b in e['bindings']),registered_historical_counts_unchanged=True,fp_blocks=e['fp_blocks'])
+    summary['derived_edition']=dict(task=version,original_summary_sha256=sha(canonical/'ACTUAL_FORM_VALIDATION_SUMMARY.json'),form_union_is_not_configuration_completeness=True)
     (output/'ACTUAL_FORM_VALIDATION_SUMMARY.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
     forms=load_csv('COMPLETE_FORM_SUITE_INVENTORY.csv')
     for r in forms:
         for stage,values in ara['forms'].items():
             if r['form'] in values: r['Ara_'+stage]='YES'
-        r['Ara_actual_evidence']='ACTUAL_FORM_VALIDATION_BINDINGS.csv; historical rows plus version87 scoped acceptance; compact-input.json#ara_evidence'
+        r['Ara_actual_evidence']=f'ACTUAL_FORM_VALIDATION_BINDINGS.csv; historical rows plus version{version} scoped acceptance; compact-input.json#ara_evidence'
     write_csv('COMPLETE_FORM_SUITE_INVENTORY.csv',forms)
     (output/'ACTUAL_SUITE_FORM_LISTS.md').write_text(render_evidence(e))
+
+
+def integrate89(data, root, canonical):
+    """Join only reviewed Ara89 inputs onto the immutable Task87 snapshot."""
+    e = data['ara_evidence']
+    if e.get('version', 87) != 87:
+        raise ValueError('Ara89 requires the Task87 input, not an already joined view')
+    root = Path(root) / 'ara89'
+    inputs = {}
+    def pin(path):
+        path = Path(path)
+        inputs[str(path)] = sha(path)
+        return path
+    def read(name):
+        return json.loads(pin(root / name).read_text())
+    review = read('MAIN_REVIEW.json')
+    sets = read('SCOPED_FORM_SETS.json')
+    baseline = pin(Path(canonical) / 'compact-input.json')
+    if sha(baseline) != sets['prior_compact_sha256']:
+        raise ValueError('Ara89 immutable Task87 input identity mismatch')
+    for header in sorted((root/'upstream').glob('*.h')):
+        pin(header)
+    for checker in ('checker.py','exact_check.py','initializer_check.py','extraction_guard.py'):
+        pin(root/checker)
+    queue = read('EXECUTED_BLOCK_QUEUE.json')
+    dispositions = read('FINITE_BLOCK_DISPOSITIONS.json')
+    detail_by = unique(dispositions, lambda r: r['id'])
+    outcomes = read('AUDITED_RESULTS.json')
+    audited = unique(outcomes, lambda r: (r['program'], r['arm']))
+    reviewed = unique(review['rows'], lambda r: (r['program'], r['arm']))
+    groups = unique(read('GROUPS.json'), lambda r: r['name'])
+    preservation = unique(read('PRESERVATION.json'), lambda r: r['name'])
+    configs = unique(read('CONFIGS.json'), lambda r: (r['case'], r['arm']))
+    for name in ('RESULT.md', 'BUILD_COMMANDS.json', 'BUILD_IDENTITY.json', 'REFERENCE_IDENTITY.json',
+                 'DUT_LAUNCH_COMMANDS.json', 'SOURCE_MAIN_AUDIT.json', 'COMPILED_INITIALIZATION_AUDIT.json',
+                 'ASSEMBLY_SCALAR_AUDIT.json', 'INITIALIZATION_CHECK_CONTROLS.json',
+                 'METHOD_ADMISSION.json', 'AGGREGATE_ADMISSION.json', 'BLOCKED_BLOCKS.md'):
+        pin(root / name)
+    old = set(next(s for s in data['suites'] if s['suite'] == 'Ara')['result_checked'])
+    added = set(review['scoped_forms'])
+    if (len(old), len(added), len(queue), len(audited), len(groups)) != (396, 26, 166, 195, 39):
+        raise ValueError('Ara89 review cardinality mismatch')
+    if old != set(sets['prior_accepted_forms']) or added & old or added != {b['form'] for b in queue}:
+        raise ValueError('Ara89 prior/new form partition mismatch')
+    if set(audited) != set(reviewed) or not all(r['original_predicates_pass'] for r in reviewed.values()):
+        raise ValueError('Ara89 main review join mismatch')
+    receipts = {}
+    for key, outcome in audited.items():
+        program, arm = key
+        base = Path(outcome['raw_root'])
+        raw_hashes = {f: sha(pin(base / f)) for f in ('stdout', 'stderr', 'result.json')}
+        raw = json.loads((base / 'result.json').read_text())
+        if not (outcome['status'] == raw['status'] == 'PASS' and raw['returncode'] == 0
+                and outcome['same_ELF'] and outcome['original_checker_accepted']
+                and outcome['exact_configurations_assertions_summary'] and outcome['identity_before_after_equal']):
+            raise ValueError('Ara89 receipt not accepted: ' + str(key))
+        for f in ('stdout', 'stderr'):
+            if raw_hashes[f] != outcome[f + '_sha256']:
+                raise ValueError('Ara89 raw hash mismatch')
+        retained = {f: json.loads(pin(base / f).read_text()) for f in
+                    ('command.json', 'IDENTITY.json', 'IDENTITY_AFTER.json', 'observations.json',
+                     'case-results.json', 'initialization.json', 'exact-check.json') if (base / f).exists()}
+        artifacts = {label: dict(path=str(pin(root / folder / (program + suffix))),
+                                sha256=sha(root / folder / (program + suffix)))
+                     for label, folder, suffix in [('adapter', 'adapter', '.c'), ('elf', 'bin', '.elf')]}
+        if not (artifacts['elf']['sha256'] == outcome['elf_sha256'] == raw['elf_sha256']
+                == configs[key]['elf_sha256'] == preservation[program]['elf_sha256']):
+            raise ValueError('Ara89 ELF/build identity mismatch')
+        if artifacts['adapter']['sha256'] != preservation[program]['source_sha256']:
+            raise ValueError('Ara89 compiled source mismatch')
+        counters = [int(x) for x in re.findall(rb'multi_member_runs=(\d+)', (base / 'stderr').read_bytes())]
+        if any(counters): raise ValueError('unexpected Ara89 multi-member admission')
+        receipts[key] = dict(artifacts=artifacts, raw_root=str(base), raw_result=raw, raw_sha256=raw_hashes,
+                             retained_runtime=retained, result=outcome, configuration=configs[key],
+                             preservation=preservation[program], multi_member_M1_counters=counters)
+    bindings = []
+    for block in queue:
+        program = block['program']
+        if not positive([audited[program, arm] for arm in ARMS]):
+            raise ValueError('incomplete Ara89 five-arm block')
+        source = Path(block['source_file'])
+        if sha(pin(source)) != block['source_sha256']:
+            raise ValueError('Ara89 immutable source mismatch')
+        frozen = Path(detail_by[block['block']]['target']['source_absolute'])
+        if sha(pin(frozen)) != block['source_sha256']:
+            raise ValueError('Ara89 frozen source view mismatch')
+        start, end = block['source_lines']
+        text = ''.join(source.read_text().splitlines(keepends=True)[start-1:end])
+        if hashlib.sha256(text.encode()).hexdigest() != block['block_sha256']:
+            raise ValueError('Ara89 source range mismatch')
+        for arm in sorted(ARMS):
+            receipt = receipts[program, arm]
+            if block['elf_sha256'] != receipt['artifacts']['elf']['sha256']:
+                raise ValueError('Ara89 block/ELF mismatch')
+            bindings.append(dict(receipt, identity=['ara89', block['block'], arm, block['form']],
+                suite='Ara', task='ara89', case=program, arm=arm, form=block['form'],
+                source=dict(block, target=detail_by[block['block']]['target'],
+                            original_block=detail_by[block['block']]['original_block'],
+                            group={k:groups[program][k] for k in ('name','file','functions','source_row_ids')}),
+                scope='EXTRACTED_ORIGINAL_ARA89_BLOCK', positive=True, whole_file_pass=False,
+                checker=str(root/'checker.py'), checker_sha256=sha(pin(root/'checker.py')),
+                config=str(root/'CONFIGS.json'), build=str(root/'BUILD_COMMANDS.json'),
+                multi_member_M1_admission=0, M2_fast_admission=None, M2_target_admission_status="UNOBSERVED"))
+    history = read('HISTORY_CLASSIFICATION.json')
+    historical_sources = read('HISTORICAL_SOURCE_IDENTITY.json')
+    for h in history:
+        base = Path(h['root'])
+        h['raw_sha256'] = {f: sha(pin(base/f)) for f in ('stdout','stderr','result.json')}
+        h['raw_result'] = json.loads((base/'result.json').read_text())
+        h['positive'] = False
+        h['compiled_historical_source'] = next(x for x in historical_sources if x['case']==h['result']['case'])
+        name = h['result']['case']
+        h['artifacts'] = {f: dict(path=str(pin(root/folder/(name+suffix))), sha256=sha(root/folder/(name+suffix)))
+                          for f,folder,suffix in [('elf','bin','.elf')]}
+        if h['raw_sha256']['stdout'] != h['stdout_sha256']:
+            raise ValueError('Ara89 failed raw history changed')
+        if h['artifacts']['elf']['sha256'] != h['result']['elf_sha256'] or h['raw_result']['returncode'] != 1:
+            raise ValueError('Ara89 failed build identity mismatch')
+    if len(history) != 8: raise ValueError('missing preliminary Spike history')
+    new = old | added
+    remaining = set(sets['remaining_source_only_forms'])
+    if set(e['diff']['source_only_new']) - added != remaining or len(new) != 422:
+        raise ValueError('Ara89 source-only partition mismatch')
+    e['bindings'].extend(bindings)
+    e['version'] = 90
+    e['ara89'] = dict(review=review, audit=read('AUDIT.json'), historical_sources=historical_sources,
+        failed_history=history, block_dispositions=dispositions, inputs=inputs,
+        checkpoint_diff=dict(old=sorted(old), new=sorted(new), added=sorted(added), removed=[]),
+        unique_calls=dict(programs=39, valid_DUT=156, valid_reference=39, failed_preliminary_reference=8,
+                          actual_reference=47, valid_receipts=195, actual_receipts=203),
+        block_arm_bindings=len(bindings), whole_file_pass=False, multi_member_M1_admission=0, M2_fast_admission=None, M2_target_admission_status="UNOBSERVED")
+    e['diff'].update(new=sorted(new), added=sorted(new-set(e['diff']['old'])), source_only_new=sorted(remaining))
+    e['batch_counts']['89'] = e['ara89']['audit']
+    for row in e['dispositions']:
+        if row['form'] in added:
+            row.update(disposition='ACCEPTED_SCOPED', remaining='Ara89 extracted original predicates accepted; incompatible blocks and whole-file obligations retained.',
+                       bindings=[i for i,b in enumerate(e['bindings']) if b['form']==row['form'] and b['positive']])
+        elif row['form'] in remaining:
+            blocked = [b for b in dispositions if b['target']['form']==row['form'] and b['blocker']]
+            row.update(disposition='SOURCE_BLOCKED', remaining='; '.join(dict.fromkeys(b['blocker'] for b in blocked)),
+                       exact_blockers=blocked)
+    for suite in data['suites']:
+        if suite['suite']=='Ara': suite['result_checked']=sorted(new)
+    for suite in e['suite_counts']:
+        if suite['suite']=='Ara':
+            suite['result_checked_forms']=422
+            suite['accepted_overlay_receipt_bindings']=len(e['bindings'])
+    e['limitations'].extend(review['limits'])
+    data['snapshot']='Task90 reviewed Ara89 overlay on immutable Task87 / recorded October 7 routes'
+    validate_evidence(data)
+    return data

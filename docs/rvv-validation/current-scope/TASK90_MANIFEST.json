@@ -1,0 +1,67 @@
+{
+  "task": 90,
+  "location": "xbd:/home/vick/rvv-task90/task90",
+  "task91_correction": "M2 target admission UNOBSERVED/null; original raw unchanged",
+  "files": {
+    "ACTUAL_FORM_VALIDATION_BINDINGS.csv": {
+      "bytes": 177839772,
+      "sha256": "6e1bc2547c9a51119e2eb6583564fc6a0e9c2a68eb3acd749a10ecba61c51130"
+    },
+    "ACTUAL_FORM_VALIDATION_SUMMARY.json": {
+      "bytes": 1423992,
+      "sha256": "933dbef88a3948851555200489d3a916d38042bf19b27adf87d761bd50c95ffe"
+    },
+    "ACTUAL_SUITE_FORM_LISTS.md": {
+      "bytes": 26415,
+      "sha256": "268827f01a254c2cecd456a0b5ac9f26c601cdc85fb242578e2899055ff54022"
+    },
+    "COMPLETE_FORM_SUITE_INVENTORY.csv": {
+      "bytes": 20587260,
+      "sha256": "7b865a3ed828c865535ac2b20cca133e7a891002d9a6f6c762eafe2ced548f9d"
+    },
+    "README.md": {
+      "bytes": 6299,
+      "sha256": "7fd3cadc10459baed0c63f87d121a5f9b7ba88cc98c775130995065c6e7c8807"
+    },
+    "SUITE_RUN_MANIFEST.csv": {
+      "bytes": 423816333,
+      "sha256": "8a9136f0ce53e0395ef3c8ebc058234b61fbb0fc69f539a20c48b358f7416511"
+    },
+    "TASK90_CHECK.json": {
+      "bytes": 522,
+      "sha256": "07727153e9749580b4135a5093609e9119a7e5f8430ea73f7b8c073f21131bb7"
+    },
+    "TASK90_MANIFEST.json": {
+      "bytes": 2107,
+      "sha256": "d93120cfd80bde24638c27bfaa35ba7297ecc05ab63594897ad3c3902dfdfb1e"
+    },
+    "TASK90_SOURCE_CHECK.json": {
+      "bytes": 469,
+      "sha256": "a258a21b13cbf8484eb1c3c79dd6757236be2b5f93d7ed4761246d532882367e"
+    },
+    "ara-accepted-evidence.md": {
+      "bytes": 26415,
+      "sha256": "268827f01a254c2cecd456a0b5ac9f26c601cdc85fb242578e2899055ff54022"
+    },
+    "ara-form-set-diff.json": {
+      "bytes": 17093,
+      "sha256": "8129d667f04a3f36e18f766fa977e398fd2699471a1b56946a2df82d68b1613c"
+    },
+    "compact-input.json": {
+      "bytes": 45658600,
+      "sha256": "b55d24825c2d0243c180fcc3c9295adc3eaa5cb3870ba7595e34267ecf39c036"
+    },
+    "counts.json": {
+      "bytes": 109,
+      "sha256": "679085b710b86df79fb5daa5f7b52f0aef3f2f2f273c321b2c61c6e0052cbc6d"
+    },
+    "forms.csv": {
+      "bytes": 141196,
+      "sha256": "989d18a1b2ac4910996bdc627d66c2e030200a3886578100f4b70567544da65d"
+    },
+    "rvv-current-scope.md": {
+      "bytes": 62708,
+      "sha256": "70def30e3b9947cc9c6dfc501c3dc727c813c939708f1e72e96aac72a09de533"
+    }
+  }
+}

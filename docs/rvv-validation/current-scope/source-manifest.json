@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "snapshot": "Task87 accepted Ara overlay on preserved Task76 membership",
+  "snapshot": "Task90 reviewed Ara89 overlay on immutable Task87 membership",
   "inputs": [
     {
       "file": "external_suite_coverage_20261007/FORM_VERIFICATION_EVIDENCE.csv",
@@ -29,17 +29,22 @@
   ],
   "bundled_projection": {
     "file": "compact-input.json",
-    "bytes": 24147409,
-    "sha256": "6a857543640c2199c46a182b5ab832776015d736eda088e943775879cef0e76c"
+    "bytes": 45658600,
+    "sha256": "b55d24825c2d0243c180fcc3c9295adc3eaa5cb3870ba7595e34267ecf39c036"
   },
   "retrieval": "Canonical inputs and historical archives are unpublished local research artifacts; no public URL assigned. Request access from the author. Availability and redistribution permission are not guaranteed.",
-  "limits": "Saved index plus accepted Ara bindings; original other-suite provenance remains retained. Raw replay requires the author archive; no public URL is assigned. This update performs no guest executions.",
+  "limits": "Accepted Ara additions and retained failure context are inspectable offline via the Task91 bundle. Full canonical other-suite archives and live replay dependencies remain separate. This update performs no guest executions.",
   "new_DUT_executions": 0,
   "reproducer": {
-    "scripts/rvv_compact_scope.py": "23e49aae0e0e08c6febae1426cdd95a4fee8a177e70f65223001efe7fa1420f4",
+    "scripts/rvv_compact_scope.py": "1801a724aee4f438662f82ef25b70a561bea58282649eae08e18e174f78e6557",
     "scripts/rvv_scope_report.py": "13cde9a50ff8847ffb925c290ce9a21bc729f7934f02e51cf43977410fff5f5a",
     "scripts/rvv_tests.py": "c4ebd8f90a065bd3405fd1b5bbfb93cf3d8d0107289264e0696d7570bb43158d",
-    "scripts/rvv_ara_accepted.py": "61078c4990e59608ec84bb90507ea213ecd6135ae7b33bc1502f7fff0610ff39",
-    "scripts/verify_rvv_ara_tables.py": "e6bcb04b8ccfd3901fcaa5777fd34f93d6f6625b1b7c4f5449a647c3bc8cb212"
-  }
+    "scripts/rvv_ara_accepted.py": "739e16df14cf1ec94d5b98537a3967473f20af0b416a34cb2e9f737243c9c960",
+    "scripts/verify_rvv_ara_tables.py": "107183ede8fb4898734ec78904719654c6cba13e4fdd3813fcbeb2e20e1f6e87"
+  },
+  "ara89_new_input_manifest": "compact-input.json#ara_evidence.ara89.inputs",
+  "ara89_source_review": "TASK90_SOURCE_CHECK.json",
+  "canonical_location": "xbd:/home/vick/rvv-task90/task90/",
+  "task91_correction": "../ara-review-task91/TASK90_CORRECTION.json",
+  "ara_portable_inspection": "../ara-review-task91/README.md"
 }
