@@ -1,0 +1,2978 @@
+{
+  "ara89_parser_controls": 390,
+  "ara89_unique_calls": {
+    "actual_receipts": 203,
+    "actual_reference": 47,
+    "failed_preliminary_reference": 8,
+    "programs": 39,
+    "valid_DUT": 156,
+    "valid_receipts": 195,
+    "valid_reference": 39
+  },
+  "ara_audits": {
+    "82": {
+      "assertions_weakened": 0,
+      "canonical_inputs_unchanged": true,
+      "new_FAIL": 0,
+      "new_PASS": 9,
+      "new_calls": 9,
+      "new_element_comparisons": 1506,
+      "new_function_invocations": 51,
+      "new_original_checker_calls": 156,
+      "new_timeout": 0,
+      "no_DUT_generated_golden": true,
+      "production_edits": 0,
+      "reused_calls": 6
+    },
+    "83": {
+      "DUT_calls": 16,
+      "DUT_function_invocations": 32,
+      "DUT_scalar_checker_calls": 4,
+      "DUT_scalar_comparisons": 4,
+      "DUT_statuses": {
+        "PASS": 16
+      },
+      "DUT_vector_checker_calls": 28,
+      "DUT_vector_element_comparisons": 112,
+      "all_executable_identities_verified": true,
+      "all_exit0_no_timeout": true,
+      "canonical_sha256_unchanged": {
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ACTUAL_FORM_VALIDATION_BINDINGS.csv": "1cd6c4b11743a4be46a1611c87c15fb86592c3853c0225135b9ea2a09cd6ce1c",
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/SUITE_RUN_MANIFEST.csv": "7527a6d2cd8e1803b38faf8000673664d88bc0ae1da586f5be6e3a07514e6bb8",
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ara/ASSERTION_TARGETS.csv": "f50cb71b0b4abd11cb62cd979d5c7252e4a1361f4d151ff02b9a367d6486908d",
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ara/FORM_COVERAGE.csv": "8039905fa2df75b35e865dc855abd7860cb6cc11a81fa6cf383ee69a8c4254ff"
+      },
+      "obligations_executed_with_adapter": 8,
+      "original_build_obligations": 20,
+      "original_failures_retained": true,
+      "original_files": 6,
+      "original_functions_executed": 8,
+      "production_modified": false,
+      "profile_eligible_intact_functions": 0,
+      "profile_forms": 107,
+      "profile_function_blockers": {
+        "BLOCKED_INTACT_FUNCTION_FP16": 182,
+        "BLOCKED_INTACT_FUNCTION_RV64_INPUT": 32
+      },
+      "profile_intact_functions": 214,
+      "reference_calls": 4,
+      "reference_function_invocations": 8,
+      "reference_statuses": {
+        "PASS": 4
+      },
+      "remaining_obligations": 12,
+      "runner_and_checker_byte_identical": true
+    },
+    "84": {
+      "DUT_calls": 120,
+      "DUT_vector_comparisons": 1920,
+      "actual_target_admission": "UNOBSERVED in retained instrumentation; configured arm completion is established",
+      "all_150_receipts_present": true,
+      "all_source_blocks_byte_identical": true,
+      "canonical_hashes_unchanged": {
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ACTUAL_FORM_VALIDATION_BINDINGS.csv": true,
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/SUITE_RUN_MANIFEST.csv": true,
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ara/ASSERTION_TARGETS.csv": true,
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ara/FORM_COVERAGE.csv": true
+      },
+      "eligible_blocks": 30,
+      "executed_blocks": 30,
+      "failures": 0,
+      "m1_both_aggregate_formation_distributions": {
+        "(0, 0, 0)": 28,
+        "(1, 0, 1)": 32
+      },
+      "original_fflags_checks_per_arm": 8,
+      "production_changed": false,
+      "reference_calls": 30,
+      "reference_vector_comparisons": 480,
+      "statuses": {
+        "PASS": 150
+      },
+      "task83_evidence_hashes_unchanged": true,
+      "unchanged_runner_checker_headers": {
+        "checker.py": true,
+        "header:float_macros.h": true,
+        "header:vector_macros.h": true,
+        "run.original.py.txt": true,
+        "runner.py": true
+      },
+      "whole_function_or_file_PASS_claimed": false
+    },
+    "85": {
+      "DUT_calls": 1052,
+      "DUT_comparisons": 13832,
+      "actual_receipts": 1315,
+      "actual_target_method_admission": "UNOBSERVED",
+      "all_source_defined_memory_safety_claimed": false,
+      "canonical_hashes_unchanged": {
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ACTUAL_FORM_VALIDATION_BINDINGS.csv": true,
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/SUITE_RUN_MANIFEST.csv": true,
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ara/ASSERTION_TARGETS.csv": true,
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/ara/FORM_COVERAGE.csv": true
+      },
+      "counts": {
+        "FAIL": 83,
+        "PASS": 1232
+      },
+      "expected_receipts": 1315,
+      "observed_DUT_comparisons": 12908,
+      "observed_reference_comparisons": 3259,
+      "original_ranges_and_context_byte_identical": true,
+      "planned_blocks": 263,
+      "production_changed": false,
+      "reference_calls": 263,
+      "reference_comparisons": 3458,
+      "unchanged_runner_checker_headers": {
+        "checker.py": true,
+        "float_macros.h": true,
+        "run.original.py.txt": true,
+        "runner.py": true,
+        "vector_macros.h": true
+      },
+      "whole_function_PASS_claimed": false
+    },
+    "86": {
+      "DUT_comparisons": 1024,
+      "actual_DUT_calls": 64,
+      "actual_reference_calls": 16,
+      "canonical_unchanged": true,
+      "changed_blocks": 16,
+      "final_fcsr_observed": [
+        33,
+        49
+      ],
+      "initial_fcsr_observed": [
+        32
+      ],
+      "initial_frm_observed": [
+        1
+      ],
+      "initial_vstart_observed": [
+        0
+      ],
+      "new_failures": [],
+      "prior_artifacts_unchanged": true,
+      "production_changed": false,
+      "reference_comparisons": 256,
+      "reused_blocks": 277,
+      "reused_failed_blocks": [
+        "upstream_block_vfwadd_TEST_CASE5_e32_b2",
+        "upstream_block_vfwadd_TEST_CASE6_e32_b2"
+      ],
+      "source_files": 43,
+      "statuses": {
+        "PASS": 80
+      },
+      "whole_file_PASS_claimed": false
+    },
+    "89": {
+      "DUT_scalar_comparisons": 12,
+      "DUT_vector_element_comparisons": 7668,
+      "actual_DUT_calls": 156,
+      "actual_reference_calls": 47,
+      "all_valid_raw_exits": 0,
+      "blocked_blocks": 81,
+      "canonical_files_unchanged": true,
+      "corrected_executed_blocks": 166,
+      "corrected_extracted_programs": 39,
+      "failed_preliminary_reference_calls": 8,
+      "full_file_PASS": false,
+      "genuine_DUT_error_demonstrated": false,
+      "global_form_edit": false,
+      "new_scoped_forms": 26,
+      "original_candidate_forms": 31,
+      "prior_files_changed": [],
+      "prior_files_checked": 21136,
+      "production_change": false,
+      "reference_scalar_comparisons": 3,
+      "reference_vector_element_comparisons": 1917,
+      "remaining_block_dispositions": {
+        "Original 55 << 32 has 32-bit int left operand and count32: undefined C input before int64 assignment.": 4,
+        "Original VL22 load and store exceed 64-element INP1/output: NF3 touches elements64,65 (e8 bytes64,65; e32 bytes256..263). Checker still compares original extent; reducing VL would rewrite test.": 2,
+        "Original VL22 load and store exceed 64-element INP1/output: stride3/NF2 touches byte64. Checker still compares original extent; reducing VL would rewrite test.": 1,
+        "Original e64 expected words consume scalar bits not represented by sign-extended one XLEN32 operand: literal/type preserved; RV64 profile required.": 30,
+        "Original signed int 55 << 30 overflows; int64 =r output also stores unwritten high RV32 register. No ABI normalization.": 4,
+        "Reserved: wide source v2-v3 EEW=2*SEW overlaps narrow source v3 EEW=SEW. No legal operand rewrite.": 12,
+        "Reserved: wide v2-v3 EEW64 source overlaps narrow v3 EEW32 source; prior Task85 raw/reproduction reused.": 2,
+        "SEW16 requires optional FP16": 2,
+        "Target consumes FP16 (optional Zfh/Zvfh outside fixed FP32/64 candidate).": 24
+      },
+      "remaining_source_only_forms": [
+        "vfwadd.wv",
+        "vnsra.wv",
+        "vnsrl.wv",
+        "vssseg3e32.v",
+        "vssseg3e8.v"
+      ],
+      "source_blocks": 247,
+      "timeouts": 0,
+      "valid_DUT_statuses": {
+        "PASS": 156
+      },
+      "valid_reference_calls": 39,
+      "valid_reference_statuses": {
+        "PASS": 39
+      }
+    }
+  },
+  "binding_groups": {
+    "ACT": {
+      "EXISTING_TARGET_CHECKER_BINDING_TO_PROGRAM_RECEIPT; static branches not dynamically counted": 8336,
+      "UNESTABLISHED": 12
+    },
+    "Ara": {
+      "COUPLED_CONTEXT_ENDPOINT": 3,
+      "EXISTING_TARGET_CHECKER_BINDING_TO_PROGRAM_RECEIPT; static branches not dynamically counted": 908,
+      "EXTRACTED_FP32_64_BLOCK": 1465,
+      "EXTRACTED_ORIGINAL_ARA89_BLOCK": 830,
+      "INVALID_CONTEXT_HISTORY": 80,
+      "LEGACY_MACRO_DERIVATIVE": 30,
+      "ORIGINAL_FULL_FILE_MISSING_CONFIG": 9,
+      "TEST_CASE1_2_ONLY": 16,
+      "UNESTABLISHED": 90
+    },
+    "CHIPS": {
+      "EXISTING_TARGET_CHECKER_BINDING_TO_PROGRAM_RECEIPT; static branches not dynamically counted": 23204,
+      "UNESTABLISHED": 32
+    },
+    "RVV-ATG": {
+      "ORIGINAL_TARGET_MACROS_TO_WRITTEN_REFERENCE_SIGNATURE; extraction helpers coupled": 736
+    },
+    "SiFive RIF": {
+      "BUILD_ONLY_STATIC_EMISSION": 1370,
+      "ORIGINAL_OPERATION_GOLDEN_TO_COMPILED_SYMBOL; no individual opcode execution count": 6000,
+      "QUARANTINED_RIF_O2_POLICY; raw original golden PASS retained diagnostically": 2172,
+      "TASK75_FROZEN_SCALAR_ENDPOINT_ONLY; host uninitialized model; no independent form or method admission credit": 432
+    }
+  },
+  "canonical": "/home/vick/rvv-task90/task90",
+  "form_counts": {
+    "ACT": {
+      "compiled_source": 591,
+      "coupled_endpoint": null,
+      "diagnostic_only": null,
+      "emitted": 591,
+      "executed_without_independent_form_check": null,
+      "failed_or_blocked": 3,
+      "program_executed": 590,
+      "result_checked": 590,
+      "source_present": 627
+    },
+    "Ara": {
+      "compiled_source": 423,
+      "coupled_endpoint": null,
+      "diagnostic_only": 4,
+      "emitted": 423,
+      "executed_without_independent_form_check": 15,
+      "failed_or_blocked": 40,
+      "program_executed": 423,
+      "result_checked": 422,
+      "source_present": 433
+    },
+    "CHIPS": {
+      "compiled_source": 595,
+      "coupled_endpoint": null,
+      "diagnostic_only": null,
+      "emitted": 595,
+      "executed_without_independent_form_check": null,
+      "failed_or_blocked": 6,
+      "program_executed": 595,
+      "result_checked": 595,
+      "source_present": 627
+    },
+    "RVV-ATG": {
+      "compiled_source": 448,
+      "coupled_endpoint": null,
+      "diagnostic_only": null,
+      "emitted": 434,
+      "executed_without_independent_form_check": null,
+      "failed_or_blocked": null,
+      "program_executed": 434,
+      "result_checked": 434,
+      "source_present": 479
+    },
+    "SiFive RIF": {
+      "compiled_source": 230,
+      "coupled_endpoint": 125,
+      "diagnostic_only": 150,
+      "emitted": 234,
+      "executed_without_independent_form_check": 214,
+      "failed_or_blocked": null,
+      "program_executed": 234,
+      "result_checked": 200,
+      "source_present": 229
+    }
+  },
+  "historical_summary_registrations": {
+    "ACT": {
+      "ledger_rows": 33898,
+      "registered_dut_receipt_rows": 8336,
+      "registered_reference_receipt_rows": 3859
+    },
+    "Ara": {
+      "ledger_rows": 2255,
+      "registered_dut_receipt_rows": 947,
+      "registered_reference_receipt_rows": 166
+    },
+    "CHIPS": {
+      "ledger_rows": 29765,
+      "registered_dut_receipt_rows": 23204,
+      "registered_reference_receipt_rows": 60
+    },
+    "RVV-ATG": {
+      "ledger_rows": 1747,
+      "registered_dut_receipt_rows": 736,
+      "registered_reference_receipt_rows": 2
+    },
+    "SiFive RIF": {
+      "ledger_rows": 22324,
+      "registered_dut_receipt_rows": 8604,
+      "registered_reference_receipt_rows": 1370
+    }
+  },
+  "input_sha256": {
+    "ACTUAL_FORM_VALIDATION_BINDINGS.csv": "6e1bc2547c9a51119e2eb6583564fc6a0e9c2a68eb3acd749a10ecba61c51130",
+    "ACTUAL_FORM_VALIDATION_SUMMARY.json": "933dbef88a3948851555200489d3a916d38042bf19b27adf87d761bd50c95ffe",
+    "SUITE_RUN_MANIFEST.csv": "8a9136f0ce53e0395ef3c8ebc058234b61fbb0fc69f539a20c48b358f7416511",
+    "compact-input.json": "b55d24825c2d0243c180fcc3c9295adc3eaa5cb3870ba7595e34267ecf39c036"
+  },
+  "ledger_observation_groups": [
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "Task53-pinned-default-generation",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "N/A": 228,
+        "SEE_OUTPUT": 1919
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task53-pinned-default-generation",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 8,
+        "PASS": 7504
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task53-pinned-default-generation",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "PASS": 1917,
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "reference:qemu",
+      "cohort": "Task53-pinned-default-generation-reference",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 1876,
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "reference:sail",
+      "cohort": "Task53-pinned-default-generation-reference",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 1878
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "Task53-separate-optional-privileged-profiles",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "N/A": 26
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "Task53-unresolved-applicable-profile-gaps",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "BLOCKED": 4
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SUITE_BOUNDARY",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "pinned-generation-inputs",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "BLOCKED": 592,
+        "N/A": 35
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "retained-generated-instances",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "UNKNOWN": 2155
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 416
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "historical-f8123",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 160
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "historical-unresolved",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 14812
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "historical2af5",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 256
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "other-recorded-candidate",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "NOT_RUN": 4
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "reference:qemu",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 103
+      },
+      "suite": "ACT"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task52-DERIVATIVE_COMPILER_INTERFACE",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 4
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "Task52-DERIVATIVE_COMPILER_INTERFACE",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 1
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task52-ORIGINAL_MAIN_CONTEXT_DIAGNOSTIC",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 3
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "Task52-ORIGINAL_MAIN_CONTEXT_DIAGNOSTIC",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 9
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task52-PROFILE_FILTERED_CONTEXT_DERIVATIVE",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 24
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "Task52-PROFILE_FILTERED_CONTEXT_DERIVATIVE",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 6
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task52-SHARED_ENVIRONMENT_ADAPTER",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 12,
+        "PASS": 120,
+        "RESULT_MISMATCH": 24
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "Task52-SHARED_ENVIRONMENT_ADAPTER",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 3,
+        "PASS": 30,
+        "RESULT_MISMATCH": 6
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SUITE_BOUNDARY",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "accepted Ara integration",
+      "row_kind": "SCOPED_ACCEPTANCE",
+      "statuses": {
+        "PASS": 2331,
+        "RESULT_MISMATCH": 99
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "pinned-186-files",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 61,
+        "BUILD_ERROR": 20,
+        "N/A": 276,
+        "NOT_RUN": 420,
+        "PASS": 276,
+        "RESULT_MISMATCH": 4
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "pinned-186-files",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "NOT_RUN": 28
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 368
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "historical2af5",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 368
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "other-recorded-candidate",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "NOT_RUN": 14
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:qemu",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 58,
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "NOT_RUN": 2,
+        "PASS": 34,
+        "REFERENCE_ERROR": 1
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "source51-original-functions",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 4,
+        "PASS": 48,
+        "RESULT_MISMATCH": 12
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "source51-original-functions",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 1,
+        "PASS": 12,
+        "RESULT_MISMATCH": 3
+      },
+      "suite": "Ara"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task54-finite-new-output",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 68
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "reference:pspike",
+      "cohort": "Task54-finite-new-reference",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 17
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "reference:qemu",
+      "cohort": "Task54-finite-new-reference",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 17
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "reference:spike",
+      "cohort": "Task54-finite-new-reference",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 17
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task54-finite-source-profile",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 8,
+        "PASS": 2416
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task54-original-store-prelaunch-blockers",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "BLOCKED": 32
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SUITE_BOUNDARY",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "original-allocation-error",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 2
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "pinned-generation-inputs",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "N/A": 32,
+        "SEE_OUTPUT": 597
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "retained-generated-instances",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "UNKNOWN": 9
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 36
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "historical2af5",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 36
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "reference:qemu",
+      "cohort": "retained-records",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 9
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "sealed-47-batches",
+      "row_kind": "CONTROL_SOURCE",
+      "statuses": {
+        "N/A": 94
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "sealed-47-batches",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "NOT_RUN": 2886
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "sealed-47-batches",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 11532
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "sealed-47-batches",
+      "row_kind": "HARNESS_CONTROL",
+      "statuses": {
+        "PASS": 212
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "historical2af5",
+      "cohort": "sealed-47-batches",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 11532
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "historical2af5",
+      "cohort": "sealed-47-batches",
+      "row_kind": "HARNESS_CONTROL",
+      "statuses": {
+        "PASS": 212
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task61-original-ATG-vid-RV32-signature",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 4
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task61-original-ATG-vid-RV32-signature",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 1,
+        "PASS": 1
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task61-original-ATG-vid-RV32-signature",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "PASS": 1
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task61-original-ATG-vid-RV32-signature",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "BLOCKED": 4
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task62-finite-original-ATG-generation",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 732
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task62-finite-original-ATG-generation",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 2,
+        "NOT_RUN": 166,
+        "PASS": 184
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task62-finite-original-ATG-generation",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "NOT_RUN": 186
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task62-finite-original-ATG-generation",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "BLOCKED": 29
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task69-retained-ATG-source-and-reserved-input-disposition",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 11
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task69-retained-ATG-source-and-reserved-input-disposition",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "BLOCKED": 9,
+        "NOT_RUN": 5
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "reference:QEMU",
+      "cohort": "Task69-retained-ATG-source-and-reserved-input-disposition",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SUITE_BOUNDARY",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "pinned-generator-templates",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "BLOCKED": 409
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task61-original-ATG-vid-RV32-signature",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task63-original-unfused-integer-pilot",
+      "row_kind": "CONFIGURATION",
+      "statuses": {
+        "BLOCKED": 16
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task63-original-unfused-integer-pilot",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BUILD_ERROR": 4
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task63-original-unfused-integer-pilot",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "BUILD_ERROR": 4
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task63-original-unfused-integer-pilot",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "BLOCKED": 6
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task64-derived-unfused-integer-gate",
+      "row_kind": "CONFIGURATION",
+      "statuses": {
+        "BLOCKED": 4808
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task64-derived-unfused-integer-gate",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 1624
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task64-derived-unfused-integer-gate",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED_SHARED_PLATFORM": 989,
+        "BUILD_ERROR": 212,
+        "OPTIONAL_EXTENSION_UNSUPPORTED": 50,
+        "PASS": 406,
+        "PLATFORM_ERROR": 1,
+        "RV32_INDEX_EEW64_NA": 64
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task64-derived-unfused-integer-gate",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "BLOCKED_SHARED_PLATFORM": 989,
+        "BUILD_ERROR": 212,
+        "OPTIONAL_EXTENSION_UNSUPPORTED": 50,
+        "PASS": 406,
+        "PLATFORM_ERROR": 1,
+        "RV32_INDEX_EEW64_NA": 64
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task64-derived-unfused-integer-gate",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "BLOCKED": 14
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task65-frozen-RIF-resume",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 1932
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task65-frozen-RIF-resume",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BUILD_ERROR": 507,
+        "PASS": 483
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-policy-preserved543-correction",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 2172
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-policy-preserved543-correction",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "PASS": 543
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-policy-preserved543-correction",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "NOT_RUN": 543
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-retained719-RIF-interface",
+      "row_kind": "CONFIGURATION",
+      "statuses": {
+        "BLOCKED": 432
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-retained719-RIF-interface",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 2444
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-retained719-RIF-interface",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "BLOCKED": 108,
+        "PASS": 611
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task67-retained719-RIF-interface",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "NOT_RUN": 611
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task75-retained108-RIF-reduction-source-repair",
+      "row_kind": "EXECUTION",
+      "statuses": {
+        "PASS": 432
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task75-retained108-RIF-reduction-source-repair",
+      "row_kind": "SOURCE_CASE",
+      "statuses": {
+        "PASS": 108
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "Task75-retained108-RIF-reduction-source-repair",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "NOT_RUN": 216
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SOURCE_INPUT",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "NOT_RUN": 14,
+        "PASS": 6
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "UNKNOWN",
+      "cohort": "UNKNOWN",
+      "row_kind": "SUITE_BOUNDARY",
+      "statuses": {
+        "BLOCKED": 1
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "candidate": "clean961",
+      "cohort": "UNKNOWN",
+      "row_kind": "SOURCE_SUPPORT",
+      "statuses": {
+        "NOT_RUN": 1239
+      },
+      "suite": "SiFive RIF"
+    }
+  ],
+  "limitations": [
+    "Receipt groups are registered observations, not exhaustive producer/reference calls.",
+    "Ara85 separate 8 DUT/2 Spike reproductions are outside these overlay bindings; do not guess joins.",
+    "SOURCE_SUPPORT compiler stdout is excluded; explicit same-ELF QEMU requires reference status and /qemu/ locator.",
+    "SCOPED_ACCEPTANCE and source/status rows are not additional calls.",
+    "Raw PASS is not necessarily accepted direct form evidence."
+  ],
+  "new_calls": 0,
+  "original_suite_universes": {
+    "ACT": "UNKNOWN",
+    "Ara": "UNKNOWN",
+    "CHIPS": "UNKNOWN",
+    "RVV-ATG": "UNKNOWN",
+    "SiFive RIF": "UNKNOWN"
+  },
+  "receipt_groups": [
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task53-pinned-default-generation",
+      "distinct_receipts": 7504,
+      "example": {
+        "adapter": "EXISTING_LINUX_USER_ENVIRONMENT_ADAPTER; explicit memory-setup gate",
+        "checker_identity": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/act-generation53/cases/Vf32-vfadd.vf/raw/DUT-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/act-generation53/cases/Vf32-vfadd.vf/RESULT.json",
+        "row_id": "543e77e3d915ed03d38a63654a681c057d711e9b3abe0ff02327edd5b2a2ec68",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/act-generation53/generated/rv32i/Vf32/Vf32-vfadd.vf.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 7504
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "reference:qemu"
+      ],
+      "candidate": "reference:qemu",
+      "cohort": "Task53-pinned-default-generation-reference",
+      "distinct_receipts": 1878,
+      "example": {
+        "adapter": "EXISTING_LINUX_USER_ENVIRONMENT_ADAPTER",
+        "checker_identity": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/act-generation53/cases/Vf32-vfadd.vf/raw/qemu-selfcheck/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/act-generation53/cases/Vf32-vfadd.vf/RESULT.json",
+        "row_id": "12977b86c419f72c7b5e588c7baedfec346e56c1c07fdb779f28bf25f8c83ca2",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/act-generation53/generated/rv32i/Vf32/Vf32-vfadd.vf.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 1876,
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "reference:sail"
+      ],
+      "candidate": "reference:sail",
+      "cohort": "Task53-pinned-default-generation-reference",
+      "distinct_receipts": 1878,
+      "example": {
+        "adapter": "ORIGINAL_SAIL_SYSTEM_CAPTURE",
+        "checker_identity": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/act-generation53/cases/Vf32-vfadd.vf/raw/sail-signature/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/act-generation53/cases/Vf32-vfadd.vf/RESULT.json",
+        "row_id": "34d10933d31fef261526a73c900242c18d16a638ecf31f62791907fbd26e235f",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/act-generation53/generated/rv32i/Vf32/Vf32-vfadd.vf.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 1878
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "retained-records",
+      "distinct_receipts": 416,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/act_current_vsub_20261008/reference/Vx32-vsub.vv-00.results",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/act-campaign49/raw/act_current_vsub_20261008__Vx32-vsub.vv-00__292b143cc6f9/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/act-campaign49/raw/act_current_vsub_20261008__Vx32-vsub.vv-00__292b143cc6f9/results.json",
+        "row_id": "e471d3a381ee6420847dce286d3d7712962873fc642f82a29b638621447ddb23",
+        "source_file": "artifacts/act_current_vsub_20261008/upstream/Vx32-vsub.vv-00.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 416
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical-f8123",
+      "cohort": "retained-records",
+      "distinct_receipts": 160,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/act_fp_convert_20261007/reference/Vf32-vfcvt.f.x.v.results",
+        "raw_stdout": "artifacts/act_fp_convert_20261007/rvdbt/Vf32-vfcvt.f.x.v-positive_B/stdout",
+        "result_evidence": "artifacts/act_fp_convert_20261007/rvdbt/results.json",
+        "row_id": "4d38b42eb14a1de873eb79aa0cd12803900324322b2194ac6d9fbad95e45faa2",
+        "source_file": "artifacts/act_fp_convert_20261007/upstream/Vf32-vfcvt.f.x.v.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 160
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "2048"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical-unresolved",
+      "cohort": "retained-records",
+      "distinct_receipts": 6624,
+      "example": {
+        "adapter": "待查",
+        "checker_identity": "待查",
+        "raw_stdout": "artifacts/v12_f1_extra_20260925/act4_2048_f1/cases/Vls16/Vls16-vl1re16.v-00/B/stdout",
+        "result_evidence": "artifacts/v12_f1_extra_20260925/act4_2048_f1/results.csv:3186",
+        "row_id": "0f6544261365a2edd6bcf3939820631e2fe4c12402019ff0611bf96603b3b1bf",
+        "source_file": "待查"
+      },
+      "role": "DUT",
+      "statuses": {
+        "BLOCKED": 6624
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical2af5",
+      "cohort": "retained-records",
+      "distinct_receipts": 256,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/act_current_vsub_20261008/reference/Vx32-vsub.vv-00.results",
+        "raw_stdout": "artifacts/act_current_vsub_20261008/runs/candidate/B/stdout",
+        "result_evidence": "artifacts/act_current_vsub_20261008/runs/candidate/results.json",
+        "row_id": "e1fab8e9d754ac73355dd9d22f42df97ef61557945560ae1edcc0dce65133ebb",
+        "source_file": "artifacts/act_current_vsub_20261008/upstream/Vx32-vsub.vv-00.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 256
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:qemu",
+      "cohort": "retained-records",
+      "distinct_receipts": 103,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/act_current_vsub_20261008/reference/Vx32-vsub.vv-00.results",
+        "raw_stdout": "artifacts/act_current_vsub_20261008/runs/qemu/reference/stdout",
+        "result_evidence": "artifacts/act_current_vsub_20261008/runs/qemu/results.json",
+        "row_id": "14b805c6f9de89d6b7d3a0315fda739701a77eea4adb4524be4463b06e945842",
+        "source_file": "artifacts/act_current_vsub_20261008/upstream/Vx32-vsub.vv-00.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 103
+      },
+      "suite": "ACT"
+    },
+    {
+      "VLEN": [
+        "2048"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task52-DERIVATIVE_COMPILER_INTERFACE",
+      "distinct_receipts": 4,
+      "example": {
+        "adapter": "DERIVATIVE_COMPILER_INTERFACE: Derivative compiler boundary repair: original C bodies/literals/assertions byte-identical; directi64 vsetivli outputs become i32 with zero-extension in IR. Original native-interface failure/blocker retained, not unchanged upstream coverage.",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/rv32_output_derivative_vsetivli/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/rv32_output_derivative_vsetivli/B/result.json",
+        "row_id": "164f9ed4b61ffcc4b00a8b4e4d618e8135868488ec35fdc26b5e686522022fec",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vsetivli.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 4
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "2048"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "Task52-DERIVATIVE_COMPILER_INTERFACE",
+      "distinct_receipts": 1,
+      "example": {
+        "adapter": "DERIVATIVE_COMPILER_INTERFACE: Derivative compiler boundary repair: original C bodies/literals/assertions byte-identical; directi64 vsetivli outputs become i32 with zero-extension in IR. Original native-interface failure/blocker retained, not unchanged upstream coverage.",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/rv32_output_derivative_vsetivli/reference/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/rv32_output_derivative_vsetivli/reference/result.json",
+        "row_id": "e10ad84cf17a763676d54e2d25cc7c4c2585d5bae7bad953b39b9f21020d31fd",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vsetivli.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 1
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024"
+      ],
+      "arms": [
+        "B"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task52-ORIGINAL_MAIN_CONTEXT_DIAGNOSTIC",
+      "distinct_receipts": 3,
+      "example": {
+        "adapter": "ORIGINAL_MAIN_CONTEXT_DIAGNOSTIC: Complete original main call order including predecessor setup/checker buffers; body/global/literal/assertion unchanged; observation only. Revisit Task51TEST_CASE4 isolation context only. Predecessor execution required, not new source coverage.",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/context_original_vredsum/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/context_original_vredsum/B/result.json",
+        "row_id": "c5d7c1290d74226b3bd96c073015eb5f2137264a8f815640dafdefdc53227c45",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vredsum.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 3
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "4096"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "Task52-ORIGINAL_MAIN_CONTEXT_DIAGNOSTIC",
+      "distinct_receipts": 9,
+      "example": {
+        "adapter": "ORIGINAL_MAIN_CONTEXT_DIAGNOSTIC: Independent reference-only original full main with source-required optional FP16 enabled explicitly; original body/literals/checker/global/call order unchanged. Validates predecessor context; outside DUT fixed base-profile execution.",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/fp_original_context_vfredmax/reference/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/fp_original_context_vfredmax/reference/result.json",
+        "row_id": "b2df1413a31a410c2de8f269143da462a343f52ea865e48e45ddaebd0e3d4f6b",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfredmax.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 9
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task52-PROFILE_FILTERED_CONTEXT_DERIVATIVE",
+      "distinct_receipts": 24,
+      "example": {
+        "adapter": "PROFILE_FILTERED_CONTEXT_DERIVATIVE: Original bodies/literals/assertions/globals and retained main order; per-function source/profile exclusions explicit; reset/setup helpers retained; omitted original functions appended explicitly; scalar Linux user environment and observer adaptation only",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"RESULT_MISMATCH\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/batch_vfredmax/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/batch_vfredmax/B/result.json",
+        "row_id": "5ac9e77309f87cb6ab672e87ead801c28e3dfc06cd935818bf1a6ab003e83d52",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfredmax.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "BLOCKED": 24
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "512"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "Task52-PROFILE_FILTERED_CONTEXT_DERIVATIVE",
+      "distinct_receipts": 6,
+      "example": {
+        "adapter": "PROFILE_FILTERED_CONTEXT_DERIVATIVE: Original bodies/literals/assertions/globals and retained main order; per-function source/profile exclusions explicit; reset/setup helpers retained; omitted original functions appended explicitly; scalar Linux user environment and observer adaptation only",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"RESULT_MISMATCH\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/batch_vfredmax/reference/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/batch_vfredmax/reference/result.json",
+        "row_id": "833bf4f846bab3bc749e0818c8ebe852c88d710bd2048f9dae5de3316d1ccc9b",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfredmax.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "BLOCKED": 6
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task52-SHARED_ENVIRONMENT_ADAPTER",
+      "distinct_receipts": 156,
+      "example": {
+        "adapter": "SHARED_ENVIRONMENT_ADAPTER: original retained main call order1,2,5,6;3,4 omitted for concrete RV64 scalar requirement; all selected function bodies byte-identical; original globals retained",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/batch01_vand/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/remote-raw/batch01_vand/B/result.json",
+        "row_id": "9754f1da42ee8a1f299cb1343868cae44ded6a62bc786688f31cc0d846af09b4",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vand.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "BLOCKED": 12,
+        "PASS": 120,
+        "RESULT_MISMATCH": 24
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "Task52-SHARED_ENVIRONMENT_ADAPTER",
+      "distinct_receipts": 39,
+      "example": {
+        "adapter": "SHARED_ENVIRONMENT_ADAPTER: original retained main call order1,2,5,6;3,4 omitted for concrete RV64 scalar requirement; all selected function bodies byte-identical; original globals retained",
+        "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/batch01_vand/reference/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-remainder52/raw/batch01_vand/reference/result.json",
+        "row_id": "81f7cb68052bbd857ce22802c9983a6da96fbcfa9567a383727c6dcb18b056f0",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vand.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "BLOCKED": 3,
+        "PASS": 30,
+        "RESULT_MISMATCH": 6
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara82:ORIGINAL_FULL_FILE_MISSING_CONFIG",
+      "distinct_receipts": 9,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara82/adapter/context_original_vredsum.c",
+          "sha256": "acb8da3b13dddf3cb7c2fbe6365632bd27e2029291e95308cd3e5cbcbb2c07a8"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara82/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara82/CONFIGS.json",
+        "identity": [
+          "ara82",
+          "context_original_vredsum",
+          "M1",
+          "vredsum.vs"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara82/raw/context_original_vredsum/M1",
+        "source": {
+          "file": "vredsum",
+          "functions": [
+            "TEST_CASE1",
+            "TEST_CASE2",
+            "TEST_CASE3",
+            "TEST_CASE4",
+            "TEST_CASE5"
+          ]
+        }
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 9
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara83:LEGACY_MACRO_DERIVATIVE",
+      "distinct_receipts": 16,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/adapter/legacy_extract_vasub.c",
+          "sha256": "877ceac4bb0d101f9d57e351b0c62cf4bb4cb514bfec6079ec945ddf4cc03b17"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/CONFIGS.json",
+        "identity": [
+          "ara83",
+          "legacy_extract_vasub",
+          "B",
+          "vasub.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/remote-raw/legacy_extract_vasub/B",
+        "source": {}
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 16
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara83:LEGACY_MACRO_DERIVATIVE",
+      "distinct_receipts": 4,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/adapter/legacy_extract_vasub.c",
+          "sha256": "877ceac4bb0d101f9d57e351b0c62cf4bb4cb514bfec6079ec945ddf4cc03b17"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/CONFIGS.json",
+        "identity": [
+          "ara83",
+          "legacy_extract_vasub",
+          "reference",
+          "vasub.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara83/raw/legacy_extract_vasub/reference",
+        "source": {}
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 4
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara84:EXTRACTED_FP32_64_BLOCK",
+      "distinct_receipts": 120,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/adapter/upstream_block_vfadd_TEST_CASE1_e32.c",
+          "sha256": "92b757679d0ec7855a39e2279f1dd69f1864dd4350f077cac0968bf15e4a13ba"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/CONFIGS.json",
+        "identity": [
+          "ara84",
+          "upstream_block_vfadd_TEST_CASE1_e32",
+          "B",
+          "vfadd.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/remote-raw/upstream_block_vfadd_TEST_CASE1_e32/B",
+        "source": {
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfadd.c",
+          "source_lines": [
+            50,
+            75
+          ],
+          "source_sha256": "a3dd0d5b19c5ac4588e84d43cfe8a7d05363633f33a74383ee6b4d3f71825f91"
+        }
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 120
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara84:EXTRACTED_FP32_64_BLOCK",
+      "distinct_receipts": 30,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/adapter/upstream_block_vfadd_TEST_CASE1_e32.c",
+          "sha256": "92b757679d0ec7855a39e2279f1dd69f1864dd4350f077cac0968bf15e4a13ba"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/CONFIGS.json",
+        "identity": [
+          "ara84",
+          "upstream_block_vfadd_TEST_CASE1_e32",
+          "reference",
+          "vfadd.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/raw/upstream_block_vfadd_TEST_CASE1_e32/reference",
+        "source": {
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfadd.c",
+          "source_lines": [
+            50,
+            75
+          ],
+          "source_sha256": "a3dd0d5b19c5ac4588e84d43cfe8a7d05363633f33a74383ee6b4d3f71825f91"
+        }
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 30
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara85:EXTRACTED_FP32_64_BLOCK",
+      "distinct_receipts": 988,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/adapter/upstream_block_vfclass_TEST_CASE1_e32_b2.c",
+          "sha256": "8ff986fec7bce5ac34a34d9f06c4703605ba703a8b9062bf805a23ac3f138199"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/CONFIGS.json",
+        "identity": [
+          "ara85",
+          "upstream_block_vfclass_TEST_CASE1_e32_b2",
+          "B",
+          "vfclass.v"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/remote-raw/upstream_block_vfclass_TEST_CASE1_e32_b2/B",
+        "source": {
+          "file": "vfclass",
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfclass.c",
+          "source_lines": [
+            25,
+            33
+          ],
+          "source_sha256": "032a0ea29f694fc652b922cab0e61f80121f889afe1589d9a8e4ae1876deabd8"
+        }
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 980,
+        "RESULT_MISMATCH": 8
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara85:EXTRACTED_FP32_64_BLOCK",
+      "distinct_receipts": 247,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/adapter/upstream_block_vfclass_TEST_CASE1_e32_b2.c",
+          "sha256": "8ff986fec7bce5ac34a34d9f06c4703605ba703a8b9062bf805a23ac3f138199"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/CONFIGS.json",
+        "identity": [
+          "ara85",
+          "upstream_block_vfclass_TEST_CASE1_e32_b2",
+          "reference",
+          "vfclass.v"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/raw/upstream_block_vfclass_TEST_CASE1_e32_b2/reference",
+        "source": {
+          "file": "vfclass",
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfclass.c",
+          "source_lines": [
+            25,
+            33
+          ],
+          "source_sha256": "032a0ea29f694fc652b922cab0e61f80121f889afe1589d9a8e4ae1876deabd8"
+        }
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 247
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara85:INVALID_CONTEXT_HISTORY",
+      "distinct_receipts": 64,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/adapter/upstream_block_vfdiv_TEST_CASE1_e32_b2.c",
+          "sha256": "bdc2d6c34ec8e5e20fab96b7b60eae8cb2687746811c083f1cb8512eb26af598"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/CONFIGS.json",
+        "identity": [
+          "ara85",
+          "upstream_block_vfdiv_TEST_CASE1_e32_b2",
+          "B",
+          "vfdiv.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/remote-raw/upstream_block_vfdiv_TEST_CASE1_e32_b2/B",
+        "source": {
+          "file": "vfdiv",
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfdiv.c",
+          "source_lines": [
+            32,
+            57
+          ],
+          "source_sha256": "32f066aaf7663a87669b3f2c17c348e4f8ee6d621dfd8aca7982c5c3babfa7cf"
+        }
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 4,
+        "RESULT_MISMATCH": 60
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara85:INVALID_CONTEXT_HISTORY",
+      "distinct_receipts": 16,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/adapter/upstream_block_vfdiv_TEST_CASE1_e32_b2.c",
+          "sha256": "bdc2d6c34ec8e5e20fab96b7b60eae8cb2687746811c083f1cb8512eb26af598"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/CONFIGS.json",
+        "identity": [
+          "ara85",
+          "upstream_block_vfdiv_TEST_CASE1_e32_b2",
+          "reference",
+          "vfdiv.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara85/raw/upstream_block_vfdiv_TEST_CASE1_e32_b2/reference",
+        "source": {
+          "file": "vfdiv",
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfdiv.c",
+          "source_lines": [
+            32,
+            57
+          ],
+          "source_sha256": "32f066aaf7663a87669b3f2c17c348e4f8ee6d621dfd8aca7982c5c3babfa7cf"
+        }
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 1,
+        "RESULT_MISMATCH": 15
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara86:EXTRACTED_FP32_64_BLOCK",
+      "distinct_receipts": 64,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/adapter/upstream_block_vfdiv_TEST_CASE1_e32_b2.c",
+          "sha256": "7bf4e7c9115f87649569ae1500b9dc6f53843761ed0c04517e38d3e61b965c8d"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/CONFIGS.json",
+        "identity": [
+          "ara86",
+          "upstream_block_vfdiv_TEST_CASE1_e32_b2",
+          "B",
+          "vfdiv.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/remote-raw/upstream_block_vfdiv_TEST_CASE1_e32_b2/B",
+        "source": {
+          "file": "vfdiv",
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfdiv.c",
+          "source_lines": [
+            32,
+            57
+          ],
+          "source_sha256": "32f066aaf7663a87669b3f2c17c348e4f8ee6d621dfd8aca7982c5c3babfa7cf"
+        }
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 64
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara86:EXTRACTED_FP32_64_BLOCK",
+      "distinct_receipts": 16,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/adapter/upstream_block_vfdiv_TEST_CASE1_e32_b2.c",
+          "sha256": "7bf4e7c9115f87649569ae1500b9dc6f53843761ed0c04517e38d3e61b965c8d"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/CONFIGS.json",
+        "identity": [
+          "ara86",
+          "upstream_block_vfdiv_TEST_CASE1_e32_b2",
+          "reference",
+          "vfdiv.vv"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara86/raw/upstream_block_vfdiv_TEST_CASE1_e32_b2/reference",
+        "source": {
+          "file": "vfdiv",
+          "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfdiv.c",
+          "source_lines": [
+            32,
+            57
+          ],
+          "source_sha256": "32f066aaf7663a87669b3f2c17c348e4f8ee6d621dfd8aca7982c5c3babfa7cf"
+        }
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 16
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "ara89:EXTRACTED_ORIGINAL_ARA89_BLOCK",
+      "distinct_receipts": 156,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/adapter/extracted_vand_TEST_CASE3.c",
+          "sha256": "53058dc483d52602845c1c83e83eb1333e38ecc474fdc2942e1871ab4b4fce81"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/CONFIGS.json",
+        "identity": [
+          "ara89",
+          "vand_TEST_CASE3_b1",
+          "B",
+          "vand.vx"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/remote-raw/extracted_vand_TEST_CASE3/B",
+        "source": {
+          "source_file": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/upstream/vand.c",
+          "source_lines": [
+            120,
+            127
+          ],
+          "source_sha256": "32e56ed93a879381f5e8b149369cddc2c8e099b1234285be540dd48badd59ca9"
+        }
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 156
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara89:EXTRACTED_ORIGINAL_ARA89_BLOCK",
+      "distinct_receipts": 39,
+      "example": {
+        "adapter": {
+          "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/adapter/extracted_vand_TEST_CASE3.c",
+          "sha256": "53058dc483d52602845c1c83e83eb1333e38ecc474fdc2942e1871ab4b4fce81"
+        },
+        "checker": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/checker.py",
+        "config": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/CONFIGS.json",
+        "identity": [
+          "ara89",
+          "vand_TEST_CASE3_b1",
+          "reference",
+          "vand.vx"
+        ],
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/raw/extracted_vand_TEST_CASE3/reference",
+        "source": {
+          "source_file": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/upstream/vand.c",
+          "source_lines": [
+            120,
+            127
+          ],
+          "source_sha256": "32e56ed93a879381f5e8b149369cddc2c8e099b1234285be540dd48badd59ca9"
+        }
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 39
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "UNKNOWN"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:Spike-overlay",
+      "cohort": "ara89:PRELIMINARY_REFERENCE_HISTORY",
+      "distinct_receipts": 8,
+      "example": {
+        "classification": "STALE_PRELIMINARY_BUILD_OUTSIDE_CORRECTED_QUEUE; original e8/e16/e32 succeeded, incompatible e64 reached and failed on Spike; no DUT execution/acceptance",
+        "raw_root": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara89/raw/extracted_vmadd_TEST_CASE4/reference"
+      },
+      "role": "reference",
+      "statuses": {
+        "RESULT_MISMATCH": 8
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "retained-records",
+      "distinct_receipts": 368,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/ara_compatible_batch_20261008/upstream/vadc.c:79",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-campaign48/raw/ara_compatible_batch_20261008__vadc/vadc_B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-campaign48/raw/ara_compatible_batch_20261008__vadc/results.json",
+        "row_id": "cd2bb033093bba2e9b045e3c3335344597f41670ac21f96eadff2c11830b8196",
+        "source_file": "artifacts/ara_compatible_batch_20261008/upstream/vadc.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 368
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical2af5",
+      "cohort": "retained-records",
+      "distinct_receipts": 368,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/ara_compatible_batch_20261008/upstream/vadc.c:79",
+        "raw_stdout": "artifacts/ara_compatible_batch_20261008/runs/vadc/candidate/vadc_B/stdout",
+        "result_evidence": "artifacts/ara_compatible_batch_20261008/runs/vadc/candidate/results.json",
+        "row_id": "a1ab43ed7df12edca2555c9cd84cfc2db2216a064093ad5777f4f31f1db913f6",
+        "source_file": "artifacts/ara_compatible_batch_20261008/upstream/vadc.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 368
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "2048"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:qemu",
+      "cohort": "retained-records",
+      "distinct_receipts": 60,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/ara_compatible_batch_20261008/upstream/vadc.c:79",
+        "raw_stdout": "artifacts/ara_compatible_batch_20261008/runs/vadc/qemu/vadc_reference/stdout",
+        "result_evidence": "artifacts/ara_compatible_batch_20261008/runs/vadc/qemu/results.json",
+        "row_id": "45ad056e21997b6377f5a87ac342fc9d55f86114172ef0b3bbc5afb056f6e92b",
+        "source_file": "artifacts/ara_compatible_batch_20261008/upstream/vadc.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 58,
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "retained-records",
+      "distinct_receipts": 35,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED",
+        "checker_identity": "artifacts/ara_extend_reduce_20261008/upstream/vsext.c:98",
+        "raw_stdout": "artifacts/ara_extend_reduce_20261008/runs/vsext/spike/vsext_reference/stdout",
+        "result_evidence": "artifacts/ara_extend_reduce_20261008/runs/vsext/spike/results.json",
+        "row_id": "bad6c6ac9b19f0eb70dd2e4a87f0ec3a572c670ce47c725ed73d6376ccb840d6",
+        "source_file": "artifacts/ara_extend_reduce_20261008/upstream/vsext.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 34,
+        "REFERENCE_ERROR": 1
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "source51-original-functions",
+      "distinct_receipts": 64,
+      "example": {
+        "adapter": "isolated main calls original selected function; nonselected function definitions blanked preserving line numbers; all selected body bytes unchanged; original global declarations retained; existing Linux-user scalar reporting/vector macros adapter",
+        "checker_identity": "{\"case_metadata\":\"b200e26c80cc56966584d2b1a327956dce9647f74de485a0adb813039e002db7\",\"observed_adapter\":\"56f64dd2b0206080347a3aeb5a8b0e545a78c6dbf2b05639240fc9862aad5fcb\",\"original_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-source51/remote-raw/vlsseg__TEST_CASE3_32_m/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-source51/remote-raw/vlsseg__TEST_CASE3_32_m/B/result.json",
+        "row_id": "e94d607dd9168c149b93b875f3d11a1147f69200b27d03137bd02575e24d079d",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vlsseg.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "BLOCKED": 4,
+        "PASS": 48,
+        "RESULT_MISMATCH": 12
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "512"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "source51-original-functions",
+      "distinct_receipts": 16,
+      "example": {
+        "adapter": "isolated main calls original selected function; nonselected function definitions blanked preserving line numbers; all selected body bytes unchanged; original global declarations retained; existing Linux-user scalar reporting/vector macros adapter",
+        "checker_identity": "{\"case_metadata\":\"b200e26c80cc56966584d2b1a327956dce9647f74de485a0adb813039e002db7\",\"observed_adapter\":\"56f64dd2b0206080347a3aeb5a8b0e545a78c6dbf2b05639240fc9862aad5fcb\",\"original_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\"}",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/ara-source51/raw/vlsseg__TEST_CASE3_32_m/reference/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/ara-source51/raw/vlsseg__TEST_CASE3_32_m/reference/result.json",
+        "row_id": "daf5f0f8d84de546b053426cd4083be1c4412a25c55d88c55614b24df41841d8",
+        "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vlsseg.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "BLOCKED": 1,
+        "PASS": 12,
+        "RESULT_MISMATCH": 3
+      },
+      "suite": "Ara"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task54-finite-new-output",
+      "distinct_receipts": 68,
+      "example": {
+        "adapter": "existing independent ELEN patch plus unchanged terminal wrapper; instruction bodies/golden/checker preserved",
+        "checker_identity": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/patches/vcpop_m-0.patch",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-generation54/raw/remaining-B-0/5344dea1080fe2a1e256f349be233480c2e6dc31a3a5091283d7427100474ac4/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-generation54/raw/remaining-B-0/5344dea1080fe2a1e256f349be233480c2e6dc31a3a5091283d7427100474ac4/result.json",
+        "row_id": "362d0302b617e55430f1e6c6a9c4d63f5be07b9c5458475bde2ad96f852451bf",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/chips-generation54/generated/vcpop_m/stage1/vcpop_m-0.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 68
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference:pspike"
+      ],
+      "candidate": "reference:pspike",
+      "cohort": "Task54-finite-new-reference",
+      "distinct_receipts": 17,
+      "example": {
+        "adapter": "original upstream model/checker; no authored expected values",
+        "checker_identity": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/patches/vcpop_m-0.patch",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/logs/external-oracle.stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-generation54/AUDIT.json",
+        "row_id": "efdcb50499886b183a914267be515bdf61bdb75b469bdeb5ca391d89f899e496",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/chips-generation54/generated/vcpop_m/stage1/vcpop_m-0.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 17
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference:qemu"
+      ],
+      "candidate": "reference:qemu",
+      "cohort": "Task54-finite-new-reference",
+      "distinct_receipts": 17,
+      "example": {
+        "adapter": "original upstream model/checker; no authored expected values",
+        "checker_identity": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/patches/vcpop_m-0.patch",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/same-ELF-qemu/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-generation54/AUDIT.json",
+        "row_id": "6e4ee8b17cc9f7ba73e482d6f3fc8e9bd0d5e4620ee13b51ec58eeb2835123e3",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/chips-generation54/generated/vcpop_m/stage1/vcpop_m-0.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 17
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference:spike"
+      ],
+      "candidate": "reference:spike",
+      "cohort": "Task54-finite-new-reference",
+      "distinct_receipts": 17,
+      "example": {
+        "adapter": "original upstream model/checker; no authored expected values",
+        "checker_identity": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/patches/vcpop_m-0.patch",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-generation54/build/vcpop_m-0/logs/spike-original-checker.stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-generation54/AUDIT.json",
+        "row_id": "62bd541d024b8d6fc903771e0abe0eaecfbecc629254835618650b6ea39c561c",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/chips-generation54/generated/vcpop_m/stage1/vcpop_m-0.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 17
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "256"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "retained-records",
+      "distinct_receipts": 36,
+      "example": {
+        "adapter": "GENERATOR_MODIFIED",
+        "checker_identity": "artifacts/chips_ext_fractional_20261008/patches/vsext_vf8-0.patch",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-supplements47/raw/chips_ext_fractional_20261008/B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-supplements47/raw/chips_ext_fractional_20261008/results.json",
+        "row_id": "33b05b8792960c69c123bc428834c38b8c632271093f5cb4370efb47fb297b32",
+        "source_file": "artifacts/chips_ext_fractional_20261008/generated/vsext_vf8-0.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 36
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "256"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical2af5",
+      "cohort": "retained-records",
+      "distinct_receipts": 36,
+      "example": {
+        "adapter": "GENERATOR_MODIFIED",
+        "checker_identity": "artifacts/chips_ext_fractional_20261008/patches/vsext_vf8-0.patch",
+        "raw_stdout": "artifacts/chips_ext_fractional_20261008/runs/candidate/B/stdout",
+        "result_evidence": "artifacts/chips_ext_fractional_20261008/runs/candidate/results.json",
+        "row_id": "0bb013b87ab7d40e96bacc45d18e609bf5d5702896a3b6f8f8942d50f1435926",
+        "source_file": "artifacts/chips_ext_fractional_20261008/generated/vsext_vf8-0.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 36
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "256"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:qemu",
+      "cohort": "retained-records",
+      "distinct_receipts": 9,
+      "example": {
+        "adapter": "GENERATOR_MODIFIED",
+        "checker_identity": "artifacts/chips_ext_fractional_20261008/patches/vsext_vf8-0.patch",
+        "raw_stdout": "artifacts/chips_ext_fractional_20261008/runs/qemu/reference/stdout",
+        "result_evidence": "artifacts/chips_ext_fractional_20261008/runs/qemu/results.json",
+        "row_id": "d3748539d3b99636b6f54d4477b9a79ac8f08a1f9c4188f2649258f0f5c08d0f",
+        "source_file": "artifacts/chips_ext_fractional_20261008/generated/vsext_vf8-0.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 9
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "sealed-47-batches",
+      "distinct_receipts": 11532,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED; storage derivatives explicitly separate",
+        "checker_identity": "upstream TEST_CASE words + terminal CHIPS_PASS/FAIL wrapper",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/positive-B-carrymove128-000/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/positive-B-carrymove128-000/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95/result.json",
+        "row_id": "80dd2a862b9333aee63e31b7ce1294690cfb9f845a1f3d225f1187b4ed7fc3da",
+        "source_file": "artifacts/chips_validation_20261007/carrymove128/user-bin/vadc_vim-0.elf"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 11532
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical2af5",
+      "cohort": "sealed-47-batches",
+      "distinct_receipts": 11532,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED; storage derivatives explicitly separate",
+        "checker_identity": "upstream TEST_CASE words + terminal CHIPS_PASS/FAIL wrapper",
+        "raw_stdout": "artifacts/rvv_final_regression_20261007/runs/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95/stdout",
+        "result_evidence": "artifacts/rvv_final_regression_20261007/runs/2f1106c13db83391c1748f39c661bee5068236f56bb399cbfdf094303d286d95/result.json",
+        "row_id": "30e58f6475455b187075bcbf4bb7ca785da2909b9f657b4c2b45bcc1347b0a44",
+        "source_file": "artifacts/chips_validation_20261007/carrymove128/user-bin/vadc_vim-0.elf"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 11532
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "sealed-47-batches:controls",
+      "distinct_receipts": 212,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED; storage derivatives explicitly separate",
+        "checker_identity": "upstream TEST_CASE words + terminal CHIPS_PASS/FAIL wrapper",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/control-B-carrymove128-000/4d475599b4b5ed520fc2d9d866969ebe281e714620b7d451a7960df86e8f4c13/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/chips-campaign46/raw/control-B-carrymove128-000/4d475599b4b5ed520fc2d9d866969ebe281e714620b7d451a7960df86e8f4c13/result.json",
+        "row_id": "d226c4217b2f12086dc925679050a1409030c6c49a049e703e20470797dd4b96",
+        "source_file": "artifacts/chips_validation_20261007/carrymove128/user-bin/wrong-answer.elf"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 212
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "1024",
+        "128",
+        "2048",
+        "256",
+        "4096",
+        "512"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "historical2af5",
+      "cohort": "sealed-47-batches:controls",
+      "distinct_receipts": 212,
+      "example": {
+        "adapter": "ENVIRONMENT_ADAPTED; storage derivatives explicitly separate",
+        "checker_identity": "upstream TEST_CASE words + terminal CHIPS_PASS/FAIL wrapper",
+        "raw_stdout": "artifacts/rvv_final_regression_20261007/runs/4d475599b4b5ed520fc2d9d866969ebe281e714620b7d451a7960df86e8f4c13/stdout",
+        "result_evidence": "artifacts/rvv_final_regression_20261007/runs/4d475599b4b5ed520fc2d9d866969ebe281e714620b7d451a7960df86e8f4c13/result.json",
+        "row_id": "a35f6be9b39ca952a145573ec903c22ea16def0628e5501dc4d4e31cc0028665",
+        "source_file": "artifacts/chips_validation_20261007/carrymove128/user-bin/wrong-answer.elf"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 212
+      },
+      "suite": "CHIPS"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task61-original-ATG-vid-RV32-signature",
+      "distinct_receipts": 4,
+      "example": {
+        "adapter": "{\"adapted_ELF_sha256\":\"a5fb629804c719cdc1d0a8209b69e6b9dd659bc13bd8df2267a9ad26e1271e2d\",\"body_changes\":0,\"body_sha256\":\"a412ad2987fed9e51e9dfcdeebe84c9bc0b0fce7713ca41dd5f1bf297e68c40f\",\"metadata\":\"Original RV64RV64 ISA tag and .*64.* RISCOF filter retained; manually select frozen original body using TEST_CASE_1, not claim original RISCOF RV32 selection works.\",\"original_ELF_sha256\":\"319fbfe8b60681dfb59e90a47ef83eac3fc9d0778c1843f4d3f8c6bee1dc6810\",\"original_body_sha256\":\"a412ad2987fed9e51e9dfcdeebe84c9bc0b0fce7713ca41dd5f1bf297e68c40f\",\"runtime\":\"Remove M-status VS/FS enable in user mode where environment enables V/F; retain fcsr/vcsr zero. Replace tohost loop with exact signature Linux write64/exit93 and write-length check. Relocate link base 0x10000. No target/store/check macro changed.\"}",
+        "checker_identity": "541b738c9c1542a71c047e96be7b139f82e7b5e0a03dacaa701ebebe7ad4cbb2",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/atg-integration61/raw/DUT-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/atg-integration61/raw/DUT-B/comparison.json",
+        "row_id": "3a502ffc5e6d185326c516946ba7a72b802f08b283fcd6e80806b36ccc0e7f04",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/atg-integration61/isolated/pilot/vid_empty.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 4
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task62-finite-original-ATG-generation",
+      "distinct_receipts": 732,
+      "example": {
+        "adapter": "Environment only: original compiler rv32gv/ilp32; Linux enable/halt/link adapter from Task61. Original target bodies and signature macros intact; task-local ISAC dependency compatibility pin.",
+        "checker_identity": "f3e78e706a2a9b54ce65fe769de857c07cf7c5a0cf10abbb2c9d68f72235497d",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/atg-generation62/outputs/vaadd-e32m1/first/dut-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/atg-generation62/outputs/vaadd-e32m1/first/dut-B/result.json",
+        "row_id": "ebb616ca365d29bfb22d9faa5de9beaca135eddabcc4f99142a64b641b712b7f",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/atg-generation62/outputs/vaadd-e32m1/first/body.S"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 732
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference-diagnostic"
+      ],
+      "candidate": "reference:QEMU",
+      "cohort": "Task69-retained-ATG-source-and-reserved-input-disposition",
+      "distinct_receipts": 2,
+      "example": {
+        "adapter": "NONE: imports work; proposed plumbing insufficient for shared code/signature contract",
+        "checker_identity": "Original ATG signature macros retained; no new executable checker",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/atg-gaps69/diagnostics/vsuxsegei16-e32m1/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/atg-gaps69/diagnostics/vsuxsegei16-e32m1/result.json",
+        "row_id": "78e537635dcbf4ec431727a4e6f2684ded07f3e3a62f5c0aeafdc17fd87d53f3",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/atg-generation62/outputs/vsuxsegei16-e32m1/first/body.S"
+      },
+      "role": "reference",
+      "statuses": {
+        "REFERENCE_ERROR": 2
+      },
+      "suite": "RVV-ATG"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task64-derived-unfused-integer-gate",
+      "distinct_receipts": 1624,
+      "example": {
+        "adapter": "Authorized separate Graph.cpp newline-only producer derivative; original RV32GV/ilp32d no-C Clang20+musl static platform.",
+        "checker_identity": "670afc64c3c8c09403b3b95c29e270942210ec4d9d093d36b427bf6a535aafae",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-generation64/outputs/AddVV16VInt16/dut-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-generation64/outputs/AddVV16VInt16/dut-B/comparison.json",
+        "row_id": "bbf933deef681ba1cf472ba348736f25e371766057ca2055c1c09bf4f2193b20",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-generation64/outputs/AddVV16VInt16/original.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 1624
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task65-frozen-RIF-resume",
+      "distinct_receipts": 1932,
+      "example": {
+        "adapter": "Task64 newline-only derivative unchanged; frozen RV32GV ilp32d VLEN128 ELEN64; owned batched transport only.",
+        "checker_identity": "080b185735c81ba8d063a65c4b4aa6c8950a869f63c2ba7d93b5bb70e406b0fc",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-generation64/outputs/AdcVVM16VInt16VIVIVB/dut-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-generation64/outputs/AdcVVM16VInt16VIVIVB/dut-B/comparison.json",
+        "row_id": "cc73970c2a354fc3475ffcd016a9c33d166f8e89047bd4f613570286ced88173",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-generation64/outputs/AdcVVM16VInt16VIVIVB/original.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 1932
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task67-policy-preserved543-correction",
+      "distinct_receipts": 2172,
+      "example": {
+        "adapter": "Task64 newline derivative; Task67 exact official v0.10 API macro names/permutations; already modern helper APIs untouched; installed GCC13.3 -O0 policy-preserved implicit-rounding API, RV32GV/ilp32d/VLEN128/ELEN64 unchanged",
+        "checker_identity": "faf662a68026025cfd4db1dd6b92ec514f794040e28c0a941ccaad5d24e4d1da",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-interface67/policy-preserved/outputs/AaddVV16VInt16VBVIVIVI_m/dut-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-interface67/policy-preserved/outputs/AaddVV16VInt16VBVIVIVI_m/dut-B/comparison.json",
+        "row_id": "1cc077f9e4590be7035707f3b9ce0439cd50121e311bc9b610f7cbaab8cd1ef1",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-interface67/policy-preserved/outputs/AaddVV16VInt16VBVIVIVI_m/original.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 2172
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:QEMU-same-ELF",
+      "cohort": "Task67-policy-preserved543-correction",
+      "distinct_receipts": 543,
+      "example": {
+        "adapter": "Task64 newline derivative; Task67 exact official v0.10 API macro names/permutations; already modern helper APIs untouched; installed GCC13.3 -O0 policy-preserved implicit-rounding API, RV32GV/ilp32d/VLEN128/ELEN64 unchanged",
+        "checker_identity": "faf662a68026025cfd4db1dd6b92ec514f794040e28c0a941ccaad5d24e4d1da",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-interface67/policy-preserved/outputs/AaddVV16VInt16VBVIVIVI_m/qemu/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-interface67/policy-preserved/outputs/AaddVV16VInt16VBVIVIVI_m/qemu/comparison.json",
+        "row_id": "41fa742263d88e0e9eb1b1624c2f75724e0c81e8363f874fa8464a637920f8ad",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-interface67/policy-preserved/outputs/AaddVV16VInt16VBVIVIVI_m/original.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 543
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task67-retained719-RIF-interface",
+      "distinct_receipts": 2444,
+      "example": {
+        "adapter": "Task64 newline derivative; Task67 exact official v0.10 API macro names/permutations; already modern helper APIs untouched; installed GCC13.3 implicit-rounding API, RV32GV/ilp32d/VLEN128/ELEN64 unchanged",
+        "checker_identity": "faf662a68026025cfd4db1dd6b92ec514f794040e28c0a941ccaad5d24e4d1da",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-interface67/outputs/AaddVV16VInt16VBVIVIVI_m/dut-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-interface67/outputs/AaddVV16VInt16VBVIVIVI_m/dut-B/comparison.json",
+        "row_id": "dcbc8b04b3dfacfcbfdbe83b3700959bdd9978129f302a2c3beff11b2ed316f9",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-interface67/outputs/AaddVV16VInt16VBVIVIVI_m/original.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 2444
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:QEMU-same-ELF",
+      "cohort": "Task67-retained719-RIF-interface",
+      "distinct_receipts": 611,
+      "example": {
+        "adapter": "Task64 newline derivative; Task67 exact official v0.10 API macro names/permutations; already modern helper APIs untouched; installed GCC13.3 implicit-rounding API, RV32GV/ilp32d/VLEN128/ELEN64 unchanged",
+        "checker_identity": "faf662a68026025cfd4db1dd6b92ec514f794040e28c0a941ccaad5d24e4d1da",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-interface67/outputs/AaddVV16VInt16VBVIVIVI_m/qemu/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-interface67/outputs/AaddVV16VInt16VBVIVIVI_m/qemu/comparison.json",
+        "row_id": "6824e0796be3f242b22cd92449a2b68e62766bcdda2ad6ea62ded07198abee24",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-interface67/outputs/AaddVV16VInt16VBVIVIVI_m/original.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 611
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "B",
+        "BOTH",
+        "M1",
+        "M2"
+      ],
+      "candidate": "clean961",
+      "cohort": "Task75-retained108-RIF-reduction-source-repair",
+      "distinct_receipts": 432,
+      "example": {
+        "adapter": "Task75 isolated producer operand-expression and masked suffix repair; exact pinned official legacyAPI _tu/_tum macro; GCC13.3-O0; not unmodified upstream",
+        "checker_identity": "5e8f5fcafae6052830db8cfa95a4cc8b6e19c62f56d4814c777967287411621e",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-reductions75/outputs/RedandVS16SInt16VBVI_m/dut-B/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-reductions75/outputs/RedandVS16SInt16VBVI_m/dut-B/comparison.json",
+        "row_id": "de07664684fdd21f714c2215a227ff3b4b08f18d6c0d4fe6646f685c1d2a27c3",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-reductions75/outputs/RedandVS16SInt16VBVI_m/derived.c"
+      },
+      "role": "DUT",
+      "statuses": {
+        "PASS": 432
+      },
+      "suite": "SiFive RIF"
+    },
+    {
+      "VLEN": [
+        "128"
+      ],
+      "arms": [
+        "reference"
+      ],
+      "candidate": "reference:QEMU-same-ELF",
+      "cohort": "Task75-retained108-RIF-reduction-source-repair",
+      "distinct_receipts": 108,
+      "example": {
+        "adapter": "Task75 isolated producer operand-expression and masked suffix repair; exact pinned official legacyAPI _tu/_tum macro; GCC13.3-O0; not unmodified upstream",
+        "checker_identity": "5e8f5fcafae6052830db8cfa95a4cc8b6e19c62f56d4814c777967287411621e",
+        "raw_stdout": "artifacts/rvv_validation_delivery_20261009/rif-reductions75/outputs/RedandVS16SInt16VBVI_m/qemu/stdout",
+        "result_evidence": "artifacts/rvv_validation_delivery_20261009/rif-reductions75/outputs/RedandVS16SInt16VBVI_m/qemu/comparison.json",
+        "row_id": "47aef4d1bd776301d73f45e01f19b547de9997b281dd021f7b034593043f6684",
+        "source_file": "artifacts/rvv_validation_delivery_20261009/rif-reductions75/outputs/RedandVS16SInt16VBVI_m/derived.c"
+      },
+      "role": "reference",
+      "statuses": {
+        "PASS": 108
+      },
+      "suite": "SiFive RIF"
+    }
+  ]
+}
