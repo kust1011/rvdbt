@@ -1,0 +1,66 @@
+{
+  "existing_archives": [
+    {
+      "file": "coverage-report.tar.gz",
+      "scope": "Original per-form CSV, scoped supplements, exporter and three reports; extracted rebuild verified byte-identical; not new ISA execution"
+    },
+    {
+      "file": "remaining-supplements.tar.gz",
+      "scope": "Store footprint, same-PC geometry, whole-store, directed reciprocal, widening state, VLEN4096 batching, mask-store, narrowing state; initial launch failures retained; eight relocated diagnostic commands registered but not reexecuted"
+    },
+    {
+      "file": "registered-corpus.tar.gz",
+      "scope": "Historical CHIPS registered corpus; original build identities retained"
+    },
+    {
+      "file": "act-supplements.tar.gz",
+      "scope": "Three ACT integer reductions and integer-to-FP32 narrowing conversion; per-case checker limitations retained"
+    },
+    {
+      "file": "latest-supplements.tar.gz",
+      "scope": "ACT FP32 unordered reduction and original CHIPS fractional-source preservation with local observer"
+    },
+    {
+      "file": "nf8-supplements.tar.gz",
+      "scope": "Original CHIPS unit-stride/indexed NF8 cases plus state and output-buffer observation; no fault/access-suppression claim"
+    },
+    {
+      "file": "suite-evidence.tar.gz",
+      "scope": "Explicitly referenced ACT/Ara/RVVTS historical evidence; includes failed, unexecuted and unresolved-status records; not turnkey executable replay"
+    },
+    {
+      "file": "oct10-evidence.tar.gz",
+      "scope": "ID delta from existing 14-supplement coverage bundle; actual source/input/oracle/commands/raw results, corrections, failures and review dependencies; 28-record coverage-v16 snapshot of the index, original CSV, exporter and reports (current full coverage-v21 index has 41 records) rebuilt byte-identically in fresh extraction; all payloads and declared references checked or external dependencies documented; frozen961 evidence, P4 separate; no ELF reexecution, toolchains or turnkey replay"
+    },
+    {
+      "file": "final-evidence.tar.gz",
+      "scope": "13-ID delta against immutable 28-record oct10 snapshot; current CSV/index, current exporter and Task42 readable coverage-v22; selected original evidence, failures, adapters, inputs/oracles/commands/raw and review dependencies; fresh extraction validates payload/navigation/raw bindings and byte-identical report JSON; historical2af5 distinct from clean961; P3-38 bounded offline observation retains original whole-test FAIL, no new PASS; P4 separate; named prior archive and remote tool dependencies explicit; no turnkey replay"
+    },
+    {
+      "file": "scope-evidence.tar.gz",
+      "scope": "Historical Task71 canonical ten outputs/check, original FORM input, dependency hashes, preserved original exporters and portable frozen-scope renderer. Source/checker/candidate/derivative stages, missing joins and diagnostic quarantine retained. Full join regeneration/raw review require separate evidence tree. No binary replacement or restricted upstream source redistribution. Task76 current outputs are regenerated separately; this archive and its prior checks are unchanged."
+    }
+  ],
+  "contents_reviews": [
+    {
+      "manifest": "final-CONTENTS.json",
+      "sha256": "8401c3d48ba9af58b32b108a96b747de0be679986e75860d2b08389a0db079c6",
+      "listed_files": 6301,
+      "task53_entries": 0
+    },
+    {
+      "manifest": "oct10-CONTENTS.json",
+      "sha256": "b36cae7433746aea96a34f65bcbbfa0b2ccf3651512509aef8159a1621f4701c",
+      "listed_files": 7809,
+      "task53_entries": 0
+    },
+    {
+      "manifest": "suite-CONTENTS.json",
+      "sha256": "8f33cd169e3dbbf936c42006d2c12c5be9693d813701b5f3c42a189534dd72ca",
+      "listed_files": 35612,
+      "task53_entries": 0
+    }
+  ],
+  "decision": "No existing portable Task53 primary payload found. ACT supplement payloads and historical suite/oct10/final evidence remain separate, unchanged and are not repackaged.",
+  "scope": "Task53 clean961 7504 primary DUT calls only, plus original reference failures/prelaunch exclusions; Task49/other candidates outside"
+}

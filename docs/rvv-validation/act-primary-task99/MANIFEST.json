@@ -1,0 +1,16 @@
+{
+  "file": "act-primary-task99.tar.gz",
+  "sha256": "87d603fb1300cbe8331d5e28ddc48443d702ff1c7e31b892d69b0975bd0c557a",
+  "bytes": 334468555,
+  "payload_files": 111384,
+  "payload_bytes": 4339802856,
+  "included_cases": 1919,
+  "primary_cases": 1878,
+  "new_DUT_calls": 0,
+  "archived_DUT_calls": 7504,
+  "archived_primary_reference_calls": 3756,
+  "reference_diagnostic_repeats": 2,
+  "ledger_rows": 15364,
+  "bindings": 7512,
+  "publication": "STAGED_ON_XBD; Release upload pending authorization/authentication; no public payload URL"
+}

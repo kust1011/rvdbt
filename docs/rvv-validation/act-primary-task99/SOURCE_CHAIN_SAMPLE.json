@@ -1,0 +1,89 @@
+{
+  "case": {
+    "case": "Vx8-vaadd.vv-00",
+    "input_id": "Vx8__vaadd.vv",
+    "form": "vaadd.vv",
+    "sew": 8,
+    "status": "PASS",
+    "source": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.S",
+    "result": "records/cases/Vx8-vaadd.vv-00/RESULT.json",
+    "checker": "records/common/user_env/signature.h",
+    "original_checker": "records/common/upstream/env/signature.h",
+    "processor": "records/common/reference_config/sig_modify.py",
+    "adapter": "records/common/user_env/rvmodel_macros.h",
+    "linker": "records/common/user_link.ld",
+    "capture_config": "records/common/reference_config/sail.json",
+    "signature": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.sig",
+    "expected": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.results",
+    "oracle": "records/cases/Vx8-vaadd.vv-00/ORACLE.json",
+    "preservation": "records/cases/Vx8-vaadd.vv-00/PRESERVATION.json",
+    "checker_scope": "records/cases/Vx8-vaadd.vv-00/CHECKER_SCOPE.json",
+    "source_scope": "records/cases/Vx8-vaadd.vv-00/SCOPE_AUDIT.json"
+  },
+  "oracle": {
+    "source_sha256": "6e046fcbcfc34a3eaaacfcda5e1625cd4b7b2289e3abfecdd22cafcf2be33a97",
+    "capture_elf_sha256": "05ae0f3244578594c3b95cc6db342335419c35e1fc19f128ffadab25d48c7ce6",
+    "raw_sig_sha256": "bacff1bea54376b442a4e92e5dc4e22082adb8be5ba18c2e6190e19c5d6a9e37",
+    "processed_results_sha256": "df950ae7a0f6060894c01a1bdb0cdb05aab70b54b3a75567c9c56b7a37ad3a7e",
+    "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+    "processor_sha256": "1427bce89a2272f41184fea8777dc2a5ba34a64e918ac26ec1d5d044afe2e39d",
+    "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+  },
+  "navigation": [
+    {
+      "form": "vaadd.vv",
+      "case": "Vx8-vaadd.vv-00",
+      "arm": "B",
+      "ledger_row_id": "94db5edabd71ba63b16281afdea83002a9f60cd12f7703a8a9faf85c9b430a18",
+      "result": "PASS",
+      "acceptance": "ACCEPTED_SCOPED",
+      "source": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.S",
+      "checker": "records/common/user_env/signature.h",
+      "raw": "records/cases/Vx8-vaadd.vv-00/raw/DUT-B",
+      "oracle": "records/cases/Vx8-vaadd.vv-00/ORACLE.json",
+      "reference_case": "Vx8-vaadd.vv-00"
+    },
+    {
+      "form": "vaadd.vv",
+      "case": "Vx8-vaadd.vv-00",
+      "arm": "BOTH",
+      "ledger_row_id": "de4aef2eaa72e5b4a499988a0fd7639e6da52e2e06ec239d9e15d9c5d55ce982",
+      "result": "PASS",
+      "acceptance": "ACCEPTED_SCOPED",
+      "source": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.S",
+      "checker": "records/common/user_env/signature.h",
+      "raw": "records/cases/Vx8-vaadd.vv-00/raw/DUT-BOTH",
+      "oracle": "records/cases/Vx8-vaadd.vv-00/ORACLE.json",
+      "reference_case": "Vx8-vaadd.vv-00"
+    },
+    {
+      "form": "vaadd.vv",
+      "case": "Vx8-vaadd.vv-00",
+      "arm": "M1",
+      "ledger_row_id": "38cbd62e4f17a410ae20b62b3433eca7519fdad09cab4f38aac18215fd93bdd2",
+      "result": "PASS",
+      "acceptance": "ACCEPTED_SCOPED",
+      "source": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.S",
+      "checker": "records/common/user_env/signature.h",
+      "raw": "records/cases/Vx8-vaadd.vv-00/raw/DUT-M1",
+      "oracle": "records/cases/Vx8-vaadd.vv-00/ORACLE.json",
+      "reference_case": "Vx8-vaadd.vv-00"
+    },
+    {
+      "form": "vaadd.vv",
+      "case": "Vx8-vaadd.vv-00",
+      "arm": "M2",
+      "ledger_row_id": "19f736dc7907ea585f5902e8ae07ac38fac060ad4fff59b4ec66f66d668eea8f",
+      "result": "PASS",
+      "acceptance": "ACCEPTED_SCOPED",
+      "source": "records/cases/Vx8-vaadd.vv-00/Vx8-vaadd.vv-00.S",
+      "checker": "records/common/user_env/signature.h",
+      "raw": "records/cases/Vx8-vaadd.vv-00/raw/DUT-M2",
+      "oracle": "records/cases/Vx8-vaadd.vv-00/ORACLE.json",
+      "reference_case": "Vx8-vaadd.vv-00"
+    }
+  ],
+  "commands": "Original per-stage command.json files under records/cases/Vx8-vaadd.vv-00/raw/",
+  "inspection_missing": [],
+  "live_replay": "excluded ELF/tool binaries named in EXCLUDED_IDENTITIES.json"
+}

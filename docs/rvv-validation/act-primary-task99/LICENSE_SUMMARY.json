@@ -1,0 +1,81 @@
+{
+  "status": "LICENSE_NOTICES_RETAINED",
+  "marked_files": {
+    "Apache-2.0": 2177,
+    "unmarked-upstream-statement": 10,
+    "BSD-3-Clause": 15,
+    "BSD-3-Clause-Clear": 2
+  },
+  "unmarked_files": {
+    "records/common/reference_config/link.ld": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/common/reference_config/sail-rv32-max-clang.yaml": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/common/upstream/env/rvtest_macros.h": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/common/upstream/env/rvtest_macros_hypervisor.h": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/common/user_env/rvtest_macros.h": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/common/user_env/rvtest_macros_hypervisor.h": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/common/user_link.ld": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/pinned-source/testplans/Vx.csv": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/pinned-source/testplans/Vls.csv": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    },
+    "records/pinned-source/testplans/Vf.csv": {
+      "spdx": null,
+      "basis": "ACT pinned README Licensing; both code license texts retained; no relicensing"
+    }
+  },
+  "license_texts": {
+    "licenses/ACT-COPYING.BSD": {
+      "bytes": 1478,
+      "sha256": "acc6d427b663b8cbc68037d871bb88e357b2983fad18d9382f820715805cad65"
+    },
+    "licenses/ACT-COPYING.APACHE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "licenses/ACT-COPYING.CC": {
+      "bytes": 18657,
+      "sha256": "c6f9c2f38a8154833000d15499fae87d0e2014a050e47dc399623fdaa3c57484"
+    },
+    "licenses/ACT-README.md": {
+      "bytes": 28052,
+      "sha256": "5a3a02e95d3fcff5657b092d940f467eaa1bc591ea568c0c4299db0139f7da8a"
+    },
+    "licenses/BSD-3-Clause-Clear.txt": {
+      "bytes": 1676,
+      "sha256": "4495ed59005765e600a16457dc52a2d39757dbfeae081e68b59fe7c177c78589"
+    }
+  },
+  "licensing": "ACT Apache-2.0/BSD-3-Clause and CC-BY-4.0 notices; UDB generated headers BSD-3-Clause-Clear. Original notices retained. Unmarked ACT files inherit upstream general licensing statement with all license texts; no relicensing.",
+  "excluded_identity_counts": {
+    "deliberately excluded binary": 3971,
+    "outside selected inspection payload; retained generator/history identity only": 402,
+    "deliberately excluded tool executable/library": 19
+  },
+  "unmarked_local_excluded": "Author-local act-generation53/finalize.py (not necessary for offline inspection)",
+  "restricted_unrelated_sources_included": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "rejected": [
+    "wrong-result-exit0",
+    "failure-alongside-pass",
+    "duplicate-pass",
+    "nonzero-exit",
+    "wrong-case",
+    "sail-failure-alongside-success"
+  ],
+  "hash_verification_invoked": false,
+  "archived_files_modified": 0,
+  "new_ISA_executions": 0,
+  "method": "Original pure audit predicates applied to deliberately altered in-memory raw result; no hash gate can cause rejection."
+}
