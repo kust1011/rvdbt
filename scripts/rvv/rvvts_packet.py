@@ -21,3 +21,13 @@ def audit_input_unchanged(packet,initial,body,out):
  vcfg=dict(cfg,rvisacfg=RVISACfg(xlen=32,extensions_under_test=[],vlen=2048,velen=64));r=MachineState(vcfg,[{},{f'v{i}':bytes.fromhex(initial['vectors'][f'v{i}'])for i in unwritten}]);a=MachineState(vcfg,[{},{f'v{i}':state.state[1][f'v{i}']for i in unwritten}]);equal,diff=r.compare(a,diff_full=True);(out/'unwritten-vector-original-compare.txt').write_text(diff);assert equal,'unwritten vector mismatch'
  state.save(str(out/'mstate.json'));(out/'observations.json').write_text(json.dumps(dict(before_fprs={f'f{i}':v.hex()for i,v in enumerate(before)},state={k:v.hex()if isinstance(v,bytes)else v for k,v in state.state[1].items()},written_regs=sorted(written),unwritten_regs=unwritten),indent=2)+'\n')
  return state
+
+def compare_packet(raw, reference, returncode, timed_out=False):
+ if returncode != 0 or timed_out:
+  return False, 'nonzero exit or timeout'
+ try:
+  _,state=decode(raw)
+  _,expected=decode(reference)
+  return expected.compare(state,diff_full=True)
+ except (AssertionError,ValueError,KeyError) as error:
+  return False,str(error)

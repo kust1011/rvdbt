@@ -1,7 +1,7 @@
 # Portable external replay
 
 Run on an AVX512 host with LLVM/Clang/LLD22, CMake, Ninja, Boost/OpenSSL development
-files, a RISC-V bare-metal GCC with RV32 ilp32d multilib, Python numpy/jsonpickle.
+files, a RISC-V bare-metal GCC with RV32 ilp32d multilib, Python numpy/jsonpickle/mergedeep. Spike needs Boost system/regex libraries and dtc; PK needs target newlib headers.
 Use a new checkout and unused output directories. No historical goldens are generated.
 
 ```sh
@@ -39,3 +39,19 @@ there; only selected small raw artifacts should be archived in Git.
 
 This replay covers two fixtures. It does not reproduce historical595-form results
 or validate general precise fault/retry, signal delivery or arbitrary configurations.
+
+On a bare GCC installation without target libc, configure PK with LDFLAGS=-nostdlib
+and run make with CFLAGS=-I/path/to/newlib/headers. PK itself links freestanding.
+On xbd, libnewlib-dev and Boost system/regex packages were downloaded and extracted
+with apt download / dpkg-deb -x into new scratch, without installing globally.
+Spike configure used --with-boost=/usr --with-boost-libdir=PRIVATE_LIBDIR
+--with-boost-asio=boost_system --with-boost-regex=boost_regex. Include PRIVATE_LIBDIR
+and Spike install/lib in LD_LIBRARY_PATH when replaying. These are dependency
+adaptations, with failed attempts retained, not changes to guest checks.
+
+After replay, run full-packet negative controls (tool checks, not ISA counts):
+```sh
+RVVTS_SOURCE=/path/to/new-dependencies/rvvts \
+RVVTS_PACKET=/path/to/new-replay/runs/rvvts/Spike/stdout \
+python3 -m unittest discover -s scripts -p test_rvv_external_packet.py
+```

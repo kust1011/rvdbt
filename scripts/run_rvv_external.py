@@ -35,7 +35,7 @@ def verify_fixtures():
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for n in ['output','rvvts','engine','library-dir','spike','pk','libgcc']:p.add_argument('--'+n,type=Path,required=True)
-    p.add_argument('--compiler',default='clang-22');p.add_argument('--llc',default='llc-22');p.add_argument('--timeout',type=int,default=120)
+    p.add_argument('--build-only',action='store_true');p.add_argument('--compiler',default='clang-22');p.add_argument('--llc',default='llc-22');p.add_argument('--timeout',type=int,default=120)
     a=p.parse_args();verify_fixtures()
     lock=json.loads((F.parent/'sources.lock.json').read_text())['sources']['rvvts']
     rev=subprocess.check_output(['git','-C',str(a.rvvts),'rev-parse','HEAD'],text=True).strip()
@@ -44,10 +44,10 @@ def main():
         if not x.is_file():raise ValueError('missing dependency: '+str(x))
     for x in [a.compiler,a.llc]:
         if not shutil.which(x):raise ValueError('missing compiler tool: '+x)
-    sys.path.insert(0,str(a.rvvts.resolve()));from rvvts_packet import decode,audit_input_unchanged
+    sys.path.insert(0,str(a.rvvts.resolve()));from rvvts_packet import decode,audit_input_unchanged,compare_packet
     out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
     ids={str(x.resolve()):digest(x) for x in [a.engine,a.library_dir/'libdbtjitshared.so',a.spike,a.pk,a.libgcc]}
-    save(out/'identity.json',dict(files=ids,rvvts_revision=rev,compiler=subprocess.check_output([a.compiler,'--version'],text=True),host=list(os.uname()),argv=sys.argv))
+    save(out/'identity.json',dict(files=ids,rvvts_revision=rev,compiler=subprocess.check_output([a.compiler,'--version'],text=True),host=list(os.uname()),argv=sys.argv,runner_sha256=digest(__file__),checker_sha256=digest(F.parent/'rvvts_packet.py'),flags_sha256=digest(F/'external-flags.json')))
     ar=F/'ara-vredsum';rv=F/'rvvts-20261089';build=out/'guests';build.mkdir()
     base=[a.compiler,'--target=riscv32-unknown-elf','-mabi=ilp32d']
     for name,src in [('test',ar/'context_original_vredsum.c'),('user_runtime',ar/'user_runtime.c'),('printf',ar/'printf.c')]:
@@ -57,8 +57,10 @@ def main():
     araelf=build/'ara.elf';rvelse=build/'rvvts.elf'
     for name,c in [('ara',base+['-march=rv32gv','-static','-nostdlib','-fuse-ld=lld','-Wl,--no-relax','-Wl,-T,'+str(ar/'link.ld'),ar/'start.S',build/'test.o',build/'user_runtime.o',build/'printf.o',a.libgcc,'-o',araelf]),('rvvts',[a.compiler,'--target=riscv32-unknown-elf','-march=rv32gv','-mabi=ilp32f','-static','-nostdlib','-fuse-ld=lld','-Wl,--no-relax','-Wl,-T,'+str(rv/'link.ld'),rv/'replay-ready-ported.S','-o',rvelse])]:
         if call(c,out/'build-logs'/name)['returncode']!=0:raise RuntimeError('link failed: '+name)
+    if a.build_only:
+        save(out/'build-only.json',dict(ara_elf_sha256=digest(araelf),rvvts_elf_sha256=digest(rvelse),scope='guest build only; zero executions'));return
     flags=json.loads((F/'external-flags.json').read_text());results=[]
-    env=dict(os.environ);env['LD_LIBRARY_PATH']=str(a.library_dir.resolve())
+    env=dict(os.environ);env['LD_LIBRARY_PATH']=str(a.library_dir.resolve())+os.pathsep+env.get('LD_LIBRARY_PATH','')
     for name,elf,vl in [('ara',araelf,1024),('rvvts',rvelse,2048)]:
         ref=None
         for arm in ['Spike','B','M1','M2','BOTH']:
@@ -74,8 +76,8 @@ def main():
                 if name=='ara':ok=ara_check(raw,r['returncode'],r['timeout']);save(d/'observations.json',observations(raw))
                 else:
                     state=audit_input_unchanged(raw,json.loads((rv/'INPUT.json').read_text()),(rv/'native16.txt').read_text(),d)
-                    if arm=='Spike':ref=state;ok=True
-                    else:ok,diff=ref.compare(state,diff_full=True);(d/'original-compare.txt').write_text(diff)
+                    if arm=='Spike':ref=raw;ok=True
+                    else:ok,diff=compare_packet(raw,ref,r['returncode'],r['timeout']);(d/'original-compare.txt').write_text(diff)
                     ok=ok and r['returncode']==0 and not r['timeout']
             except (AssertionError,ValueError,KeyError) as e:r['checker_error']=str(e)
             r.update(fixture=name,arm=arm,checker_pass=ok,elf_sha256=digest(elf));save(d/'result.json',r);results.append(r);save(out/'results.json',results)
