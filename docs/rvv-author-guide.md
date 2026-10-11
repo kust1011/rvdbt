@@ -7,7 +7,7 @@ Direct chunk routes and shared semantic helpers both implement guest behavior.
 
 Source presence, compiled source, static emission, program execution,
 target/result checking and coupled endpoints are separate stages. Checked sets
-are CHIPS595, ACT590, RVV-ATG434, Ara301 and SiFive RIF200; their union is595.
+are CHIPS595, ACT590, RVV-ATG434, Ara422 and SiFive RIF200; their union is595.
 RVVTS58, RVISmith43 and libriscv198 are coupled endpoints: program success does
 not independently check each contributing static opcode. Candidate-specific
 sets and original/derivative provenance remain in the canonical bindings. The
@@ -83,6 +83,47 @@ The thesis's complementary `vadd.vv` LMUL8 case is retained in the
 `vadd-m8-1024-external/` evidence directory: 26 targets, 6656 original checker
 words, same-ELF QEMU and clean DUT comparisons. Its `README.md`,
 source, command/result records and checker audit explain that geometry.
+
+## Trace an external assertion: Ara `vfdiv.vv`
+
+Ara revision `34bd3bc152421b4601a7bf3d6e8e91ffb545c99e` supplies
+`apps/riscv-tests/isa/rv64uv/vfdiv.c`. Its first FP32 block sets VL16,
+loads sixteen original hexadecimal operands into each source vector, executes
+`vfdiv.vv v1, v2, v3`, and compares the result with sixteen literal expected
+words through `VCMP_U32`. These expected words are upstream data, not outputs
+captured from rvdbt. The original `main` selects `CHANGE_RM(RM_RTZ)` before
+calling the test functions.
+
+The RV32 adapter extracts the FP32/FP64 blocks from functions that also contain
+FP16 operations. It preserves their operands, target instructions and assertions,
+and carries the original rounding initialization into each wrapper. Before the
+block, an observation reads `fcsr` and `vstart`: `fcsr=32` means `frm=1` (RTZ)
+and zero initial exception flags; `vstart=0` starts at the first element.
+The self-check compares the original result words. Spike and rvdbt execute the
+same ELF; the runner also requires successful termination and complete checker
+output. Final observed `fcsr` is compared with Spike separately from the
+upstream result assertion.
+
+This context check caught an adapter defect: wrappers initially omitted the
+original RTZ initialization and ran in RNE. Those observations remain recorded
+as invalid-context history, including one that happened to pass. Restoring only
+the original initialization produced sixteen corrected blocks, each passing
+Spike and B/M1/M2/Both, for eighty executions. The expected words were unchanged.
+These are extracted-block results, not passes of complete mixed-FP16 files.
+
+To explain the review, distinguish three checks: the original assertion checks
+the calculated value; the adapter review checks that the intended input and
+initial state reached the instruction; runner failure controls check that an
+incorrect output or unsuccessful process cannot be reported as PASS. Enabling
+M1 or M2 does not itself establish that the corresponding optimized path ran.
+The retained `ara86/MAIN_REVIEW.json` records independent replay of all eighty
+outputs and 160 parser rejection controls; source-initialization controls are
+listed separately in `ara86/REGRESSION_CHECK.json`.
+
+These source, adapter, raw and review records are included in the
+[licensed Ara inspection archive](rvv-validation/ara-review-task91/README.md).
+Follow `FORMS.json` into `BINDINGS.json` to find package-relative records, then
+run its offline checker to replay the retained original predicates.
 
 ## Limits to keep in the answer
 

@@ -35,6 +35,11 @@ replaces that architecture.
 
 Start with the [current 627-form table](docs/rvv-current-scope.md) and
 [real four-configuration CHIPS smoke records/workflow](docs/rvv-validation/smoke-task80/README.md).
+The [portable Ara and RVVTS replay](docs/rvv-validation/portable-external.md)
+builds and checks a complete external test file and a vector instruction sequence
+against Spike, with separate checks for actual optimized-path execution.
+The [licensed Ara inspection archive](docs/rvv-validation/ara-review-task91/README.md)
+provides accepted source/assertion/raw joins and an offline producer-parser check.
 The compact view can be regenerated from committed inputs; historical raw archives
 are unpublished and must be obtained separately. See
 [validation and reproducibility](docs/rvv-validation.md) and the

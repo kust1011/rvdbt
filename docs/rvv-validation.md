@@ -8,16 +8,25 @@ that failures propagate. Passing the runner's unit tests is not ISA coverage.
 
 Start with the [generated current 627-form table](rvv-current-scope.md), its
 [compact inputs/source manifest and reproduction command](rvv-validation/current-scope/README.md),
-and [Task80 actual four-result smoke with build -> fixture -> results workflow](rvv-validation/smoke-task80/README.md).
-The table uses Task76's exact checked/endpoint membership and already recorded
+the [CHIPS four-configuration smoke](rvv-validation/smoke-task80/README.md),
+and the [complete Ara file and RVVTS sequence replay](rvv-validation/portable-external.md).
+The table uses the accepted checked/endpoint membership, including the Ara
+integration recorded in its input manifest, and already recorded
 static route classes. It is a compact index, not raw evidence or new executions.
 Its bundled projection renders without this machine; full bindings and unpublished
 historical archives still require separately authorized retrieval. No public
 reproduction of inaccessible historical archives is claimed.
 
+The [licensed Ara inspection archive](rvv-validation/ara-review-task91/README.md)
+packages the accepted Ara82–86/89 source, adapter, original parser and raw records,
+including retained failures. Extract it into a fresh directory and run
+`python3 tools/verify_rvv_ara_bundle.py .`; form-to-binding navigation and notices
+are included. This offline predicate check is separate from live replay and
+does not make the other historical suites portable.
+
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
-and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara301 and
+and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara422 and
 SiFive RIF200, with union595. RVVTS58, RVISmith43 and libriscv198 are coupled
 endpoints. An opcode in a successful program need not have executed or influenced
 its output. The clean961 candidate has its own checked union595; historical2af5
@@ -63,11 +72,12 @@ For artifact integrity, run `scripts/verify_rvv_artifacts.py --archive-root
 "$ARCHIVES"`; the archive root may contain the named delivery subdirectories.
 Digest/size verification proves transport identity, not ISA correctness.
 
-Only `rvv_tests.py` and `run_rvv_smoke.py` below actually execute registered guests.
-The latter's `--build-only` compiles one fixture, without DUT execution. Original
+`rvv_tests.py`, `run_rvv_smoke.py` and `run_rvv_external.py` execute guests.
+The smoke and external runners also provide `--build-only`, without DUT execution. Original
 suite-specific generation/campaign scripts are retained research evidence;
 no portable all-suite execution runner is supplied. The source lock documents
-pinned fetch entry points and licensing. CHIPS is the bundled runnable fixture;
+pinned fetch entry points and licensing. Bundled runnable fixtures cover CHIPS,
+an original complete Ara reduction file and a retained RVVTS API sequence;
 RVV-ATG lacks a redistribution license in the pinned tree, and RVISmith restricts
 redistribution/modification/use, so their fixtures are not copied into this repo.
 Obtain any required permission before reuse. Pinned fetch instructions describe
