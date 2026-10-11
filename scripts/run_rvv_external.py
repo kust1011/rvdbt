@@ -35,7 +35,7 @@ def verify_fixtures():
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for n in ['output','rvvts','engine','library-dir','spike','pk','libgcc']:p.add_argument('--'+n,type=Path,required=True)
-    p.add_argument('--build-only',action='store_true');p.add_argument('--compiler',default='clang-22');p.add_argument('--llc',default='llc-22');p.add_argument('--timeout',type=int,default=120)
+    p.add_argument('--reuse-successful-from',type=Path);p.add_argument('--build-only',action='store_true');p.add_argument('--compiler',default='clang-22');p.add_argument('--llc',default='llc-22');p.add_argument('--timeout',type=int,default=120)
     a=p.parse_args();verify_fixtures()
     lock=json.loads((F.parent/'sources.lock.json').read_text())['sources']['rvvts']
     rev=subprocess.check_output(['git','-C',str(a.rvvts),'rev-parse','HEAD'],text=True).strip()
@@ -69,9 +69,15 @@ def main():
             else:
                 fs=[f'--vlen={vl}' if x.startswith('--vlen=') else x for x in flags[arm]]
                 cmd=[a.engine,*fs,'--dump-tbcode='+str(d/'tbcode.txt'),'--dump-tbmap='+str(d/'tbmap.txt')]
-                if arm in ['M1','BOTH']:cmd+=['--rvv-run-frame-census=1']
+                if arm in ['M1','BOTH'] and '--rvv-run-frame-census=1' not in fs:cmd+=['--rvv-run-frame-census=1']
                 cmd+=['--fsroot='+str(work/'fs'),'--cache='+str(work/'cache'),'--','/t.elf']
-            r=call(cmd,d,env,a.timeout);raw=(d/'stdout').read_bytes();ok=False
+            reuse=a.reuse_successful_from/'runs'/name/arm if a.reuse_successful_from else None
+            if reuse and (reuse/'result.json').exists() and json.loads((reuse/'result.json').read_text()).get('checker_pass'):
+                old=json.loads((reuse/'result.json').read_text())
+                if json.loads((a.reuse_successful_from/'identity.json').read_text())['files']!=ids or old['elf_sha256']!=digest(elf) or old['stdout_sha256']!=digest(reuse/'stdout') or old['stderr_sha256']!=digest(reuse/'stderr') or old['returncode']!=0 or old['timeout']:raise ValueError('changed reused receipt')
+                shutil.copytree(reuse,d);r=old;r['reused_from']=str(reuse)
+            else:r=call(cmd,d,env,a.timeout)
+            raw=(d/'stdout').read_bytes();ok=False
             try:
                 if name=='ara':ok=ara_check(raw,r['returncode'],r['timeout']);save(d/'observations.json',observations(raw))
                 else:
