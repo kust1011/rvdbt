@@ -14,10 +14,11 @@ The delivery branch adds checked vector-memory helpers and synchronous fault
 delivery. The following records distinguish complete replay campaigns from
 affected-family regressions; they must not be pooled as one executable's tests.
 
-The current merged memory implementation has two distinct validation records:
+The final build and earlier implementation stages have separate validation records:
 
 | Host width | Executable | Original external results | Scope |
 |---|---|---|---|
+| 512 | `e2559c5cd930` | 21,316 calls: CHIPS 11,532 positive and 212 controls; ACT 7,668 passes; Ara 1,888 whole-file passes and 16 scoped acceptances | [Final signal-copy build](rvv-validation/host512-task142/README.md), including singleton memory fault exits and memory-instruction run boundaries |
 | 512 | `849e6dd0a11e` | 21,316 calls: CHIPS 11,532 positive and 212 controls; ACT 7,668 passes; Ara 1,888 whole-file passes and 16 scoped acceptances | [Complete retained corpus](rvv-validation/host512-task129/README.md), before native fault-exit integration |
 | 512 | `baac2151f634` | 5,904 affected memory calls pass: CHIPS 1,948, ACT 3,828, Ara 128 | [Final memory regression](../SESSION0_RESULT_134.md), after native fault-exit integration; not a full-corpus replay |
 
@@ -25,8 +26,9 @@ Ordinary unit-stride and whole-register singleton QCG bodies now own exact
 guest-memory instruction PCs and emitted fault exits for page-contained
 anonymous-memory user data page faults. Completed load chunks are published
 before subsequent accesses. Crossing or unsupported backing uses checked helpers.
-Grouped QCG and LLVM whole-register bodies use checked fallback, not the singleton
-SIMD recovery contract. Local terminal-state checks and normal-path external
+QCG cuts promoted runs at memory instructions, preserving the admitted singleton
+SIMD path and arithmetic promotion on either side. LLVM whole-register bodies
+use checked fallback, not the QCG recovery contract. Local terminal-state checks and normal-path external
 tests have separate roles; neither establishes guest-handler return/restart.
 See the [ordinary native contract](../SESSION0_RESULT_131.md),
 [checked helper integration](../SESSION0_RESULT_132.md) and
@@ -46,7 +48,8 @@ performance executable.
 | `ed980270b6d6` | Eight retained exit-only signal/control executions pass | Helper delivery and later fault-only-first control, not all-form or restart coverage | [Signal integration](rvv-validation/helper-signal-task126/README.md) |
 
 The checked-copy integration also has a production-linked host test (142 checks).
-The signal integration has 1,792 local interface checks. These local tests verify
+The historical signal integration has 1,792 local interface checks; the final
+signal-copy build has 2,063 interface checks. These local tests verify
 the installed host handler, frame fields and boundary behavior, not additional
 external instruction-form coverage. General native fault-state recovery and
 complete guest-handler return/restart remain open in issue #1.
@@ -80,44 +83,50 @@ and its result records. A membership mark alone does not describe testing depth.
 Report the actual SEW, LMUL, VLEN, mask/tail state, operands, checked outputs and
 candidate build from those records. If a state is absent, it remains unverified.
 
-The final Task138 retained external validation has **595 checked forms** and
-21,316 current receipts on the exact Task137 executable (CHIPS 11,532 positives
-plus 212 controls; ACT 7,668; Ara 1,888 whole-file and 16 scoped calls). It adds
-no coverage to the existing accepted sets. The [Task138 reader](rvv-validation/host512-task138/README.md)
-gives exact public acquisition URLs, hash-checked extraction, source/checker
-navigation and configuration interpretation. Its [Task139 supplement manifest](rvv-validation/host512-task138/TASK139_ARCHIVES.json)
-is published in the validation release; it contains the final current raw
-receipts and the missing reader dependencies.
-The existing published CHIPS94/ACT db2 and licensed repository Ara91 packages
-are reused; only current outputs and missing reader dependencies are added.
+The final Task142 retained external validation uses source `8111040`, including
+signal-copy correction `ad5e3c8`, and executable SHA256
+`e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b`.
+It retains **595 checked forms** and exactly **21,316 current receipts**:
+CHIPS 11,532 positives plus 212 controls; ACT 7,668; Ara 1,888 whole-file and
+16 TEST_CASE1/2-only scoped calls. Controls add no positive form credit; scoped
+MAC results retain whole-file failures. Both original ACT reference blockers
+remain outside the accepted queue. Prior-build receipts earn zero Task142 credit.
 
-After the reader's acquisition/extraction steps, check offline from a downloaded
-checkout with explicit roots (Python 3.10+, assertions enabled):
+The [Task142 public reader](rvv-validation/host512-task142/README.md) gives exact
+asset acquisition, hash verification, safe extraction and selected-form commands
+using an explicit new raw root. Its
+[public manifest](rvv-validation/host512-task142/TASK143_ARCHIVES.json) is staged;
+main owns upload/publication. Public acquisition of Task142 raw remains incomplete
+until that new asset is published. The Task139 supplementary source/checker
+package is already published and reused with CHIPS94, ACT db2 and repository
+Ara91; no duplicate source package is added. The existing release tag's source
+ZIP is historical: use main's reviewed source revision containing Task143.
+[Task138](rvv-validation/host512-task138/README.md) remains immutable history.
+
+After acquisition/extraction, inspect a form across suites (Python 3.10+,
+assertions enabled, output directory new):
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv_scope_report.py \
-  --host512-corpus docs/rvv-validation --host512-task138-build \
-  --host512-raw inspection/current/raw --host512-evidence inspection/current \
+  --host512-corpus docs/rvv-validation/host512-task142/combined/navigation.json.gz \
+  --host512-raw inspection/task142-raw --host512-evidence inspection/current \
   --chips-package inspection/chips --act-db2-package inspection/act \
-  --ara-package inspection/ara --output inspection/audit138
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv_scope_report.py \
-  --host512-corpus docs/rvv-validation/host512-task138/combined/navigation.json.gz \
-  --host512-raw inspection/current/raw --host512-evidence inspection/current \
-  --chips-package inspection/chips --act-db2-package inspection/act \
-  --ara-package inspection/ara --form vadd.vv --arm B --output inspection/vadd
+  --ara-package inspection/ara --form vle32.v --arm B --output inspection/vle32-142
 ```
 
-Use the same selector for `vle32.v`, `vfadd.vv`, `vmand.mm` and `vsetvli`;
-`--suite chips|act|ara`, `--case` and `--arm` narrow original records.
-`record.json` and `PORTABLE_SOURCES.json.gz` link original source/assertions,
-frozen signature/capture or parser, current streams/result, binary/library pins
-and actual command/configuration. Missing/corrupt current receipts reject;
-without a raw root, selection explicitly reports `NOT_CHECKED`. Literal source
-geometry and source-only bindings remain distinct from runtime evidence;
-unobserved dimensions remain UNKNOWN. These checks inspect retained evidence
-without executing guests or references. Historical oracle reconstruction has
-separate pinned tool/source dependencies; no single-command rebuild of all
-historical oracles is claimed.
+`record.json` connects original sources/assertions and frozen checker metadata to
+current streams/results, executable/library pins and actual commands. Missing or
+corrupt current raw rejects; no old raw fallback receives credit. Without an
+explicit raw root, selection reports `NOT_CHECKED`. Offline reapplication runs
+no guest/reference engine; historical oracle reconstruction has separate pinned
+tool/source dependencies and no universal rebuild promise.
+
+| Evidence class | Final Task142 meaning | Limit |
+|---|---|---|
+| External result checks | Original CHIPS/ACT/Ara predicates on final executable receipts | Finite checked forms/configurations; no complete RVV conformance or all-dimensional coverage |
+| Local engineering tests | Final signal-interface/FRM/MMU, codegen/admission and normal memory regressions in [TEST_SUCCESS.json](rvv-validation/host512-task142/TEST_SUCCESS.json) | Separate from external credit; interface test executes zero guest handlers |
+| Configuration evidence | Actual cache/compile flags, command guest VLEN and printed ACT/Ara host chunks | Source literals and enabled method flags do not establish runtime tuples or per-target native admission; missing fields stay UNKNOWN |
+| Guest restart | **NOT VERIFIED** | No guest handler return, mapping repair or same-PC retry/P4-04 equivalent |
 
 CHIPS and ACT primary raw packages are available in the
 [validation release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012);
