@@ -1,0 +1,453 @@
+{
+  "manifest_files": 314,
+  "differences": [],
+  "snapshots": [
+    {
+      "file": "dispatcher-store0-eew4-partial0-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial0-first0-pins0-inside4.bin",
+      "origin": "checked",
+      "vstart": 17,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 68
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial0-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial0-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial0-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial1-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial1-first0-pins0-inside4.bin",
+      "origin": "checked",
+      "vstart": 17,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 68
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial1-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial1-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew4-partial1-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial0-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial0-first0-pins0-inside8.bin",
+      "origin": "checked",
+      "vstart": 9,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 72
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial0-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial0-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial0-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial1-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial1-first0-pins0-inside8.bin",
+      "origin": "checked",
+      "vstart": 9,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 72
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial1-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial1-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store0-eew8-partial1-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial0-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial0-first0-pins0-inside4.bin",
+      "origin": "checked",
+      "vstart": 17,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 68
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial0-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial0-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial0-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial1-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial1-first0-pins0-inside4.bin",
+      "origin": "checked",
+      "vstart": 17,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 68
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial1-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 16,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial1-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew4-partial1-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial0-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial0-first0-pins0-inside8.bin",
+      "origin": "checked",
+      "vstart": 9,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 72
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial0-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial0-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial0-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial1-first0-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial1-first0-pins0-inside8.bin",
+      "origin": "checked",
+      "vstart": 9,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 72
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial1-first0-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 8,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 64
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial1-first1-pins0-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    },
+    {
+      "file": "dispatcher-store1-eew8-partial1-first1-pins1-inside0.bin",
+      "origin": "native",
+      "vstart": 0,
+      "destination_bytes_checked": 512,
+      "memory_bytes_checked": 0
+    }
+  ],
+  "native_snapshots": 32,
+  "checked_crossing_snapshots": 8,
+  "emitted_shapes": [
+    {
+      "file": "sites-load-eew4-partial0.txt",
+      "sites": [
+        {
+          "offset": 102,
+          "instruction": "vmovdqu64 (%rax),%zmm2",
+          "cold_offset": 179
+        },
+        {
+          "offset": 122,
+          "instruction": "vmovdqu64 0x40(%rax),%zmm3",
+          "cold_offset": 179
+        }
+      ]
+    },
+    {
+      "file": "sites-load-eew4-partial1.txt",
+      "sites": [
+        {
+          "offset": 108,
+          "instruction": "vmovdqu64 (%rax),%zmm2",
+          "cold_offset": 559
+        },
+        {
+          "offset": 128,
+          "instruction": "vmovdqu64 0x40(%rax),%zmm3",
+          "cold_offset": 559
+        },
+        {
+          "offset": 225,
+          "instruction": "vmovdqu32 (%rax),%zmm4{%k7}{z}",
+          "cold_offset": 559
+        },
+        {
+          "offset": 409,
+          "instruction": "vmovdqu32 0x40(%rax),%zmm5{%k7}{z}",
+          "cold_offset": 559
+        }
+      ]
+    },
+    {
+      "file": "sites-load-eew8-partial0.txt",
+      "sites": [
+        {
+          "offset": 102,
+          "instruction": "vmovdqu64 (%rax),%zmm2",
+          "cold_offset": 179
+        },
+        {
+          "offset": 122,
+          "instruction": "vmovdqu64 0x40(%rax),%zmm3",
+          "cold_offset": 179
+        }
+      ]
+    },
+    {
+      "file": "sites-load-eew8-partial1.txt",
+      "sites": [
+        {
+          "offset": 108,
+          "instruction": "vmovdqu64 (%rax),%zmm2",
+          "cold_offset": 559
+        },
+        {
+          "offset": 128,
+          "instruction": "vmovdqu64 0x40(%rax),%zmm3",
+          "cold_offset": 559
+        },
+        {
+          "offset": 225,
+          "instruction": "vmovdqu64 (%rax),%zmm4{%k7}{z}",
+          "cold_offset": 559
+        },
+        {
+          "offset": 409,
+          "instruction": "vmovdqu64 0x40(%rax),%zmm5{%k7}{z}",
+          "cold_offset": 559
+        }
+      ]
+    },
+    {
+      "file": "sites-store-eew4-partial0.txt",
+      "sites": [
+        {
+          "offset": 122,
+          "instruction": "vmovdqu64 %zmm2,(%rax)",
+          "cold_offset": 179
+        },
+        {
+          "offset": 132,
+          "instruction": "vmovdqu64 %zmm3,0x40(%rax)",
+          "cold_offset": 179
+        }
+      ]
+    },
+    {
+      "file": "sites-store-eew4-partial1.txt",
+      "sites": [
+        {
+          "offset": 128,
+          "instruction": "vmovdqu64 %zmm2,(%rax)",
+          "cold_offset": 395
+        },
+        {
+          "offset": 138,
+          "instruction": "vmovdqu64 %zmm3,0x40(%rax)",
+          "cold_offset": 395
+        },
+        {
+          "offset": 245,
+          "instruction": "vmovdqu32 %zmm4,(%rax){%k7}",
+          "cold_offset": 395
+        },
+        {
+          "offset": 348,
+          "instruction": "vmovdqu32 %zmm5,0x40(%rax){%k7}",
+          "cold_offset": 395
+        }
+      ]
+    },
+    {
+      "file": "sites-store-eew8-partial0.txt",
+      "sites": [
+        {
+          "offset": 122,
+          "instruction": "vmovdqu64 %zmm2,(%rax)",
+          "cold_offset": 179
+        },
+        {
+          "offset": 132,
+          "instruction": "vmovdqu64 %zmm3,0x40(%rax)",
+          "cold_offset": 179
+        }
+      ]
+    },
+    {
+      "file": "sites-store-eew8-partial1.txt",
+      "sites": [
+        {
+          "offset": 128,
+          "instruction": "vmovdqu64 %zmm2,(%rax)",
+          "cold_offset": 395
+        },
+        {
+          "offset": 138,
+          "instruction": "vmovdqu64 %zmm3,0x40(%rax)",
+          "cold_offset": 395
+        },
+        {
+          "offset": 245,
+          "instruction": "vmovdqu64 %zmm4,(%rax){%k7}",
+          "cold_offset": 395
+        },
+        {
+          "offset": 348,
+          "instruction": "vmovdqu64 %zmm5,0x40(%rax){%k7}",
+          "cold_offset": 395
+        }
+      ]
+    }
+  ],
+  "production_callback_calls": 0,
+  "guest_executions": 0,
+  "restart_verified": false
+}

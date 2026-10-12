@@ -1,0 +1,30 @@
+{
+  "rvv-1.0.adoc": {
+    "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc",
+    "local": "/home/user/research/materials/task130-authoritative-sources-20261013/rvv-1.0.adoc",
+    "sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19",
+    "bytes": 207611
+  },
+  "linux-v6.12-sigcontext.h": {
+    "url": "https://github.com/torvalds/linux/blob/adc218676eef25575469234709c2d87185ca223a/arch/x86/include/uapi/asm/sigcontext.h",
+    "local": "/home/user/research/materials/task130-authoritative-sources-20261013/linux-v6.12-sigcontext.h",
+    "sha256": "84e2cf444ec6a539a4bc0b46717775cb1fd1f591301b7469ba143e56f43afc0c",
+    "bytes": 9950
+  },
+  "intel-sdm-089.pdf": {
+    "url": "https://cdrdv2-public.intel.com/868137/325462-089-sdm-vol-1-2abcd-3abcd-4.pdf",
+    "local": "/home/user/research/materials/task131-authoritative-sources-20261013/intel-sdm-089.pdf",
+    "sha256": "1eb81360c636a723fb34610a1deef276e98e1fc331ac08b380114079664add20",
+    "bytes": 25917814,
+    "edition": "325462-089US, October 2025",
+    "clauses": [
+      "Vol3A 7.5 Exception Classifications",
+      "Vol3A 7.6 Program or Task Restart",
+      "Vol3A 5.6 Access Rights, 6.11 Page-Level Protection",
+      "Vol3A Interrupt14 Page Fault 7-44 to7-46",
+      "Vol1 15.6.1 OPMASK",
+      "Vol2B MOVDQU/VMOVDQU8/16/32/64 4-66 to4-72",
+      "Vol2A Table2-51 TypeE4.nb"
+    ]
+  }
+}
