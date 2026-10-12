@@ -1,0 +1,8 @@
+{
+  "unchanged_original_calls": 3,
+  "whole_file_pass": 3,
+  "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+  "final_build_equals_external_build": true,
+  "reference_calls": 0,
+  "input_differences": []
+}
