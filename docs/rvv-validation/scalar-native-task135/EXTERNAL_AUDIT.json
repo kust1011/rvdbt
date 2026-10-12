@@ -1,0 +1,51 @@
+{
+  "calls": [
+    {
+      "case": "Vls32-vlseg2e32.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "299ab0574c7ab5ef6c6ad69b423dcfbed74c62e828fb858d62f7484ad52a16a7"
+    },
+    {
+      "case": "Vls32-vlse32.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "5b8186a3a6c9796a1ddd80bbd46871d3c6a15584ab5053a01226c36651b59f47"
+    },
+    {
+      "case": "Vls32-vluxei32.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "80a9db25d79b7958a7d911c7cf9395e1a25c4a7286082f86949383e150f0fdf6"
+    },
+    {
+      "case": "Vls32-vlm.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "3f5e9ea292183d8b4d56c8bdd16aa055a1386cd5aec6b983ca3c5620749822d1"
+    }
+  ],
+  "input_files": 22,
+  "differences": [],
+  "new_reference_calls": 0
+}
