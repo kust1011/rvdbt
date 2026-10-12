@@ -1,0 +1,32 @@
+{
+  "applicable": 595,
+  "canonical_bindings": 35015,
+  "forms": 627,
+  "new_guest_executions": 0,
+  "packages": {
+    "ACT": {
+      "distinct_direct_raw_locators": 0,
+      "distinct_sources": 1919,
+      "forms": 591,
+      "records": 1919
+    },
+    "ACT-db2": {
+      "distinct_direct_raw_locators": 1918,
+      "distinct_sources": 1918,
+      "forms": 591,
+      "records": 1918
+    },
+    "Ara": {
+      "distinct_direct_raw_locators": 1785,
+      "distinct_sources": 79,
+      "forms": 126,
+      "records": 2430
+    },
+    "CHIPS": {
+      "distinct_direct_raw_locators": 23488,
+      "distinct_sources": 2934,
+      "forms": 596,
+      "records": 23840
+    }
+  }
+}

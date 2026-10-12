@@ -1,5 +1,7 @@
 # RVV validation
 
+For any instruction form, use the [complete original-case navigation](rvv-validation/all-form-records/README.md): 627 forms / 595 applicable, exact original selectors, source/checker/raw detail and family obligations. Historical results retain their own build identities.
+
 The validation has two separate responsibilities: external test programs check
 instruction behavior, while the runner checks that the intended program ran and
 that failures propagate. Passing the runner's unit tests is not ISA coverage.

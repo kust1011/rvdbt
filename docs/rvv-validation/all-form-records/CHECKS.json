@@ -1,0 +1,425 @@
+{
+  "task": 114,
+  "new_guest_executions": 0,
+  "new_ISA_coverage": 0,
+  "build_scope": "retained historical identities; not 37823dd suite validation",
+  "host_tests": {
+    "scope_report": 8,
+    "chips_form_record": 9,
+    "chips_inspection_helpers": 7
+  },
+  "navigation_check": {
+    "selections": 627,
+    "applicable_with_original_CHIPS_and_canonical_joins": 595,
+    "Task90_input_pins": "PASS"
+  },
+  "original_package_acceptance": {
+    "CHIPS": {
+      "status": "PASS",
+      "payload_files": 201756,
+      "primary_binding_rows": 23064,
+      "source_chains": 2980,
+      "original_TEST_CASE_assertions": 33935720,
+      "unique_receipts": 23488,
+      "forms": {
+        "clean961": 595,
+        "historical2af5": 595
+      },
+      "positive_source_cases": {
+        "clean961": 2886,
+        "historical2af5": 2886
+      },
+      "controls": {
+        "clean961": 212,
+        "historical2af5": 212
+      },
+      "receipt_configurations": [
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "B",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "BOTH",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "M1",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "1024",
+          "arm": "M2",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "B",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "BOTH",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "M1",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "128",
+          "arm": "M2",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "2048",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "256",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "B",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "BOTH",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "M1",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "4096",
+          "arm": "M2",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "clean961",
+          "VLEN": "512",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "B",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "BOTH",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "M1",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "1024",
+          "arm": "M2",
+          "positive_receipts": 401
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "B",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "BOTH",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "M1",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "128",
+          "arm": "M2",
+          "positive_receipts": 2364
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "2048",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "256",
+          "arm": "M2",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "B",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "BOTH",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "M1",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "4096",
+          "arm": "M2",
+          "positive_receipts": 37
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "B",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "BOTH",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "M1",
+          "positive_receipts": 27
+        },
+        {
+          "candidate": "historical2af5",
+          "VLEN": "512",
+          "arm": "M2",
+          "positive_receipts": 27
+        }
+      ],
+      "original_excluded_failure_records": 8,
+      "unsafe_original_store_sources": 8,
+      "literal_configuration_sources": 19,
+      "source_geometry_rows": 230916,
+      "source_geometry_files": 2869,
+      "geometry_scope": "source context only; no Cartesian product, runtime VL/branch or independent per-arm method admission",
+      "new_guest_executions": 0
+    },
+    "ACT-c3e": {
+      "status": "PASS",
+      "files_verified": 111383,
+      "original_identity_bindings": 109570,
+      "source_outputs": 1919,
+      "primary_signature_roundtrips": 1878,
+      "original_guest_checker_sha256": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+      "archived_DUT_receipts": 7504,
+      "primary_reference_receipts": {
+        "Sail:PASS": 1878,
+        "QEMU:PASS": 1876,
+        "QEMU:REFERENCE_ERROR": 2
+      },
+      "unlaunched_DUT_arms": 8,
+      "prelaunch_exclusions": {
+        "adapter-blocked-attempts": 5,
+        "adapter-corrections-v2": 210
+      },
+      "diagnostic_reference_repeats": 2,
+      "outside_prior_outputs": 41,
+      "outside_prior_receipts": 164,
+      "selected_ledger_rows": 15364,
+      "bindings": 7512,
+      "inspection_missing": [],
+      "new_DUT_executions": 0,
+      "new_reference_executions": 0,
+      "limitation": "Original guest assertions are inspectable; host check evaluates original retained summary predicates, not ISA results independently."
+    },
+    "ACT-db2": {
+      "status": "PASS",
+      "files_verified": 128101,
+      "source_outputs": 1919,
+      "Task104_prior_join": 1,
+      "Task109_results": {
+        "PASS": 1916,
+        "REFERENCE_ERROR": 2
+      },
+      "signature_roundtrips": 1918,
+      "DUT_receipts": 7664,
+      "reference_receipts": {
+        "Sail:PASS": 1918,
+        "QEMU:PASS": 1916,
+        "QEMU:REFERENCE_ERROR": 2
+      },
+      "diagnostic_failed_QEMU_receipts": 2,
+      "compiled_target_labels": 483103,
+      "archived_target_arm_reach_tuples": 1932412,
+      "original_compiled_checker_macros": {
+        "RVTEST_SIGUPD_V": 669484,
+        "RVTEST_SIGUPD_V_LEN": 114729,
+        "RVTEST_SIGUPD_VXSAT": 21628,
+        "RVTEST_SIGUPD": 1494,
+        "RVTEST_SIGUPD_FFLAGS": 89449
+      },
+      "full_raw_files_indexed": 13684,
+      "full_raw_files_verified": 0,
+      "new_guest_calls": 0,
+      "optimized_target_admission": "NOT_ESTABLISHED",
+      "limitation": "Frozen original signature processing and raw-summary predicates verified; host does not execute architectural checker or recompute TB reach. Exact full raw is separately indexed."
+    },
+    "Ara": {
+      "status": "PASS",
+      "files_verified": 23193,
+      "bindings": 2430,
+      "unique_binding_receipts": 1785,
+      "scope_bindings": {
+        "EXTRACTED_FP32_64_BLOCK": 1465,
+        "INVALID_CONTEXT_HISTORY": 80,
+        "LEGACY_MACRO_DERIVATIVE": 30,
+        "ORIGINAL_FULL_FILE_MISSING_CONFIG": 9,
+        "TEST_CASE1_2_ONLY": 16,
+        "EXTRACTED_ORIGINAL_ARA89_BLOCK": 830
+      },
+      "ara89_blocks": 166,
+      "ara89_receipts": 195,
+      "ara89_exact_added_forms": 26,
+      "retained_preliminary_failures": 8,
+      "M2_target_admission": "UNOBSERVED",
+      "M2_fast_admission": null,
+      "new_DUT_executions": 0
+    }
+  },
+  "reconciliation_inputs": {
+    "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/REMAINING_OBLIGATIONS.md": "371aaf4026b3d2b2ca9bb678a2a2431509604f62527f843f94e3413b4da3a97c",
+    "/home/user/research/materials/thesis_rvv_20260921/artifacts/upstream_validation_review_20261009/README.md": "5fc8596d8df628bacf287087210b9babc0b48c98f362c2720a8e37a86bef6ec4"
+  },
+  "generated_files_cross_host_byte_identity": "PASS: navigation.json.gz, forms.md, families.md, COUNTS.json",
+  "reporter_files": {
+    "scripts/rvv_scope_report.py": "fecebc5f78972e25e631c41d908e02ca7f46ee23beb484b1f1e07f79263af647",
+    "scripts/verify_rvv_chips_inspection.py": "468c00b36a97db692196e0cae96d2e7d52b82c0af4f7b9e9bb1ed14e54aa8073"
+  }
+}

@@ -230,10 +230,22 @@ def form_record(root, rows, files):
         selected_bindings[n['ledger_row_id']] = b  # Alias rows keep their shared binding ID.
         if n['source'] not in sources:
             lines = payload(n['source']).read_text().splitlines()
+            in_test = False
+            marked = any('TEST BEGIN' in line for line in lines)
+            targets = []
+            for i, line in enumerate(lines, 1):
+                if 'TEST BEGIN' in line:
+                    in_test = True
+                if 'TEST END' in line:
+                    in_test = False
+                if re.match(r'^\s*' + re.escape(n['source_form']) + r'\s', line):
+                    targets.append({'line': i, 'text': line,
+                                    'source_role': 'TEST_BODY' if in_test else
+                                    'OUTSIDE_TEST_BODY' if marked else 'UNSCOPED_LITERAL'})
             sources[n['source']] = {
                 'source_sha256': n['source_sha256'],
-                'target_instructions': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
-                                        if re.match(r'^\s*' + re.escape(n['source_form']) + r'\s', s)],
+                'target_instructions': targets,
+                'target_role_scope': 'retained TEST BEGIN/END markers only; outside-body initialization is not a target witness; unmarked literals are unresolved',
                 'assertions': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
                                if re.search(r'\bTEST_CASE\s*\(', s)],
                 'CSR_source_lines': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
