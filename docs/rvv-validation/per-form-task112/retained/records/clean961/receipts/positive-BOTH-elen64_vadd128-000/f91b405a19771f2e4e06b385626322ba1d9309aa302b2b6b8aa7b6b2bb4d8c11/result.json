@@ -1,0 +1,13 @@
+{
+  "id": "f91b405a19771f2e4e06b385626322ba1d9309aa302b2b6b8aa7b6b2bb4d8c11",
+  "status": "PASS",
+  "control": false,
+  "returncode": 0,
+  "error": null,
+  "elapsed_seconds_for_timeout_diagnostics_only": 0.06407288101036102,
+  "elf_sha256": "5d0533ff513832c0f399469ba4c8fe7cda5e08155af1c2ce77e3ca8485543d61",
+  "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+  "stderr_sha256": "83c3be852110cebd754d026b929b234ef770f479b8a4a6b107b7a5e74b256b57",
+  "checker": "registered exit code and exact stdout of self-checking guest",
+  "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+}

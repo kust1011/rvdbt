@@ -30,3 +30,14 @@ class ScopeTests(unittest.TestCase):
         with self.assertRaises(ValueError): report(forms + forms[:1], summary)
         summary['suites'][0]['forms']['result_checked'].append('unknown')
         with self.assertRaises(ValueError): report(forms, summary)
+
+    def test_delivered_compact_forms_header_preserves_report(self):
+        forms, summary = self.data()
+        compact = [{'form': r['form'], 'applicability': r['rv32_elen64_applicability']} for r in forms]
+        self.assertEqual(report(compact, summary, 'vadd.vv'), report(forms, summary, 'vadd.vv'))
+
+    def test_conflicting_applicability_headers_rejected(self):
+        forms, summary = self.data()
+        forms[0]['applicability'] = 'UNKNOWN'
+        with self.assertRaisesRegex(ValueError, 'conflicting applicability'):
+            report(forms, summary)

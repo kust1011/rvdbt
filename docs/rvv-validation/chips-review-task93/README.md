@@ -56,6 +56,13 @@ The configuration selector joins each source file to its retained geometry rows,
 
 ## Licenses and excluded dependencies
 
+The [vadd.vv per-form review example](../per-form-task112/vadd.vv.md) follows one
+retained source through its original answer capture, checker and four concrete
+raw receipts. The checkout verifier adds `--record` to this same `--form` interface
+for selected source/checker/raw inspection. Use that updated checkout script
+against the extracted package; the frozen archive's original tool is unchanged.
+Its exact source tuples remain separate from runtime configuration observations.
+
 Pinned CHIPS revision is `f76bff121dce91b6b23e1d37be77a5e44af914c3` (Apache2); env submodule is `81721c126d7dd7335829948b4a19070546e465d6` (BSD notices retained). Upstream tracked source, original headers and licenses are preserved. Local package/inspection tools retain repository MIT. CHIPS derivatives, including generator patches, retain their source license; the package does not collectively relicense components. `LICENSE_AUDIT.json` identifies notices and the credential-pattern scan. The TestFloat3 origin license is also retained as a notice; its code is fetched with the pinned checkout. The CHIPS env/ps header identifies its gem5 asmtest basis; the [original asmtest BSD notice](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/develop/src/asmtest/LICENSE) is included separately in licenses/GEM5_ASMTEST_BSD.txt. Restricted/unrelated third-party fixtures are excluded.
 
 ELFs, toolchains, libraries, Spike/pspike/merger executables, TestFloat3 source, caches, TB dumps and Git stores are excluded. Inspection does not require them. Fetch/build instructions for optional reconstruction:

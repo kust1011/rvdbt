@@ -1,0 +1,338 @@
+[
+  {
+    "name": "generate",
+    "command": [
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_generator/worktree/build/generator",
+      "-VLEN=128",
+      "-XLEN=32",
+      "-ELEN=64",
+      "-integer=true",
+      "-testfloat3level=1",
+      "-pattern=^vadd\\.vv$",
+      "-stage1output=/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1",
+      "-configs=/home/user/research/third_party/riscv-vector-tests-20261007/configs",
+      "-march=rv32gcv"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-0-stage1",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/env/riscv-test-env/p",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1/vadd_vv-0.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1-bin/vadd_vv-0"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-0-oracle",
+    "command": [
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/pspike",
+      "--isa=rv32gcv_zvl128b",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1-bin/vadd_vv-0"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-1-stage1",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/env/riscv-test-env/p",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1/vadd_vv-1.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1-bin/vadd_vv-1"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-1-oracle",
+    "command": [
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/pspike",
+      "--isa=rv32gcv_zvl128b",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1-bin/vadd_vv-1"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-2-stage1",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/env/riscv-test-env/p",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1/vadd_vv-2.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1-bin/vadd_vv-2"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-2-oracle",
+    "command": [
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/pspike",
+      "--isa=rv32gcv_zvl128b",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1-bin/vadd_vv-2"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "merge",
+    "command": [
+      "/home/user/research/third_party/riscv-vector-tests-20261007/build/merger",
+      "-stage1output",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage1",
+      "-stage2output",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2",
+      "-stage2patch",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/patches"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-0-machine",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/env/riscv-test-env/p",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2/vadd_vv-0.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/machine-bin/vadd_vv-0.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-0-spike-check",
+    "command": [
+      "/home/user/research/third_party/chips-spike-20261007-install/bin/spike",
+      "--isa=rv32gcv_zvl128b",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/machine-bin/vadd_vv-0.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-0-user",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/user_env",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2/vadd_vv-0.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/user-bin/vadd_vv-0.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-1-machine",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/env/riscv-test-env/p",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2/vadd_vv-1.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/machine-bin/vadd_vv-1.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-1-spike-check",
+    "command": [
+      "/home/user/research/third_party/chips-spike-20261007-install/bin/spike",
+      "--isa=rv32gcv_zvl128b",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/machine-bin/vadd_vv-1.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-1-user",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/user_env",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2/vadd_vv-1.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/user-bin/vadd_vv-1.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-2-machine",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/env/riscv-test-env/p",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2/vadd_vv-2.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/machine-bin/vadd_vv-2.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-2-spike-check",
+    "command": [
+      "/home/user/research/third_party/chips-spike-20261007-install/bin/spike",
+      "--isa=rv32gcv_zvl128b",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/machine-bin/vadd_vv-2.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "vadd_vv-2-user",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/user_env",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/stage2/vadd_vv-2.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/user-bin/vadd_vv-2.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "fail256-control",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/user_env",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/fail256.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/user-bin/fail256.elf"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wrong-answer-control",
+    "command": [
+      "clang-20",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gv",
+      "-mabi=ilp32f",
+      "-static",
+      "-mcmodel=medany",
+      "-fvisibility=hidden",
+      "-nostdlib",
+      "-fuse-ld=lld",
+      "-DENTROPY=0xdeadbeef",
+      "-DLFSR_BITS=9",
+      "-I/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/user_env",
+      "-I/home/user/research/third_party/riscv-vector-tests-20261007/macros/general",
+      "-Wl,-T,/home/user/research/third_party/riscv-vector-tests-20261007/env/ps/link.ld",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/wrong-answer.S",
+      "-o",
+      "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_vadd128/user-bin/wrong-answer.elf"
+    ],
+    "returncode": 0
+  }
+]

@@ -12,6 +12,15 @@ STAGES = ('source_present', 'compiled_source', 'emitted', 'program_executed',
 
 
 def report(forms, summary, selected=None):
+    def applicability(row):
+        # The delivered compact forms.csv retains the same values under a shorter header.
+        if 'rv32_elen64_applicability' in row:
+            value = row['rv32_elen64_applicability']
+            if 'applicability' in row and row['applicability'] != value:
+                raise ValueError('conflicting applicability: ' + row['form'])
+            return value
+        return row['applicability']
+
     names = {r['form'] for r in forms}
     if len(names) != len(forms):
         raise ValueError('duplicate form')
@@ -33,12 +42,12 @@ def report(forms, summary, selected=None):
     for r in forms:
         if selected is not None and r['form'] != selected:
             continue
-        per_form.append({'form': r['form'], 'applicability': r['rv32_elen64_applicability'],
+        per_form.append({'form': r['form'], 'applicability': applicability(r),
                          'suites': [{'suite': s['suite'], **{
                              k: True if r['form'] in s['forms'][k] else None for k in STAGES}}
                              for s in suites]})
     return {'scope': summary['scope'], 'forms': len(names),
-            'applicable_forms': sum(r['rv32_elen64_applicability'] == 'REQUIRED' for r in forms),
+            'applicable_forms': sum(applicability(r) == 'REQUIRED' for r in forms),
             'checked_union': len(checked), 'suite_counts': counts,
             'per_form': per_form, 'candidate_scopes': [{'suite': s['suite'], 'candidates': s.get('candidates', [])} for s in suites],
             'interpretation': 'null means no established stage join; never infer opcode execution or influence from program completion',
