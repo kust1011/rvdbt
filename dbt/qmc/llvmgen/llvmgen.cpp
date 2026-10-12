@@ -1717,10 +1717,14 @@ void QIRToLLVM::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		guard = lb->CreateAnd(guard, lb->CreateICmpEQ(
 		    lb->CreateAnd(fcsr, lb->getInt32(0xe0)), lb->getInt32(0)));
 	}
-	if (ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse) {
+	bool const unit_memory = ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse;
+	bool const family_memory = ins->stub == RuntimeStubId::id_rv32_vlse || ins->stub == RuntimeStubId::id_rv32_vsse ||
+	    ins->stub == RuntimeStubId::id_rv32_vlxei || ins->stub == RuntimeStubId::id_rv32_vsxei ||
+	    ins->stub == RuntimeStubId::id_rv32_vlseg || ins->stub == RuntimeStubId::id_rv32_vsseg;
+	if (unit_memory || family_memory) {
 		auto *type = llvm::FunctionType::get(lb->getInt32Ty(),
 			{statev->getType(), lb->getInt32Ty()}, false);
-		auto *safe = lb->CreateCall(type, MakeRStub(RuntimeStubId::id_rv32_unit_memory_safe, type),
+		auto *safe = lb->CreateCall(type, MakeRStub((unit_memory ? RuntimeStubId::id_rv32_unit_memory_safe : RuntimeStubId::id_rv32_family_memory_safe), type),
 			{statev, lb->getInt32(ins->raw)});
 		guard = lb->CreateAnd(guard, lb->CreateICmpNE(safe, lb->getInt32(0)));
 	}

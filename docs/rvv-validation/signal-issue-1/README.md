@@ -152,3 +152,71 @@ so their unchecked unit-stride bodies cannot survive through a stale cache.
 Architectural GPR/vector/IP/trap offsets remain unchanged. Historical build/raw
 results in RESULTS.json remain Task113 results; [UNIT_MEMORY_RESULTS.json](UNIT_MEMORY_RESULTS.json)
 records the separate Task115 candidate and bounded validation.
+
+## Task117 shared ordinary memory design (base cfa37bb; before implementation)
+
+Use one checked element/field loop in `rv32_vector_lower.h` for ordinary
+unit-stride, strided, indexed and segment helpers. Address selection is shared:
+unit segments advance NF*data EEW, strided uses unsigned RV32 multiplication of
+the signed scalar stride's bits, indexed reads unsigned byte offsets at index
+EEW. Existing handler legality checks remain authoritative for independent
+index/data EMUL, mask overlap, register bounds and segment field spacing.
+Skip prestart/inactive elements before reading indices or probing permissions;
+publish absolute element vstart, probe each complete field before copying, return
+address/field values on denial. Completed elements and earlier fields of the
+faulting segment remain committed; later fields/elements remain untouched.
+
+Primary RVV 1.0 source: [v1.0 vector specification](https://github.com/riscvarchive/riscv-v-spec/blob/v1.0/v-spec.adoc),
+sections 7.8 and 17: segment masking and vstart count whole segments; a faulting
+segment may have a subset of fields accessed. This implementation chooses an
+ascending field prefix, with no partial bytes within the denied field. This is
+not segment-wide transactional rollback. Ordinary faults preserve VL and PC;
+FOF's absolute-zero trap/later VL trim stays separate.
+
+Extend typed-frame admission in QCG and LLVM for vlse/vsse, vlxei/vsxei and
+vlseg/vsseg, including QCG's vmemorynative element/segment loops and Z3 AVX512
+strided gather, LLVM C7/C8 masked gather/scatter, and the separate AVX2 indexed
+helper gather. The guard scans live element/field addresses for guest permission
+and rejects wrapping fields before native bodies; nonzero vstart uses checked
+fallback. Conservative checks of inactive addresses may reject SIMD but the
+helper never accesses inactive elements. Keep all existing safe shape routes.
+Existing HAS_CALLS scalar publication and RvvCommit/Reset vector barriers apply;
+add one admission call and O(VL*NF) permission probes per family frame, with index
+reads for indexed forms. No measured performance claim. Append a runtime stub
+so the changed table/layout signature rejects old unchecked AOT caches.
+
+Validation is bounded local state/fault/native-route checks and retained external
+original normal tests with original predicates on a new executable identity.
+Unexpected host SIGBUS, concurrent remapping, native host-fault recovery and
+complete restart are not solved by preflight. Whole-register/mask special EVL,
+FOF expansion and external fault oracles remain follow-ups. P4-04/equivalent
+repair/return/same-PC retry is excluded; neither issue is closed by this increment.
+
+Task117 result: shared checked helpers now queue ordinary strided/indexed/segment
+faults with absolute element and field coordinates. Every QCG/LLVM typed frame
+for these families calls `rv32_family_memory_safe`; the separate AVX2 gather
+checks read permission and refuses offsets above its positive signed-i32 range.
+QCG Z3's own geometry/stride guards and LLVM's original shape guards remain.
+Nonzero vstart selects the helper. Permission preflight is conservative for masks;
+the checked helper suppresses inactive/prestart guest accesses. Unit-stride
+fallback now delegates to the same loop. FOF and special EVL paths remain separate.
+
+ABI is `b04553e010cbb4e9`; `CPUStateImpl` remains42688 bytes, `CPUState` becomes
+42704, and fpu moves42264→42272. The old `40cf59110e7e8839` cache signature is
+rejected by the actual AOT gate in a local host check. Architectural gpr/ip/vec/
+trap offsets are unchanged. Pure QCG does not gain a new vector-SSA barrier;
+existing HAS_CALLS publication applies. LLVM C7/C8 retain RvvCommit/Reset before
+the frame. New cost is one admission call plus VL*NF field probes (with indices
+read for indexed forms); no timing or performance result is claimed.
+
+[Commands](FAMILY_MEMORY_COMMANDS.md) and [results](FAMILY_MEMORY_RESULTS.json)
+record323410 family host checks/59424 cells,9562 unit checks/1248 cells,376 signal
+checks, passing LLVM guard/value checks and88646 Z3 value checks. Twenty original
+Ara normal calls pass1268 assertions/20052 comparisons; sixteen original CHIPS
+indexed normal calls pass their original exit/stdout predicates. Actual local
+native/fallback counters, Z3 fast completion and AVX2 admission are checked.
+External Ara aggregate fallbacks belong to vmv.v.i, not target memory; CHIPS
+original flags print helper census but omit RVV_DIRECT, so no native hit count
+is invented. These results do not close issue #1 or transfer older full-suite or
+performance results to this binary. Unexpected host faults/concurrent remapping,
+complete restart, whole-register/mask EVL precision and additional FOF work remain.

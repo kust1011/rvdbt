@@ -603,23 +603,42 @@ ALWAYS_INLINE void guest_store_elem(u8 *vmem, u32 gaddr, u8 const *src, u32 byte
 namespace rvv_ref
 {
 
-// Ordinary unit-stride permission fallback. Returns normally on denial so the
-// instruction handler can queue the event without unwinding helper-owned scopes.
-inline bool unit_stride_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
-				u32 vlen, u32 vl, u32 eew, bool vm, bool store,
-				u32 &denied)
+// Ordinary memory shares one address selector and one checked field transfer.
+// Legality/shape belong to the handlers; all arithmetic here wraps at RV32.
+inline u32 memory_element_base(VectorState &vs, u32 base, u32 e, u32 stride,
+                              u32 index, u32 index_eew, u32 vlen)
+{
+	return base + (index_eew ? (u32)vs.elem_u(index, e, index_eew, vlen) : e * stride);
+}
+
+inline bool memory_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
+                           u32 stride, u32 index, u32 index_eew, u32 vlen,
+                           u32 vl, u32 eew, u32 nf, u32 field_regs, bool vm,
+                           bool store, u32 &denied, u32 &field)
 {
 	for (u32 e = vs.vstart; e < vl; ++e) {
 		if (!vm && !vs.mask_get(0, e)) continue;
 		vs.vstart = e;
-		u32 address = base + e * eew;
-		if (mmu::FirstDenied(address, eew, store, denied)) return false;
-		u8 *element = vs.elem_ptr(reg, e, eew, vlen);
-		if (store) guest_store_elem(vmem, address, element, eew);
-		else guest_load_elem(element, vmem, address, eew);
+		u32 const element_base = memory_element_base(vs, base, e, stride, index, index_eew, vlen);
+		for (field = 0; field < nf; ++field) {
+			u32 const address = element_base + field * eew;
+			if (mmu::FirstDenied(address, eew, store, denied)) return false;
+			u8 *element = vs.elem_ptr(reg + field * field_regs, e, eew, vlen);
+			if (store) guest_store_elem(vmem, address, element, eew);
+			else guest_load_elem(element, vmem, address, eew);
+		}
 	}
 	vs.vstart = 0;
 	return true;
+}
+
+inline bool unit_stride_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
+                                u32 vlen, u32 vl, u32 eew, bool vm, bool store,
+                                u32 &denied)
+{
+	u32 field;
+	return memory_checked(vs, reg, vmem, base, eew, 0, 0, vlen, vl, eew,
+	                      1, 1, vm, store, denied, field);
 }
 
 inline void load_unit_stride(VectorState &vs, u32 vd, u8 *vmem, u32 base, u32 vlen_bits, u32 vl,

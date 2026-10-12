@@ -1,0 +1,59 @@
+{
+  "task": 117,
+  "base": "cfa37bb",
+  "branch": "fix/rvv-memory-families-issue-1",
+  "root": "/home/vick/rvdbt-memory-families-20261012-task117",
+  "ABI": "b04553e010cbb4e9",
+  "local_only": true,
+  "focused": [
+    {
+      "test": "rv32_family_memory_fault_test",
+      "returncode": 0,
+      "stdout_sha256": "671f5cd12f56f87607b192b51fa770d48cc23ac7d64c273de1c2ed902b528c47",
+      "stderr_sha256": "a8cf101debb2de71dc58edc3ef9eafed62936080146a932a335a4ef93da76e07"
+    },
+    {
+      "test": "rv32_unit_memory_fault_test",
+      "returncode": 0,
+      "stdout_sha256": "89c21f685b35212cafd97501fc16d78ef05d9188b29623a73cfba8cdd7fe559f",
+      "stderr_sha256": "bfdf08a8611c4790c9ce9c59a8fbb8bb6aee1c94f7d796b8c87d01f67c1358e8"
+    },
+    {
+      "test": "rv32_signal_interface_test",
+      "returncode": 0,
+      "stdout_sha256": "b7908a52498346f65b6737af668359be2c9f99b7a13e4573fb343282dd8072fe",
+      "stderr_sha256": "d90222dd66288004416c17e066a6b06ac7ea637ab357841502088d1c2ec9d26b"
+    },
+    {
+      "test": "rvv_llvm_vstrided_test",
+      "returncode": 0,
+      "stdout_sha256": "85d43d01b51629ee88551176ff12c79958ccb2dc0023988307ceb4738288a2d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "test": "rvv_vlse_gather_value_test",
+      "returncode": 0,
+      "stdout_sha256": "2903ffac14c4929f2b1f7dde5c7bd254d4ce0055b208ea4ce8fa38617b33d86c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "ara_calls": 20,
+  "ara_assertions": 1268,
+  "ara_comparisons": 20052,
+  "chips_calls": 16,
+  "elfrun_sha256": "d397cc27111e858961b3954f9bf5c0e942a67e0c9668b1a9b80a3f0eb923079c",
+  "library_sha256": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d",
+  "source_manifest_sha256": "0a729eb5cc0de54557a904ef043b76039aa7114116a7ee82e7c4ee1fa7e9aad3",
+  "limitations": [
+    "No external fault/restart conformance",
+    "No P4-04 or equivalent execution",
+    "No full suite or performance campaign",
+    "No concurrent remapping/unexpected SIGBUS recovery"
+  ],
+  "local_family_checks": 323410,
+  "local_family_cells": 59424,
+  "local_unit_checks": 9562,
+  "local_unit_cells": 1248,
+  "ABI_old_rejected": "40cf59110e7e8839",
+  "external_calls_are_normal_only": true
+}

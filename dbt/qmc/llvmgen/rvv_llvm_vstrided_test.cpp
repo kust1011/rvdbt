@@ -40,6 +40,8 @@
 
 #include "llvm/Analysis/ConstantFolding.h"
 #include "llvm/IR/Constants.h"
+#include "llvm/IR/Dominators.h"
+#include <functional>
 #include "llvm/IR/Function.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/IntrinsicInst.h"
@@ -134,6 +136,8 @@ void Configure(u32 vlen, unsigned which)
 	config::rvv_qcg_direct_setvl = false;
 }
 
+void CheckPermissionGuard(Built &b);
+
 void Translate(Built &b)
 {
 	CompilerJob::IpRangesSet ranges = {{0u, (u32)(b.words.size() * sizeof(u32))}};
@@ -143,6 +147,7 @@ void Translate(Built &b)
 	ctx.AddFunction(0u, b.segment);
 	QIRToLLVM gen(ctx, &b.segment, b.region, 0u);
 	b.fn = gen.Run();
+	CheckPermissionGuard(b);
 }
 
 struct Qir {
@@ -337,6 +342,64 @@ u32 ChainOffset(llvm::Value *p, llvm::Value *root, llvm::DataLayout const &DL)
 		p = g->getPointerOperand();
 	}
 	return p == root ? (u32)total : ~0u;
+}
+
+// Local structural check of the production guard, independent of value folding.
+// Every native gather/scatter must be dominated by the exact permission call's
+// successful branch; keep all four original state predicates identifiable.
+void CheckPermissionGuard(Built &b)
+{
+	if (!b.fn) return;
+	auto *state = b.fn->getArg(0);
+	auto const &dl = b.module.getDataLayout();
+	llvm::DominatorTree dom(*b.fn);
+	unsigned permissions = 0, memory = 0;
+	llvm::BasicBlock *fast = nullptr;
+	for (auto &bb : *b.fn) for (auto &i : bb) {
+		auto *call = llvm::dyn_cast<llvm::CallInst>(&i);
+		if (!call) continue;
+		auto *target = llvm::dyn_cast<llvm::LoadInst>(call->getCalledOperand());
+		if (!target || ChainOffset(target->getPointerOperand(),state,dl) !=
+		    offsetof(CPUState,stub_tab)+RuntimeStubTab::offs(RuntimeStubId::id_rv32_family_memory_safe)) continue;
+		++permissions;
+		CHECK(call->getType()->isIntegerTy(32) && call->arg_size()==2);
+		CHECK(call->getArgOperand(0)==state);
+		auto *raw=llvm::dyn_cast<llvm::ConstantInt>(call->getArgOperand(1));
+		CHECK(raw && raw->getZExtValue()==b.words[1]);
+		auto *br=llvm::dyn_cast<llvm::BranchInst>(bb.getTerminator());
+		CHECK(br && br->isConditional());if(!br || !br->isConditional())continue;
+		auto *all=llvm::dyn_cast<llvm::BinaryOperator>(br->getCondition());
+		CHECK(all && all->getOpcode()==llvm::Instruction::And);if(!all)continue;
+		auto *cmp=llvm::dyn_cast<llvm::ICmpInst>(all->getOperand(1));
+		CHECK(cmp && cmp->getPredicate()==llvm::CmpInst::ICMP_NE);
+		if(!cmp)continue;
+		CHECK(cmp->getOperand(0)==call);
+		auto *zero=llvm::dyn_cast<llvm::ConstantInt>(cmp->getOperand(1));CHECK(zero && zero->isZero());
+		unsigned states=0;u32 seen=0;
+		std::function<void(llvm::Value *)> inspect=[&](llvm::Value *v) {
+			if(auto *a=llvm::dyn_cast<llvm::BinaryOperator>(v)) {
+				CHECK(a->getOpcode()==llvm::Instruction::And);inspect(a->getOperand(0));inspect(a->getOperand(1));return;
+			}
+			auto *c=llvm::dyn_cast<llvm::ICmpInst>(v);CHECK(c);if(!c)return;
+			auto *l=llvm::dyn_cast<llvm::LoadInst>(c->getOperand(0));
+			auto *n=llvm::dyn_cast<llvm::ConstantInt>(c->getOperand(1));CHECK(l && n);if(!l || !n)return;
+			u32 off=ChainOffset(l->getPointerOperand(),state,dl),expected=0,bit=0;
+			u32 vo=offsetof(CPUState,vec),vt=b.words[0]>>20;
+			if(off==vo+offsetof(rvv32::VectorState,vlenb)){bit=1;expected=config::vlen_bits/8;}
+			if(off==vo+offsetof(rvv32::VectorState,vtype)){bit=2;expected=vt;}
+			if(off==vo+offsetof(rvv32::VectorState,vl)){bit=4;expected=rvv32::compute_vlmax(rvv32::VType{vt},config::vlen_bits);}
+			if(off==vo+offsetof(rvv32::VectorState,vstart)){bit=8;expected=0;}
+			CHECK(bit && !(seen&bit) && n->getZExtValue()==expected);
+			CHECK(c->getPredicate()==(bit==4?llvm::CmpInst::ICMP_ULE:llvm::CmpInst::ICMP_EQ));
+			seen|=bit;++states;
+		};
+		inspect(all->getOperand(0));CHECK(states==4 && seen==15);fast=br->getSuccessor(0);
+	}
+	for(auto &bb:*b.fn)for(auto &i:bb)if(auto *ii=llvm::dyn_cast<llvm::IntrinsicInst>(&i)) {
+		if(ii->getIntrinsicID()!=llvm::Intrinsic::masked_gather && ii->getIntrinsicID()!=llvm::Intrinsic::masked_scatter)continue;
+		++memory;CHECK(fast && dom.dominates(fast,&bb));
+	}
+	if(memory)CHECK(permissions==1);
 }
 
 struct Folded {

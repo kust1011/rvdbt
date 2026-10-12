@@ -14,8 +14,8 @@
 //   * FAULT-FREEDOM IS PROVEN, NOT ASSUMED. A host gather that faults part-way cannot report a
 //     precise vstart, so instead of recovering we refuse unless no access can fault: the index
 //     vector is pre-scanned for its min and max byte offset and the whole touched range is checked
-//     against mmu::range_mapped. If any page in it is unmapped, the fast path refuses and the
-//     reference runs, faulting exactly as before. The pre-scan reads the same indices the gather
+//     against guest read permissions. If any page in it denies reading, the fast path refuses and the
+//     checked fallback runs. The pre-scan reads the same indices the gather
 //     will use, so it cannot disagree with them.
 //   * unmasked (vm=1), vstart == 0, and data EEW == index EEW == 4. Other widths, masks and a
 //     non-zero vstart all fall through to the reference.
@@ -56,7 +56,9 @@ extern "C" bool rvv_gather_e32_avx2(void *vs_void, unsigned vd, unsigned vs2, un
 	if (hi < lo)
 		return false;
 	// Fault-freedom obligation. 4 bytes per element, so the last touched byte is hi+3.
-	if (!mmu::range_mapped(lo, (hi - lo) + 4)) {
+	// AVX2 i32 gather sign-extends offsets; only the positive half is safe
+	// relative to vmem. Reject overflow and guest read denial before any access.
+	if (hi > 0x7ffffffcu || !mmu::range_readable(lo, (hi - lo) + 4)) {
 		g_gather_unmapped++;
 		return false;
 	}
