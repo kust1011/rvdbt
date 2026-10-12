@@ -3222,6 +3222,7 @@ struct InstRVVTypedChunkBegin : InstNoOperands {
 		    kind != GuardKind::VTypeIntegerTwoArm && kind != GuardKind::VTypeIntegerNoRestart)
 			Panic("qir: rvv run frame built with a non-vtype guard kind");
 		CheckRunMembers(members_, n_members_);
+		run_members = members_;
 	}
 
 	// G1 run frame WITH the memory frames' base-range guard. A run that contains a whole-register
@@ -3244,6 +3245,7 @@ struct InstRVVTypedChunkBegin : InstNoOperands {
 		if (base_limit_ == 0)
 			Panic("qir: rvvtypedchunkbegin base limit is zero");
 		CheckRunMembers(members_, n_members_);
+		run_members = members_;
 	}
 
 	InstRVVTypedChunkBegin(u32 vtype_, u32 vlmax_, RVVRunMember const *members_, u8 n_members_,
@@ -3258,6 +3260,7 @@ struct InstRVVTypedChunkBegin : InstNoOperands {
 		    (base_state_mask_ & 1u) != 0 || base_limit_ == 0)
 			Panic("qir: run base-mask frame has invalid guard arguments");
 		CheckRunMembers(members_, n_members_);
+		run_members = members_;
 	}
 
 	// THE SINGLE-INSTRUCTION, VTYPE-DEPENDENT, NO-EXTRA-FIELD CONSTRUCTOR. What the allowlist
@@ -3324,7 +3327,9 @@ struct InstRVVTypedChunkBegin : InstNoOperands {
 	// other two limits admit, which would have made the NODE the binding constraint -- a
 	// representation accident, not a translation one.
 	u16 n_typed; // typed instructions the group must contain; checked by `end`
-	u8 n_members; // members this ONE guard covers; 1 is the accepted single-instruction frame
+	u8 n_members; // members this ONE guard covers; 1 is the single-instruction frame
+	// Borrowed with the same arena lifetime as the end-node member list.
+	RVVRunMember const *run_members{nullptr};
 	GuardKind guard_kind{GuardKind::VTypeVlVstart}; // default = the accepted predicate
 	u32 vlenb{0}; // expected CPUState::vec.vlenb   (VlenbVstart only)
 	u16 base_state_offs{0}; // A13: CPUState offset of the base GPR (VTypeVlVstartBaseLimit only)

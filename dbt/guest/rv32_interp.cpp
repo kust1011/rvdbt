@@ -567,8 +567,58 @@ extern "C" u32 qcgstub_rv32_family_memory_safe(CPUState *s, u32 raw)
 	return 1;
 }
 
-static void OrdinaryMemory(CPUState *s, u8 *vmem, u32 pc, u32 raw, u32 vlen,
-                           u32 eew, u32 index_eew, u32 nf, u32 field_regs)
+// Mask/whole-register EVL is independent of ordinary SEW/VL geometry.
+// Nonzero vstart uses the shared precise loop; native admission probes only
+// a complete nonwrapping transfer and never mutates architectural state.
+extern "C" u32 qcgstub_rv32_special_memory_safe(CPUState *s, u32 raw)
+{
+	u32 const vlen = config::vlen_bits, width = (raw >> 12) & 7u;
+	bool const store = (raw & 0x7f) == 0x27;
+	if (!vlen_supported(vlen) || s->vec.vlenb != vlen / 8u || s->vec.vstart)
+		return 0;
+	u32 bytes;
+	if (((raw >> 20) & 31u) == 8u) {
+		u32 const nregs = ((raw >> 29) & 7u) + 1u;
+		if (!whole_reg_group_legal((raw >> 7) & 31u, nregs) ||
+		    (store ? width != 0 : eew_log2_from_width(width) < 0))
+			return 0;
+		bytes = nregs * (vlen / 8u);
+	} else if (((raw >> 20) & 31u) == 11u) {
+		VType const vt{s->vec.vtype};
+		if (!vtype_supported(vt, vlen) || s->vec.vl > compute_vlmax(vt, vlen))
+			return 0;
+		bytes = (s->vec.vl + 7u) / 8u;
+	} else
+		return 0;
+	u32 const base = s->gpr[(raw >> 15) & 31u];
+	if ((u64)base + bytes > mmu::ASPACE_SIZE)
+		return 0;
+	u32 denied;
+	return !mmu::FirstDenied(base, bytes, store, denied);
+}
+
+static void SpecialMemory(CPUState *s, u8 *vmem, u32 pc, u32 raw, u32 vlen, u32 evl, u32 eew, u32 nregs = 1)
+{
+	u32 denied;
+	bool const store = (raw & 0x7f) == 0x27;
+	// Retain the existing fixed-copy helper on wholly permitted whole groups.
+	if (((raw >> 20) & 31u) == 8u && qcgstub_rv32_special_memory_safe(s, raw)) {
+		if (store)
+			rvv_ref::whole_reg_store(s->vec, (raw >> 7) & 31u, vmem, s->gpr[(raw >> 15) & 31u],
+						 nregs, vlen);
+		else
+			rvv_ref::whole_reg_load(s->vec, (raw >> 7) & 31u, vmem, s->gpr[(raw >> 15) & 31u],
+						nregs, vlen);
+		s->vec.vstart = 0;
+		return;
+	}
+	if (!rvv_ref::unit_stride_checked(s->vec, (raw >> 7) & 31u, vmem, s->gpr[(raw >> 15) & 31u], vlen,
+					  evl, eew, true, store, denied))
+		QueueOrdinaryMemoryFault(s, pc, raw, denied, eew, store, nregs);
+}
+
+static void OrdinaryMemory(CPUState *s, u8 *vmem, u32 pc, u32 raw, u32 vlen, u32 eew, u32 index_eew, u32 nf,
+			   u32 field_regs)
 {
 	u32 const mop = (raw >> 26) & 3u, index = (raw >> 20) & 31u;
 	u32 const stride = mop == 2 ? s->gpr[index] : nf * eew;
@@ -1474,14 +1524,12 @@ HANDLER(vsmul)
 HANDLER(vlm)
 {
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
-	rvv_ref::load_mask_reg(s->vec, i.rd(), vmem, s->gpr[i.rs1()], vlen, s->vec.vl);
-	s->vec.vstart = 0;
+	SpecialMemory(s, vmem, GET_GIP(), i.raw, vlen, (s->vec.vl + 7u) / 8u, 1);
 }
 HANDLER(vsm)
 {
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
-	rvv_ref::store_mask_reg(s->vec, i.rd(), vmem, s->gpr[i.rs1()], vlen, s->vec.vl);
-	s->vec.vstart = 0;
+	SpecialMemory(s, vmem, GET_GIP(), i.raw, vlen, (s->vec.vl + 7u) / 8u, 1);
 }
 
 // ---- vector FP widening arithmetic / FMA ------------------------------------------------------
@@ -1952,10 +2000,8 @@ HANDLER(vlNre)
 	u32 const nregs = ((i.raw >> 29) & 0x7) + 1;
 	RVV_REQUIRE_WHOLE_GROUP(i.rd(), nregs);
 	u32 const eew_bytes = 1u << (eew_log2_from_width(i.funct3()) - 3); // decoder admits 8/16/32/64
-	u32 start_byte = 0;
-	if (rvv_ref::whole_reg_start_byte(s->vec.vstart, eew_bytes, nregs, vlen, &start_byte))
-		rvv_ref::whole_reg_load(s->vec, i.rd(), vmem, s->gpr[i.rs1()], nregs, vlen, start_byte);
-	s->vec.vstart = 0;
+	SpecialMemory(s, vmem, GET_GIP(), i.raw, vlen, nregs * (vlen / 8u) / eew_bytes,
+	              eew_bytes, nregs);
 }
 
 HANDLER(vsNr)
@@ -1963,10 +2009,7 @@ HANDLER(vsNr)
 	u32 const vlen = dbt::config::vlen_bits;
 	u32 const nregs = ((i.raw >> 29) & 0x7) + 1;
 	RVV_REQUIRE_WHOLE_GROUP(i.rd(), nregs); // rd field holds vs3 for stores
-	u32 start_byte = 0; // the store's EEW is 8 (decoder pins width == 000)
-	if (rvv_ref::whole_reg_start_byte(s->vec.vstart, 1u, nregs, vlen, &start_byte))
-		rvv_ref::whole_reg_store(s->vec, i.rd(), vmem, s->gpr[i.rs1()], nregs, vlen, start_byte);
-	s->vec.vstart = 0;
+	SpecialMemory(s, vmem, GET_GIP(), i.raw, vlen, nregs * (vlen / 8u), 1, nregs);
 }
 
 // ---------------------------------------------------------------------------------------------

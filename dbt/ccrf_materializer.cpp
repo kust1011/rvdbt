@@ -244,13 +244,28 @@ std::string ArchDigest(ArchSnapshot const &a)
 	return Digest(d, sizeof(d));
 }
 
+// Component images reorder whole-register transfers and require a fault-free
+// certificate. Check every declared read object before either live component
+// execution or snapshot materialization, including write-only guest mappings.
+bool ReadObjectsReadable()
+{
+	u32 denied;
+	for (auto const &r : read_objects)
+		if (mmu::FirstDenied(r.lo, r.hi - r.lo + 1u, false, denied))
+			return false;
+	return true;
+}
+
 void ValidatePages()
 {
+	if (!ReadObjectsReadable())
+		Fail("READ_OBJECT_PERMISSION_MISMATCH");
 	for (auto const &r : memory_ranges) {
 		for (u32 page = r.lo >> mmu::PAGE_BITS; page <= (r.hi >> mmu::PAGE_BITS); ++page) {
 			mmu::PageInfo p;
-			if (!mmu::QueryPage(page << mmu::PAGE_BITS, p) || !p.mapped || !(p.prot & PROT_WRITE) ||
-			    !p.is_private || p.is_shared || p.backing == mmu::BackingType::None)
+			if (!mmu::QueryPage(page << mmu::PAGE_BITS, p) || !p.mapped ||
+			    !(p.prot & PROT_WRITE) || !p.is_private || p.is_shared ||
+			    p.backing == mmu::BackingType::None)
 				Fail("LIVE_PAGE_FACT_MISMATCH");
 		}
 	}
@@ -359,7 +374,7 @@ void MaterializeReadSnapshots()
 	for (auto const &r : read_objects)
 		for (u32 page = r.lo >> mmu::PAGE_BITS; page <= r.hi >> mmu::PAGE_BITS; ++page) {
 			mmu::PageInfo p;
-			if (!mmu::QueryPage(page << mmu::PAGE_BITS, p) || !p.mapped ||
+			if (!mmu::QueryPage(page << mmu::PAGE_BITS, p) || !p.mapped || !(p.prot & PROT_READ) ||
 			    !p.is_private || p.is_shared || p.backing == mmu::BackingType::None)
 				Fail("READ_OBJECT_LIVE_PAGE_MISMATCH");
 		}

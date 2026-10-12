@@ -918,7 +918,7 @@ llvm::Value *QIRToLLVM::RvvVlenbVstartGuard(u32 expected_vlenb)
 // `total_bytes` is the node's own `evl` (nregs * VLEN/8). The bound is `addr <= 2^32 - total`,
 // written as the unsigned compare `addr <= (u32)(0 - total)`: for any `total` in [1, 2^32) that
 // constant IS `2^32 - total`, and `total` is at least 16 here.
-llvm::Value *QIRToLLVM::RvvWholeRegMemGuard(llvm::Value *addr, u32 total_bytes)
+llvm::Value *QIRToLLVM::RvvWholeRegMemGuard(llvm::Value *addr, u32 total_bytes, u32 raw)
 {
 	if (total_bytes == 0) {
 		Panic("llvmgen: whole-register transfer with a zero byte count");
@@ -927,8 +927,14 @@ llvm::Value *QIRToLLVM::RvvWholeRegMemGuard(llvm::Value *addr, u32 total_bytes)
 	auto *ok = lb->CreateICmpEQ(RvvStateLoad(VType::I32,
 		vo + offsetof(rv32::VectorState, vlenb), llvm::Align(4)),
 		lb->getInt32(config::vlen_bits / 8));
-	ok = lb->CreateAnd(ok, lb->CreateICmpEQ(RvvStateLoad(VType::I32,
-		vo + offsetof(rv32::VectorState, vstart), llvm::Align(4)), lb->getInt32(0)));
+	ok = lb->CreateAnd(ok,
+			   lb->CreateICmpEQ(RvvStateLoad(VType::I32, vo + offsetof(rv32::VectorState, vstart),
+							 llvm::Align(4)),
+					    lb->getInt32(0)));
+	auto *type = llvm::FunctionType::get(lb->getInt32Ty(), {statev->getType(), lb->getInt32Ty()}, false);
+	auto *safe = lb->CreateCall(type, MakeRStub(RuntimeStubId::id_rv32_special_memory_safe, type),
+				    {statev, lb->getInt32(raw)});
+	ok = lb->CreateAnd(ok, lb->CreateICmpNE(safe, lb->getInt32(0)));
 	return lb->CreateAnd(ok, lb->CreateICmpULE(addr, lb->getInt32(0u - total_bytes)));
 }
 
@@ -1717,16 +1723,31 @@ void QIRToLLVM::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		guard = lb->CreateAnd(guard, lb->CreateICmpEQ(
 		    lb->CreateAnd(fcsr, lb->getInt32(0xe0)), lb->getInt32(0)));
 	}
-	bool const unit_memory = ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse;
-	bool const family_memory = ins->stub == RuntimeStubId::id_rv32_vlse || ins->stub == RuntimeStubId::id_rv32_vsse ||
-	    ins->stub == RuntimeStubId::id_rv32_vlxei || ins->stub == RuntimeStubId::id_rv32_vsxei ||
-	    ins->stub == RuntimeStubId::id_rv32_vlseg || ins->stub == RuntimeStubId::id_rv32_vsseg;
-	if (unit_memory || family_memory) {
-		auto *type = llvm::FunctionType::get(lb->getInt32Ty(),
-			{statev->getType(), lb->getInt32Ty()}, false);
-		auto *safe = lb->CreateCall(type, MakeRStub((unit_memory ? RuntimeStubId::id_rv32_unit_memory_safe : RuntimeStubId::id_rv32_family_memory_safe), type),
-			{statev, lb->getInt32(ins->raw)});
-		guard = lb->CreateAnd(guard, lb->CreateICmpNE(safe, lb->getInt32(0)));
+	// Runs may begin with arithmetic; admit every memory member before any body access.
+	for (u8 member = 0; member < ins->n_members; ++member) {
+		u32 const raw = ins->n_members == 1 ? ins->raw : ins->run_members[member].raw;
+		auto const stub = ins->n_members == 1 ? ins->stub : ins->run_members[member].stub;
+		bool const unit_memory =
+		    stub == RuntimeStubId::id_rv32_vle || stub == RuntimeStubId::id_rv32_vse;
+		bool const family_memory =
+		    stub == RuntimeStubId::id_rv32_vlse || stub == RuntimeStubId::id_rv32_vsse ||
+		    stub == RuntimeStubId::id_rv32_vlxei || stub == RuntimeStubId::id_rv32_vsxei ||
+		    stub == RuntimeStubId::id_rv32_vlseg || stub == RuntimeStubId::id_rv32_vsseg;
+		bool const special_memory =
+		    stub == RuntimeStubId::id_rv32_vlm || stub == RuntimeStubId::id_rv32_vsm ||
+		    stub == RuntimeStubId::id_rv32_vlNre || stub == RuntimeStubId::id_rv32_vsNr;
+		if (unit_memory || family_memory || special_memory) {
+			auto *type =
+			    llvm::FunctionType::get(lb->getInt32Ty(), {statev->getType(), lb->getInt32Ty()}, false);
+			auto *safe =
+			    lb->CreateCall(type,
+					   MakeRStub((special_memory ? RuntimeStubId::id_rv32_special_memory_safe
+						      : unit_memory  ? RuntimeStubId::id_rv32_unit_memory_safe
+								     : RuntimeStubId::id_rv32_family_memory_safe),
+						     type),
+					   {statev, lb->getInt32(raw)});
+			guard = lb->CreateAnd(guard, lb->CreateICmpNE(safe, lb->getInt32(0)));
+		}
 	}
 
 	lb->CreateCondBr(guard, fast, slow);
@@ -6374,7 +6395,7 @@ void QIRToLLVM::Emit_rvvload(qir::InstRVVLoad *ins)
 	// C1: `addr` is materialised BEFORE the branch because the guard now tests it. See
 	// RvvWholeRegMemGuard for why vlenb alone was not a sufficient precondition.
 	auto *addr = LoadVOperand(ins->i(0));
-	auto *guard_ok = RvvWholeRegMemGuard(addr, ins->evl);
+	auto *guard_ok = RvvWholeRegMemGuard(addr, ins->evl, ins->raw);
 	auto *fast = llvm::BasicBlock::Create(lctx, "rvv.load.direct", func);
 	auto *slow = llvm::BasicBlock::Create(lctx, "rvv.load.fallback", func);
 	auto *done = llvm::BasicBlock::Create(lctx, "rvv.load.done", func);
@@ -6408,7 +6429,7 @@ void QIRToLLVM::Emit_rvvstore(qir::InstRVVStore *ins)
 	// C1: same three-test guard as the load; the two must not state different preconditions for
 	// the same transfer, which is why they share RvvWholeRegMemGuard.
 	auto *addr = LoadVOperand(ins->i(0));
-	auto *guard_ok = RvvWholeRegMemGuard(addr, ins->evl);
+	auto *guard_ok = RvvWholeRegMemGuard(addr, ins->evl, ins->raw);
 	auto *fast = llvm::BasicBlock::Create(lctx, "rvv.store.direct", func);
 	auto *slow = llvm::BasicBlock::Create(lctx, "rvv.store.fallback", func);
 	auto *done = llvm::BasicBlock::Create(lctx, "rvv.store.done", func);
