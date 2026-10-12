@@ -9899,7 +9899,9 @@ rvvrun::RunDescriptor RV32Translator::RvvFormVectorRunAt(u32 entry_pc, u32 bound
 	//
 	// On the pure-QCG path this is false, so `needs_observed` in FormRun is the expression it
 	// always was and no QCG admission or emitted byte can change.
-	rvvrun::RunBackendCaps const caps{/*fp_candidate_vtype_ok=*/RvvLLVMTypedSubstrate()};
+	rvvrun::RunBackendCaps const caps{
+	    .fp_candidate_vtype_ok = RvvLLVMTypedSubstrate(),
+	    .memory_instruction_boundary = !config::aot_use_llvm};
 	rvvrun::MemberAdmit const admit{&RV32Translator::RvvRunMemberChunksThunk,
 					const_cast<RV32Translator *>(this)};
 	// P7N-G. THE PRESSURE CUT IS WHAT SPLITTING EXISTS TO REMOVE, so with splitting on the scan

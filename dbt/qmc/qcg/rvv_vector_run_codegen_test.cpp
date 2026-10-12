@@ -3305,7 +3305,8 @@ constexpr u32 W_VFMV_V_F_V10_FA2 = 0x5e065557u;
 constexpr u32 W_VMV_V_V_V11_V9 = 0x5e0485d7u;
 constexpr u32 W_VADD_V12_V8_V11 = 0x02858657u;
 
-// FormRun refuses to put a memory member and an FP member in one run, so the memory/OPMVX kinds
+// QCG cuts at memory instructions; the memory/OPMVX case checks separate frames.
+// The memory/OPMVX kinds
 // and the FP kinds are separate cases rather than one long list. `n_members` is the count the
 // descriptor must report in BOTH arms; it is written here rather than read back, so a repair that
 // silently admitted fewer members would fail rather than redefine the expectation.
@@ -3316,7 +3317,7 @@ std::vector<OrderCase> ExtendedOrderCases()
 	    {"mem-vx",
 	     {W_VSETVLI_E32M1, W_VL1RE32_V8_A4, W_VMUL_VX_V8_V8_A1, W_VMACC_VX_V9_S7_V8,
 	      W_VS1R_V8_A4},
-	     4},
+	     0},
 	    // Mov in all four source forms (imm, x-scalar, f-scalar, vector rename) plus one
 	    // arithmetic member that consumes a moved value.
 	    {"moves",
@@ -3562,6 +3563,10 @@ void P6C_CheckOrderInvisibleToAdmission()
 				st[m] = rvvrun::g_stats;
 			}
 			CHECK_EQ((unsigned)d[0].n_members, c.n_members);
+			if (c.n_members == 0) {
+				CHECK_EQ(d[0].cut, rvvrun::CutReason::VectorMemory);
+				CHECK_EQ(d[1].cut, rvvrun::CutReason::VectorMemory);
+			}
 			CHECK_EQ((unsigned)d[1].n_members, c.n_members);
 			CHECK_EQ((unsigned)d[0].n_members, (unsigned)d[1].n_members);
 			CHECK_EQ(d[0].live_in_mask, d[1].live_in_mask);
@@ -3869,6 +3874,23 @@ void P6C_CheckExtendedFamilyOrderIdentity()
 			BuildOrderArm(mem, c.words, vlen, false);
 			BuildOrderArm(chk, c.words, vlen, true);
 			auto const f0 = FindFrames(mem.b.region), f1 = FindFrames(chk.b.region);
+			if (c.n_members == 0) {
+				// Memory is an instruction boundary in both ordering modes. Keep the
+				// intervening .vx pair promoted, with singleton SIMD on either side.
+				CHECK_EQ(f0.size(), (size_t)3);
+				CHECK_EQ(f1.size(), (size_t)3);
+				for (auto const *frames : {&f0, &f1}) {
+					if (frames->size() != 3) continue;
+					CHECK_EQ((*frames)[0].begin->n_members, 1u);
+					CHECK_EQ((*frames)[1].begin->n_members, 2u);
+					CHECK_EQ((*frames)[2].begin->n_members, 1u);
+					CHECK_EQ((*frames)[0].begin->raw, W_VL1RE32_V8_A4);
+					CHECK_EQ((*frames)[2].begin->raw, W_VS1R_V8_A4);
+					CHECK((*frames)[0].begin->native_memory_pc != RVVRunMember::PC_UNUSED);
+					CHECK((*frames)[2].begin->native_memory_pc != RVVRunMember::PC_UNUSED);
+				}
+				continue;
+			}
 			CHECK_EQ(f0.size(), (size_t)1);
 			CHECK_EQ(f1.size(), (size_t)1);
 			if (f0.size() != 1 || f1.size() != 1)
@@ -3988,6 +4010,11 @@ int main(int argc, char **argv)
 	g_startup_body_materialize = config::rvv_run_body_materialize;
 	g_startup_hit_counter = config::rvv_qcg_hit_counter;
 	g_startup_run_order_chunk_major = config::rvv_run_order_chunk_major;
+	if (argc == 2 && std::string(argv[1]) == "--memory-boundaries") {
+		P6C_CheckOrderInvisibleToAdmission();
+		P6C_CheckExtendedFamilyOrderIdentity();
+		return g_failures ? 1 : 0;
+	}
 	CheckFlagOffGoldens();
 	CheckLaneCensusCodegenInvisible();
 	CheckNamedPairsAndAllPairs();

@@ -1998,6 +1998,14 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		    stub == RuntimeStubId::id_rv32_vlm || stub == RuntimeStubId::id_rv32_vsm ||
 		    stub == RuntimeStubId::id_rv32_vlNre || stub == RuntimeStubId::id_rv32_vsNr;
 		if (unit_memory || family_memory || special_memory) {
+			// Multi-instruction bodies have no prior-member recovery map. In particular,
+			// component-major ordering and overlapping destinations cannot use the
+			// singleton cold exit. Production scan cuts at memory; other producers
+			// must execute the checked members in guest order. Preflight is not ownership.
+			if (ins->n_members != 1) {
+				j.jmp(rvv_typed_chunk_fallback);
+				break;
+			}
 			j.mov(x86::rdi, R_STATE);
 			j.mov(x86::esi, native_memory_scalar ? raw | (1u << 28) : raw);
 			j.emit(x86::Inst::kIdCall,

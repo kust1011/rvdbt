@@ -1293,7 +1293,7 @@ void CheckBodySelectorInvisibleToAdmission()
 	     {W_VMV_V_I_V3_5, W_VMV_V_X_V4_A1, W_VFMV_V_F_V5_FA2, W_VMV_V_V_V6_V5}, 4, moves},
 	    {"vmul.vx + vmacc.vx", {W_VMUL_VX_V3_V1_A1, W_VMACC_VX_V4_A1_V3}, 2, vx},
 	    {"whole-register load/store around a .vx multiply",
-	     {W_VL1RE32_V1_A4, W_VMUL_VX_V3_V1_A1, W_VS1R_V3_A4}, 3, mem},
+	     {W_VL1RE32_V1_A4, W_VMUL_VX_V3_V1_A1, W_VS1R_V3_A4}, 0, mem},
 	};
 
 	for (auto const &r : rows) {
@@ -1307,6 +1307,10 @@ void CheckBodySelectorInvisibleToAdmission()
 			// The member count first: it is what C2j's G5 gate compares and the first
 			// thing a body-conditional refusal changes.
 			CHECK_EQ((unsigned)d_off.n_members, r.want_members);
+			if (r.want_members == 0) {
+				CHECK_EQ(d_off.cut, CutReason::VectorMemory);
+				CHECK_EQ(d_off.end_pc, 0u);
+			}
 			CHECK_EQ((unsigned)d_on.n_members, (unsigned)d_off.n_members);
 			// ... and then the whole descriptor, so a selector that changed a dataflow
 			// field, a mask or the pressure bound instead of the member count is caught
