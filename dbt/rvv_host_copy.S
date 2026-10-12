@@ -108,6 +108,55 @@ rvv_copy_write_pc_qword:
     movl $1, %eax
     ret
 .size rvv_copy_write_qword,.-rvv_copy_write_qword
+// R8 is the completed-element frontier at every owned PC. The guest access
+// remains exactly EEW; publication/source PCs are outside callback ownership.
+.macro BULK name, suffix, size, reg
+.globl rvv_bulk_read_\name
+.hidden rvv_bulk_read_\name
+.type rvv_bulk_read_\name,@function
+rvv_bulk_read_\name:
+    endbr64
+    xorl %r8d, %r8d
+.Lread_\name:
+.globl rvv_bulk_read_pc_\name
+.hidden rvv_bulk_read_pc_\name
+rvv_bulk_read_pc_\name:
+    mov\suffix (%rdi), %\reg
+    mov\suffix %\reg, (%rsi)
+    addq $\size, %rdi
+    addq $\size, %rsi
+    incl %r8d
+    cmpl %edx, %r8d
+    jb .Lread_\name
+    movl $1, %eax
+    ret
+.size rvv_bulk_read_\name,.-rvv_bulk_read_\name
+.globl rvv_bulk_write_\name
+.hidden rvv_bulk_write_\name
+.type rvv_bulk_write_\name,@function
+rvv_bulk_write_\name:
+    endbr64
+    xorl %r8d, %r8d
+.Lwrite_\name:
+    mov\suffix (%rsi), %\reg
+.globl rvv_bulk_write_pc_\name
+.hidden rvv_bulk_write_pc_\name
+rvv_bulk_write_pc_\name:
+    mov\suffix %\reg, (%rdi)
+    addq $\size, %rdi
+    addq $\size, %rsi
+    incl %r8d
+    cmpl %edx, %r8d
+    jb .Lwrite_\name
+    movl $1, %eax
+    ret
+.size rvv_bulk_write_\name,.-rvv_bulk_write_\name
+.endm
+BULK byte, b, 1, al
+BULK word, w, 2, ax
+BULK dword, l, 4, eax
+BULK qword, q, 8, rax
+
 // Frameless leaves return through the original call, never a C++ unwind.
 .globl rvv_copy_failed
 .hidden rvv_copy_failed
