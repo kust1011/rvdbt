@@ -12,6 +12,11 @@ The delivery branch adds checked vector-memory helpers and synchronous fault
 delivery. The following records distinguish complete replay campaigns from
 affected-family regressions; they must not be pooled as one executable's tests.
 
+All executables in the table below were built with
+`RVV_HOST_CHUNK_BITS=128`. This is the host decomposition width, not guest VLEN.
+They do not establish that these fixes have been replayed through the 512-bit
+host configuration used by the thesis performance campaign.
+
 | Executable (SHA256 prefix) | External executions | Checked forms and scope | Records |
 |---|---|---|---|
 | `533443050f4d` | CHIPS: 11,532 positive + 212 failure controls | 595 forms under each of B/M1/M2/Both | [CHIPS](rvv-validation/current-production-task120/README.md) |
