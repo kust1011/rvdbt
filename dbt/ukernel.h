@@ -25,7 +25,7 @@ struct uthread;
 // Queueing returns normally so helper-owned scopes end before the trap unwind.
 struct MemoryFaultEvent {
 	enum class Origin : u32 { PredictedHelper };
-	enum class Access : u32 { Load };
+	enum class Access : u32 { Load, Store };
 	enum class Reason : u32 { Unmapped, Protection };
 	Origin origin{Origin::PredictedHelper};
 	Access access{Access::Load};

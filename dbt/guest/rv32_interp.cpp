@@ -509,6 +509,37 @@ void RvvVerifyFailed(char const *op, u32 vlen_bits, u32 vl, u32 elem_bytes)
 //
 // The masked path is element-wise; the unmasked path goes through the width-parametric chunked
 // decomposition. Both are the shared implementations, so they cannot drift.
+// Returns only after precise state has been published by the checked loop.
+static void QueueUnitMemoryFault(CPUState *s, u32 pc, u32 raw, u32 address,
+				u32 eew, bool store)
+{
+	MemoryFaultEvent event;
+	event.access = store ? MemoryFaultEvent::Access::Store : MemoryFaultEvent::Access::Load;
+	event.reason = mmu::page_mapped(address) ? MemoryFaultEvent::Reason::Protection
+					      : MemoryFaultEvent::Reason::Unmapped;
+	event.pc = pc; event.raw = raw; event.address = address;
+	event.element = s->vec.vstart; event.eew_bytes = eew; event.nf = 1;
+	ukernel::QueueHelperMemoryFault(s, event);
+}
+
+// Live admission for ordinary typed memory frames only. No state mutation, no
+// guest access. Both backends call through the runtime stub table before bodies.
+extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
+{
+	u32 const width = (raw >> 12) & 7;
+	if (width != 0 && width != 5 && width != 6 && width != 7) return 0;
+	u32 const eew = width == 0 ? 1 : 1u << (width - 4);
+	VType const vt{s->vec.vtype};
+	if (s->vec.vlenb != config::vlen_bits / 8u || vt.vill() ||
+	    !vtype_supported(vt, s->vec.vlenb * 8u) || s->vec.vstart ||
+	    s->vec.vl > compute_vlmax(vt, s->vec.vlenb * 8u)) return 0;
+	u32 const base = s->gpr[(raw >> 15) & 31];
+	u32 const bytes = s->vec.vl * eew;
+	if ((u64)base + bytes > mmu::ASPACE_SIZE) return 0;
+	u32 denied;
+	return !mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied);
+}
+
 HANDLER(vle)
 {
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
@@ -518,15 +549,15 @@ HANDLER(vle)
 	RVV_REQUIRE_MASK_NO_OVERLAP(i.rd(), i.vm(), emul_log2);
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2);
 	u32 const base = s->gpr[i.rs1()];
-	if (i.vm() && s->vec.vstart==0) {
+	u32 denied = 0;
+	if (i.vm() && s->vec.vstart == 0 &&
+	    !mmu::FirstDenied(base, s->vec.vl * eew_bytes, false, denied)) {
 		dispatch_load_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
-	} else if(i.vm()) {
-		rvv_ref::load_unit_stride(s->vec,i.rd(),vmem,base,vlen,s->vec.vl,eew_bytes);
-	} else {
-		rvv_ref::load_unit_stride_masked(s->vec, i.rd(), vmem, base, vlen, s->vec.vl,
-						 eew_bytes);
+	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
+						s->vec.vl, eew_bytes, i.vm(), false, denied)) {
+		QueueUnitMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, false);
+		return;
 	}
-	// Tail (e >= vl): tail-undisturbed. Legal under both ta and tu policies, and deterministic.
 	s->vec.vstart = 0;
 }
 
@@ -538,13 +569,14 @@ HANDLER(vse)
 	i32 const emul_log2 = compute_emul_log2(vt, (u32)eew_log2);
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2); // rd field holds vs3 for stores
 	u32 const base = s->gpr[i.rs1()];
-	if (i.vm() && s->vec.vstart==0) {
+	u32 denied = 0;
+	if (i.vm() && s->vec.vstart == 0 &&
+	    !mmu::FirstDenied(base, s->vec.vl * eew_bytes, true, denied)) {
 		dispatch_store_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
-	} else if(i.vm()) {
-		rvv_ref::store_unit_stride(s->vec,i.rd(),vmem,base,vlen,s->vec.vl,eew_bytes);
-	} else {
-		rvv_ref::store_unit_stride_masked(s->vec, i.rd(), vmem, base, vlen, s->vec.vl,
-						  eew_bytes);
+	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
+						s->vec.vl, eew_bytes, i.vm(), true, denied)) {
+		QueueUnitMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, true);
+		return;
 	}
 	s->vec.vstart = 0;
 }
@@ -565,12 +597,8 @@ HANDLER(vlse)
 }
 
 // ---- fault-only-first load ---------------------------------------------------------------------
-// On a fault at the first element this execution owns, the architectural response is the same as
-// an ordinary load's: report the access fault. rvdbt has no recoverable memory-fault trap
-// (TrapCode has no member for one, and the SIGSEGV handler panics), so the fault is delivered by
-// performing the access that was predicted to fault -- which reaches the existing handler with
-// the correct faulting address, exactly as a plain vle would. Every LATER element is trimmed
-// instead, which is the case that needs no trap and is what the instruction exists for.
+// Absolute element zero queues a helper-origin fault through the Task113 interface.
+// A denied later element trims VL and completes normally; this differs from ordinary vle.
 // Fault-only-first, non-segment (nf == 1) AND segment (7.8.1's vlseg<nf>e<eew>ff.v) -- one handler,
 // because nf changes only how many contiguous fields one element occupies, not the trap rule that
 // this instruction exists for. The shape and the register legality come from the SAME 7.8

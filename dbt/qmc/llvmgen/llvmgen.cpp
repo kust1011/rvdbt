@@ -1717,6 +1717,14 @@ void QIRToLLVM::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		guard = lb->CreateAnd(guard, lb->CreateICmpEQ(
 		    lb->CreateAnd(fcsr, lb->getInt32(0xe0)), lb->getInt32(0)));
 	}
+	if (ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse) {
+		auto *type = llvm::FunctionType::get(lb->getInt32Ty(),
+			{statev->getType(), lb->getInt32Ty()}, false);
+		auto *safe = lb->CreateCall(type, MakeRStub(RuntimeStubId::id_rv32_unit_memory_safe, type),
+			{statev, lb->getInt32(ins->raw)});
+		guard = lb->CreateAnd(guard, lb->CreateICmpNE(safe, lb->getInt32(0)));
+	}
+
 	lb->CreateCondBr(guard, fast, slow);
 
 	lb->SetInsertPoint(fast);

@@ -97,3 +97,58 @@ helper configurations passed. The latter execute no guest sigreturn. See
 [RESULTS.json](RESULTS.json) for the exact build identity. Full commands, raw,
 failed builds, candidate preservation and remaining obligations are retained in
 Task113's workspace evidence and the thesis `SESSION0_RESULT_113.md` receipt.
+
+## Task115 ordinary unit-stride design (base 032b5c4)
+
+The historical FAULT_CONTRACT describes 961f022, not this base: Task113 now
+provides `QueueHelperMemoryFault`, normal helper/census return followed by
+`FinishHelperMemoryFault`, and dispatcher capture/delivery. Ordinary `vle/vse`
+in `guest/rv32_interp.cpp` still select unchecked reference/chunked transfers;
+QCG typed frames in `qmc/qcg/qemit.cpp::Emit_rvvtypedchunkbegin` guard vtype,
+VL/vstart and address bounds but not guest permissions. Loads publish chunks
+only after all memory reads, so native permission faults cannot preserve a prefix.
+
+Reuse MMU's always-maintained readable/writable bitmaps (not optional observer
+metadata). Add a wrapped range query returning the first denied byte. Before an
+ordinary helper transfer, permit the existing chunked path only for an unmasked,
+vstart-zero, wholly permitted active range. Otherwise execute active elements
+in order, skipping masks/prestart before probing, setting vstart before each
+probe, and checking the complete element before copying. On denial return a
+value-only address to the handler; queue Load/Store, actual GET_GIP/raw, absolute
+element, EEW, NF1/field0 and mapped/protection reason, then return normally.
+Do not clear vstart or advance PC on fault. Normal completion clears vstart,
+leaves VL unchanged and keeps inactive/tail bytes undisturbed. Element addresses
+and permission probes wrap at RV32; a denied split element is not partially copied.
+
+Every typed ordinary unit-stride frame in QCG and LLVM must call the same live
+permission admission predicate before any native body access. HAS_CALLS already
+publishes scalar state; the translators' existing RvvCommit/Reset publishes
+vector SSA state. The guard reads the current base/VL and direction from raw,
+checks the active byte range and reservation wrap, and sends unsafe mappings to
+the precise helper. Existing shape/VL/vstart guards remain authoritative. This
+retains SIMD on permitted mappings and does not specialize workloads or cache
+permissions across mmap/mprotect. Guard calls occur before any frame temporaries.
+
+FOF stays on its separate absolute-element-zero trap/later-element VL-trim
+contract. Segment/indexed/whole-register precision, unexpected host SIGBUS,
+concurrent mapping changes and full guest restart remain follow-ups. Local host
+interface checks are not external ISA coverage; P4-04 and equivalent repair /
+return / same-PC retry experiments are excluded. Historical suite/raw/build IDs
+remain unchanged; candidate normal regressions get separate identities.
+
+Task115 implementation also covers the general `RvvTryIntegerFamily` ordinary
+unit-stride `vmemorynative` frames, through their existing vle/vse stub tag.
+The permission guard conservatively probes the full active range even for a
+masked native frame; denied inactive pages select the helper, whose mask check
+precedes each probe and therefore queues no spurious fault. Nonzero vstart also
+selects the helper. It verifies live VLEN against runtime configuration; AOT's
+existing VLEN gate binds that configuration to the compiled artifact.
+
+The admission stub is appended to `qmc/runtime_stubs.h`, preserving established
+stub indices. The embedded table grows, changing later runtime/FP offsets and
+`CPUStateAbiSignature` to `40cf59110e7e8839`. `ukernel.cpp` records the measured
+layout tripwires. Old AOT artifacts are refused by the existing signature gate,
+so their unchecked unit-stride bodies cannot survive through a stale cache.
+Architectural GPR/vector/IP/trap offsets remain unchanged. Historical build/raw
+results in RESULTS.json remain Task113 results; [UNIT_MEMORY_RESULTS.json](UNIT_MEMORY_RESULTS.json)
+records the separate Task115 candidate and bounded validation.

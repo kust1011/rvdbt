@@ -99,7 +99,8 @@ bool ukernel::DeliverHelperSignal(CPUState *state, MemoryFaultSnapshot const &sn
 	auto const action=ut->signal_actions[10];
 	// This entry is only reached after helper scopes and the FP bracket have closed.
 	if (snapshot.event.origin!=MemoryFaultEvent::Origin::PredictedHelper ||
-	    snapshot.event.access!=MemoryFaultEvent::Access::Load || ut->signal_frame ||
+	    (snapshot.event.access!=MemoryFaultEvent::Access::Load &&
+	     snapshot.event.access!=MemoryFaultEvent::Access::Store) || ut->signal_frame ||
 	    (ut->guest_signal_mask&(1ull<<10)) || action.handler<=1 ||
 	    (action.handler&1) || !mmu::CheckedRange(action.handler,2,PROT_EXEC) ||
 	    state->fpu.fround_run_open || !snapshot.vlenb || snapshot.vlenb>rv32::VLEN_MAX_BYTES) {
