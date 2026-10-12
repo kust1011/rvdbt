@@ -1,0 +1,3 @@
+CPUID1_ECX=7ed8320b XCR0=00000000000002e7
+CPUID7_EBX=f1bf97ab avx512f=1 bw=1 dq=1 vl=1
+AVX512 instruction execution PASS

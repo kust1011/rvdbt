@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "files": 40274,
+  "differences": [],
+  "archive": "/home/user/research/materials/task128-host512-receipts-20261013.tar.gz",
+  "archive_sha256": "3f4283bfa310599df07decb2ed98b71cb8aa64fa62cb597fe4e3498603a01a23",
+  "local_raw": "/home/user/research/materials/task128-host512-raw-20261013",
+  "remote_raw": "xbd:/home/vick/rvdbt-host512-task128"
+}

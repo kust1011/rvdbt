@@ -1,0 +1,21 @@
+{
+  "queue_calls": 5904,
+  "queue_counts": {
+    "chips": {
+      "PASS": 1948
+    },
+    "act": {
+      "PASS": 3828
+    },
+    "ara": {
+      "PASS": 128
+    }
+  },
+  "original_pilot_calls": 32,
+  "code_dump_diagnostic_pass_calls": 32,
+  "code_dump_bad_options_pre_guest_calls": 1,
+  "exit_only_calls": 8,
+  "focused_targets": 14,
+  "implementation_fixes": 0,
+  "remaining": "Unexpected native/SIMD/gather host-fault recovery and architectural guest restart remain unvalidated; no optimization claim for helper-only indexed/FOF targets"
+}

@@ -1,0 +1,13 @@
+{
+  "exact_original_selected_calls": true,
+  "counts": {
+    "chips": 1948,
+    "act": 3828,
+    "ara": 128
+  },
+  "original_compressed_hashes": {
+    "chips": "7199f2ffc7d7a941b0b656a369fd1bdf505f8979fd06e6210309e3fab19686e9",
+    "act": "aaa498ab0a7d5e7794dca119d289ad13b8b67a1f7e49b5d6088c13a095001293",
+    "ara": "168081c899b277232ca9d353281367866a270d076bba9b2c2862caff9b11b0b2"
+  }
+}

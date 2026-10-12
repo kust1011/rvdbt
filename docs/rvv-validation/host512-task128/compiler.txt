@@ -1,0 +1,4 @@
+Ubuntu clang version 22.1.6 (++20260516103140+fc4aad7b5db3-1~exp1~20260516103204.74)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-22/bin
