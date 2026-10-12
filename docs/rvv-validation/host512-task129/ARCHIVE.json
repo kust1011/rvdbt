@@ -1,0 +1,7 @@
+{
+  "archive": "/home/vick/task129-host512-receipts.tar.gz",
+  "sha256": "9470eea51229f0035ad06f27d2cf8b038a31fb13c44e4e26cb1f4ee16d1f1e58",
+  "bytes": 57642924,
+  "files": 98121,
+  "scope": "All direct raw receipt files including TB dumps; full work/cache and original observer tree remain remote unchanged"
+}

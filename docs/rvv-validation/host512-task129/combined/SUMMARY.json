@@ -1,0 +1,100 @@
+{
+  "total": 21316,
+  "task128": 5904,
+  "task129": 15412,
+  "partition": {
+    "chips": {
+      "original": 11744,
+      "task128": 1948,
+      "task129": 9796,
+      "intersection": 0
+    },
+    "act": {
+      "original": 7668,
+      "task128": 3828,
+      "task129": 3840,
+      "intersection": 0
+    },
+    "ara": {
+      "original": 1904,
+      "task128": 128,
+      "task129": 1776,
+      "intersection": 0
+    }
+  },
+  "counts": {
+    "chips": {
+      "PASS": 11744
+    },
+    "act": {
+      "PASS": 7668
+    },
+    "ara": {
+      "PASS": 1888,
+      "SCOPED_PASS": 16
+    }
+  },
+  "per_arm": {
+    "chips": {
+      "B": {
+        "PASS": 2936
+      },
+      "M1": {
+        "PASS": 2936
+      },
+      "M2": {
+        "PASS": 2936
+      },
+      "BOTH": {
+        "PASS": 2936
+      }
+    },
+    "act": {
+      "B": {
+        "PASS": 1917
+      },
+      "M1": {
+        "PASS": 1917
+      },
+      "M2": {
+        "PASS": 1917
+      },
+      "BOTH": {
+        "PASS": 1917
+      }
+    },
+    "ara": {
+      "B": {
+        "PASS": 472,
+        "SCOPED_PASS": 4
+      },
+      "M1": {
+        "PASS": 472,
+        "SCOPED_PASS": 4
+      },
+      "M2": {
+        "PASS": 472,
+        "SCOPED_PASS": 4
+      },
+      "BOTH": {
+        "PASS": 472,
+        "SCOPED_PASS": 4
+      }
+    }
+  },
+  "control_counts": {
+    "PASS": 212
+  },
+  "checked_forms": {
+    "chips": 595,
+    "act": 590,
+    "ara": 422
+  },
+  "checked_union": 595,
+  "whole_file_mac_pass": 0,
+  "scoped_mac": 16,
+  "new_guest_executions_by_this_reporter": 0,
+  "unattempted": 0,
+  "local_host_tests": "Separate Task128 FOCUSED_RESULTS.json; no external call credit",
+  "limits": "Finite retained cases, not every semantic combination; no native fault recovery, guest handler return/repair/retry or P4-04/equivalent validation."
+}

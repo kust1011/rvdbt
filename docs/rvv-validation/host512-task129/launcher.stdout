@@ -1,0 +1,156 @@
+QUEUE {'chips': 9796, 'act': 3840, 'ara': 1776}
+PROGRESS {'chips': Counter({'PASS': 100})}
+PROGRESS {'chips': Counter({'PASS': 200})}
+PROGRESS {'chips': Counter({'PASS': 300})}
+PROGRESS {'chips': Counter({'PASS': 400})}
+PROGRESS {'chips': Counter({'PASS': 500})}
+PROGRESS {'chips': Counter({'PASS': 600})}
+PROGRESS {'chips': Counter({'PASS': 700})}
+PROGRESS {'chips': Counter({'PASS': 800})}
+PROGRESS {'chips': Counter({'PASS': 900})}
+PROGRESS {'chips': Counter({'PASS': 1000})}
+PROGRESS {'chips': Counter({'PASS': 1100})}
+PROGRESS {'chips': Counter({'PASS': 1200})}
+PROGRESS {'chips': Counter({'PASS': 1300})}
+PROGRESS {'chips': Counter({'PASS': 1400})}
+PROGRESS {'chips': Counter({'PASS': 1500})}
+PROGRESS {'chips': Counter({'PASS': 1600})}
+PROGRESS {'chips': Counter({'PASS': 1700})}
+PROGRESS {'chips': Counter({'PASS': 1800})}
+PROGRESS {'chips': Counter({'PASS': 1900})}
+PROGRESS {'chips': Counter({'PASS': 2000})}
+PROGRESS {'chips': Counter({'PASS': 2100})}
+PROGRESS {'chips': Counter({'PASS': 2200})}
+PROGRESS {'chips': Counter({'PASS': 2300})}
+PROGRESS {'chips': Counter({'PASS': 2400})}
+PROGRESS {'chips': Counter({'PASS': 2500})}
+PROGRESS {'chips': Counter({'PASS': 2600})}
+PROGRESS {'chips': Counter({'PASS': 2700})}
+PROGRESS {'chips': Counter({'PASS': 2800})}
+PROGRESS {'chips': Counter({'PASS': 2900})}
+PROGRESS {'chips': Counter({'PASS': 3000})}
+PROGRESS {'chips': Counter({'PASS': 3100})}
+PROGRESS {'chips': Counter({'PASS': 3200})}
+PROGRESS {'chips': Counter({'PASS': 3300})}
+PROGRESS {'chips': Counter({'PASS': 3400})}
+PROGRESS {'chips': Counter({'PASS': 3500})}
+PROGRESS {'chips': Counter({'PASS': 3600})}
+PROGRESS {'chips': Counter({'PASS': 3700})}
+PROGRESS {'chips': Counter({'PASS': 3800})}
+PROGRESS {'chips': Counter({'PASS': 3900})}
+PROGRESS {'chips': Counter({'PASS': 4000})}
+PROGRESS {'chips': Counter({'PASS': 4100})}
+PROGRESS {'chips': Counter({'PASS': 4200})}
+PROGRESS {'chips': Counter({'PASS': 4300})}
+PROGRESS {'chips': Counter({'PASS': 4400})}
+PROGRESS {'chips': Counter({'PASS': 4500})}
+PROGRESS {'chips': Counter({'PASS': 4600})}
+PROGRESS {'chips': Counter({'PASS': 4700})}
+PROGRESS {'chips': Counter({'PASS': 4800})}
+PROGRESS {'chips': Counter({'PASS': 4900})}
+PROGRESS {'chips': Counter({'PASS': 5000})}
+PROGRESS {'chips': Counter({'PASS': 5100})}
+PROGRESS {'chips': Counter({'PASS': 5200})}
+PROGRESS {'chips': Counter({'PASS': 5300})}
+PROGRESS {'chips': Counter({'PASS': 5400})}
+PROGRESS {'chips': Counter({'PASS': 5500})}
+PROGRESS {'chips': Counter({'PASS': 5600})}
+PROGRESS {'chips': Counter({'PASS': 5700})}
+PROGRESS {'chips': Counter({'PASS': 5800})}
+PROGRESS {'chips': Counter({'PASS': 5900})}
+PROGRESS {'chips': Counter({'PASS': 6000})}
+PROGRESS {'chips': Counter({'PASS': 6100})}
+PROGRESS {'chips': Counter({'PASS': 6200})}
+PROGRESS {'chips': Counter({'PASS': 6300})}
+PROGRESS {'chips': Counter({'PASS': 6400})}
+PROGRESS {'chips': Counter({'PASS': 6500})}
+PROGRESS {'chips': Counter({'PASS': 6600})}
+PROGRESS {'chips': Counter({'PASS': 6700})}
+PROGRESS {'chips': Counter({'PASS': 6800})}
+PROGRESS {'chips': Counter({'PASS': 6900})}
+PROGRESS {'chips': Counter({'PASS': 7000})}
+PROGRESS {'chips': Counter({'PASS': 7100})}
+PROGRESS {'chips': Counter({'PASS': 7200})}
+PROGRESS {'chips': Counter({'PASS': 7300})}
+PROGRESS {'chips': Counter({'PASS': 7400})}
+PROGRESS {'chips': Counter({'PASS': 7500})}
+PROGRESS {'chips': Counter({'PASS': 7600})}
+PROGRESS {'chips': Counter({'PASS': 7700})}
+PROGRESS {'chips': Counter({'PASS': 7800})}
+PROGRESS {'chips': Counter({'PASS': 7900})}
+PROGRESS {'chips': Counter({'PASS': 8000})}
+PROGRESS {'chips': Counter({'PASS': 8100})}
+PROGRESS {'chips': Counter({'PASS': 8200})}
+PROGRESS {'chips': Counter({'PASS': 8300})}
+PROGRESS {'chips': Counter({'PASS': 8400})}
+PROGRESS {'chips': Counter({'PASS': 8500})}
+PROGRESS {'chips': Counter({'PASS': 8600})}
+PROGRESS {'chips': Counter({'PASS': 8700})}
+PROGRESS {'chips': Counter({'PASS': 8800})}
+PROGRESS {'chips': Counter({'PASS': 8900})}
+PROGRESS {'chips': Counter({'PASS': 9000})}
+PROGRESS {'chips': Counter({'PASS': 9100})}
+PROGRESS {'chips': Counter({'PASS': 9200})}
+PROGRESS {'chips': Counter({'PASS': 9300})}
+PROGRESS {'chips': Counter({'PASS': 9400})}
+PROGRESS {'chips': Counter({'PASS': 9500})}
+PROGRESS {'chips': Counter({'PASS': 9600})}
+PROGRESS {'chips': Counter({'PASS': 9700})}
+PROGRESS {'chips': Counter({'PASS': 9794}), 'act': Counter({'PASS': 6})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 104})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 204})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 304})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 404})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 504})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 604})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 704})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 804})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 904})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1004})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1104})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1204})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1304})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1404})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1504})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1604})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1704})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1804})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 1904})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2004})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2104})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2204})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2304})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2404})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2504})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2604})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2704})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2804})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 2904})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3004})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3104})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3204})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3304})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3404})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3504})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3604})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3704})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3804})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 64})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 164})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 264})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 364})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 464})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 564})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 664})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 764})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 864})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 964})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1064})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1164})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1264})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1364})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1464})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1564})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1661, 'SCOPED_PASS': 3})}
+PROGRESS {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1748, 'SCOPED_PASS': 16})}
+COMPLETE {'chips': Counter({'PASS': 9796}), 'act': Counter({'PASS': 3840}), 'ara': Counter({'PASS': 1760, 'SCOPED_PASS': 16})}

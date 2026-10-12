@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/vick/finalize-task129.py", line 10, in <module>
+    assert p.returncode==0
+           ^^^^^^^^^^^^^^^
+AssertionError

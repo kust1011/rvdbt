@@ -1,0 +1,39 @@
+{
+  "suites": {
+    "chips": {
+      "original": 11744,
+      "task128": 1948,
+      "task129": 9796,
+      "intersection": 0,
+      "union": 11744,
+      "original_manifest_sha256": "d24b743bfb29abd49219ee7839bf9885cd25b56c93dd726f878b8e60a2761ed8",
+      "task128_queue_sha256": "6e00bbaacf3c821ed38b4ca2c3776112a26afb8b296a778f5b6b2a6700af6b04",
+      "full_call_identities_sha256": "57ccebf5ea158bec5370da2295987a7b44ba8c3c01eb2297f5c1e8ffdd0bc7a6"
+    },
+    "act": {
+      "original": 7668,
+      "task128": 3828,
+      "task129": 3840,
+      "intersection": 0,
+      "union": 7668,
+      "original_manifest_sha256": "080e18c7bfbc983cd60f91d098f62a0121e2dda54dc363a1811361e6764e365d",
+      "task128_queue_sha256": "b851b9606fd01eefc089f4d5b40ff0172406d335ef20a5369469034ffa15a616",
+      "full_call_identities_sha256": "5ea7b4e163d9b23350b23c9986bb5bf397e607f4915a96dd91b448293fb64332"
+    },
+    "ara": {
+      "original": 1904,
+      "task128": 128,
+      "task129": 1776,
+      "intersection": 0,
+      "union": 1904,
+      "original_manifest_sha256": "6bee591d353e1656e0e40ac95607d0ec13b708fc94f74b251224060fd29e43c6",
+      "task128_queue_sha256": "3518742d2f7de9d1477d9eb688e69310db7d24c04b79a5f2e03c39c193fab013",
+      "full_call_identities_sha256": "bb632d79764829f3175ddee25f1a29f7636fc1f977009c531db7b7bb3e715378"
+    }
+  },
+  "original": 21316,
+  "task128": 5904,
+  "task129": 15412,
+  "disjoint": true,
+  "identity": "Complete original call object; canonical sorted-key JSON"
+}

@@ -1,0 +1,16 @@
+{
+  "chips-source-geometry.csv.gz": {
+    "original_source": "/home/vick/rvv-task93/inspection-task94-clean/sources/chips/SOURCE_GEOMETRY.csv",
+    "uncompressed_sha256": "83e9ccb4840a3ab5c382dd3ea5dcca8282b331185f59231a15396edab3f8ae07",
+    "compressed_sha256": "04a32e93686c7a6db55a0b35e5ebdac8c45101db6f87273cd8c88457e79e3ce7",
+    "bytes": 41587309,
+    "interpretation": "Unchanged source literals, not runtime observations"
+  },
+  "chips-literal-config-contexts.json.gz": {
+    "original_source": "/home/vick/rvv-task93/inspection-task94-clean/LITERAL_CONFIG_CONTEXTS.json",
+    "uncompressed_sha256": "3c72320d0f988cf3401b82470fb562e9be2418dff395f31263490ee67a8769b9",
+    "compressed_sha256": "362e3d4bcbea6673d71a2f0e9f57000efd547ec9cbe55194de3c3ae747b7ed37",
+    "bytes": 9241828,
+    "interpretation": "Unchanged source literals, not runtime observations"
+  }
+}

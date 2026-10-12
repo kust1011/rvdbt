@@ -2,6 +2,8 @@
 
 For any instruction form, use the [complete original-case navigation](rvv-validation/all-form-records/README.md): 627 forms / 595 applicable, exact original selectors, source/checker/raw detail and family obligations. Historical results retain their own build identities.
 
+The exact Task128 host512 retained external corpus is indexed in the [combined Task128/129 summary and per-form receipt navigation](rvv-validation/host512-task129/README.md). Its original scoped outcomes, controls, reference blockers and runtime/admission limits are preserved separately.
+
 The validation has two separate responsibilities: external test programs check
 instruction behavior, while the runner checks that the intended program ran and
 that failures propagate. Passing the runner's unit tests is not ISA coverage.
