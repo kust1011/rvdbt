@@ -1,0 +1,78 @@
+{
+  "AUDIT_CONTROLS.json": {
+    "bytes": 780,
+    "sha256": "efadaf97c324555a12adf34f315a67c36cf92e77bbcbd96801d6350963db1bfe"
+  },
+  "BUILD_PREFLIGHT.txt": {
+    "bytes": 105,
+    "sha256": "55846b9a797087d2a0623a490993070ed2c96d26c44a770be42e62f1be98dad3"
+  },
+  "COUNTS.json": {
+    "bytes": 2153,
+    "sha256": "537da68fa886237441887b43b5375f3ba300214112ff5241ef65b8cd5928e6c4"
+  },
+  "LOCAL_RAW_AUDIT.json": {
+    "bytes": 357,
+    "sha256": "ce9ea031f48fde1bb2f7814b568734dff749a139629fcc52be510e6ba88f938c"
+  },
+  "PRODUCTION_EQUALITY.json": {
+    "bytes": 67693,
+    "sha256": "b4aeffb68fb98bc07651ef2f2db5d62f95bb48fc2035b722bfe9187bb81ef0e2"
+  },
+  "QUEUE.json.gz": {
+    "bytes": 1197462,
+    "sha256": "308206c9b904f3f23650c14b983874bde0073bef9ec5558ba8d3f01a0441a3f4"
+  },
+  "README.md": {
+    "bytes": 4833,
+    "sha256": "d2b348dcf162c880c1d203b1c63917a2f67a5d215e59226de6ec79286960960e"
+  },
+  "SETUP_ATTEMPTS.json": {
+    "bytes": 267,
+    "sha256": "06527a15b659a9110721812e466f778cf3e0460b286ef4cb8dce13e4e80ffd9b"
+  },
+  "audit-controls.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "audit-controls.stdout": {
+    "bytes": 114,
+    "sha256": "cd40b85e0e66bffb78baf3418773f12711a8dcd8d541ef332920551d4fdf9e3b"
+  },
+  "audit-final.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "audit-final.stdout": {
+    "bytes": 88,
+    "sha256": "2cb3a35ee4dc4fbce239199b03c07230d8e7d713dd2af7ea4018dc3aeb01cd9a"
+  },
+  "initial-load.txt": {
+    "bytes": 70,
+    "sha256": "ab6ae5b11154999b9e44fc6b18a1f7804405be23e4d6cb333a636cf7e1a1967e"
+  },
+  "launch-command.txt": {
+    "bytes": 143,
+    "sha256": "0dc52ab450f098a2bc3c283ab3db722a32b285f4ded0dc89e2aa3f03bb415d47"
+  },
+  "queue-prelaunch.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "queue-prelaunch.stdout": {
+    "bytes": 863,
+    "sha256": "7347d170155cedd7e9253aba58d5325a3af197fa268ba5868096c5fc75968ca0"
+  },
+  "replay-receipts.csv.gz": {
+    "bytes": 765898,
+    "sha256": "8df3682dea27b17ea5c3cceeaaa3ff0cfe53d4f79d9b4f58192441c397d0d58a"
+  },
+  "scope.json.gz": {
+    "bytes": 229158,
+    "sha256": "105492e05470d5d2bdee27b7f2743345f9dbb1602e5198f0d5817bec9027af20"
+  },
+  "transport.attempt1.json": {
+    "bytes": 437,
+    "sha256": "278c709a9e2bdc1f8fe0c2ef282e53c0cb58c0525a322c484bf3ac6b76d3a1f5"
+  }
+}

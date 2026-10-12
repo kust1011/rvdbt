@@ -18,6 +18,13 @@ the checked union remains 595. The linked index records the original source,
 checker, configuration, signature and each result. Replay-interface smoke tests
 are recorded separately and do not increase this campaign's counts.
 
+The [Task121 production regression](current-production-task121/README.md) adds
+7,668 current-build DUT calls over the 1,917 previously accepted original outputs,
+including the exact Task104 reuse: all PASS, no failures/timeouts/unattempted
+applicable calls, 590 checked forms. It adds zero reference calls and preserves
+two distinct original platform-blocked files (eight withheld DUT arm slots).
+These new-build receipts do not change the historical accounting above.
+
 ## Earlier registered-receipt snapshot (Task96)
 
 This is an offline accounting checkpoint over `xbd:/home/vick/rvv-task90/task90`,

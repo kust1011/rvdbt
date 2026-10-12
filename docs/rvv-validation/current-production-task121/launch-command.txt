@@ -1,0 +1,1 @@
+cd /home/vick/act-current121 && nohup nice -n 10 taskset -c 28-31 python3 run121.py execute > launcher.stdout 2> launcher.stderr < /dev/null &

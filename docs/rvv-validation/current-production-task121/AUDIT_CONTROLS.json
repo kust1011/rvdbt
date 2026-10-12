@@ -1,0 +1,38 @@
+[
+  {
+    "control": "changed-candidate",
+    "status": "PASS",
+    "rejection": "candidate changed"
+  },
+  {
+    "control": "changed-answer",
+    "status": "PASS",
+    "rejection": "signature words changed"
+  },
+  {
+    "control": "tampered-stream",
+    "status": "PASS",
+    "rejection": "altered stream"
+  },
+  {
+    "control": "missing-raw",
+    "status": "PASS",
+    "rejection": "[Errno 2] No such file or directory: '/home/vick/act-current121/controls/missing-raw/raw/Vls8-vle8.v/B/result.json'"
+  },
+  {
+    "control": "failed-checker",
+    "status": "PASS",
+    "preserved_counts": {
+      "RESULT_MISMATCH": 1,
+      "PASS": 7667
+    }
+  },
+  {
+    "control": "timeout",
+    "status": "PASS",
+    "preserved_counts": {
+      "TIMEOUT": 1,
+      "PASS": 7667
+    }
+  }
+]
