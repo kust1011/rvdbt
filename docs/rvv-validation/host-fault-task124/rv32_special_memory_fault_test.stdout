@@ -1,0 +1,3 @@
+ACTUAL_QCG_COMBINED native_hits=2 native_fallbacks=2 cells=4
+ACTUAL_QCG_SPECIAL native_hits=12 native_fallbacks=108 cells=120
+LOCAL_SPECIAL_MEMORY_PASS checks=254648 cells=26290 ABI=ce212ddc4742de49 impl=42704 state=42704 fpu=42280 (no guest retry)
