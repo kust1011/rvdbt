@@ -1,0 +1,19 @@
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+GUEST_FAULT ip=80001234 addr=00001234 page=00001000 kind=unmapped
+Panic: Memory fault in guest address space. See logs for more details
+backtrace
+	at build-clang/bin/rv32_host_copy_fault_test(+0x11500) [0x5fdb82749500]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x114df) [0x5fdb827494df]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x115e6) [0x5fdb827495e6]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x17255) [0x5fdb8274f255]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x70dc1b845330]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x1f50d) [0x5fdb8275750d]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x70dc1b82a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x70dc1b82a28b]

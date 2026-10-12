@@ -1,0 +1,1069 @@
+
+build-clang/dbt/CMakeFiles/dbtstatic.dir/rvv_host_copy.cpp.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_ZN3dbt13rvv_host_copy10ResetFaultEv>:
+   0:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+   7:	00 00 00 00 00 
+			4: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5signoE
+   c:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+  13:	00 00 00 00 00 
+			10: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL4codeE
+  18:	c3                   	ret
+  19:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000020 <_ZN3dbt13rvv_host_copy9LastFaultEv>:
+  20:	64 8b 0c 25 00 00 00 	mov    %fs:0x0,%ecx
+  27:	00 
+			24: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5signoE
+  28:	64 8b 04 25 00 00 00 	mov    %fs:0x0,%eax
+  2f:	00 
+			2c: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL4codeE
+  30:	48 c1 e0 20          	shl    $0x20,%rax
+  34:	48 09 c8             	or     %rcx,%rax
+  37:	c3                   	ret
+  38:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  3f:	00 
+
+0000000000000040 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t>:
+  40:	64 83 3c 25 00 00 00 	cmpl   $0x0,%fs:0x0
+  47:	00 00 
+			44: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+  49:	0f 84 94 00 00 00    	je     e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  4f:	83 ff 07             	cmp    $0x7,%edi
+  52:	74 16                	je     6a <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x2a>
+  54:	83 ff 0b             	cmp    $0xb,%edi
+  57:	0f 85 86 00 00 00    	jne    e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  5d:	8b 46 08             	mov    0x8(%rsi),%eax
+  60:	8d 48 ff             	lea    -0x1(%rax),%ecx
+  63:	83 f9 02             	cmp    $0x2,%ecx
+  66:	72 0f                	jb     77 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x37>
+  68:	eb 79                	jmp    e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  6a:	8b 46 08             	mov    0x8(%rsi),%eax
+  6d:	89 c1                	mov    %eax,%ecx
+  6f:	83 e1 fe             	and    $0xfffffffe,%ecx
+  72:	83 f9 02             	cmp    $0x2,%ecx
+  75:	75 6c                	jne    e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  77:	48 8b 8a a8 00 00 00 	mov    0xa8(%rdx),%rcx
+  7e:	48 3b 0d 00 00 00 00 	cmp    0x0(%rip),%rcx        # 85 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x45>
+			81: R_X86_64_REX_GOTPCRELX	rvv_copy_read_pc-0x4
+  85:	41 0f 95 c0          	setne  %r8b
+  89:	48 3b 0d 00 00 00 00 	cmp    0x0(%rip),%rcx        # 90 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x50>
+			8c: R_X86_64_REX_GOTPCRELX	rvv_copy_write_pc-0x4
+  90:	0f 95 c1             	setne  %cl
+  93:	41 84 c8             	test   %cl,%r8b
+  96:	75 4b                	jne    e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  98:	64 48 8b 0c 25 00 00 	mov    %fs:0x0,%rcx
+  9f:	00 00 
+			9d: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL8expectedE
+  a1:	48 3b 4e 10          	cmp    0x10(%rsi),%rcx
+  a5:	75 3c                	jne    e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  a7:	64 48 8b 0c 25 00 00 	mov    %fs:0x0,%rcx
+  ae:	00 00 
+			ac: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL8expectedE
+  b0:	48 39 4a 68          	cmp    %rcx,0x68(%rdx)
+  b4:	75 2d                	jne    e3 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0xa3>
+  b6:	64 89 3c 25 00 00 00 	mov    %edi,%fs:0x0
+  bd:	00 
+			ba: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5signoE
+  be:	64 89 04 25 00 00 00 	mov    %eax,%fs:0x0
+  c5:	00 
+			c2: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL4codeE
+  c6:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+  cd:	00 00 00 00 00 
+			ca: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+  d2:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # d9 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x99>
+			d5: R_X86_64_REX_GOTPCRELX	rvv_copy_failed-0x4
+  d9:	48 89 82 a8 00 00 00 	mov    %rax,0xa8(%rdx)
+  e0:	b0 01                	mov    $0x1,%al
+  e2:	c3                   	ret
+  e3:	31 c0                	xor    %eax,%eax
+  e5:	c3                   	ret
+  e6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  ed:	00 00 00 
+
+00000000000000f0 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj>:
+  f0:	55                   	push   %rbp
+  f1:	41 57                	push   %r15
+  f3:	41 56                	push   %r14
+  f5:	41 55                	push   %r13
+  f7:	41 54                	push   %r12
+  f9:	53                   	push   %rbx
+  fa:	48 83 ec 18          	sub    $0x18,%rsp
+  fe:	41 89 cc             	mov    %ecx,%r12d
+ 101:	64 8b 04 25 00 00 00 	mov    %fs:0x0,%eax
+ 108:	00 
+			105: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 109:	41 8d 4c 24 f7       	lea    -0x9(%r12),%ecx
+ 10e:	83 f9 f8             	cmp    $0xfffffff8,%ecx
+ 111:	0f 82 5b 01 00 00    	jb     272 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x182>
+ 117:	85 c0                	test   %eax,%eax
+ 119:	0f 85 53 01 00 00    	jne    272 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x182>
+ 11f:	44 89 c5             	mov    %r8d,%ebp
+ 122:	41 89 d6             	mov    %edx,%r14d
+ 125:	49 89 f5             	mov    %rsi,%r13
+ 128:	48 89 fb             	mov    %rdi,%rbx
+ 12b:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+ 132:	00 00 00 00 00 
+			12f: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5signoE
+ 137:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+ 13e:	00 00 00 00 00 
+			13b: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL4codeE
+ 143:	89 d7                	mov    %edx,%edi
+ 145:	48 01 f7             	add    %rsi,%rdi
+ 148:	64 48 89 3c 25 00 00 	mov    %rdi,%fs:0x0
+ 14f:	00 00 
+			14d: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL8expectedE
+ 151:	64 c7 04 25 00 00 00 	movl   $0x1,%fs:0x0
+ 158:	00 01 00 00 00 
+			155: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 15d:	40 84 ed             	test   %bpl,%bpl
+ 160:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+ 165:	74 6c                	je     1d3 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0xe3>
+ 167:	48 89 de             	mov    %rbx,%rsi
+ 16a:	e8 00 00 00 00       	call   16f <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x7f>
+			16b: R_X86_64_PLT32	rvv_copy_write_byte-0x4
+ 16f:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+ 176:	00 00 00 00 00 
+			173: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 17b:	85 c0                	test   %eax,%eax
+ 17d:	0f 84 ba 00 00 00    	je     23d <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x14d>
+ 183:	45 89 e7             	mov    %r12d,%r15d
+ 186:	48 89 1c 24          	mov    %rbx,(%rsp)
+ 18a:	48 ff c3             	inc    %rbx
+ 18d:	49 ff cf             	dec    %r15
+ 190:	49 83 ef 01          	sub    $0x1,%r15
+ 194:	0f 82 bc 00 00 00    	jb     256 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x166>
+ 19a:	41 ff c6             	inc    %r14d
+ 19d:	4b 8d 3c 2e          	lea    (%r14,%r13,1),%rdi
+ 1a1:	64 48 89 3c 25 00 00 	mov    %rdi,%fs:0x0
+ 1a8:	00 00 
+			1a6: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL8expectedE
+ 1aa:	64 c7 04 25 00 00 00 	movl   $0x1,%fs:0x0
+ 1b1:	00 01 00 00 00 
+			1ae: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 1b6:	48 89 de             	mov    %rbx,%rsi
+ 1b9:	e8 00 00 00 00       	call   1be <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0xce>
+			1ba: R_X86_64_PLT32	rvv_copy_write_byte-0x4
+ 1be:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+ 1c5:	00 00 00 00 00 
+			1c2: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 1ca:	48 ff c3             	inc    %rbx
+ 1cd:	85 c0                	test   %eax,%eax
+ 1cf:	75 bf                	jne    190 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0xa0>
+ 1d1:	eb 6a                	jmp    23d <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x14d>
+ 1d3:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+ 1d8:	e8 00 00 00 00       	call   1dd <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0xed>
+			1d9: R_X86_64_PLT32	rvv_copy_read_byte-0x4
+ 1dd:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+ 1e4:	00 00 00 00 00 
+			1e1: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 1e9:	85 c0                	test   %eax,%eax
+ 1eb:	74 50                	je     23d <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x14d>
+ 1ed:	48 89 1c 24          	mov    %rbx,(%rsp)
+ 1f1:	45 89 e7             	mov    %r12d,%r15d
+ 1f4:	48 8d 5c 24 09       	lea    0x9(%rsp),%rbx
+ 1f9:	49 ff cf             	dec    %r15
+ 1fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 200:	49 83 ef 01          	sub    $0x1,%r15
+ 204:	72 50                	jb     256 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x166>
+ 206:	41 ff c6             	inc    %r14d
+ 209:	4b 8d 3c 2e          	lea    (%r14,%r13,1),%rdi
+ 20d:	64 48 89 3c 25 00 00 	mov    %rdi,%fs:0x0
+ 214:	00 00 
+			212: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL8expectedE
+ 216:	64 c7 04 25 00 00 00 	movl   $0x1,%fs:0x0
+ 21d:	00 01 00 00 00 
+			21a: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 222:	48 89 de             	mov    %rbx,%rsi
+ 225:	e8 00 00 00 00       	call   22a <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x13a>
+			226: R_X86_64_PLT32	rvv_copy_read_byte-0x4
+ 22a:	64 c7 04 25 00 00 00 	movl   $0x0,%fs:0x0
+ 231:	00 00 00 00 00 
+			22e: R_X86_64_TPOFF32	_ZN3dbt13rvv_host_copyL5armedE
+ 236:	48 ff c3             	inc    %rbx
+ 239:	85 c0                	test   %eax,%eax
+ 23b:	75 c3                	jne    200 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x110>
+ 23d:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 242:	44 89 30             	mov    %r14d,(%rax)
+ 245:	31 c0                	xor    %eax,%eax
+ 247:	48 83 c4 18          	add    $0x18,%rsp
+ 24b:	5b                   	pop    %rbx
+ 24c:	41 5c                	pop    %r12
+ 24e:	41 5d                	pop    %r13
+ 250:	41 5e                	pop    %r14
+ 252:	41 5f                	pop    %r15
+ 254:	5d                   	pop    %rbp
+ 255:	c3                   	ret
+ 256:	b0 01                	mov    $0x1,%al
+ 258:	40 84 ed             	test   %bpl,%bpl
+ 25b:	75 ea                	jne    247 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x157>
+ 25d:	44 89 e2             	mov    %r12d,%edx
+ 260:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+ 265:	48 8b 3c 24          	mov    (%rsp),%rdi
+ 269:	e8 00 00 00 00       	call   26e <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x17e>
+			26a: R_X86_64_PLT32	memcpy-0x4
+ 26e:	b0 01                	mov    $0x1,%al
+ 270:	eb d5                	jmp    247 <_ZN3dbt13rvv_host_copy4CopyEPhS1_jjbRj+0x157>
+ 272:	0f 0b                	ud2
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config20aot_guardonly_targetE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config20aot_guardonly_targetE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config20aot_guardonly_targetE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config20aot_guardonly_targetE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev:
+
+0000000000000000 <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	4c 8d 77 10          	lea    0x10(%rdi),%r14
+   c:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
+  10:	48 85 ff             	test   %rdi,%rdi
+  13:	74 20                	je     35 <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev+0x35>
+  15:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1c:	00 00 00 00 
+  20:	4c 8b 3f             	mov    (%rdi),%r15
+  23:	be 10 00 00 00       	mov    $0x10,%esi
+  28:	e8 00 00 00 00       	call   2d <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev+0x2d>
+			29: R_X86_64_PLT32	_ZdlPvm-0x4
+  2d:	4c 89 ff             	mov    %r15,%rdi
+  30:	4d 85 ff             	test   %r15,%r15
+  33:	75 eb                	jne    20 <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev+0x20>
+  35:	48 8b 3b             	mov    (%rbx),%rdi
+  38:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  3c:	48 c1 e2 03          	shl    $0x3,%rdx
+  40:	31 f6                	xor    %esi,%esi
+  42:	e8 00 00 00 00       	call   47 <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev+0x47>
+			43: R_X86_64_PLT32	memset-0x4
+  47:	0f 57 c0             	xorps  %xmm0,%xmm0
+  4a:	41 0f 11 06          	movups %xmm0,(%r14)
+  4e:	48 8b 3b             	mov    (%rbx),%rdi
+  51:	48 8d 43 30          	lea    0x30(%rbx),%rax
+  55:	48 39 c7             	cmp    %rax,%rdi
+  58:	74 12                	je     6c <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev+0x6c>
+  5a:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+  5e:	48 c1 e6 03          	shl    $0x3,%rsi
+  62:	5b                   	pop    %rbx
+  63:	41 5e                	pop    %r14
+  65:	41 5f                	pop    %r15
+  67:	e9 00 00 00 00       	jmp    6c <_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev+0x6c>
+			68: R_X86_64_PLT32	_ZdlPvm-0x4
+  6c:	5b                   	pop    %rbx
+  6d:	41 5e                	pop    %r14
+  6f:	41 5f                	pop    %r15
+  71:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.1>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.1+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config22aot_multiguard_targetsE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.1+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.1+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config22aot_multiguard_targetsE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.1+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.1+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.1+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.1+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.1+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.1+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.1+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.1+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.1+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config22aot_multiguard_targetsE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.1+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.1+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.1+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.1+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config22aot_multiguard_targetsE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev:
+
+0000000000000000 <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	41 54                	push   %r12
+   6:	53                   	push   %rbx
+   7:	50                   	push   %rax
+   8:	48 89 fb             	mov    %rdi,%rbx
+   b:	4c 8d 7f 10          	lea    0x10(%rdi),%r15
+   f:	4c 8b 77 10          	mov    0x10(%rdi),%r14
+  13:	4d 85 f6             	test   %r14,%r14
+  16:	75 5d                	jne    75 <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x75>
+  18:	48 8b 3b             	mov    (%rbx),%rdi
+  1b:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  1f:	48 c1 e2 03          	shl    $0x3,%rdx
+  23:	31 f6                	xor    %esi,%esi
+  25:	e8 00 00 00 00       	call   2a <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x2a>
+			26: R_X86_64_PLT32	memset-0x4
+  2a:	0f 57 c0             	xorps  %xmm0,%xmm0
+  2d:	41 0f 11 07          	movups %xmm0,(%r15)
+  31:	48 8b 3b             	mov    (%rbx),%rdi
+  34:	48 8d 43 30          	lea    0x30(%rbx),%rax
+  38:	48 39 c7             	cmp    %rax,%rdi
+  3b:	74 52                	je     8f <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x8f>
+  3d:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+  41:	48 c1 e6 03          	shl    $0x3,%rsi
+  45:	48 83 c4 08          	add    $0x8,%rsp
+  49:	5b                   	pop    %rbx
+  4a:	41 5c                	pop    %r12
+  4c:	41 5e                	pop    %r14
+  4e:	41 5f                	pop    %r15
+  50:	e9 00 00 00 00       	jmp    55 <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x55>
+			51: R_X86_64_PLT32	_ZdlPvm-0x4
+  55:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  5c:	00 00 00 00 
+  60:	be 28 00 00 00       	mov    $0x28,%esi
+  65:	4c 89 f7             	mov    %r14,%rdi
+  68:	e8 00 00 00 00       	call   6d <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x6d>
+			69: R_X86_64_PLT32	_ZdlPvm-0x4
+  6d:	4d 89 e6             	mov    %r12,%r14
+  70:	4d 85 e4             	test   %r12,%r12
+  73:	74 a3                	je     18 <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x18>
+  75:	4d 8b 26             	mov    (%r14),%r12
+  78:	49 8b 7e 10          	mov    0x10(%r14),%rdi
+  7c:	48 85 ff             	test   %rdi,%rdi
+  7f:	74 df                	je     60 <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x60>
+  81:	49 8b 76 20          	mov    0x20(%r14),%rsi
+  85:	48 29 fe             	sub    %rdi,%rsi
+  88:	e8 00 00 00 00       	call   8d <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x8d>
+			89: R_X86_64_PLT32	_ZdlPvm-0x4
+  8d:	eb d1                	jmp    60 <_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev+0x60>
+  8f:	48 83 c4 08          	add    $0x8,%rsp
+  93:	5b                   	pop    %rbx
+  94:	41 5c                	pop    %r12
+  96:	41 5e                	pop    %r14
+  98:	41 5f                	pop    %r15
+  9a:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.2>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.2+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config24aot_fdre_dominant_targetE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.2+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.2+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config24aot_fdre_dominant_targetE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.2+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.2+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.2+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.2+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.2+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.2+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.2+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.2+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.2+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config24aot_fdre_dominant_targetE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.2+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjjSt4hashIjESt8equal_toIjESaISt4pairIKjjEEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.2+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.2+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.2+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config24aot_fdre_dominant_targetE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.3>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.3+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config9avoid_ipsE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.3+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.3+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config9avoid_ipsE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.3+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.3+0xc>
+  1e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 25 <__cxx_global_var_init.3+0x25>
+			21: R_X86_64_PC32	_ZNSt6vectorImSaImEED2Ev-0x4
+  25:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c <__cxx_global_var_init.3+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config9avoid_ipsE-0x4
+  2c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 33 <__cxx_global_var_init.3+0x33>
+			2f: R_X86_64_PC32	__dso_handle-0x4
+  33:	e8 00 00 00 00       	call   38 <__cxx_global_var_init.3+0x38>
+			34: R_X86_64_PLT32	__cxa_atexit-0x4
+  38:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3f <__cxx_global_var_init.3+0x3f>
+			3b: R_X86_64_PC32	_ZGVN3dbt6config9avoid_ipsE-0x4
+  3f:	58                   	pop    %rax
+  40:	e9 00 00 00 00       	jmp    45 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x5>
+			41: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt6vectorImSaImEED2Ev:
+
+0000000000000000 <_ZNSt6vectorImSaImEED2Ev>:
+   0:	48 89 f8             	mov    %rdi,%rax
+   3:	48 8b 3f             	mov    (%rdi),%rdi
+   6:	48 85 ff             	test   %rdi,%rdi
+   9:	74 0c                	je     17 <_ZNSt6vectorImSaImEED2Ev+0x17>
+   b:	48 8b 70 10          	mov    0x10(%rax),%rsi
+   f:	48 29 fe             	sub    %rdi,%rsi
+  12:	e9 00 00 00 00       	jmp    17 <_ZNSt6vectorImSaImEED2Ev+0x17>
+			13: R_X86_64_PLT32	_ZdlPvm-0x4
+  17:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.4>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.4+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config16aot_edge_targetsE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.4+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.4+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config16aot_edge_targetsE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.4+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.4+0xc>
+  1e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 25 <__cxx_global_var_init.4+0x25>
+			21: R_X86_64_PC32	_ZNSt6vectorIjSaIjEED2Ev-0x4
+  25:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c <__cxx_global_var_init.4+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config16aot_edge_targetsE-0x4
+  2c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 33 <__cxx_global_var_init.4+0x33>
+			2f: R_X86_64_PC32	__dso_handle-0x4
+  33:	e8 00 00 00 00       	call   38 <__cxx_global_var_init.4+0x38>
+			34: R_X86_64_PLT32	__cxa_atexit-0x4
+  38:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3f <__cxx_global_var_init.4+0x3f>
+			3b: R_X86_64_PC32	_ZGVN3dbt6config16aot_edge_targetsE-0x4
+  3f:	58                   	pop    %rax
+  40:	e9 00 00 00 00       	jmp    45 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x5>
+			41: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt6vectorIjSaIjEED2Ev:
+
+0000000000000000 <_ZNSt6vectorIjSaIjEED2Ev>:
+   0:	48 89 f8             	mov    %rdi,%rax
+   3:	48 8b 3f             	mov    (%rdi),%rdi
+   6:	48 85 ff             	test   %rdi,%rdi
+   9:	74 0c                	je     17 <_ZNSt6vectorIjSaIjEED2Ev+0x17>
+   b:	48 8b 70 10          	mov    0x10(%rax),%rsi
+   f:	48 29 fe             	sub    %rdi,%rsi
+  12:	e9 00 00 00 00       	jmp    17 <_ZNSt6vectorIjSaIjEED2Ev+0x17>
+			13: R_X86_64_PLT32	_ZdlPvm-0x4
+  17:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.5>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.5+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config20aot_region_merge_mapE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.5+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.5+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config20aot_region_merge_mapE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.5+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.5+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.5+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.5+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.5+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.5+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.5+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.5+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.5+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config20aot_region_merge_mapE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.5+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjSt6vectorIjSaIjEESt4hashIjESt8equal_toIjESaISt4pairIKjS2_EEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.5+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.5+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.5+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config20aot_region_merge_mapE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.6>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.6+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config11sr_tbs_histE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.6+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.6+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config11sr_tbs_histE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.6+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.6+0xc>
+  1e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 25 <__cxx_global_var_init.6+0x25>
+			21: R_X86_64_PC32	_ZNSt6vectorImSaImEED2Ev-0x4
+  25:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c <__cxx_global_var_init.6+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config11sr_tbs_histE-0x4
+  2c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 33 <__cxx_global_var_init.6+0x33>
+			2f: R_X86_64_PC32	__dso_handle-0x4
+  33:	e8 00 00 00 00       	call   38 <__cxx_global_var_init.6+0x38>
+			34: R_X86_64_PLT32	__cxa_atexit-0x4
+  38:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3f <__cxx_global_var_init.6+0x3f>
+			3b: R_X86_64_PC32	_ZGVN3dbt6config11sr_tbs_histE-0x4
+  3f:	58                   	pop    %rax
+  40:	e9 00 00 00 00       	jmp    45 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x5>
+			41: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.7>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.7+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config20aot_natural_admittedE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.7+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.7+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config20aot_natural_admittedE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.7+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.7+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.7+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.7+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.7+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.7+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.7+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.7+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.7+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config20aot_natural_admittedE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.7+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.7+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.7+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.7+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config20aot_natural_admittedE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev:
+
+0000000000000000 <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	4c 8d 77 10          	lea    0x10(%rdi),%r14
+   c:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
+  10:	48 85 ff             	test   %rdi,%rdi
+  13:	74 20                	je     35 <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev+0x35>
+  15:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1c:	00 00 00 00 
+  20:	4c 8b 3f             	mov    (%rdi),%r15
+  23:	be 10 00 00 00       	mov    $0x10,%esi
+  28:	e8 00 00 00 00       	call   2d <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev+0x2d>
+			29: R_X86_64_PLT32	_ZdlPvm-0x4
+  2d:	4c 89 ff             	mov    %r15,%rdi
+  30:	4d 85 ff             	test   %r15,%r15
+  33:	75 eb                	jne    20 <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev+0x20>
+  35:	48 8b 3b             	mov    (%rbx),%rdi
+  38:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  3c:	48 c1 e2 03          	shl    $0x3,%rdx
+  40:	31 f6                	xor    %esi,%esi
+  42:	e8 00 00 00 00       	call   47 <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev+0x47>
+			43: R_X86_64_PLT32	memset-0x4
+  47:	0f 57 c0             	xorps  %xmm0,%xmm0
+  4a:	41 0f 11 06          	movups %xmm0,(%r14)
+  4e:	48 8b 3b             	mov    (%rbx),%rdi
+  51:	48 8d 43 30          	lea    0x30(%rbx),%rax
+  55:	48 39 c7             	cmp    %rax,%rdi
+  58:	74 12                	je     6c <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev+0x6c>
+  5a:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+  5e:	48 c1 e6 03          	shl    $0x3,%rsi
+  62:	5b                   	pop    %rbx
+  63:	41 5e                	pop    %r14
+  65:	41 5f                	pop    %r15
+  67:	e9 00 00 00 00       	jmp    6c <_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev+0x6c>
+			68: R_X86_64_PLT32	_ZdlPvm-0x4
+  6c:	5b                   	pop    %rbx
+  6d:	41 5e                	pop    %r14
+  6f:	41 5f                	pop    %r15
+  71:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.8>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.8+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config23g_direct_branch_targetsE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.8+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.8+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config23g_direct_branch_targetsE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.8+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.8+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.8+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.8+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.8+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.8+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.8+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.8+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.8+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config23g_direct_branch_targetsE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.8+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.8+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.8+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.8+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config23g_direct_branch_targetsE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.9>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.9+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config17aot_context_edgesE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.9+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.9+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config17aot_context_edgesE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.9+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.9+0xc>
+  1e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 25 <__cxx_global_var_init.9+0x25>
+			21: R_X86_64_PC32	_ZNSt6vectorISt4pairIjjESaIS1_EED2Ev-0x4
+  25:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c <__cxx_global_var_init.9+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config17aot_context_edgesE-0x4
+  2c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 33 <__cxx_global_var_init.9+0x33>
+			2f: R_X86_64_PC32	__dso_handle-0x4
+  33:	e8 00 00 00 00       	call   38 <__cxx_global_var_init.9+0x38>
+			34: R_X86_64_PLT32	__cxa_atexit-0x4
+  38:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3f <__cxx_global_var_init.9+0x3f>
+			3b: R_X86_64_PC32	_ZGVN3dbt6config17aot_context_edgesE-0x4
+  3f:	58                   	pop    %rax
+  40:	e9 00 00 00 00       	jmp    45 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x5>
+			41: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt6vectorISt4pairIjjESaIS1_EED2Ev:
+
+0000000000000000 <_ZNSt6vectorISt4pairIjjESaIS1_EED2Ev>:
+   0:	48 89 f8             	mov    %rdi,%rax
+   3:	48 8b 3f             	mov    (%rdi),%rdi
+   6:	48 85 ff             	test   %rdi,%rdi
+   9:	74 0c                	je     17 <_ZNSt6vectorISt4pairIjjESaIS1_EED2Ev+0x17>
+   b:	48 8b 70 10          	mov    0x10(%rax),%rsi
+   f:	48 29 fe             	sub    %rdi,%rsi
+  12:	e9 00 00 00 00       	jmp    17 <_ZNSt6vectorISt4pairIjjESaIS1_EED2Ev+0x17>
+			13: R_X86_64_PLT32	_ZdlPvm-0x4
+  17:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.10>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.10+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config22backedge_safepoint_ipsE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.10+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.10+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config22backedge_safepoint_ipsE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.10+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.10+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.10+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.10+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.10+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.10+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.10+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.10+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.10+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config22backedge_safepoint_ipsE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.10+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.10+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.10+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.10+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config22backedge_safepoint_ipsE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev:
+
+0000000000000000 <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	4c 8d 77 10          	lea    0x10(%rdi),%r14
+   c:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
+  10:	48 85 ff             	test   %rdi,%rdi
+  13:	74 20                	je     35 <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev+0x35>
+  15:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1c:	00 00 00 00 
+  20:	4c 8b 3f             	mov    (%rdi),%r15
+  23:	be 18 00 00 00       	mov    $0x18,%esi
+  28:	e8 00 00 00 00       	call   2d <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev+0x2d>
+			29: R_X86_64_PLT32	_ZdlPvm-0x4
+  2d:	4c 89 ff             	mov    %r15,%rdi
+  30:	4d 85 ff             	test   %r15,%r15
+  33:	75 eb                	jne    20 <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev+0x20>
+  35:	48 8b 3b             	mov    (%rbx),%rdi
+  38:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  3c:	48 c1 e2 03          	shl    $0x3,%rdx
+  40:	31 f6                	xor    %esi,%esi
+  42:	e8 00 00 00 00       	call   47 <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev+0x47>
+			43: R_X86_64_PLT32	memset-0x4
+  47:	0f 57 c0             	xorps  %xmm0,%xmm0
+  4a:	41 0f 11 06          	movups %xmm0,(%r14)
+  4e:	48 8b 3b             	mov    (%rbx),%rdi
+  51:	48 8d 43 30          	lea    0x30(%rbx),%rax
+  55:	48 39 c7             	cmp    %rax,%rdi
+  58:	74 12                	je     6c <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev+0x6c>
+  5a:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+  5e:	48 c1 e6 03          	shl    $0x3,%rsi
+  62:	5b                   	pop    %rbx
+  63:	41 5e                	pop    %r14
+  65:	41 5f                	pop    %r15
+  67:	e9 00 00 00 00       	jmp    6c <_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev+0x6c>
+			68: R_X86_64_PLT32	_ZdlPvm-0x4
+  6c:	5b                   	pop    %rbx
+  6d:	41 5e                	pop    %r14
+  6f:	41 5f                	pop    %r15
+  71:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.11>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.11+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config18loop_tier_notifiedE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.11+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.11+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config18loop_tier_notifiedE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.11+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.11+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.11+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.11+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.11+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.11+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.11+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.11+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.11+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config18loop_tier_notifiedE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.11+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.11+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.11+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.11+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config18loop_tier_notifiedE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text._ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev:
+
+0000000000000000 <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	4c 8d 77 10          	lea    0x10(%rdi),%r14
+   c:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
+  10:	48 85 ff             	test   %rdi,%rdi
+  13:	74 20                	je     35 <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev+0x35>
+  15:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1c:	00 00 00 00 
+  20:	4c 8b 3f             	mov    (%rdi),%r15
+  23:	be 10 00 00 00       	mov    $0x10,%esi
+  28:	e8 00 00 00 00       	call   2d <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev+0x2d>
+			29: R_X86_64_PLT32	_ZdlPvm-0x4
+  2d:	4c 89 ff             	mov    %r15,%rdi
+  30:	4d 85 ff             	test   %r15,%r15
+  33:	75 eb                	jne    20 <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev+0x20>
+  35:	48 8b 3b             	mov    (%rbx),%rdi
+  38:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  3c:	48 c1 e2 03          	shl    $0x3,%rdx
+  40:	31 f6                	xor    %esi,%esi
+  42:	e8 00 00 00 00       	call   47 <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev+0x47>
+			43: R_X86_64_PLT32	memset-0x4
+  47:	0f 57 c0             	xorps  %xmm0,%xmm0
+  4a:	41 0f 11 06          	movups %xmm0,(%r14)
+  4e:	48 8b 3b             	mov    (%rbx),%rdi
+  51:	48 8d 43 30          	lea    0x30(%rbx),%rax
+  55:	48 39 c7             	cmp    %rax,%rdi
+  58:	74 12                	je     6c <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev+0x6c>
+  5a:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+  5e:	48 c1 e6 03          	shl    $0x3,%rsi
+  62:	5b                   	pop    %rbx
+  63:	41 5e                	pop    %r14
+  65:	41 5f                	pop    %r15
+  67:	e9 00 00 00 00       	jmp    6c <_ZNSt13unordered_mapIjhSt4hashIjESt8equal_toIjESaISt4pairIKjhEEED2Ev+0x6c>
+			68: R_X86_64_PLT32	_ZdlPvm-0x4
+  6c:	5b                   	pop    %rbx
+  6d:	41 5e                	pop    %r14
+  6f:	41 5f                	pop    %r15
+  71:	c3                   	ret
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.12>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.12+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config23loop_tier_side_exit_ipsE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.12+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.12+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config23loop_tier_side_exit_ipsE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.12+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.12+0xc>
+  1e:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 25 <__cxx_global_var_init.12+0x25>
+			21: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE+0x2c
+  25:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 2c <__cxx_global_var_init.12+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE-0x4
+  2c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33 <__cxx_global_var_init.12+0x33>
+			2f: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE-0x4
+  33:	48 c7 05 00 00 00 00 	movq   $0x1,0x0(%rip)        # 3e <__cxx_global_var_init.12+0x3e>
+  3a:	01 00 00 00 
+			36: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE
+  3e:	0f 57 c0             	xorps  %xmm0,%xmm0
+  41:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 48 <__cxx_global_var_init.12+0x48>
+			44: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE+0xc
+  48:	c7 05 00 00 00 00 00 	movl   $0x3f800000,0x0(%rip)        # 52 <__cxx_global_var_init.12+0x52>
+  4f:	00 80 3f 
+			4a: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE+0x18
+  52:	0f 11 05 00 00 00 00 	movups %xmm0,0x0(%rip)        # 59 <__cxx_global_var_init.12+0x59>
+			55: R_X86_64_PC32	_ZN3dbt6config23loop_tier_side_exit_ipsE+0x24
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <__cxx_global_var_init.12+0x60>
+			5c: R_X86_64_PC32	_ZNSt13unordered_mapIjySt4hashIjESt8equal_toIjESaISt4pairIKjyEEED2Ev-0x4
+  60:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 67 <__cxx_global_var_init.12+0x67>
+			63: R_X86_64_PC32	__dso_handle-0x4
+  67:	e8 00 00 00 00       	call   6c <__cxx_global_var_init.12+0x6c>
+			68: R_X86_64_PLT32	__cxa_atexit-0x4
+  6c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 73 <__cxx_global_var_init.12+0x73>
+			6f: R_X86_64_PC32	_ZGVN3dbt6config23loop_tier_side_exit_ipsE-0x4
+  73:	58                   	pop    %rax
+  74:	e9 00 00 00 00       	jmp    79 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x39>
+			75: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.13>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.13+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config17g_elf_exec_rangesE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.13+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.13+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config17g_elf_exec_rangesE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.13+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.13+0xc>
+  1e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 25 <__cxx_global_var_init.13+0x25>
+			21: R_X86_64_PC32	_ZNSt6vectorISt4pairIjjESaIS1_EED2Ev-0x4
+  25:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c <__cxx_global_var_init.13+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config17g_elf_exec_rangesE-0x4
+  2c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 33 <__cxx_global_var_init.13+0x33>
+			2f: R_X86_64_PC32	__dso_handle-0x4
+  33:	e8 00 00 00 00       	call   38 <__cxx_global_var_init.13+0x38>
+			34: R_X86_64_PLT32	__cxa_atexit-0x4
+  38:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3f <__cxx_global_var_init.13+0x3f>
+			3b: R_X86_64_PC32	_ZGVN3dbt6config17g_elf_exec_rangesE-0x4
+  3f:	58                   	pop    %rax
+  40:	e9 00 00 00 00       	jmp    45 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x5>
+			41: R_X86_64_PLT32	__cxa_guard_release-0x4
+
+Disassembly of section .text.startup:
+
+0000000000000000 <__cxx_global_var_init.14>:
+   0:	50                   	push   %rax
+   1:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 8 <__cxx_global_var_init.14+0x8>
+			4: R_X86_64_PC32	_ZGVN3dbt6config24g_elf_nonwritable_rangesE-0x4
+   8:	84 c0                	test   %al,%al
+   a:	74 02                	je     e <__cxx_global_var_init.14+0xe>
+   c:	58                   	pop    %rax
+   d:	c3                   	ret
+   e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 15 <__cxx_global_var_init.14+0x15>
+			11: R_X86_64_PC32	_ZGVN3dbt6config24g_elf_nonwritable_rangesE-0x4
+  15:	e8 00 00 00 00       	call   1a <__cxx_global_var_init.14+0x1a>
+			16: R_X86_64_PLT32	__cxa_guard_acquire-0x4
+  1a:	85 c0                	test   %eax,%eax
+  1c:	74 ee                	je     c <__cxx_global_var_init.14+0xc>
+  1e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 25 <__cxx_global_var_init.14+0x25>
+			21: R_X86_64_PC32	_ZNSt6vectorISt4pairIjjESaIS1_EED2Ev-0x4
+  25:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c <__cxx_global_var_init.14+0x2c>
+			28: R_X86_64_PC32	_ZN3dbt6config24g_elf_nonwritable_rangesE-0x4
+  2c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 33 <__cxx_global_var_init.14+0x33>
+			2f: R_X86_64_PC32	__dso_handle-0x4
+  33:	e8 00 00 00 00       	call   38 <__cxx_global_var_init.14+0x38>
+			34: R_X86_64_PLT32	__cxa_atexit-0x4
+  38:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3f <__cxx_global_var_init.14+0x3f>
+			3b: R_X86_64_PC32	_ZGVN3dbt6config24g_elf_nonwritable_rangesE-0x4
+  3f:	58                   	pop    %rax
+  40:	e9 00 00 00 00       	jmp    45 <_ZN3dbt13rvv_host_copy12HandleSignalEiPK9siginfo_tP10ucontext_t+0x5>
+			41: R_X86_64_PLT32	__cxa_guard_release-0x4
