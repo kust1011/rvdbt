@@ -47,6 +47,7 @@
 #include "llvm/IR/Function.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/Module.h"
+#include "llvm/IR/Verifier.h"
 
 #include <cstdio>
 #include <functional>
@@ -79,7 +80,10 @@ unsigned g_fail = 0;
 		}                                                                                   \
 	} while (0)
 
-llvm::LLVMContext g_ctx;
+// LLVMGenCtx builds types/metadata in the backend's thread-local context. The
+// module must share it, including in Release builds where Run's assert-based
+// function verification is disabled.
+llvm::LLVMContext &g_ctx = dbt::qir::g_llvm_ctx;
 
 // `vl<NREG>re<EEW>.v vd, (rs1)`: nf = NREG-1, mew = 0, mop = 00, vm = 1, lumop = 01000, opcode
 // 0000111. `vs<NREG>r.v vs3, (rs1)`: same layout, sumop = 01000, opcode 0100111, width = 0 (EEW 8).
@@ -134,6 +138,7 @@ void Translate(Built &b, bool backend)
 	ctx.AddFunction(0u, b.segment);
 	QIRToLLVM gen(ctx, &b.segment, b.region, 0u);
 	b.fn = gen.Run();
+	CHECK(!llvm::verifyModule(b.module, &llvm::errs()));
 }
 
 struct Qir {
