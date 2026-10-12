@@ -123,6 +123,7 @@ static void threads()
 }
 static void helper(CPUState *s, bool store, bool bus, bool split)
 {
+ sigset_t before{},after{};sigprocmask(SIG_SETMASK,nullptr,&before);
  // File length one page, mapping two: second page has permission but SIGBUS.
  int fd=-1;
  if(bus) { char name[]="/tmp/rvv-copy123-XXXXXX";fd=mkstemp(name);unlink(name);
@@ -169,7 +170,21 @@ static void helper(CPUState *s, bool store, bool bus, bool split)
  siginfo_t info{};ucontext_t uc{};info.si_code=SEGV_ACCERR;
  info.si_addr=mem+4096;uc.uc_mcontext.gregs[REG_RIP]=(greg_t)rvv_copy_read_pc;
  check(!rvv_host_copy::HandleSignal(SIGSEGV,&info,&uc),"boundary disarmed");
- check(!ukernel::DeliverHelperSignal(s,snap),"host fault delivery explicitly unsupported");
+ auto *ut=s->GetUThread();ut->memory_fault_pending=false;ut->guest_signal_mask=0;
+ ut->signal_actions[10]={pc,4,0};ut->signal_actions[6]={pc+8,4,0};s->gpr[2]=0x25008000;
+ check(ukernel::DeliverHelperSignal(s,snap),"real captured helper delivered on host dispatcher stack");
+ auto *frame=(u8*)mmu::g2h(s->gpr[2]);
+ check(rv32_signal::get32(frame)==(bus?7u:11u) && rv32_signal::get32(frame+8)==2 &&
+       rv32_signal::get32(frame+12)==snap.event.address,"real signal code address in RV32 frame");
+ check(s->ip==pc+(bus?8:0) && s->gpr[10]==(bus?7u:11u) &&
+       rv32_signal::get32(frame+rv32_signal::MC)==pc &&
+       rv32_signal::get32(frame+rv32_signal::VS)==1 &&
+       rv32_signal::get32(frame+rv32_signal::VS+4)==3,"real fault handler PC vstart VL");
+ for(u32 r=0;r<32;++r)check(!memcmp(frame+rv32_signal::Data+r*16,snap.vreg[r].data(),16),"real vector frame bytes");
+ sigprocmask(SIG_SETMASK,nullptr,&after);
+ check(!memcmp(&before,&after,sizeof(before)),"real capture and delivery host mask unchanged");
+ // End this local one-shot observation; never execute handler/sigreturn/retry.
+ ut->signal_frame=0;ut->signal_frame_size=0;ut->guest_signal_mask=0;
  if(store)check(mem[4092]==0xa5 && mem[4093]==0xa5 &&
                 mem[4094]==(split?0xb6:0xa5) && mem[4095]==(split?0xb6:0xa5),
                 "completed store and split-field byte prefix retained");
@@ -218,6 +233,8 @@ int main()
  sa.sa_sigaction=width_callback;
  check(sigaction(SIGSEGV,&sa,nullptr)==0 && sigaction(SIGBUS,&sa,nullptr)==0,"install production callback");
  config::vlen_bits=128;config::rvv_lowering=0;config::rvv_verify=false;
+ check(mmu::mmap(pc&~4095u,4096,PROT_READ|PROT_EXEC,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"delivery code mapping");
+ check(mmu::mmap(0x25000000,32768,PROT_READ|PROT_WRITE,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"delivery stack mapping");
  filters();widths();
  for(bool bus:{false,true})for(bool store:{false,true})for(bool split:{false,true})helper(s,store,bus,split);
  segment(s);fof(s,data+4092);fof(s,data+4096);threads();

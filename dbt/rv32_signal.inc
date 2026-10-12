@@ -8,6 +8,31 @@ constexpr u32 Reserved = 932, Header = 936, VS = 944, Data = 976;
 constexpr u32 Magic = 0x53465457;
 constexpr u64 Unblockable = (1ull << (9-1)) | (1ull << (19-1));
 constexpr u32 FrameSize(u32 vlenb) { return (Data + 32*vlenb + 8 + 15) & ~15u; }
+// Linux asm-generic (RV32) numbers, independent of the host ABI.
+constexpr u32 SigBus = 7, SigSegv = 11, SigInfo = 4;
+// Only metadata owned by the checked helper boundary is admissible. Translate
+// explicitly: host numeric signal/code values are not a guest ABI contract.
+bool HelperSiginfo(MemoryFaultEvent const &e, u32 &signal, u32 &code)
+{
+	if (e.origin == MemoryFaultEvent::Origin::PredictedHelper &&
+	    !e.host_signal && !e.host_code) {
+		signal = SigSegv;
+		if (e.reason == MemoryFaultEvent::Reason::Unmapped) { code = 1; return true; }
+		if (e.reason == MemoryFaultEvent::Reason::Protection) { code = 2; return true; }
+	} else if (e.origin == MemoryFaultEvent::Origin::HostCopy &&
+	           e.reason == MemoryFaultEvent::Reason::HostFault) {
+		if (e.host_signal == SIGSEGV) {
+			signal = SigSegv;
+			if (e.host_code == SEGV_MAPERR) { code = 1; return true; }
+			if (e.host_code == SEGV_ACCERR) { code = 2; return true; }
+		} else if (e.host_signal == SIGBUS) {
+			signal = SigBus;
+			if (e.host_code == BUS_ADRERR) { code = 2; return true; }
+			if (e.host_code == BUS_OBJERR) { code = 3; return true; }
+		}
+	}
+	return false;
+}
 u32 get32(u8 const *p) { return u32(p[0]) | (u32(p[1])<<8) | (u32(p[2])<<16) | (u32(p[3])<<24); }
 u64 get64(u8 const *p) { return get32(p) | (u64(get32(p+4))<<32); }
 void put32(u8 *p, u32 v) { for (u32 i=0;i<4;++i) p[i]=v>>(8*i); }
@@ -63,10 +88,10 @@ bool ukernel::SignalSyscall(CPUState *state)
 			// Both optional pointers are guest integers; zero means absent.
 			if ((input && !CopyIn(incoming,input,16)) ||
 			    (output && !mmu::CheckedRange(output,16,PROT_WRITE))) rc=-EFAULT;
-			// Only synchronous helper SIGSEGV delivery is implemented. Queries are
+			// Only synchronous helper SIGSEGV/SIGBUS delivery is implemented. Queries are
 			// available for all legal signal numbers; other installations fail explicitly.
-			else if (input && first!=11) rc=-EOPNOTSUPP;
-			else if (input && (get32(incoming+4)&~4u)) rc=-EOPNOTSUPP;
+			else if (input && first!=SigSegv && first!=SigBus) rc=-EOPNOTSUPP;
+			else if (input && (get32(incoming+4)&~SigInfo)) rc=-EOPNOTSUPP;
 			else if (input && get32(incoming)==1) rc=-EOPNOTSUPP; // no ignored synchronous fault
 			else {
 				if (output) CopyOut(output,old,16);
@@ -96,21 +121,21 @@ bool ukernel::DeliverHelperSignal(CPUState *state, MemoryFaultSnapshot const &sn
 {
 	using namespace rv32_signal;
 	auto *ut=state->GetUThread();
-	auto const action=ut->signal_actions[10];
-	// Host-copy capture preserves SIGBUS/code; guest host-fault delivery is unimplemented.
-	if (snapshot.event.origin == MemoryFaultEvent::Origin::HostCopy) {
-		fprintf(stderr,"RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=%d code=%d\n",
-		        snapshot.event.host_signal, snapshot.event.host_code);
+	u32 signal=0, code=0;
+	if (!HelperSiginfo(snapshot.event,signal,code)) {
+		fprintf(stderr,"RVDBT_SIGNAL_UNDELIVERABLE unsupported_helper_source signal=%d code=%d\n",
+		        snapshot.event.host_signal,snapshot.event.host_code);
 		return false;
 	}
+	auto const action=ut->signal_actions[signal-1];
+	u64 const bit=1ull<<(signal-1);
 	// This entry is only reached after helper scopes and the FP bracket have closed.
-	if (snapshot.event.origin!=MemoryFaultEvent::Origin::PredictedHelper ||
-	    (snapshot.event.access!=MemoryFaultEvent::Access::Load &&
+	if ((snapshot.event.access!=MemoryFaultEvent::Access::Load &&
 	     snapshot.event.access!=MemoryFaultEvent::Access::Store) || ut->signal_frame ||
-	    (ut->guest_signal_mask&(1ull<<10)) || action.handler<=1 ||
+	    (ut->guest_signal_mask&bit) || (action.flags&~SigInfo) || action.handler<=1 ||
 	    (action.handler&1) || !mmu::CheckedRange(action.handler,2,PROT_EXEC) ||
 	    state->fpu.fround_run_open || !snapshot.vlenb || snapshot.vlenb>rv32::VLEN_MAX_BYTES) {
-		fprintf(stderr,"RVDBT_SIGNAL_UNDELIVERABLE helper_sync_SIGSEGV\n");
+		fprintf(stderr,"RVDBT_SIGNAL_UNDELIVERABLE helper_sync signal=%u code=%u\n",signal,code);
 		return false;
 	}
 	u32 size=FrameSize(snapshot.vlenb), sp=state->gpr[2];
@@ -119,8 +144,8 @@ bool ukernel::DeliverHelperSignal(CPUState *state, MemoryFaultSnapshot const &sn
 	if (!mmu::CheckedRange(frame,size,PROT_WRITE)) return false;
 	// Build on the ordinary dispatcher stack, never inside a host signal callback.
 	std::vector<u8> bytes(size,0); auto *p=bytes.data();
-	put32(p+Info,11);
-	put32(p+Info+8,snapshot.event.reason==MemoryFaultEvent::Reason::Protection?2:1);
+	put32(p+Info,signal);
+	put32(p+Info+8,code);
 	put32(p+Info+12,snapshot.event.address);
 	put32(p+UC+12,2); // SS_DISABLE; altstack is outside this implementation's scope.
 	put64(p+Mask,ut->guest_signal_mask);
@@ -148,12 +173,13 @@ bool ukernel::DeliverHelperSignal(CPUState *state, MemoryFaultSnapshot const &sn
 	    !CopyOut(frame,p,size)) return false;
 	ut->signal_host_mxcsr=rv32::rvdbt_mxcsr_get();
 	ut->signal_frame=frame; ut->signal_frame_size=size;
-	ut->guest_signal_mask|=action.mask|(1ull<<10);
+	ut->guest_signal_mask|=action.mask|bit;
 	state->gpr[0]=0; state->gpr[1]=ut->signal_trampoline; state->gpr[2]=frame;
-	state->gpr[10]=11; state->gpr[11]=frame; state->gpr[12]=frame+UC;
+	state->gpr[10]=signal; state->gpr[11]=frame; state->gpr[12]=frame+UC;
 	state->ip=action.handler; state->trapno=rv32::TrapCode::NONE;
-	fprintf(stderr,"RVDBT_SIGNAL_DELIVERED signal=11 pc=%08x frame=%08x size=%u handler=%08x\n",
-		snapshot.pc,frame,size,action.handler);
+	fprintf(stderr,"RVDBT_SIGNAL_DELIVERED signal=%u pc=%08x frame=%08x size=%u handler=%08x code=%u access=%s\n",
+		signal,snapshot.pc,frame,size,action.handler,code,
+		snapshot.event.access==MemoryFaultEvent::Access::Store ? "store" : "load");
 	return true;
 }
 

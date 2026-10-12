@@ -221,18 +221,10 @@ ukernel::Process ukernel::process{};
 void ukernel::QueueHelperMemoryFault(CPUState *state, MemoryFaultEvent const &event)
 {
 	auto *ut = state->GetUThread();
+	u32 signal=0, code=0;
 	if (state != CPUState::Current() || ut->memory_fault_pending ||
 	    state->trapno != rv32::TrapCode::NONE ||
-	    !((event.origin == MemoryFaultEvent::Origin::PredictedHelper &&
-	       !event.host_signal && !event.host_code &&
-	       (event.reason == MemoryFaultEvent::Reason::Protection ||
-	        event.reason == MemoryFaultEvent::Reason::Unmapped)) ||
-	      (event.origin == MemoryFaultEvent::Origin::HostCopy &&
-	       event.reason == MemoryFaultEvent::Reason::HostFault &&
-	       ((event.host_signal == SIGSEGV &&
-	         (event.host_code == SEGV_MAPERR || event.host_code == SEGV_ACCERR)) ||
-	        (event.host_signal == SIGBUS &&
-	         (event.host_code == BUS_ADRERR || event.host_code == BUS_OBJERR))))) ||
+	    !rv32_signal::HelperSiginfo(event,signal,code) ||
 	    (event.access != MemoryFaultEvent::Access::Load &&
 	     event.access != MemoryFaultEvent::Access::Store) ||
 	    (event.eew_bytes != 1 && event.eew_bytes != 2 &&
