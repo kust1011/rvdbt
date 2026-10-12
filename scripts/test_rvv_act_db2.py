@@ -2,6 +2,7 @@
 """Focused host-only rejection controls over db2's original raw predicates."""
 import ast
 import json
+import os
 import shlex
 from pathlib import Path
 import subprocess
@@ -14,7 +15,10 @@ from verify_rvv_act_db2 import original_predicates, validate_raw
 class RawControls(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.predicates=original_predicates((Path(sys.argv_package)/'records/execute109.py').read_text())
+        cls.package = getattr(sys, 'argv_package', None) or os.environ.get('RVV_ACT_DB2_PACKAGE')
+        if not cls.package:
+            raise unittest.SkipTest('set RVV_ACT_DB2_PACKAGE to the extracted ACT db2 archive')
+        cls.predicates=original_predicates((Path(cls.package)/'records/execute109.py').read_text())
 
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
@@ -53,7 +57,7 @@ class RawControls(unittest.TestCase):
         exporter=Path(__file__).with_name('replay_rvv_act_db2.py')
         for case,expected in [('Vls8-vluxei8.v',8),('Vf32-vfmv.f.s',4)]:
             output=self.root/case
-            cmd=[sys.executable,str(exporter),sys.argv_package,'--case',case,'--output',str(output),'--sail','/opt/sail','--qemu','/opt/qemu','--stage','/opt/clean961','--clang','/opt/clang-22']
+            cmd=[sys.executable,str(exporter),self.package,'--case',case,'--output',str(output),'--sail','/opt/sail','--qemu','/opt/qemu','--stage','/opt/clean961','--clang','/opt/clang-22']
             p=subprocess.run(cmd,capture_output=True,text=True)
             self.assertEqual(p.returncode,0,p.stderr)
             self.assertEqual(json.loads(p.stdout)['commands'],expected)
@@ -67,9 +71,11 @@ class RawControls(unittest.TestCase):
                     ast.parse(shell_tokens[i+2])
 
     def test_task104_not_exported(self):
-        cmd=[sys.executable,str(Path(__file__).with_name('replay_rvv_act_db2.py')),sys.argv_package,'--case','Vls32-vluxei32.v','--output',str(self.root/'join'),'--sail','/opt/sail','--qemu','/opt/qemu','--stage','/opt/clean961']
+        cmd=[sys.executable,str(Path(__file__).with_name('replay_rvv_act_db2.py')),self.package,'--case','Vls32-vluxei32.v','--output',str(self.root/'join'),'--sail','/opt/sail','--qemu','/opt/qemu','--stage','/opt/clean961']
         p=subprocess.run(cmd,capture_output=True,text=True)
         self.assertNotEqual(p.returncode,0);self.assertIn('Task104 join',p.stderr)
+
+class EntryControls(unittest.TestCase):
     def test_optimized_import_entry(self):
         code='from pathlib import Path; from verify_rvv_act_db2 import verify; verify(Path("missing"))'
         for opt in ('-O','-OO'):
@@ -78,4 +84,6 @@ class RawControls(unittest.TestCase):
 
 if __name__=='__main__':
     if not __debug__:raise RuntimeError('negative controls require normal Python')
-    sys.argv_package=sys.argv.pop(1);unittest.main()
+    if len(sys.argv)>1 and not sys.argv[1].startswith('-'):
+        sys.argv_package=sys.argv.pop(1)
+    unittest.main()

@@ -291,6 +291,12 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover \
 ```
 
 These checks use synthetic host processes to test failure handling and reporting.
+ACT db2 archive-dependent controls require the extracted public package. Without
+it, discovery reports that class as SKIPPED; the archive-independent entry checks
+still run. To include the archived-predicate controls, set
+`RVV_ACT_DB2_PACKAGE=/path/to/act-db2-inspection` before the command above, or run
+`python3 scripts/test_rvv_act_db2.py /path/to/act-db2-inspection -v`.
+An explicitly supplied invalid package path is an error, not a skip.
 The Jenkins stage runs them before building rvdbt. It does not claim to run the
 external ISA suites: those need registered fixtures, a compatible host, and a
 separately recorded DUT build. No external suite result is inferred from CI being
