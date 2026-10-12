@@ -1,5 +1,10 @@
 # Linux RV32 signal interface increment (Refs #1)
 
+Checked helpers and admitted singleton QCG memory bodies have bounded fault
+handling. The signal-copy correction below is included in the
+[final host512 regression](../host512-task142/README.md). Complete guest
+handler return/restart remains unverified; broad issue #1 is not closed.
+
 ## Task141 checked signal buffers (current bounded correction)
 
 Production correction `ad5e3c8` replaces the raw guest `memcpy` in the common

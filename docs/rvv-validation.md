@@ -8,6 +8,53 @@ The validation has two separate responsibilities: external test programs check
 instruction behavior, while the runner checks that the intended program ran and
 that failures propagate. Passing the runner's unit tests is not ISA coverage.
 
+## Implemented fixes and their regression results
+
+The delivery branch adds checked vector-memory helpers and synchronous fault
+delivery. The following records distinguish complete replay campaigns from
+affected-family regressions; they must not be pooled as one executable's tests.
+
+The current merged memory implementation has two distinct validation records:
+
+| Host width | Executable | Original external results | Scope |
+|---|---|---|---|
+| 512 | `849e6dd0a11e` | 21,316 calls: CHIPS 11,532 positive and 212 controls; ACT 7,668 passes; Ara 1,888 whole-file passes and 16 scoped acceptances | [Complete retained corpus](rvv-validation/host512-task129/README.md), before native fault-exit integration |
+| 512 | `baac2151f634` | 5,904 affected memory calls pass: CHIPS 1,948, ACT 3,828, Ara 128 | [Final memory regression](../SESSION0_RESULT_134.md), after native fault-exit integration; not a full-corpus replay |
+
+Ordinary unit-stride and whole-register singleton QCG bodies now own exact
+guest-memory instruction PCs and emitted fault exits for page-contained
+anonymous-memory user data page faults. Completed load chunks are published
+before subsequent accesses. Crossing or unsupported backing uses checked helpers.
+Grouped QCG and LLVM whole-register bodies use checked fallback, not the singleton
+SIMD recovery contract. Local terminal-state checks and normal-path external
+tests have separate roles; neither establishes guest-handler return/restart.
+See the [ordinary native contract](../SESSION0_RESULT_131.md),
+[checked helper integration](../SESSION0_RESULT_132.md) and
+[whole-register singleton integration](../SESSION0_RESULT_133.md).
+
+The earlier executables in the table below were built with
+`RVV_HOST_CHUNK_BITS=128`. This is the host decomposition width, not guest VLEN.
+Their records remain separate from the 512-bit builds above and from the thesis
+performance executable.
+
+| Executable (SHA256 prefix) | External executions | Checked forms and scope | Records |
+|---|---|---|---|
+| `533443050f4d` | CHIPS: 11,532 positive + 212 failure controls | 595 forms under each of B/M1/M2/Both | [CHIPS](rvv-validation/current-production-task120/README.md) |
+| `533443050f4d` | ACT: 7,668 passing executions | 590 forms per configuration; two original reference-blocked files excluded | [ACT](rvv-validation/current-production-task121/README.md) |
+| `533443050f4d` | Ara: 1,888 complete-file passes + 16 accepted case subsets | 422 forms per configuration; original MAC failures remain failures outside the accepted subset | [Ara](rvv-validation/current-production-task122/README.md) |
+| `8220339e6d74` | CHIPS: 1,948; ACT: 3,828; Ara: 128; all pass | Memory-only regression: 278 forms in CHIPS/ACT, 110 memory forms plus vsetivli setup in Ara | [Checked-copy integration](rvv-validation/production-task125/README.md) |
+| `ed980270b6d6` | Eight retained exit-only signal/control executions pass | Helper delivery and later fault-only-first control, not all-form or restart coverage | [Signal integration](rvv-validation/helper-signal-task126/README.md) |
+
+The checked-copy integration also has a production-linked host test (142 checks).
+The signal integration has 1,792 local interface checks. These local tests verify
+the installed host handler, frame fields and boundary behavior, not additional
+external instruction-form coverage. General native fault-state recovery and
+complete guest-handler return/restart remain open in issue #1.
+
+The full source/checker bindings remain in the per-form navigation below. Each
+campaign guide identifies its executable and original checker; the performance
+results belong to a separate executable and are unchanged by this work.
+
 ## Test suites and checkers
 
 The table describes the accepted campaigns, not everything each upstream suite
@@ -39,8 +86,8 @@ plus 212 controls; ACT 7,668; Ara 1,888 whole-file and 16 scoped calls). It adds
 no coverage to the existing accepted sets. The [Task138 reader](rvv-validation/host512-task138/README.md)
 gives exact public acquisition URLs, hash-checked extraction, source/checker
 navigation and configuration interpretation. Its [Task139 supplement manifest](rvv-validation/host512-task138/TASK139_ARCHIVES.json)
-is **staged, not uploaded**; main owns publication after review. Until that
-asset is published, public retrieval of the final current raw is incomplete.
+is published in the validation release; it contains the final current raw
+receipts and the missing reader dependencies.
 The existing published CHIPS94/ACT db2 and licensed repository Ara91 packages
 are reused; only current outputs and missing reader dependencies are added.
 
