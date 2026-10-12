@@ -1,0 +1,16 @@
+{
+  "artifacts": [
+    {
+      "file": "task129-host512-receipts-20261013.tar.gz",
+      "sha256": "9470eea51229f0035ad06f27d2cf8b038a31fb13c44e4e26cb1f4ee16d1f1e58",
+      "bytes": 57642924,
+      "kind": "actual_Task129_host512_raw_receipts",
+      "new_DUT_calls": 15412
+    }
+  ],
+  "remote_archive": "/home/vick/task129-host512-receipts.tar.gz",
+  "local_archive": "/home/user/research/materials/task129-host512-receipts-20261013.tar.gz",
+  "attempts": 1,
+  "failures": 0,
+  "uncompressed_file_audit": "LOCAL_RAW_AUDIT.json"
+}

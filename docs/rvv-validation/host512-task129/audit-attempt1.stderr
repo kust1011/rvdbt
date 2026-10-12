@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/vick/collect_retained_task129.py", line 66, in <module>
+    assert ok == result['accepted_scope_pass'] and detail == read(d/'observer.json')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

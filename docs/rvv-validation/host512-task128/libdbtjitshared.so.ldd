@@ -1,0 +1,7 @@
+	linux-vdso.so.1 (0x0000743a65d01000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000743a65a00000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000743a65917000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000743a65cb3000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000743a65600000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000743a65d03000)
+undefined symbol: _ZN3dbt5PanicEPKc	(/home/vick/rvdbt-host512-task128/build/lib/libdbtjitshared.so)

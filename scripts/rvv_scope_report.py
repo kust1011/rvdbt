@@ -480,6 +480,9 @@ def act_db2_replay(index, raw, package, prior, output):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--host512-corpus', type=Path, help='offline Task128/129 navigation, or validation docs root with --host512-build')
+    p.add_argument('--host512-build', action='store_true', help='audit and merge exact retained host512 raw receipts')
+    p.add_argument('--suite', choices=('chips','act','ara'))
     p.add_argument('--forms', type=Path)
     p.add_argument('--summary', type=Path)
     p.add_argument('--form')
@@ -500,6 +503,16 @@ def main():
     for label in ('chips', 'act', 'act-db2', 'ara'):
         p.add_argument('--' + label + '-package', type=Path)
     a = p.parse_args()
+    if a.host512_corpus:
+        from rvv_host512_corpus import generate, select
+        if a.host512_build:
+            result = generate(a.host512_corpus,a.output)
+        else:
+            result = select(a.host512_corpus,a.form,a.suite,a.case,a.arm)
+            a.output.mkdir(parents=True,exist_ok=False)
+            (a.output/'record.json').write_text(json.dumps(result,indent=2)+'\n')
+        print(json.dumps(result.get('summary',result)))
+        return
     roots = {k: v for k, v in [('CHIPS', a.chips_package), ('ACT', a.act_package),
                               ('ACT-db2', a.act_db2_package), ('Ara', a.ara_package)] if v}
     if a.navigation:

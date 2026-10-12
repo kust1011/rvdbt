@@ -1,0 +1,14 @@
+# Task128 attempts and failures
+
+No configure, production/focused build, focused test, original pilot, exit-only guest check, or selected queue guest failure occurred. No implementation/guest/checker edit or helper forcing was made.
+
+One supplementary code-dump call, `Vls32-vluxei32.v/B`, returned 1 before guest execution: `Bad options: option '--dump-tbcode' cannot be specified more than once`. The diagnostic adapter added a dump flag to an original command that already had it. Original predicate result is false/RESULT_MISMATCH in the preserved receipt; it must not be counted as a successful diagnostic or as a guest implementation failure. Preserved at `attempts/Vls32-vluxei32.v-duplicate-dump/B/`; launcher/script stderr at `attempts/inspection-extra.attempt1.*`. Correction only conditionally adds a missing exit-time dump option. The corrected diagnostic call and the original unchanged-flags pilot/full-queue calls pass. An apport exception hook also failed because the temporary `inspect.py` filename shadowed Python's inspect module; the audit is now named target-code-audit.py.
+
+Evidence-tool failures (no guest/checker alteration):
+
+* Initial exit-only staging searched the Task126 root rather than its `helper/` subdirectory and raised FileNotFoundError for `inputs`, before launching any call. Staging corrected to the retained helper subtree. All eight original exit-only calls then passed.
+* Initial code-audit slicing found the current PC marker again while looking for the next marker, producing an empty segment and zero opcode counts. It was corrected to search after the marker's first complete line; no native-admission conclusion relies on that preliminary output.
+* Expanded code audit initially ran while supplementary calls were absent/stopped and raised FileNotFoundError for mask tbmap/code. Those stderr/scripts remain in attempts. Original commands were inspected to distinguish optional dumps; the final audit permits absence of tbmap without inventing execution counts (all final selected records do have one).
+* Linear objdump decoding of the indexed target lost instruction alignment across inline data pools and failed to find the target marker. `attempts/inspect.attempt5.stderr` preserves this failure. Final decoding starts at the exact architectural guest-PC MOV byte sequence in retained emitted bytes. The indexed target now resolves to its actual helper call at guest PC8000009c in all four arms; it is never inferred native from aggregate counters.
+
+Local host-copy fixtures intentionally produce fatal unrelated-host-fault children and assert SIGABRT, as in the original fixtures. Their Panic stderr remains; these are expected negative controls, not hidden test failures. No new fault fixture, guest handler return, same-PC retry or mapping repair was introduced.
