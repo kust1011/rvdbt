@@ -1,0 +1,285 @@
+{
+  "initial_bytes": "00112233445566778899aabbccddeeff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "final_bytes": "008877665544338877665544332211ff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "stores": [
+    {
+      "line": 142,
+      "original": "sh\tt6, 1(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "8877",
+      "offset": 1,
+      "buffer_sha256": "6303ca4b9c41cbc0582a18be459531ec5d3e9a8a7a2a86da2df0f372839473ff"
+    },
+    {
+      "line": 148,
+      "original": "sw\tt6, 1(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "88776655",
+      "offset": 1,
+      "buffer_sha256": "cf3d9522e725cf8570dd78a243565d90861f541d828ea61901c40d179268bbcc"
+    },
+    {
+      "line": 155,
+      "original": "sw\tt6, 3(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "88776655",
+      "offset": 3,
+      "buffer_sha256": "da7d7d137537e5a105559c436209cb5aa36e38ea63ee7ea6c5bdcad0434c3cc6"
+    },
+    {
+      "line": 163,
+      "original": "sd\tt6, 1(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "8877665544332211",
+      "offset": 1,
+      "buffer_sha256": "a5c10862187358badca08f9eeb7f25e17bc0202f83248baf9387e244faf53232"
+    },
+    {
+      "line": 174,
+      "original": "sd\tt6, 7(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "8877665544332211",
+      "offset": 7,
+      "buffer_sha256": "13fd12a72ac5e503b0edeff2270b423187a4ac387e64139fd1571cf3bb2e9bbd"
+    },
+    {
+      "line": 212,
+      "original": "fsh\tfa0, 1(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "8877",
+      "offset": 1,
+      "buffer_sha256": "13fd12a72ac5e503b0edeff2270b423187a4ac387e64139fd1571cf3bb2e9bbd"
+    },
+    {
+      "line": 216,
+      "original": "fsw\tfa0, 1(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "88776655",
+      "offset": 1,
+      "buffer_sha256": "13fd12a72ac5e503b0edeff2270b423187a4ac387e64139fd1571cf3bb2e9bbd"
+    },
+    {
+      "line": 219,
+      "original": "fsw\tfa0, 3(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "88776655",
+      "offset": 3,
+      "buffer_sha256": "c9cc75699668eeafbeb034725af67e655e2ccb534d3ce88c98652617db303498"
+    },
+    {
+      "line": 223,
+      "original": "fsd\tfa0, 1(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "8877665544332211",
+      "offset": 1,
+      "buffer_sha256": "e6eeb3ea979164ae5321a5d0b581a3140ed2406a07bbd49f121ac36570e30a70"
+    },
+    {
+      "line": 226,
+      "original": "fsd\tfa0, 7(s4)",
+      "full_source_bits": "0x1122334455667788",
+      "bytes_written": "8877665544332211",
+      "offset": 7,
+      "buffer_sha256": "13fd12a72ac5e503b0edeff2270b423187a4ac387e64139fd1571cf3bb2e9bbd"
+    }
+  ],
+  "excluded_scalar_checks_static_proof": [
+    {
+      "line": 105,
+      "kind": "scalar-value-static-proof",
+      "value": "0x2211"
+    },
+    {
+      "line": 109,
+      "kind": "scalar-value-static-proof",
+      "value": "0x2211"
+    },
+    {
+      "line": 114,
+      "kind": "scalar-value-static-proof",
+      "value": "0x44332211"
+    },
+    {
+      "line": 118,
+      "kind": "scalar-value-static-proof",
+      "value": "0x66554433"
+    },
+    {
+      "line": 122,
+      "kind": "scalar-value-static-proof",
+      "value": "0x44332211"
+    },
+    {
+      "line": 127,
+      "kind": "scalar-value-static-proof",
+      "value": "0x8877665544332211"
+    },
+    {
+      "line": 131,
+      "kind": "scalar-value-static-proof",
+      "value": "0xaa99887766554433"
+    },
+    {
+      "line": 135,
+      "kind": "scalar-value-static-proof",
+      "value": "0xeeddccbbaa998877"
+    },
+    {
+      "line": 144,
+      "kind": "scalar-byte-static-proof",
+      "offset": 1,
+      "value": 136
+    },
+    {
+      "line": 145,
+      "kind": "scalar-byte-static-proof",
+      "offset": 2,
+      "value": 119
+    },
+    {
+      "line": 150,
+      "kind": "scalar-byte-static-proof",
+      "offset": 1,
+      "value": 136
+    },
+    {
+      "line": 151,
+      "kind": "scalar-byte-static-proof",
+      "offset": 2,
+      "value": 119
+    },
+    {
+      "line": 152,
+      "kind": "scalar-byte-static-proof",
+      "offset": 3,
+      "value": 102
+    },
+    {
+      "line": 153,
+      "kind": "scalar-byte-static-proof",
+      "offset": 4,
+      "value": 85
+    },
+    {
+      "line": 157,
+      "kind": "scalar-byte-static-proof",
+      "offset": 3,
+      "value": 136
+    },
+    {
+      "line": 158,
+      "kind": "scalar-byte-static-proof",
+      "offset": 4,
+      "value": 119
+    },
+    {
+      "line": 159,
+      "kind": "scalar-byte-static-proof",
+      "offset": 5,
+      "value": 102
+    },
+    {
+      "line": 160,
+      "kind": "scalar-byte-static-proof",
+      "offset": 6,
+      "value": 85
+    },
+    {
+      "line": 165,
+      "kind": "scalar-byte-static-proof",
+      "offset": 1,
+      "value": 136
+    },
+    {
+      "line": 166,
+      "kind": "scalar-byte-static-proof",
+      "offset": 2,
+      "value": 119
+    },
+    {
+      "line": 167,
+      "kind": "scalar-byte-static-proof",
+      "offset": 3,
+      "value": 102
+    },
+    {
+      "line": 168,
+      "kind": "scalar-byte-static-proof",
+      "offset": 4,
+      "value": 85
+    },
+    {
+      "line": 169,
+      "kind": "scalar-byte-static-proof",
+      "offset": 5,
+      "value": 68
+    },
+    {
+      "line": 170,
+      "kind": "scalar-byte-static-proof",
+      "offset": 6,
+      "value": 51
+    },
+    {
+      "line": 171,
+      "kind": "scalar-byte-static-proof",
+      "offset": 7,
+      "value": 34
+    },
+    {
+      "line": 172,
+      "kind": "scalar-byte-static-proof",
+      "offset": 8,
+      "value": 17
+    },
+    {
+      "line": 176,
+      "kind": "scalar-byte-static-proof",
+      "offset": 7,
+      "value": 136
+    },
+    {
+      "line": 177,
+      "kind": "scalar-byte-static-proof",
+      "offset": 8,
+      "value": 119
+    },
+    {
+      "line": 178,
+      "kind": "scalar-byte-static-proof",
+      "offset": 9,
+      "value": 102
+    },
+    {
+      "line": 179,
+      "kind": "scalar-byte-static-proof",
+      "offset": 10,
+      "value": 85
+    },
+    {
+      "line": 180,
+      "kind": "scalar-byte-static-proof",
+      "offset": 11,
+      "value": 68
+    },
+    {
+      "line": 181,
+      "kind": "scalar-byte-static-proof",
+      "offset": 12,
+      "value": 51
+    },
+    {
+      "line": 182,
+      "kind": "scalar-byte-static-proof",
+      "offset": 13,
+      "value": 34
+    },
+    {
+      "line": 183,
+      "kind": "scalar-byte-static-proof",
+      "offset": 14,
+      "value": 17
+    }
+  ],
+  "meaning": "static dependency proof, no scalar execution/PASS claim; full64 values retained; each original scalar store replayed in order as byte writes; no concurrency/MMIO in aligned private buf"
+}

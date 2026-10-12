@@ -1,0 +1,113 @@
+{
+  "original_scalar_vector_body_literal": true,
+  "original_macros_literal": true,
+  "original_unused_trap_handler_literal": true,
+  "RV64_Zfh_vector_disassembly_present": true,
+  "Task106_retained_raw_checks": [
+    {
+      "arm": "QEMU",
+      "receipt_bytes": 52,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "stdout_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "B",
+      "receipt_bytes": 52,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "stdout_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "M1",
+      "receipt_bytes": 52,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "stdout_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "M2",
+      "receipt_bytes": 52,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "stdout_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "BOTH",
+      "receipt_bytes": 52,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "stdout_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    }
+  ],
+  "qemu64_PATH": null,
+  "Task107_reference_calls": 0,
+  "Task107_DUT_calls": 0,
+  "tool_execution_path_limit": "build and unavailable-executable branch exercised; actual Zfh/reference branches remain unexecuted",
+  "tool_sha256": "168613606fa8ebdeb64e3e991c16675871a25654fa037dc037ef46b8b77c2c9c"
+}

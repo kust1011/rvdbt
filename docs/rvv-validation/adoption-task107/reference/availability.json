@@ -1,0 +1,5 @@
+{
+  "qemu": "/home/vick/rvv_qemu_compare_20260930/bin/qemu-riscv64",
+  "executable_present": false,
+  "Zfh_actual_execution": "UNOBSERVED: RV64 executable absent"
+}

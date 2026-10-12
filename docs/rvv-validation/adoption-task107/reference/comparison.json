@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED_REFERENCE_UNAVAILABLE",
+  "captured_bytes": 0,
+  "equal": null,
+  "mismatches": null,
+  "reference_calls": 0,
+  "DUT_calls": 0,
+  "reason": "Requested existing qemu-riscv64 executable absent; Zfh actual availability cannot be checked. Static Task106 proof retained, not replaced."
+}

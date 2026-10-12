@@ -1,0 +1,15 @@
+[
+  "/usr/bin/clang-22",
+  "--target=riscv64-unknown-elf",
+  "-fuse-ld=lld",
+  "-march=rv64gv_zfh",
+  "-mabi=lp64d",
+  "-mno-relax",
+  "-ffreestanding",
+  "-nostdlib",
+  "-static",
+  "-Wl,-T,/home/vick/rvv-task107/reference-precondition-final/link.ld",
+  "/home/vick/rvv-task107/reference-precondition-final/reference.S",
+  "-o",
+  "/home/vick/rvv-task107/reference-precondition-final/reference.elf"
+]

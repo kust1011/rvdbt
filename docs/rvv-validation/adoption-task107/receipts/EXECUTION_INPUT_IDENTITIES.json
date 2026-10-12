@@ -1,0 +1,15 @@
+{
+  "/home/vick/rvv-task102/build/vector-sum.elf": "896ece451c375f899b7dfcae3d62c4859876e7fec162baa06b75549420da053f",
+  "/home/vick/rvv-task102/source/spike/ci-tests/vector-sum.c": "5abcd86d83bf6dd841018d33aaef7303c199688db9706b9d622a7d96f3272f7c",
+  "/home/vick/rvv-task102/source/spike/ci-tests/test-spike": "081ce396af8413a8e6961ca7bc43300df2eaf99669bf4822998784b84364c250",
+  "/home/vick/rvv-task102/start.S": "180303ce923b8d8a6b8387fa93ee00c51a5e793c7f5b70a83939085ab7dbb51e",
+  "/home/vick/rvv-task102/transport.c": "a9ee1f1618f1e393c497f7d8cf6e24e07f11246bcb8c1ec8bd7220227e26321b",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/printf.c": "49519dd108a3be44536f061f6103aaae08f6412a9b66c49a82fdbc9db9be488d",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/printf.h": "2240800e971a8dde5647bea4ea69ad962f2398252eab82814bb2d1f4a3a8f1cf",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/ara-vredsum/link.ld": "671d4a06b5298dc776ad61cee92acf0f249e35262d87fa039ec4033950720c71",
+  "/home/vick/rvv-portable88-20261012/repo/scripts/rvv/fixtures/external-flags.json": "b6a8e0ba8fce2f70668b14c8d7bfa1194908249f21415fc1e2289bbef9dd802c",
+  "/home/vick/rvv-portable88-20261012/build/bin/elfrun": "9bb171b61e1f8f75b1b2779fdf368fb9fa53613546659bc1403b6744ccb31d43",
+  "/home/vick/rvv-portable88-20261012/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+  "/home/vick/rvv-portable88-20261012/spike-install/bin/spike": "f29340b6e14ee1f11bf3023e5ec808ab1a146cf4620bfb208f288d4d82aa348b",
+  "/home/vick/rvv-portable88-20261012/pk-build3/pk": "f9943c86f30af27adcbd402a969f56ec2c97ad404c2d70267a648c79d2c409ab"
+}

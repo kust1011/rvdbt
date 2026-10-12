@@ -70,3 +70,10 @@ python3 scripts/verify_rvv_external_elf.py --elf /path/to/new-replay/guests/rvvt
   --nm llvm-nm-22 --output /path/to/new-replay/elf-verification.json
 python3 scripts/audit_rvv_external_admission.py --results /path/to/new-replay --source .
 ```
+
+The [Tasks103–106 scoped adoption record](adoption-task107/README.md) provides
+exact original source/checker/adapter and raw-result access for the Spike endpoint,
+ACT original215 targets, Sail legal group no-trap and QEMU13 extracted no-trap
+checks. Their task-local drivers and engine identities remain separate from this
+two-fixture portable replay. Task107's RV64/Zfh extraction precondition reference
+is blocked by an unavailable RV64 executable; its static proof remains explicit.

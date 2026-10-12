@@ -1,0 +1,57 @@
+{
+  "actual_calls": 5,
+  "reference_calls": 1,
+  "DUT_calls": 4,
+  "subset_targets": 13,
+  "reference_assertions": 13,
+  "DUT_assertions": 52,
+  "rows": [
+    {
+      "arm": "QEMU",
+      "returncode": 0,
+      "timeout": false,
+      "targets": 13,
+      "original_assertions_executed": 13,
+      "original_assertions_passed": 13,
+      "receipt_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "B",
+      "returncode": 0,
+      "timeout": false,
+      "targets": 13,
+      "original_assertions_executed": 13,
+      "original_assertions_passed": 13,
+      "receipt_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "M1",
+      "returncode": 0,
+      "timeout": false,
+      "targets": 13,
+      "original_assertions_executed": 13,
+      "original_assertions_passed": 13,
+      "receipt_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "M2",
+      "returncode": 0,
+      "timeout": false,
+      "targets": 13,
+      "original_assertions_executed": 13,
+      "original_assertions_passed": 13,
+      "receipt_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    },
+    {
+      "arm": "BOTH",
+      "returncode": 0,
+      "timeout": false,
+      "targets": 13,
+      "original_assertions_executed": 13,
+      "original_assertions_passed": 13,
+      "receipt_sha256": "df6ea5b59f0e6c03f390ad5fea0bbc199ec3524c0a682913148fd071af1898ec"
+    }
+  ],
+  "whole_file_PASS": false,
+  "vector_byte_checks": 0
+}

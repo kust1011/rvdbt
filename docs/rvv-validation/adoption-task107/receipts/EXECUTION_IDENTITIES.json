@@ -1,0 +1,8 @@
+{
+  "/home/vick/rvv-task106/build/zicclsm.elf": "fd3c31cd95a763fe363a3bff7ef60bfb48d5c5e6790886652186acedd7be256d",
+  "/home/vick/rvv_qemu_compare_20260930/bin/qemu-riscv32": "fc69c3332977459ee844d5e25f3386f7bff1061e4ff4adf0343f864571d13fa9",
+  "/home/vick/ara-clean961-stage/elfrun": "6fda0f9ab06c2c824b5301d1f302b76799842981b00a88fffa85fe43f1dbd84f",
+  "/home/vick/ara-clean961-stage/libdbtjitshared.so": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d",
+  "/home/vick/rvv-task106/adapter/zicclsm-enabled-rvv.S": "c48bb4dd907341bacd0b5f958651ed413f4225c698c725fee742ce3740310037",
+  "/home/vick/rvv-task106/adapter/link.ld": "671d4a06b5298dc776ad61cee92acf0f249e35262d87fa039ec4033950720c71"
+}

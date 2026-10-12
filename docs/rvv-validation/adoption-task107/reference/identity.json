@@ -1,0 +1,9 @@
+{
+  "source_sha256": "e98938129b9c3b69e3bb1e1e3f6f9aef2c6ad081a41268cbc1bc42e17a69f791",
+  "proof_sha256": "e627b9e5ea1b8e4478d361de70b2e7bbe892349131b9b5711dbde2fb139ffece",
+  "adapter_sha256": "eae600a679a2707d90229ac44dc67cf18cbbc9912a95610fc4f5a3471e6923fe",
+  "elf_sha256": "040f537480eef32303118a99c96a0bdd71c83edc2b0ef9546c4ff6e461d25b9a",
+  "qemu_sha256": null,
+  "compiler_sha256": "271764e9b47729e011b19740b79022842f1158dcfea1ff29336968738c909551",
+  "original_body_literal_preserved": true
+}
