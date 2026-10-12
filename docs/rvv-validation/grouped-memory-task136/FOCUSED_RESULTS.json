@@ -1,0 +1,239 @@
+[
+  {
+    "name": "baseline",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_grouped_memory_fault_test",
+      "--baseline-trace"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "EMISSION id=36 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=37 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=37 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "ADMISSION id=38 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=38 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=39 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=39 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "GROUPED_MEMORY_PASS checks=123 terminal_cells=0 trace_only=1 restart_NOT_verified"
+    ]
+  },
+  {
+    "name": "normal",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_grouped_memory_fault_test",
+      "--normal-only"
+    ],
+    "rc": 2,
+    "last_stdout_lines": [
+      "ADMISSION id=36 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=36 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=37 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=37 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "ADMISSION id=38 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=38 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=39 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=39 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0"
+    ]
+  },
+  {
+    "name": "normal-final",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_grouped_memory_fault_test",
+      "--normal-only"
+    ],
+    "rc": 2,
+    "last_stdout_lines": [
+      "ADMISSION id=36 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=36 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=37 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=37 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "ADMISSION id=38 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=38 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=39 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=39 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0"
+    ]
+  },
+  {
+    "name": "normal-diagnose",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_grouped_memory_fault_test",
+      "--normal-only"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "EMISSION id=38 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=39 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=39 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "LEGACY_STATE whole=0 fallbacks=1 prior=0 ip=8000123c",
+      "LEGACY_GROUP whole=0 component_major=1 annotation_ignored=1 checked=1",
+      "LEGACY_STATE whole=1 fallbacks=2 prior=1 ip=8000123c",
+      "LEGACY_GROUP whole=1 component_major=1 annotation_ignored=1 checked=1",
+      "GROUPED_MEMORY_PASS checks=585 terminal_cells=0 trace_only=0 restart_NOT_verified"
+    ]
+  },
+  {
+    "name": "normal-pinned-final",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_grouped_memory_fault_test",
+      "--normal-only"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "EMISSION id=38 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=39 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=39 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "LEGACY_STATE whole=0 fallbacks=1 prior=0 ip=8000123c",
+      "LEGACY_GROUP whole=0 component_major=1 annotation_ignored=1 checked=1",
+      "LEGACY_STATE whole=1 fallbacks=2 prior=1 ip=8000123c",
+      "LEGACY_GROUP whole=1 component_major=1 annotation_ignored=1 checked=1",
+      "GROUPED_MEMORY_PASS checks=585 terminal_cells=0 trace_only=0 restart_NOT_verified"
+    ]
+  },
+  {
+    "name": "terminal",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_grouped_memory_fault_test",
+      "--terminal"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "EMISSION id=6 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=7 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=7 compute_groups=2 singletons=2 memory_groups=0 sites=4 pins=0",
+      "ADMISSION id=8 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=8 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "ADMISSION id=9 members=2 has_mem=0 cut=vector_memory end=80001240 ops=add@80001238,xor@8000123c",
+      "EMISSION id=9 compute_groups=2 singletons=1 memory_groups=0 sites=2 pins=0",
+      "GROUPED_MEMORY_PASS checks=103 terminal_cells=10 trace_only=0 restart_NOT_verified"
+    ]
+  },
+  {
+    "name": "scalar-normal",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_scalar_native_fault_test",
+      "--normal-only"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "SCALAR_NATIVE_PASS checks=1919 terminal_cells=0 ABI=a89957277993e0d9 restart_NOT_verified"
+    ]
+  },
+  {
+    "name": "whole-normal",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rv32_whole_native_fault_test",
+      "--normal-only"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "WHOLE_NATIVE_PASS checks=13330 terminal_cells=0 restart_NOT_verified"
+    ]
+  },
+  {
+    "name": "admission",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rvv_vector_run_admission_test"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "    ok  move forms                                    vlen=512  4 members in both arms",
+      "    ok  move forms                                    vlen=1024 4 members in both arms",
+      "    ok  vmul.vx + vmacc.vx                            vlen=512  2 members in both arms",
+      "    ok  vmul.vx + vmacc.vx                            vlen=1024 2 members in both arms",
+      "    ok  whole-register load/store around a .vx multiply vlen=512  0 members in both arms",
+      "    ok  whole-register load/store around a .vx multiply vlen=1024 0 members in both arms",
+      "",
+      "ALL CHECKS PASSED"
+    ]
+  },
+  {
+    "name": "codegen",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rvv_vector_run_codegen_test"
+    ],
+    "rc": 1,
+    "last_stdout_lines": [
+      "    ok  two-chain2  vlen=1024  k=2 m=2  alu=2/chunk  multiset= chains= guard= fallback=  order member-major != chunk-major",
+      "[P6C-5] extended member kinds: same frame, same body histogram, same state accesses, same emitted multiset",
+      "    ok  moves    vlen=512   k=1 m=5  qir=9   typed=9   insns=74   byte-identical (k=1 control)",
+      "    ok  fp       vlen=512   k=1 m=3  qir=10  typed=10  insns=190  byte-identical (k=1 control)",
+      "    ok  moves    vlen=1024  k=2 m=5  qir=15  typed=15  insns=80   identical multiset",
+      "    ok  fp       vlen=1024  k=2 m=3  qir=18  typed=18  insns=281  identical multiset",
+      "[P6C-4] the issue-order switch defaults to the accepted member-major body",
+      "    ok  default == explicit member-major at both widths, all six shapes"
+    ]
+  },
+  {
+    "name": "codegen-focused",
+    "command": [
+      "taskset",
+      "-c",
+      "28",
+      "timeout",
+      "60",
+      "/home/vick/rvdbt-grouped-memory-task136/build/bin/rvv_vector_run_codegen_test",
+      "--memory-boundaries"
+    ],
+    "rc": 0,
+    "last_stdout_lines": [
+      "R1A.3b QCG vector-run codegen and correctness + R1A.3d three-arm ablation",
+      "[P6C-1] the issue-order selector never reaches admission",
+      "    ok  72 ordered pairs x VLEN + 6 extended-family cases x VLEN: descriptor, member list, scan stats and cut vector identical in both orders",
+      "[P6C-5] extended member kinds: same frame, same body histogram, same state accesses, same emitted multiset",
+      "    ok  moves    vlen=512   k=1 m=5  qir=9   typed=9   insns=74   byte-identical (k=1 control)",
+      "    ok  fp       vlen=512   k=1 m=3  qir=10  typed=10  insns=190  byte-identical (k=1 control)",
+      "    ok  moves    vlen=1024  k=2 m=5  qir=15  typed=15  insns=80   identical multiset",
+      "    ok  fp       vlen=1024  k=2 m=3  qir=18  typed=18  insns=281  identical multiset"
+    ]
+  }
+]
