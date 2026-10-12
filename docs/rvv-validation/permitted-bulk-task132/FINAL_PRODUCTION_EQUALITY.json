@@ -1,0 +1,8 @@
+{
+  "after_comment_and_test_label_build": true,
+  "differences": [],
+  "production": {
+    "build/bin/elfrun": "d5e2c44470fef9c31090b2e880716ca690b68bd10147dea1ecf6491d45c62367",
+    "build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  }
+}

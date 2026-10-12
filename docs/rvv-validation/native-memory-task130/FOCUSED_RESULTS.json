@@ -1,0 +1,26 @@
+{
+  "rv32_native_memory_site_test": {
+    "rc": 0,
+    "last_stdout_line": "LOCAL_NATIVE_MEMORY_SITE_PASS checks=5581 cells=16 ABI=ce212ddc4742de49 (inspection and publication only)",
+    "stdout_sha256": "4404f3592c98c63b30924f2c9c2e9e54feb5b4dab2ce0fbe7bc741062015edac",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vle32v_typedchunk_route_test": {
+    "rc": 0,
+    "last_stdout_line": "PASS",
+    "stdout_sha256": "2beefac5f383a10ee8d568d27eb5adddd75c94876d46ebf8a1091062ab3039b6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vse32v_typedchunk_route_test": {
+    "rc": 0,
+    "last_stdout_line": "PASS",
+    "stdout_sha256": "2ce69cfb0d36685bd91301b55328c239bd14c0de9457b93b3e91c2f557142ecb",
+    "stderr_sha256": "bb39a038088ec70afefa494a4dd3768d8171df35957a2b84b64264ba8c1d4f4e"
+  },
+  "rv32_unit_memory_fault_test": {
+    "rc": 0,
+    "last_stdout_line": "LOCAL_UNIT_MEMORY_PASS checks=9562 cells=1248 ABI=ce212ddc4742de49 (no guest retry)",
+    "stdout_sha256": "4f58862cc366f6f91891ff133a634ee03085c5fa8a918c1d0569746dadcea716",
+    "stderr_sha256": "6a1d18f132d49934b243c541c5c01f8052b250a18853468f581f3fac5a4872af"
+  }
+}

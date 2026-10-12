@@ -1,0 +1,59 @@
+{
+  "rv32_permitted_bulk_fault_test": {
+    "rc": 0,
+    "stdout": "concatenated first/resume captures; separate original streams retained",
+    "stderr": "rv32_permitted_bulk_fault_test.stderr",
+    "last_line": "PERMITTED_BULK_PASS checks=1507 cells=133 no_guest_delivery_or_retry",
+    "first_batch_captured": 135,
+    "resumed_skip": 135,
+    "second_batch_bulk_captured": 131,
+    "fof_checks": 2,
+    "first_batch_rc": 2,
+    "cause": "next short whole transfer ended before denied page; completed normally; fixture boundary corrected, captured cells not repeated",
+    "post_capture_refinement": "page-contained file assertion and separate admission-only mode added; only the latter executed afterward; no terminal cell repeated"
+  },
+  "rv32_native_memory_fault_test": {
+    "rc": 0,
+    "stdout": "rv32_native_memory_fault_test.stdout",
+    "stderr": "rv32_native_memory_fault_test.stderr",
+    "last_line": "LOCAL_NATIVE_DISPATCH_PASS checks=6142 cells=40 ABI=a89957277993e0d9 (terminal inspection only, restart NOT verified)"
+  },
+  "rv32_unit_memory_fault_test": {
+    "rc": 0,
+    "stdout": "rv32_unit_memory_fault_test.stdout",
+    "stderr": "rv32_unit_memory_fault_test.stderr",
+    "last_line": "LOCAL_UNIT_MEMORY_PASS checks=9562 cells=1248 ABI=a89957277993e0d9 (no guest retry)"
+  },
+  "rv32_special_memory_fault_test": {
+    "rc": 0,
+    "stdout": "rv32_special_memory_fault_test.stdout",
+    "stderr": "rv32_special_memory_fault_test.stderr",
+    "last_line": "LOCAL_SPECIAL_MEMORY_PASS checks=254648 cells=26290 ABI=a89957277993e0d9 impl=42720 state=42720 fpu=42296 (no guest retry)"
+  },
+  "rv32_llvm_memory_admission_test": {
+    "rc": 0,
+    "stdout": "rv32_llvm_memory_admission_test.stdout",
+    "stderr": "rv32_llvm_memory_admission_test.stderr",
+    "last_line": "LLVM_EXECUTE_PASS native=8 denied=4 forced_fallback=4 checks=292 (no guest retry)",
+    "label_note": "native=8 in original execution stream counts normal completions; all whole native hits assert zero. Later output-only source label is normal=8; no additional execution."
+  },
+  "vle32v_typedchunk_route_test": {
+    "rc": 0,
+    "stdout": "vle32v_typedchunk_route_test.stdout",
+    "stderr": "vle32v_typedchunk_route_test.stderr",
+    "last_line": "PASS"
+  },
+  "vse32v_typedchunk_route_test": {
+    "rc": 0,
+    "stdout": "vse32v_typedchunk_route_test.stdout",
+    "stderr": "vse32v_typedchunk_route_test.stderr",
+    "last_line": "PASS"
+  },
+  "admission_only": {
+    "rc": 0,
+    "guest_accesses": 0,
+    "checks": 8,
+    "stdout": "admission.stdout",
+    "actual_checks": "page-contained permitted regular file refused; anonymous fixed replacement admitted; unmap clears bitmap"
+  }
+}

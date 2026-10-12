@@ -1,0 +1,12 @@
+{
+  "unchanged_original_calls": 9,
+  "whole_file_pass": 9,
+  "reference_calls": 0,
+  "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+  "input_differences": [],
+  "final_production_equal": true,
+  "production": {
+    "build/bin/elfrun": "d5e2c44470fef9c31090b2e880716ca690b68bd10147dea1ecf6491d45c62367",
+    "build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  }
+}

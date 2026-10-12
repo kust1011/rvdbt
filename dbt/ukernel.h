@@ -24,7 +24,7 @@ struct uthread;
 // Value-only metadata, owned by uthread, never stored in the baked CPUState ABI.
 // Queueing returns normally so helper-owned scopes end before the trap unwind.
 struct MemoryFaultEvent {
-	enum class Origin : u32 { PredictedHelper, HostCopy };
+	enum class Origin : u32 { PredictedHelper, HostCopy, NativeUnit };
 	enum class Access : u32 { Load, Store };
 	enum class Reason : u32 { Unmapped, Protection, HostFault };
 	Origin origin{Origin::PredictedHelper};

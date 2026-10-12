@@ -1,0 +1,10 @@
+{
+  "terminal_bulk_cells": 266,
+  "actual_sigbus": 133,
+  "actual_sigsegv": 133,
+  "complete_active_register_files_checked": 266,
+  "full_accessible_memory_checked": 266,
+  "guest_executions": 0,
+  "differences": [],
+  "stdout_sha256": "e451ce6c244912ddc4b6a9e37e24d5314529da8df6e0754d3ad673fbe69e29f6"
+}

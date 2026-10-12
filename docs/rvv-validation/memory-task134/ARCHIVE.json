@@ -1,0 +1,11 @@
+{
+  "remote": "xbd:/home/vick/task134-memory-receipts.tar.gz",
+  "local": "/home/user/research/materials/task134-memory-receipts-20261013.tar.gz",
+  "sha256": "20a2e39f9f57dcc70ca313ac514cf244db132eca522fb411d821dfdfe0116474",
+  "bytes": 443761279,
+  "authenticated_manifest_files": 45433,
+  "excluded_generated_paths": ["*/work/cache", "*/observers"],
+  "original_observers_retained_at": "/home/vick/ara-current122/observers",
+  "raw_root": "xbd:/home/vick/rvdbt-memory-validation-task134",
+  "verified_local_extraction": "/home/user/research/materials/task134-memory-raw-20261013"
+}

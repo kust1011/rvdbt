@@ -51,12 +51,12 @@ int main()
  llvm::InitializeNativeTarget(); llvm::InitializeNativeTargetAsmPrinter();
  mmu::Init(); ukernel::process.main_thread = std::make_unique<uthread>();
  auto *s = CPUState::Current();
- unsigned native_count=0, denied_count=0, restart_count=0;
+ unsigned normal_count=0, denied_count=0, restart_count=0;
  for (u32 vlen : {512u,1024u}) for (bool store : {false,true}) {
   Configure(vlen); config::rvv_vector_ssa_counters=true;
   prior_reg=store?8:12; bytes=vlen/8;
   target_raw=store?VsNr(1,10,8):VlNre(1,kW32,10,8);
-  // A native whole load, scalar base update, then the target memory instruction.
+  // A checked whole load, scalar base update, then the target memory instruction.
   Built b({VlNre(1,kW32,11,prior_reg), (64u<<20)|(10u<<15)|(10u<<7)|0x13u,
            target_raw,kJalr});
   Translate(b,true);
@@ -121,7 +121,7 @@ int main()
    safe_calls=fallback_calls=0; s->rvv_direct_hits=s->rvv_direct_fallbacks=0;
    if(sigsetjmp(trap_unwind_env,0)==0)code(s,mmu::base);
    check(safe_calls==1,"one target admission call");
-   check(fallback_calls==(mode==1||mode==3),"executed target fallback count");
+   check(fallback_calls==1,"executed target fallback count");
    check(s->vec.vreg==expected.vreg,"complete vector state after native/fallback/fault");
    check(s->gpr[10]==latest_base,"updated scalar remains architectural");
    if(mode==1) {
@@ -132,9 +132,9 @@ int main()
     auto snap=ukernel::CaptureHelperMemoryFault(s);
     check(snap.vreg==expected.vreg && snap.pc==8 && snap.csrs[3]==ev.element,"fault snapshot once");
     ++denied_count;
-   } else {check(!s->GetUThread()->memory_fault_pending,"normal completion"); if(mode==3)++restart_count;else ++native_count;}
-   check(s->rvv_direct_hits==(mode==1||mode==3?1:2),"actual LLVM native hit counter");
-   check(s->rvv_direct_fallbacks==(mode==1||mode==3?1:0),"actual LLVM fallback counter");
+   } else {check(!s->GetUThread()->memory_fault_pending,"normal completion"); if(mode==3)++restart_count;else ++normal_count;}
+   check(s->rvv_direct_hits==0,"actual LLVM native hit counter");
+   check(s->rvv_direct_fallbacks==2,"actual LLVM fallback counter");
    check(s->vec.vtype==dbt::rv32::VTYPE_VILL_BIT && s->vec.vl==0,"whole independent geometry");
    // Read-only inspection cleanup, after execution ended; never reenter this state.
    mmu::mprotect(data,8192,PROT_READ|PROT_WRITE);
@@ -144,5 +144,5 @@ int main()
   }
   delete engine;
  }
- printf("LLVM_EXECUTE_PASS native=%u denied=%u forced_fallback=%u checks=%u (no guest retry)\n",native_count,denied_count,restart_count,checks);
+ printf("LLVM_EXECUTE_PASS normal=%u denied=%u forced_fallback=%u checks=%u (no guest retry)\n",normal_count,denied_count,restart_count,checks);
 }

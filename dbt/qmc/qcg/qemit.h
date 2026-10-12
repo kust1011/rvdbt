@@ -95,6 +95,12 @@ private:
 	bool EmitRvvStridedGather(qir::InstVMemory *ins, asmjit::Label const &done);
 	void EmitRvvGatherCensus(unsigned long long *counter); // Z4B; no-op unless the switch is on
 	void EmitCloseRvvFpBracket();
+	void NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
+                           u8 active_sew, bool store);
+	u32 native_memory_pc{qir::RVVRunMember::PC_UNUSED}, native_memory_raw{};
+	std::vector<NativeMemorySite> native_memory_sites;
+	asmjit::Label native_memory_cold;
+	size_t native_memory_frame_sites{};
 	void EmitRvvFpLaneMask(u32 lanes, u32 element_base);
 	void EmitRvvRunScalarRaw(u32 raw, bool count_body_op);
 

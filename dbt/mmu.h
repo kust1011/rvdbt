@@ -40,6 +40,9 @@ struct mmu {
 	static bool EnableDetailedMetadata();
 	static bool DetailedMetadataEnabled();
 	static bool QueryPage(u32 gaddr, PageInfo &out);
+	// Native singleton page-fault ownership excludes truncatable file backing.
+	static bool page_native_copy_ram(u32 address) { return native_copy_ram_pages[address >> PAGE_BITS]; }
+	static bool page_ordinary_ram(u32 address) { return ordinary_ram_pages[address >> PAGE_BITS]; }
 	static u64 MappingEpoch();
 	// Signal marshalling never wraps an RV32 pointer and never treats guest NULL as base.
 	static bool CheckedRange(u32 address, u32 length, int permission);
@@ -160,7 +163,8 @@ private:
 	static std::bitset<(ASPACE_SIZE >> PAGE_BITS)> used_pages;
 	// Separate from used_pages, which is the allocator's and whose length convention is
 	// broken (see mmu.cpp). This one is accurate and is read by FOF.
-	static std::bitset<(ASPACE_SIZE >> PAGE_BITS)> mapped_pages;
+	static std::bitset<(ASPACE_SIZE >> PAGE_BITS)> mapped_pages, ordinary_ram_pages, native_copy_ram_pages;
+	static void MarkOrdinaryRam(u32 page, u32 count, int flags, int fd);
 	// The subset of mapped_pages the guest may READ. See page_readable() above for why it is a
 	// bitset of its own rather than a lookup into the optional page_details table.
 	static std::bitset<(ASPACE_SIZE >> PAGE_BITS)> readable_pages;

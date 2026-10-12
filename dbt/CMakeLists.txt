@@ -31,6 +31,7 @@ add_library(dbtstatic STATIC
 	ccrf_materializer.cpp
 	fault_snapshot.cpp
 	mmu.cpp
+	rvv_native_fault.cpp
 	rvv_host_copy.cpp
 	rvv_host_copy.S
 	execute.cpp
@@ -1265,7 +1266,7 @@ target_link_libraries(rvv_ssa_edge_commit_test PUBLIC dbtstatic)
 
 # Signal interface tests include the production ukernel TU to inspect its private
 # owner state. Normal archive extraction links the remaining runtime definitions.
-foreach(signal_test rv32_host_copy_fault_test rv32_signal_frm_test rv32_signal_interface_test rv32_unit_memory_fault_test rv32_family_memory_fault_test rv32_special_memory_fault_test)
+foreach(signal_test rv32_whole_native_fault_test rv32_permitted_bulk_fault_test rv32_native_memory_fault_test rv32_native_memory_site_test rv32_host_copy_fault_test rv32_signal_frm_test rv32_signal_interface_test rv32_unit_memory_fault_test rv32_family_memory_fault_test rv32_special_memory_fault_test)
   add_executable(${signal_test} ${signal_test}.cpp)
   target_link_libraries(${signal_test} PUBLIC dbtstatic)
 endforeach()

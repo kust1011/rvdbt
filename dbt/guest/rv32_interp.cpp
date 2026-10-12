@@ -10,6 +10,7 @@
 #include "dbt/guest/rv32_route_census.h"
 #include "dbt/guest/rv32_vector_fast.h"
 #include "dbt/mmu.h"
+#include "dbt/rvv_native_fault.h"
 #include "dbt/config.h"
 #include "dbt/ukernel.h"
 #include <atomic>
@@ -507,8 +508,8 @@ void RvvVerifyFailed(char const *op, u32 vlen_bits, u32 vl, u32 elem_bytes)
 // INDEPENDENT of SEW -- that is the whole reason EMUL = (EEW/SEW)*LMUL exists and can differ
 // from LMUL. Masked forms leave inactive elements undisturbed.
 //
-// The masked path is element-wise; the unmasked path goes through the width-parametric chunked
-// decomposition. Both are the shared implementations, so they cannot drift.
+// The masked path suppresses inactive elements; the unmasked path uses the shared
+// checked bulk frontier, independent of the permission census and lowering option.
 // Returns only after precise state has been published by the checked loop.
 static void QueueOrdinaryMemoryFault(CPUState *s, u32 pc, u32 raw, u32 address,
 				u32 eew, bool store, u32 nf = 1, u32 field = 0)
@@ -544,6 +545,37 @@ extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
 	if ((u64)base + bytes > mmu::ASPACE_SIZE) return 0;
 	u32 denied;
 	return !mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied);
+}
+
+// Only annotated ordinary/whole-register singleton QCG producers invoke this admission.
+// Cross-page active chunks use the checked element helper BEFORE any SIMD body.
+extern "C" u32 qcgstub_rv32_native_memory_safe(CPUState *s, u32 raw)
+{
+	bool const whole = ((raw >> 20) & 31u) == 8u;
+	if (whole) {
+		u32 const width = (raw >> 12) & 7u;
+		bool const store = (raw & 0x7f) == 0x27;
+		if ((raw & 0x7f) != (store ? 0x27u : 7u) || ((raw >> 26) & 7u) ||
+		    !(raw & (1u << 25)) || !vlen_supported(config::vlen_bits) ||
+		    s->vec.vlenb != config::vlen_bits / 8u || s->vec.vstart ||
+		    !whole_reg_group_legal((raw >> 7) & 31u, ((raw >> 29) & 7u) + 1u) ||
+		    (store ? width != 0 : eew_log2_from_width(width) < 0)) return 0;
+	} else if (!qcgstub_rv32_unit_memory_safe(s, raw)) return 0;
+	u32 const width = (raw >> 12) & 7;
+	u32 const eew = width == 0 ? 1 : 1u << (width - 4);
+	u32 const base = s->gpr[(raw >> 15) & 31];
+	u32 const bytes = whole ? (((raw >> 29) & 7u) + 1u) * s->vec.vlenb : s->vec.vl * eew;
+	if ((u64)base + bytes > mmu::ASPACE_SIZE) return 0;
+	u32 denied;
+	if (whole && mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied)) return 0;
+	u32 const chunk = std::min(s->vec.vlenb, u32(RVV_HOST_CHUNK_BITS / 8));
+	for (u32 off = 0; off < bytes; off += chunk) {
+		u32 const active = std::min(chunk, bytes - off);
+		if (((base + off) & (mmu::PAGE_SIZE - 1)) + active > mmu::PAGE_SIZE ||
+		    !mmu::page_native_copy_ram(base + off)) return 0;
+	}
+	rvv_native_fault::Arm(s);
+	return 1;
 }
 
 // Family preflight: no guest access/state mutation, before native frame bodies.
@@ -588,7 +620,9 @@ extern "C" u32 qcgstub_rv32_special_memory_safe(CPUState *s, u32 raw)
 		if (!whole_reg_group_legal((raw >> 7) & 31u, nregs) ||
 		    (store ? width != 0 : eew_log2_from_width(width) < 0))
 			return 0;
-		bytes = nregs * (vlen / 8u);
+		// Grouped QCG and LLVM bodies do not own singleton sites/cold exits.
+		// Annotated singleton QCG uses native_memory_safe instead.
+		return 0;
 	} else if (((raw >> 20) & 31u) == 11u) {
 		VType const vt{s->vec.vtype};
 		if (!vtype_supported(vt, vlen) || s->vec.vl > compute_vlmax(vt, vlen))
@@ -607,17 +641,6 @@ static void SpecialMemory(CPUState *s, u8 *vmem, u32 pc, u32 raw, u32 vlen, u32 
 {
 	u32 denied;
 	bool const store = (raw & 0x7f) == 0x27;
-	// Retain the existing fixed-copy helper on wholly permitted whole groups.
-	if (((raw >> 20) & 31u) == 8u && qcgstub_rv32_special_memory_safe(s, raw)) {
-		if (store)
-			rvv_ref::whole_reg_store(s->vec, (raw >> 7) & 31u, vmem, s->gpr[(raw >> 15) & 31u],
-						 nregs, vlen);
-		else
-			rvv_ref::whole_reg_load(s->vec, (raw >> 7) & 31u, vmem, s->gpr[(raw >> 15) & 31u],
-						nregs, vlen);
-		s->vec.vstart = 0;
-		return;
-	}
 	if (!rvv_ref::unit_stride_checked(s->vec, (raw >> 7) & 31u, vmem, s->gpr[(raw >> 15) & 31u], vlen,
 					  evl, eew, true, store, denied))
 		QueueOrdinaryMemoryFault(s, pc, raw, denied, eew, store, nregs);
@@ -646,11 +669,11 @@ HANDLER(vle)
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2);
 	u32 const base = s->gpr[i.rs1()];
 	u32 denied = 0;
-	if (i.vm() && s->vec.vstart == 0 &&
-	    !mmu::FirstDenied(base, s->vec.vl * eew_bytes, false, denied)) {
-		dispatch_load_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
-	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
-						s->vec.vl, eew_bytes, i.vm(), false, denied)) {
+	bool const complete = i.vm()
+	    ? dispatch_load_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes, denied)
+	    : rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
+	                                   s->vec.vl, eew_bytes, false, false, denied);
+	if (!complete) {
 		QueueOrdinaryMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, false);
 		return;
 	}
@@ -666,15 +689,25 @@ HANDLER(vse)
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2); // rd field holds vs3 for stores
 	u32 const base = s->gpr[i.rs1()];
 	u32 denied = 0;
-	if (i.vm() && s->vec.vstart == 0 &&
-	    !mmu::FirstDenied(base, s->vec.vl * eew_bytes, true, denied)) {
-		dispatch_store_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
-	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
-						s->vec.vl, eew_bytes, i.vm(), true, denied)) {
+	bool const complete = i.vm()
+	    ? dispatch_store_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes, denied)
+	    : rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
+	                                   s->vec.vl, eew_bytes, false, true, denied);
+	if (!complete) {
 		QueueOrdinaryMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, true);
 		return;
 	}
 	s->vec.vstart = 0;
+}
+
+// Selected before any native access when a singleton guard misses. All helper
+// entries now use checked copies, including wholly permission-admitted suffixes.
+void ExecuteCheckedUnitMemory(CPUState *state, u32 raw)
+{
+	u32 gip = state->ip;
+	if ((raw & 0x7f) == 0x27) H_vse(state, gip, mmu::base, raw);
+	else H_vle(state, gip, mmu::base, raw);
+	state->ip = gip;
 }
 
 // Strided load/store. The stride is x[rs2] interpreted as a SIGNED byte count; rs2 == x0 gives

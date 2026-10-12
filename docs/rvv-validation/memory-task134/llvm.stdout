@@ -1,0 +1,17 @@
+LLVM_CELL vlen=512 store=0 mode=0 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=0 mode=1 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=0 mode=2 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=0 mode=3 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=1 mode=0 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=1 mode=1 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=1 mode=2 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=512 store=1 mode=3 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=0 mode=0 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=0 mode=1 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=0 mode=2 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=0 mode=3 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=1 mode=0 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=1 mode=1 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=1 mode=2 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_CELL vlen=1024 store=1 mode=3 safe=1 fallback=1 hits=0 misses=2 PASS
+LLVM_EXECUTE_PASS normal=8 denied=4 forced_fallback=4 checks=292 (no guest retry)

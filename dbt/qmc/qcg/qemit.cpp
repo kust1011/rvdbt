@@ -75,6 +75,7 @@ std::span<u8> QEmit::EmitCode()
 		if (unlikely(dbt::config::qcg_ic_regret))
 			tcache::qcg_ic_regret_cache[tcache::gbrind_hitrate_hash(_entry_ip)].blob = (u8 *)code_ptr + s.blob_off;
 	}
+	cruntime->PublishNativeMemorySites({(u8 *)code_ptr, code_sz}, native_memory_sites);
 	return {(u8 *)code_ptr, code_sz};
 }
 
@@ -1954,6 +1955,13 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	    ins->guard_kind ==
 		qir::InstRVVTypedChunkBegin::GuardKind::VTypeVlOrPartialVstartBaseLimit;
 	rvv_typed_chunk_open = true;
+	native_memory_pc = ins->n_members == 1 ? ins->native_memory_pc : qir::RVVRunMember::PC_UNUSED;
+	native_memory_raw = ins->raw;
+	native_memory_cold = j.newLabel();
+	native_memory_frame_sites = native_memory_sites.size();
+	// Pins remain resident at CallOp. Commit their runtime values unconditionally.
+	if (native_memory_pc != qir::RVVRunMember::PC_UNUSED)
+		for (u8 i = 0; i < n_pins; ++i) StateSpill(pins[i].preg, pins[i].type, pins[i].offs);
 	rvv_typed_chunk_expected = ins->n_typed;
 	rvv_typed_chunk_seen = 0;
 	rvv_typed_chunk_members = ins->n_members;
@@ -1992,8 +2000,12 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 			j.mov(x86::rdi, R_STATE);
 			j.mov(x86::esi, raw);
 			j.emit(x86::Inst::kIdCall,
-			       make_stubcall_target((special_memory ? RuntimeStubId::id_rv32_special_memory_safe
-						     : unit_memory  ? RuntimeStubId::id_rv32_unit_memory_safe
+			       make_stubcall_target((special_memory ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
+                                                    ? RuntimeStubId::id_rv32_native_memory_safe
+                                                    : RuntimeStubId::id_rv32_special_memory_safe)
+						     : unit_memory  ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
+							? RuntimeStubId::id_rv32_native_memory_safe
+							: RuntimeStubId::id_rv32_unit_memory_safe)
 								    : RuntimeStubId::id_rv32_family_memory_safe)));
 			j.test(x86::eax, x86::eax);
 			j.jz(rvv_typed_chunk_fallback);
@@ -2347,22 +2359,7 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 	// sees exactly what instruction `i-1` left, with no merged value anywhere.
 	j.bind(rvv_typed_chunk_fallback);
 	j.inc(x86::qword_ptr(R_STATE, (int32_t)offsetof(CPUState, rvv_direct_fallbacks)));
-	if (ins->whole_regbytes) {
-		// The packed copy's vstart/range restrictions do not require a C++ call.
-		// Reuse the native element loop, including RV32 wrapping and restart publication.
-		// Only an actual VLEN mismatch still needs the runtime-sized helper.
-		auto helper = j.newLabel();
-		j.cmp(x86::dword_ptr(R_STATE, offsetof(CPUState, vec) + offsetof(rv32::VectorState, vlenb)),
-		      ins->whole_regbytes);
-		j.jne(helper);
-		bool const store = ins->stub == RuntimeStubId::id_rv32_vsNr;
-		u8 const eew = store ? 1 : (u8)(1u << (rv32::eew_log2_from_width((ins->raw >> 12) & 7) - 3));
-		qir::InstVMemory memory((ins->raw >> 7) & 31, (ins->raw >> 15) & 31,
-			(ins->raw >> 29) + 1, eew, eew, 4, ins->whole_regbytes, store, false);
-		Emit_vmemorynative(&memory);
-		j.jmp(rvv_typed_chunk_done);
-		j.bind(helper);
-	}
+	// A guard miss must reach checked helpers, including whole-register transfers.
 	for (u8 i = 0; i < ins->n_members; ++i) {
 		EmitRunMemberIp(ins->members[i].pc);
 		if (ins->members[i].scalar_passthrough) {
@@ -2371,11 +2368,29 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 		}
 		j.mov(x86::rdi, R_STATE);
 		j.mov(x86::rsi, (uint64_t)ins->members[i].raw);
-		j.emit(x86::Inst::kIdCall, make_stubcall_target(ins->members[i].stub));
+		j.emit(x86::Inst::kIdCall, make_stubcall_target(
+			native_memory_pc != qir::RVVRunMember::PC_UNUSED
+			? RuntimeStubId::id_rv32_native_memory_fault : ins->members[i].stub));
 	}
 
+	if (native_memory_sites.size() != native_memory_frame_sites) {
+		// Neither the successful body nor helpers fall through the terminal fault exit.
+		j.jmp(rvv_typed_chunk_done);
+		j.bind(native_memory_cold);
+		u32 const cold = (u32)j.offset();
+		for (size_t i = native_memory_frame_sites; i < native_memory_sites.size(); ++i)
+			native_memory_sites[i].cold_offset = cold;
+		// Tail-enter C++ with the original trampoline return address and SysV alignment.
+		// FinishHelperMemoryFault closes deferred FP state and RaiseTrap discards the
+		// trampoline/spill frame using the established dispatcher unwind boundary.
+		FrameDestroy();
+		j.mov(x86::rdi, R_STATE);
+		j.xor_(x86::esi, x86::esi);
+		j.emit(x86::Inst::kIdJmp, make_stubcall_target(RuntimeStubId::id_rv32_native_memory_fault));
+	}
 	j.bind(rvv_typed_chunk_done);
 	rvv_typed_chunk_open = false;
+	native_memory_pc = qir::RVVRunMember::PC_UNUSED;
 	rvv_typed_chunk_expected = 0;
 	rvv_typed_chunk_seen = 0;
 	rvv_typed_chunk_members = 0;
@@ -4501,6 +4516,23 @@ void QEmit::EmitPartialAluBody(qir::InstVChunkPartialAlu *ins, bool finish_instr
 		j.mov(x86::dword_ptr(R_STATE, offsetof(CPUState, vec) + offsetof(rv32::VectorState, vstart)), 0);
 }
 
+void QEmit::NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
+                                u8 active_sew, bool store)
+{
+	// No attribution for generic pointer ops, multi-member frames or unannotated
+	// producers. In particular, state reads/publications remain unrelated host PCs.
+	if (!rvv_typed_chunk_open || native_memory_pc == qir::RVVRunMember::PC_UNUSED) return;
+	u32 const opcode = native_memory_raw & 0x7f;
+	bool const whole = ((native_memory_raw >> 20) & 31u) == 8u;
+	if (opcode != (store ? 0x27u : 7u) || ((native_memory_raw >> 26) & (whole ? 7u : 0x3fu)) != 0 ||
+	    !(native_memory_raw & (1u << 25)) || (!whole && ((native_memory_raw >> 20) & 31)))
+		Panic("qemit: native memory annotation is not an owned unmasked singleton");
+	u8 const eew = (u8)(1u << (rv32::eew_log2_from_width((native_memory_raw >> 12) & 7) - 3));
+	native_memory_sites.push_back({(u32)j.offset(), native_memory_pc, native_memory_raw,
+	    disp, base_offs, bytes, eew, ArchTraits::AX, data_reg,
+	    (u8)(active_sew ? 7 : 0xff), store});
+}
+
 void QEmit::Emit_vchunkload(qir::InstVChunkLoad *ins)
 {
 	// Accounted like every other typed body op, so `end`'s shape check covers the whole frame.
@@ -4561,12 +4593,14 @@ void QEmit::Emit_vchunkload(qir::InstVChunkLoad *ins)
 	mem.setSize(load_bytes);
 	if (ins->active_sew) {
 		EvexOnly(j);
+		NoteNativeMemorySite(ins->base_state_offs, ins->disp, load_bytes, vrd.GetPVPR(), ins->active_sew, false);
 		if (ins->active_sew == 4)
 			j.k(x86::k7).z().vmovdqu32(make_vpr(vrd), mem);
 		else
 			j.k(x86::k7).z().vmovdqu64(make_vpr(vrd), mem);
 		return;
 	}
+	NoteNativeMemorySite(ins->base_state_offs, ins->disp, load_bytes, vrd.GetPVPR(), 0, false);
 	j.vmovdqu64(make_vpr(vrd), mem);
 }
 
@@ -4967,12 +5001,14 @@ void QEmit::Emit_vchunkstore(qir::InstVChunkStore *ins)
 	mem.setSize(store_bytes);
 	if (ins->active_sew) {
 		EvexOnly(j);
+		NoteNativeMemorySite(ins->base_state_offs, ins->disp, store_bytes, vdata.GetPVPR(), ins->active_sew, true);
 		if (ins->active_sew == 4)
 			j.k(x86::k7).vmovdqu32(mem, make_vpr(vdata));
 		else
 			j.k(x86::k7).vmovdqu64(mem, make_vpr(vdata));
 		return;
 	}
+	NoteNativeMemorySite(ins->base_state_offs, ins->disp, store_bytes, vdata.GetPVPR(), 0, true);
 	j.vmovdqu64(mem, make_vpr(vdata));
 }
 

@@ -1,0 +1,6 @@
+{
+  "symbol": "_ZN3dbt16rvv_native_fault12HandleSignalEiPK9siginfo_tP10ucontext_t",
+  "disassembly_sha256": "4a76088dbab821876295b554b6b08a9c7441a7917a645def27f1d68738f828da",
+  "calls": 0,
+  "tls_get_addr_calls": 0
+}

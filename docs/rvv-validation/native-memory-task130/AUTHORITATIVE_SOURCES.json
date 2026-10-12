@@ -1,0 +1,20 @@
+{
+  "rvv-1.0.adoc": {
+    "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc",
+    "local": "/home/user/research/materials/task130-authoritative-sources-20261013/rvv-1.0.adoc",
+    "sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19",
+    "bytes": 207611
+  },
+  "linux-v6.12-sigcontext.h": {
+    "url": "https://github.com/torvalds/linux/blob/adc218676eef25575469234709c2d87185ca223a/arch/x86/include/uapi/asm/sigcontext.h",
+    "local": "/home/user/research/materials/task130-authoritative-sources-20261013/linux-v6.12-sigcontext.h",
+    "sha256": "84e2cf444ec6a539a4bc0b46717775cb1fd1f591301b7469ba143e56f43afc0c",
+    "bytes": 9950
+  },
+  "qemu-signal.c": {
+    "url": "https://github.com/qemu/qemu/blob/ae35f033b874c627d81d51070187fbf55f0bf1a7/linux-user/signal.c",
+    "local": "/home/user/research/materials/task126-authoritative-sources-20261013/qemu-signal.c",
+    "sha256": "3a3dfa65905b04865ed9e7bfe3ef8cf61152960cfb4a4bdc97fdcd3006f2ca74",
+    "bytes": 45236
+  }
+}

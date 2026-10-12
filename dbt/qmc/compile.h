@@ -10,10 +10,27 @@ namespace dbt
 {
 using IpRange = std::pair<u32, u32>;
 
+// Exact ordinary/whole-register QCG singleton guest accesses and their emitted terminal cold exits.
+// A nonzero cold_offset requires page-contained active accesses and prior-state sync.
+// CPUState/spill accesses never belong to this list. Register numbers are x86 IDs.
+struct NativeMemorySite {
+	u32 code_offset{}, guest_pc{}, raw{}, displacement{};
+	u16 base_state_offs{};
+	u8 bytes{}, eew_bytes{}, address_reg{}, data_reg{}, mask_reg{0xff};
+	bool store{};
+	u32 cold_offset{};
+};
+
 struct CompilerRuntime {
 	virtual void *AllocateCode(size_t sz, uint align) = 0;
 
 	virtual bool AllowsRelocation() const = 0;
+
+	// Called after final relocation/copy, before code can execute. The span is
+	// borrowed for this call only; a runtime retaining it must copy it and retire
+	// it when its code allocation dies. Offline artifacts do not gain JIT ownership.
+	virtual void PublishNativeMemorySites(std::span<u8> code,
+				      std::span<NativeMemorySite const> sites) {}
 
 	virtual void *AnnounceRegion(u32 ip, std::span<u8> const &code, u32 num_insns) = 0;
 	// virtual void *AnnounceRegion(u32 ip, std::span<u8> const &code) = 0;

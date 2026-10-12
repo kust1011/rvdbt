@@ -56,7 +56,7 @@
 //      accepted ALU splits are re-counted in the same run so this checkpoint cannot have disturbed
 //      them.
 //   2. QIR. At VLEN=512 the admitted instruction becomes ONE 512-bit chunk (2 typed ops); at
-//      VLEN=1024 TWO chunks (4 typed ops), in load-major order, reading the guest base from the
+//      VLEN=1024 TWO chunks (4 typed ops), in load/publication order, reading the guest base from the
 //      CPUState slot of the ENCODED rs1 and writing the exact low/high 64-byte windows of vd, with
 //      per-chunk def-use and no cross-chunk edge. Nothing is emitted at displacement 64 when
 //      VLEN=512 -- the chunk count comes from config::vlen_bits, never from VLEN_MAX.
@@ -526,10 +526,10 @@ void CheckRoute(char const *tag, u32 vlen_bits, u32 nchunks, u32 expect_vlmax, u
 		return;
 	}
 
-	// LOAD-MAJOR: every chunk's guest-memory load, then every chunk's state store.
+	// Each guest load publishes before the following guest access.
 	std::vector<RegN> load_dsts;
 	for (u32 c = 0; c < nchunks; ++c) {
-		auto *ins = g.body[c];
+		auto *ins = g.body[2 * c];
 		CHECK(ins->GetOpcode() == Op::_vchunkload);
 		if (ins->GetOpcode() != Op::_vchunkload) {
 			return;
@@ -549,7 +549,7 @@ void CheckRoute(char const *tag, u32 vlen_bits, u32 nchunks, u32 expect_vlmax, u
 		load_dsts.push_back(ld->o(0).GetVVPR());
 	}
 	for (u32 c = 0; c < nchunks; ++c) {
-		auto *ins = g.body[nchunks + c];
+		auto *ins = g.body[2 * c + 1];
 		CHECK(ins->GetOpcode() == Op::_vstatechunkstore);
 		if (ins->GetOpcode() != Op::_vstatechunkstore) {
 			return;
@@ -778,9 +778,9 @@ void CheckRoutePostQRA(char const *tag, u32 vlen_bits, u32 nchunks)
 			zmms.insert(s.GetPVPR());
 		}
 	}
-	// One physical ZMM per chunk, distinct across chunks: the "two chunks, different ZMM
-	// registers" requirement, read off the allocation rather than assumed.
-	CHECK_EQ(zmms.size(), (size_t)nchunks);
+	// A published chunk's last use permits its physical register to be recycled.
+	// Allocation may keep distinct registers but no longer requires simultaneous residency.
+	CHECK(zmms.size() >= 1 && zmms.size() <= nchunks);
 	printf("    OK %zu distinct pool ZMM(s), no allocator mov inside the frame\n", zmms.size());
 }
 
@@ -804,7 +804,10 @@ struct TestCompilerRuntime final : CompilerRuntime {
 	{
 		return nullptr;
 	}
-	std::vector<u8> buf;
+	void PublishNativeMemorySites(std::span<u8>, std::span<NativeMemorySite const> values) override
+ { sites.assign(values.begin(), values.end()); }
+ std::vector<NativeMemorySite> sites;
+ std::vector<u8> buf;
 };
 
 // The three host instruction shapes this frame can emit, and nothing else.
@@ -1038,6 +1041,14 @@ std::vector<u8> EmitOne(MemArena &arena, u32 (&words)[2], RouteConfig const &cfg
 	qir::CodeSegment segment(0u, 0x1000u);
 	auto const code_span = qcg::GenerateCode(&cr, &segment, region, 0);
 	CHECK(!code_span.empty());
+ for (auto const &site : cr.sites) {
+  CHECK_EQ(site.guest_pc, 4u);
+  CHECK_EQ(site.raw, cfg.load_word);
+  CHECK(!site.store);
+  CHECK(site.code_offset < code_span.size());
+  CHECK_EQ(code_span[site.code_offset], 0x62u); // finalized actual JIT access
+ }
+ CHECK_EQ(cr.sites.size(), CountOp(region, Op::_vchunkload));
 	return std::vector<u8>(code_span.begin(), code_span.end());
 }
 
@@ -1119,13 +1130,21 @@ void CheckRouteEmitted(char const *tag, u32 vlen_bits, u32 nchunks, u32 load_wor
 		}
 	}
 
+ // The externally decoded memory effects must alternate guest load/publication.
+ unsigned effect = 0;
+ for (auto const &v : vecs) {
+  if (v.kind == DecodedVec::Kind::BASE) continue;
+  CHECK(v.kind == (effect % 2 == 0 ? DecodedVec::Kind::GUEST_LOAD : DecodedVec::Kind::STATE_STORE));
+  ++effect;
+ }
+ CHECK_EQ(effect, 2u * nchunks);
 	CHECK_EQ(loads.size(), (size_t)nchunks);
 	CHECK_EQ(stores.size(), (size_t)nchunks);
 	// ONE base read PER CHUNK, and this is a recorded property rather than an optimum. Each
 	// vchunkload emits its own `mov <scratch>, [r13+gpr_off]`, so the op is self-contained and no
 	// emitter state is carried between the two chunks -- the same "the emitter picks nothing and
 	// remembers nothing" discipline the six ALU frames keep. The reload is redundant (nothing
-	// between the two loads writes that CPUState slot; the stores come after both, load-major) and
+	// between the two loads writes that CPUState slot; publications name vector slots) and
 	// it is a known, deliberate cost, not an accident. What matters for correctness is asserted
 	// below: every base read names the SAME slot and the SAME fixed scratch register, so both
 	// chunks address the same base.
@@ -1173,9 +1192,9 @@ void CheckRouteEmitted(char const *tag, u32 vlen_bits, u32 nchunks, u32 load_wor
 		load_zmms.insert(loads[c].zmm);
 		store_zmms.insert(stores[c].zmm);
 	}
-	// Two chunks, two different ZMM registers, in the externally decoded bytes.
-	CHECK_EQ(load_zmms.size(), (size_t)nchunks);
-	CHECK_EQ(store_zmms.size(), (size_t)nchunks);
+	// Def/use still agrees even when publication permits physical-register reuse.
+	CHECK(load_zmms.size() >= 1 && load_zmms.size() <= nchunks);
+	CHECK(store_zmms == load_zmms);
 
 	printf("    OK %zu base read(s) [r13+0x%x]->%s, %zu guest load(s) [%s%s], %zu state store(s), "
 	       "%zu distinct zmm\n",
@@ -1424,10 +1443,10 @@ void CheckFrozenWords(u32 vlen_bits, u32 nchunks)
 			continue;
 		}
 		for (u32 c = 0; c < nchunks; ++c) {
-			auto *ld = static_cast<InstVChunkLoad *>(g.body[c]);
+			auto *ld = static_cast<InstVChunkLoad *>(g.body[2 * c]);
 			CHECK_EQ((u32)ld->base_state_offs, GprOffs(f.base));
 			CHECK_EQ((u32)ld->disp, c * 64u);
-			auto *st = static_cast<InstVStateChunkStore *>(g.body[nchunks + c]);
+			auto *st = static_cast<InstVStateChunkStore *>(g.body[2 * c + 1]);
 			CHECK_EQ((u32)st->offs, ChunkOffs(f.vd, c));
 		}
 		printf("    %-20s vd=v%-2u base=x%-2u -> %u chunk(s) OK\n", f.text, f.vd, f.base,

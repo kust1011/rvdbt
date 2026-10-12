@@ -1,0 +1,744 @@
+{
+  "manifest_files": 620,
+  "differences": [],
+  "terminal_cells": [
+    {
+      "file": "focused/whole/snapshot-02828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 1,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-02828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 1,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 0,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-02828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 1,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 0,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": false,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 1,
+      "store": false,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828427-vlen1024-mode1.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 1,
+      "vstart": 65,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828427-vlen1024-mode2.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 2,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-22828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282d407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 2,
+      "store": false,
+      "mode": 0,
+      "vstart": 32,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282d407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 2,
+      "store": false,
+      "mode": 0,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282e407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282e407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 4,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282f407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282f407-vlen1024-mode1.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 1,
+      "vstart": 9,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282f407-vlen1024-mode2.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 2,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-2282f407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 2,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-62828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 4,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-62828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 4,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-62828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 4,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-e2828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 8,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-e2828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 8,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/whole/snapshot-e2828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 8,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-02828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 1,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-02828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 1,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 0,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-02828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 1,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 0,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": false,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 1,
+      "store": false,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828427-vlen1024-mode1.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 1,
+      "vstart": 65,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828427-vlen1024-mode2.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 2,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-22828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 2,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282d407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 2,
+      "store": false,
+      "mode": 0,
+      "vstart": 32,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282d407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 2,
+      "store": false,
+      "mode": 0,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282e407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282e407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 4,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282f407-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282f407-vlen1024-mode1.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 1,
+      "vstart": 9,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282f407-vlen1024-mode2.bin",
+      "vlen": 1024,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 2,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-2282f407-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 2,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 2,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-62828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 4,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-62828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 4,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-62828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 4,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-e2828427-vlen1024-mode0.bin",
+      "vlen": 1024,
+      "nregs": 8,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-e2828427-vlen128-mode0.bin",
+      "vlen": 128,
+      "nregs": 8,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra/snapshot-e2828427-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 8,
+      "eew": 1,
+      "store": true,
+      "mode": 0,
+      "vstart": 64,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra-final/snapshot-0282e407-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 1,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 0,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra-final/snapshot-0282f407-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 1,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 0,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra-final/snapshot-6282e407-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 4,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra-final/snapshot-6282f407-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 4,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra-final/snapshot-e282e407-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 8,
+      "eew": 4,
+      "store": false,
+      "mode": 0,
+      "vstart": 16,
+      "full_register_bytes": 16384
+    },
+    {
+      "file": "focused/extra-final/snapshot-e282f407-vlen512-mode0.bin",
+      "vlen": 512,
+      "nregs": 8,
+      "eew": 8,
+      "store": false,
+      "mode": 0,
+      "vstart": 8,
+      "full_register_bytes": 16384
+    }
+  ],
+  "physical_whole_faults": 54,
+  "distinct_whole_geometries": 30,
+  "emitted_shapes": [
+    {
+      "file": "focused/normal-complete/sites-02828407-vlen1024.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-02828407-vlen128.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-02828407-vlen512.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-0282d407-vlen1024.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-0282d407-vlen128.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-0282d407-vlen512.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-0282e407-vlen1024.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-0282e407-vlen128.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-0282e407-vlen512.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-0282f407-vlen1024.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-0282f407-vlen128.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-0282f407-vlen512.txt",
+      "exact_sites": 1
+    },
+    {
+      "file": "focused/normal-complete/sites-22828407-vlen1024.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-22828407-vlen128.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-22828407-vlen512.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-2282d407-vlen1024.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-2282d407-vlen128.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-2282d407-vlen512.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-2282e407-vlen1024.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-2282e407-vlen128.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-2282e407-vlen512.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-2282f407-vlen1024.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-2282f407-vlen128.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-2282f407-vlen512.txt",
+      "exact_sites": 2
+    },
+    {
+      "file": "focused/normal-complete/sites-62828407-vlen1024.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-62828407-vlen128.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-62828407-vlen512.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-6282d407-vlen1024.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-6282d407-vlen128.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-6282d407-vlen512.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-6282e407-vlen1024.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-6282e407-vlen128.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-6282e407-vlen512.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-6282f407-vlen1024.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-6282f407-vlen128.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-6282f407-vlen512.txt",
+      "exact_sites": 4
+    },
+    {
+      "file": "focused/normal-complete/sites-e2828407-vlen1024.txt",
+      "exact_sites": 16
+    },
+    {
+      "file": "focused/normal-complete/sites-e2828407-vlen128.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e2828407-vlen512.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e282d407-vlen1024.txt",
+      "exact_sites": 16
+    },
+    {
+      "file": "focused/normal-complete/sites-e282d407-vlen128.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e282d407-vlen512.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e282e407-vlen1024.txt",
+      "exact_sites": 16
+    },
+    {
+      "file": "focused/normal-complete/sites-e282e407-vlen128.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e282e407-vlen512.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e282f407-vlen1024.txt",
+      "exact_sites": 16
+    },
+    {
+      "file": "focused/normal-complete/sites-e282f407-vlen128.txt",
+      "exact_sites": 8
+    },
+    {
+      "file": "focused/normal-complete/sites-e282f407-vlen512.txt",
+      "exact_sites": 8
+    }
+  ],
+  "guest_executions": 0,
+  "restart_verified": false
+}

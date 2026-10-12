@@ -1,0 +1,32 @@
+{
+  "rv32_native_memory_fault_test": {
+    "rc": 0,
+    "stdout": "rv32_native_memory_fault_test.final.stdout",
+    "stderr": "rv32_native_memory_fault_test.final.stderr",
+    "last_line": "LOCAL_NATIVE_DISPATCH_PASS checks=6142 cells=40 ABI=a89957277993e0d9 (terminal inspection only, restart NOT verified)"
+  },
+  "rv32_native_memory_site_test": {
+    "rc": 0,
+    "stdout": "rv32_native_memory_site_test.final.stdout",
+    "stderr": "rv32_native_memory_site_test.final.stderr",
+    "last_line": "LOCAL_NATIVE_MEMORY_SITE_PASS checks=2801 cells=8 ABI=a89957277993e0d9 (inspection and publication only)"
+  },
+  "vle32v_typedchunk_route_test": {
+    "rc": 0,
+    "stdout": "vle32v_typedchunk_route_test.stdout",
+    "stderr": "vle32v_typedchunk_route_test.stderr",
+    "last_line": "PASS"
+  },
+  "vse32v_typedchunk_route_test": {
+    "rc": 0,
+    "stdout": "vse32v_typedchunk_route_test.stdout",
+    "stderr": "vse32v_typedchunk_route_test.stderr",
+    "last_line": "PASS"
+  },
+  "rv32_unit_memory_fault_test": {
+    "rc": 0,
+    "stdout": "rv32_unit_memory_fault_test.stdout",
+    "stderr": "rv32_unit_memory_fault_test.stderr",
+    "last_line": "LOCAL_UNIT_MEMORY_PASS checks=9562 cells=1248 ABI=a89957277993e0d9 (no guest retry)"
+  }
+}

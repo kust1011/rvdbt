@@ -13321,12 +13321,8 @@ u8 RV32Translator::RvvVseChunkShapeAdmit(u32 raw, u32 sew_bytes) const
 RV32Translator::RvvChunkShape RV32Translator::RvvVseChunkShape(u32 raw, u32 sew_bytes) const
 {
 	RvvChunkShape const none{};
-	// --rvv-verify compares the helper's two internal paths per operation and cannot see emitted
-	// code, so leaving this path enabled under it would make "verified" mean "verified except
-	// where we skipped the check". For the store the diagnostic it would disable is the one that
-	// snapshots the DESTINATION RANGE of guest memory and compares the bytes actually written
-	// (dispatch_store_unit_stride, rv32_vector_lower.h) -- the only cross-check in the build that
-	// looks at this route's output at all.
+	// Keep diagnostic mode on the checked helper route. Guest memory is accessed
+	// once there; the former store verifier's snapshot/restore/replay is unowned.
 	if (config::rvv_verify)
 		return none;
 	// STRICTER THAN THE SIX ALU ROUTES and for the same reason the vle route is: `--rvv-lowering 0`
@@ -13628,7 +13624,8 @@ u8 RV32Translator::RvvQcgWholeRegAdmit(u32 raw, bool is_load) const
 //
 // Guest memory and the host CPUState register file are distinct architectural storage.
 // As in whole_reg_load/store, transfers may publish one batch before loading the next.
-// This retains the existing fault contract; it does not add precise restart after host faults.
+// The annotated singleton uses the Task131 page-contained site/publication/cold-exit contract.
+// Grouped consumers remain refused by their shared special-memory admission.
 void RV32Translator::RvvEmitWholeRegChunkGroup(u32 raw, u8 base_reg, u8 nregs, u8 chunks,
 					      bool is_load, RuntimeStubId stub)
 {
@@ -13661,6 +13658,7 @@ void RV32Translator::RvvEmitWholeRegChunkGroup(u32 raw, u8 base_reg, u8 nregs, u
 	auto *frame_begin = qb.Create_rvvtypedchunkbegin((u32)(vlen / 8u), raw, stub, (u16)(2 * chunks),
 				     qir::InstRVVTypedChunkBegin::GuardKind::VlenbVstartBaseLimit,
 				     base_offs, 0u - (u32)nregs * (vlen / 8u));
+	static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
 	RvvEmitWholeRegChunkBody(is_load, base_offs, base_reg, chunks, chunk_bytes);
 	rvvfinal::CloseFrame(qb, frame_begin, {.reason = rvvfinal::Ineligibility::WholeRegisterEvl, .raw = raw, .stub = stub, .whole_regbytes = (u16)reg_bytes});
 }
@@ -13674,8 +13672,8 @@ void RV32Translator::RvvEmitWholeRegChunkGroup(u32 raw, u8 base_reg, u8 nregs, u
 // from the one place in the tree that owns that rule. In guest MEMORY the transfer is contiguous,
 // so the displacement is simply c*chunk_bytes.
 //
-// A caller declares 2 * chunks typed ops. Each batch is published before its temporary
-// host values are reused, bounding register pressure independently of VLEN and group size.
+// A caller declares 2 * chunks typed ops. Publish each load before the next guest
+// access, including across architectural register-slot boundaries.
 void RV32Translator::RvvEmitWholeRegChunkBody(bool is_load, u32 base_offs, u8 base_reg, u8 chunks,
 					      u32 chunk_bytes)
 {
@@ -13690,7 +13688,7 @@ void RV32Translator::RvvEmitWholeRegChunkBody(bool is_load, u32 base_offs, u8 ba
 	auto const off = [&](u8 c) {
 		return rvv::group_chunk_state_offset(vreg_base, base_reg, vlen, chunk_bytes, c);
 	};
-	constexpr u8 batch_capacity = 4;
+	constexpr u8 batch_capacity = 1;
 	std::array<VOperand, batch_capacity> v;
 	for (u8 first = 0; first < chunks; first += batch_capacity) {
 		u8 const count = std::min<u8>(chunks - first, batch_capacity);
@@ -17128,9 +17126,9 @@ void RV32Translator::RvvEmitTypedAndChunkGroup(insn::Insn_vand_vv i, u32 vtype_r
 // NO OPERAND-OVERLAP OBLIGATION EXISTS HERE, and inventing one would be pretending. A load writes
 // one register and reads none, so there is no vd==vs1/vs2 hazard for load-major ordering to
 // discharge -- the six ALU frames need that discipline and this one does not. The order below is
-// still all-loads-then-all-stores, for two reasons that are real but smaller: it keeps one shape
-// across all seven routed frames so the analyser traces them identically, and it is what leaves the
-// two chunks' V512 values simultaneously live so QRegAlloc gives them disjoint ZMMs.
+// chunk load/publication pairs on QCG, so a later access cannot hide a completed
+// earlier chunk in an unpublished host register. LLVM retains its SSA load-major shape.
+// Neither shape supplies an element frontier inside a faulting SIMD access.
 //
 // The two chunks are independent end to end: chunk c reads guest bytes [base+64c, base+64c+64) and
 // writes vreg[vd] bytes [64c, 64c+64), and neither the loads nor the stores of one chunk name a
@@ -17230,48 +17228,30 @@ void RV32Translator::RvvEmitTypedVleChunkGroup(insn::Insn_vle i, u32 vtype_raw, 
 	else
 		frame_begin = qb.Create_rvvtypedchunkbegin(vt.raw, rvv::compute_vlmax(vt, vlen), i.raw,
 					     RuntimeStubId::id_rv32_vle, (u8)(2 * nchunks));
-	// T6b: kMaxChunks, not the literal 2. The two loops below were already generic in `nchunks`;
-	// this array was the one thing in the frame that was not, and at k=4 it was a stack overrun
-	// rather than a refusal. Same size and same reason as RvvEmitTypedAluChunkBody's three arrays.
-	std::array<VOperand, rvvrun::kMaxChunks> v_d;
-	// pass 1: every chunk's guest-memory load. S1: ONE width, derived once -- `ct` is the QIR
-	// value type for this chunk width and `chunk_bytes` is simultaneously the stride between
-	// consecutive chunks, the coupling the store frame and RvvEmitTypedAluChunkBody already use.
-	// The emitter reads the load width out of the destination operand's type.
-	for (u8 c = 0; c < nchunks; ++c) {
-		v_d[c] = VOperand::MakeVVPR(ct, qb.CreateVGPR(ct));
-		// W32: the LLVM partial arm passes the active width and the chunk index, which is
-		// exactly what turns this node into a masked load; every other arm passes neither and
-		// gets the byte-identical unmasked node it got before.
-		if (llvm_partial)
-			qb.Create_vchunkload(v_d[c], base_offs, (u32)c * chunk_bytes, active_sew, c);
-		else
-			qb.Create_vchunkload(v_d[c], base_offs, (u32)c * chunk_bytes);
-	}
-	// pass 2: every chunk's destination store into the architectural register's own window, at
-	// the SAME `c * chunk_bytes`, so the windows tile [0, VLEN/8) exactly once.
-	for (u8 c = 0; c < nchunks; ++c) {
-		u32 const co = (u32)c * chunk_bytes; // 0 = low chunk, chunk_bytes = next
-		// W32: the store side is predicated by the SAME (lanes, element_base) the load used,
-		// so a lane the load skipped is a lane this refuses to publish. `masked = false`: the
-		// unit-stride route is admitted for `vm == 1` only, so there is no v0 conjunct.
-		if (llvm_partial)
-			qb.Create_vstatechunkstore(vreg_base + (u32)i.rd() * slot + co, v_d[c],
-						   active_sew, c, false);
-		else
-			qb.Create_vstatechunkstore(vreg_base + (u32)i.rd() * slot + co, v_d[c]);
-	}
+	static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
+	// QCG publishes each loaded chunk before the next guest access. There is no
+	// cross-chunk alias in this EMUL=1 frame. LLVM retains its SSA shape.
+	auto body = [&](bool active) {
+		std::array<VOperand, rvvrun::kMaxChunks> values;
+		auto publish = [&](u8 c) {
+			u32 const co = (u32)c * chunk_bytes;
+			if (active)
+				qb.Create_vstatechunkstore(vreg_base + (u32)i.rd() * slot + co,
+							  values[c], active_sew, c, false);
+			else qb.Create_vstatechunkstore(vreg_base + (u32)i.rd() * slot + co, values[c]);
+		};
+		for (u8 c = 0; c < nchunks; ++c) {
+			values[c] = VOperand::MakeVVPR(ct, qb.CreateVGPR(ct));
+			if (active) qb.Create_vchunkload(values[c], base_offs, (u32)c * chunk_bytes, active_sew, c);
+			else qb.Create_vchunkload(values[c], base_offs, (u32)c * chunk_bytes);
+			if (!config::aot_use_llvm) publish(c);
+		}
+		if (config::aot_use_llvm) for (u8 c = 0; c < nchunks; ++c) publish(c);
+	};
+	body(llvm_partial);
 	if (partial) {
 		qb.Create_rvvtypedchunkpartial();
-		for (u8 c = 0; c < nchunks; ++c) {
-			v_d[c] = VOperand::MakeVVPR(ct, qb.CreateVGPR(ct));
-			qb.Create_vchunkload(v_d[c], base_offs, (u32)c * chunk_bytes, active_sew, c);
-		}
-		for (u8 c = 0; c < nchunks; ++c) {
-			u32 const co = (u32)c * chunk_bytes;
-			qb.Create_vstatechunkstore(vreg_base + (u32)i.rd() * slot + co, v_d[c],
-						   active_sew, c, false);
-		}
+		body(true);
 	}
 	rvvfinal::CloseFrame(qb, frame_begin, {.reason = rvvfinal::Ineligibility::MemoryOrProtocol, .raw = i.raw, .stub = RuntimeStubId::id_rv32_vle});
 }
@@ -17403,6 +17383,7 @@ void RV32Translator::RvvEmitTypedVseChunkGroup(insn::Insn_vse i, u32 vtype_raw, 
 	else
 		frame_begin = qb.Create_rvvtypedchunkbegin(vt.raw, rvv::compute_vlmax(vt, vlen), i.raw,
 					     RuntimeStubId::id_rv32_vse, (u8)(2 * nchunks));
+	static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
 	// T6b: kMaxChunks, not the literal 2 -- the load frame's fix, and on this side an overrun would
 	// have taken the DATA operand of a guest-memory write from off the end of the array.
 	std::array<VOperand, rvvrun::kMaxChunks> v_s;

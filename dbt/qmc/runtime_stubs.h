@@ -24,7 +24,7 @@ namespace dbt
 
 // Append new entries so established stub indices retain their meaning. The
 // embedded table grows: CPUStateAbiSignature refuses pre-Task115 AOT artifacts.
-#define RUNTIME_STUBS(X) COMMON_RUNTIME_STUBS(X) GUEST_RUNTIME_STUBS(X) X(rv32_unit_memory_safe) X(rv32_family_memory_safe) X(rv32_special_memory_safe)
+#define RUNTIME_STUBS(X) COMMON_RUNTIME_STUBS(X) GUEST_RUNTIME_STUBS(X) X(rv32_unit_memory_safe) X(rv32_family_memory_safe) X(rv32_special_memory_safe) X(rv32_native_memory_safe) X(rv32_native_memory_fault)
 
 enum class RuntimeStubId {
 #define X(name) id_##name,
