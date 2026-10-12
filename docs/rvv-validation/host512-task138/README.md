@@ -8,15 +8,14 @@ The existing Task128/129 reporter joins current authenticated receipts to unchan
 
 Portable inspection uses a downloaded checkout, the published CHIPS94 and ACT db2
 packages, the repository's licensed Ara91 archive, and the Task139 supplement.
-The supplement is **staged for main's review, not uploaded**. Its exact identity
-and intended release URL are in [TASK139_ARCHIVES.json](TASK139_ARCHIVES.json).
-Until main publishes that asset, public acquisition of current raw receipts is
-incomplete. Local review can copy the staged archive named in
-[Task139's result](../../../SESSION0_RESULT_139.md). No author directory or xbd
-mount is used by the following checks.
+The supplement is [published in the validation release](https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/task138-inspection.tar.gz).
+Its exact identity is in [TASK139_ARCHIVES.json](TASK139_ARCHIVES.json); that
+immutable staging manifest retains its prepublication status. The original
+[Task139 report](../../../SESSION0_RESULT_139.md) records the isolated checks.
+No author directory or xbd mount is used by the following checks.
 
-Use a repository snapshot containing Task139's reader and these Task138 docs.
-Main supplies the reviewed repository revision when 135–139 are merged/published.
+Use [repository revision dc7aeed](https://github.com/kust1011/rvdbt/tree/dc7aeedaff8a197b239ef49c0bf7e5db3563b173)
+or a later delivery revision containing this reader and its documentation.
 The existing validation release tag targets historical 49c44174; adding assets
 does not update that tag's source ZIP. Check `python3 scripts/rvv_scope_report.py
 --help` for `--host512-raw` and `--host512-evidence` before inspection.
@@ -30,7 +29,7 @@ curl -q -fL --retry 3 --no-netrc -o downloads/CHIPS94_ARCHIVES.json \
   https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/CHIPS94_ARCHIVES.json
 curl -q -fL --retry 3 --no-netrc -o downloads/act-db2-task110.tar.gz \
   https://github.com/kust1011/rvdbt/releases/download/rvv-act-db2-20261012/act-db2-task110.tar.gz
-# Run this only after main publishes the staged Task139 asset:
+# Final current outputs and missing reader dependencies:
 curl -q -fL --retry 3 --no-netrc -o downloads/task138-inspection.tar.gz \
   https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/task138-inspection.tar.gz
 python3 - <<'PY_DOWNLOAD'

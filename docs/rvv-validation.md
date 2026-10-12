@@ -86,8 +86,8 @@ plus 212 controls; ACT 7,668; Ara 1,888 whole-file and 16 scoped calls). It adds
 no coverage to the existing accepted sets. The [Task138 reader](rvv-validation/host512-task138/README.md)
 gives exact public acquisition URLs, hash-checked extraction, source/checker
 navigation and configuration interpretation. Its [Task139 supplement manifest](rvv-validation/host512-task138/TASK139_ARCHIVES.json)
-is **staged, not uploaded**; main owns publication after review. Until that
-asset is published, public retrieval of the final current raw is incomplete.
+is published in the validation release; it contains the final current raw
+receipts and the missing reader dependencies.
 The existing published CHIPS94/ACT db2 and licensed repository Ara91 packages
 are reused; only current outputs and missing reader dependencies are added.
 
