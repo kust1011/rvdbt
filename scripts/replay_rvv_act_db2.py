@@ -54,7 +54,7 @@ def main():
             shell.append('cp '+shlex.quote(str(out/(a.case+'.elf')))+' '+shlex.quote(str(fs/'t.elf')))
         commands.append(dict(label=label,command=changed))
         shell.append('rc=0; timeout 300 '+shlex.join(changed)+' >'+shlex.quote(str(raw/'stdout'))+' 2>'+shlex.quote(str(raw/'stderr'))+' || rc=$?')
-        code='import json,sys; from pathlib import Path; rc=int(sys.argv[1]); Path('+repr(str(raw/'result.json'))+').write_text(json.dumps(dict(returncode=rc,timeout=rc==124))+"\n"); raise SystemExit(rc)'
+        code='import json,sys; from pathlib import Path; rc=int(sys.argv[1]); Path('+repr(str(raw/'result.json'))+').write_text(json.dumps(dict(returncode=rc,timeout=rc==124))+"\\n"); raise SystemExit(rc)'
         shell.append('python3 -c '+shlex.quote(code)+' "$rc"')
         if label=='sail-signature':
             predicate='from pathlib import Path; p=Path('+repr(str(raw))+'); t=(p/"stdout").read_text(errors="replace")+(p/"stderr").read_text(errors="replace"); raise SystemExit(0 if "SUCCESS" in t and '+repr('TEST SIGRUN - Test File "'+a.case+'.S"')+' in t and "FAILED" not in t else 1)'

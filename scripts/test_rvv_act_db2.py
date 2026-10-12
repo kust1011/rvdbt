@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: Apache-2.0
 """Focused host-only rejection controls over db2's original raw predicates."""
+import ast
 import json
+import shlex
 from pathlib import Path
 import subprocess
 import sys
@@ -58,6 +60,12 @@ class RawControls(unittest.TestCase):
             commands=json.loads((output/'COMMANDS.json').read_text())
             self.assertNotIn('/home/vick/rvv-task109/',json.dumps(commands))
             self.assertEqual(subprocess.run(['sh','-n',str(output/'replay.sh')]).returncode,0)
+            # Shell syntax alone accepts a quoted, invalid multiline Python string.
+            shell_tokens=shlex.split((output/'replay.sh').read_text(),comments=True)
+            for i, token in enumerate(shell_tokens[:-2]):
+                if token=='python3' and shell_tokens[i+1]=='-c':
+                    ast.parse(shell_tokens[i+2])
+
     def test_task104_not_exported(self):
         cmd=[sys.executable,str(Path(__file__).with_name('replay_rvv_act_db2.py')),sys.argv_package,'--case','Vls32-vluxei32.v','--output',str(self.root/'join'),'--sail','/opt/sail','--qemu','/opt/qemu','--stage','/opt/clean961']
         p=subprocess.run(cmd,capture_output=True,text=True)
