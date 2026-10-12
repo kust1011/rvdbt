@@ -1,0 +1,17 @@
+{
+  "guest_calls": 0,
+  "corrections": [
+    "Original raw_stdout locators require parent directories",
+    "Overlay pseudo-source links resolved to retained upstream files",
+    "Offline preparation interrupted twice to cache repeated immutable reads and include retained FP markers",
+    "Original vadd pilot has no CASES file; reused run.py accepted function and vadd source",
+    "Canonical masked-store names differ from original runner_case and adapter filename",
+    "Original masked-store expected observation uses actual selected VLEN variable",
+    "vset parser extraction must select arm loop rather than earlier manifest loop",
+    "MAC exit is retained original returncode (2), not assumed 1",
+    "Source51 canonical source_case is a function name; actual retained runner case derives from raw parent",
+    "Remote preflight rejected missing local-only orchestration script run_missing.py; restricted audit to actual parser dependencies",
+    "Remote rounding runner differs only in case filter; staged exact retained observer copies in fresh root instead of changing originals"
+  ],
+  "production_changes": 0
+}

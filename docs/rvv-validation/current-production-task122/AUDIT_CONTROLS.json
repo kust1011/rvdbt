@@ -1,0 +1,52 @@
+[
+  {
+    "control": "changed-candidate",
+    "status": "PASS",
+    "rejection": "wrong candidate"
+  },
+  {
+    "control": "changed-original-assertion-with-updated-queue-seal",
+    "status": "PASS",
+    "rejection": "original assertion metadata changed"
+  },
+  {
+    "control": "changed-ELF-binding-with-updated-queue-seal",
+    "status": "PASS",
+    "rejection": "original artifact binding changed"
+  },
+  {
+    "control": "tampered-stream",
+    "status": "PASS",
+    "rejection": "stream/detail changed: /home/user/research/materials/ara-current122-raw-20261012/controls/tampered-stream/raw/ara82__context_original_vredsum__context_original_vredsum__BOTH/stdout"
+  },
+  {
+    "control": "missing-stream",
+    "status": "PASS",
+    "rejection": "[Errno 2] No such file or directory: '/home/user/research/materials/ara-current122-raw-20261012/controls/missing-stream/raw/ara82__context_original_vredsum__context_original_vredsum__BOTH/stdout'"
+  },
+  {
+    "control": "consistent-failed-checker",
+    "status": "PASS",
+    "preserved_status": "RESULT_MISMATCH",
+    "counts": {
+      "RESULT_MISMATCH": 1,
+      "PASS": 1887,
+      "SCOPED_PASS": 16
+    }
+  },
+  {
+    "control": "consistent-timeout",
+    "status": "PASS",
+    "preserved_status": "TIMEOUT",
+    "counts": {
+      "TIMEOUT": 1,
+      "PASS": 1887,
+      "SCOPED_PASS": 16
+    }
+  },
+  {
+    "control": "original-MAC-whole-file-failure-remains-scoped",
+    "status": "PASS",
+    "whole_file_pass": false
+  }
+]
