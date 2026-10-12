@@ -1,5 +1,44 @@
 # Linux RV32 signal interface increment (Refs #1)
 
+## Task141 checked signal buffers (current bounded correction)
+
+Production correction `ad5e3c8` replaces the raw guest `memcpy` in the common
+`rv32_signal::CopyIn/CopyOut` boundary with owned `rvv_host_copy::CopyElements`
+byte transfers after the existing nonwrapping, per-page permission checks.
+Calls respect the checked leaf's signed count limit. Exact access-PC ownership
+and the production SIGSEGV/SIGBUS callback return backing faults normally,
+without a callback longjmp. This supersedes the **signal frame/action/mask copy**
+part of the Task140 table below; general syscall marshalling remains open.
+
+`rt_sigaction` and `rt_sigprocmask` return `-EFAULT` on failed output copies
+before changing action/mask state, including queries. Guest output bytes can
+retain a copied prefix after an unexpected backing fault. Delivery still refuses
+a failed frame copy; restoration still stages and validates the frame before
+architectural writeback. Signal layouts, flags, trampoline and existing
+rejection rules are unchanged.
+
+The existing production-interface regression now tests normal, denied,
+nonwrapping, cross-page and truncated-file buffers through these wrappers and
+the production callbacks. It checks EFAULT and unchanged actions/masks for
+first-byte and crossing output faults, all three mask operations, permission
+and overflow failures, and truncated delivery/restore rejection. File truncation
+happens once per isolated child; no mapping repair or guest execution occurs.
+The FRM test's obsolete host CPUState-size assertion is aligned with the already
+pinned Task131 production size (42720); no ABI layout is changed.
+
+Local engineering results: **1876 parent interface checks**, **101 input-child
+and 86 output-child checks**, **256 FRM roundtrips / 192 badframes**, and
+**27 MMU checks**, all passing. `elfrun` also builds but is not executed here.
+These checks are distinct from external corpus coverage: no external fixtures
+or corpus were rerun, and no external expected values changed. Raw builds,
+original fatal witnesses, the copy-only EFAULT failure and final results are in
+[Task141 receipt](../../../SESSION0_RESULT_141.md).
+
+Generic scalar/atomic lowering, optional gather/LLVM ownership and general
+syscall marshalling are outside this correction. Broad issue #1 remains open.
+Guest handler-return/restart, repaired-mapping and same-PC retry execution,
+including equivalents, remain prohibited and untested.
+
 ## Current issue #1 acceptance on QCG (Task140, source audit only)
 
 This table supersedes the **current-work interpretation** of the historical
