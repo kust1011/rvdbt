@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "command": [
+    "scp",
+    "xbd:/home/vick/ara-current122/receipts.tar.gz",
+    "/home/user/research/materials/ara-current122-raw-20261012/receipts.tar.gz"
+  ],
+  "bytes": 15047019,
+  "sha256": "301fdc011baf9be0f147d881128060f1c084f0df05ec85a572cf60cb8d4529ba",
+  "archive_attempts": 2,
+  "archive_warning": "First tar . recorded root directory change caused by archive creation; second explicit-operand archive exited zero",
+  "transport_attempts": 1,
+  "transport_failures": 0,
+  "remote_raw": "/home/vick/ara-current122/raw",
+  "local_raw": "/home/user/research/materials/ara-current122-raw-20261012"
+}

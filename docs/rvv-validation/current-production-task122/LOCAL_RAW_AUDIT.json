@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "actual_attempts": 1908,
+  "eligible_calls": 1904,
+  "excluded_queue_join_attempts": 4,
+  "raw_status_counts": {
+    "PASS": 1892,
+    "SCOPED_PASS": 16
+  },
+  "verified_files": 13356,
+  "attempt_manifest_sha256": "6deb436654a6927831f4bd3abc4114a4dc5600b0319a58a5539dd54465431bc7",
+  "candidate_pins": {
+    "/home/vick/rvdbt-special-memory-20261012-task118/build/bin/elfrun": "533443050f4d1ad4dc49ca74f3e5ac4ca1ccc576f2b107d3771412a218ac3e31",
+    "/home/vick/rvdbt-special-memory-20261012-task118/build/lib/libdbtjitshared.so": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d"
+  }
+}

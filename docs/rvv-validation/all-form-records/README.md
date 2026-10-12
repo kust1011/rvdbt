@@ -78,3 +78,9 @@ reporters and offline readers only, with zero new guest executions or ISA covera
 join these same source selectors to 7,668 new original selfchecks, exact expected
 signature words and literal destination/CSR checker calls. Its actual checked
 union is 590; old records and broader 595-form claims remain separate.
+
+Task122 adds the [current-production Ara receipts](../current-production-task122/README.md)
+to this reader, with original element literals/source checks, actual VL/CSR
+observations, complete commands and scoped failure preservation. Recorded422
+is fully replayed; four incorrectly joined launcher calls are separately retained
+without coverage credit.

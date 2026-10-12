@@ -489,6 +489,7 @@ def main():
     p.add_argument('--candidate')
     p.add_argument('--arm')
     p.add_argument('--navigation', type=Path, help='select from compressed original-case index')
+    p.add_argument('--ara-replay', type=Path, help='audit current-build original accepted Ara receipts')
     p.add_argument('--act-db2-replay', type=Path, help='audit current-build original ACT db2 selfchecks')
     p.add_argument('--act-prior-root', type=Path, help='retained Task104 sealed raw root')
     p.add_argument('--chips-replay', type=Path, help='audit new-build raw with retained CHIPS selectors')
@@ -503,6 +504,12 @@ def main():
                               ('ACT-db2', a.act_db2_package), ('Ara', a.ara_package)] if v}
     if a.navigation:
         import gzip
+        if a.ara_replay:
+            from rvv_ara_replay import audit
+            index = json.loads(gzip.decompress(a.navigation.read_bytes()))
+            result = audit(index, a.ara_replay, a.output)
+            print(json.dumps({k: result[k] for k in ('total', 'counts', 'checked_union_count', 'unattempted')}))
+            return
         if a.act_db2_replay:
             if not a.act_db2_package or not a.act_prior_root:
                 p.error('--act-db2-replay requires --act-db2-package and --act-prior-root')
