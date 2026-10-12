@@ -1269,3 +1269,14 @@ foreach(signal_test rv32_host_copy_fault_test rv32_signal_frm_test rv32_signal_i
   add_executable(${signal_test} ${signal_test}.cpp)
   target_link_libraries(${signal_test} PUBLIC dbtstatic)
 endforeach()
+
+# Task119 executable admission checks reuse the existing translator/fault fixtures.
+foreach(admission_test rv32_llvm_memory_admission_test rv32_memory_run_scanner_test)
+  add_executable(${admission_test} ${admission_test}.cpp)
+  target_include_directories(${admission_test} PRIVATE "${PROJECT_SOURCE_DIR}")
+  target_link_libraries(${admission_test} PRIVATE dbtstatic)
+endforeach()
+llvm_map_components_to_libnames(admission_llvm_libs mcjit executionengine native)
+target_link_libraries(rv32_llvm_memory_admission_test PRIVATE ${admission_llvm_libs})
+add_executable(rv32_host_copy_linkage_test rv32_host_copy_linkage_test.cpp)
+target_link_libraries(rv32_host_copy_linkage_test PRIVATE dbtstatic)
