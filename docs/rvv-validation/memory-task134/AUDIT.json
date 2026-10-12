@@ -1,0 +1,70 @@
+{
+  "completed": 5904,
+  "passed": 5904,
+  "failed": 0,
+  "unattempted": 0,
+  "new_calls": 5901,
+  "credited_calls": 3,
+  "counts": {
+    "chips": {
+      "PASS": 1948
+    },
+    "act": {
+      "PASS": 3828
+    },
+    "ara": {
+      "PASS": 128
+    }
+  },
+  "per_arm": {
+    "chips": {
+      "M2": 487,
+      "M1": 487,
+      "BOTH": 487,
+      "B": 487
+    },
+    "act": {
+      "B": 957,
+      "M1": 957,
+      "M2": 957,
+      "BOTH": 957
+    },
+    "ara": {
+      "B": 32,
+      "BOTH": 32,
+      "M1": 32,
+      "M2": 32
+    }
+  },
+  "XLEN": 32,
+  "ELEN": 64,
+  "guest_VLEN_counts": {
+    "chips": {
+      "1024": 64,
+      "128": 1860,
+      "256": 4,
+      "512": 4,
+      "2048": 4,
+      "4096": 12
+    },
+    "act": {
+      "1024": 3828
+    },
+    "ara": {
+      "1024": 40,
+      "256": 20,
+      "2048": 16,
+      "512": 16,
+      "4096": 28,
+      "128": 8
+    }
+  },
+  "host_chunk_bits": 512,
+  "predicates_recomputed": true,
+  "guest_instructions_in_audit": 0,
+  "production": {
+    "/home/vick/rvdbt-whole-native-task133/build/bin/elfrun": "baac2151f634adb34132f5166e998b98c28b51616a50d7c55bbc829988ae6c98",
+    "/home/vick/rvdbt-whole-native-task133/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "limitations": "Counters do not establish per-target SIMD; grouped QCG/LLVM whole SIMD remains disabled"
+}

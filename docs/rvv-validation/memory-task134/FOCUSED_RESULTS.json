@@ -1,0 +1,31 @@
+[
+  {
+    "name": "singleton-grouped",
+    "rc": 0,
+    "command": [
+      "nice",
+      "-n",
+      "10",
+      "taskset",
+      "-c",
+      "28",
+      "/home/vick/rvdbt-whole-native-task133/build/bin/rv32_whole_native_fault_test",
+      "--normal-only"
+    ],
+    "executable_sha256": "a4af2f2130cd52a6a0f7e9bce6cbfb92f3ac4e433c9b2ce9203b2dbcf6152f91"
+  },
+  {
+    "name": "llvm",
+    "rc": 0,
+    "command": [
+      "nice",
+      "-n",
+      "10",
+      "taskset",
+      "-c",
+      "28",
+      "/home/vick/rvdbt-whole-native-task133/build/bin/rv32_llvm_memory_admission_test"
+    ],
+    "executable_sha256": "2dd5fb613d51b62e2f81e8c4821e1f4ea1c7bd5c007057c0c2b06ea4960dcb10"
+  }
+]
