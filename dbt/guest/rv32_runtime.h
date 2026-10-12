@@ -9,6 +9,7 @@ namespace dbt::rv32
 // Called only after the helper body and its census scope have returned normally.
 // A pending helper fault closes the persistent FP bracket, then uses RaiseTrap.
 void FinishHelperMemoryFault(CPUState *state);
+void ExecuteCheckedUnitMemory(CPUState *state, u32 raw);
 
 extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *state, u32 raw);
 

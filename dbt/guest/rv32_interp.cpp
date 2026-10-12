@@ -10,6 +10,7 @@
 #include "dbt/guest/rv32_route_census.h"
 #include "dbt/guest/rv32_vector_fast.h"
 #include "dbt/mmu.h"
+#include "dbt/rvv_native_fault.h"
 #include "dbt/config.h"
 #include "dbt/ukernel.h"
 #include <atomic>
@@ -546,6 +547,25 @@ extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
 	return !mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied);
 }
 
+// Only the ordinary singleton QCG producer invokes this stronger admission.
+// Cross-page active chunks use the checked element helper BEFORE any SIMD body.
+extern "C" u32 qcgstub_rv32_native_memory_safe(CPUState *s, u32 raw)
+{
+	if (!qcgstub_rv32_unit_memory_safe(s, raw)) return 0;
+	u32 const width = (raw >> 12) & 7;
+	u32 const eew = width == 0 ? 1 : 1u << (width - 4);
+	u32 const base = s->gpr[(raw >> 15) & 31];
+	u32 const bytes = s->vec.vl * eew;
+	u32 const chunk = std::min(s->vec.vlenb, u32(RVV_HOST_CHUNK_BITS / 8));
+	for (u32 off = 0; off < bytes; off += chunk) {
+		u32 const active = std::min(chunk, bytes - off);
+		if (((base + off) & (mmu::PAGE_SIZE - 1)) + active > mmu::PAGE_SIZE ||
+		    !mmu::page_ordinary_ram(base + off)) return 0;
+	}
+	rvv_native_fault::Arm(s);
+	return 1;
+}
+
 // Family preflight: no guest access/state mutation, before native frame bodies.
 extern "C" u32 qcgstub_rv32_family_memory_safe(CPUState *s, u32 raw)
 {
@@ -636,8 +656,11 @@ static void OrdinaryMemory(CPUState *s, u8 *vmem, u32 pc, u32 raw, u32 vlen, u32
 		QueueOrdinaryMemoryFault(s, pc, raw, denied, eew, store, nf, field);
 }
 
+static thread_local bool native_checked_unit;
+
 HANDLER(vle)
 {
+	bool const checked = native_checked_unit; native_checked_unit = false;
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
 	i32 const eew_log2 = eew_log2_from_width(i.funct3());
 	u32 const eew_bytes = 1u << (eew_log2 - 3);
@@ -646,7 +669,7 @@ HANDLER(vle)
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2);
 	u32 const base = s->gpr[i.rs1()];
 	u32 denied = 0;
-	if (i.vm() && s->vec.vstart == 0 &&
+	if (!checked && i.vm() && s->vec.vstart == 0 &&
 	    !mmu::FirstDenied(base, s->vec.vl * eew_bytes, false, denied)) {
 		dispatch_load_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
 	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
@@ -659,6 +682,7 @@ HANDLER(vle)
 
 HANDLER(vse)
 {
+	bool const checked = native_checked_unit; native_checked_unit = false;
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
 	i32 const eew_log2 = eew_log2_from_width(i.funct3());
 	u32 const eew_bytes = 1u << (eew_log2 - 3);
@@ -666,7 +690,7 @@ HANDLER(vse)
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2); // rd field holds vs3 for stores
 	u32 const base = s->gpr[i.rs1()];
 	u32 denied = 0;
-	if (i.vm() && s->vec.vstart == 0 &&
+	if (!checked && i.vm() && s->vec.vstart == 0 &&
 	    !mmu::FirstDenied(base, s->vec.vl * eew_bytes, true, denied)) {
 		dispatch_store_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
 	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
@@ -675,6 +699,18 @@ HANDLER(vse)
 		return;
 	}
 	s->vec.vstart = 0;
+}
+
+// Selected before any native access when a singleton guard misses. Force the
+// existing checked element path even if the permission census admits a bulk copy.
+void ExecuteCheckedUnitMemory(CPUState *state, u32 raw)
+{
+	// Consumed at handler entry, before validation or any possible trap unwind.
+	native_checked_unit = true;
+	u32 gip = state->ip;
+	if ((raw & 0x7f) == 0x27) H_vse(state, gip, mmu::base, raw);
+	else H_vle(state, gip, mmu::base, raw);
+	state->ip = gip;
 }
 
 // Strided load/store. The stride is x[rs2] interpreted as a SIGNED byte count; rs2 == x0 gives

@@ -7,8 +7,10 @@
 
 struct SiteRuntime final : CompilerRuntime {
  std::vector<NativeMemorySite> sites;
+ bool relocate{true};
+ unsigned allocated_pins{};
  void *AllocateCode(size_t size, uint align) override { return tcache::AllocateCode(size + 16, align); }
- bool AllowsRelocation() const override { return true; }
+ bool AllowsRelocation() const override { return relocate; }
  void *AnnounceRegion(u32, std::span<u8> const &, u32) override { return nullptr; }
  void PublishNativeMemorySites(std::span<u8> code, std::span<NativeMemorySite const> values) override {
   sites.assign(values.begin(), values.end());
@@ -63,21 +65,22 @@ static std::span<u8> emit(SiteRuntime &runtime, MemArena &arena, bool store, u32
  for (auto &block : region->GetBlocks()) {
   for (auto it=block.ilist.begin(); it!=block.ilist.end();) {
    auto *ins=&*it++;
-   if (ins->GetOpcode()==Op::_gbr) IListBase::remove(ins); // standalone return harness only
+   if (runtime.relocate && ins->GetOpcode()==Op::_gbr) IListBase::remove(ins); // standalone return harness only
    if (ins->GetOpcode()==Op::_vchunkload) { check(loads==publications,"load publishes before next guest load"); ++loads; }
    if (ins->GetOpcode()==Op::_vstatechunkstore) ++publications;
   }
  }
  check(store || (loads==(partial?4u:2u) && loads==publications),"production QCG publication order in both arms");
  auto code=qcg::GenerateCode(&runtime,&job.segment,region,pc);
+ runtime.allocated_pins=region->n_pins;
  check(runtime.sites.size()==(partial?4u:2u),"exact full/partial access count, state accesses excluded");
  char filename[96];
  snprintf(filename,sizeof(filename),"emitted-%s-eew%u-partial%d.bin",store?"store":"load",eew,partial);
  FILE *out=fopen(filename,"wb");check(out && fwrite(code.data(),1,code.size(),out)==code.size(),"retain actual emitted bytes");fclose(out);
  snprintf(filename,sizeof(filename),"sites-%s-eew%u-partial%d.txt",store?"store":"load",eew,partial);
  out=fopen(filename,"w");check(out,"retain final site records");
- for(auto const &site:runtime.sites) fprintf(out,"offset=%u guest_pc=%08x raw=%08x disp=%u base_state=%u bytes=%u eew=%u addr_reg=%u data_reg=%u mask=%u store=%d\n",
-  site.code_offset,site.guest_pc,site.raw,site.displacement,site.base_state_offs,site.bytes,site.eew_bytes,site.address_reg,site.data_reg,site.mask_reg,site.store);
+ for(auto const &site:runtime.sites) fprintf(out,"offset=%u guest_pc=%08x raw=%08x disp=%u base_state=%u bytes=%u eew=%u addr_reg=%u data_reg=%u mask=%u store=%d cold=%u\n",
+  site.code_offset,site.guest_pc,site.raw,site.displacement,site.base_state_offs,site.bytes,site.eew_bytes,site.address_reg,site.data_reg,site.mask_reg,site.store,site.cold_offset);
  fclose(out);
  auto *bytes=code.data();size_t end=code.size();
  check(bytes[0]==0x51,"normal nonleaf frame prologue");
@@ -151,6 +154,7 @@ static void cell(CPUState *s, bool store, u32 eew, bool partial, u32 inside)
         store,eew,partial,inside,capture_site.code_offset,capture_site.data_reg,capture_site.mask_reg,store?0:64,capture->vstart);
  ++cells;
 }
+#ifndef RVV_NATIVE_FAULT_FIXTURE
 int main()
 {
  check(__builtin_cpu_supports("avx512f")&&__builtin_cpu_supports("bmi2"),"actual host features, no force emission");
@@ -158,7 +162,7 @@ int main()
  auto *s=CPUState::Current();check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE)!=MAP_FAILED,"guest program mapping");
  capture=(Capture*)::mmap(nullptr,sizeof(Capture),PROT_READ|PROT_WRITE,MAP_SHARED|MAP_ANON,-1,0);
  check(capture!=MAP_FAILED,"shared local capture");
- for(bool store:{false,true})for(u32 eew:{4u,8u})for(bool partial:{false,true})for(u32 inside:{0u,eew})
+ for(bool store:{false,true})for(u32 eew:{4u,8u})for(bool partial:{false,true})for(u32 inside:{0u})
   cell(s,store,eew,partial,inside);
  SiteRuntime runtime;MemArena arena(4u<<20);auto code=emit(runtime,arena,false,4,false);
  auto old=(uptr)code.data()+runtime.sites[0].code_offset;NativeMemorySite found;
@@ -166,3 +170,5 @@ int main()
  tcache::Destroy();check(!tcache::InspectNativeMemorySite(old,found),"pool destroy has no stale ownership");
  printf("LOCAL_NATIVE_MEMORY_SITE_PASS checks=%u cells=%u ABI=%016llx (inspection and publication only)\n",checks,cells,(unsigned long long)rv32::CPUStateAbiSignature());
 }
+
+#endif

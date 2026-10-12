@@ -1957,6 +1957,11 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	rvv_typed_chunk_open = true;
 	native_memory_pc = ins->n_members == 1 ? ins->native_memory_pc : qir::RVVRunMember::PC_UNUSED;
 	native_memory_raw = ins->raw;
+	native_memory_cold = j.newLabel();
+	native_memory_frame_sites = native_memory_sites.size();
+	// Pins remain resident at CallOp. Commit their runtime values unconditionally.
+	if (native_memory_pc != qir::RVVRunMember::PC_UNUSED)
+		for (u8 i = 0; i < n_pins; ++i) StateSpill(pins[i].preg, pins[i].type, pins[i].offs);
 	rvv_typed_chunk_expected = ins->n_typed;
 	rvv_typed_chunk_seen = 0;
 	rvv_typed_chunk_members = ins->n_members;
@@ -1996,7 +2001,9 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 			j.mov(x86::esi, raw);
 			j.emit(x86::Inst::kIdCall,
 			       make_stubcall_target((special_memory ? RuntimeStubId::id_rv32_special_memory_safe
-						     : unit_memory  ? RuntimeStubId::id_rv32_unit_memory_safe
+						     : unit_memory  ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
+							? RuntimeStubId::id_rv32_native_memory_safe
+							: RuntimeStubId::id_rv32_unit_memory_safe)
 								    : RuntimeStubId::id_rv32_family_memory_safe)));
 			j.test(x86::eax, x86::eax);
 			j.jz(rvv_typed_chunk_fallback);
@@ -2374,9 +2381,26 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 		}
 		j.mov(x86::rdi, R_STATE);
 		j.mov(x86::rsi, (uint64_t)ins->members[i].raw);
-		j.emit(x86::Inst::kIdCall, make_stubcall_target(ins->members[i].stub));
+		j.emit(x86::Inst::kIdCall, make_stubcall_target(
+			native_memory_pc != qir::RVVRunMember::PC_UNUSED
+			? RuntimeStubId::id_rv32_native_memory_fault : ins->members[i].stub));
 	}
 
+	if (native_memory_sites.size() != native_memory_frame_sites) {
+		// Neither the successful body nor helpers fall through the terminal fault exit.
+		j.jmp(rvv_typed_chunk_done);
+		j.bind(native_memory_cold);
+		u32 const cold = (u32)j.offset();
+		for (size_t i = native_memory_frame_sites; i < native_memory_sites.size(); ++i)
+			native_memory_sites[i].cold_offset = cold;
+		// Tail-enter C++ with the original trampoline return address and SysV alignment.
+		// FinishHelperMemoryFault closes deferred FP state and RaiseTrap discards the
+		// trampoline/spill frame using the established dispatcher unwind boundary.
+		FrameDestroy();
+		j.mov(x86::rdi, R_STATE);
+		j.xor_(x86::esi, x86::esi);
+		j.emit(x86::Inst::kIdJmp, make_stubcall_target(RuntimeStubId::id_rv32_native_memory_fault));
+	}
 	j.bind(rvv_typed_chunk_done);
 	rvv_typed_chunk_open = false;
 	native_memory_pc = qir::RVVRunMember::PC_UNUSED;

@@ -1,4 +1,5 @@
 #include "dbt/tcache/tcache.h"
+#include "dbt/rvv_native_fault.h"
 #include "dbt/qmc/qcg/jitabi.h"
 
 namespace dbt
@@ -202,6 +203,7 @@ static std::unordered_map<uptr, NativeMemorySite> native_memory_sites;
 
 void tcache::RegisterNativeMemorySites(std::span<u8> code, std::span<NativeMemorySite const> sites)
 {
+	rvv_native_fault::Register(code, sites);
 	for (auto const &site : sites) {
 		if (site.code_offset >= code.size()) Panic("native memory site outside code allocation");
 		native_memory_sites[(uptr)code.data() + site.code_offset] = site;
@@ -218,6 +220,7 @@ bool tcache::InspectNativeMemorySite(uptr pc, NativeMemorySite &site)
 
 void tcache::Init()
 {
+	rvv_native_fault::Clear();
 	native_memory_sites.clear();
 	brind_dirty.reserve(1u << 20); // F2 fix: no realloc ever => no UAF window in the SIGALRM flush
 
@@ -238,6 +241,7 @@ void tcache::Init()
 
 void tcache::Destroy()
 {
+	rvv_native_fault::Clear();
 	native_memory_sites.clear();
 	log_tcache("Destroy tcache, code_pool size: %zu", code_pool.GetUsedSize());
 
@@ -252,6 +256,7 @@ void tcache::Destroy()
 
 void tcache::Invalidate()
 {
+	rvv_native_fault::Clear();
 	native_memory_sites.clear();
 	l1_cache.fill(nullptr);
 	l1_brind_cache.fill({0, nullptr});

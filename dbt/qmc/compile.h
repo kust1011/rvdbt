@@ -10,14 +10,15 @@ namespace dbt
 {
 using IpRange = std::pair<u32, u32>;
 
-// Exact emitted guest-program access sites. Inspection metadata, NOT a recovery
-// map: SIMD completion, architectural publication and a cold exit are not encoded.
+// Exact ordinary singleton guest accesses and their emitted terminal cold exits.
+// A nonzero cold_offset requires page-contained active accesses and prior-state sync.
 // CPUState/spill accesses never belong to this list. Register numbers are x86 IDs.
 struct NativeMemorySite {
 	u32 code_offset{}, guest_pc{}, raw{}, displacement{};
 	u16 base_state_offs{};
 	u8 bytes{}, eew_bytes{}, address_reg{}, data_reg{}, mask_reg{0xff};
 	bool store{};
+	u32 cold_offset{};
 };
 
 struct CompilerRuntime {

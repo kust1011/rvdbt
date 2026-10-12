@@ -19,13 +19,14 @@ bool HelperSiginfo(MemoryFaultEvent const &e, u32 &signal, u32 &code)
 		signal = SigSegv;
 		if (e.reason == MemoryFaultEvent::Reason::Unmapped) { code = 1; return true; }
 		if (e.reason == MemoryFaultEvent::Reason::Protection) { code = 2; return true; }
-	} else if (e.origin == MemoryFaultEvent::Origin::HostCopy &&
+	} else if ((e.origin == MemoryFaultEvent::Origin::HostCopy ||
+	            e.origin == MemoryFaultEvent::Origin::NativeUnit) &&
 	           e.reason == MemoryFaultEvent::Reason::HostFault) {
 		if (e.host_signal == SIGSEGV) {
 			signal = SigSegv;
 			if (e.host_code == SEGV_MAPERR) { code = 1; return true; }
 			if (e.host_code == SEGV_ACCERR) { code = 2; return true; }
-		} else if (e.host_signal == SIGBUS) {
+		} else if (e.host_signal == SIGBUS && e.origin == MemoryFaultEvent::Origin::HostCopy) {
 			signal = SigBus;
 			if (e.host_code == BUS_ADRERR) { code = 2; return true; }
 			if (e.host_code == BUS_OBJERR) { code = 3; return true; }

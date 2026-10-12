@@ -1,4 +1,5 @@
 #include "dbt/rvv_host_copy.h"
+#include "dbt/rvv_native_fault.h"
 #include "dbt/ukernel.h"
 #include "dbt/execute.h"
 #include "dbt/qmc/ngr.h"
@@ -162,16 +163,17 @@ struct RVDBT_UTHREAD_ALIGNAS uthread {
 // gate rather than loaded against a different register file.
 // Tasks115/117/118 append admission stubs to the embedded runtime table. Architectural
 // offsets stay fixed; Task118 moves FP to42280 and CPUStateImpl to42704 bytes. The existing
-// layout signature therefore rejects old AOT images instead of executing their
+// Task131 appends two native-boundary stubs: FP is42296, CPUState42720.
+// The layout signature therefore rejects old AOT images instead of executing their
 // unchecked ordinary memory bodies (even if the guest ELF/cache key is unchanged).
-static_assert(sizeof(rv32::CPUStateImpl) == 42704, "CPUStateImpl size changed -- AOT ABI moved");
-static_assert(sizeof(CPUState) == 42704, "CPUState size changed -- AOT ABI moved");
+static_assert(sizeof(rv32::CPUStateImpl) == 42720, "CPUStateImpl size changed -- AOT ABI moved");
+static_assert(sizeof(CPUState) == 42720, "CPUState size changed -- AOT ABI moved");
 static_assert(alignof(CPUState) == 16, "CPUState's own alignment changed");
 static_assert(sizeof(rv32::VectorState) == 16432, "VectorState size changed -- AOT ABI moved");
 static_assert(sizeof(rv32::FPUState) == 408, "FPUState size changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, vec) == 208, "vec offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, gpr) == 56, "gpr offset changed -- AOT ABI moved");
-static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42280, "fpu offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42296, "fpu offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, ip) == 184, "ip offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, trapno) == 192, "trapno offset changed -- AOT ABI moved");
 #if RVDBT_UTHREAD_PAGE_ALIGN
@@ -415,6 +417,7 @@ static void DumpFaultState(ucontext_t *uc, siginfo_t *sinfo, CPUState *state)
 static void dbt_sigaction_memory(int signo, siginfo_t *sinfo, void *uctx_raw)
 {
 	auto uc = static_cast<ucontext_t *>(uctx_raw);
+	if (rvv_native_fault::HandleSignal(signo, sinfo, uc)) return;
 	if (rvv_host_copy::HandleSignal(signo, sinfo, uc)) return;
 
 	auto hpc = uc->uc_mcontext.gregs[REG_RIP];

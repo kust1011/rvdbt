@@ -2,6 +2,7 @@
 #include "dbt/ukernel.h"
 #include <cstdlib>
 #include <map>
+#include <sys/stat.h>
 
 namespace dbt
 {
@@ -47,6 +48,7 @@ bool mmu::DetailedMetadataEnabled()
 void mmu::Init()
 {
 	mapped_pages.reset();
+	ordinary_ram_pages.reset();
 	readable_pages.reset();
 	writable_pages.reset();
 	executable_pages.reset();
@@ -99,7 +101,17 @@ void mmu::MarkFreePages(u32 pvaddr, u32 plen)
 // Accurate map of what is actually mapped, kept only so a fault-only-first load can PREDICT a
 // fault. Read-only from the guest's point of view and never consulted by the allocator, so it
 // cannot change which addresses are handed out.
-std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::mapped_pages;
+std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::mapped_pages, mmu::ordinary_ram_pages;
+
+// Anonymous RAM and regular-file mappings are idempotent ordinary memory.
+// Device/unknown backing must use checked helpers, never a native recovery claim.
+void mmu::MarkOrdinaryRam(u32 page, u32 count, int flags, int fd)
+{
+	struct stat st{};
+	bool const ordinary = (flags & MAP_ANONYMOUS) ||
+	    (fd >= 0 && ::fstat(fd, &st) == 0 && S_ISREG(st.st_mode));
+	for (u32 p = page; p < page + count; ++p) ordinary_ram_pages.set(p, ordinary);
+}
 
 void mmu::MarkMapped(u32 pvaddr, u32 plen)
 {
@@ -111,6 +123,7 @@ void mmu::MarkUnmapped(u32 pvaddr, u32 plen)
 {
 	for (u32 p = pvaddr; p < pvaddr + plen && p < (ASPACE_SIZE >> PAGE_BITS); ++p) {
 		mapped_pages.reset(p);
+		ordinary_ram_pages.reset(p);
 		readable_pages.reset(p);
 		writable_pages.reset(p);
 		executable_pages.reset(p);
@@ -169,6 +182,7 @@ void *mmu::mmap(u32 vaddr, u32 len, int prot, int flags, int fd, size_t offs)
 		log_mmu("mmu::mmap allocated at %p sz=0x%08x", hptr, len);
 		MarkUsedPages(vaddr >> PAGE_BITS, plen);
 		MarkMapped(vaddr >> PAGE_BITS, plen);
+		MarkOrdinaryRam(vaddr >> PAGE_BITS, plen, flags, fd);
 		MarkReadable(vaddr >> PAGE_BITS, plen, prot);
 		if (page_details)
 			for (u32 p = vaddr >> PAGE_BITS; p < (vaddr >> PAGE_BITS) + plen; ++p)
@@ -221,6 +235,7 @@ void *mmu::mmap(u32 vaddr, u32 len, int prot, int flags, int fd, size_t offs)
 	paddr = h2g(hptr) >> PAGE_BITS;
 	MarkUsedPages(paddr, plen);
 	MarkMapped(paddr, plen);
+	MarkOrdinaryRam(paddr, plen, flags, fd);
 	MarkReadable(paddr, plen, prot);
 	if (page_details)
 		for (u32 p = paddr; p < paddr + plen; ++p)
