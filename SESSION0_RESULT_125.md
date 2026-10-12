@@ -58,8 +58,8 @@ golden, original testcase or expected answer was generated or repaired.
 | Total | **5,904** | **1,476 each** | no mismatch/crash/timeout/runner error/unattempted call |
 
 The checked memory union is **278 forms**, also 278 in each CHIPS and ACT arm;
-Ara supplies111 memory forms. Family union: unit8, strided8, indexed/segment208,
-mask2, whole-register20, FOF32. These are finite original comparisons, not all
+Ara supplies 111 memory forms. Family union: unit 8, strided 8, indexed/segment 208,
+mask 2, whole-register 20, FOF 32. These are finite original comparisons, not all
 configurations or a full-state/fault oracle. Original source/adapter/ELF/checker
 hashes were authenticated before execution. Remote receipt audit validates
 original call membership, complete normalized flags, candidate identities and
@@ -89,9 +89,9 @@ FOF case. Exact selected external counters are in
 
 Task119 executable LLVM/scanner checks are now reproducible from repository
 sources using two small existing-CMake targets. Current source executes the
-retained O3 MCJIT whole-memory body/observer fixture: **8 native,4 denied,4
-forced successful fallback cells,268 checks**, exit0. Actual scanner FormRun:
-**13 rows,0 failures**, exit0, with the original permissive shape callback and
+retained O3 MCJIT whole-memory body/observer fixture: **8 native, 4 denied, 4
+forced successful fallback cells, 268 checks**, exit0. Actual scanner FormRun:
+**13 rows, 0 failures**, exit0, with the original permissive shape callback and
 separate production translator/route checks. Existing whole-register LLVM IR and
 QCG route tests also exit0. The LLVM fixture still replaces GHC entry convention
 with C and terminal dispatch with return; this is executable translated-body
@@ -137,4 +137,3 @@ Remaining unexpected-host-fault limitations are explicit:
 
 No native recovery, complete memory model, concurrent mapping contract, complete
 guest fault delivery/restart, P4-04 or equivalent guest retry is accepted here.
-
