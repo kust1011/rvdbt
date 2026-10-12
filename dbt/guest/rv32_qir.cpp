@@ -15494,9 +15494,9 @@ TRANSLATOR(vleff)
 	rvv_bb_vl = RVV_VL_UNKNOWN;
 	rvv_bb_vl_vlmax = 0;
 	// THE HELPER-ONLY WITNESS for the lowering decision layer, and the reason is the one this
-	// comment block already gives: `vleff` delivers a memory fault by PERFORMING the predicted-
-	// faulting access and trimming `vl` to what it managed to load, and rvdbt has no recoverable
-	// memory-fault trap for emitted code to use. That is a protocol fact, not a missing AVX-512
+	// comment block already gives: `vleff` queues an element-zero permission fault through
+	// the helper-return boundary, or trims `vl` on a denied later element. Native host-fault
+	// recovery is still unavailable. That is a protocol fact, not a missing AVX-512
 	// sequence, so the axis is `MemoryProtocol` and no amount of lowering work removes it.
 	// Stating it here is the same contract every typed-frame producer already follows with
 	// rvvfinal::CloseFrame's `reason`: the producer classifies, the shared layer records.

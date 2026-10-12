@@ -159,14 +159,18 @@ struct RVDBT_UTHREAD_ALIGNAS uthread {
 // still alignas(16) -- and the AOT ABI signature changes with the size, which is the intended
 // fail-closed outcome: an artifact built against the old CPUState is REFUSED by the centralized
 // gate rather than loaded against a different register file.
-static_assert(sizeof(rv32::CPUStateImpl) == 42672, "CPUStateImpl size changed -- AOT ABI moved");
+// Task115 appends one admission stub to the embedded runtime table. Architectural
+// offsets stay fixed; later runtime/FP offsets move by eight bytes. The existing
+// layout signature therefore rejects old AOT images instead of executing their
+// unchecked ordinary memory bodies (even if the guest ELF/cache key is unchanged).
+static_assert(sizeof(rv32::CPUStateImpl) == 42688, "CPUStateImpl size changed -- AOT ABI moved");
 static_assert(sizeof(CPUState) == 42688, "CPUState size changed -- AOT ABI moved");
 static_assert(alignof(CPUState) == 16, "CPUState's own alignment changed");
 static_assert(sizeof(rv32::VectorState) == 16432, "VectorState size changed -- AOT ABI moved");
 static_assert(sizeof(rv32::FPUState) == 408, "FPUState size changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, vec) == 208, "vec offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, gpr) == 56, "gpr offset changed -- AOT ABI moved");
-static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42256, "fpu offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42264, "fpu offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, ip) == 184, "ip offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, trapno) == 192, "trapno offset changed -- AOT ABI moved");
 #if RVDBT_UTHREAD_PAGE_ALIGN
@@ -219,7 +223,8 @@ void ukernel::QueueHelperMemoryFault(CPUState *state, MemoryFaultEvent const &ev
 	if (state != CPUState::Current() || ut->memory_fault_pending ||
 	    state->trapno != rv32::TrapCode::NONE ||
 	    event.origin != MemoryFaultEvent::Origin::PredictedHelper ||
-	    event.access != MemoryFaultEvent::Access::Load ||
+	    (event.access != MemoryFaultEvent::Access::Load &&
+	     event.access != MemoryFaultEvent::Access::Store) ||
 	    (event.reason != MemoryFaultEvent::Reason::Protection &&
 	     event.reason != MemoryFaultEvent::Reason::Unmapped) ||
 	    (event.eew_bytes != 1 && event.eew_bytes != 2 &&
@@ -258,10 +263,11 @@ void ukernel::WriteMemoryFaultSnapshot(FILE *out, MemoryFaultSnapshot const &s)
 	auto const &e = s.event;
 	fprintf(out, "RVDBT_MEMORY_FAULT_SNAPSHOT {\"schema_version\":1,"
 		"\"status\":\"HELPER_FAULT_CAPTURED\","
-		"\"origin\":\"PredictedHelper\",\"access\":\"load\","
+		"\"origin\":\"PredictedHelper\",\"access\":\"%s\","
 		"\"reason\":\"%s\",\"pc\":%u,\"raw\":%u,\"address\":%u,"
 		"\"element\":%u,\"field\":%u,\"eew_bytes\":%u,\"nf\":%u,"
 		"\"fp_run_closed\":true,\"vlenb\":%u,\"gpr\":[",
+		e.access == MemoryFaultEvent::Access::Store ? "store" : "load",
 		e.reason == MemoryFaultEvent::Reason::Protection ? "protection" : "unmapped",
 		s.pc, e.raw, e.address, e.element, e.field, e.eew_bytes, e.nf, s.vlenb);
 	for (u32 r = 0; r < 32; ++r) fprintf(out, "%s%u", r ? "," : "", s.gpr[r]);

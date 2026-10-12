@@ -603,6 +603,25 @@ ALWAYS_INLINE void guest_store_elem(u8 *vmem, u32 gaddr, u8 const *src, u32 byte
 namespace rvv_ref
 {
 
+// Ordinary unit-stride permission fallback. Returns normally on denial so the
+// instruction handler can queue the event without unwinding helper-owned scopes.
+inline bool unit_stride_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
+				u32 vlen, u32 vl, u32 eew, bool vm, bool store,
+				u32 &denied)
+{
+	for (u32 e = vs.vstart; e < vl; ++e) {
+		if (!vm && !vs.mask_get(0, e)) continue;
+		vs.vstart = e;
+		u32 address = base + e * eew;
+		if (mmu::FirstDenied(address, eew, store, denied)) return false;
+		u8 *element = vs.elem_ptr(reg, e, eew, vlen);
+		if (store) guest_store_elem(vmem, address, element, eew);
+		else guest_load_elem(element, vmem, address, eew);
+	}
+	vs.vstart = 0;
+	return true;
+}
+
 inline void load_unit_stride(VectorState &vs, u32 vd, u8 *vmem, u32 base, u32 vlen_bits, u32 vl,
 			     u32 eew_bytes)
 {

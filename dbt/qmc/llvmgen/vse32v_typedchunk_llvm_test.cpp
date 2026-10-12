@@ -582,7 +582,27 @@ void CheckAdmitted(char const *tag, u32 vlen_bits, unsigned nchunks, u32 vlmax, 
 	{
 		std::vector<std::pair<u64, u64>> cmps;
 		unsigned n_other = 0;
-		CollectGuardCmps(br->getCondition(), statev, &cmps, &n_other);
+		// Task115 adds a mandatory permission conjunct. Verify its exact runtime
+		// target, ABI, raw word and dominance, then retain every original guard
+		// expectation on the other conjunct (no unidentified conditions allowed).
+		auto *all = llvm::dyn_cast<llvm::BinaryOperator>(br->getCondition());
+		CHECK(all && all->getOpcode() == llvm::Instruction::And);
+		if (!all) return;
+		auto *permission = llvm::dyn_cast<llvm::ICmpInst>(all->getOperand(1));
+		CHECK(permission && permission->getPredicate() == llvm::CmpInst::ICMP_NE);
+		if (!permission) return;
+		auto *call = llvm::dyn_cast<llvm::CallInst>(permission->getOperand(0));
+		auto *zero = llvm::dyn_cast<llvm::ConstantInt>(permission->getOperand(1));
+		CHECK(zero && zero->isZero());
+		CHECK(call && call->getType()->isIntegerTy(32) && call->getParent() == guard_bb);
+		if (!call) return;
+		CHECK(IsHelperCallWithRaw(call, statev, insn));
+		auto *target = llvm::dyn_cast<llvm::LoadInst>(StripCasts(call->getCalledOperand()));
+		u64 target_offset = 0;
+		CHECK(target && StateOffsetOf(target->getPointerOperand(), statev, &target_offset));
+		CHECK_EQ(target_offset, offsetof(CPUState, stub_tab) +
+			 RuntimeStubTab::offs(RuntimeStubId::id_rv32_unit_memory_safe));
+		CollectGuardCmps(all->getOperand(0), statev, &cmps, &n_other);
 		CHECK_EQ(n_other, 0u);
 		CHECK_EQ(cmps.size(), (size_t)4);
 		CHECK(HasGuardCmp(cmps, ST_VLENB, vlen_bits / 8));

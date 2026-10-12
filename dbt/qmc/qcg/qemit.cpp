@@ -1976,6 +1976,14 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	rvv_typed_chunk_vl_guarded =
 	    qir::InstRVVTypedChunkBegin::GuardBoundsVlByVlmax(ins->guard_kind);
 
+	if (ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse) {
+		j.mov(x86::rdi, R_STATE);
+		j.mov(x86::esi, ins->raw);
+		j.emit(x86::Inst::kIdCall, make_stubcall_target(RuntimeStubId::id_rv32_unit_memory_safe));
+		j.test(x86::eax, x86::eax);
+		j.jz(rvv_typed_chunk_fallback);
+	}
+
 	// Guard: the architectural state must be exactly what translation assumed. WHICH state that
 	// is depends on the opcode, and the node says which -- see InstRVVTypedChunkBegin::GuardKind.
 	if (ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VlenbVstart ||

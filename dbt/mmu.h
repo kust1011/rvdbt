@@ -2,6 +2,7 @@
 
 #include "dbt/util/allocator.h"
 #include "dbt/util/logger.h"
+#include <algorithm>
 #include <bitset>
 #include <cstdint>
 #include <memory>
@@ -106,6 +107,23 @@ struct mmu {
 			a += in_page;
 		}
 		return true;
+	}
+
+	// RV32-wrapped permission query. On failure identify the first denied byte,
+	// including a second page (or address zero) within a split element.
+	static ALWAYS_INLINE bool FirstDenied(u32 address, u32 length, bool store, u32 &denied)
+	{
+		for (u32 left = length; left;) {
+			if (!(store ? writable_pages[address >> PAGE_BITS]
+				    : readable_pages[address >> PAGE_BITS])) {
+				denied = address;
+				return true;
+			}
+			u32 step = std::min(left, (u32)PAGE_SIZE - (address & (u32)(PAGE_SIZE - 1)));
+			left -= step;
+			address += step;
+		}
+		return false;
 	}
 
 	// Report a guest memory fault at a KNOWN guest address and terminate, which is what the
