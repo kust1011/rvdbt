@@ -1,8 +1,9 @@
 # Reading the RVV implementation and validation
 
 The inventory has 627 mnemonic/operand forms, with 595 applicable to RV32/ELEN64
-and 32 ei64 indexed forms excluded by that profile. The fixed correctness build
-uses QCG host512; VLEN128–4096 is a capability, not a tested Cartesian product.
+and 32 ei64 indexed forms excluded by that profile. The current delivery has
+separate host512 full-corpus and affected-memory regression builds, listed in
+[the validation entry](rvv-validation.md). VLEN128–4096 is a capability, not a tested Cartesian product.
 Direct chunk routes and shared semantic helpers both implement guest behavior.
 
 Source presence, compiled source, static emission, program execution,
@@ -34,9 +35,9 @@ and Ara review package linked below supersede its aggregate counts.
   those configured executions. An optimization may refuse a case and use a
   fallback; generated-code or runtime admission evidence is needed to say
   that the optimized body itself was exercised.
-- **What remains incomplete?** Precise interruption/retry is not established.
-  This is more than a Linux signal interface gap: vector memory paths do not
-  uniformly save completed elements and restart state on a fault. Normal
+- **What remains incomplete?** Complete guest-handler return/retry is not established.
+  Checked helpers and admitted singleton QCG memory bodies now have bounded
+  fault-state handling, but this does not cover every generated memory path. Normal
   result checks, including manually supplied nonzero `vstart`, do not test
   an actual fault followed by repair and retry. Additional configuration and
   intermediate-state coverage is described below, not assumed from595 forms.
@@ -239,9 +240,46 @@ contracts and CTK/Tenstorrent profile exclusions do not become ISA passes.
 rv32emu retains whole-test FAIL (8 reached,7 passed,1 failed,296 unreached),
 without data-vector result coverage.
 
-Clean961 lacks guest signal-handler completion; general precise vector fault
-restoration/retry and native fault-state proof remain incomplete. P4 is separate.
+Clean961 is a historical build, not the current fault-handling implementation.
+The delivery branch integrates checked-helper fault delivery and exact host-PC
+fault exits for admitted ordinary and whole-register singleton QCG bodies.
+Local terminal-state checks inspect the instruction PC, memory address,
+completed state and vstart. The retained guest signal fixtures exit from the
+handler; they do not return and retry an instruction. Grouped/other native
+paths and complete guest return/restart remain separate unfinished obligations.
 Full/intermediate state, access suppression, agnostic write history, arbitrary
 overlap/restart and per-PC M1/M2 admission remain unknown beyond scoped witnesses.
 These results establish finite checked forms/configurations, not full RVV1.0
 conformance or complete engineering.
+
+## Explain a memory fault without conflating the tests
+
+For an admitted singleton unit-stride load, the generated code publishes each
+completed chunk to `CPUState` before the next guest-memory access. The compiler
+records the exact host memory-instruction address and its emitted cold exit in
+`NativeMemorySite` (`dbt/qmc/compile.h`). Registration binds those records to
+the finalized code allocation, not a guessed instruction offset.
+
+`dbt/rvv_native_fault.cpp` accepts only faults satisfying the site's ownership
+and access conditions. The signal callback redirects execution to the cold
+exit; the ordinary runtime then records the guest PC, address and restart
+element and enters the dispatcher. CPUState loads, allocator spills and unrelated
+host faults are not guest-memory sites. Page-crossing or unsupported backing
+uses the checked helper instead of this SIMD fault path.
+
+Three different observations answer three different questions:
+
+1. An external normal-path test checks its original expected result. It does
+   not test fault-state handling just because its opcode is a load or store.
+2. A local one-time fault fixture captures the terminal dispatcher state and
+   compares completed and unchanged elements. It does not repair memory or
+   execute the faulting instruction again.
+3. A guest-handler delivery test checks the delivered state and signal frame.
+   Returning from that handler and correctly resuming the instruction would
+   require a separate test; the exit-only fixtures do not establish it.
+
+The implementation links and exact results are in the
+[ordinary native contract](../SESSION0_RESULT_131.md),
+[checked helper integration](../SESSION0_RESULT_132.md), and
+[whole-register contract](../SESSION0_RESULT_133.md). These are implementation
+regressions, not additional external instruction forms.
