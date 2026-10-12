@@ -4,31 +4,21 @@
 
 Task142 uses source `8111040faad84ded7f84fc5bd34d10461bfc50ca`, including reviewed signal-copy correction `ad5e3c8`. Actual build: `xbd:/home/vick/rvdbt-host512-task142-build/build/`, Clang22/LLVM22.1.6, Release, RV32/ELEN64, `RVV_HOST_CHUNK_BITS=512`. [Configuration match](CONFIGURATION_MATCH_137.json) checks 44 relevant options against Task137; [source](SOURCE_EQUALITY.json) and [dependencies](DEPENDENCY_EQUALITY.json) authenticate 297/442 files. The final executable is `e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b`; library `79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af`.
 
-The current portable entry uses the public asset proposed in
+The current portable entry uses the published public asset in
 [TASK143_ARCHIVES.json](TASK143_ARCHIVES.json), compatible with the existing
-`verify_rvv_artifacts.py`. It is **staged locally, not uploaded**; main publishes
-after review. The exact upload file is
-`/tmp/task143-release/task142-inspection.tar.gz`. The unchanged transport archive
+`verify_rvv_artifacts.py`. The immutable manifest records its staging identity;
+the matching asset is now uploaded to the validation release. The unchanged transport archive
 and identity remain in [TRANSPORT.json](TRANSPORT.json). Remote retained raw is
 `xbd:/home/vick/rvdbt-host512-task142/`; build/source/binaries remain in its
 separate build root. Task137/138 history is immutable.
 
-Main's prepared upload command (not executed here):
-
-```sh
-gh release upload rvv-validation-20261012 \
-  /tmp/task143-release/task142-inspection.tar.gz --repo kust1011/rvdbt
-```
-
-Use a **reviewed source checkout containing Task143**, descended from `f50a1bf`,
-with Task142 navigation and this manifest. Main supplies that published revision.
+Use reviewed revision **0d253a45ddce1b45f46c843e986b29410d04786f** or a later
+delivery revision containing this reader, navigation and manifest.
 The existing `rvv-validation-20261012` release tag can host the new asset but its
 historical source ZIP does not contain this reader. From a cloned repository:
 
 ```sh
-# Set this to main's published reviewed Task143 commit, not the old release tag.
-: "${TASK143_SOURCE_REVISION:?set the published reviewed Task143 source commit}"
-git checkout --detach "$TASK143_SOURCE_REVISION"
+git checkout --detach 0d253a45ddce1b45f46c843e986b29410d04786f
 git merge-base --is-ancestor f50a1bf HEAD
 test -f docs/rvv-validation/host512-task142/TASK143_ARCHIVES.json
 ```
@@ -37,8 +27,7 @@ Use Python 3.10+, assertions enabled (`PYTHONOPTIMIZE` unset; no `-O`/`-OO`).
 The already published Task139 supplement, CHIPS94 and ACT db2 assets and licensed
 repository Ara91 archive supply source/checker metadata; reuse existing checked
 extractions if available. They are not republished in the new Task142 asset.
-The following exact public acquisition recipe creates new directories; the new
-Task142 download requires main's publication first:
+The following public acquisition recipe creates new directories:
 
 ```sh
 mkdir downloads
@@ -48,7 +37,7 @@ curl -q -fL --retry 3 --no-netrc -o downloads/act-db2-task110.tar.gz \
   https://github.com/kust1011/rvdbt/releases/download/rvv-act-db2-20261012/act-db2-task110.tar.gz
 curl -q -fL --retry 3 --no-netrc -o downloads/task138-inspection.tar.gz \
   https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/task138-inspection.tar.gz
-# This new asset is available only after main publishes the reviewed Task143 handoff:
+# Final signal-copy build outputs:
 curl -q -fL --retry 3 --no-netrc -o downloads/task142-inspection.tar.gz \
   https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/task142-inspection.tar.gz
 python3 - <<'PY_DOWNLOAD'

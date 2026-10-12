@@ -95,12 +95,12 @@ remain outside the accepted queue. Prior-build receipts earn zero Task142 credit
 The [Task142 public reader](rvv-validation/host512-task142/README.md) gives exact
 asset acquisition, hash verification, safe extraction and selected-form commands
 using an explicit new raw root. Its
-[public manifest](rvv-validation/host512-task142/TASK143_ARCHIVES.json) is staged;
-main owns upload/publication. Public acquisition of Task142 raw remains incomplete
-until that new asset is published. The Task139 supplementary source/checker
+[public manifest](rvv-validation/host512-task142/TASK143_ARCHIVES.json) records the
+immutable staging identity; the matching asset is now published. The Task139 supplementary source/checker
 package is already published and reused with CHIPS94, ACT db2 and repository
 Ara91; no duplicate source package is added. The existing release tag's source
-ZIP is historical: use main's reviewed source revision containing Task143.
+ZIP is historical: use reviewed revision `0d253a45ddce1b45f46c843e986b29410d04786f`
+or a later delivery revision containing the reader.
 [Task138](rvv-validation/host512-task138/README.md) remains immutable history.
 
 After acquisition/extraction, inspect a form across suites (Python 3.10+,

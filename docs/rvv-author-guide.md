@@ -23,7 +23,8 @@ Its 21,316 retained CHIPS/ACT/Ara calls reuse original inputs and predicates;
 595 checked forms remain the same union. Earlier builds, including Task138,
 retain historical attribution and earn no final-build credit. Use the explicit
 Task142 raw root and already published source/checker packages in that reader;
-main publishes the new raw asset and reviewed source revision after review.
+the new raw asset is published, and reviewed source revision
+`0d253a45ddce1b45f46c843e986b29410d04786f` contains its reader and manifest.
 
 When writing about this result, distinguish four evidence classes:
 
