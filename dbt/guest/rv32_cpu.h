@@ -18,6 +18,7 @@ enum class TrapCode : u32 {
 	ILLEGAL_INSN,
 	EBREAK,
 	ECALL,
+	MEMORY_FAULT, // predicted helper fault only; native host faults remain diagnostic
 };
 
 // TODO: separate guest part

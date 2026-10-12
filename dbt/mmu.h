@@ -40,6 +40,8 @@ struct mmu {
 	static bool DetailedMetadataEnabled();
 	static bool QueryPage(u32 gaddr, PageInfo &out);
 	static u64 MappingEpoch();
+	// Signal marshalling never wraps an RV32 pointer and never treats guest NULL as base.
+	static bool CheckedRange(u32 address, u32 length, int permission);
 
 	static ALWAYS_INLINE bool check_h2g(void *hptr)
 	{
@@ -144,6 +146,7 @@ private:
 	// The subset of mapped_pages the guest may READ. See page_readable() above for why it is a
 	// bitset of its own rather than a lookup into the optional page_details table.
 	static std::bitset<(ASPACE_SIZE >> PAGE_BITS)> readable_pages;
+	static std::bitset<(ASPACE_SIZE >> PAGE_BITS)> writable_pages, executable_pages;
 	struct PageDetail {
 		int prot{};
 		u8 flags{};

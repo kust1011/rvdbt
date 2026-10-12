@@ -11,6 +11,7 @@
 #include "dbt/guest/rv32_vector_fast.h"
 #include "dbt/mmu.h"
 #include "dbt/config.h"
+#include "dbt/ukernel.h"
 #include <atomic>
 #include <cassert>
 #include <unordered_map>
@@ -45,6 +46,26 @@ void dump_load_values(char const *path)
 
 namespace dbt::rv32
 {
+
+void FinishHelperMemoryFault(CPUState *state)
+{
+	if (unlikely(state->trapno == TrapCode::MEMORY_FAULT)) {
+		// The normal helper return already ended all body/census scopes. Harvest
+		// older FP flags and restore the original host MXCSR even in deferred mode 2.
+		// Do not depend on the normal TB-exit epilogue, which longjmp bypasses.
+		if (state->fpu.fround_run_open) {
+			// Vector openers in modes 1/2 deliberately do not save per-run MXCSR.
+			u32 const saved = config::rvv_fround_mxcsr_mode == 0
+				? state->fpu.fround_run_saved_mxcsr : config::g_mxcsr_resting;
+			rvv_fast::fround_run_force_close(state->fpu);
+			rvdbt_mxcsr_set(saved);
+		}
+		// Mode 2 may also leave RC behind after an already closed run.
+		if (config::rvv_fround_mxcsr_mode != 0)
+			rvdbt_mxcsr_set(config::g_mxcsr_resting);
+		RaiseTrap();
+	}
+}
 
 static void InsnNotImplemented(insn::Base insn, char const *name)
 {
@@ -82,6 +103,9 @@ static void InsnNotImplemented(insn::Base insn, char const *name)
 			state->ip = GET_GIP();                                                               \
 		}                                                                                            \
 		Impl_##name(state, gip, vmem, i);                                                            \
+		if constexpr (flags & insn::Flags::MayTrap) {                                                \
+			if (unlikely(state->trapno == TrapCode::MEMORY_FAULT)) return;                         \
+		}                                                                                            \
 		if constexpr (seqtrace::kEnabled) {                                                          \
 			seqtrace::record(seqtrace_pc, #name, (bool)(flags & insn::Flags::Branch),            \
 					 (bool)(flags & insn::Flags::MayTrap), insn_raw, seqtrace_vl_pre,    \
@@ -117,13 +141,18 @@ static void InsnNotImplemented(insn::Base insn, char const *name)
 			}                                                                                    \
 			if (unlikely(dbt::config::rvv_census)) {                                             \
 				static int const fam = rvv_census::intern(#name);                            \
-				rvv_census::Scope sc(fam, state->vec, insn_raw);                              \
-				HBody_##name(state, gip, vmem, insn_raw);                                    \
-				sc.finish();                                                                 \
+				{                                                                             \
+					rvv_census::Scope sc(fam, state->vec, insn_raw);                       \
+					HBody_##name(state, gip, vmem, insn_raw);                             \
+					sc.finish();                                                          \
+				}                                                                             \
+				FinishHelperMemoryFault(state);                                              \
 				return;                                                                      \
 			}                                                                                    \
 		}                                                                                            \
 		HBody_##name(state, gip, vmem, insn_raw);                                                    \
+		if constexpr (insn::Insn_##name::flags & insn::Flags::MayTrap)                                \
+			FinishHelperMemoryFault(state);                                                       \
 	}                                                                                                    \
 	extern "C" void __attribute__((used)) qcgstub_rv32_##name(CPUState *state, u32 insn_raw)             \
 	{                                                                                                    \
@@ -564,22 +593,20 @@ HANDLER(vleff)
 							 i.vm(), faulted, fault_gaddr, seg.nf,
 							 seg.field_regs);
 	if (unlikely(faulted)) {
-		// REPORTED, NOT PROVOKED. The earlier form touched the guest address and relied on the
-		// host to fault; that is unsound twice over. The address must come from the probe
-		// rather than from rs1 -- element 0 may straddle a page boundary, and a segment form's
-		// first field can be readable while a later one is not -- and even with the right
-		// address a touch is not a fault: x86 has no read-denying protection for a page mapped
-		// PROT_WRITE, so the host mapping of a write-only guest page reads back fine and the
-		// instruction would complete having done nothing at all.
-		//
-		// There is no guest-signal delivery and no memory-fault TrapCode in this substrate
-		// (TrapCode is UNALIGNED_IP / ILLEGAL_INSN / EBREAK / ECALL), so a guest load fault
-		// ends in ukernel's diagnose-and-terminate. mmu::ReportGuestFault is that same ending,
-		// reached directly with the address the probe found and the reason it refused. vl and
-		// vstart are left untouched, per the spec: the instruction did not complete.
-		s->ip = GET_GIP();
-		mmu::ReportGuestFault(s->ip, fault_gaddr,
-				      mmu::page_mapped(fault_gaddr) ? "protection" : "unmapped");
+		// Report the predicted guest denial, never provoke or intercept a host SIGSEGV.
+		// Return through the helper/census scopes before FinishHelperMemoryFault unwinds.
+		MemoryFaultEvent event;
+		event.reason = mmu::page_mapped(fault_gaddr) ? MemoryFaultEvent::Reason::Protection
+							 : MemoryFaultEvent::Reason::Unmapped;
+		event.pc = GET_GIP();
+		event.raw = i.raw;
+		event.address = fault_gaddr;
+		event.element = 0; // only element zero produces a trap in this FF helper
+		event.eew_bytes = seg.data_eew; // VSegShape already expresses EEW in bytes
+		event.nf = seg.nf;
+		event.field = (fault_gaddr - s->gpr[i.rs1()]) / event.eew_bytes;
+		ukernel::QueueHelperMemoryFault(s, event);
+		return; // preserve VL/vstart and every already committed vector byte
 	}
 	s->vec.vl = newvl; // trimmed, or unchanged if every active element was mapped
 	s->vec.vstart = 0;

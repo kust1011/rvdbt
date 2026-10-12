@@ -1,0 +1,794 @@
+{
+  "base_commit": "8f2b416f2dfd3f16733d7d162f5b1ac4937a279d",
+  "branch": "fix/rvv-signal-issue-1",
+  "executable_sha256": "12f9ecd5b706ab2476c6786e1f4cc30762b49b26a895d82a6b4b62db6a83f37e",
+  "library_sha256": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d",
+  "source_manifest_sha256": "f54c7e405e0f501d6833322527036431462aa00d8a5b49916d7adbc7e3b4f67d",
+  "build_profile": {
+    "host_chunk_bits": 128,
+    "compiler": "Clang 22.1.6",
+    "LLVM": "22.1.6",
+    "build_type": "Release",
+    "fp_contract": "off",
+    "fround_impl": 2,
+    "host_fma": false,
+    "fast_stats": true,
+    "census": true
+  },
+  "interface_checks": 376,
+  "mmu_checks": 27,
+  "frm_roundtrips": 256,
+  "frm_badframes": 192,
+  "normal_path_results": [
+    {
+      "test": "vl",
+      "kind": "ara",
+      "arm": "B",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "4b48171cc14b71e2739668a221d767c1d9e4bcc7309d98e51a92aaa0fc927168",
+      "stdout_bytes": 995,
+      "stdout_sha256": "bd2bffdd831cbdcbf50503572dd1c4af87defabf3be6c2344e3f222fc7ea930e",
+      "stderr_sha256": "d58bb416855f1f66878e560f742a73f27e4a9018a0cb1005a4d82a2674ef38bb",
+      "checker": {
+        "original_gate_pass": true,
+        "expected_observations": {
+          "vsets": [
+            [
+              38,
+              15,
+              15,
+              192
+            ],
+            [
+              45,
+              15,
+              15,
+              200
+            ],
+            [
+              52,
+              15,
+              15,
+              208
+            ],
+            [
+              60,
+              15,
+              15,
+              216
+            ]
+          ],
+          "assertions": [
+            [
+              1,
+              15,
+              1,
+              15,
+              192,
+              15,
+              1
+            ],
+            [
+              2,
+              15,
+              2,
+              15,
+              200,
+              15,
+              1
+            ],
+            [
+              3,
+              15,
+              4,
+              15,
+              208,
+              15,
+              1
+            ],
+            [
+              4,
+              15,
+              8,
+              15,
+              216,
+              15,
+              1
+            ]
+          ],
+          "summary": [
+            0,
+            4,
+            4,
+            60
+          ],
+          "flags": [],
+          "flag_summary": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "scalars": [],
+          "scalar_summary": [
+            0,
+            0,
+            0
+          ]
+        },
+        "sequences": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "assertions": 4,
+        "element_comparisons": 60
+      }
+    },
+    {
+      "test": "vl",
+      "kind": "ara",
+      "arm": "M1",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "4b48171cc14b71e2739668a221d767c1d9e4bcc7309d98e51a92aaa0fc927168",
+      "stdout_bytes": 995,
+      "stdout_sha256": "bd2bffdd831cbdcbf50503572dd1c4af87defabf3be6c2344e3f222fc7ea930e",
+      "stderr_sha256": "a274a74bfa9f4c8f6490191f90f3e685093921856eee1c42f41604ef96581f72",
+      "checker": {
+        "original_gate_pass": true,
+        "expected_observations": {
+          "vsets": [
+            [
+              38,
+              15,
+              15,
+              192
+            ],
+            [
+              45,
+              15,
+              15,
+              200
+            ],
+            [
+              52,
+              15,
+              15,
+              208
+            ],
+            [
+              60,
+              15,
+              15,
+              216
+            ]
+          ],
+          "assertions": [
+            [
+              1,
+              15,
+              1,
+              15,
+              192,
+              15,
+              1
+            ],
+            [
+              2,
+              15,
+              2,
+              15,
+              200,
+              15,
+              1
+            ],
+            [
+              3,
+              15,
+              4,
+              15,
+              208,
+              15,
+              1
+            ],
+            [
+              4,
+              15,
+              8,
+              15,
+              216,
+              15,
+              1
+            ]
+          ],
+          "summary": [
+            0,
+            4,
+            4,
+            60
+          ],
+          "flags": [],
+          "flag_summary": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "scalars": [],
+          "scalar_summary": [
+            0,
+            0,
+            0
+          ]
+        },
+        "sequences": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "assertions": 4,
+        "element_comparisons": 60
+      }
+    },
+    {
+      "test": "vl",
+      "kind": "ara",
+      "arm": "M2",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "4b48171cc14b71e2739668a221d767c1d9e4bcc7309d98e51a92aaa0fc927168",
+      "stdout_bytes": 995,
+      "stdout_sha256": "bd2bffdd831cbdcbf50503572dd1c4af87defabf3be6c2344e3f222fc7ea930e",
+      "stderr_sha256": "d58bb416855f1f66878e560f742a73f27e4a9018a0cb1005a4d82a2674ef38bb",
+      "checker": {
+        "original_gate_pass": true,
+        "expected_observations": {
+          "vsets": [
+            [
+              38,
+              15,
+              15,
+              192
+            ],
+            [
+              45,
+              15,
+              15,
+              200
+            ],
+            [
+              52,
+              15,
+              15,
+              208
+            ],
+            [
+              60,
+              15,
+              15,
+              216
+            ]
+          ],
+          "assertions": [
+            [
+              1,
+              15,
+              1,
+              15,
+              192,
+              15,
+              1
+            ],
+            [
+              2,
+              15,
+              2,
+              15,
+              200,
+              15,
+              1
+            ],
+            [
+              3,
+              15,
+              4,
+              15,
+              208,
+              15,
+              1
+            ],
+            [
+              4,
+              15,
+              8,
+              15,
+              216,
+              15,
+              1
+            ]
+          ],
+          "summary": [
+            0,
+            4,
+            4,
+            60
+          ],
+          "flags": [],
+          "flag_summary": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "scalars": [],
+          "scalar_summary": [
+            0,
+            0,
+            0
+          ]
+        },
+        "sequences": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "assertions": 4,
+        "element_comparisons": 60
+      }
+    },
+    {
+      "test": "vl",
+      "kind": "ara",
+      "arm": "BOTH",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "4b48171cc14b71e2739668a221d767c1d9e4bcc7309d98e51a92aaa0fc927168",
+      "stdout_bytes": 995,
+      "stdout_sha256": "bd2bffdd831cbdcbf50503572dd1c4af87defabf3be6c2344e3f222fc7ea930e",
+      "stderr_sha256": "a274a74bfa9f4c8f6490191f90f3e685093921856eee1c42f41604ef96581f72",
+      "checker": {
+        "original_gate_pass": true,
+        "expected_observations": {
+          "vsets": [
+            [
+              38,
+              15,
+              15,
+              192
+            ],
+            [
+              45,
+              15,
+              15,
+              200
+            ],
+            [
+              52,
+              15,
+              15,
+              208
+            ],
+            [
+              60,
+              15,
+              15,
+              216
+            ]
+          ],
+          "assertions": [
+            [
+              1,
+              15,
+              1,
+              15,
+              192,
+              15,
+              1
+            ],
+            [
+              2,
+              15,
+              2,
+              15,
+              200,
+              15,
+              1
+            ],
+            [
+              3,
+              15,
+              4,
+              15,
+              208,
+              15,
+              1
+            ],
+            [
+              4,
+              15,
+              8,
+              15,
+              216,
+              15,
+              1
+            ]
+          ],
+          "summary": [
+            0,
+            4,
+            4,
+            60
+          ],
+          "flags": [],
+          "flag_summary": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "scalars": [],
+          "scalar_summary": [
+            0,
+            0,
+            0
+          ]
+        },
+        "sequences": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "assertions": 4,
+        "element_comparisons": 60
+      }
+    },
+    {
+      "test": "Vf32-vfadd.vv-positive",
+      "kind": "act",
+      "arm": "B",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "64f69ea1af543d2ed2b6fd1d5612209f9a42341dc5a9c634430202526b79e9dd",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "626ef40daee06e3c6112fc8f455317134e27b5f70d83fa35d116f90fa46dd33e",
+      "checker": {
+        "original_positive_gate_pass": true,
+        "passed_marker": true,
+        "failed_marker": false,
+        "original_flags_checks": 750
+      }
+    },
+    {
+      "test": "Vf32-vfadd.vv-positive",
+      "kind": "act",
+      "arm": "M1",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "64f69ea1af543d2ed2b6fd1d5612209f9a42341dc5a9c634430202526b79e9dd",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b23299fdd66c4f7090684489c825899f5ea75bbf32b157c032009d770ae2e8d0",
+      "checker": {
+        "original_positive_gate_pass": true,
+        "passed_marker": true,
+        "failed_marker": false,
+        "original_flags_checks": 750
+      }
+    },
+    {
+      "test": "Vf32-vfadd.vv-positive",
+      "kind": "act",
+      "arm": "M2",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "64f69ea1af543d2ed2b6fd1d5612209f9a42341dc5a9c634430202526b79e9dd",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "626ef40daee06e3c6112fc8f455317134e27b5f70d83fa35d116f90fa46dd33e",
+      "checker": {
+        "original_positive_gate_pass": true,
+        "passed_marker": true,
+        "failed_marker": false,
+        "original_flags_checks": 750
+      }
+    },
+    {
+      "test": "Vf32-vfadd.vv-positive",
+      "kind": "act",
+      "arm": "BOTH",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "64f69ea1af543d2ed2b6fd1d5612209f9a42341dc5a9c634430202526b79e9dd",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b23299fdd66c4f7090684489c825899f5ea75bbf32b157c032009d770ae2e8d0",
+      "checker": {
+        "original_positive_gate_pass": true,
+        "passed_marker": true,
+        "failed_marker": false,
+        "original_flags_checks": 750
+      }
+    },
+    {
+      "test": "seed_20261007",
+      "kind": "rvvts",
+      "arm": "B",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "1246153e16153833691fcf0a3d405c991afdd3804bcc1cf84a3bc0bf03ab2529",
+      "stdout_bytes": 4147,
+      "stdout_sha256": "91a3d948c5acc28bb362d0c23c8a35022fb6c933c3c42613045671e0c4d8e68e",
+      "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+      "checker": {
+        "original_gate_pass": true,
+        "state_bytes": 4136,
+        "expected_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "actual_snapshot_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "stdout_exact_equality": true
+      }
+    },
+    {
+      "test": "seed_20261007",
+      "kind": "rvvts",
+      "arm": "M1",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "1246153e16153833691fcf0a3d405c991afdd3804bcc1cf84a3bc0bf03ab2529",
+      "stdout_bytes": 4147,
+      "stdout_sha256": "91a3d948c5acc28bb362d0c23c8a35022fb6c933c3c42613045671e0c4d8e68e",
+      "stderr_sha256": "258de25ff772bcd6e3b1171bdd11336cbfff2f5199ffb3a31bace0baa18d5cae",
+      "checker": {
+        "original_gate_pass": true,
+        "state_bytes": 4136,
+        "expected_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "actual_snapshot_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "stdout_exact_equality": true
+      }
+    },
+    {
+      "test": "seed_20261007",
+      "kind": "rvvts",
+      "arm": "M2",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "1246153e16153833691fcf0a3d405c991afdd3804bcc1cf84a3bc0bf03ab2529",
+      "stdout_bytes": 4147,
+      "stdout_sha256": "91a3d948c5acc28bb362d0c23c8a35022fb6c933c3c42613045671e0c4d8e68e",
+      "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+      "checker": {
+        "original_gate_pass": true,
+        "state_bytes": 4136,
+        "expected_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "actual_snapshot_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "stdout_exact_equality": true
+      }
+    },
+    {
+      "test": "seed_20261007",
+      "kind": "rvvts",
+      "arm": "BOTH",
+      "returncode": 0,
+      "status": "PASS",
+      "elf_sha256": "1246153e16153833691fcf0a3d405c991afdd3804bcc1cf84a3bc0bf03ab2529",
+      "stdout_bytes": 4147,
+      "stdout_sha256": "91a3d948c5acc28bb362d0c23c8a35022fb6c933c3c42613045671e0c4d8e68e",
+      "stderr_sha256": "258de25ff772bcd6e3b1171bdd11336cbfff2f5199ffb3a31bace0baa18d5cae",
+      "checker": {
+        "original_gate_pass": true,
+        "state_bytes": 4136,
+        "expected_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "actual_snapshot_sha256": "a786d2ad0865a1ba453e553ea93ffcdcf8d59b4858e7aeb8f60bfe2ee728341c",
+        "stdout_exact_equality": true
+      }
+    }
+  ],
+  "helper_results": [
+    {
+      "name": "first_fault_none",
+      "arm": "B",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06539884302765131,
+      "classification": "ORIGINAL_HANDLER_CHECKER_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "b16282b6fdac7d30097407c4828a16fe86eb64caf19d8458ce8898cb62d86f00",
+      "stderr_sha256": "2a5b1acf95d6de4ad7045179ece6a52995a136907bb6b4e4f1796c3cdc2d0ab9",
+      "guest_handler_reached": true,
+      "signal_deliveries": 1,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "first_fault_none",
+      "arm": "M1",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06524647999322042,
+      "classification": "ORIGINAL_HANDLER_CHECKER_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "b16282b6fdac7d30097407c4828a16fe86eb64caf19d8458ce8898cb62d86f00",
+      "stderr_sha256": "bc84c206903763b72646143d4f5ee2157bca91f38ab6d755cbc714c5cc66aae1",
+      "guest_handler_reached": true,
+      "signal_deliveries": 1,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "first_fault_none",
+      "arm": "M2",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06521778798196465,
+      "classification": "ORIGINAL_HANDLER_CHECKER_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "b16282b6fdac7d30097407c4828a16fe86eb64caf19d8458ce8898cb62d86f00",
+      "stderr_sha256": "e04c481dcdb9ae090d01692b6992e11f6a1810dfc1932a88f59c509bfeb3ca7a",
+      "guest_handler_reached": true,
+      "signal_deliveries": 1,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "first_fault_none",
+      "arm": "BOTH",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06548238400137052,
+      "classification": "ORIGINAL_HANDLER_CHECKER_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "b16282b6fdac7d30097407c4828a16fe86eb64caf19d8458ce8898cb62d86f00",
+      "stderr_sha256": "2c5f0043bf536c532a06f0525f9e077c9f075f30723a007910eb6311d20f4046",
+      "guest_handler_reached": true,
+      "signal_deliveries": 1,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "later_field1_none",
+      "arm": "B",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06505052599823102,
+      "classification": "ORIGINAL_LATER_SUCCESS_CONTROL_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "0799dbc7bab58ba4b5b7405f8f887067c502c79c7def79c8abc05dfb2fa2cd93",
+      "stderr_sha256": "1d0b0cfb4c98110c5b8bcec72c839ae7acf4615db5f0a14a9f7bddb513c3f704",
+      "guest_handler_reached": false,
+      "signal_deliveries": 0,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "later_field1_none",
+      "arm": "M1",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06532725301804021,
+      "classification": "ORIGINAL_LATER_SUCCESS_CONTROL_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "0799dbc7bab58ba4b5b7405f8f887067c502c79c7def79c8abc05dfb2fa2cd93",
+      "stderr_sha256": "0d531ef93530cccf23dde12b7f7cd2256aa3af146c03af70d3fe848d4a0f13d5",
+      "guest_handler_reached": false,
+      "signal_deliveries": 0,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "later_field1_none",
+      "arm": "M2",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06520909495884553,
+      "classification": "ORIGINAL_LATER_SUCCESS_CONTROL_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "0799dbc7bab58ba4b5b7405f8f887067c502c79c7def79c8abc05dfb2fa2cd93",
+      "stderr_sha256": "c8d0998e2f78a71adf9d9ef02fd57cfef8944d1167aa7834e1a259c6f9d32202",
+      "guest_handler_reached": false,
+      "signal_deliveries": 0,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    },
+    {
+      "name": "later_field1_none",
+      "arm": "BOTH",
+      "vlen": 1024,
+      "returncode": 0,
+      "elapsed_seconds": 0.06756620097439736,
+      "classification": "ORIGINAL_LATER_SUCCESS_CONTROL_PASS",
+      "passed": true,
+      "errors": [],
+      "original_checker_pass": true,
+      "raw_byte_equal": true,
+      "stdout_sha256": "0799dbc7bab58ba4b5b7405f8f887067c502c79c7def79c8abc05dfb2fa2cd93",
+      "stderr_sha256": "7df450c2b59dab4befb390b3db7674d30438abb636fd4fb00437beb5f346156a",
+      "guest_handler_reached": false,
+      "signal_deliveries": 0,
+      "sigreturn_guest_executed": false,
+      "reference_calls": 0,
+      "guest_compiler_calls": 0,
+      "generator_calls": 0,
+      "native_admission_established": false,
+      "retry_established": false
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "normal_calls": 12,
+    "exit_only_helper_calls": 8,
+    "reference_calls": 0,
+    "guest_retries": 0,
+    "original_FRM_source_unchanged": true,
+    "rvvts_M1_BOTH_actual_admission": true,
+    "act_optimized_FP_flags_admission": false
+  },
+  "candidate_reuse": {
+    "path": "/home/user/research/materials/rvdbt-fault-delivery-20261009",
+    "head": "961f022d3be5fec26d64d5aaefc77346c921b652",
+    "dirty_diff_sha256": "2f328eb98aa1c626d60f3322dfc59bc997b56c21958407caee5ea72c5c16725d",
+    "signal_inc_sha256": "fea8fe4c17b67aa507f81cdb30b6777d6729af332a0ad873c5078168d2035983",
+    "status": " M dbt/guest/rv32_cpu.h\n M dbt/guest/rv32_interp.cpp\n M dbt/guest/rv32_runtime.h\n M dbt/mmu.cpp\n M dbt/mmu.h\n M dbt/ukernel.cpp\n M dbt/ukernel.h\n?? dbt/rv32_signal.inc\n",
+    "preserved": true
+  },
+  "limits": [
+    "Host unit tests are not external RVV conformance evidence.",
+    "Helper regressions are exit-only; no guest sigreturn/retry was executed.",
+    "Native memory faults remain diagnostic; general precise state/restart is incomplete.",
+    "P4-04 and equivalent execution were not attempted."
+  ]
+}

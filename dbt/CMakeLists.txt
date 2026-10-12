@@ -1260,3 +1260,10 @@ set_source_files_properties(guest/rv32_vector_run64.cpp PROPERTIES COMPILE_OPTIO
 add_executable(rvv_ssa_edge_commit_test qmc/qcg/rvv_ssa_edge_commit_test.cpp)
 target_include_directories(rvv_ssa_edge_commit_test PUBLIC "${PROJECT_SOURCE_DIR}")
 target_link_libraries(rvv_ssa_edge_commit_test PUBLIC dbtstatic)
+
+# Signal interface tests include the production ukernel TU to inspect its private
+# owner state. Normal archive extraction links the remaining runtime definitions.
+foreach(signal_test rv32_signal_frm_test rv32_signal_interface_test)
+  add_executable(${signal_test} ${signal_test}.cpp)
+  target_link_libraries(${signal_test} PUBLIC dbtstatic)
+endforeach()

@@ -26,6 +26,7 @@ u32 mmu::mmap_hint_page = mmu::MIN_MMAP_ADDR >> mmu::PAGE_BITS;
 std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::used_pages;
 std::unique_ptr<mmu::PageDetail[]> mmu::page_details;
 std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::readable_pages;
+std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::writable_pages, mmu::executable_pages;
 bool mmu::initialized{};
 u64 mmu::mapping_epoch{};
 
@@ -47,6 +48,8 @@ void mmu::Init()
 {
 	mapped_pages.reset();
 	readable_pages.reset();
+	writable_pages.reset();
+	executable_pages.reset();
 	mapping_epoch = 0;
 	initialized = true;
 	MarkUsedPages(0, MIN_MMAP_ADDR);
@@ -109,6 +112,8 @@ void mmu::MarkUnmapped(u32 pvaddr, u32 plen)
 	for (u32 p = pvaddr; p < pvaddr + plen && p < (ASPACE_SIZE >> PAGE_BITS); ++p) {
 		mapped_pages.reset(p);
 		readable_pages.reset(p);
+		writable_pages.reset(p);
+		executable_pages.reset(p);
 	}
 }
 
@@ -118,6 +123,8 @@ void mmu::MarkReadable(u32 pvaddr, u32 plen, int prot)
 {
 	bool const readable = (prot & PROT_READ) != 0;
 	for (u32 p = pvaddr; p < pvaddr + plen && p < (ASPACE_SIZE >> PAGE_BITS); ++p) {
+		writable_pages.set(p, (prot & PROT_WRITE) != 0);
+		executable_pages.set(p, (prot & PROT_EXEC) != 0);
 		if (readable)
 			readable_pages.set(p);
 		else
@@ -261,6 +268,19 @@ bool mmu::QueryPage(u32 gaddr, PageInfo &out)
 	u32 const p = gaddr >> PAGE_BITS;
 	auto const &detail = page_details[p];
 	out = {mapped_pages[p], detail.prot, detail.flags == 1, detail.flags == 2, detail.backing};
+	return true;
+}
+
+bool mmu::CheckedRange(u32 address, u32 length, int permission)
+{
+	if (!address || !length || (u64)address + length > ASPACE_SIZE)
+		return false;
+	u32 last = (u32)(((u64)address + length - 1) >> PAGE_BITS);
+	for (u32 p = address >> PAGE_BITS; p <= last; ++p)
+		if (!mapped_pages[p] || ((permission & PROT_READ) && !readable_pages[p]) ||
+		    ((permission & PROT_WRITE) && !writable_pages[p]) ||
+		    ((permission & PROT_EXEC) && !executable_pages[p]))
+			return false;
 	return true;
 }
 
