@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "form": "vle32.v",
+  "arm": "B",
+  "records": 10,
+  "task": 142,
+  "current_raw_verification": "CHECKED",
+  "original_current_predicate_counts": {
+    "chips": 3,
+    "act": 4,
+    "ara": 3
+  },
+  "outside_queue_ACT_reference_blockers": 2
+}

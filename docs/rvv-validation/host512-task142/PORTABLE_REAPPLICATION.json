@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "new_guest_reference_calls": 0,
+  "source_dependencies": 7409,
+  "records": 21316,
+  "original_current_predicate_counts": {
+    "chips": 11744,
+    "act": 7668,
+    "ara": 1904
+  },
+  "command": [
+    "/usr/bin/python3",
+    "scripts/rvv_scope_report.py",
+    "--host512-corpus",
+    "docs/rvv-validation",
+    "--host512-task142-build",
+    "--host512-raw",
+    "/home/user/research/materials/task142-host512-raw-20261013",
+    "--host512-evidence",
+    "/tmp/task139-fresh/inspection/current",
+    "--chips-package",
+    "/tmp/task139-fresh/inspection/chips",
+    "--act-db2-package",
+    "/tmp/task139-fresh/inspection/act",
+    "--ara-package",
+    "/tmp/task139-fresh/inspection/ara",
+    "--output",
+    "docs/rvv-validation/host512-task142/combined"
+  ]
+}

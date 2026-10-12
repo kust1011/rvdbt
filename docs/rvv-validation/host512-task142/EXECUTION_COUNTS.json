@@ -1,0 +1,12 @@
+{
+  "chips": {
+    "PASS": 11744
+  },
+  "act": {
+    "PASS": 7668
+  },
+  "ara": {
+    "PASS": 1888,
+    "SCOPED_PASS": 16
+  }
+}
