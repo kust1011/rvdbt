@@ -110,5 +110,72 @@ class NavigationTests(unittest.TestCase):
                 selected_navigation(index,'vadd.vv',{'ACT':root})
 
 
+class ReplayReceiptTests(unittest.TestCase):
+    def fixture(self, root, stdout='PASS\n'):
+        import json
+        from rvv_tests import digest, classify
+        raw = root/'raw'; raw.mkdir()
+        cell = dict(id='one', elf_sha256='a'*64, vlen=128, control=False,
+                    aliases=[{'arm':'B'}],
+                    expected_returncode=0, expected_stdout='PASS\n',
+                    flags=['--fsroot={WORK}/fs', '--cache={WORK}/cache', '--', '/t.elf'])
+        original = root/'original.json'
+        def save(p, v): p.write_text(json.dumps(v))
+        save(original, dict(cells=[cell], timeout_seconds=120))
+        build = {'stage/elfrun':'b'*64, 'stage/libdbtjitshared.so':'c'*64}
+        save(raw/'manifest.json', dict(cells=[cell], timeout_seconds=120, candidate={'build':build}))
+        identities = {'/engine':'b'*64, '/lib':'c'*64}
+        save(raw/'invocation.json', dict(selected_cases=['one'], engine_files_before=identities,
+                                        manifest_sha256=digest(raw/'manifest.json')))
+        save(raw/'summary.json', dict(candidate_unchanged=True, engine_files_after=identities))
+        case = raw/'one'; case.mkdir(); save(case/'case.json', cell)
+        (case/'stdout').write_text(stdout); (case/'stderr').write_text('')
+        result = dict(id='one', status=classify(0, stdout.encode(), cell), returncode=0, error=None,
+                      control=False, elf_sha256=cell['elf_sha256'], stdout_sha256=digest(case/'stdout'),
+                      stderr_sha256=digest(case/'stderr'), checker='original predicate')
+        save(case/'result.json', result); save(raw/'results.json', [result])
+        save(case/'command.json', ['/engine']+[f.replace('{WORK}', '/remote/one/work') for f in cell['flags']])
+        row = dict(candidate='clean961', cell_id='one', elf_sha256=cell['elf_sha256'], VLEN='128',
+                   form='vadd.vv', arm='B', case='original', batch='batch', control='False',
+                   receipt='old/receipt', source='original.S')
+        binding = dict(suite='CHIPS', candidate='clean961', elf_sha256=cell['elf_sha256'], arm='B',
+                       source_case='original', result_checked_forms='vadd.vv', flags_json=json.dumps(cell['flags']))
+        index = dict(packages={'CHIPS':{'records':[row]}}, canonical_bindings=[binding],
+                     forms=[dict(form='vadd.vv', applicability='REQUIRED', family='integer')])
+        return index, raw, original
+
+    def test_current_receipt_join_and_preserved_failure(self):
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        from rvv_scope_report import chips_replay
+        for stdout, expected in [('PASS\n', 1), ('WRONG\n', 0)]:
+            with TemporaryDirectory() as temp:
+                root = Path(temp); args = self.fixture(root, stdout)
+                result = chips_replay(*args, root/'output')
+                self.assertEqual(result['checked_union_count'], expected)
+                self.assertEqual(result['total'], 1)
+                self.assertEqual(result['unattempted'], 0)
+                self.assertIn('old/receipt', (root/'output/replay-receipts.csv').read_text())
+
+    def test_changed_oracle_stream_and_candidate_rejected(self):
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        import json
+        from rvv_scope_report import chips_replay
+        for field in ('oracle', 'stream', 'candidate'):
+            with TemporaryDirectory() as temp:
+                root = Path(temp); index, raw, original = self.fixture(root)
+                if field == 'oracle':
+                    value = json.loads(original.read_text()); value['cells'][0]['expected_stdout']='WRONG\n'
+                    original.write_text(json.dumps(value))
+                elif field == 'stream':
+                    (raw/'one/stdout').write_text('WRONG\n')
+                else:
+                    value=json.loads((raw/'summary.json').read_text());value['engine_files_after']['/engine']='d'*64
+                    (raw/'summary.json').write_text(json.dumps(value))
+                with self.assertRaises(ValueError): chips_replay(index, raw, original, root/'output')
+                self.assertFalse((root/'output').exists())
+
+
 if __name__ == '__main__':
     unittest.main()

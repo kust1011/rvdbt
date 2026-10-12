@@ -1,0 +1,46 @@
+{
+  "PRODUCTION_EQUALITY.json": {
+    "bytes": 67693,
+    "sha256": "bffbe251750f9a7e22a092672ac41d9535da1e122fd72c071355dcc6b127bc6e"
+  },
+  "QUEUE.json": {
+    "bytes": 12263,
+    "sha256": "cda703bda0fca9579c4b0ec3b88e0d78f5b97fb64333875967e1f4476f8b6763"
+  },
+  "README.md": {
+    "bytes": 2905,
+    "sha256": "e756eeba26ab292fbf5e714b6727e43834fc07d8c1ed8a70211695fab43bd359"
+  },
+  "COUNTS.json": {
+    "bytes": 1027,
+    "sha256": "5e8266d266de2149c06a29ee6115cea20d62301c3dd2b6586f3487765603382b"
+  },
+  "transport.attempt1.json": {
+    "bytes": 122,
+    "sha256": "9ea514037aa6162acd30a0943a523d46a656dbb278136ddb20163605c4c44d86"
+  },
+  "BUILD_PREFLIGHT.txt": {
+    "bytes": 615,
+    "sha256": "dd2d1ba3924b8543fb5fcedf02bea2ee7037d5c21e69670f876e476862ee7371"
+  },
+  "launch-command.txt": {
+    "bytes": 404,
+    "sha256": "fd9b0ea17a3273e9d59ee02a5cbb05d5dd28e101d352f25473e5dd902a92b48f"
+  },
+  "SETUP_ATTEMPTS.json": {
+    "bytes": 352,
+    "sha256": "80d2bb73bee16969f73df363461cfede77494d1821848e9298dc771d87c877c7"
+  },
+  "initial-load.txt": {
+    "bytes": 150,
+    "sha256": "8ca83d8e6f2b3b38cd6ecfe888249e3a9382358890e91a711bbc4efcfc1e503c"
+  },
+  "replay-receipts.csv.gz": {
+    "bytes": 3956542,
+    "sha256": "17cd131b8158e7f34405f21a3a6e1eab48d0c42ad1b5483656cae8262843d83b"
+  },
+  "scope.json.gz": {
+    "bytes": 492952,
+    "sha256": "52e23000e388f504ef665f194b2c6df1b0049f09786b92223b1bc5db02638eaa"
+  }
+}

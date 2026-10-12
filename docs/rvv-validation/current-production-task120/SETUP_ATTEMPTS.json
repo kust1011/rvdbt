@@ -1,0 +1,4 @@
+{
+  "attempt1": "Pre-execution manifest equality assertion stopped setup: campaign46 removed original_command from aliases. No guest executed. Retained full sealed manifest and compared executable fields rather than alias presentation fields.",
+  "attempt2": "Complete queue derived, printed and launched; all original full-manifest cells retained."
+}

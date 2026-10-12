@@ -1,0 +1,9 @@
+ninja: Entering directory `build'
+ninja: no work to do.
+533443050f4d1ad4dc49ca74f3e5ac4ca1ccc576f2b107d3771412a218ac3e31  build/bin/elfrun
+1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d  build/lib/libdbtjitshared.so
+21f8f068b964c230fe965b1e08e12276f9f109238d3b089d7e22b17a3203c41c  /home/vick/chips-current120/runner.py
+ 22:12:49 up 5 days,  1:51,  8 users,  load average: 3.75, 2.08, 1.06
+               total        used        free      shared  buff/cache   available
+Mem:           46745       10427        3409          52       33947       36318
+Swap:           8191        1961        6230

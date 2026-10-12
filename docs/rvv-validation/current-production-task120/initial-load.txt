@@ -1,0 +1,1 @@
+Initial xbd preflight 2026-10-12 22:06:22 +0800: uptime 5 days 1:44; load 0.20/0.27/0.34. Four workers, nice10, taskset28-31; no global CPU settings.
