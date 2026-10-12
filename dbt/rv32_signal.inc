@@ -38,15 +38,28 @@ u32 get32(u8 const *p) { return u32(p[0]) | (u32(p[1])<<8) | (u32(p[2])<<16) | (
 u64 get64(u8 const *p) { return get32(p) | (u64(get32(p+4))<<32); }
 void put32(u8 *p, u32 v) { for (u32 i=0;i<4;++i) p[i]=v>>(8*i); }
 void put64(u8 *p, u64 v) { put32(p,v); put32(p+4,v>>32); }
+bool CopyBuffer(u8 *buffer, u32 address, u32 size, bool store)
+{
+	if (!mmu::CheckedRange(address,size,store?PROT_WRITE:PROT_READ)) return false;
+	// Exact leaf ownership returns backing faults normally. Byte prefixes may
+	// have copied on failure; callers publish signal state only after success.
+	// CopyElements uses a signed signal-safe count; preserve the u32 buffer API.
+	while (size) {
+		u32 count=std::min(size,0x7fffffffu), completed=0, denied=0;
+		if (!rvv_host_copy::CopyElements(buffer,static_cast<u8 *>(mmu::g2h(0)),
+		                               address,1,count,store,completed,denied)) return false;
+		buffer+=count; address+=count; size-=count;
+	}
+	return true;
+}
 bool CopyIn(void *out, u32 address, u32 size)
 {
-	if (!mmu::CheckedRange(address,size,PROT_READ)) return false;
-	memcpy(out,mmu::g2h(address),size); return true;
+	return CopyBuffer(static_cast<u8 *>(out),address,size,false);
 }
 bool CopyOut(u32 address, void const *in, u32 size)
 {
-	if (!mmu::CheckedRange(address,size,PROT_WRITE)) return false;
-	memcpy(mmu::g2h(address),in,size); return true;
+	// The checked leaf only reads the local source on stores.
+	return CopyBuffer(const_cast<u8 *>(static_cast<u8 const *>(in)),address,size,true);
 }
 void CloseFP(CPUState *state)
 {
@@ -95,8 +108,8 @@ bool ukernel::SignalSyscall(CPUState *state)
 			else if (input && (get32(incoming+4)&~SigInfo)) rc=-EOPNOTSUPP;
 			else if (input && get32(incoming)==1) rc=-EOPNOTSUPP; // no ignored synchronous fault
 			else {
-				if (output) CopyOut(output,old,16);
-				if (input) action={get32(incoming),get32(incoming+4),get64(incoming+8)&~Unblockable};
+				if (output && !CopyOut(output,old,16)) rc=-EFAULT;
+				else if (input) action={get32(incoming),get32(incoming+4),get64(incoming+8)&~Unblockable};
 			}
 		}
 	} else {
@@ -105,8 +118,8 @@ bool ukernel::SignalSyscall(CPUState *state)
 		    (output && !mmu::CheckedRange(output,8,PROT_WRITE))) rc=-EFAULT;
 		else if (input && first>2) rc=-EINVAL;
 		else {
-			if (output) CopyOut(output,old,8);
-			if (input) {
+			if (output && !CopyOut(output,old,8)) rc=-EFAULT;
+			else if (input) {
 				u64 bits=get64(incoming)&~Unblockable;
 				if (first==0) ut->guest_signal_mask|=bits;
 				else if (first==1) ut->guest_signal_mask&=~bits;

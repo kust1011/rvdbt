@@ -1,6 +1,7 @@
 // Local interface test, not external ISA conformance evidence.
 #include "dbt/ukernel.cpp"
 #include "dbt/guest/rv32_runtime.h"
+#include <sys/wait.h>
 using namespace dbt;
 using namespace dbt::rv32_signal;
 static unsigned checks;
@@ -11,6 +12,100 @@ static i32 call(CPUState *s,u32 no,u32 first,u32 in,u32 out,u32 size=8)
  s->gpr[17]=no; s->gpr[10]=first; s->gpr[11]=in; s->gpr[12]=out; s->gpr[13]=size;
  check(ukernel::SignalSyscall(s),"signal syscall handled"); return (i32)s->gpr[10];
 }
+// Run each direction in a child so the original unowned SIGBUS failure is
+// observable independently. All transfers and callbacks are production APIs.
+static void checked_buffers(CPUState *s, uthread *ut, u32 a, u32 code)
+{
+ u8 source[16], result[16];
+ for(u32 i=0;i<16;++i)source[i]=0x40+i;
+ check(CopyOut(a+4090,source,16),"normal cross-page output");
+ check(CopyIn(result,a+4090,16) && !memcmp(source,result,16),"normal cross-page input");
+ for(u32 address : {0u,0xfffffff8u,a+32760}) {
+  memset(result,0x6d,16);
+  check(!CopyIn(result,address,16),"null wrapping unmapped-crossing input denied");
+  for(u8 byte:result)check(byte==0x6d,"preflight input leaves destination intact");
+  check(!CopyOut(address,source,16),"null wrapping unmapped-crossing output denied");
+ }
+ check(mmu::mprotect(a+4096,4096,PROT_READ)==0,"copy read-only page");
+ memset(result,0xa5,16);
+ check(!CopyOut(a+4090,result,16),"cross-page output permission denied");
+ check(CopyIn(result,a+4090,16) && !memcmp(source,result,16),"denied output leaves prefix intact");
+ check(mmu::mprotect(a+4096,4096,PROT_WRITE)==0,"copy write-only page");
+ memset(result,0x6d,16);
+ check(!CopyIn(result,a+4090,16),"cross-page input permission denied");
+ for(u8 byte:result)check(byte==0x6d,"denied input leaves prefix intact");
+ check(CopyOut(a+4096,source,16),"guest write-only output allowed");
+ check(mmu::mprotect(a+4096,4096,PROT_READ|PROT_WRITE)==0,"restore normal test permissions");
+ unsigned child_checks=0;bool passed=true;
+ for(bool store : {false,true}) {
+  pid_t child=fork();check(child>=0,"truncated buffer fork");
+  if(!child) {
+   checks=0;
+   struct sigaction sa{};sigfillset(&sa.sa_mask);sa.sa_flags=SA_SIGINFO;
+   sa.sa_sigaction=dbt_sigaction_memory;
+   check(sigaction(SIGSEGV,&sa,nullptr)==0 && sigaction(SIGBUS,&sa,nullptr)==0,"install production callbacks");
+   constexpr u32 b=0x25000000;
+   int fd=memfd_create("signal-buffer-task141",0);
+   check(fd>=0 && ftruncate(fd,8192)==0,"signal file backing");
+   check(mmu::mmap(b,8192,PROT_READ|PROT_WRITE,MAP_FIXED|MAP_SHARED,fd,0)!=MAP_FAILED,"signal file mapping");
+   memset(mmu::g2h(b),0x3c,8192);
+   check(ftruncate(fd,4096)==0,"truncate second page once");close(fd);
+   check(mmu::CheckedRange(b+4096,16,PROT_READ|PROT_WRITE),"truncated backing retains permissions");
+   memset(result,0x6d,16);
+   check(!(store?CopyOut(b+4096,source,16):CopyIn(result,b+4096,16)),"truncated direct copy fails normally");
+   check(rvv_host_copy::LastFault().signal==SIGBUS && rvv_host_copy::LastFault().code==BUS_ADRERR,
+         "direct copy owned BUS_ADRERR");
+   for(u8 byte:result)check(byte==0x6d,"first-byte input fault preserves buffer");
+   check(!(store?CopyOut(b+4090,source,16):CopyIn(result,b+4090,16)),"truncated crossing fails normally");
+   check(rvv_host_copy::LastFault().signal==SIGBUS,"crossing copy owned BUS");
+   if(store)check(!memcmp(mmu::g2h(b+4090),source,6),"output fault retains checked byte prefix");
+   else {
+    for(u32 i=0;i<16;++i)check(result[i]==(i<6?0x3c:0x6d),"input fault prefix and suffix values");
+   }
+   u8 incoming[16]{};put32(incoming,code+4);put32(incoming+4,4);put64(incoming+8,1ull<<20);
+   check(CopyOut(a,incoming,16),"fault syscall action input");
+   ut->signal_actions[10]={code,0,1ull<<21};
+   auto saved=ut->signal_actions[10];
+   for(u32 out : {b+4096,b+4090,code,0xfffffff8u}) {
+    check(call(s,134,11,a,out)==-EFAULT,"action output failure EFAULT");
+    check(ut->signal_actions[10].handler==saved.handler && ut->signal_actions[10].flags==saved.flags &&
+          ut->signal_actions[10].mask==saved.mask,"action unchanged after output failure");
+   }
+   check(call(s,134,11,b+4096,0)==-EFAULT,"truncated action input EFAULT");
+   check(ut->signal_actions[10].handler==saved.handler && ut->signal_actions[10].mask==saved.mask,
+         "action unchanged after input failure");
+   put64(incoming,1ull<<22);check(CopyOut(a,incoming,8),"fault syscall mask input");
+   for(u32 how : {0u,1u,2u})for(u32 out : {b+4096,b+4090,code,0xfffffffcu}) {
+    ut->guest_signal_mask=(1ull<<21)|(1ull<<22);u64 saved_mask=ut->guest_signal_mask;
+    check(call(s,135,how,a,out)==-EFAULT,"mask output failure EFAULT");
+    check(ut->guest_signal_mask==saved_mask,"mask unchanged after output failure");
+   }
+   u64 saved_mask=ut->guest_signal_mask;
+   check(call(s,135,2,b+4096,0)==-EFAULT && ut->guest_signal_mask==saved_mask,"truncated mask input atomic EFAULT");
+   check(call(s,134,11,0,b+4096)==-EFAULT && call(s,135,0,0,b+4096)==-EFAULT,"truncated query outputs EFAULT");
+   // Direct host delivery/codec rejection only; no guest code or retry runs.
+   s->vec.Reset(128);s->gpr[2]=b+8192;s->fpu.fround_run_open=false;
+   ut->guest_signal_mask=0;ut->signal_actions[10]={code,4,0};
+   MemoryFaultSnapshot snapshot{};snapshot.vlenb=16;snapshot.pc=code;
+   snapshot.event.access=MemoryFaultEvent::Access::Load;
+   snapshot.event.reason=MemoryFaultEvent::Reason::Unmapped;
+   auto regs=s->gpr;auto vectors=s->vec.vreg;auto pc=s->ip;
+   check(!ukernel::DeliverHelperSignal(s,snapshot) && s->gpr==regs && s->ip==pc &&
+         !ut->signal_frame && !ut->guest_signal_mask,"truncated delivery rejects before state publication");
+   ut->signal_frame=b+4096;ut->signal_frame_size=FrameSize(16);s->gpr[2]=ut->signal_frame;
+   regs=s->gpr;saved_mask=ut->guest_signal_mask;
+   check(!ukernel::RestoreSignalFrame(s) && s->gpr==regs && s->vec.vreg==vectors && s->ip==pc &&
+         ut->guest_signal_mask==saved_mask && ut->signal_frame==b+4096,"truncated restore rejects before architectural writeback");
+   printf("SIGNAL_BUFFER_CHILD_PASS direction=%s checks=%u guest_calls=0\n",store?"out":"in",checks);
+   fflush(stdout);_exit(0);
+  }
+  int status=0;check(waitpid(child,&status,0)==child,"truncated buffer wait");
+  fprintf(stderr,"SIGNAL_BUFFER_CHILD_STATUS direction=%s status=%d\n",store?"out":"in",status);
+  passed &= WIFEXITED(status) && WEXITSTATUS(status)==0;
+  ++child_checks;
+ }
+ check(passed && child_checks==2,"both truncated copy directions pass");
+}
 int main()
 {
  mmu::Init();
@@ -19,6 +114,7 @@ int main()
  check(mmu::mmap(code,4096,PROT_READ|PROT_EXEC,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"code");
  ukernel::process.main_thread=std::make_unique<uthread>();
  auto *s=CPUState::Current(); auto *ut=s->GetUThread();
+ checked_buffers(s,ut,a,code);
  u8 action[16]{};put32(action,code);put32(action+4,4);put64(action+8,~0ull);
  check(CopyOut(a,action,16),"action input");
  check(call(s,134,11,a,a+32)==0,"install");
