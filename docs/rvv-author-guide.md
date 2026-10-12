@@ -146,7 +146,37 @@ not 595 forms multiplied by every VLEN/SEW/LMUL combination. The CHIPS macro
 branches to `fail` on a mismatch. The retained build commands do not enable
 `COSIM_TEST_CASE`, which would omit that comparison. Offline checking reapplies
 the recorded exit/stdout predicate; it does not execute those guest comparisons
-again. Archive download publication is pending, as recorded in the guide.
+again. The [published archives](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012)
+include the sources, checks and retained outputs described in the guide.
+
+### ACT indexed load: from expected signature to checked execution
+
+The [ACT db2 reader](rvv-validation/act-db2-task110/README.md) provides a
+1,919-file index. To inspect an indexed load, select `Vls8-vluxei8.v` in
+`RESULT_INDEX.csv` and follow its source, signature and result paths:
+
+1. Read the original generated assembly and its testplan entry. The target
+   loads elements using vector indices; the surrounding code sets the operands,
+   vector configuration and destination before executing it.
+2. Sail executes the signature-producing program. The pinned upstream signature
+   processor converts its capture into expected values for the self-checking
+   executable. These values are not collected from rvdbt.
+3. The upstream `signature.h` supplies the in-program comparisons. QEMU first
+   runs the self-checking executable; B/M1/M2/Both then run that same executable.
+   Check the selected BASE/LEN/CSR assertions, not just the target opcode name:
+   different assertions observe different portions of the result.
+4. Open each command, exit record and original output. Acceptance requires no
+   timeout, exit zero, exactly one original PASS summary and no FAILED text.
+   The portable replay interface creates new records without replacing the
+   archived ones. The offline inspector only rechecks retained evidence.
+
+This batch has 1,916 complete-file passes under all four configurations
+(7,664 DUT executions), one previously accepted file, and two reference blockers.
+The Linux environment replaces startup `csrs mstatus`, but retains the tested
+`csrrc`/`csrrs mstatus` operations in both `vfmv.f.s` files. Those files stop in
+QEMU before DUT execution; their original checks were not removed. The batch
+does not add forms to the 595-form union, establish optimized-path admission,
+or test general fault recovery.
 
 ### Ara `vfdiv.vv`
 

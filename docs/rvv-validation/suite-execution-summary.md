@@ -1,4 +1,24 @@
-# Suite execution accounting (Task96)
+# Suite execution accounting
+
+## Additional ACT source revision
+
+The [ACT db2 campaign](act-db2-task110/README.md) is separate from the older
+accounting snapshot below. Its 2,147 marked instruction/SEW inputs produce
+1,919 files; 228 inputs are excluded by the selected RV32/ELEN64 profile
+(128 ei64 indexed inputs and 100 optional FP16/Zvfh inputs). One output reuses
+an exact previously accepted case. Of the remaining 1,918, 1,916 pass the original
+self-check under B/M1/M2/Both, giving 7,664 additional clean961 DUT executions.
+Two complete files stop at tested privileged state setup in QEMU, with no DUT
+calls. There are no unattempted outputs in this queue.
+
+The 3,836 primary reference calls comprise 1,918 Sail passes and 1,916 QEMU
+passes plus two QEMU failures. Two additional QEMU diagnostic failures are
+retained separately. These are execution counts, not new instruction forms:
+the checked union remains 595. The linked index records the original source,
+checker, configuration, signature and each result. Replay-interface smoke tests
+are recorded separately and do not increase this campaign's counts.
+
+## Earlier registered-receipt snapshot (Task96)
 
 This is an offline accounting checkpoint over `xbd:/home/vick/rvv-task90/task90`,
 including its accepted Ara overlays. No guests, compilers or references were run.
