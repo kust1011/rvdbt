@@ -2000,7 +2000,9 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 			j.mov(x86::rdi, R_STATE);
 			j.mov(x86::esi, raw);
 			j.emit(x86::Inst::kIdCall,
-			       make_stubcall_target((special_memory ? RuntimeStubId::id_rv32_special_memory_safe
+			       make_stubcall_target((special_memory ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
+                                                    ? RuntimeStubId::id_rv32_native_memory_safe
+                                                    : RuntimeStubId::id_rv32_special_memory_safe)
 						     : unit_memory  ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
 							? RuntimeStubId::id_rv32_native_memory_safe
 							: RuntimeStubId::id_rv32_unit_memory_safe)
@@ -2357,22 +2359,7 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 	// sees exactly what instruction `i-1` left, with no merged value anywhere.
 	j.bind(rvv_typed_chunk_fallback);
 	j.inc(x86::qword_ptr(R_STATE, (int32_t)offsetof(CPUState, rvv_direct_fallbacks)));
-	if (ins->whole_regbytes) {
-		// The packed copy's vstart/range restrictions do not require a C++ call.
-		// Reuse the native element loop, including RV32 wrapping and restart publication.
-		// Only an actual VLEN mismatch still needs the runtime-sized helper.
-		auto helper = j.newLabel();
-		j.cmp(x86::dword_ptr(R_STATE, offsetof(CPUState, vec) + offsetof(rv32::VectorState, vlenb)),
-		      ins->whole_regbytes);
-		j.jne(helper);
-		bool const store = ins->stub == RuntimeStubId::id_rv32_vsNr;
-		u8 const eew = store ? 1 : (u8)(1u << (rv32::eew_log2_from_width((ins->raw >> 12) & 7) - 3));
-		qir::InstVMemory memory((ins->raw >> 7) & 31, (ins->raw >> 15) & 31,
-			(ins->raw >> 29) + 1, eew, eew, 4, ins->whole_regbytes, store, false);
-		Emit_vmemorynative(&memory);
-		j.jmp(rvv_typed_chunk_done);
-		j.bind(helper);
-	}
+	// A guard miss must reach checked helpers, including whole-register transfers.
 	for (u8 i = 0; i < ins->n_members; ++i) {
 		EmitRunMemberIp(ins->members[i].pc);
 		if (ins->members[i].scalar_passthrough) {
@@ -4536,9 +4523,10 @@ void QEmit::NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
 	// producers. In particular, state reads/publications remain unrelated host PCs.
 	if (!rvv_typed_chunk_open || native_memory_pc == qir::RVVRunMember::PC_UNUSED) return;
 	u32 const opcode = native_memory_raw & 0x7f;
-	if (opcode != (store ? 0x27u : 7u) || ((native_memory_raw >> 26) & 0x3f) != 0 ||
-	    !(native_memory_raw & (1u << 25)) || ((native_memory_raw >> 20) & 31))
-		Panic("qemit: native memory annotation is not ordinary unmasked unit stride");
+	bool const whole = ((native_memory_raw >> 20) & 31u) == 8u;
+	if (opcode != (store ? 0x27u : 7u) || ((native_memory_raw >> 26) & (whole ? 7u : 0x3fu)) != 0 ||
+	    !(native_memory_raw & (1u << 25)) || (!whole && ((native_memory_raw >> 20) & 31)))
+		Panic("qemit: native memory annotation is not an owned unmasked singleton");
 	u8 const eew = (u8)(1u << (rv32::eew_log2_from_width((native_memory_raw >> 12) & 7) - 3));
 	native_memory_sites.push_back({(u32)j.offset(), native_memory_pc, native_memory_raw,
 	    disp, base_offs, bytes, eew, ArchTraits::AX, data_reg,

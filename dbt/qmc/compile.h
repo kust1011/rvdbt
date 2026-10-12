@@ -10,7 +10,7 @@ namespace dbt
 {
 using IpRange = std::pair<u32, u32>;
 
-// Exact ordinary singleton guest accesses and their emitted terminal cold exits.
+// Exact ordinary/whole-register QCG singleton guest accesses and their emitted terminal cold exits.
 // A nonzero cold_offset requires page-contained active accesses and prior-state sync.
 // CPUState/spill accesses never belong to this list. Register numbers are x86 IDs.
 struct NativeMemorySite {

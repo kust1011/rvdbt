@@ -547,15 +547,27 @@ extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
 	return !mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied);
 }
 
-// Only the ordinary singleton QCG producer invokes this stronger admission.
+// Only annotated ordinary/whole-register singleton QCG producers invoke this admission.
 // Cross-page active chunks use the checked element helper BEFORE any SIMD body.
 extern "C" u32 qcgstub_rv32_native_memory_safe(CPUState *s, u32 raw)
 {
-	if (!qcgstub_rv32_unit_memory_safe(s, raw)) return 0;
+	bool const whole = ((raw >> 20) & 31u) == 8u;
+	if (whole) {
+		u32 const width = (raw >> 12) & 7u;
+		bool const store = (raw & 0x7f) == 0x27;
+		if ((raw & 0x7f) != (store ? 0x27u : 7u) || ((raw >> 26) & 7u) ||
+		    !(raw & (1u << 25)) || !vlen_supported(config::vlen_bits) ||
+		    s->vec.vlenb != config::vlen_bits / 8u || s->vec.vstart ||
+		    !whole_reg_group_legal((raw >> 7) & 31u, ((raw >> 29) & 7u) + 1u) ||
+		    (store ? width != 0 : eew_log2_from_width(width) < 0)) return 0;
+	} else if (!qcgstub_rv32_unit_memory_safe(s, raw)) return 0;
 	u32 const width = (raw >> 12) & 7;
 	u32 const eew = width == 0 ? 1 : 1u << (width - 4);
 	u32 const base = s->gpr[(raw >> 15) & 31];
-	u32 const bytes = s->vec.vl * eew;
+	u32 const bytes = whole ? (((raw >> 29) & 7u) + 1u) * s->vec.vlenb : s->vec.vl * eew;
+	if ((u64)base + bytes > mmu::ASPACE_SIZE) return 0;
+	u32 denied;
+	if (whole && mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied)) return 0;
 	u32 const chunk = std::min(s->vec.vlenb, u32(RVV_HOST_CHUNK_BITS / 8));
 	for (u32 off = 0; off < bytes; off += chunk) {
 		u32 const active = std::min(chunk, bytes - off);
@@ -608,8 +620,8 @@ extern "C" u32 qcgstub_rv32_special_memory_safe(CPUState *s, u32 raw)
 		if (!whole_reg_group_legal((raw >> 7) & 31u, nregs) ||
 		    (store ? width != 0 : eew_log2_from_width(width) < 0))
 			return 0;
-		// Whole-register native bodies have neither the singleton site ownership
-		// nor its publication/cold-exit ABI. Admit no unowned guest SIMD access.
+		// Grouped QCG and LLVM bodies do not own singleton sites/cold exits.
+		// Annotated singleton QCG uses native_memory_safe instead.
 		return 0;
 	} else if (((raw >> 20) & 31u) == 11u) {
 		VType const vt{s->vec.vtype};

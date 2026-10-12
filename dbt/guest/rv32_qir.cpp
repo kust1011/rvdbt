@@ -13624,7 +13624,8 @@ u8 RV32Translator::RvvQcgWholeRegAdmit(u32 raw, bool is_load) const
 //
 // Guest memory and the host CPUState register file are distinct architectural storage.
 // As in whole_reg_load/store, transfers may publish one batch before loading the next.
-// This retains the existing fault contract; it does not add precise restart after host faults.
+// The annotated singleton uses the Task131 page-contained site/publication/cold-exit contract.
+// Grouped consumers remain refused by their shared special-memory admission.
 void RV32Translator::RvvEmitWholeRegChunkGroup(u32 raw, u8 base_reg, u8 nregs, u8 chunks,
 					      bool is_load, RuntimeStubId stub)
 {
@@ -13657,6 +13658,7 @@ void RV32Translator::RvvEmitWholeRegChunkGroup(u32 raw, u8 base_reg, u8 nregs, u
 	auto *frame_begin = qb.Create_rvvtypedchunkbegin((u32)(vlen / 8u), raw, stub, (u16)(2 * chunks),
 				     qir::InstRVVTypedChunkBegin::GuardKind::VlenbVstartBaseLimit,
 				     base_offs, 0u - (u32)nregs * (vlen / 8u));
+	static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
 	RvvEmitWholeRegChunkBody(is_load, base_offs, base_reg, chunks, chunk_bytes);
 	rvvfinal::CloseFrame(qb, frame_begin, {.reason = rvvfinal::Ineligibility::WholeRegisterEvl, .raw = raw, .stub = stub, .whole_regbytes = (u16)reg_bytes});
 }
@@ -13670,8 +13672,8 @@ void RV32Translator::RvvEmitWholeRegChunkGroup(u32 raw, u8 base_reg, u8 nregs, u
 // from the one place in the tree that owns that rule. In guest MEMORY the transfer is contiguous,
 // so the displacement is simply c*chunk_bytes.
 //
-// A caller declares 2 * chunks typed ops. Each batch is published before its temporary
-// host values are reused, bounding register pressure independently of VLEN and group size.
+// A caller declares 2 * chunks typed ops. Publish each load before the next guest
+// access, including across architectural register-slot boundaries.
 void RV32Translator::RvvEmitWholeRegChunkBody(bool is_load, u32 base_offs, u8 base_reg, u8 chunks,
 					      u32 chunk_bytes)
 {
@@ -13686,7 +13688,7 @@ void RV32Translator::RvvEmitWholeRegChunkBody(bool is_load, u32 base_offs, u8 ba
 	auto const off = [&](u8 c) {
 		return rvv::group_chunk_state_offset(vreg_base, base_reg, vlen, chunk_bytes, c);
 	};
-	constexpr u8 batch_capacity = 4;
+	constexpr u8 batch_capacity = 1;
 	std::array<VOperand, batch_capacity> v;
 	for (u8 first = 0; first < chunks; first += batch_capacity) {
 		u8 const count = std::min<u8>(chunks - first, batch_capacity);
