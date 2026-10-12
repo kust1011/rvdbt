@@ -3317,8 +3317,9 @@ struct InstRVVTypedChunkBegin : InstNoOperands {
 		}
 	}
 
-	// Set only by the ordinary singleton vle/vse producers; never inferred from block entry.
+	// Explicit singleton memory producer annotation; never inferred from block entry.
 	u32 native_memory_pc{RVVRunMember::PC_UNUSED};
+	bool native_memory_scalar{};
 	u32 vtype; // expected CPUState::vec.vtype; guarded at run time (VTypeVlVstart only)
 	u32 vlmax; // the typed path runs only at vl == VLMAX      (VTypeVlVstart only)
 	u32 raw;   // guest encoding of member 0, for the fallback helper call

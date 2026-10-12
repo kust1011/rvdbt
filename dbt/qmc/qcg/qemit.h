@@ -98,6 +98,7 @@ private:
 	void NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
                            u8 active_sew, bool store);
 	u32 native_memory_pc{qir::RVVRunMember::PC_UNUSED}, native_memory_raw{};
+	bool native_memory_scalar{};
 	std::vector<NativeMemorySite> native_memory_sites;
 	asmjit::Label native_memory_cold;
 	size_t native_memory_frame_sites{};

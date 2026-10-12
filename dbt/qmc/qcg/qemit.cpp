@@ -1957,6 +1957,7 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	rvv_typed_chunk_open = true;
 	native_memory_pc = ins->n_members == 1 ? ins->native_memory_pc : qir::RVVRunMember::PC_UNUSED;
 	native_memory_raw = ins->raw;
+	native_memory_scalar = ins->n_members == 1 && ins->native_memory_scalar;
 	native_memory_cold = j.newLabel();
 	native_memory_frame_sites = native_memory_sites.size();
 	// Pins remain resident at CallOp. Commit their runtime values unconditionally.
@@ -1998,9 +1999,9 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		    stub == RuntimeStubId::id_rv32_vlNre || stub == RuntimeStubId::id_rv32_vsNr;
 		if (unit_memory || family_memory || special_memory) {
 			j.mov(x86::rdi, R_STATE);
-			j.mov(x86::esi, raw);
+			j.mov(x86::esi, native_memory_scalar ? raw | (1u << 28) : raw);
 			j.emit(x86::Inst::kIdCall,
-			       make_stubcall_target((special_memory ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
+			       make_stubcall_target(native_memory_scalar ? RuntimeStubId::id_rv32_native_memory_safe : (special_memory ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
                                                     ? RuntimeStubId::id_rv32_native_memory_safe
                                                     : RuntimeStubId::id_rv32_special_memory_safe)
 						     : unit_memory  ? (native_memory_pc != qir::RVVRunMember::PC_UNUSED
@@ -2370,7 +2371,7 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 		j.mov(x86::rsi, (uint64_t)ins->members[i].raw);
 		j.emit(x86::Inst::kIdCall, make_stubcall_target(
 			native_memory_pc != qir::RVVRunMember::PC_UNUSED
-			? RuntimeStubId::id_rv32_native_memory_fault : ins->members[i].stub));
+			? (native_memory_scalar ? ins->members[i].stub : RuntimeStubId::id_rv32_native_memory_fault) : ins->members[i].stub));
 	}
 
 	if (native_memory_sites.size() != native_memory_frame_sites) {
@@ -3340,6 +3341,15 @@ void QEmit::Emit_vmemorynative(qir::InstVMemory *ins)
 		j.jmp(copied);
 	}
 	j.bind(regular);
+	if (native_memory_scalar && native_memory_pc != qir::RVVRunMember::PC_UNUSED) {
+		NativeMemorySite site;
+		site.code_offset = (u32)j.offset(); site.guest_pc = native_memory_pc;
+		site.raw = native_memory_raw; site.bytes = site.eew_bytes = ins->sew;
+		site.address_reg = x86::Gp::kIdDi; site.data_reg = x86::Gp::kIdCx;
+		site.store = ins->store; site.scalar_loop = true;
+		site.field = field; site.nf = ins->mode == 4 ? ins->index : ins->nf;
+		native_memory_sites.push_back(site);
+	}
 	if(ins->store)write(x86::ptr(R_MEMBASE,x86::rdi),ins->sew);
 	else read(x86::ptr(R_MEMBASE,x86::rdi),ins->sew);
 	j.bind(copied);

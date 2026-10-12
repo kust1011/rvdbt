@@ -10,7 +10,7 @@ namespace dbt
 {
 using IpRange = std::pair<u32, u32>;
 
-// Exact ordinary/whole-register QCG singleton guest accesses and their emitted terminal cold exits.
+// Exact QCG singleton guest accesses and their emitted terminal cold exits.
 // A nonzero cold_offset requires page-contained active accesses and prior-state sync.
 // CPUState/spill accesses never belong to this list. Register numbers are x86 IDs.
 struct NativeMemorySite {
@@ -19,6 +19,10 @@ struct NativeMemorySite {
 	u8 bytes{}, eew_bytes{}, address_reg{}, data_reg{}, mask_reg{0xff};
 	bool store{};
 	u32 cold_offset{};
+	// Scalar loop: element is live in R8D, field/nf are unrolled facts,
+	// address is live in EDI. Other sites retain their chunk codec.
+	bool scalar_loop{};
+	u8 field{}, nf{1};
 };
 
 struct CompilerRuntime {

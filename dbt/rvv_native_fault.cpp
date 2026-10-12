@@ -21,6 +21,8 @@ static thread_local std::atomic<uptr> membase __attribute__((tls_model("initial-
 static thread_local volatile sig_atomic_t pending __attribute__((tls_model("initial-exec")));
 static thread_local std::atomic<Entry const *> captured __attribute__((tls_model("initial-exec")));
 static thread_local std::atomic<uptr> address __attribute__((tls_model("initial-exec")));
+static thread_local std::atomic<u32> element __attribute__((tls_model("initial-exec")));
+static thread_local volatile sig_atomic_t fault_signal __attribute__((tls_model("initial-exec")));
 static thread_local volatile sig_atomic_t fault_code __attribute__((tls_model("initial-exec")));
 
 void Arm(CPUState *state) {
@@ -34,6 +36,9 @@ void Register(std::span<u8> code, std::span<NativeMemorySite const> sites)
         if (site.code_offset >= code.size() || site.cold_offset >= code.size() ||
             (site.eew_bytes != 1 && site.eew_bytes != 2 && site.eew_bytes != 4 && site.eew_bytes != 8) ||
             !site.bytes || site.bytes > 64 || site.displacement % site.eew_bytes ||
+            (site.scalar_loop && (site.bytes != site.eew_bytes || site.displacement ||
+                site.address_reg != 7 || site.data_reg != 1 || site.mask_reg != 0xff ||
+                !site.nf || site.nf > 8 || site.field >= site.nf)) ||
             (site.mask_reg == 7 && site.eew_bytes < 4) ||
             (site.mask_reg != 7 && site.mask_reg != 0xff))
             Panic("native fault exit outside code allocation");
@@ -54,22 +59,27 @@ void Clear()
 
 bool HandleSignal(int signal, siginfo_t const *info, ucontext_t *context)
 {
-    // Own only synchronous data #PF with ordinary Linux translation/protection
-    // codes. SIGBUS, PKU, instruction-fetch and non-page exceptions stay unowned.
+    // Scalar sites own synchronous SEGV data #PF and BUS backing errors.
+    // Chunk sites retain their existing SEGV-only codec. No CPUState reads here.
     auto const *r = context->uc_mcontext.gregs;
-    if (pending || signal != SIGSEGV ||
-        (info->si_code != SEGV_MAPERR && info->si_code != SEGV_ACCERR) ||
-        r[REG_TRAPNO] != 14 || !(r[REG_ERR] & 4) || (r[REG_ERR] & ~greg_t(7)) ||
-        !owner.load(std::memory_order_relaxed) ||
+    if (pending || !owner.load(std::memory_order_relaxed) ||
         (uptr)r[REG_R13] != owner.load(std::memory_order_relaxed)) return false;
     auto *entry = head.load(std::memory_order_acquire);
     while (entry && entry->pc != (uptr)r[REG_RIP]) entry = entry->next;
-    if (!entry || bool(r[REG_ERR] & 2) != entry->site.store) return false;
+    if (!entry) return false;
+    bool const page_fault = signal == SIGSEGV &&
+        (info->si_code == SEGV_MAPERR || info->si_code == SEGV_ACCERR) &&
+        r[REG_TRAPNO] == 14 && (r[REG_ERR] & 4) && !(r[REG_ERR] & ~greg_t(7)) &&
+        bool(r[REG_ERR] & 2) == entry->site.store;
+    bool const bus_fault = entry->site.scalar_loop && signal == SIGBUS &&
+        (info->si_code == BUS_ADRERR || info->si_code == BUS_OBJERR);
+    if (!page_fault && !bus_fault) return false;
     auto const &site = entry->site;
     uptr const memory = membase.load(std::memory_order_relaxed);
-    if ((uptr)r[REG_RAX] > 0xffffffffu ||
+    uptr const guest = (uptr)r[site.scalar_loop ? REG_RDI : REG_RAX];
+    if (guest > 0xffffffffu ||
         (!config::zero_membase && (uptr)r[REG_RBP] != memory)) return false;
-    uptr const base = (uptr)r[REG_RAX] + site.displacement +
+    uptr const base = guest + site.displacement +
         (config::zero_membase ? 0 : (uptr)r[REG_RBP]);
     u32 bytes = site.bytes;
     if (site.mask_reg == 7) {
@@ -89,6 +99,8 @@ bool HandleSignal(int signal, siginfo_t const *info, ucontext_t *context)
     // Every active byte is on the denied page. Report the first byte of
     // the selected first denied element; si_addr only validates host ownership.
     address.store(base, std::memory_order_relaxed);
+    element.store(site.scalar_loop ? (u32)r[REG_R8] : site.displacement / site.eew_bytes, std::memory_order_relaxed);
+    fault_signal = signal;
     fault_code = info->si_code;
     pending = 1;
     owner.store(0, std::memory_order_relaxed);
@@ -108,7 +120,7 @@ extern "C" void qcgstub_rv32_native_memory_fault(CPUState *state, u32 raw)
     if (!pending || state != CPUState::Current()) Panic("unarmed native fault exit");
     auto const site = captured.load(std::memory_order_relaxed)->site;
     pending = 0;
-    state->vec.vstart = site.displacement / site.eew_bytes;
+    state->vec.vstart = element.load(std::memory_order_relaxed);
     MemoryFaultEvent event;
     event.origin = MemoryFaultEvent::Origin::NativeUnit;
     event.reason = MemoryFaultEvent::Reason::HostFault;
@@ -116,8 +128,9 @@ extern "C" void qcgstub_rv32_native_memory_fault(CPUState *state, u32 raw)
     event.pc = site.guest_pc; event.raw = site.raw;
     event.address = mmu::h2g((void *)address.load(std::memory_order_relaxed));
     event.element = state->vec.vstart; event.eew_bytes = site.eew_bytes;
-    event.nf = ((site.raw >> 20) & 31u) == 8u ? ((site.raw >> 29) & 7u) + 1u : 1u;
-    event.host_signal = SIGSEGV; event.host_code = fault_code;
+    event.field = site.scalar_loop ? site.field : 0;
+    event.nf = site.scalar_loop ? site.nf : ((site.raw >> 20) & 31u) == 8u ? ((site.raw >> 29) & 7u) + 1u : 1u;
+    event.host_signal = fault_signal; event.host_code = fault_code;
     ukernel::QueueHelperMemoryFault(state, event);
     // All automatic body scopes have ended before the established FP/unwind exit.
     rv32::FinishHelperMemoryFault(state);
