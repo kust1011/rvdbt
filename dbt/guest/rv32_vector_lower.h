@@ -2729,6 +2729,8 @@ ALWAYS_INLINE void sized_copy(void *dst, void const *src, u32 bytes)
 // the caller never gets here). The byte view is exact because a whole-register transfer is a byte
 // copy: element e of EEW occupies bytes [e*EEW/8, (e+1)*EEW/8) of the group, in memory and in the
 // register file alike. The vstart == 0 fast path is byte-identical to before.
+// Semantic fixtures only: production whole-register helpers use unit_stride_checked.
+// These raw byte-copy oracles carry no host fault ownership contract.
 inline void whole_reg_load(VectorState &vs, u32 vd, u8 *vmem, u32 base, u32 nregs, u32 vlen_bits,
 			   u32 start_byte = 0)
 {
@@ -3604,70 +3606,22 @@ ALWAYS_INLINE bool rvv_fault_here()
 	return ++g_rvv_op_seq == config::rvv_inject_fault;
 }
 
-inline void dispatch_load_unit_stride(VectorState &vs, u32 vd, u8 *vmem, u32 base, u32 vlen_bits,
-				      u32 vl, u32 eew_bytes)
+// Helper guest copies have no emitted native cold exit or SIMD completion ABI.
+// Permission admission cannot make their libc/SSE accesses owned. Use the shared
+// register-slot bulk loop, whose checked leaf publishes an exact element frontier.
+// Memory verification must not replay guest reads/writes to construct an oracle.
+inline bool dispatch_load_unit_stride(VectorState &vs, u32 vd, u8 *vmem, u32 base,
+                                      u32 vlen_bits, u32 vl, u32 eew_bytes, u32 &denied)
 {
-	if (unlikely(config::rvv_lowering == (u8)RvvLowering::Ref)) {
-		g_rvv_stats.ref_fallback++;
-		rvv_ref::load_unit_stride(vs, vd, vmem, base, vlen_bits, vl, eew_bytes);
-		return;
-	}
-	if (unlikely(config::rvv_verify)) {
-		VectorState shadow = vs;
-		rvv_ref::load_unit_stride(shadow, vd, vmem, base, vlen_bits, vl, eew_bytes);
-		rvv_chunked::load_unit_stride(vs, vd, vmem, base, vlen_bits, vl, eew_bytes);
-		if (unlikely(rvv_fault_here()))
-			vs.vreg[vd][0] ^= 1;
-		if (std::memcmp(shadow.vreg.data(), vs.vreg.data(), sizeof(shadow.vreg)) != 0) {
-			g_rvv_stats.verify_fail++;
-			RvvVerifyFailed("vle", vlen_bits, vl, eew_bytes);
-		} else {
-			g_rvv_stats.verify_ok++;
-		}
-		return;
-	}
-	rvv_chunked::load_unit_stride(vs, vd, vmem, base, vlen_bits, vl, eew_bytes);
+	return rvv_ref::unit_stride_checked(vs, vd, vmem, base, vlen_bits, vl,
+	                                    eew_bytes, true, false, denied);
 }
 
-inline void dispatch_store_unit_stride(VectorState &vs, u32 vs3, u8 *vmem, u32 base, u32 vlen_bits,
-				       u32 vl, u32 eew_bytes)
+inline bool dispatch_store_unit_stride(VectorState &vs, u32 vs3, u8 *vmem, u32 base,
+                                       u32 vlen_bits, u32 vl, u32 eew_bytes, u32 &denied)
 {
-	if (unlikely(config::rvv_lowering == (u8)RvvLowering::Ref)) {
-		g_rvv_stats.ref_fallback++;
-		rvv_ref::store_unit_stride(vs, vs3, vmem, base, vlen_bits, vl, eew_bytes);
-		return;
-	}
-	if (unlikely(config::rvv_verify)) {
-		// A store's effect is on GUEST MEMORY, so the comparison has to be against the
-		// bytes actually written. Snapshot the destination range, let the reference write
-		// it, capture that, restore, then let the optimized path write and compare.
-		u32 const bytes = vl * eew_bytes;
-		// Single-threaded guest execution, and this is a diagnostic mode, so plain statics
-		// are fine. Sized well above any legal vl*EEW (EMUL <= 8 => <= 8*VLEN_MAX/8 bytes).
-		static u8 want[VLEN_MAX_BYTES * VREG_NUM];
-		static u8 orig[VLEN_MAX_BYTES * VREG_NUM];
-		// Skip the comparison (but still take the fast path) if the access would wrap the
-		// 4 GiB guest space: the contiguous snapshot below would not model that correctly,
-		// and reporting a bogus mismatch is worse than reporting no result.
-		bool const wraps = ((u64)base + bytes) > 0x1'0000'0000ull;
-		if (bytes <= sizeof(want) && !wraps) {
-			std::memcpy(orig, vmem + base, bytes);
-			rvv_ref::store_unit_stride(vs, vs3, vmem, base, vlen_bits, vl, eew_bytes);
-			std::memcpy(want, vmem + base, bytes);
-			std::memcpy(vmem + base, orig, bytes);
-			rvv_chunked::store_unit_stride(vs, vs3, vmem, base, vlen_bits, vl, eew_bytes);
-			if (unlikely(rvv_fault_here()))
-				vmem[base] ^= 1;
-			if (std::memcmp(want, vmem + base, bytes) != 0) {
-				g_rvv_stats.verify_fail++;
-				RvvVerifyFailed("vse", vlen_bits, vl, eew_bytes);
-			} else {
-				g_rvv_stats.verify_ok++;
-			}
-			return;
-		}
-	}
-	rvv_chunked::store_unit_stride(vs, vs3, vmem, base, vlen_bits, vl, eew_bytes);
+	return rvv_ref::unit_stride_checked(vs, vs3, vmem, base, vlen_bits, vl,
+	                                    eew_bytes, true, true, denied);
 }
 
 inline void dispatch_add_vv(VectorState &vs, u32 vd, u32 vs2, u32 vs1, u32 vlen_bits, u32 vl,

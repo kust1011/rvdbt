@@ -49,6 +49,7 @@ void mmu::Init()
 {
 	mapped_pages.reset();
 	ordinary_ram_pages.reset();
+	native_copy_ram_pages.reset();
 	readable_pages.reset();
 	writable_pages.reset();
 	executable_pages.reset();
@@ -101,7 +102,7 @@ void mmu::MarkFreePages(u32 pvaddr, u32 plen)
 // Accurate map of what is actually mapped, kept only so a fault-only-first load can PREDICT a
 // fault. Read-only from the guest's point of view and never consulted by the allocator, so it
 // cannot change which addresses are handed out.
-std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::mapped_pages, mmu::ordinary_ram_pages;
+std::bitset<(mmu::ASPACE_SIZE >> mmu::PAGE_BITS)> mmu::mapped_pages, mmu::ordinary_ram_pages, mmu::native_copy_ram_pages;
 
 // Anonymous RAM and regular-file mappings are idempotent ordinary memory.
 // Device/unknown backing must use checked helpers, never a native recovery claim.
@@ -110,7 +111,12 @@ void mmu::MarkOrdinaryRam(u32 page, u32 count, int flags, int fd)
 	struct stat st{};
 	bool const ordinary = (flags & MAP_ANONYMOUS) ||
 	    (fd >= 0 && ::fstat(fd, &st) == 0 && S_ISREG(st.st_mode));
-	for (u32 p = page; p < page + count; ++p) ordinary_ram_pages.set(p, ordinary);
+	// Regular files are idempotent but can SIGBUS after truncation. Task131 owns
+	// user data page faults only; anonymous backing retains that native contract.
+	for (u32 p = page; p < page + count; ++p) {
+		ordinary_ram_pages.set(p, ordinary);
+		native_copy_ram_pages.set(p, flags & MAP_ANONYMOUS);
+	}
 }
 
 void mmu::MarkMapped(u32 pvaddr, u32 plen)
@@ -124,6 +130,7 @@ void mmu::MarkUnmapped(u32 pvaddr, u32 plen)
 	for (u32 p = pvaddr; p < pvaddr + plen && p < (ASPACE_SIZE >> PAGE_BITS); ++p) {
 		mapped_pages.reset(p);
 		ordinary_ram_pages.reset(p);
+		native_copy_ram_pages.reset(p);
 		readable_pages.reset(p);
 		writable_pages.reset(p);
 		executable_pages.reset(p);

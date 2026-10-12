@@ -13321,12 +13321,8 @@ u8 RV32Translator::RvvVseChunkShapeAdmit(u32 raw, u32 sew_bytes) const
 RV32Translator::RvvChunkShape RV32Translator::RvvVseChunkShape(u32 raw, u32 sew_bytes) const
 {
 	RvvChunkShape const none{};
-	// --rvv-verify compares the helper's two internal paths per operation and cannot see emitted
-	// code, so leaving this path enabled under it would make "verified" mean "verified except
-	// where we skipped the check". For the store the diagnostic it would disable is the one that
-	// snapshots the DESTINATION RANGE of guest memory and compares the bytes actually written
-	// (dispatch_store_unit_stride, rv32_vector_lower.h) -- the only cross-check in the build that
-	// looks at this route's output at all.
+	// Keep diagnostic mode on the checked helper route. Guest memory is accessed
+	// once there; the former store verifier's snapshot/restore/replay is unowned.
 	if (config::rvv_verify)
 		return none;
 	// STRICTER THAN THE SIX ALU ROUTES and for the same reason the vle route is: `--rvv-lowering 0`

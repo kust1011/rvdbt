@@ -78,7 +78,7 @@ static void cell(CPUState *s, bool mask, bool store, u32 vlen, u32 nr, u32 eew, 
 	else
 		check(mmu::mprotect(data + 4096, 4096, prot) == 0, "special protect");
 	u32 raw = special_word(mask, store, eew, nr, reg);
-	bool admitted = start == 0 && (evl * eew <= 4096 - baseoff || !denied);
+	bool admitted = mask && start == 0 && (evl * eew <= 4096 - baseoff || !denied);
 	check(qcgstub_rv32_special_memory_safe(s, raw) == admitted, "live special admission");
 	u64 hits = s->rvv_direct_hits, misses = s->rvv_direct_fallbacks;
 	if (native_code) {
@@ -350,8 +350,8 @@ static void combined_frames(CPUState *s)
 			u64 hits = s->rvv_direct_hits, misses = s->rvv_direct_fallbacks;
 			if (sigsetjmp(trap_unwind_env, 0) == 0)
 				Enter(s, mmu::base, bytes);
-			check(s->rvv_direct_hits - hits == (denied ? 0u : 1u) &&
-				  s->rvv_direct_fallbacks - misses == (denied ? 1u : 0u),
+			check(s->rvv_direct_hits - hits == 0 &&
+				  s->rvv_direct_fallbacks - misses == 1,
 			      "actual arithmetic-first/multiple-base run admission");
 			check(s->vec.vreg == expected.vreg && s->vec.vl == 16 &&
 				  s->vec.vstart == (denied ? 8u : 0u),
@@ -369,7 +369,7 @@ static void combined_frames(CPUState *s)
 			check(!memcmp(mem, expected_mem.data(), 8192), "run prior and denied store prefix");
 			++cells;
 		}
-	printf("ACTUAL_QCG_COMBINED native_hits=2 native_fallbacks=2 cells=4\n");
+	printf("ACTUAL_QCG_COMBINED native_hits=0 native_fallbacks=4 cells=4\n");
 }
 
 int main(int argc, char **argv)
