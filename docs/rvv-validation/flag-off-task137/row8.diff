@@ -1,0 +1,82 @@
+--- c2084aa
++++ Task137
+@@ -21,45 +21,55 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpaddd zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0xc7
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
+ mov    DWORD PTR [r13+0xb8],0x8
++mov    rdi,r13
++mov    esi,0xABS
++rex call 0xABS
++test   eax,eax
++je     0x142
+ cmp    DWORD PTR [r13+0x40d0],0xd0
+-jne    0x12c
++jne    0x142
+ cmp    DWORD PTR [r13+0x40d4],0x10
+-jne    0x12c
++jne    0x142
+ cmp    DWORD PTR [r13+0x40d8],0x0
+-jne    0x12c
++jne    0x142
+ mov    eax,DWORD PTR [r13+0x64]
+ cmp    eax,0xABS
+-ja     0x12c
++ja     0x142
+ mov    eax,DWORD PTR [r13+0x64]
+ vmovdqu64 zmm2,ZMMWORD PTR [rax]
+ vmovdqu64 ZMMWORD PTR [r13+0x2d0],zmm2
+-inc    QWORD PTR [r13+0xa500]
+-jmp    0x143
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa528]
++jmp    0x16a
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
++jmp    0x16a
++pop    rcx
++mov    rdi,r13
++xor    esi,esi
++rex jmp 0xABS
+ mov    DWORD PTR [r13+0xb8],0xc
+ cmp    DWORD PTR [r13+0x40d0],0xd0
+-jne    0x1ab
++jne    0x1d2
+ cmp    DWORD PTR [r13+0x40d4],0x10
+-jne    0x1ab
++jne    0x1d2
+ cmp    DWORD PTR [r13+0x40d8],0x0
+-jne    0x1ab
++jne    0x1d2
+ vmovdqu64 zmm2,ZMMWORD PTR [r13+0x2d0]
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpaddd zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
+-jmp    0x1c2
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa528]
++jmp    0x1e9
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
+@@ -68,7 +78,7 @@
+ lea    esi,[esi*4+0x0]
+ and    esi,0xABS
+ cmp    DWORD PTR [r12+rsi*1],0x10
+-jne    0x1f4
++jne    0x21b
+ mov    r12,QWORD PTR [r12+rsi*1+0x8]
+ inc    QWORD PTR [r12+0x20]
+ mov    r14,0x10

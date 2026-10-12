@@ -1,0 +1,11 @@
+{
+  "production_commands": 52,
+  "cpp": 51,
+  "host_chunk_bits": 512,
+  "checked_flags": [
+    "-mavx512f",
+    "-mavx512bw",
+    "-O3",
+    "-DNDEBUG"
+  ]
+}

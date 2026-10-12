@@ -1,0 +1,81 @@
+commit 1fe19fb9993fe905021f86bed4058e94480897d8
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Tue Oct 13 03:51:36 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Tue Oct 13 03:51:36 2026 +0800
+
+    Preserve QCG instruction fault boundaries by splitting memory runs
+
+commit 93cb0c07bb7aaf4dbadc0f7d541a81ceb15267e0
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Tue Oct 13 03:31:51 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Tue Oct 13 03:31:51 2026 +0800
+
+    Own singleton QCG scalar vector-memory loop faults at exact guest sites
+
+commit eaf45ab75c034c6135acb19b4897d9fe63859672
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Tue Oct 13 02:43:31 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Tue Oct 13 02:43:31 2026 +0800
+
+    Restore owned whole-register QCG singleton SIMD and checked guard fallback
+
+commit 39129430ec05e582572b73c1306f4eefb3693586
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Tue Oct 13 02:29:24 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Tue Oct 13 02:32:27 2026 +0800
+
+    Route admitted unit and whole helper transfers through checked element frontier
+
+commit bfbb2c9f186c88b91c5c97551de7c7627c3273b5
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Tue Oct 13 02:11:58 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Tue Oct 13 02:15:12 2026 +0800
+
+    Deliver ordinary QCG page-contained memory faults through emitted dispatcher exit
+
+commit d86355b38054ac96c6f62b6e1e22357169c4ed4c
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Tue Oct 13 01:44:51 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Tue Oct 13 01:44:51 2026 +0800
+
+    Track exact QCG unit-memory sites and publish loaded chunks in order
+
+commit 51b2fe56a0ecd06aa995088b0d30796a6b9c90d8
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Mon Oct 12 21:47:01 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Mon Oct 12 21:47:01 2026 +0800
+
+    Handle precise permission faults for RVV mask and whole-register memory
+
+    Reuse the checked effective-element loop and admit every memory member before native bodies. Guard LLVM whole-register SSA and certified component reads; reject stale AOT ABI. Add non-restarting state, permission, combined-frame and admission checks. Refs #1.
+
+commit ba817f6966a61b2e0071c5a2389cc35246d7d6af
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Mon Oct 12 21:14:49 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Mon Oct 12 21:14:49 2026 +0800
+
+    Share precise checked accesses across ordinary RVV memory families
+
+    Guard QCG, LLVM and AVX2 native memory admission while retaining permitted SIMD routes. Preserve absolute element/field fault state through the established helper return and dispatcher contract.
+
+    Refs #1
+
+commit b0280831532748d4f76772c0585c2291a7199bf1
+Author:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+AuthorDate: Mon Oct 12 20:28:41 2026 +0800
+Commit:     Sheng-Tsung Ku <r13922143@ntu.edu.tw>
+CommitDate: Mon Oct 12 20:28:41 2026 +0800
+
+    Preserve precise ordinary RVV unit-stride permission fault state
+
+    Guard native unit-stride frames with live directional MMU permissions and route unsafe accesses through element-precise helper queueing. Extend the existing helper signal event interface for stores and validate native/fallback state, masks, vstart and FOF separation.
+
+    Refs #1
