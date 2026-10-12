@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "checks": {
+    "vadd": {
+      "records": 21,
+      "geometry_records": 21,
+      "literal_records": 0,
+      "arguments": [
+        "--form",
+        "vadd.vv",
+        "--suite",
+        "chips",
+        "--arm",
+        "B"
+      ],
+      "output": "/tmp/task138-navigation-final-vadd",
+      "all_task138": true,
+      "reference_blockers": 2
+    },
+    "config": {
+      "records": 1,
+      "geometry_records": 0,
+      "literal_records": 1,
+      "arguments": [
+        "--form",
+        "vsetvli",
+        "--suite",
+        "chips",
+        "--arm",
+        "B"
+      ],
+      "output": "/tmp/task138-navigation-final-config",
+      "all_task138": true,
+      "reference_blockers": 2
+    },
+    "scoped": {
+      "records": 1,
+      "geometry_records": 0,
+      "literal_records": 0,
+      "arguments": [
+        "--suite",
+        "ara",
+        "--case",
+        "batch_vmacc",
+        "--arm",
+        "B"
+      ],
+      "output": "/tmp/task138-navigation-final-scoped",
+      "all_task138": true,
+      "reference_blockers": 2
+    }
+  }
+}

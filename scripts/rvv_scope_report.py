@@ -481,6 +481,7 @@ def act_db2_replay(index, raw, package, prior, output):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--host512-corpus', type=Path, help='offline Task128/129 navigation, or validation docs root with --host512-build')
+    p.add_argument('--host512-task138-build', action='store_true', help='audit complete current Task138 receipts and reuse original navigation bindings')
     p.add_argument('--host512-build', action='store_true', help='audit and merge exact retained host512 raw receipts')
     p.add_argument('--suite', choices=('chips','act','ara'))
     p.add_argument('--forms', type=Path)
@@ -504,8 +505,10 @@ def main():
         p.add_argument('--' + label + '-package', type=Path)
     a = p.parse_args()
     if a.host512_corpus:
-        from rvv_host512_corpus import generate, select
-        if a.host512_build:
+        from rvv_host512_corpus import generate, generate_current, select
+        if a.host512_task138_build:
+            result = generate_current(a.host512_corpus,a.output)
+        elif a.host512_build:
             result = generate(a.host512_corpus,a.output)
         else:
             result = select(a.host512_corpus,a.form,a.suite,a.case,a.arm)

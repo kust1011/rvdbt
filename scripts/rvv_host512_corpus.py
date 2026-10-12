@@ -4,6 +4,7 @@ import csv
 import gzip
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ELFRUN = '849e6dd0a11e78d19319a2d04b93a644f4dd04e9fbc86dd8b350288392d655a3'
@@ -40,11 +41,11 @@ def partition(original, prior, remaining):
     return dict(original=len(sets[0]), task128=len(sets[1]), task129=len(sets[2]), intersection=0)
 
 
-def validate_record(record, local):
+def validate_record(record, local, elfrun=ELFRUN, executable=REMOTE128 + '/build/bin/elfrun'):
     """Authenticate raw joins without fabricating timestamps or rerunning code."""
     pins = record['executable_pins']
-    require(sorted(pins.values()) == sorted([ELFRUN, LIBRARY]), 'candidate identity')
-    require(record['command'][0] == REMOTE128 + '/build/bin/elfrun', 'pinned executable path')
+    require(sorted(pins.values()) == sorted([elfrun, LIBRARY]), 'candidate identity')
+    require(record['command'][0] == executable, 'pinned executable path')
     require(read(local/'IDENTITY.json') == pins, 'per-call identity')
     require(read(local/'command.json') == record['command'], 'raw command join')
     result = record['result']
@@ -229,3 +230,74 @@ def select(path, form=None, suite=None, case=None, arm=None):
                 selected_CHIPS_source_geometry=dict(contexts),selected_CHIPS_literal_contexts=literal_contexts,
                 literal_interpretation='Original source lines/requested geometry in passing files; never substituted for actual runtime tuples.',
                 original_ACT_reference_blockers=index['original_ACT_reference_blockers'])
+
+
+def generate_current(docs, output, raw=Path('/home/user/research/materials/task138-host512-raw-20261013')):
+    """Reuse original bindings; credit only fresh Task138 authenticated receipts."""
+    docs, output, raw = Path(docs), Path(output), Path(raw)
+    current = docs/'host512-task138'
+    historical_path = docs/'host512-task129/combined/navigation.json.gz'
+    historical = read(historical_path)
+    templates = {identity(r['original_call']):r for r in historical['records']}
+    require(len(templates)==21316, 'historical original binding uniqueness')
+    require(read(raw/'IDENTITY_BEFORE.json')==read(raw/'IDENTITY_AFTER.json'), 'current before/after pins')
+    pilots=read(raw/'PILOT_CALLS.json')
+    for suite,key in (('chips','cells'),('act','calls'),('ara','calls')):
+        calls=read(raw/suite/'QUEUE.json')[key]
+        original={identity(r['original_call']) for r in historical['records'] if r['suite']==suite}
+        full={identity(c) for c in calls}; pilot={identity(pilots[suite])}
+        require(len(full)==len(calls) and full==original and pilot<=full, 'same-build original pilot/full equality')
+        require(len(full-pilot)==len(calls)-1, 'same-build disjoint remainder')
+    require(read(current/'PARTITION.json')==read(raw/'PARTITION.json'), 'partition raw join')
+    receipts = read(current/'RECEIPTS.json.gz')
+    require(len(receipts)==21316, 'current receipt count')
+    require({identity(r['original_call']) for r in receipts}==set(templates), 'complete original call equality')
+    require(len({r['receipt'] for r in receipts})==21316, 'current raw uniqueness')
+    remote='/home/vick/rvdbt-host512-task138'
+    executable='/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun'
+    digest='da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e'
+    records=[]; forms=collections.defaultdict(lambda:collections.defaultdict(list))
+    for receipt in receipts:
+        require(receipt['receipt'].startswith(remote+'/'), 'current raw root')
+        local=raw/Path(receipt['receipt']).relative_to(remote)
+        validate_record(receipt,local,elfrun=digest,executable=executable)
+        require(receipt['result']['status'] in ('PASS','SCOPED_PASS'), 'current failed call')
+        row=dict(templates[identity(receipt['original_call'])])
+        row.update(task=138,receipt=receipt['receipt'],local_receipt=str(local),
+            command=receipt['command'],result=receipt['result'],executable_pins=receipt['executable_pins'],
+            observed_runtime=read(local/'observer.json') if receipt['suite']=='ara' else
+                {'target_SEW_LMUL_VL_mask_tail_vstart':'UNKNOWN; original checker completion is not a runtime tuple census'},
+            admission='No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.',
+            routes=receipt['routes'],direct=receipt['direct'])
+        stats=re.findall(r'^RVV_STATS (.*)$',(local/'stderr').read_text(errors='replace'),re.M)
+        row['observed_runtime']['RVV_STATS']=stats
+        row['observed_runtime']['host_chunk_bytes']=sorted({int(n) for line in stats for n in re.findall(r'chunk_bytes=(\d+)',line)})
+        require(not row['observed_runtime']['host_chunk_bytes'] or row['observed_runtime']['host_chunk_bytes']==[64], 'observed host chunk')
+        i=len(records);records.append(row)
+        for form in row['forms']: forms[form][row['suite']].append(i)
+    summary=dict(historical['summary'])
+    summary.update(task128=0,task129=0,task138=21316,prior_build_credit=0,
+        partition=read(current/'PARTITION.json')['suites'],
+        counts={s:dict(collections.Counter(r['result']['status'] for r in records if r['suite']==s)) for s in ('chips','act','ara')},
+        per_arm={s:{a:dict(collections.Counter(r['result']['status'] for r in records if r['suite']==s and r['arm']==a)) for a in ('B','M1','M2','BOTH')} for s in ('chips','act','ara')},
+        control_counts=dict(collections.Counter(r['result']['status'] for r in records if r['control'])),
+        guest_vlen_commands={s:dict(collections.Counter(r['guest_vlen'] for r in records if r['suite']==s)) for s in ('chips','act','ara')},
+        observed_host_chunks={s:dict(collections.Counter(','.join(map(str,r['observed_runtime']['host_chunk_bytes'])) or 'UNKNOWN' for r in records if r['suite']==s)) for s in ('chips','act','ara')},
+        local_host_tests='Task135/136/137 checks remain separate; no new fault/restart or local fixture execution in Task138')
+    require(summary['counts']=={'chips':{'PASS':11744},'act':{'PASS':7668},'ara':{'PASS':1888,'SCOPED_PASS':16}}, 'suite counts')
+    require(sum(r['control'] for r in records)==212, 'control count')
+    require(len(forms)==595, 'checked form union')
+    index=dict(summary=summary,records=records,per_form={f:dict(v) for f,v in sorted(forms.items())},
+        original_ACT_reference_blockers=historical['original_ACT_reference_blockers'],
+        source_context_files=historical['source_context_files'],
+        inputs={str(historical_path):sha(historical_path),str(current/'RECEIPTS.json.gz'):sha(current/'RECEIPTS.json.gz')})
+    output.mkdir(parents=True,exist_ok=False)
+    (output/'navigation.json.gz').write_bytes(gzip.compress(json.dumps(index,separators=(',',':')).encode(),mtime=0))
+    (output/'SUMMARY.json').write_text(json.dumps(summary,indent=2)+'\n')
+    lines=['# Task138 final retained host512 forms','','Counts are distinct current-build receipts joined to unchanged original source/checker bindings. Controls earn no positive form credit; Ara scoped acceptances retain their scope.','','Use `rvv_scope_report.py --host512-corpus navigation.json.gz --form FORM --output NEW`.','','| Form | CHIPS calls | ACT calls | Ara calls | Example current receipt |','|---|---:|---:|---:|---|']
+    for form,groups in sorted(forms.items()):
+        sample=records[next(iter(groups.values()))[0]]
+        lines.append('|`'+form+'`|'+'|'.join(str(len(groups.get(s,[]))) for s in ('chips','act','ara'))+'|Task138 `'+sample['suite']+'/'+str(sample['id'])+'/'+sample['arm']+'`|')
+    (output/'FORMS.md').write_text('\n'.join(lines)+'\n')
+    (output/'SUMMARY.md').write_text('# Task138 complete retained corpus on exact Task137 final build\n\nAll 21,316 calls have fresh Task138 receipts on da5209ae…; prior-build credit: zero. Three unchanged pilots plus 21,313 disjoint remaining calls.\n\n| Suite | Positives / whole-file PASS | Controls PASS | Scoped PASS |\n|---|---:|---:|---:|\n| CHIPS | 11,532 | 212 | 0 |\n| ACT | 7,668 | 0 | 0 |\n| Ara | 1,888 | 0 | 16 |\n\nEach B/M1/M2/BOTH arm: CHIPS 2,883 positives + 53 controls; ACT 1,917; Ara 472 whole-file + 4 scoped. Two ACT reference blockers remain outside the queue. Checked-form union: 595. See [forms](FORMS.md), [counts](SUMMARY.json) and [reader instructions](../README.md).\n\nGuest VLEN/flags are actual command settings. Source SEW/LMUL/requested VL/mask/tail/vstart literals remain source evidence; unprinted runtime dimensions remain UNKNOWN. Enabled flags and aggregate counters are not a target-native census. No guest handler return, mapping repair, same-PC retry, new reference, fault/restart or performance campaign was executed. Earlier target-admission observations remain attributed to their original build.\n')
+    return summary

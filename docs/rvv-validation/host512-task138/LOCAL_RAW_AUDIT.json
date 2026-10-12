@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "files": 137509,
+  "differences": [],
+  "archive_sha256": "8aa6ddb625a3b4bf3c3687316239cae50d45b51d6d4c687290497e3eacc33307",
+  "archive_bytes": 100514028,
+  "local_raw": "/home/user/research/materials/task138-host512-raw-20261013",
+  "archive": "/home/user/research/materials/task138-host512-receipts-20261013.tar.gz"
+}
