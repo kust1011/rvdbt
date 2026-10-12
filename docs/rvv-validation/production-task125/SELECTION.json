@@ -1,0 +1,16 @@
+{
+  "rule": null,
+  "regex": "^v[ls](?:e\\d|se\\d|[ou]xei|[ou]xseg|seg|sseg|m\\.|[1248]r)",
+  "original_manifests": {
+    "/home/vick/chips-current120/manifest.json": "d24b743bfb29abd49219ee7839bf9885cd25b56c93dd726f878b8e60a2761ed8",
+    "/home/vick/act-current121/QUEUE.json": "080e18c7bfbc983cd60f91d098f62a0121e2dda54dc363a1811361e6764e365d",
+    "/home/vick/ara-current122/QUEUE.json": "6bee591d353e1656e0e40ac95607d0ec13b708fc94f74b251224060fd29e43c6"
+  },
+  "calls": {
+    "chips": 1948,
+    "act": 3828,
+    "ara": 128
+  },
+  "workers": 4,
+  "scope": "Original memory targets only; unchanged flags and predicates; no new reference execution"
+}

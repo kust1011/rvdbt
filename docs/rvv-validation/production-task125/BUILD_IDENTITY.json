@@ -1,0 +1,30 @@
+{
+  "build/bin/elfrun": {
+    "sha256": "8220339e6d7443568d3918d884032d077183405bd5b6d16fd9cc48bb8bcb4bad",
+    "bytes": 3181888
+  },
+  "build/bin/rv32_host_copy_linkage_test": {
+    "sha256": "f4fde2296ce1ddf440bc0ddcf229049cc37be863e26a9bbf9d7afd17e582b7d4",
+    "bytes": 2746264
+  },
+  "build/bin/rv32_llvm_memory_admission_test": {
+    "sha256": "031c67986a708da21c223e5ec8ff3b96053781eeda4f83f7a4a54aa321a0dfe9",
+    "bytes": 62943824
+  },
+  "build/bin/rv32_memory_run_scanner_test": {
+    "sha256": "5c7f8978fae8f3e29639dc4421fc7e7db05faf97571b3a128326d1b06d5a3ba1",
+    "bytes": 2755984
+  },
+  "build/bin/rvv_llvm_wholereg_mem_test": {
+    "sha256": "3ab1398848513336f2b92a756e708d30e796eee9e003c4bbc1a0a725454c01d0",
+    "bytes": 9090104
+  },
+  "build/bin/rvv_whole_reg_mem_route_test": {
+    "sha256": "d062fdd9b3caeeac0cf6638d415c51ea191d738239491efc0acafd7cf3977301",
+    "bytes": 2778384
+  },
+  "build/lib/libdbtjitshared.so": {
+    "sha256": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d",
+    "bytes": 23096
+  }
+}

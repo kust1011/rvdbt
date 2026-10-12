@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "calls": 5904,
+  "raw_files_checked": 39384,
+  "form_binding_rows": 5904,
+  "raw_root": "/home/user/research/materials/task125-raw-20261013",
+  "archive": "/home/user/research/materials/task125-receipts-20261013.tar.gz",
+  "archive_bytes": 50233809,
+  "archive_sha256": "4560273f31960654fdeae2e3d27de41a63d60e656412b36ccda241ea7711950e"
+}
