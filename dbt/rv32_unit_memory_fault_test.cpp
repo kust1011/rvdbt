@@ -5,6 +5,8 @@
 #include "dbt/qmc/qcg/arch_traits.h"
 #include "dbt/qmc/qcg/qcg.h"
 #include "dbt/qmc/qir_builder.h"
+#include <boost/property_tree/json_parser.hpp>
+#include <sstream>
 using namespace dbt;
 using namespace dbt::qir;
 extern "C" void qcgstub_rv32_vle(CPUState *, u32);
@@ -170,6 +172,63 @@ static void native(CPUState *s)
   }
  }
 }
+// Exercise the production formatter from independently initialized real helper
+// faults, and parse its structured record rather than only inspecting the enum.
+static void formatted_faults(CPUState *s)
+{
+ config::vlen_bits=128;
+ for(bool store : {false,true}) {
+  check(mmu::mprotect(data,8192,PROT_READ|PROT_WRITE)==0,"formatter reset mapping");
+  clear(s);s->vec.Reset(128);s->vec.vtype=16;s->vec.vl=4;s->gpr[5]=data+4096-8;
+  s->vec.vreg[8].fill(0x59);
+  check(mmu::mprotect(data+4096,4096,PROT_NONE)==0,"formatter denied mapping");
+  u32 raw=word(4,store);invoke(s,raw,store);
+  auto snapshot=ukernel::CaptureHelperMemoryFault(s);
+  char *buffer=nullptr;size_t size=0;
+  FILE *out=open_memstream(&buffer,&size);check(out!=nullptr,"formatter output stream");
+  ukernel::WriteMemoryFaultSnapshot(out,snapshot);
+  check(fclose(out)==0,"formatter close stream");
+  std::string record(buffer,size);free(buffer);
+  std::string prefix="RVDBT_MEMORY_FAULT_SNAPSHOT ";
+  check(record.starts_with(prefix) && record.back()=='\n',"formatter record envelope");
+  boost::property_tree::ptree json;
+  std::istringstream input(record.substr(prefix.size()));
+  boost::property_tree::read_json(input,json);
+  check(json.get<unsigned>("schema_version")==1 &&
+        json.get<std::string>("status")=="HELPER_FAULT_CAPTURED" &&
+        json.get<std::string>("origin")=="PredictedHelper","formatter schema/status/origin");
+  check(json.get<std::string>("access")== (store?"store":"load"),"formatter structured access direction");
+  check(json.get<std::string>("reason")=="protection" &&
+        json.get<u32>("pc")==pc && json.get<u32>("raw")==raw &&
+        json.get<u32>("address")==data+4096 && json.get<u32>("element")==2 &&
+        json.get<u32>("field")==0 && json.get<u32>("eew_bytes")==4 &&
+        json.get<u32>("nf")==1,"formatter fault coordinates/geometry");
+  check(json.get<bool>("fp_run_closed") && json.get<u32>("vlenb")==16 &&
+        json.get<u32>("csrs.vstart")==2 && json.get<u32>("csrs.vl")==4 &&
+        json.get<u32>("csrs.vtype")==16 && json.get<u32>("csrs.vlenb")==16,
+        "formatter boundary/vector CSRs");
+  auto const &gpr=json.get_child("gpr");auto const &fpr=json.get_child("fpr_hex");
+  auto const &vreg=json.get_child("vreg_hex");
+  check(gpr.size()==32 && fpr.size()==32 && vreg.size()==32 &&
+        json.get_child("csrs").size()==10,"formatter register/CSR shape");
+  u32 r=0;for(auto const &entry:gpr) {
+   check(entry.first.empty() && entry.second.get_value<u32>()==snapshot.gpr[r++],"formatter GPR array values");
+  }
+  r=0;for(auto const &entry:fpr) {
+   char expected[17];snprintf(expected,sizeof(expected),"%016llx",(unsigned long long)snapshot.fpr[r++]);
+   check(entry.first.empty() && entry.second.get_value<std::string>()==expected,"formatter FPR array values");
+  }
+  r=0;for(auto const &entry:vreg) {
+   std::string expected;for(u32 b=0;b<snapshot.vlenb;++b) {
+    char hex[3];snprintf(hex,sizeof(hex),"%02x",snapshot.vreg[r][b]);expected+=hex;
+   }
+   check(entry.first.empty() && entry.second.get_value<std::string>()==expected,"formatter vector array values");++r;
+  }
+  fputs(record.c_str(),stdout); // retain actual records for independent JSON inspection
+ }
+ check(mmu::mprotect(data,8192,PROT_READ|PROT_WRITE)==0,"formatter restore mapping");
+}
+
 static void fof_and_store_delivery(CPUState *s)
 {
  config::vlen_bits=128;
@@ -211,6 +270,7 @@ int main()
  helpers(s);
  config::rvv_lowering=1;config::rvv_census=true;helpers(s); // permitted chunked dispatch and same precise fault fallback
  config::rvv_qcg_hit_counter=true; native(s);
+ formatted_faults(s);
  fof_and_store_delivery(s);
  printf("LOCAL_UNIT_MEMORY_PASS checks=%u cells=%u ABI=%016llx (no guest retry)\n",checks,cells,(unsigned long long)rv32::CPUStateAbiSignature());
 }

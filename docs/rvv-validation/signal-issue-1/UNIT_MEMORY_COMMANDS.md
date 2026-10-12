@@ -1,43 +1,78 @@
-# Task115 ordinary unit-stride build/check receipt
+# Task116 formatter correction: final build and checks
 
-Isolated xbd root: `/home/vick/rvdbt-unit-memory-faults-20261012-task115`.
-Source/worktree: `/home/user/research/materials/rvdbt-unit-memory-faults-20261012`.
-Task113 pinned third_party source was copied into the new source tree; independent
-file hashes confirm equality. Other jobs were checked with uptime and
-`ps -eo user,pid,pcpu,comm --sort=-pcpu`; load was 0.86/0.54/0.39.
-No machine settings or other jobs were changed.
+Base `b0280831532748d4f76772c0585c2291a7199bf1`, branch
+`fix/rvv-unit-memory-faults-issue-1`, worktree
+`/home/user/research/materials/rvdbt-unit-memory-faults-20261012`.
+Task115 commands/results remain byte-for-byte in `UNIT_MEMORY_COMMANDS_TASK115.md`
+and `UNIT_MEMORY_RESULTS_TASK115.json`; its raw remains `task115-evidence/`.
+
+The existing configured build root was reused on xbd:
+`/home/vick/rvdbt-unit-memory-faults-20261012-task115`.
+New logs, adapters, identities and raw are separately retained at
+`/home/vick/rvdbt-unit-memory-faults-20261012-task116` and local
+`task116-evidence/`. Only `source/dbt/ukernel.cpp` and
+`source/dbt/rv32_unit_memory_fault_test.cpp` changed from the old source manifest;
+all pinned dependencies remained identical. All 281 locally available build-source
+files hash-match the final remote source. No old result is assigned to this build.
+
+Checked `ssh xbd 'uptime; ps -eo user,pid,pcpu,comm --sort=-pcpu | head -12'`:
+load 0.05/0.21/0.33, no competing CPU-heavy build observed. No host settings changed.
+
+First build the new regression with the old formatter, then execute it:
 
 ```sh
-cmake -S "$root/source" -B "$root/build" -G Ninja \
-  -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/usr/bin/clang-22 \
-  -DCMAKE_CXX_COMPILER=/usr/bin/clang++-22 -DLLVM_PATH=/usr/lib/llvm-22 \
-  -DRVV_HOST_CHUNK_BITS=128 -DRVDBT_FP_CONTRACT_OFF=ON \
-  -DRVDBT_FROUND_IMPL=2 -DRVDBT_HOST_FMA=OFF \
-  -DRVDBT_FAST_STATS=ON -DRVDBT_CENSUS=ON
+root=/home/vick/rvdbt-unit-memory-faults-20261012-task115
+receipt=/home/vick/rvdbt-unit-memory-faults-20261012-task116
 nice -n 10 taskset -c 28,29 cmake --build "$root/build" --parallel 2 \
-  --target elfrun rv32_unit_memory_fault_test rv32_signal_interface_test \
-  mmu_mapping_metadata_test vle32v_typedchunk_llvm_test vse32v_typedchunk_llvm_test
+  --target rv32_unit_memory_fault_test > "$receipt/build-before-fix.log" 2>&1
+cd "$root"
+LD_LIBRARY_PATH=build/lib nice -n 10 taskset -c 28 \
+  build/bin/rv32_unit_memory_fault_test \
+  > "$receipt/before-fix.stdout" 2> "$receipt/before-fix.stderr"
 ```
 
-From the isolated root, each of the five test executables above was run with
-`LD_LIBRARY_PATH=build/lib nice -n 10 taskset -c 28 build/bin/<test>`, separately
-retaining stdout, stderr and rc. Local unit checks are not external ISA coverage.
-The original LLVM tests now check the exact permission-call conjunct and retain
-all four original guard-state comparisons with no unknown predicate allowed.
+Expected observed negative control: rc2,
+`UNIT_MEMORY_FAIL formatter structured access direction`.
+After correcting the formatter, the final build command was:
 
-`python3 normal_replay.py` executed retained Ara `vl.elf` and `vs.elf` in
-B/M1/M2/BOTH, sequentially on core28, nice10, timeout120 per call, core dumps off.
-The adapter preserves original argv flags, inputs, expected observations, sequence
-checks and all original success/failure predicates. Only executable/library and
-fs/cache/output paths change. `original_observations.py` contains the exact retained
-parser function with its required `import re`. No reference or guest compilation
-was performed. Exact per-call commands are in `normal_final/*/command.json`.
-`python3 collect.py` checks final identities, dependency equality and actual route
-counts. These adapters and all raw are retained in workspace `task115-evidence/`.
+```sh
+nice -n 10 taskset -c 28,29 cmake --build "$root/build" --parallel 2 \
+  --target elfrun rv32_unit_memory_fault_test rv32_signal_interface_test \
+  mmu_mapping_metadata_test vle32v_typedchunk_llvm_test vse32v_typedchunk_llvm_test \
+  > "$receipt/build-final.log" 2>&1
+cd "$receipt"
+python3 run_focused.py > focused.stdout 2> focused.stderr
+python3 normal_replay.py > normal.stdout 2> normal.stderr
+python3 collect.py > collect.stdout 2> collect.stderr
+```
 
-The first successful external round used an earlier guard version; it stays in
-`normal_pass/` with separate identity/results. Final results use `normal_final/`.
-No historical full-suite build ID or raw was reassigned. Failed transfers,
-builds, local harness attempts and LLVM expectation failures are described in
-SESSION0_RESULT_115.md and retained separately. P4-04/equivalent guest restart,
-full suites and performance campaigns were not executed.
+`run_focused.py` runs the five tests sequentially, each with
+`LD_LIBRARY_PATH=$root/build/lib nice -n 10 taskset -c 28 $root/build/bin/<test>`,
+120-second timeout, retaining stdout/stderr/rc and exact argv in
+`FOCUSED_RESULTS.json`. It also independently parses both emitted formatter
+records using Python JSON; actual records are in `FORMATTER_RECORDS.json`.
+The C++ regression invokes the production formatter on real captured load/store
+faults, parses its JSON, and checks direction, schema, fault geometry, CSR state,
+array shape and all serialized GPR/FPR/vector values. Existing checks remain intact.
+
+`normal_replay.py` is the Task115 adapter with only its task comment changed;
+its output root derives from the script directory. It uses the same final build
+root and original fixture paths. Eight calls: Ara `vl` and `vs`, each B/M1/M2/BOTH,
+sequential nice10/core28, timeout120, no core dumps. Original argv flags, retained
+ELFs/source, observer and all success/failure predicates are preserved. Exact
+original and launch argv are in `normal_final/<case>_<arm>/command.json`.
+The final source/binaries/fixtures hash identically before and after those calls.
+No reference run or guest compilation took place.
+
+`collect.py` asserts five zero return codes, all eight original PASS results,
+actual route counters, before/after identity equality, and exactly two source
+changes against Task115. `SOURCE_IDENTITY.json` and `BUILD_IDENTITY.json` contain
+final hashes; `UNIT_MEMORY_RESULTS.json` records actual final identities.
+The static-linked elfrun changed; the shared library hash stayed identical.
+The final source archive includes the pinned dependencies and configured source.
+
+A first correction build (`build-attempt1.log`) had an added format argument
+without the matching placeholder; diff inspection caught it before any test or
+external call. The corrected build and all results above are separate from it.
+No guest restart, full suite, performance, push, merge, issue closure, quota
+change or completion signal was performed. The launcher owns completion.

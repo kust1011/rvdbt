@@ -1,27 +1,32 @@
 {
-  "base": "032b5c4",
+  "task": 116,
+  "base": "b0280831532748d4f76772c0585c2291a7199bf1",
   "branch": "fix/rvv-unit-memory-faults-issue-1",
-  "executable_sha256": "63a2abbe63bb49c0fd6d672700517c4ca90ddf9db3f392379bf42aa48d8d1aca",
+  "build_root": "/home/vick/rvdbt-unit-memory-faults-20261012-task115/build",
+  "evidence_root": "/home/vick/rvdbt-unit-memory-faults-20261012-task116",
+  "executable_sha256": "10031d40e3b811fc89e266f0aeddb6105638919c24c70fec71f4c6d34b3fc6d7",
   "library_sha256": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d",
+  "source_manifest_sha256": "ead52c3cb01d74ab2484fd66a2047eda3cc194d3bd7fef09f7781c796b833c1c",
+  "formatter_source_sha256": "7db2907b52e5e7f9be2fc67fec2c556912d88394f9b9d03ca4d14c9cb9fb9ae9",
+  "host_regression_source_sha256": "4efd9d974cd36e8e0624c72726b465aab3f90e81d8634ddf46471eac8ff2bbcb",
   "ABI": "40cf59110e7e8839",
-  "local_unit_checks": 9349,
+  "local_unit_checks": 9562,
   "local_cells": 1248,
+  "formatter_directions": [
+    "load",
+    "store"
+  ],
+  "before_fix_returncode": 2,
+  "before_fix_failure": "UNIT_MEMORY_FAIL formatter structured access direction",
   "existing_signal_checks": 376,
   "existing_mmu_checks": 27,
-  "LLVM_route_tests": "both PASS; original four state conditions plus exact mandatory permission conjunct",
+  "LLVM_route_tests": "both PASS; all existing predicates preserved",
   "external_normal_calls": 8,
   "original_vector_assertion_executions": 32,
   "original_element_comparisons": 496,
   "guest_restart_calls": 0,
   "reference_calls": 0,
   "new_external_ISA_forms": 0,
-  "scope": "ordinary unit stride permission faults only",
-  "remaining": [
-    "segment/indexed/whole-register precise faults",
-    "unexpected host SIGBUS/native host recovery",
-    "concurrent mapping changes",
-    "complete restart: no guest returning handler experiment"
-  ],
   "normal_results": [
     {
       "test": "vl",
@@ -1376,13 +1381,12 @@
       }
     }
   ],
-  "dependencies": {
-    "pinned_asmjit": "029075b84bf0161a761beb63e6eda519a29020db",
-    "pinned_ELFIO": "d251da09a07dff40af0b63b8f6c8ae71d2d1938d",
-    "Task113_file_identity": true,
-    "files": 443
-  },
-  "source_manifest_sha256": "e9780cfbfe0d46f01548eb09aa6f582dfbbc1a850dc33d135a051960fb70cdaf",
-  "raw_archive_sha256": "be40db63b14fdde1347a5b12b97e5c9c7b15a0c996ba485d7a9e1e2860b8c3d9",
-  "final_source_archive_sha256": "697e6f5b041ff0a3a33e446130c12a90aa97d7dc1d760571d9e4e0357af7e4e8"
+  "source_delta": [
+    "dbt/rv32_unit_memory_fault_test.cpp",
+    "dbt/ukernel.cpp"
+  ],
+  "identity_before_after_equal": true,
+  "prior_results": "Task115 retained separately in task115-evidence and UNIT_MEMORY_RESULTS_TASK115.json",
+  "final_source_archive_sha256": "46a50449af319d528bf9cc8fab49d308670a0503680dc65db9749d69cab8de9a",
+  "local_build_source_files_matched": 281
 }

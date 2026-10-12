@@ -263,10 +263,11 @@ void ukernel::WriteMemoryFaultSnapshot(FILE *out, MemoryFaultSnapshot const &s)
 	auto const &e = s.event;
 	fprintf(out, "RVDBT_MEMORY_FAULT_SNAPSHOT {\"schema_version\":1,"
 		"\"status\":\"HELPER_FAULT_CAPTURED\","
-		"\"origin\":\"PredictedHelper\",\"access\":\"load\","
+		"\"origin\":\"PredictedHelper\",\"access\":\"%s\","
 		"\"reason\":\"%s\",\"pc\":%u,\"raw\":%u,\"address\":%u,"
 		"\"element\":%u,\"field\":%u,\"eew_bytes\":%u,\"nf\":%u,"
 		"\"fp_run_closed\":true,\"vlenb\":%u,\"gpr\":[",
+		e.access == MemoryFaultEvent::Access::Store ? "store" : "load",
 		e.reason == MemoryFaultEvent::Reason::Protection ? "protection" : "unmapped",
 		s.pc, e.raw, e.address, e.element, e.field, e.eew_bytes, e.nf, s.vlenb);
 	for (u32 r = 0; r < 32; ++r) fprintf(out, "%s%u", r ? "," : "", s.gpr[r]);
