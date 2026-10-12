@@ -1,0 +1,40 @@
+{
+  "calls": [
+    {
+      "case": "Vls8-vl1re8.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "c635f7e3f57dc9c7960aa235692ed17433c48b37448c444c0be30e015707df5a"
+    },
+    {
+      "case": "Vls8-vl1re64.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "bfba51284a396a0dfedc1bfc23678b4597d1143a0ca3a25be90a05569e954092"
+    },
+    {
+      "case": "Vls8-vs1r.v",
+      "arm": "B",
+      "original_full_call_equal": true,
+      "flags_equal": true,
+      "predicate": "rc == 0 and raw.count(f'RVCP-SUMMARY: TEST PASSED - Test File \"{N}.S\"') == 1 and ('TEST FAILED' not in raw)",
+      "PASS": true,
+      "ELF32_LE": true,
+      "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "65d20928ff2dcf94a345a4e164db5c883128ec7c046ba17de50540a733b38167"
+    }
+  ],
+  "input_files": 17,
+  "differences": [],
+  "new_reference_calls": 0
+}

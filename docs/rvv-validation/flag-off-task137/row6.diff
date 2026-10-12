@@ -1,0 +1,74 @@
+--- c2084aa
++++ Task137
+@@ -21,9 +21,9 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpaddd zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0xc7
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
+@@ -38,9 +38,9 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpsubd zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0x146
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
+@@ -55,9 +55,9 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpmulld zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0x1c8
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ movabs rsi,0xABS
+ rex call 0xABS
+@@ -72,9 +72,9 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpxord zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0x247
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
+@@ -89,9 +89,9 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpord  zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0x2c6
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS
+@@ -106,9 +106,9 @@
+ vmovdqu64 zmm3,ZMMWORD PTR [r13+0x4d0]
+ vpandd zmm4,zmm2,zmm3
+ vmovdqu64 ZMMWORD PTR [r13+0x6d0],zmm4
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0x345
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS

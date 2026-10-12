@@ -1125,6 +1125,15 @@ RunDescriptor FormRun(uptr vmem_base, u32 entry_pc, u32 boundary_pc, u32 insn_bu
 			d.cut = c.cut;
 			break;
 		}
+		// A permission preflight cannot prove that a later host access will not fault.
+		// Memory needs its own instruction frame: component-first execution can commit
+		// a later member too early, and final live-outs lose overwritten prior values.
+		// The cut leaves this instruction for its normal SIMD/scalar singleton route.
+		if (caps.memory_instruction_boundary &&
+		    ((raw & 0x7fu) == 0x07u || (raw & 0x7fu) == 0x27u)) {
+			d.cut = CutReason::VectorMemory;
+			break;
+		}
 		if (c.scalar_passthrough) {
 			// A scalar prefix is not a vector island. Passthrough exists only to bridge vector
 			// producers/consumers already seen in this run.

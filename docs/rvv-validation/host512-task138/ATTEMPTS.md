@@ -1,0 +1,7 @@
+# Retained tooling attempts
+
+No guest queue failed or stopped. All 21,316 original accepted calls were executed once on the exact pinned final build; no guest/source/adapter/DUT fix or repeated guest call was needed.
+
+The first local navigation spot-check incorrectly asserted that `vadd.vv` must also select a row from the separate 19-file configuration-literal supplement. Its actual selection correctly returns 21 current CHIPS B receipts and 21 authenticated geometry/source-context records, and zero supplement records: the supplement covers original configuration-test files, not every arithmetic source. The assertion failed in the spot-check only; navigation generation and receipt audits had already passed. The check was corrected to require the applicable VADD geometry records, with a separate original `vsetvli` selection checking the applicable literal supplement. No reporter/source/oracle/result was changed to satisfy this mistaken assertion, and zero guests or references were executed by either check.
+
+Original Task120/121/122 and Task128/129/135/136/137 attempts, excluded/reference/invalid-context cases, source-only claims and historical build results remain separately attributed. No prior-build execution earns current credit. The invoked replay script's introductory Task129/128 labels were clarified in the repository copy after execution; exact invoked raw snapshots and tool hashes remain intact.

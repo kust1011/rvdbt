@@ -1,0 +1,290 @@
+{
+  "manifest_files": 999,
+  "differences": [],
+  "snapshot_layout": {
+    "size": 16864,
+    "vreg": 480
+  },
+  "terminal_cells": 10,
+  "host_sigsegv": 10,
+  "guest_executions": 0,
+  "restart_verified": false,
+  "cells": [
+    {
+      "id": 0,
+      "whole": true,
+      "store": false,
+      "prior_load_same_destination": false,
+      "pc": 2147488320,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 1,
+      "whole": true,
+      "store": false,
+      "prior_load_same_destination": true,
+      "pc": 2147488324,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 2,
+      "whole": true,
+      "store": true,
+      "prior_load_same_destination": false,
+      "pc": 2147488320,
+      "eew": 1,
+      "element": 64,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 3,
+      "whole": true,
+      "store": true,
+      "prior_load_same_destination": true,
+      "pc": 2147488324,
+      "eew": 1,
+      "element": 64,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 4,
+      "whole": false,
+      "store": false,
+      "prior_load_same_destination": false,
+      "pc": 2147488320,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 5,
+      "whole": false,
+      "store": false,
+      "prior_load_same_destination": true,
+      "pc": 2147488324,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 6,
+      "whole": false,
+      "store": true,
+      "prior_load_same_destination": false,
+      "pc": 2147488320,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 7,
+      "whole": false,
+      "store": true,
+      "prior_load_same_destination": true,
+      "pc": 2147488324,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 8,
+      "whole": true,
+      "store": false,
+      "prior_load_same_destination": false,
+      "pc": 2147488320,
+      "eew": 4,
+      "element": 16,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    },
+    {
+      "id": 9,
+      "whole": true,
+      "store": true,
+      "prior_load_same_destination": false,
+      "pc": 2147488320,
+      "eew": 1,
+      "element": 64,
+      "vector_bytes": 16384,
+      "memory_bytes": 4096
+    }
+  ],
+  "shapes": [
+    {
+      "file": "focused/normal-pinned-final/sites-0.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-1.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-10.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-11.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-12.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-13.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-14.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-15.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-16.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-17.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-18.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-19.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-2.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-20.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-21.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-22.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-23.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-24.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-25.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-26.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-27.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-28.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-29.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-3.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-30.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-31.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-32.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-33.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-34.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-35.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-36.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-37.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-38.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-39.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-4.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-5.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-6.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-7.txt",
+      "sites": 4
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-8.txt",
+      "sites": 2
+    },
+    {
+      "file": "focused/normal-pinned-final/sites-9.txt",
+      "sites": 4
+    }
+  ],
+  "baseline_grouped_whole_shapes": 20,
+  "final_singleton_memory_shapes": 40,
+  "retained_full_codegen_failure": "22 byte/hash golden checks; not granted passing credit",
+  "terminal_fixture_pin_limit": "Fixture hash first recorded after terminal batch; production binaries pinned before/after."
+}

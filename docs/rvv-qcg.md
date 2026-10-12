@@ -90,3 +90,34 @@ python3 scripts/vlen_propagation_audit.py .
 The repository does not redistribute restricted benchmark binaries or
 inputs. Focused checks and scoped RVV corpus results are not a proof of
 complete native lowering or exhaustive RVV 1.0 conformance.
+
+### Synchronous memory boundaries in multi-instruction runs (Task136)
+
+QCG run residency and component-first ordering are valid across nontrapping
+arithmetic members. They are not an architectural commit protocol for memory.
+Permission/backing preflight does not prevent a later synchronous host fault.
+A component-first memory run can execute a later instruction before all components
+of an earlier instruction finish; a final-live-out map also discards prior values
+when a later destination overlaps an earlier destination. Member-major issue alone
+does not recover dirty intermediate values or partially completed loads.
+
+The production QCG run scan therefore cuts at each memory instruction, using the
+existing `VectorMemory` constraint. Whole-register loads/stores are the only memory
+members in the run route table; ordinary unit, strided, indexed, segment and mask
+memory already have separate instruction routes. Each memory instruction keeps its
+normal singleton SIMD/scalar frame, per-chunk/field publication, precise guest PC,
+exact finalized sites and terminal cold exit. The arithmetic islands on either
+side still use the selected residency/ordering and promotion policy. Source values
+reach architectural state before the singleton memory frame via the existing SSA
+commit and HAS_CALLS allocation boundary. This also makes repeated/overlapping
+load destinations observe the previous complete instruction before replacing its
+completed prefix. No later instruction executes before the memory frame completes.
+
+QCG additionally sends any multi-member memory frame from another producer to its
+ordered checked fallback; a singleton annotation cannot grant it native ownership.
+This applies to all currently recognized memory helper families, independent of
+body ordering. The existing singleton guard misses remain checked. LLVM admission
+and optional gather are unchanged. Restoring memory fusion would require a real
+per-instruction recovery/commit protocol retaining overwritten prior values and
+prohibiting later architectural effects until earlier faulting instructions finish;
+entry preflight and final live-outs alone cannot establish it.

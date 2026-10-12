@@ -549,8 +549,12 @@ extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
 
 // Only annotated ordinary/whole-register singleton QCG producers invoke this admission.
 // Cross-page active chunks use the checked element helper BEFORE any SIMD body.
+extern "C" u32 qcgstub_rv32_scalar_memory_safe(CPUState *, u32);
 extern "C" u32 qcgstub_rv32_native_memory_safe(CPUState *s, u32 raw)
 {
+	// Private guard-call tag in reserved MEW; architectural/site/helper raw stays
+	// unchanged. Reuse the existing runtime slot to preserve CPUState/AOT layout.
+	if (raw & (1u << 28)) return qcgstub_rv32_scalar_memory_safe(s, raw & ~(1u << 28));
 	bool const whole = ((raw >> 20) & 31u) == 8u;
 	if (whole) {
 		u32 const width = (raw >> 12) & 7u;
@@ -602,6 +606,67 @@ extern "C" u32 qcgstub_rv32_family_memory_safe(CPUState *s, u32 raw)
 			    mmu::FirstDenied(address, seg.data_eew, store, denied)) return 0;
 		}
 	}
+	return 1;
+}
+
+// Scalar singleton preflight. The emitted loop keeps its real counters and MOVs;
+// only page-contained fields gain exact-site ownership. Split/wrapping fields
+// use the existing checked instruction, which stages loads and preflights stores.
+extern "C" u32 qcgstub_rv32_scalar_memory_safe(CPUState *s, u32 raw)
+{
+	u32 const vlen = config::vlen_bits, width = (raw >> 12) & 7u;
+	u32 const mop = (raw >> 26) & 3u, reg = (raw >> 7) & 31u, index = (raw >> 20) & 31u;
+	bool const store = (raw & 0x7f) == 0x27, vm = raw & (1u << 25);
+	if (!vlen_supported(vlen) || s->vec.vlenb != vlen / 8u ||
+	    ((raw & 0x7f) != 7u && !store) || (raw & (1u << 28))) return 0;
+	u32 eew, nf = 1, evl, ieew = 0;
+	bool const whole = mop == 0 && index == 8;
+	bool const mask = mop == 0 && index == 11;
+	if (whole) {
+		nf = ((raw >> 29) & 7u) + 1u;
+		if (!vm || !whole_reg_group_legal(reg, nf) || (store ? width != 0 : eew_log2_from_width(width) < 0)) return 0;
+		eew = store ? 1 : 1u << (eew_log2_from_width(width) - 3);
+		evl = nf * s->vec.vlenb / eew;
+	} else {
+		VType const vt{s->vec.vtype};
+		if (!vtype_supported(vt, vlen) || s->vec.vl > compute_vlmax(vt, vlen)) return 0;
+		if (mask) {
+			if (!vm || width || (raw >> 29)) return 0;
+			eew = 1; evl = (s->vec.vl + 7u) / 8u;
+		} else {
+			if (mop == 0 && index) return 0; // excludes fault-only-first
+			auto const seg = vseg_shape(width, mop, (raw >> 29) & 7u, vt);
+			if (seg.nf > 1 ? !vseg_registers_legal(seg, reg, index, !store, vm)
+				       : !vmemory_registers_legal(vt, width, mop, reg, index, store, vm)) return 0;
+			eew = seg.data_eew; nf = seg.nf; evl = s->vec.vl;
+			ieew = seg.indexed ? seg.index_eew : 0;
+			// A legal indexed-load overlap can modify a later offset. Do not infer
+			// that this preflight's addresses describe that evolving loop.
+			if (!store && ieew) {
+				u32 const vmax = compute_vlmax(vt, vlen);
+				u32 const nr = std::max(1u, (vmax * eew + s->vec.vlenb - 1) / s->vec.vlenb);
+				u32 const ni = std::max(1u, (vmax * ieew + s->vec.vlenb - 1) / s->vec.vlenb);
+				for (u32 f = 0; f < nf; ++f) {
+					u32 const first = reg + f * seg.field_regs;
+					if (first < index + ni && index < first + nr) return 0;
+				}
+			}
+		}
+	}
+	u32 const stride = mop == 2 ? s->gpr[index] : (whole ? eew : nf * eew);
+	for (u32 e = s->vec.vstart; e < evl; ++e) {
+		if (!vm && !s->vec.mask_get(0, e)) continue;
+		u32 const base = rvv_ref::memory_element_base(s->vec, s->gpr[(raw >> 15) & 31],
+			e, stride, index, ieew, vlen);
+		for (u32 f = 0; f < (whole ? 1u : nf); ++f) {
+			u32 const address = base + f * eew;
+			u32 denied;
+			if (!mmu::page_ordinary_ram(address) ||
+			    (address & (mmu::PAGE_SIZE - 1)) + eew > mmu::PAGE_SIZE ||
+			    mmu::FirstDenied(address, eew, store, denied)) return 0;
+		}
+	}
+	rvv_native_fault::Arm(s);
 	return 1;
 }
 

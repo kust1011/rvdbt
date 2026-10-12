@@ -1,0 +1,11 @@
+{
+  "artifacts": [
+    {
+      "file": "task138-host512-receipts-20261013.tar.gz",
+      "bytes": 100514028,
+      "sha256": "8aa6ddb625a3b4bf3c3687316239cae50d45b51d6d4c687290497e3eacc33307"
+    }
+  ],
+  "successful_transfers": 1,
+  "transport_failures": 0
+}

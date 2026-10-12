@@ -2582,6 +2582,8 @@ bool RV32Translator::RvvTrySegmentMemory(insn::Base i, RuntimeStubId stub)
 	u8 const mode = (u8)(seg.indexed ? 2u : mop == 2u ? 1u : 0u);
 	auto *frame_begin = qb.Create_rvvtypedchunkbegin(vt.raw, rv32::compute_vlmax(vt, vlen), raw, stub, 1,
 				     qir::InstRVVTypedChunkBegin::GuardKind::VTypeInteger);
+	static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
+	static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_scalar = true;
 	qb.Create_vmemorynative((u8)data, (u8)base, (u8)index, (u8)seg.data_eew, isew, mode,
 				(u16)(vlen / 8), store, masked, (u8)seg.nf, (u8)seg.field_regs);
 	rvvfinal::CloseFrame(qb, frame_begin, {.reason = rvvfinal::Ineligibility::MemoryOrProtocol, .raw = raw, .stub = stub});
@@ -5597,6 +5599,8 @@ bool RV32Translator::RvvTryIntegerFamily(insn::Base i, RuntimeStubId stub)
 		if(!rv32::vlen_supported(vlen)||!rv32::whole_reg_group_legal(data,nregs))return false;
 		u32 const eew=store?1:1u<<(rv32::eew_log2_from_width((raw>>12)&7)-3);
 		auto *frame_begin = qb.Create_rvvtypedchunkbegin(vlen/8,raw,stub,1,qir::InstRVVTypedChunkBegin::GuardKind::VlenbRestartable);
+		static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
+		static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_scalar = true;
 		qb.Create_vmemorynative((u8)data,(u8)base,(u8)nregs,(u8)eew,(u8)eew,4,
 			(u16)(vlen/8),store,false);
 		rvvfinal::CloseFrame(qb, frame_begin, {.reason = rvvfinal::Ineligibility::WholeRegisterEvl, .raw = raw, .stub = stub});return true;
@@ -5621,6 +5625,8 @@ bool RV32Translator::RvvTryIntegerFamily(insn::Base i, RuntimeStubId stub)
 		if(!rv32::vlen_supported(vlen)||!rv32::vtype_supported(vt,vlen))return false;
 		auto *frame_begin = qb.Create_rvvtypedchunkbegin(vt.raw,rv32::compute_vlmax(vt,vlen),i.raw,stub,1,
 			qir::InstRVVTypedChunkBegin::GuardKind::VTypeInteger);
+		static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
+		static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_scalar = true;
 		qb.Create_vmemorynative((u8)((i.raw>>7)&31),(u8)((i.raw>>15)&31),0,1,1,3,
 			(u16)(vlen/8),stub==RuntimeStubId::id_rv32_vsm,false);
 		rvvfinal::CloseFrame(qb, frame_begin, {.reason = rvvfinal::Ineligibility::MemoryOrProtocol, .raw = i.raw, .stub = stub});return true;
@@ -5641,6 +5647,8 @@ bool RV32Translator::RvvTryIntegerFamily(insn::Base i, RuntimeStubId stub)
 		// rvvtypedchunkbegin above is given), recorded on the node for the Z3 strided-gather
 		// body's static chunk count. It changes nothing for the element loop, whose trip count
 		// is the live vec.vl; the segment, mask and whole-register forms above leave it zero.
+		static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_pc = insn_ip;
+		static_cast<qir::InstRVVTypedChunkBegin *>(frame_begin)->native_memory_scalar = true;
 		qb.Create_vmemorynative((u8)data,(u8)base,(u8)index,(u8)sew,(u8)eew,
 			(u8)(indexed?2:mop==2?1:0),(u16)(vlen/8),store,masked,
 			(u8)1,(u8)1,(u16)rv32::compute_vlmax(vt,vlen));
@@ -9891,7 +9899,9 @@ rvvrun::RunDescriptor RV32Translator::RvvFormVectorRunAt(u32 entry_pc, u32 bound
 	//
 	// On the pure-QCG path this is false, so `needs_observed` in FormRun is the expression it
 	// always was and no QCG admission or emitted byte can change.
-	rvvrun::RunBackendCaps const caps{/*fp_candidate_vtype_ok=*/RvvLLVMTypedSubstrate()};
+	rvvrun::RunBackendCaps const caps{
+	    .fp_candidate_vtype_ok = RvvLLVMTypedSubstrate(),
+	    .memory_instruction_boundary = !config::aot_use_llvm};
 	rvvrun::MemberAdmit const admit{&RV32Translator::RvvRunMemberChunksThunk,
 					const_cast<RV32Translator *>(this)};
 	// P7N-G. THE PRESSURE CUT IS WHAT SPLITTING EXISTS TO REMOVE, so with splitting on the scan

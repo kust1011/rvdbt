@@ -1,0 +1,26 @@
+--- c2084aa
++++ Task137
+@@ -25,9 +25,9 @@
+ vpmulld zmm7,zmm4,zmm5
+ vmovdqu64 ZMMWORD PTR [r13+0xad0],zmm6
+ vmovdqu64 ZMMWORD PTR [r13+0xb10],zmm7
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0xee
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ movabs rsi,0xABS
+ rex call 0xABS
+@@ -46,9 +46,9 @@
+ vpxord zmm7,zmm4,zmm5
+ vmovdqu64 ZMMWORD PTR [r13+0xcd0],zmm6
+ vmovdqu64 ZMMWORD PTR [r13+0xd10],zmm7
+-inc    QWORD PTR [r13+0xa500]
++inc    QWORD PTR [r13+0xa528]
+ jmp    0x191
+-inc    QWORD PTR [r13+0xa508]
++inc    QWORD PTR [r13+0xa530]
+ mov    rdi,r13
+ mov    rsi,0xABS
+ rex call 0xABS

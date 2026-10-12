@@ -915,6 +915,9 @@ struct RunBackendCaps {
 	// per-member fallback to the same already-verified helpers when it does not hold. This is
 	// the rule the memory and integer routes have used for an unobserved block since C3.1f.
 	bool fp_candidate_vtype_ok{};
+	// QCG has exact memory sites and publication only at instruction frames.
+	// Keep memory out of multi-instruction residency/ordering domains.
+	bool memory_instruction_boundary{};
 };
 
 // P7O-1 STAGE 1. THE COMPONENT-SEPARABLE LEGALITY PREDICATE, as a PURE FUNCTION OF A FORMED
