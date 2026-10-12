@@ -2,6 +2,7 @@
 #include "dbt/execute.h"
 #include "dbt/qmc/ngr.h"
 #include "dbt/mmu.h"
+#include "dbt/guest/rv32_vector_fast.h"
 #include "dbt/tcache/objprof.h"
 #include "dbt/util/fsmanager.h"
 #include <alloca.h>
@@ -135,6 +136,13 @@ struct RVDBT_UTHREAD_ALIGNAS uthread {
 	// per-thread/task OS data
 	bool terminating{};
 	int termination_code{};
+	MemoryFaultEvent memory_fault{};
+	bool memory_fault_pending{};
+	struct SignalAction { u32 handler{}, flags{}; u64 mask{}; };
+	std::array<SignalAction, 64> signal_actions{};
+	u64 guest_signal_mask{};
+	u32 signal_frame{}, signal_frame_size{}, signal_trampoline{};
+	u32 signal_host_mxcsr{};
 };
 
 // S3.2 ABI INVARIANCE, PROVEN AT COMPILE TIME RATHER THAN ASSERTED IN PROSE.
@@ -203,6 +211,77 @@ static_assert([] {
 
 ukernel::Process ukernel::process{};
 
+#include "dbt/rv32_signal.inc"
+
+void ukernel::QueueHelperMemoryFault(CPUState *state, MemoryFaultEvent const &event)
+{
+	auto *ut = state->GetUThread();
+	if (state != CPUState::Current() || ut->memory_fault_pending ||
+	    state->trapno != rv32::TrapCode::NONE ||
+	    event.origin != MemoryFaultEvent::Origin::PredictedHelper ||
+	    event.access != MemoryFaultEvent::Access::Load ||
+	    (event.reason != MemoryFaultEvent::Reason::Protection &&
+	     event.reason != MemoryFaultEvent::Reason::Unmapped) ||
+	    (event.eew_bytes != 1 && event.eew_bytes != 2 &&
+	     event.eew_bytes != 4 && event.eew_bytes != 8) ||
+	    event.nf < 1 || event.nf > 8 || event.field >= event.nf)
+		Panic("invalid helper-origin memory fault event");
+	ut->memory_fault = event;
+	ut->memory_fault_pending = true;
+	state->ip = event.pc;
+	state->trapno = rv32::TrapCode::MEMORY_FAULT;
+}
+
+MemoryFaultSnapshot ukernel::CaptureHelperMemoryFault(CPUState const *state)
+{
+	auto const *ut = state->GetUThread();
+	if (!ut->memory_fault_pending || state->trapno != rv32::TrapCode::MEMORY_FAULT ||
+	    state->ip != ut->memory_fault.pc || state->fpu.fround_run_open ||
+	    !state->vec.vlenb || state->vec.vlenb > rv32::VLEN_MAX_BYTES)
+		Panic("helper fault snapshot outside a clean dispatcher boundary");
+	MemoryFaultSnapshot snapshot;
+	snapshot.event = ut->memory_fault;
+	snapshot.pc = state->ip;
+	snapshot.vlenb = state->vec.vlenb;
+	snapshot.gpr = state->gpr;
+	std::copy(std::begin(state->fpu.f), std::end(state->fpu.f), snapshot.fpr.begin());
+	snapshot.csrs = {state->fpu.fflags(), state->fpu.frm(), state->fpu.fcsr,
+		state->vec.vstart, state->vec.vxsat, state->vec.vxrm,
+		(state->vec.vxrm << 1) | state->vec.vxsat,
+		state->vec.vl, state->vec.vtype, state->vec.vlenb};
+	snapshot.vreg = state->vec.vreg; // copy the live state, never roll back partial writes
+	return snapshot;
+}
+
+void ukernel::WriteMemoryFaultSnapshot(FILE *out, MemoryFaultSnapshot const &s)
+{
+	auto const &e = s.event;
+	fprintf(out, "RVDBT_MEMORY_FAULT_SNAPSHOT {\"schema_version\":1,"
+		"\"status\":\"HELPER_FAULT_CAPTURED\","
+		"\"origin\":\"PredictedHelper\",\"access\":\"load\","
+		"\"reason\":\"%s\",\"pc\":%u,\"raw\":%u,\"address\":%u,"
+		"\"element\":%u,\"field\":%u,\"eew_bytes\":%u,\"nf\":%u,"
+		"\"fp_run_closed\":true,\"vlenb\":%u,\"gpr\":[",
+		e.reason == MemoryFaultEvent::Reason::Protection ? "protection" : "unmapped",
+		s.pc, e.raw, e.address, e.element, e.field, e.eew_bytes, e.nf, s.vlenb);
+	for (u32 r = 0; r < 32; ++r) fprintf(out, "%s%u", r ? "," : "", s.gpr[r]);
+	fprintf(out, "],\"fpr_hex\":[");
+	for (u32 r = 0; r < 32; ++r)
+		fprintf(out, "%s\"%016llx\"", r ? "," : "", (unsigned long long)s.fpr[r]);
+	fprintf(out, "],\"csrs\":{");
+	static constexpr char const *names[] = {"fflags", "frm", "fcsr", "vstart", "vxsat",
+		"vxrm", "vcsr", "vl", "vtype", "vlenb"};
+	for (u32 i = 0; i < 10; ++i) fprintf(out, "%s\"%s\":%u", i ? "," : "", names[i], s.csrs[i]);
+	fprintf(out, "},\"vreg_hex\":[");
+	for (u32 r = 0; r < 32; ++r) {
+		fprintf(out, "%s\"", r ? "," : "");
+		for (u32 b = 0; b < s.vlenb; ++b) fprintf(out, "%02x", s.vreg[r][b]);
+		fputc('"', out);
+	}
+	fprintf(out, "]}\n");
+	if (ferror(out) || fflush(out)) Panic("cannot write helper fault snapshot");
+}
+
 static void DebugTrap(CPUState *state)
 {
 	state->DumpTrace("ebreak");
@@ -217,6 +296,14 @@ void ukernel::Execute()
 		dbt::Execute(state);
 		assert(!ut->terminating);
 		switch (state->trapno) {
+		case rv32::TrapCode::MEMORY_FAULT: {
+			auto const snapshot = CaptureHelperMemoryFault(state);
+			WriteMemoryFaultSnapshot(stderr, snapshot);
+			ut->memory_fault_pending = false;
+			if (!DeliverHelperSignal(state, snapshot))
+				EnqueueTermination(1);
+			break;
+		}
 		case rv32::TrapCode::EBREAK:
 			log_ukernel("ebreak");
 			DebugTrap(state);
@@ -358,7 +445,7 @@ static void dbt_sigaction_memory(int signo, siginfo_t *sinfo, void *uctx_raw)
 								: "unknown");
 }
 
-// TODO: emulate signals
+// Host faults remain diagnostic; guest predicted-helper delivery is separate.
 void ukernel::InitSignals(CPUState *state)
 {
 	struct sigaction sa;
@@ -704,14 +791,9 @@ static uabi_long linux_exit_group(uabi_int error_code)
 
 static uabi_long linux_tgkill(uabi_int tgid, uabi_int pid, int sig)
 {
-	return rcerrno(tgkill(tgid, pid, sig));
-}
-
-static uabi_long linux_rt_sigaction(int, const struct uabi_sigaction __user *, struct sigaction __user *,
-				    uabi_size_t)
-{
-	log_ukernel("TODO: support signals");
-	return 0;
+	// Guest asynchronous delivery is not implemented; never send a guest signal
+	// into the host diagnostic handler under a false emulation contract.
+	return -ENOSYS;
 }
 
 using uabi_new_utsname = struct utsname;
@@ -897,43 +979,6 @@ static uabi_long linux_mremap(uabi_ulong old_addr, uabi_size_t old_size,
     log_ukernel("mremap: result old=%x new=%x", old_addr, new_addr);
     
     return new_addr;
-}
-
-static uabi_long linux_rt_sigprocmask(int how, const sigset_t *set, sigset_t *oldset, size_t sigsetsize)
-{
-    // Validate 'how' parameter
-    switch (how) {
-    case SIG_BLOCK:   // Add signals to blocked set
-        break;
-    case SIG_UNBLOCK: // Remove signals from blocked set
-        break;
-    case SIG_SETMASK: // Set the blocked set directly
-        break;
-    default:
-        return -EINVAL;
-    }
-
-    // BUG FIX: the guest (rv32 Linux) kernel sigset is sigsetsize bytes (8 for the 64-signal kernel ABI), NOT the
-    // host userspace sizeof(sigset_t) (128 on glibc). Copying sizeof(sigset_t) over-reads the guest 'set' and, far
-    // worse, over-WRITES the guest 'oldset' by 120 bytes -> clobbers adjacent guest stack (e.g. a saved return
-    // address) -> deterministic wild jump (observed: Perl teardown sigprocmask -> guest pc=0x00007ffe fault).
-    // Marshal exactly the guest-sized sigset into/out of the low bytes of a zeroed host sigset.
-    size_t n = sigsetsize < sizeof(sigset_t) ? sigsetsize : sizeof(sigset_t);
-    sigset_t host_set, host_oldset;
-    sigemptyset(&host_set);
-    sigemptyset(&host_oldset);
-    if (set) {
-        memcpy(&host_set, set, n);
-    }
-
-    int rc = sigprocmask(how, set ? &host_set : NULL,
-                        oldset ? &host_oldset : NULL);
-
-    if (oldset && rc == 0) {
-        memcpy(oldset, &host_oldset, n);
-    }
-
-    return rcerrno(rc);
 }
 
 static uabi_long linux_mmap2(uabi_ulong gaddr, uabi_size_t len, uabi_ulong prot, uabi_ulong flags,
@@ -1179,7 +1224,6 @@ void ukernel::Syscall(CPUState *state)
 	X(linux_exit)                                                                                        \
 	X(linux_exit_group)                                                                                  \
 	X(linux_tgkill)                                                                                      \	
-	X(linux_rt_sigaction)                                                                                \
 	X(linux_uname)                                                                                       \
 	X(linux_getpid)																						\
 	X(linux_getuid)                                                                                      \
@@ -1200,7 +1244,6 @@ void ukernel::Syscall(CPUState *state)
 	X(linux_statx)                                                                                       \
 	X(linux_clock_gettime64)                                                                             \
 	X(linux_gettimeofday)                                                                                \
-	X(linux_rt_sigprocmask)                                                                              \
 	X(linux_ftruncate64)                                                                                 \
 	X(linux_getcwd)                                                                                      \
 	X(linux_chdir)                                                                                       \
@@ -1212,6 +1255,10 @@ void ukernel::Syscall(CPUState *state)
 void ukernel::SyscallLinux(CPUState *state)
 {
 	state->trapno = rv32::TrapCode::NONE;
+	// 139 restores a0 and PC itself. Execute has advanced only the ECALL PC;
+	// this special outcome returns before the ordinary result writeback.
+	if (SignalSyscall(state))
+		return;
 	std::array<uabi_long, 7> args = {(uabi_long)state->gpr[10], (uabi_long)state->gpr[11],
 					 (uabi_long)state->gpr[12], (uabi_long)state->gpr[13],
 					 (uabi_long)state->gpr[14], (uabi_long)state->gpr[15],

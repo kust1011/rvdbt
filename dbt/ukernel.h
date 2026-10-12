@@ -1,6 +1,7 @@
 #pragma once
 
 #include "dbt/guest/rv32_cpu.h"
+#include <cstdio>
 
 namespace dbt
 {
@@ -20,6 +21,28 @@ using uabi_size_t = u32;
 
 struct uthread;
 
+// Value-only metadata, owned by uthread, never stored in the baked CPUState ABI.
+// Queueing returns normally so helper-owned scopes end before the trap unwind.
+struct MemoryFaultEvent {
+	enum class Origin : u32 { PredictedHelper };
+	enum class Access : u32 { Load };
+	enum class Reason : u32 { Unmapped, Protection };
+	Origin origin{Origin::PredictedHelper};
+	Access access{Access::Load};
+	Reason reason{};
+	u32 pc{}, raw{}, address{}, element{}, field{}, eew_bytes{}, nf{};
+};
+
+struct MemoryFaultSnapshot {
+	MemoryFaultEvent event;
+	u32 pc{}, vlenb{};
+	std::array<u32, 32> gpr;
+	std::array<u64, 32> fpr;
+	// fflags, frm, fcsr, vstart, vxsat, vxrm, vcsr, vl, vtype, vlenb.
+	std::array<u32, 10> csrs;
+	decltype(rv32::VectorState::vreg) vreg;
+};
+
 struct ukernel {
 	ukernel() = delete;
 
@@ -35,6 +58,12 @@ struct ukernel {
 
 	static void Execute();
 	static void EnqueueTermination(int code);
+	static void QueueHelperMemoryFault(CPUState *state, MemoryFaultEvent const &event);
+	static MemoryFaultSnapshot CaptureHelperMemoryFault(CPUState const *state);
+	static void WriteMemoryFaultSnapshot(FILE *out, MemoryFaultSnapshot const &snapshot);
+	static bool DeliverHelperSignal(CPUState *state, MemoryFaultSnapshot const &snapshot);
+	static bool RestoreSignalFrame(CPUState *state);
+	static bool SignalSyscall(CPUState *state);
 
 	static Process process;
 

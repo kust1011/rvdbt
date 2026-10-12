@@ -6,6 +6,10 @@
 namespace dbt::rv32
 {
 
+// Called only after the helper body and its census scope have returned normally.
+// A pending helper fault closes the persistent FP bracket, then uses RaiseTrap.
+void FinishHelperMemoryFault(CPUState *state);
+
 struct Interpreter {
 	static void Execute(CPUState *state);
 	// 2026-06-16 tier-0 lazy translation: interpret exactly ONE dynamic basic block (until a branch, a page
