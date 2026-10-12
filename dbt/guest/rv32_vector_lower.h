@@ -637,9 +637,36 @@ inline bool unit_stride_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
                                 u32 vlen, u32 vl, u32 eew, bool vm, bool store,
                                 u32 &denied)
 {
-	u32 field;
-	return memory_checked(vs, reg, vmem, base, eew, 0, 0, vlen, vl, eew,
-	                      1, 1, vm, store, denied, field);
+	if (!vm) {
+		u32 field;
+		return memory_checked(vs, reg, vmem, base, eew, 0, 0, vlen, vl, eew,
+		                      1, 1, vm, store, denied, field);
+	}
+	// Shared ordinary/whole-register checked bulk boundary. Register slots are
+	// not contiguous at smaller VLENs. Admit only the suffix in this slot,
+	// stopping before a predicted denial; retain its exact denied byte.
+	rvv_host_copy::ResetFault();
+	u32 const per_reg = vlen / (8 * eew);
+	for (u32 e = vs.vstart; e < vl;) {
+		u32 const end = std::min(vl, e + per_reg - e % per_reg);
+		u32 count = 0;
+		while (e + count < end &&
+		       !mmu::FirstDenied(base + (e + count) * eew, eew, store, denied)) ++count;
+		vs.vstart = e;
+		if (count) {
+			u32 completed;
+			if (!rvv_host_copy::CopyElements(vs.elem_ptr(reg, e, eew, vlen), vmem,
+			    base + e * eew, eew, count, store, completed, denied)) {
+				vs.vstart = e + completed;
+				return false;
+			}
+			e += count;
+			vs.vstart = e;
+		}
+		if (e < end) return false;
+	}
+	vs.vstart = 0;
+	return true;
 }
 
 inline void load_unit_stride(VectorState &vs, u32 vd, u8 *vmem, u32 base, u32 vlen_bits, u32 vl,

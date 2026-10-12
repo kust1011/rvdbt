@@ -12,10 +12,29 @@ extern "C" char rvv_copy_read_pc[], rvv_copy_write_pc[];
 extern "C" char rvv_copy_read_pc_word[], rvv_copy_write_pc_word[];
 extern "C" char rvv_copy_read_pc_dword[], rvv_copy_write_pc_dword[];
 extern "C" char rvv_copy_read_pc_qword[], rvv_copy_write_pc_qword[];
-static volatile sig_atomic_t probe_width, probe_store, probe_count, probe_errors;
+extern "C" char rvv_bulk_read_pc_byte[], rvv_bulk_write_pc_byte[];
+extern "C" char rvv_bulk_read_pc_word[], rvv_bulk_write_pc_word[];
+extern "C" char rvv_bulk_read_pc_dword[], rvv_bulk_write_pc_dword[];
+extern "C" char rvv_bulk_read_pc_qword[], rvv_bulk_write_pc_qword[];
+static volatile sig_atomic_t probe_width, probe_store, probe_count, probe_errors, probe_bulk;
 static void width_callback(int sig, siginfo_t *info, void *frame)
 {
  auto *uc=(ucontext_t*)frame;
+ if(probe_bulk) {
+  char *reads[]={rvv_bulk_read_pc_byte,rvv_bulk_read_pc_word,rvv_bulk_read_pc_dword,rvv_bulk_read_pc_qword};
+  char *writes[]={rvv_bulk_write_pc_byte,rvv_bulk_write_pc_word,rvv_bulk_write_pc_dword,rvv_bulk_write_pc_qword};
+  unsigned idx=probe_bulk==8?3:probe_bulk==4?2:probe_bulk==2?1:0;
+  if((uptr)uc->uc_mcontext.gregs[REG_RIP]!=(uptr)(probe_store?writes[idx]:reads[idx]) ||
+     uc->uc_mcontext.gregs[REG_R8]!=3) ++probe_errors;
+  ++probe_count;
+  ucontext_t copy=*uc;
+  copy.uc_mcontext.gregs[REG_R8]=5;
+  if(rvv_host_copy::HandleSignal(sig,info,&copy)) ++probe_errors;
+  copy=*uc;copy.uc_mcontext.gregs[REG_R8]=2;
+  if(rvv_host_copy::HandleSignal(sig,info,&copy)) ++probe_errors;
+  copy=*uc;copy.uc_mcontext.gregs[REG_RIP]=(greg_t)(probe_store?reads[idx]:writes[idx]);
+  if(rvv_host_copy::HandleSignal(sig,info,&copy)) ++probe_errors;
+ }
  if(probe_width) {
   char *reads[]={rvv_copy_read_pc,rvv_copy_read_pc_word,rvv_copy_read_pc_dword,rvv_copy_read_pc_qword};
   char *writes[]={rvv_copy_write_pc,rvv_copy_write_pc_word,rvv_copy_write_pc_dword,rvv_copy_write_pc_qword};
@@ -92,7 +111,55 @@ static void widths()
  check(rvv_host_copy::Copy(element,base,0xffffffffu,2,false,denied) && element[0]==0x12 && element[1]==0x34,"wrapping load byte decomposition");
  element[0]=0x56;element[1]=0x78;
  check(rvv_host_copy::Copy(element,base,0xffffffffu,2,true,denied) && base[0xffffffffu]==0x56 && base[0]==0x78,"wrapping store byte decomposition");
+ u32 completed;
+ u8 group[4]={0,0,0xa1,0xa2};
+ check(rvv_host_copy::CopyElements(group,base,0xffffffffu,2,2,false,completed,denied) &&
+       completed==2 && group[0]==0x56 && group[1]==0x78,"bulk RV32 wrap fallback frontier");
  ::munmap(base,space);
+}
+
+static void bulk()
+{
+ for (u32 width : {1u,2u,4u,8u}) for (bool store : {false,true}) for (bool bus : {false,true}) {
+  int fd=-1;
+  if(bus) { char name[]="/tmp/rvv-bulk127-XXXXXX";fd=mkstemp(name);unlink(name);
+   check(fd>=0 && ftruncate(fd,8192)==0,"bulk file admission"); }
+  check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE,
+        MAP_FIXED|MAP_PRIVATE|(bus?0:MAP_ANONYMOUS),fd)!=MAP_FAILED,"bulk mapping");
+  auto *memory=(u8*)mmu::g2h(data);memset(memory,0x3a,4096);
+  u8 elements[64];memset(elements,0xc7,sizeof(elements));u32 completed=99,denied=99;
+  check(rvv_host_copy::CopyElements(elements,(u8*)mmu::g2h(0),data,width,4,store,completed,denied)
+        && completed==4,"bulk normal exact frontier");
+  for(u32 b=0;b<sizeof(elements);++b)
+   check(elements[b]==(store||b>=4*width?0xc7:0x3a),"bulk normal bounded publication");
+  check(rvv_host_copy::CopyElements(elements,(u8*)mmu::g2h(0),data,width,0,store,completed,denied)
+        && completed==0,"empty bulk no access");
+  auto epoch=mmu::MappingEpoch();
+  if(bus) {check(ftruncate(fd,4096)==0,"bulk truncate after admission");close(fd);}
+  else check(::mprotect(memory+4096,4096,PROT_NONE)==0,"bulk host protection after admission");
+  check(mmu::MappingEpoch()==epoch,"bulk backing not pinned by epoch");
+  memset(elements,0xc7,sizeof(elements));
+  probe_bulk=width;probe_store=store;probe_count=0;probe_errors=0;
+  check(!rvv_host_copy::CopyElements(elements,(u8*)mmu::g2h(0),data+4096-3*width,
+        width,5,store,completed,denied) && completed==3 && denied==data+4096,
+        "bulk actual fault exact committed element frontier");
+  probe_bulk=0;
+  check(probe_count==1 && !probe_errors,"bulk exact PC and frontier filters");
+  check(rvv_host_copy::LastFault().signal==(bus?SIGBUS:SIGSEGV) &&
+        rvv_host_copy::LastFault().code==(bus?BUS_ADRERR:SEGV_ACCERR),"bulk actual signal provenance");
+  for(u32 b=0;b<sizeof(elements);++b)
+   check(elements[b]==(store||b>=3*width?0xc7:0x3a),"bulk failed load fault element unpublished");
+  for(u32 b=0;b<3*width;++b)
+   check(memory[4096-3*width+b]==(store?0xc7:0x3a),"bulk store retains completed elements");
+  // Same shared boundary used by checked ordinary and whole-register suffixes.
+  rv32::VectorState vs;vs.Reset(128);for(auto &r:vs.vreg)r.fill(0xad);vs.vstart=1;
+  check(!rv32::rvv_ref::unit_stride_checked(vs,8,(u8*)mmu::g2h(0),data+4096-3*width,
+        128,6,width,true,store,denied) && vs.vstart==3 && denied==data+4096,
+        "checked bulk register-gap and nonzero vstart frontier");
+  for(u32 e=0;e<6;++e)for(u32 b=0;b<width;++b)
+   check(vs.elem_ptr(8,e,width,128)[b]==(!store&&e>=1&&e<3?0x3a:0xad),
+         "checked bulk prefix completed suffix and fault publication");
+ }
 }
 
 static void filters()
@@ -235,7 +302,7 @@ int main()
  config::vlen_bits=128;config::rvv_lowering=0;config::rvv_verify=false;
  check(mmu::mmap(pc&~4095u,4096,PROT_READ|PROT_EXEC,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"delivery code mapping");
  check(mmu::mmap(0x25000000,32768,PROT_READ|PROT_WRITE,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"delivery stack mapping");
- filters();widths();
+ filters();widths();bulk();
  for(bool bus:{false,true})for(bool store:{false,true})for(bool split:{false,true})helper(s,store,bus,split);
  segment(s);fof(s,data+4092);fof(s,data+4096);threads();
  // An unrelated real host fault must retain fatal handling, not produce a captured event.
