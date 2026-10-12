@@ -1,0 +1,12 @@
+{
+  "path": "/home/vick/rvv-task110/act-db2-task110.tar.gz",
+  "bytes": 445180486,
+  "sha256": "4597c521427b2cd9e6bfda04a5a717e3e2a50a17854e307144b2c190e24526bc",
+  "payload_files": 128102,
+  "payload_bytes": 5603335189,
+  "case_results": 1918,
+  "prior_Task104": 1,
+  "full_raw_indexed_files": 13684,
+  "new_guest_calls": 0,
+  "publication": "STAGED_ON_XBD; no push/release"
+}

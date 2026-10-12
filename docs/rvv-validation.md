@@ -44,6 +44,13 @@ explicitly rejected. The Task100 checker refresh preserves original payload
 bytes and evidence counts. Its archive remains staged on xbd, with payload
 publication and a verified download still pending.
 
+The [ACT db2 Task109/110 delivery](rvv-validation/act-db2-task110/README.md)
+adds a separate exact output index and staged inspection/replay package:
+1,916 new complete-file four-arm PASS, two preserved QEMU platform blockers,
+and one separate Task104 join. Offline verification evaluates original raw
+predicates and reprocesses frozen signatures without guest execution. The form
+union remains 595; target reach does not establish optimized admission.
+
 The current canonical stage index separates source presence, compilation/static
 emission, program execution, target/result checking, coupled endpoints, diagnostics
 and failures. Target-checked sets are CHIPS595, ACT590, RVV-ATG434, Ara422 and

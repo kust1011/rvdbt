@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "files_verified": 128101,
+  "source_outputs": 1919,
+  "Task104_prior_join": 1,
+  "Task109_results": {
+    "PASS": 1916,
+    "REFERENCE_ERROR": 2
+  },
+  "signature_roundtrips": 1918,
+  "DUT_receipts": 7664,
+  "reference_receipts": {
+    "Sail:PASS": 1918,
+    "QEMU:PASS": 1916,
+    "QEMU:REFERENCE_ERROR": 2
+  },
+  "diagnostic_failed_QEMU_receipts": 2,
+  "compiled_target_labels": 483103,
+  "archived_target_arm_reach_tuples": 1932412,
+  "original_compiled_checker_macros": {
+    "RVTEST_SIGUPD_V": 669484,
+    "RVTEST_SIGUPD_V_LEN": 114729,
+    "RVTEST_SIGUPD_VXSAT": 21628,
+    "RVTEST_SIGUPD": 1494,
+    "RVTEST_SIGUPD_FFLAGS": 89449
+  },
+  "full_raw_files_indexed": 13684,
+  "full_raw_files_verified": 13684,
+  "new_guest_calls": 0,
+  "optimized_target_admission": "NOT_ESTABLISHED",
+  "limitation": "Frozen original signature processing and raw-summary predicates verified; host does not execute architectural checker or recompute TB reach. Exact full raw is separately indexed."
+}

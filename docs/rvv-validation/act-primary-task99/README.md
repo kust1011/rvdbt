@@ -111,3 +111,6 @@ Repo tools: [packager](../../../scripts/package_rvv_act_inspection.py),
 [wrong-result controls](../../../scripts/check_rvv_act_rejection.py), and
 [focused tests](../../../scripts/test_rvv_act_inspection.py).
 Main owns thesis/status/email. Task101 published and independently accepted the current archives; this adds no ISA executions.
+
+The later [db2 Task109/110 delivery](../act-db2-task110/README.md) is indexed
+separately; it preserves this c3e primary package and its result identities.

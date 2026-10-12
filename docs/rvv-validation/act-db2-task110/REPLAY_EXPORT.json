@@ -1,0 +1,8 @@
+{
+  "case": "Vls8-vluxei8.v",
+  "status": "EXPORTED_ONLY",
+  "commands": 8,
+  "script": "/home/vick/rvv-task110/replay-export-control3/replay.sh",
+  "new_guest_calls": 0,
+  "blocked": false
+}

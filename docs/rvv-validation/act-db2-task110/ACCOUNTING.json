@@ -1,0 +1,56 @@
+{
+  "outputs": 1919,
+  "profile_excluded_inputs": 228,
+  "Task104_exact_join": 1,
+  "Task109_outputs": 1918,
+  "PASS": 1916,
+  "DUT_FAILURE": 0,
+  "platform_blocked": 2,
+  "unattempted": 0,
+  "primary_guest_calls": 11500,
+  "primary_reference_calls": 3836,
+  "diagnostic_QEMU_calls": 2,
+  "total_actual_guest_calls": 11502,
+  "DUT_calls": 7664,
+  "all_four_arms_PASS_cases": 1916,
+  "compiled_target_labels": 483103,
+  "target_arm_reach_tuples": 1932412,
+  "target_unproven": 0,
+  "compiled_original_checker_macros": {
+    "RVTEST_SIGUPD_FFLAGS": 89449,
+    "RVTEST_SIGUPD_V": 669484,
+    "RVTEST_SIGUPD_V_LEN": 114729,
+    "RVTEST_SIGUPD": 1494,
+    "RVTEST_SIGUPD_VXSAT": 21628
+  },
+  "source_byte_equal_cases": 36,
+  "source_guard_or_format_only": 637,
+  "remaining_source_normalized_differences": 1246,
+  "queue_checker_config_path": "EXACT_QUEUE.json",
+  "actual_receipts": "EXECUTION_AUDIT_109.json",
+  "build": {
+    "DUT-B:0": 1916,
+    "DUT-BOTH:0": 1916,
+    "DUT-M1:0": 1916,
+    "DUT-M2:0": 1916,
+    "compile-reference:0": 1918,
+    "compile-user:0": 1918,
+    "qemu-selfcheck:0": 1916,
+    "sail-signature:0": 1918,
+    "qemu-selfcheck:-4": 2
+  },
+  "timings": {
+    "INVENTORY_TOTALS.json": "2026-10-12T02:40:37.897369+00:00",
+    "pilot2.stdout": "2026-10-12T02:39:14.015028+00:00",
+    "batch1.stdout": "2026-10-12T02:47:14.968280+00:00",
+    "batch2.stdout": "2026-10-12T02:51:34.463457+00:00"
+  },
+  "artifact_sha256": {
+    "EXACT_QUEUE.json": "50e4653dc3a58249f73db41024531f2351c080be5737babfe17058a49ba39d04",
+    "EXECUTION_AUDIT_109.json": "c4aa635dfeac00393ff11b7dc6f9e7d86ec2842d705304bbf5486a7d85df226f",
+    "CONCRETE_DIFFERENCES.json": "71f086091b152f713a475a544416e06da7a531bc0064165159892d68801fc39b",
+    "SEAL_109.json": "c05826d3361f89ab2f9efc3b7bd53397988339406ca87146d14d57702285586e",
+    "BLOCKER_DIAGNOSIS.json": "8d72a20bfb69de3294017d64b23fbef9c719506e57778a5cf73c0637e9068909",
+    "OBSERVER_REJECTION_CONTROLS.json": "4db88f9ffc9661a345c3d228380c8c794f64c9a0bb5b3a185cfeff8aae39be21"
+  }
+}
