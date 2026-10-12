@@ -1,0 +1,10 @@
+[
+  "/home/vick/rvv-task108/build/qemu-riscv64",
+  "-cpu",
+  "rv64,v=true,vlen=128,elen=64,zfh=true",
+  "-d",
+  "in_asm,exec",
+  "-D",
+  "/home/vick/rvv-task108/reference-precondition/reference-trace.txt",
+  "/home/vick/rvv-task108/reference-precondition/reference.elf"
+]

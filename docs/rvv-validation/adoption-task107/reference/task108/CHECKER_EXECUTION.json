@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "python3",
+    "check_rvv_qemu_preconditions.py",
+    "--source",
+    "/home/vick/rvv-task106/source/test-zicclsm.S",
+    "--proof",
+    "/home/vick/rvv-task106/DATA_DEPENDENCY_PROOF.json",
+    "--qemu",
+    "/home/vick/rvv-task108/build/qemu-riscv64",
+    "--output",
+    "/home/vick/rvv-task108/reference-precondition"
+  ],
+  "cwd": "/home/vick/rvv-task108",
+  "returncode": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "probe_source_sha256": "316a719ed4982a1cc23bdfb97cdd95a91661c756c3d7147e099279a633e30e4c",
+  "probe_elf_sha256": "ffdaa113846a5d538ea2500f8dd428560e3137512fb88052337656d9f9f2094a",
+  "new_guest_calls": 2,
+  "Zfh_probe_calls": 1,
+  "original_body_calls": 1,
+  "DUT_calls": 0
+}

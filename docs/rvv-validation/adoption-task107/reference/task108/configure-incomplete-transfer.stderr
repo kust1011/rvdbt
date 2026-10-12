@@ -1,0 +1,4 @@
+
+ERROR: linux-user/include/host/x86_64 does not exist.
+       This is a bug in the configure script, please report it.
+

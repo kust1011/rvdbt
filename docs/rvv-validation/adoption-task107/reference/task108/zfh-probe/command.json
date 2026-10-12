@@ -1,0 +1,6 @@
+[
+  "/home/vick/rvv-task108/build/qemu-riscv64",
+  "-cpu",
+  "rv64,v=true,vlen=128,elen=64,zfh=true",
+  "/home/vick/rvv-task108/reference-precondition/zfh-probe.elf"
+]

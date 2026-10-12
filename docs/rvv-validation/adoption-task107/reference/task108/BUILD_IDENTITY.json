@@ -1,0 +1,55 @@
+{
+  "source_repository": "https://github.com/qemu/qemu.git",
+  "source_revision": "f9587d4045c67cd0d8d8bdcd5d0bb5b6b395b63c",
+  "source_archive_sha256": "1cc220a0d4dbce0fc18dbc3f19720cc29566b891d55ac52e45f540ac9af99eda",
+  "source_origin": "git archive from existing official qemu-audit-20261005 object database; archive pax commit verified",
+  "existing_rv32_source_inspected": "/home/user/research/third_party/qemu-11.1.0",
+  "existing_rv32_build_inspected": "/home/user/research/third_party/qemu-11.1.0-build/config-host.mak: TARGET_DIRS=riscv32-linux-user",
+  "reason_for_pinned_source": "Existing 11.1.0 source has no Git revision metadata; reuse retained official QEMU object database at exact source-test pin instead.",
+  "source_dir": "/home/vick/rvv-task108/source",
+  "build_dir": "/home/vick/rvv-task108/build",
+  "target_list": [
+    "riscv64-linux-user"
+  ],
+  "configure_argv": [
+    "../source/configure",
+    "--target-list=riscv64-linux-user",
+    "--disable-system",
+    "--disable-docs",
+    "--disable-tools",
+    "--disable-guest-agent",
+    "--disable-plugins"
+  ],
+  "configure_env": {
+    "PKG_CONFIG_SYSROOT_DIR": "/home/vick/rvv-task108/deps/root",
+    "PKG_CONFIG_LIBDIR": "/home/vick/rvv-task108/deps/root/usr/lib/x86_64-linux-gnu/pkgconfig"
+  },
+  "build_argv": [
+    "ninja",
+    "-j2",
+    "qemu-riscv64"
+  ],
+  "build_returncode": 0,
+  "load_before": "09:39:21 up 4 days, 13:17,  6 users,  load average: 0.10, 0.20, 0.28",
+  "qemu_sha256": "cfdf66f6e77f955216611d9f57668ee935235f6d0856bf9a2f9430e2aa8ece81",
+  "subprojects": {
+    "berkeley-softfloat-3": "b64af41c3276f97f0e181920400ee056b9c88037",
+    "berkeley-testfloat-3": "e7af9751d9f9fd3b47911f51a5cfd08af256a9ab"
+  },
+  "dependency_packages_sha256": "7009959b8a3b77206325026917fb45150ac81bf6139468abc0841d5a29c8619d  deps/libffi-dev_3.4.6-1build1_amd64.deb\na25df95147a20a1748b5e110650670b6453dc972284b85d14e2b4a53c934b4da  deps/libglib2.0-dev-bin_2.80.0-6ubuntu3.9_amd64.deb\n2f34111ef1c41179d610049c902e2622d433e648869abf267e17083c13aa6030  deps/libglib2.0-dev_2.80.0-6ubuntu3.9_amd64.deb\n933ac2723142126b6e01b588803dc6fa15a26205468524548e14af3cd48027e9  deps/libpcre2-dev_10.42-4ubuntu2.1_amd64.deb\ne9152a08af21ab22bc99e8bfa98f1eb83955b2cc3653bcefecab394ecf9d1b63  deps/zlib1g-dev_1%3a1.3.dfsg-3.1ubuntu2.2_amd64.deb\n",
+  "dependency_strategy": "apt-get download and dpkg-deb -x under task108/deps; local development symlinks resolve installed runtime libraries; no system install/configuration",
+  "linked_runtime_libraries": {
+    "/lib/x86_64-linux-gnu/libm.so.6": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0",
+    "/home/vick/rvv-task108/deps/root/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0": "96ef9163aee942bdc09e6f4a1acd2fd6b178c03af824c569741440d63ac9f4f4",
+    "/lib/x86_64-linux-gnu/libc.so.6": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+    "/lib/x86_64-linux-gnu/libpcre2-8.so.0": "e00576d71d81d3ba0cfa4903c835a44a8723aac96f72f79ff75200b4cff9071b"
+  },
+  "retained_failed_configure": "configure-incomplete-transfer.{stdout,stderr}: linux-user/include/host/x86_64 absent in incomplete initial streamed archive",
+  "raw_build_log_sha256": {
+    "configure.stdout": "010e50c1054fa21aec45f9873bf46ab661b9ed5b4a9148aec0299cd3da109826",
+    "configure.stderr": "c4b56a948ae99294781e7da66a1fc368de1217139865d360afad48f0d6041cbd",
+    "build.stdout": "4f97d7a28fd0749499f99f494cdb13ff4b5688d09b4092a4dd8f78f8cc68bbf2",
+    "build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "rv32_reference_unchanged_sha256": "fc69c3332977459ee844d5e25f3386f7bff1061e4ff4adf0343f864571d13fa9"
+}

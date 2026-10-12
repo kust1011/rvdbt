@@ -1,14 +1,18 @@
 # Scoped adoption of Tasks103–106
 
 These are accepted, named original predicates from four execution checkpoints.
-Task107 adds **zero DUT executions**. Its RV64 precondition reference is
-[blocked](reference/comparison.json): the existing Task106 installation has only
-`qemu-riscv32`, and no `qemu-riscv64` was found in xbd PATH, `/usr`, `/usr/local`,
-`/opt`, `/home/vick`, `/tmp` or `/var/tmp` searches. Zfh actual availability is
-unobserved; this is an executable availability obstacle, not evidence that Zfh is
-unsupported by a tested RV64 CPU. The [RV64/Zfh build](reference/build-command.json)
-succeeded. [Identity](reference/identity.json) and [exact adapter diff](reference/original-to-user.diff)
-identify the complete scalar/vector body retained for review.
+Tasks107–108 add **zero DUT executions**. Task108 completed the
+[RV64 precondition comparison](reference/task108/comparison.json): the actual Zfh
+`flh/fsh` probe and the complete original enabled body both exited0 without timeout;
+all 256 captured bytes equal Task106's scalar-store replay. The
+[Task107 blocked receipt](reference/comparison.json) is preserved as history.
+The [new RV64 build identity](reference/task108/BUILD_IDENTITY.json) pins official
+QEMU `f9587d4045c67cd0d8d8bdcd5d0bb5b6b395b63c`, built in isolated
+`xbd:/home/vick/rvv-task108/build` with only `riscv64-linux-user` and two jobs.
+The existing RV32 reference remains byte-identical and has a separate identity.
+The [reference identity](reference/task108/identity.json) matches Task107's source,
+proof, adapter, ELF and compiler; the [exact adapter diff](reference/original-to-user.diff)
+remains unchanged.
 
 | Checkpoint / explicit status | Actual predicate and profile | Accepted executions and limits |
 |---|---|---|
@@ -25,14 +29,14 @@ elfrun `6fda0f9ab06c2c824b5301d1f302b76799842981b00a88fffa85fe43f1dbd84f`,
 library `1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d`.
 Neither cohort is silently merged with a newly built executable.
 
-The [Task106 static dependency proof](receipts/DATA_DEPENDENCY_PROOF.json) remains
-static: ten stores in original order, full 64-bit inputs, and 34 scalar value/byte
-assertion calculations. Task107 has **no captured bytes and no equality result**. The
-[offline review](reference/REVIEW_CHECKS.json) confirms literal body/macros/trap
-handler preservation, emitted RV64/Zfh instructions and all five retained
-Task106 13-marker receipts, without guest execution. Only the build and missing
-executable path of the new tool have been exercised; its actual Zfh/reference
-execution path remains untested.
+The [Task106 dependency proof](receipts/DATA_DEPENDENCY_PROOF.json) replays ten
+stores in original order with full 64-bit inputs. Task108 now validates its final
+256-byte state by execution, immediately before the first vector `vsetvli`.
+The [runtime review](reference/task108/RUNTIME_REVIEW.json) joins executed trace
+blocks to all 23 scalar no-trap checks, 34 scalar value/byte checks and 13 vector
+no-trap checks; the fail label and unused M-mode handler were not entered.
+The [original offline review](reference/REVIEW_CHECKS.json) and all five accepted
+Task106 receipts remain intact. No Task106 DUT was rerun.
 The new [precondition checker](../../../scripts/check_rvv_qemu_preconditions.py)
 builds the original RV64 body without replacing `ld/sd/flh/fsh` or scalar assertions.
 Only privileged startup and semihost exit are adapted to Linux user, with a
@@ -42,14 +46,14 @@ The unused M-mode trap handler remains visible. A separate actual `flh/fsh` prob
 with `zfh=true` must succeed before the full reference is run once. Signals,
 nonzero exit, timeout, short write or byte mismatch cannot pass. Missing RV64 or
 failed Zfh probe is BLOCKED (exit2), never PASS. This validates extraction inputs;
-even a future success would not add rvdbt coverage or original M-mode acceptance.
+the observed success adds no rvdbt coverage or original M-mode acceptance.
 
 ## Source, adapter, checker and raw access
 
 Small copied receipts above are existing observations, not new executions. Full
 source/adapters/build/disassembly/raw histories remain at the following xbd paths;
-SSH access is required. These paths are not public download URLs. No new evidence
-archive or upstream source bundle was created. Obtain upstream sources at the exact
+SSH access is required. These paths are not public download URLs. No distributable evidence
+archive or full upstream source bundle is committed here. Obtain upstream sources at the exact
 pins below and retain their notices; source identity is stronger than a form name.
 
 | Task | Pinned upstream original | xbd review root and exact access |
@@ -82,19 +86,30 @@ The established [portable external runner](../portable-external.md) continues to
 cover its two fixtures; this document exposes these four additional scoped drivers
 and evidence without silently expanding that runner's acceptance contract.
 
-To resolve only Task107's pending precondition using an existing RV64 binary:
+To replay only the validated precondition with Task108's separate RV64 binary:
 
 ```sh
 python3 scripts/check_rvv_qemu_preconditions.py \
   --source /home/vick/rvv-task106/source/test-zicclsm.S \
   --proof /home/vick/rvv-task106/DATA_DEPENDENCY_PROOF.json \
-  --qemu /actual/path/to/qemu-riscv64 \
-  --output /home/vick/rvv-task107/new-reference-precondition
+  --qemu /home/vick/rvv-task108/build/qemu-riscv64 \
+  --output /home/vick/rvv-task108/new-reference-precondition
 ```
 
 The command uses existing clang22 and produces raw build/probe/reference argv,
 stdout/stderr/exit/timeout records, full adapter/diff/disassembly and comparison.
-It never invokes elfrun. Current blocked preparation is at
+It never invokes elfrun. Actual Task108 raw is at
+`xbd:/home/vick/rvv-task108/reference-precondition/`; small
+[probe](reference/task108/zfh-probe/result.json) and
+[reference](reference/task108/reference/result.json) command/output/result receipts
+are copied here. The 35,600-byte executed trace, full generated adapter and ELF,
+source archive and build/dependency logs stay on xbd, with hashes in the build and
+runtime reviews. The unchanged checker was invoked once for the probe and body.
+Its availability receipt is a pre-execution snapshot; actual Zfh success is in the
+probe and comparison receipts. The first incomplete source-stream configure failure
+is retained in `reference/task108/configure-incomplete-transfer.{stdout,stderr}`;
+the complete archive and all 11,404 archived files were verified before acceptance.
+Historical blocked preparation remains at
 `xbd:/home/vick/rvv-task107/reference-precondition-final/`.
 
 Licensing inspected before integration: QEMU source explicitly GPL-2.0-or-later;
@@ -119,8 +134,8 @@ changes were made. See the existing [current scope](../../rvv-current-scope.md),
 [Ara accepted bindings](../current-scope/ara-accepted-evidence.md) for those unchanged
 claims. Main owns the external-suite summary and thesis/status prose.
 
-Remaining bounded adoption gaps are: Task107's actual RV64/Zfh scalar buffer
-capture; ACT's other 383 applicable db2 exact output identities, profile-excluded
+The RV64/Zfh scalar buffer comparison gap is closed. Remaining bounded adoption
+gaps are: ACT's other 383 applicable db2 exact output identities, profile-excluded
 64-bit-index truncation, EFFEW32 vfwcvt producer input and dedicated privileged
 vset tests; Sail neighboring expected illegal-group/ELEN trap assertions; QEMU
 `test-vle32ff.S` original cause5 plus unchanged-VL predicate and the disabled
