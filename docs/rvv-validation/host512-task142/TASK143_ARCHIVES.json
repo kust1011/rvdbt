@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "publication": "STAGED_LOCAL; main owns publication after review",
+  "artifacts": [
+    {
+      "file": "task142-inspection.tar.gz",
+      "bytes": 98727572,
+      "sha256": "bc3b34a8020ff0ee0ebefd62318f14585a42a3d3de63c334519079c49f5715bf",
+      "payload_files": 137748,
+      "kind": "Task142_public_inspection_receipts",
+      "new_guest_calls": 0,
+      "intended_url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/task142-inspection.tar.gz",
+      "licenses": "Repository MIT records/scripts; separate original suite packages retain their upstream terms",
+      "scope": "Original Task142 raw transport receipts with 126 emitted executable code dumps excluded; license/notice added; no supplementary source package duplication"
+    }
+  ]
+}

@@ -15,6 +15,29 @@ libriscv records remain in the archive but are not used for this validation
 claim. The immutable scope archive is the Task71 snapshot; the current scope
 and Ara review package linked below supersede its aggregate counts.
 
+The final current-build evidence is [Task142](rvv-validation/host512-task142/README.md):
+source `8111040` with reviewed signal-copy correction `ad5e3c8`, executable
+`e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b`.
+Its 21,316 retained CHIPS/ACT/Ara calls reuse original inputs and predicates;
+595 checked forms remain the same union. Earlier builds, including Task138,
+retain historical attribution and earn no final-build credit. Use the explicit
+Task142 raw root and already published source/checker packages in that reader;
+main publishes the new raw asset and reviewed source revision after review.
+
+When writing about this result, distinguish four evidence classes:
+
+- External predicates check the original program outputs: CHIPS controls and
+  Ara scoped MAC failures remain separate; two ACT reference blockers stay excluded.
+- Final-build local interface/FRM/MMU, codegen/admission and normal memory tests
+  check engineering behavior. The signal interface test has `guest_calls=0`;
+  these tests add no external instruction coverage.
+- Actual cache/compile/command evidence establishes Release/host512/RV32/ELEN64
+  settings and guest VLEN. Printed ACT/Ara chunks are observations; source
+  geometry and unprinted runtime fields remain source-only or UNKNOWN. Enabled
+  B/M1/M2/Both settings do not prove admission at each target instruction.
+- Guest handler return/restart remains **NOT VERIFIED**. Host signal-copy checks
+  do not establish mapping repair, same-PC retry or complete fault-state recovery.
+
 ## Explaining the support claim
 
 - **What was implemented?** RVV decoding, vector architectural state, direct
@@ -239,8 +262,9 @@ contracts and CTK/Tenstorrent profile exclusions do not become ISA passes.
 rv32emu retains whole-test FAIL (8 reached,7 passed,1 failed,296 unreached),
 without data-vector result coverage.
 
-Clean961 lacks guest signal-handler completion; general precise vector fault
-restoration/retry and native fault-state proof remain incomplete. P4 is separate.
+Task142 does not verify guest signal-handler completion or restart; general precise
+vector fault restoration/retry and native fault-state proof remain incomplete.
+Historical clean961 results and P4 remain separately attributed.
 Full/intermediate state, access suppression, agnostic write history, arbitrary
 overlap/restart and per-PC M1/M2 admission remain unknown beyond scoped witnesses.
 These results establish finite checked forms/configurations, not full RVV1.0

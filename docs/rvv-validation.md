@@ -33,44 +33,50 @@ and its result records. A membership mark alone does not describe testing depth.
 Report the actual SEW, LMUL, VLEN, mask/tail state, operands, checked outputs and
 candidate build from those records. If a state is absent, it remains unverified.
 
-The final Task138 retained external validation has **595 checked forms** and
-21,316 current receipts on the exact Task137 executable (CHIPS 11,532 positives
-plus 212 controls; ACT 7,668; Ara 1,888 whole-file and 16 scoped calls). It adds
-no coverage to the existing accepted sets. The [Task138 reader](rvv-validation/host512-task138/README.md)
-gives exact public acquisition URLs, hash-checked extraction, source/checker
-navigation and configuration interpretation. Its [Task139 supplement manifest](rvv-validation/host512-task138/TASK139_ARCHIVES.json)
-is **staged, not uploaded**; main owns publication after review. Until that
-asset is published, public retrieval of the final current raw is incomplete.
-The existing published CHIPS94/ACT db2 and licensed repository Ara91 packages
-are reused; only current outputs and missing reader dependencies are added.
+The final Task142 retained external validation uses source `8111040`, including
+signal-copy correction `ad5e3c8`, and executable SHA256
+`e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b`.
+It retains **595 checked forms** and exactly **21,316 current receipts**:
+CHIPS 11,532 positives plus 212 controls; ACT 7,668; Ara 1,888 whole-file and
+16 TEST_CASE1/2-only scoped calls. Controls add no positive form credit; scoped
+MAC results retain whole-file failures. Both original ACT reference blockers
+remain outside the accepted queue. Prior-build receipts earn zero Task142 credit.
 
-After the reader's acquisition/extraction steps, check offline from a downloaded
-checkout with explicit roots (Python 3.10+, assertions enabled):
+The [Task142 public reader](rvv-validation/host512-task142/README.md) gives exact
+asset acquisition, hash verification, safe extraction and selected-form commands
+using an explicit new raw root. Its
+[public manifest](rvv-validation/host512-task142/TASK143_ARCHIVES.json) is staged;
+main owns upload/publication. Public acquisition of Task142 raw remains incomplete
+until that new asset is published. The Task139 supplementary source/checker
+package is already published and reused with CHIPS94, ACT db2 and repository
+Ara91; no duplicate source package is added. The existing release tag's source
+ZIP is historical: use main's reviewed source revision containing Task143.
+[Task138](rvv-validation/host512-task138/README.md) remains immutable history.
+
+After acquisition/extraction, inspect a form across suites (Python 3.10+,
+assertions enabled, output directory new):
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv_scope_report.py \
-  --host512-corpus docs/rvv-validation --host512-task138-build \
-  --host512-raw inspection/current/raw --host512-evidence inspection/current \
+  --host512-corpus docs/rvv-validation/host512-task142/combined/navigation.json.gz \
+  --host512-raw inspection/task142-raw --host512-evidence inspection/current \
   --chips-package inspection/chips --act-db2-package inspection/act \
-  --ara-package inspection/ara --output inspection/audit138
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv_scope_report.py \
-  --host512-corpus docs/rvv-validation/host512-task138/combined/navigation.json.gz \
-  --host512-raw inspection/current/raw --host512-evidence inspection/current \
-  --chips-package inspection/chips --act-db2-package inspection/act \
-  --ara-package inspection/ara --form vadd.vv --arm B --output inspection/vadd
+  --ara-package inspection/ara --form vle32.v --arm B --output inspection/vle32-142
 ```
 
-Use the same selector for `vle32.v`, `vfadd.vv`, `vmand.mm` and `vsetvli`;
-`--suite chips|act|ara`, `--case` and `--arm` narrow original records.
-`record.json` and `PORTABLE_SOURCES.json.gz` link original source/assertions,
-frozen signature/capture or parser, current streams/result, binary/library pins
-and actual command/configuration. Missing/corrupt current receipts reject;
-without a raw root, selection explicitly reports `NOT_CHECKED`. Literal source
-geometry and source-only bindings remain distinct from runtime evidence;
-unobserved dimensions remain UNKNOWN. These checks inspect retained evidence
-without executing guests or references. Historical oracle reconstruction has
-separate pinned tool/source dependencies; no single-command rebuild of all
-historical oracles is claimed.
+`record.json` connects original sources/assertions and frozen checker metadata to
+current streams/results, executable/library pins and actual commands. Missing or
+corrupt current raw rejects; no old raw fallback receives credit. Without an
+explicit raw root, selection reports `NOT_CHECKED`. Offline reapplication runs
+no guest/reference engine; historical oracle reconstruction has separate pinned
+tool/source dependencies and no universal rebuild promise.
+
+| Evidence class | Final Task142 meaning | Limit |
+|---|---|---|
+| External result checks | Original CHIPS/ACT/Ara predicates on final executable receipts | Finite checked forms/configurations; no complete RVV conformance or all-dimensional coverage |
+| Local engineering tests | Final signal-interface/FRM/MMU, codegen/admission and normal memory regressions in [TEST_SUCCESS.json](rvv-validation/host512-task142/TEST_SUCCESS.json) | Separate from external credit; interface test executes zero guest handlers |
+| Configuration evidence | Actual cache/compile flags, command guest VLEN and printed ACT/Ara host chunks | Source literals and enabled method flags do not establish runtime tuples or per-target native admission; missing fields stay UNKNOWN |
+| Guest restart | **NOT VERIFIED** | No guest handler return, mapping repair or same-PC retry/P4-04 equivalent |
 
 CHIPS and ACT primary raw packages are available in the
 [validation release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012);
