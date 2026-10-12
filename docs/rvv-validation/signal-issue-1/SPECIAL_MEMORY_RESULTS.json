@@ -1,0 +1,27 @@
+{
+  "base": "ba817f6966a61b2e0071c5a2389cc35246d7d6af",
+  "abi": "ce212ddc4742de49",
+  "local_checks": 254652,
+  "local_cells": 26290,
+  "qcg_native_cells": 124,
+  "qcg_native_hits": 14,
+  "qcg_fallbacks": 110,
+  "checks": {
+    "special-combined.rc": 0,
+    "rv32_unit_memory_fault_test-combined.rc": 0,
+    "rvv_llvm_wholereg_mem_test-combined.rc": 0,
+    "rvv_whole_reg_mem_route_test-combined.rc": 0,
+    "normal-combined.rc": 0,
+    "build-combined2.rc": 0,
+    "build-receipt.rc": 0,
+    "binary-equality.rc": 0
+  },
+  "external_calls": 16,
+  "external_assertions": 212,
+  "external_comparisons": 35060,
+  "external_build_sha256": "533443050f4d1ad4dc49ca74f3e5ac4ca1ccc576f2b107d3771412a218ac3e31",
+  "no_guest_retry": true,
+  "whole_suite": false,
+  "performance": false,
+  "completed_utc": "2026-10-12T13:46:13.657380+00:00"
+}

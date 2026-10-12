@@ -49,6 +49,7 @@
 #include "llvm/IR/Module.h"
 
 #include <cstdio>
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -171,6 +172,8 @@ constexpr u32 kVstart = kVec + offsetof(rvv32::VectorState, vstart);
 // every CPUState access in this backend is a constant-index GEP off the state argument.)
 struct IR {
 	std::vector<u32> loaded;
+	unsigned permission_calls = 0;
+	unsigned permission_branches = 0;
 	unsigned icmp_ule = 0; // the address-bound compare is the only unsigned-<= in these bodies
 	bool Reads(u32 o) const
 	{
@@ -192,8 +195,27 @@ IR ScanIR(llvm::Function *fn)
 {
 	IR v;
 	llvm::Value *state = fn->getArg(0);
+	llvm::Value *permission = nullptr;
 	for (auto &bb : *fn)
 		for (auto &ins : bb) {
+			if (auto *call = llvm::dyn_cast<llvm::CallInst>(&ins)) {
+				auto *load = llvm::dyn_cast<llvm::LoadInst>(call->getCalledOperand());
+				if (load && StripToBase(load->getPointerOperand()) == state) {
+					auto *g = llvm::dyn_cast<llvm::GetElementPtrInst>(
+					    load->getPointerOperand());
+					llvm::APInt off(64, 0);
+					if (g &&
+					    g->accumulateConstantOffset(fn->getParent()->getDataLayout(),
+									off) &&
+					    off.getZExtValue() ==
+						offsetof(CPUState, stub_tab) +
+						    (u32)RuntimeStubId::id_rv32_special_memory_safe *
+							sizeof(void *)) {
+						++v.permission_calls;
+						permission = call;
+					}
+				}
+			}
 			if (auto *c = llvm::dyn_cast<llvm::ICmpInst>(&ins)) {
 				if (c->getPredicate() == llvm::CmpInst::ICMP_ULE)
 					++v.icmp_ule;
@@ -206,11 +228,31 @@ IR ScanIR(llvm::Function *fn)
 			if (StripToBase(p) != state)
 				continue;
 			llvm::APInt ap(64, 0);
-			if (p == state) { v.loaded.push_back(0); continue; }
+			if (p == state) {
+				v.loaded.push_back(0);
+				continue;
+			}
 			auto *g = llvm::cast<llvm::GetElementPtrInst>(p);
 			if (g->accumulateConstantOffset(g->getModule()->getDataLayout(), ap))
 				v.loaded.push_back((u32)ap.getZExtValue());
 		}
+	std::function<bool(llvm::Value *)> depends = [&](llvm::Value *value) {
+		if (value == permission)
+			return true;
+		auto *instruction = llvm::dyn_cast<llvm::Instruction>(value);
+		if (!instruction || llvm::isa<llvm::PHINode>(instruction))
+			return false;
+		for (auto &operand : instruction->operands())
+			if (depends(operand.get()))
+				return true;
+		return false;
+	};
+	if (permission)
+		for (auto &bb : *fn)
+			if (auto *branch = llvm::dyn_cast<llvm::BranchInst>(bb.getTerminator()))
+				if (branch->isConditional() && depends(branch->getCondition()))
+					++v.permission_branches;
+
 	return v;
 }
 
@@ -237,6 +279,8 @@ void SectionGuard()
 			// address bound is the second C1 addition.
 			CHECK(ir.Reads(kVlenb));
 			CHECK(ir.Reads(kVstart));   // pre-C1 this was absent
+			CHECK_EQ(ir.permission_calls, 1u);
+			CHECK_EQ(ir.permission_branches, 1u);
 			CHECK(ir.icmp_ule >= 1u);   // pre-C1 there was no unsigned-<= at all
 		}
 	}

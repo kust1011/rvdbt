@@ -1976,16 +1976,28 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	rvv_typed_chunk_vl_guarded =
 	    qir::InstRVVTypedChunkBegin::GuardBoundsVlByVlmax(ins->guard_kind);
 
-	bool const unit_memory = ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse;
-	bool const family_memory = ins->stub == RuntimeStubId::id_rv32_vlse || ins->stub == RuntimeStubId::id_rv32_vsse ||
-	    ins->stub == RuntimeStubId::id_rv32_vlxei || ins->stub == RuntimeStubId::id_rv32_vsxei ||
-	    ins->stub == RuntimeStubId::id_rv32_vlseg || ins->stub == RuntimeStubId::id_rv32_vsseg;
-	if (unit_memory || family_memory) {
-		j.mov(x86::rdi, R_STATE);
-		j.mov(x86::esi, ins->raw);
-		j.emit(x86::Inst::kIdCall, make_stubcall_target((unit_memory ? RuntimeStubId::id_rv32_unit_memory_safe : RuntimeStubId::id_rv32_family_memory_safe)));
-		j.test(x86::eax, x86::eax);
-		j.jz(rvv_typed_chunk_fallback);
+	// Runs may begin with arithmetic; admit every memory member before any body access.
+	for (u8 member = 0; member < ins->n_members; ++member) {
+		u32 const raw = ins->n_members == 1 ? ins->raw : ins->run_members[member].raw;
+		auto const stub = ins->n_members == 1 ? ins->stub : ins->run_members[member].stub;
+		bool const unit_memory = stub == RuntimeStubId::id_rv32_vle || stub == RuntimeStubId::id_rv32_vse;
+		bool const family_memory =
+		    stub == RuntimeStubId::id_rv32_vlse || stub == RuntimeStubId::id_rv32_vsse ||
+		    stub == RuntimeStubId::id_rv32_vlxei || stub == RuntimeStubId::id_rv32_vsxei ||
+		    stub == RuntimeStubId::id_rv32_vlseg || stub == RuntimeStubId::id_rv32_vsseg;
+		bool const special_memory =
+		    stub == RuntimeStubId::id_rv32_vlm || stub == RuntimeStubId::id_rv32_vsm ||
+		    stub == RuntimeStubId::id_rv32_vlNre || stub == RuntimeStubId::id_rv32_vsNr;
+		if (unit_memory || family_memory || special_memory) {
+			j.mov(x86::rdi, R_STATE);
+			j.mov(x86::esi, raw);
+			j.emit(x86::Inst::kIdCall,
+			       make_stubcall_target((special_memory ? RuntimeStubId::id_rv32_special_memory_safe
+						     : unit_memory  ? RuntimeStubId::id_rv32_unit_memory_safe
+								    : RuntimeStubId::id_rv32_family_memory_safe)));
+			j.test(x86::eax, x86::eax);
+			j.jz(rvv_typed_chunk_fallback);
+		}
 	}
 
 	// Guard: the architectural state must be exactly what translation assumed. WHICH state that

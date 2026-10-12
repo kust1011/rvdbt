@@ -257,7 +257,7 @@ private:
 	// C1: the whole-register MEMORY frame's guard -- `vlenb == VLEN/8 && vstart == 0 &&
 	// addr + total_bytes <= 2^32`. Shared by Emit_rvvload and Emit_rvvstore so the load and the
 	// store cannot state different preconditions for the same transfer.
-	llvm::Value *RvvWholeRegMemGuard(llvm::Value *addr, u32 total_bytes);
+	llvm::Value *RvvWholeRegMemGuard(llvm::Value *addr, u32 total_bytes, u32 raw);
 	// C5-FP: the active-lane predicate for a chunk whose first architectural element is
 	// `element_base`, read from the LIVE `vec.vl`. Shared by the FP operand neutralisation and
 	// available to any later family that needs the same predicate.
