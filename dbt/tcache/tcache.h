@@ -1,6 +1,7 @@
 #pragma once
 
 #include "dbt/arena.h"
+#include "dbt/qmc/compile.h"
 #include "dbt/mmu.h"
 #include "dbt/tcache/cflow_dump.h"
 #include "dbt/util/logger.h"
@@ -38,6 +39,11 @@ struct alignas(8) TBlock {
 };
 
 struct tcache {
+	// Host-stack inspection only: these maps are NOT signal-handler lookup tables.
+	// Entries outlive guest-IP revocation, since old linked code may still execute;
+	// Init/Invalidate/Destroy retire them with the actual code pool.
+	static void RegisterNativeMemorySites(std::span<u8> code, std::span<NativeMemorySite const> sites);
+	static bool InspectNativeMemorySite(uptr pc, NativeMemorySite &site);
 	static void Init();
 	static void Destroy();
 	static void Invalidate();

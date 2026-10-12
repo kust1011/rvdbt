@@ -163,6 +163,11 @@ static inline bool HandleTrap(CPUState *state)
 }
 
 struct JITCompilerRuntime final : CompilerRuntime {
+	void PublishNativeMemorySites(std::span<u8> code, std::span<NativeMemorySite const> sites) override
+	{
+		tcache::RegisterNativeMemorySites(code, sites);
+	}
+
 	void *AllocateCode(size_t sz, uint align) override
 	{
 		return tcache::AllocateCode(sz, align);

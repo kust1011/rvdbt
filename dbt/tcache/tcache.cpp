@@ -198,8 +198,27 @@ void tcache::ICUnpatchPage(u32 pvaddr)
 	}
 }
 
+static std::unordered_map<uptr, NativeMemorySite> native_memory_sites;
+
+void tcache::RegisterNativeMemorySites(std::span<u8> code, std::span<NativeMemorySite const> sites)
+{
+	for (auto const &site : sites) {
+		if (site.code_offset >= code.size()) Panic("native memory site outside code allocation");
+		native_memory_sites[(uptr)code.data() + site.code_offset] = site;
+	}
+}
+
+bool tcache::InspectNativeMemorySite(uptr pc, NativeMemorySite &site)
+{
+	auto const it = native_memory_sites.find(pc);
+	if (it == native_memory_sites.end()) return false;
+	site = it->second;
+	return true;
+}
+
 void tcache::Init()
 {
+	native_memory_sites.clear();
 	brind_dirty.reserve(1u << 20); // F2 fix: no realloc ever => no UAF window in the SIGALRM flush
 
 	// The 3 L1 caches are globals (BSS, already zero == the fill value), and Init() is boot-only, so the
@@ -219,6 +238,7 @@ void tcache::Init()
 
 void tcache::Destroy()
 {
+	native_memory_sites.clear();
 	log_tcache("Destroy tcache, code_pool size: %zu", code_pool.GetUsedSize());
 
 	l1_cache.fill(nullptr);
@@ -232,6 +252,7 @@ void tcache::Destroy()
 
 void tcache::Invalidate()
 {
+	native_memory_sites.clear();
 	l1_cache.fill(nullptr);
 	l1_brind_cache.fill({0, nullptr});
 	cache_tb_exec_count.fill({0, nullptr});

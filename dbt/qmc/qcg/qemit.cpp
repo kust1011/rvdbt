@@ -75,6 +75,7 @@ std::span<u8> QEmit::EmitCode()
 		if (unlikely(dbt::config::qcg_ic_regret))
 			tcache::qcg_ic_regret_cache[tcache::gbrind_hitrate_hash(_entry_ip)].blob = (u8 *)code_ptr + s.blob_off;
 	}
+	cruntime->PublishNativeMemorySites({(u8 *)code_ptr, code_sz}, native_memory_sites);
 	return {(u8 *)code_ptr, code_sz};
 }
 
@@ -1954,6 +1955,8 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	    ins->guard_kind ==
 		qir::InstRVVTypedChunkBegin::GuardKind::VTypeVlOrPartialVstartBaseLimit;
 	rvv_typed_chunk_open = true;
+	native_memory_pc = ins->n_members == 1 ? ins->native_memory_pc : qir::RVVRunMember::PC_UNUSED;
+	native_memory_raw = ins->raw;
 	rvv_typed_chunk_expected = ins->n_typed;
 	rvv_typed_chunk_seen = 0;
 	rvv_typed_chunk_members = ins->n_members;
@@ -2376,6 +2379,7 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 
 	j.bind(rvv_typed_chunk_done);
 	rvv_typed_chunk_open = false;
+	native_memory_pc = qir::RVVRunMember::PC_UNUSED;
 	rvv_typed_chunk_expected = 0;
 	rvv_typed_chunk_seen = 0;
 	rvv_typed_chunk_members = 0;
@@ -4501,6 +4505,22 @@ void QEmit::EmitPartialAluBody(qir::InstVChunkPartialAlu *ins, bool finish_instr
 		j.mov(x86::dword_ptr(R_STATE, offsetof(CPUState, vec) + offsetof(rv32::VectorState, vstart)), 0);
 }
 
+void QEmit::NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
+                                u8 active_sew, bool store)
+{
+	// No attribution for generic pointer ops, multi-member frames or unannotated
+	// producers. In particular, state reads/publications remain unrelated host PCs.
+	if (!rvv_typed_chunk_open || native_memory_pc == qir::RVVRunMember::PC_UNUSED) return;
+	u32 const opcode = native_memory_raw & 0x7f;
+	if (opcode != (store ? 0x27u : 7u) || ((native_memory_raw >> 26) & 0x3f) != 0 ||
+	    !(native_memory_raw & (1u << 25)) || ((native_memory_raw >> 20) & 31))
+		Panic("qemit: native memory annotation is not ordinary unmasked unit stride");
+	u8 const eew = (u8)(1u << (rv32::eew_log2_from_width((native_memory_raw >> 12) & 7) - 3));
+	native_memory_sites.push_back({(u32)j.offset(), native_memory_pc, native_memory_raw,
+	    disp, base_offs, bytes, eew, ArchTraits::AX, data_reg,
+	    (u8)(active_sew ? 7 : 0xff), store});
+}
+
 void QEmit::Emit_vchunkload(qir::InstVChunkLoad *ins)
 {
 	// Accounted like every other typed body op, so `end`'s shape check covers the whole frame.
@@ -4561,12 +4581,14 @@ void QEmit::Emit_vchunkload(qir::InstVChunkLoad *ins)
 	mem.setSize(load_bytes);
 	if (ins->active_sew) {
 		EvexOnly(j);
+		NoteNativeMemorySite(ins->base_state_offs, ins->disp, load_bytes, vrd.GetPVPR(), ins->active_sew, false);
 		if (ins->active_sew == 4)
 			j.k(x86::k7).z().vmovdqu32(make_vpr(vrd), mem);
 		else
 			j.k(x86::k7).z().vmovdqu64(make_vpr(vrd), mem);
 		return;
 	}
+	NoteNativeMemorySite(ins->base_state_offs, ins->disp, load_bytes, vrd.GetPVPR(), 0, false);
 	j.vmovdqu64(make_vpr(vrd), mem);
 }
 
@@ -4967,12 +4989,14 @@ void QEmit::Emit_vchunkstore(qir::InstVChunkStore *ins)
 	mem.setSize(store_bytes);
 	if (ins->active_sew) {
 		EvexOnly(j);
+		NoteNativeMemorySite(ins->base_state_offs, ins->disp, store_bytes, vdata.GetPVPR(), ins->active_sew, true);
 		if (ins->active_sew == 4)
 			j.k(x86::k7).vmovdqu32(mem, make_vpr(vdata));
 		else
 			j.k(x86::k7).vmovdqu64(mem, make_vpr(vdata));
 		return;
 	}
+	NoteNativeMemorySite(ins->base_state_offs, ins->disp, store_bytes, vdata.GetPVPR(), 0, true);
 	j.vmovdqu64(mem, make_vpr(vdata));
 }
 
