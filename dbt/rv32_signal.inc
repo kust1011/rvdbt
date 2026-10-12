@@ -97,6 +97,12 @@ bool ukernel::DeliverHelperSignal(CPUState *state, MemoryFaultSnapshot const &sn
 	using namespace rv32_signal;
 	auto *ut=state->GetUThread();
 	auto const action=ut->signal_actions[10];
+	// Host-copy capture preserves SIGBUS/code; guest host-fault delivery is unimplemented.
+	if (snapshot.event.origin == MemoryFaultEvent::Origin::HostCopy) {
+		fprintf(stderr,"RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=%d code=%d\n",
+		        snapshot.event.host_signal, snapshot.event.host_code);
+		return false;
+	}
 	// This entry is only reached after helper scopes and the FP bracket have closed.
 	if (snapshot.event.origin!=MemoryFaultEvent::Origin::PredictedHelper ||
 	    (snapshot.event.access!=MemoryFaultEvent::Access::Load &&
