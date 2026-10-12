@@ -6,6 +6,30 @@ The validation has two separate responsibilities: external test programs check
 instruction behavior, while the runner checks that the intended program ran and
 that failures propagate. Passing the runner's unit tests is not ISA coverage.
 
+## Implemented fixes and their regression results
+
+The delivery branch adds checked vector-memory helpers and synchronous fault
+delivery. The following records distinguish complete replay campaigns from
+affected-family regressions; they must not be pooled as one executable's tests.
+
+| Executable (SHA256 prefix) | External executions | Checked forms and scope | Records |
+|---|---|---|---|
+| `533443050f4d` | CHIPS: 11,532 positive + 212 failure controls | 595 forms under each of B/M1/M2/Both | [CHIPS](rvv-validation/current-production-task120/README.md) |
+| `533443050f4d` | ACT: 7,668 passing executions | 590 forms per configuration; two original reference-blocked files excluded | [ACT](rvv-validation/current-production-task121/README.md) |
+| `533443050f4d` | Ara: 1,888 complete-file passes + 16 accepted case subsets | 422 forms per configuration; original MAC failures remain failures outside the accepted subset | [Ara](rvv-validation/current-production-task122/README.md) |
+| `8220339e6d74` | CHIPS: 1,948; ACT: 3,828; Ara: 128; all pass | Memory-only regression: 278 forms in CHIPS/ACT, 111 in Ara | [Checked-copy integration](rvv-validation/production-task125/README.md) |
+| `ed980270b6d6` | Eight retained exit-only signal/control executions pass | Helper delivery and later fault-only-first control, not all-form or restart coverage | [Signal integration](rvv-validation/helper-signal-task126/README.md) |
+
+The checked-copy integration also has a production-linked host test (142 checks).
+The signal integration has 1,792 local interface checks. These local tests verify
+the installed host handler, frame fields and boundary behavior, not additional
+external instruction-form coverage. General native fault-state recovery and
+complete guest-handler return/restart remain open in issue #1.
+
+The full source/checker bindings remain in the per-form navigation below. Each
+campaign guide identifies its executable and original checker; the performance
+results belong to a separate executable and are unchanged by this work.
+
 ## Test suites and checkers
 
 The table describes the accepted campaigns, not everything each upstream suite

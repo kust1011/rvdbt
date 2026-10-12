@@ -36,6 +36,8 @@ replaces that architecture.
 ## RVV correctness tests: start here
 
 Read [which external suites test which behaviors, and what each script does](docs/rvv-validation.md#test-suites-and-checkers).
+The [fixes and regression summary](docs/rvv-validation.md#implemented-fixes-and-their-regression-results)
+separates full external replays, affected-memory regressions and local signal checks.
 The suite tests are distinct from Python unit tests of the runner. The current
 inventory has 595 applicable instruction forms with result-checked records;
 this is not exhaustive coverage of every form's configurations and fault behavior.

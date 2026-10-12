@@ -1,5 +1,21 @@
 # Linux RV32 signal interface increment (Refs #1)
 
+## Current implementation
+
+Checked helpers cover ordinary unit-stride, strided, indexed and segment memory,
+mask memory, whole-register memory and fault-only-first operations, with each
+operation retaining its own extent and fault rules. Predicted permission failures
+and owned checked-copy host faults enter the dispatcher with a recorded element
+prefix and fault location. SIGSEGV and SIGBUS actions are supported for these
+synchronous sources. See [the current signal integration](../helper-signal-task126/README.md)
+and [checked-copy integration](../production-task125/README.md) for tests and code.
+
+Native/bulk/gather host faults outside this boundary and complete guest restart
+remain unresolved. The sections below are retained design history with their
+original build identities, not a list of the current implementation's omissions.
+
+## Initial signal-interface increment
+
 `rt_sigaction` now installs a guest SIGSEGV action instead of returning success
 from a stub. The supported delivery ingress is a predicted element-zero FOF
 load denial from `rvv_ref::load_fault_only_first`. General native load/store
