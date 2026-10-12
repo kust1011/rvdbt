@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "repository": "https://github.com/kust1011/rvdbt",
+  "reviewed_delivery_commit": "52ac8bec5a4b359a9260b2c65c548b705b53fbc4",
+  "release_tag": "rvv-act-db2-20261012",
+  "public_asset_url": "https://github.com/kust1011/rvdbt/releases/download/rvv-act-db2-20261012/act-db2-task110.tar.gz",
+  "authentication_used": false,
+  "archive_bytes": 445180486,
+  "archive_sha256": "4597c521427b2cd9e6bfda04a5a717e3e2a50a17854e307144b2c190e24526bc",
+  "extracted_files": 128102,
+  "extracted_payload_bytes": 5603335189,
+  "offline_checker": {
+    "status": "PASS",
+    "files_verified": 128101,
+    "source_outputs": 1919,
+    "Task104_prior_join": 1,
+    "Task109_results": {
+      "PASS": 1916,
+      "REFERENCE_ERROR": 2
+    },
+    "signature_roundtrips": 1918,
+    "DUT_receipts": 7664,
+    "reference_receipts": {
+      "Sail:PASS": 1918,
+      "QEMU:PASS": 1916,
+      "QEMU:REFERENCE_ERROR": 2
+    },
+    "diagnostic_failed_QEMU_receipts": 2,
+    "compiled_target_labels": 483103,
+    "archived_target_arm_reach_tuples": 1932412,
+    "original_compiled_checker_macros": {
+      "RVTEST_SIGUPD_V": 669484,
+      "RVTEST_SIGUPD_V_LEN": 114729,
+      "RVTEST_SIGUPD_VXSAT": 21628,
+      "RVTEST_SIGUPD": 1494,
+      "RVTEST_SIGUPD_FFLAGS": 89449
+    },
+    "full_raw_files_indexed": 13684,
+    "full_raw_files_verified": 0,
+    "new_guest_calls": 0,
+    "optimized_target_admission": "NOT_ESTABLISHED",
+    "limitation": "Frozen original signature processing and raw-summary predicates verified; host does not execute architectural checker or recompute TB reach. Exact full raw is separately indexed."
+  },
+  "package_unmodified": true,
+  "prior_release_unchanged": true
+}

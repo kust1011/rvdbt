@@ -25,19 +25,47 @@ The accepted form union stays **595**. The retained clean961 executable/library
 and tool identities are in `records/LAUNCH_REGISTRATION.json`; these receipts do
 not transfer to newer builds.
 
-The inspection archive is staged at
-`xbd:/home/vick/rvv-task110/act-db2-task110.tar.gz`. It has no new public Release
-URL. [ARCHIVE.json](ARCHIVE.json) gives its measured size and SHA256. Obtain it
-from that host, then inspect on any Python 3.9+ machine:
+The unchanged inspection archive is published in
+[Release rvv-act-db2-20261012](https://github.com/kust1011/rvdbt/releases/tag/rvv-act-db2-20261012)
+in [kust1011/rvdbt](https://github.com/kust1011/rvdbt), tagged at reviewed delivery
+commit `52ac8bec5a4b359a9260b2c65c548b705b53fbc4`. The original host copy remains
+`xbd:/home/vick/rvv-task110/act-db2-task110.tar.gz`.
+[ARCHIVE.json](ARCHIVE.json) retains Task110's historical staging record;
+[PUBLIC_ACCEPTANCE.json](PUBLIC_ACCEPTANCE.json) records Task111's actual public
+verification. Download and inspect on a Python 3.9+ machine without GitHub login:
 
 ```sh
-scp xbd:/home/vick/rvv-task110/act-db2-task110.tar.gz .
+mkdir act-db2-download
+cd act-db2-download
+curl -q --fail --location --no-netrc -o act-db2-task110.tar.gz \
+  https://github.com/kust1011/rvdbt/releases/download/rvv-act-db2-20261012/act-db2-task110.tar.gz
+curl -q --fail --location --no-netrc -o SHA256SUMS \
+  https://github.com/kust1011/rvdbt/releases/download/rvv-act-db2-20261012/SHA256SUMS
+sha256sum --check SHA256SUMS
 mkdir act-db2-inspection
 tar xzf act-db2-task110.tar.gz -C act-db2-inspection
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/verify_rvv_act_db2.py act-db2-inspection
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/test_rvv_act_db2.py act-db2-inspection
-python3 scripts/verify_rvv_act_db2.py act-db2-inspection --case Vls8-vluxei8.v
+PYTHONDONTWRITEBYTECODE=1 python3 act-db2-inspection/tools/verify_rvv_act_db2.py act-db2-inspection
 ```
+
+For replay, obtain the corrected `scripts/replay_rvv_act_db2.py` from repository
+commit `4e80ff3c8bb9fd5446893774d2fa87514b532c13` or later on
+`delivery/rvv-validation-20261012`. The original archive is intentionally unchanged:
+its exported replay script has a Python receipt newline escaping defect, fixed in
+that repository commit. The package-delivered offline checker is unaffected.
+Task110's packaged README remains the original prepublication record.
+
+Task111 downloaded all three release assets without authentication into new
+`xbd:/home/vick/rvv-task111/public-download/`. The archive returned HTTP200,
+445,180,486 bytes, and SHA256
+`4597c521427b2cd9e6bfda04a5a717e3e2a50a17854e307144b2c190e24526bc`.
+Fresh extraction contained 128,102 files and 5,603,335,189 payload bytes.
+The package-delivered offline checker passed with empty stderr: 128,101 manifested
+files, 1,918 signature roundtrips, 7,664 DUT receipts, 3,836 primary reference
+receipts and two preserved failed QEMU diagnostics. It ran zero guests and did
+not fetch any tools. The 13,684 excluded full-raw files were indexed only;
+`full_raw_files_verified=0` in this public inspection. Prior release
+`rvv-validation-20261012` and its assets remained unchanged.
+
 
 The index has all 1,919 outputs, including a distinct Task104 prior row, with
 source/checker/config hashes, geometry, original testplan line and c3e comparison
@@ -102,8 +130,8 @@ blocked both whole files before DUT; they have zero DUT calls and are not PASS.
 The missing upstream EFFEW32 `vfwcvt.f.f.v` input and privileged vset obligations
 remain separately unverified. Broader fault decisions belong to main review.
 
-For a future explicitly requested single-case replay, export the archived
-commands using local tool locations:
+To repeat a single case, use the corrected repository exporter and local tool
+locations (the output directory must be new):
 
 ```sh
 python3 scripts/replay_rvv_act_db2.py act-db2-inspection \
@@ -125,8 +153,26 @@ A replay with changed tools is a new identity, not verification of these receipt
 Blocked cases export only their historical reference steps and stop at original
 QEMU failure. Task104 is deliberately excluded from this exporter.
 
-This is a new Task110 command export, **not retroactively the script used for
-Task109**. Old raw runners are unchanged and still document their historical
+Task111 exercised this interface for the original `Vls8-vluxei8.v` in new
+`xbd:/home/vick/rvv-task111/replay-attempt1` and `replay-attempt2` directories.
+Attempt1 exported eight commands but stopped after reference compilation with
+`SyntaxError: unterminated string literal` in the receipt writer: one compiler
+call, zero guest calls. Its script and output are preserved. After the general
+exporter fix, attempt2 completed all eight commands: two compiler calls and six
+guest calls (Sail, QEMU, B/M1/M2/Both), all exit0/no-timeout and original predicates
+PASS. The freshly processed expected bytes match the frozen expected; original
+source/checker/inputs and tool pins are unchanged. Pre-execution tool pin check and
+independent post-execution pin/raw checks passed. [REPLAY_CALLS.json](REPLAY_CALLS.json)
+records exact export/execute calls; [REPLAY_ACCEPTANCE.json](REPLAY_ACCEPTANCE.json)
+records outputs and identities. The updated focused exporter test parses all
+embedded Python in both PASS and blocked-case scripts and passed; no full suite
+or the eleven-test host suite was rerun. This is **repeat validation of tooling**,
+with zero new semantic coverage; archived counts and form union595 are unchanged.
+Actual guest commands/output, both attempts and publication/download logs remain
+`xbd:/home/vick/rvv-task111/`.
+
+This is a new Task110 command export with a Task111 interface fix,
+**not retroactively the script used for Task109**. Old raw runners are unchanged and still document their historical
 absolute paths; do not run `execute109.py batch` or delete receipts to manufacture
 new work. No guest suites were rerun for this delivery, and no production,
 thesis/status, public Release, push or email change is part of Task110.

@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "case": "Vls8-vluxei8.v",
+  "pre_pin_check": "exported script before any command",
+  "post_pins": {
+    "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+    "/home/vick/ara-clean961-stage/elfrun": "6fda0f9ab06c2c824b5301d1f302b76799842981b00a88fffa85fe43f1dbd84f",
+    "/home/vick/ara-clean961-stage/libdbtjitshared.so": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d",
+    "/home/vick/rvv_qemu_compare_20260930/bin/qemu-riscv32": "fc69c3332977459ee844d5e25f3386f7bff1061e4ff4adf0343f864571d13fa9",
+    "/home/vick/rvv-task109/producer/framework/src/act/sig_modify.py": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5"
+  },
+  "replay_input_hashes": {
+    "records/common/reference_config/link.ld": "fa3b9053ea81c62d15807d0dff7be9e181256dbe1e6acae42c9a46cd033cf584",
+    "records/common/reference_config/rvmodel_macros.h": "01b13a4fa943396760923e6482fa548e705987cb4b890c3664fb41566044d531",
+    "records/common/reference_config/rvtest_config.h": "8f777b2d0cdd24d12dd5ce32f04b524a18d783631011bc4e9d8b4c3420adf760",
+    "records/common/reference_config/rvtest_config.svh": "0b2f06a55f1e5a6627b6711fe924f4e882258bdc3425d4403dcb2d52db7d1b5f",
+    "records/common/reference_config/sail-rv32-max-clang.yaml": "b0346c4dca5cd8b9bec3516b5b7f016728e1c6185b0224b34e52d0411fbcd69d",
+    "records/common/reference_config/sail.json": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748",
+    "records/common/reference_config/sig_modify.py": "1427bce89a2272f41184fea8777dc2a5ba34a64e918ac26ec1d5d044afe2e39d",
+    "records/common/upstream/env/c_test.h": "121024adeab9b4d9d8a4d0bfc1c99b1386efb65369a9801cdf1fa0267e926c8b",
+    "records/common/upstream/env/c_test_start.S": "6fe0b1f1367beb36bc39ec1780315077676b0e1586be97d43dca3a234fcc5245",
+    "records/common/upstream/env/c_test_support.c": "cb19a1e1c48fc680089cf07ad24077e5f05d180687fc4fec10a09cf6be1134fd",
+    "records/common/upstream/env/check_defines.h": "cfb720f95cf133028b42c2834d8c633ff9909bb59d2386d05c6b9916581345cf",
+    "records/common/upstream/env/derived_config.h": "e842eee627e50df957e80054a27544d6b2073b15283452ea4cf33c379d41604b",
+    "records/common/upstream/env/derived_config.svh": "6645a3c6d7a08b2e75d823e5f923cc90c3fc4302781ae467b980af6d6e128614",
+    "records/common/upstream/env/encoding.h": "a1047813971b83fcce4b6701b244a0d9552287e53a21774defc1aa96e31820dc",
+    "records/common/upstream/env/riscv_arch_test.h": "63c2ddc0f887629d313f6613792676ac20233ab01a45b75cbbde347ad1b4ed5f",
+    "records/common/upstream/env/rvtest_failure_code.h": "897d96d100d93fcb5b0924a9c0bcf8a077e7e79b9ff6320b15f5f9a6fdb5ae26",
+    "records/common/upstream/env/rvtest_macros.h": "8488ba93d99c0213b9b3ce6a0f149ebda870ef7ce8aa17f4cac6f1beb731ba3f",
+    "records/common/upstream/env/rvtest_macros_hypervisor.h": "808b3ee1d916b0f6fdcdb5f22e2f4d10e4fc1a9058b8f2c51d73258e5396427f",
+    "records/common/upstream/env/rvtest_macros_vector.h": "7cf5e8e890de7fe44d6653b2e9d19fb571793cd5060ae8d4fadda3f98cbf1633",
+    "records/common/upstream/env/rvtest_pmp_macros.h": "fa38a9b79bf703dfb16bcda858dbd7afd2be79b79efd334fe7a0feba2642813b",
+    "records/common/upstream/env/rvtest_setup.h": "96d5131fb4556191460428d9d150505bb1e546cbbe790196f26f091ea6b2df59",
+    "records/common/upstream/env/rvtest_trap_handler.h": "0fd14058f26db6ef26c5ed1f36f60044e0b90c9c875f0e9cee229ce6f1e85f22",
+    "records/common/upstream/env/sail_macros.h": "6822e11339a42b08f7137e2e93c7ad24d9918b1f1cb807d299bf15968675cf27",
+    "records/common/upstream/env/signature.h": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "records/common/upstream/env/utils.h": "a3d861a14e716df7486aec24c2f113934b1733edf1f1db2c9b2c65ed2017be78",
+    "records/common/user_env/c_test.h": "121024adeab9b4d9d8a4d0bfc1c99b1386efb65369a9801cdf1fa0267e926c8b",
+    "records/common/user_env/c_test_start.S": "6fe0b1f1367beb36bc39ec1780315077676b0e1586be97d43dca3a234fcc5245",
+    "records/common/user_env/c_test_support.c": "cb19a1e1c48fc680089cf07ad24077e5f05d180687fc4fec10a09cf6be1134fd",
+    "records/common/user_env/check_defines.h": "cfb720f95cf133028b42c2834d8c633ff9909bb59d2386d05c6b9916581345cf",
+    "records/common/user_env/derived_config.h": "e842eee627e50df957e80054a27544d6b2073b15283452ea4cf33c379d41604b",
+    "records/common/user_env/derived_config.svh": "6645a3c6d7a08b2e75d823e5f923cc90c3fc4302781ae467b980af6d6e128614",
+    "records/common/user_env/encoding.h": "a1047813971b83fcce4b6701b244a0d9552287e53a21774defc1aa96e31820dc",
+    "records/common/user_env/riscv_arch_test.h": "63c2ddc0f887629d313f6613792676ac20233ab01a45b75cbbde347ad1b4ed5f",
+    "records/common/user_env/rvmodel_macros.h": "248dbff96308e230ed0f4965e75616b1a9314bb667e1064d1924f7799eb52ebf",
+    "records/common/user_env/rvtest_failure_code.h": "897d96d100d93fcb5b0924a9c0bcf8a077e7e79b9ff6320b15f5f9a6fdb5ae26",
+    "records/common/user_env/rvtest_macros.h": "8488ba93d99c0213b9b3ce6a0f149ebda870ef7ce8aa17f4cac6f1beb731ba3f",
+    "records/common/user_env/rvtest_macros_hypervisor.h": "808b3ee1d916b0f6fdcdb5f22e2f4d10e4fc1a9058b8f2c51d73258e5396427f",
+    "records/common/user_env/rvtest_macros_vector.h": "7cf5e8e890de7fe44d6653b2e9d19fb571793cd5060ae8d4fadda3f98cbf1633",
+    "records/common/user_env/rvtest_pmp_macros.h": "fa38a9b79bf703dfb16bcda858dbd7afd2be79b79efd334fe7a0feba2642813b",
+    "records/common/user_env/rvtest_setup.h": "96d5131fb4556191460428d9d150505bb1e546cbbe790196f26f091ea6b2df59",
+    "records/common/user_env/rvtest_trap_handler.h": "0fd14058f26db6ef26c5ed1f36f60044e0b90c9c875f0e9cee229ce6f1e85f22",
+    "records/common/user_env/sail_macros.h": "6822e11339a42b08f7137e2e93c7ad24d9918b1f1cb807d299bf15968675cf27",
+    "records/common/user_env/signature.h": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "records/common/user_env/utils.h": "a3d861a14e716df7486aec24c2f113934b1733edf1f1db2c9b2c65ed2017be78",
+    "records/common/user_link.ld": "7690d7c323a39623489079872d51e4142faab8a219b86f895980893af45b6cbe",
+    "records/producer/framework/src/act/sig_modify.py": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5"
+  },
+  "receipts": [
+    {
+      "label": "compile-reference",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "not a guest",
+      "stdout_bytes": 0,
+      "stderr_bytes": 290
+    },
+    {
+      "label": "sail-signature",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "PASS",
+      "stdout_bytes": 172,
+      "stderr_bytes": 91
+    },
+    {
+      "label": "compile-user",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "not a guest",
+      "stdout_bytes": 0,
+      "stderr_bytes": 290
+    },
+    {
+      "label": "qemu-selfcheck",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "PASS",
+      "stdout_bytes": 0,
+      "stderr_bytes": 59
+    },
+    {
+      "label": "DUT-B",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "PASS",
+      "stdout_bytes": 0,
+      "stderr_bytes": 1526
+    },
+    {
+      "label": "DUT-M1",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "PASS",
+      "stdout_bytes": 0,
+      "stderr_bytes": 2598
+    },
+    {
+      "label": "DUT-M2",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "PASS",
+      "stdout_bytes": 0,
+      "stderr_bytes": 1526
+    },
+    {
+      "label": "DUT-BOTH",
+      "result": {
+        "returncode": 0,
+        "timeout": false
+      },
+      "original_predicate": "PASS",
+      "stdout_bytes": 0,
+      "stderr_bytes": 2598
+    }
+  ],
+  "new_guest_calls": 6,
+  "reference_calls": 2,
+  "DUT_calls": 4,
+  "failed_attempt1_guest_calls": 0,
+  "repeat_tool_validation": true,
+  "new_semantic_coverage": 0
+}

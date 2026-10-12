@@ -1,0 +1,56 @@
+[
+  {
+    "attempt": 1,
+    "export": [
+      "python3",
+      "/home/vick/rvv-task110/clean-extraction/tools/replay_rvv_act_db2.py",
+      "/home/vick/rvv-task110/clean-extraction",
+      "--case",
+      "Vls8-vluxei8.v",
+      "--output",
+      "/home/vick/rvv-task111/replay-attempt1",
+      "--sail",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+      "--qemu",
+      "/home/vick/rvv_qemu_compare_20260930/bin/qemu-riscv32",
+      "--stage",
+      "/home/vick/ara-clean961-stage",
+      "--clang",
+      "/usr/bin/clang-22"
+    ],
+    "execute": [
+      "sh",
+      "/home/vick/rvv-task111/replay-attempt1/replay.sh"
+    ],
+    "shell_exit": 1,
+    "compiler_calls": 1,
+    "guest_calls": 0
+  },
+  {
+    "attempt": 2,
+    "export": [
+      "python3",
+      "/home/vick/rvv-task111/replay_rvv_act_db2.py",
+      "/home/vick/rvv-task110/clean-extraction",
+      "--case",
+      "Vls8-vluxei8.v",
+      "--output",
+      "/home/vick/rvv-task111/replay-attempt2",
+      "--sail",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+      "--qemu",
+      "/home/vick/rvv_qemu_compare_20260930/bin/qemu-riscv32",
+      "--stage",
+      "/home/vick/ara-clean961-stage",
+      "--clang",
+      "/usr/bin/clang-22"
+    ],
+    "execute": [
+      "sh",
+      "/home/vick/rvv-task111/replay-attempt2/replay.sh"
+    ],
+    "shell_exit": 0,
+    "compiler_calls": 2,
+    "guest_calls": 6
+  }
+]
