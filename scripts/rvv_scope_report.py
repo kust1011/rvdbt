@@ -243,6 +243,106 @@ def write_navigation(index, output):
     (output / 'families.md').write_text('\n'.join(lines)+'\n')
 
 
+def chips_replay(index, raw, original_manifest, output, original_runner=None):
+    """Join a new build's receipts to retained CHIPS selectors and predicates."""
+    from collections import Counter, defaultdict
+    from rvv_tests import load_manifest, classify
+    original = load_manifest(original_manifest)
+    manifest = load_manifest(raw / 'manifest.json')
+    if manifest['cells'] != original['cells'] or manifest['timeout_seconds'] != original['timeout_seconds']:
+        raise ValueError('original CHIPS cells/ELFs/inputs/predicates changed')
+    cells = {c['id']: c for c in manifest['cells']}
+    invocation = json.loads((raw / 'invocation.json').read_text())
+    summary = json.loads((raw / 'summary.json').read_text())
+    if invocation['manifest_sha256'] != digest(raw / 'manifest.json'):
+        raise ValueError('invoked manifest identity mismatch')
+    if original_runner is not None and invocation['runner_sha256'] != digest(original_runner):
+        raise ValueError('original runner identity mismatch')
+    if set(invocation['selected_cases']) != set(cells) or not summary['candidate_unchanged']:
+        raise ValueError('incomplete selection or changed candidate')
+    build = manifest['candidate']['build']
+    identities = invocation['engine_files_before']
+    if identities != summary['engine_files_after'] or not set(build.values()) <= set(identities.values()):
+        raise ValueError('candidate identity mismatch')
+    results = json.loads((raw / 'results.json').read_text())
+    if len(results) != len(cells) or {r['id'] for r in results} != set(cells):
+        raise ValueError('missing/duplicate result')
+    selectors = defaultdict(list)
+    for row in index['packages']['CHIPS']['records']:
+        if row['candidate'] == 'clean961':
+            selectors[row['cell_id']].append(row)
+    bindings = defaultdict(list)
+    for b in index['canonical_bindings']:
+        if b['suite'] == 'CHIPS' and b['candidate'] == 'clean961':
+            bindings[b['elf_sha256'], b['arm'], b['source_case']].append(b)
+    records = []
+    statuses = Counter()
+    control_statuses = Counter()
+    positive_statuses = Counter()
+    for r in results:
+        cell = cells[r['id']]
+        directory = raw / r['id']
+        if json.loads((directory / 'case.json').read_text()) != cell or json.loads((directory / 'result.json').read_text()) != r:
+            raise ValueError('receipt/cell mismatch: ' + r['id'])
+        stdout, stderr = (directory / 'stdout').read_bytes(), (directory / 'stderr').read_bytes()
+        if digest(directory / 'stdout') != r['stdout_sha256'] or digest(directory / 'stderr') != r['stderr_sha256']:
+            raise ValueError('stream identity: ' + r['id'])
+        status = classify(r['returncode'], stdout, cell, timed_out=r['status'] == 'TIMEOUT', error=r['error'])
+        if status != r['status'] or r['elf_sha256'] != cell['elf_sha256'] or r['control'] != cell['control']:
+            raise ValueError('original predicate/result mismatch: ' + r['id'])
+        command = json.loads((directory / 'command.json').read_text())
+        if command[0] not in identities or identities[command[0]] != build['stage/elfrun']:
+            raise ValueError('command executable identity')
+        if command[1:] != [f.replace('{WORK}', str(directory / 'work')) for f in cell['flags']]:
+            # Downloaded receipts retain the original remote work path.
+            remote_work = next(f[len('--fsroot='):-len('/fs')] for f in command if f.startswith('--fsroot='))
+            if command[1:] != [f.replace('{WORK}', remote_work) for f in cell['flags']]:
+                raise ValueError('original flags changed: ' + r['id'])
+        statuses[status] += 1
+        (control_statuses if cell['control'] else positive_statuses)[status] += 1
+        if not selectors[r['id']]:
+            raise ValueError('missing original source selector: ' + r['id'])
+        for n in selectors[r['id']]:
+            if n['elf_sha256'] != cell['elf_sha256'] or n['VLEN'] != str(cell['vlen']):
+                raise ValueError('source selector ELF/configuration mismatch')
+            matches = [b for b in bindings[cell['elf_sha256'], n['arm'], n['case']]
+                       if n['form'] in b['result_checked_forms'].split(';') and json.loads(b['flags_json']) == cell['flags']]
+            if not cell['control'] and not matches:
+                raise ValueError('missing retained target/checker binding: ' + str(n))
+            records.append(dict(n, candidate=manifest['candidate'].get('production_head', build['stage/elfrun']),
+                                prior_candidate=n['candidate'], prior_receipt=n['receipt'], receipt=str(directory),
+                                result=status, returncode=r['returncode'], flags_json=json.dumps(cell['flags']),
+                                executable_sha256=build['stage/elfrun'], library_sha256=build['stage/libdbtjitshared.so'],
+                                checker=r['checker'], original_bindings_json=json.dumps(matches, sort_keys=True)))
+    forms = []
+    for f in index['forms']:
+        rows = [r for r in records if r['form'] == f['form'] and r['control'] == 'False']
+        passed = [r for r in rows if r['result'] == 'PASS']
+        forms.append(dict(form=f['form'], applicability=f['applicability'], family=f['family'],
+                          source_cases=sorted({r['batch'] + '/' + r['case'] for r in rows}),
+                          tested_configurations=sorted({(r['arm'], int(r['VLEN'])) for r in rows}),
+                          checked=bool(passed), counts=dict(Counter(r['result'] for r in rows)),
+                          receipts=sorted({r['receipt'] for r in rows})))
+    checked = sorted(f['form'] for f in forms if f['checked'])
+    by_arm = defaultdict(Counter)
+    for r in results:
+        by_arm[cells[r['id']]['aliases'][0]['arm']][r['status']] += 1
+    result = dict(candidate=manifest['candidate'], counts=dict(statuses), positive_counts=dict(positive_statuses),
+                  control_counts=dict(control_statuses), total=len(cells), unattempted=0,
+                  counts_by_arm={arm: dict(counts) for arm, counts in by_arm.items()},
+                  checked_union=checked, checked_union_count=len(checked), per_form=forms,
+                  inputs={str(p): digest(p) for p in (original_manifest, raw/'manifest.json', raw/'invocation.json', raw/'results.json')},
+                  scope='New-build original CHIPS predicates only; source setup is not runtime geometry or per-PC admission; fault/restart and complete semantic obligations remain separate.')
+    if original_runner is not None:
+        result['inputs'][str(original_runner)] = digest(original_runner)
+    output.mkdir(parents=True, exist_ok=False)
+    with (output / 'replay-receipts.csv').open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, list(records[0]), lineterminator='\n')
+        writer.writeheader(); writer.writerows(records)
+    (output / 'scope.json').write_text(json.dumps(result, indent=2) + '\n')
+    return result
+
+
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
@@ -255,6 +355,9 @@ def main():
     p.add_argument('--candidate')
     p.add_argument('--arm')
     p.add_argument('--navigation', type=Path, help='select from compressed original-case index')
+    p.add_argument('--chips-replay', type=Path, help='audit new-build raw with retained CHIPS selectors')
+    p.add_argument('--original-manifest', type=Path, help='unchanged sealed CHIPS manifest')
+    p.add_argument('--original-runner', type=Path, help='retained unchanged CHIPS runner')
     p.add_argument('--canonical-manifest', type=Path, help='pin canonical Task90 generation inputs')
     p.add_argument('--all-records', action='store_true', help='index original Task90 and retained package selectors')
     for label in ('chips', 'act', 'act-db2', 'ara'):
@@ -264,6 +367,15 @@ def main():
                               ('ACT-db2', a.act_db2_package), ('Ara', a.ara_package)] if v}
     if a.navigation:
         import gzip
+        if a.chips_replay:
+            if not a.original_manifest or not a.original_runner:
+                p.error('--chips-replay requires --original-manifest and --original-runner')
+            index = json.loads(gzip.decompress(a.navigation.read_bytes()))
+            result = chips_replay(index, a.chips_replay, a.original_manifest, a.output, a.original_runner)
+            result['inputs'][str(a.navigation)] = digest(a.navigation)
+            (a.output / 'scope.json').write_text(json.dumps(result, indent=2) + '\n')
+            print(json.dumps({k: result[k] for k in ('total', 'counts', 'checked_union_count', 'unattempted')}))
+            return
         if not a.form:
             p.error('--navigation requires --form')
         index = json.loads(gzip.decompress(a.navigation.read_bytes()))

@@ -1,0 +1,40 @@
+{
+  "total": 11744,
+  "positives": 11532,
+  "controls": 212,
+  "counts": {
+    "PASS": 11744
+  },
+  "counts_by_arm": {
+    "M1": {
+      "PASS": 2936
+    },
+    "M2": {
+      "PASS": 2936
+    },
+    "BOTH": {
+      "PASS": 2936
+    },
+    "B": {
+      "PASS": 2936
+    }
+  },
+  "actual_form_union": 595,
+  "actual_forms_per_arm": {
+    "B": 595,
+    "BOTH": 595,
+    "M1": 595,
+    "M2": 595
+  },
+  "failed": 0,
+  "timed_out": 0,
+  "unattempted": 0,
+  "blocked_retry_cases": 0,
+  "positive_source_case_aliases": 2886,
+  "positive_navigation_rows": 11544,
+  "all_navigation_rows": 11920,
+  "production_head": "4ae749fb63c09a53d8e158b51ab97064c4226b40",
+  "raw_remote": "xbd:/home/vick/chips-current120/raw",
+  "raw_local": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/chips-current120/raw",
+  "checker_scope": "New-build original CHIPS predicates only; source setup is not runtime geometry or per-PC admission; fault/restart and complete semantic obligations remain separate."
+}
