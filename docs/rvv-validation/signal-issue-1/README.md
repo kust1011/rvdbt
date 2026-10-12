@@ -39,6 +39,167 @@ syscall marshalling are outside this correction. Broad issue #1 remains open.
 Guest handler-return/restart, repaired-mapping and same-PC retry execution,
 including equivalents, remain prohibited and untested.
 
+## Task144 generic scalar memory boundary (design only)
+
+Recommendation: route ordinary RV32 integer memory instructions through one
+appended `rv32_scalar_memory` runtime stub and make their existing interpreter
+bodies, plus the four existing scalar FP bodies, use one checked 1/2/4/8-byte
+transfer. Reuse `hcall`, checked leaf ownership, pending events and the clean
+helper/dispatcher exit. This is the smallest general implementation for the
+current default QCG architecture; it requires no scalar recovery map, new QIR
+opcode, allocator redesign or signal/dispatcher rewrite. It is **not implemented**
+by this review. This refines the generic scalar implementation row in the
+Task140 table below without changing its open acceptance status. Task141
+corrected signal buffers, not these instruction bodies.
+
+Source base is `785253d7a224d883ea14fd7c56f91b7ddf06886b` on
+`fix/rvv-memory-families-issue-1`. Main's accepted143, published Task142 artifact,
+independent original-predicate replay and public delivery `05db3ca` are supplied
+handoff facts, not new results from this checkout. No build, guest/fault execution,
+corpus replay, packaging, publication or issue closure occurs in144.
+
+### Actual route and minimum file impact
+
+| Current code (line references at the source base) | Required change or reuse |
+|---|---|
+| `dbt/guest/rv32_qir.cpp:2357–2400`, integer bindings at15314–15321 | Replace ordinary `TranslateLoad/TranslateStore` vmload/vmstore construction with `Create_hcall(id_rv32_scalar_memory, raw)`. Pass the actual encoding, not just width/address. Existing translator macro at14745–14763 calls `PreSideeff` for MayTrap. Remove any ordinary-path bypass of the access. |
+| `dbt/guest/rv32_qir.cpp:15482–15485`, `TranslateHelper:2528–2532` | FLW/FLD/FSW/FSD already use their own registered H-call stubs. Retain those routes and their vector commit/reset boundary; no new FP stub is needed. Integer routing should use the same explicit `RvvCommit/ResetValues` discipline before its hcall. |
+| `dbt/guest/rv32_interp.cpp:179–192,245–252,2148–2158` | Change LB/LBU/LH/LHU/LW, SB/SH/SW and FLW/FLD/FSW/FSD bodies to a shared checked scalar transfer, stage loads and sources, and queue a value-only fault on failure. Define the new integer stub here; validate major/funct3 and dispatch to the eight existing H handlers so their PC/finish wrapper is reused. Place transfer/event functions before the scalar macros, rather than relying on the later RVV-only queue helper. Interpreter execution thereby uses the same boundary. |
+| `dbt/qmc/runtime_stubs.h:27` and `runtime_stubs.cpp:7–14` | Append **one** `X(rv32_scalar_memory)` at the end of RUNTIME_STUBS. Existing X-macro declarations/table populate it; no edits to runtime_stubs.cpp or eight new table entries are needed. Integer qcgstub symbols currently exist via HANDLER, but `guest/rv32_stubs.h` does not register those eight names. |
+| `dbt/ukernel.cpp:169–180`; layout tests such as `dbt/rv32_signal_frm_test.cpp` | Update measured size/offset tripwires after the embedded stub table grows. Do not guess new numbers: FPU offset and later offsets move, even if alignment absorbs some total-size growth. `guest/rv32_cpu.h:211–232` already hashes those offsets; `aot/aot_boot.cpp:371–389` rejects older signatures. A new build must reject pre-change AOT integer bodies; unchanged layout alone would not invalidate their unchecked code. |
+| `dbt/qmc/qir_ops.h:6`, `qcg/qra.cpp:988–1026,1108–1111`, `qcg/qemit.cpp:327–333` | Reuse SIDEEFF/HAS_CALLS hcall, `CallOp(true)` and `(CPUState*,raw)` emission. No production edits here. Leave vmload/vmstore emitters available for other internal users; globally marking them HAS_CALLS would not provide a checked transfer or precise event. |
+| `dbt/mmu.h:117–130`, `dbt/rvv_host_copy.cpp:75–113`, `dbt/ukernel.cpp:223–260,310–318`, `dbt/rv32_signal.inc:15–35,136 onward` | Reuse wrapped permission prediction, owned width-matched leaf transfer, queue/capture and frame delivery. No callback, dispatcher or frame-layout change is required for the helper recommendation. |
+
+The production core is three edited files (`rv32_qir.cpp`, `rv32_interp.cpp`,
+`runtime_stubs.h`), plus the required layout tripwires in `ukernel.cpp` and
+focused engineering tests/build registration. No new management framework.
+Widths/sign handling stay in the handlers: signed byte/halfword extension,
+unsigned extension, full 32-bit integer bits, FLW NaN boxing, FLD raw 64-bit bits,
+FSW low32 and FSD full64. FP register f0 remains a real destination; integer x0
+still performs the access and discards only a successful value. Explicitly skip
+integer destination writes for rd=0, including failure, rather than depending
+on incidental wrapper zeroing.
+
+Default-off stable-load substitution (`rv32_qir.cpp:2368–2373`) and CCRF scalar
+remainder-store suppression (`2386–2389`) bypass memory by construction. Route
+these instructions through the checked helper too, or refuse those diagnostic
+modes when this scalar contract is selected; do not retain them and advertise
+universal scalar fault coverage. This review recommends removing those bypasses
+from these two ordinary translators when implementing the boundary. RVV run
+scalar passthrough is ADDI/ADD/SUB only (`qemit.cpp:2244–2281`), not hidden scalar
+memory. RV32 compressed instructions are not added by this change (the current
+translator/wrapper advances by4). RV32A LR/SC/AMO bodies (`rv32_interp.cpp:2440–2515`)
+remain separate, including reservation, alignment and aq/rl obligations; checked
+load plus checked store is never an atomic implementation.
+
+### Transfer and state contract
+
+Compute EA as a u32 sum of the **old** rs1 and decoded immediate. Reset the
+checked-leaf fault record before permission prediction; otherwise LastFault can
+mislabel a predicted denial using an earlier transfer's captured host code.
+Call `mmu::FirstDenied(EA,width,store,denied)` for the complete field, then
+`rvv_host_copy::Copy(local,vmem,EA,width,store,denied)`. Do not use signal-buffer
+`CheckedRange`, which has nonwrapping pointer-buffer semantics. The existing
+MMU/Copy pair explicitly wraps split fields at RV32; this is the recommended
+scalar policy. It differs from the old raw contiguous host access near the top
+of the address space and must receive focused validation, not be claimed as
+unchanged measured behavior.
+
+On failure build `MemoryFaultEvent`: PredictedHelper with Unmapped/Protection
+from the denied byte's mapped bit, or HostCopy/HostFault with LastFault's supported
+signal/code; actual guest PC/raw, denied guest byte, Load/Store, width,
+`element=0,field=0,nf=1`. These scalar coordinates describe no RVV progress.
+Do **not** reuse `QueueOrdinaryMemoryFault:514–529` unchanged: it takes element
+from vector vstart. Do not modify vstart, VL, vtype, mask or vector bytes.
+Queue through `ukernel::QueueHelperMemoryFault`, then return from the body.
+
+PC preservation is already wired: `PreSideeff:2198–2218` writes this instruction's
+PC to CPUState; the HANDLER HBody at93–120 publishes gip and returns on
+MEMORY_FAULT **before** `gip +=4`. H at154–162 calls Finish only after the body
+returns; the new stub must enter those H wrappers, not call Impl directly and
+then overwrite ip. Queue also sets state->ip to event.pc. Successful instructions
+advance through the existing wrapper/translator rules.
+
+At hcall, `QRegAlloc::CallOp(true)` spills caller-clobbered GPRs, all live VPRs
+and every dirty guest global; `Spill/Release:311–363` make later accesses reload
+state. The call-free pin selection at645–709 refuses a region containing
+HAS_CALLS, so the new integer route cannot retain pinned GPRs across this call.
+Existing prior integer results and old load destination therefore reach CPUState
+before any checked leaf. Source rs1/rs2 are staged before destination writeback,
+including rd==rs1. Every load writes its GPR/FPR only after full transfer success;
+`Copy` itself stages split loads. Failure retains the old destination and other
+integer/FP registers. Scalar memory moves raise no new FP arithmetic flags.
+
+For LLVM vector SSA, `RvvSSAEnabled:6616–6620` and `RvvCommit:14710–14736` matter:
+PreSideeff commits integer memory, but treats all 0x07/0x27 as vector-owned, so
+scalar FP must retain TranslateHelper's explicit commit/reset. Use the same
+explicit barrier for the new integer helper. Spilling a VPR to a host frame is
+not architectural publication. Pure QCG has no such frontend vector SSA cache;
+completed vector bodies already publish CPUState. `FinishHelperMemoryFault:51–69`
+harvests earlier deferred FP flags and restores host MXCSR before RaiseTrap.
+Capture at `ukernel.cpp:242–260` rejects an open FP run and copies GPRs, FPR bits,
+vector bytes and CSRs after this clean boundary; delivery uses that snapshot.
+No scalar helper-owned C++ scope may be crossed by an early RaiseTrap or callback
+longjmp. Keep queue/return/finish ordering, rather than trapping inside Copy.
+
+Prediction refuses an entire denied store field before writes. Aligned fields
+use one width-matched leaf. Misaligned/wrapping stores split into bytes and an
+unexpected backing fault may leave a written prefix; there is no transactional
+rollback promise. Loads remain fully staged. The existing implementation accepts
+misaligned transfers; this design introduces no separate misalignment trap.
+Concurrent mapping/backing mutation is not pinned or made thread safe. These are
+explicit contract limits, not facts resolved by this source review.
+
+### Checked helper versus exact-site native recovery
+
+| Choice | Impact in this architecture | Normal-path cost / estimate |
+|---|---|---|
+| Recommended checked helper | One appended stub; shared transfer in existing handlers; frontend hcall and SSA barrier; existing signal callback and dispatcher unchanged. Also removes ordinary scalar native accesses from newly generated LLVM QIR: `llvmgen.cpp:1178–1204` emits hcall and globals are state-backed (`1505–1509`). This does not solve other LLVM/RVV native fault ownership. | Integer memory changes from native MOV/MOVSX/MOVZX to full publication, indirect helper call, permission probes (at most two pages for these widths), TLS arm/disarm, leaf call and later register reloads. Misaligned fields need up to8 leaf calls. FP already pays hcall/publication and adds checking/leaf cost. HAS_CALLS also disables call-free pinning/leaf eligibility in affected regions. No measured slowdown percentage. Estimated **3–5 engineering days** for implementation, layout/AOT gate updates and bounded host/translation validation, excluding external corpus, performance campaign and all prohibited execution. |
+| Exact-site native recovery | Generic vmload/vmstore currently emit unowned native instructions (`qemit.cpp:1394–1447`). They would need PC/raw/width/direction and address-location metadata, precise prior-state publication, old destination preservation, permission admission, owner arming, fault-site records and terminal cold exits. Keeping arbitrary register residency needs allocator state maps/reconstruction at every site; publishing everything first avoids maps but forfeits much of the hoped-for advantage. FP remains helper-based unless separately lowered. | Native access can remain on success, but guest permission checks/publication/arming still cost work. Accurate maps may reduce spill cost at the price of a larger change. Estimated **8–12 engineering days** for a conservative QCG-only version and its validation; arbitrary-residency maps, native FP and offline/LLVM registration would add work. No speedup is established. |
+
+Existing `NativeMemorySite` (`qmc/compile.h:16–29`) and
+`rvv_native_fault.cpp:32–109` are useful lifetime/ownership plumbing, not a ready
+scalar exception codec. The RVV scalar-loop form requires EDI address, ECX data,
+R8D element, specific geometry and a page-contained footprint; chunk form uses
+RAX and masks. Generic MOV allocation and crossing/misaligned accesses do not
+satisfy that contract. Native fault stub at111–138 writes **vector vstart**, and
+its raw fallback selects RVV checked operations. A scalar extension must add an
+explicit site kind and scalar terminal stub that preserves vector state, not
+pretend an ordinary instruction is a vector-loop lane. Cross-page/wrapping sites
+need checked fallback or a new footprint rule. Host permissions alone cannot
+reject a guest write-only load on x86.
+
+QCG publishes after relocation before execution (`qemit.cpp:78`,
+`execute.cpp:166–169`, `tcache/tcache.cpp:204–210`); owned records die at physical
+pool clearing (`tcache.cpp:223–260`). A scalar native option would change
+`qir.h/qir_ops.h` or equivalent site-bearing nodes, frontend, allocator, emitter,
+`compile.h`, `rvv_native_fault.cpp` and stub table/layout tripwires; runtime cache
+publication can reuse its current lifecycle if the extended record is retained.
+Offline CompilerRuntime's default publication hook is empty (`compile.h:36–37`),
+so offline/LLVM code does not acquire recovery just by emitting a site record.
+Permission and code-lifetime serialization remain current assumptions.
+
+### Small implementable next step and uncertainty
+
+Implement the shared checked transfer and switch **all twelve** scalar bodies,
+then add one integer dispatch stub and route the eight integer translators through
+it. Update measured ABI tripwires and confirm old AOT signatures are rejected.
+Keep the existing call/publication/finish chain. A focused follow-up should check
+translation has hcall and the actual PC/barrier, and use direct host transfer/body
+checks for widths, signs, boxing, x0, operand overlap, denied second page, stale
+LastFault, old destination/vector state and bounded captured backing failure.
+Those checks require separately authorized implementation work; none run here.
+Do not infer a complete QCG snapshot from a direct helper test: inspect emitted
+publication as well. No new external predicates or packaging are needed for this
+first implementation increment.
+
+Uncertainty remains in measured hot-loop cost, platform-specific partial-store
+behavior, wrapping-address compatibility and the compiled ABI numbers. This
+review supports the source architecture, not a runtime proof. No P4-04,
+repaired mapping, guest-handler return, same-PC retry or equivalent restart
+execution is authorized or performed; host codec checks are not guest restart
+proof. Guest continuation acceptance and broad issue #1 remain open.
+
 ## Current issue #1 acceptance on QCG (Task140, source audit only)
 
 This table supersedes the **current-work interpretation** of the historical
