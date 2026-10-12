@@ -1,0 +1,83 @@
+{
+  "configure": {
+    "rc": 0,
+    "stdout": "configure.stdout",
+    "stderr": "configure.stderr",
+    "last_line": "-- Build files have been written to: /home/vick/rvdbt-whole-native-task133/build"
+  },
+  "build.fix": {
+    "rc": 0,
+    "stdout": "build.fix.stdout",
+    "stderr": "build.fix.stderr",
+    "last_line": "[100%] Built target rv32_native_memory_fault_test"
+  },
+  "build.final": {
+    "rc": 0,
+    "stdout": "build.final.stdout",
+    "stderr": "build.final.stderr",
+    "last_line": "[100%] Built target rv32_native_memory_fault_test"
+  },
+  "build.test2": {
+    "rc": 0,
+    "stdout": "build.test2.stdout",
+    "stderr": "build.test2.stderr",
+    "last_line": "[100%] Built target rv32_whole_native_fault_test"
+  },
+  "build.test3": {
+    "rc": 0,
+    "stdout": "build.test3.stdout",
+    "stderr": "build.test3.stderr",
+    "last_line": "[100%] Built target rv32_whole_native_fault_test"
+  },
+  "whole": {
+    "rc": 0,
+    "stdout": "whole.stdout",
+    "stderr": "whole.stderr",
+    "last_line": "WHOLE_NATIVE_PASS checks=6184 terminal_cells=24 restart_NOT_verified"
+  },
+  "normal.complete": {
+    "rc": 0,
+    "stdout": "normal.complete.stdout",
+    "stderr": "normal.complete.stderr",
+    "last_line": "WHOLE_NATIVE_PASS checks=13330 terminal_cells=0 restart_NOT_verified"
+  },
+  "extra.final": {
+    "rc": 0,
+    "stdout": "extra.final.stdout",
+    "stderr": "extra.final.stderr",
+    "last_line": "WHOLE_NATIVE_PASS checks=1773 terminal_cells=6 restart_NOT_verified"
+  },
+  "ordinary": {
+    "rc": 0,
+    "stdout": "ordinary.stdout",
+    "stderr": "ordinary.stderr",
+    "last_line": "LOCAL_NATIVE_DISPATCH_PASS checks=6142 cells=40 ABI=a89957277993e0d9 (terminal inspection only, restart NOT verified)"
+  },
+  "llvm": {
+    "rc": 0,
+    "stdout": "llvm.stdout",
+    "stderr": "llvm.stderr",
+    "last_line": "LLVM_EXECUTE_PASS normal=8 denied=4 forced_fallback=4 checks=292 (no guest retry)"
+  },
+  "external": {
+    "rc": 0,
+    "stdout": "external.stdout",
+    "stderr": "external.stderr",
+    "last_line": "[{'case': 'Vls8-vl1re8.v', 'status': 'PASS'}, {'case': 'Vls8-vl1re64.v', 'status': 'PASS'}, {'case': 'Vls8-vs1r.v', 'status': 'PASS'}]"
+  },
+  "attempts": {
+    "build": {
+      "rc": 2,
+      "reason": "incorrect dbt::u32 qualification"
+    },
+    "build.test": {
+      "rc": 2,
+      "reason": "test-only Inst pointer needs derived cast"
+    },
+    "extra": {
+      "rc": 0,
+      "credit": false,
+      "reason": "command continued after test rebuild failure; stale executable ignored new CLI and ran 24 fresh terminal cells of earlier geometry; snapshots retained; no guest handler/repair/retry"
+    }
+  }
+}
