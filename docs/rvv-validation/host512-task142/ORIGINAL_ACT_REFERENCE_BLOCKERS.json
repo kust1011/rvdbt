@@ -1,0 +1,126 @@
+[
+  {
+    "case": "Vf32-vfmv.f.s",
+    "form": "vfmv.f.s",
+    "sew": 32,
+    "geometry": {
+      "XLEN": 32,
+      "ELEN": 64,
+      "VLEN": 1024,
+      "MAXINDEXEEW": 32
+    },
+    "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+    "original_status": "REFERENCE_ERROR",
+    "prior_task": 109,
+    "original_base": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s",
+    "source": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.S",
+    "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+    "elf": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.elf",
+    "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+    "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+    "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "expected": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.results",
+    "expected_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+    "capture": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.sig",
+    "capture_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+    "oracle": {
+      "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+      "capture_elf_sha256": "89172806059c91f2ee937428c126167c2b22725b475d2444151c405cffc28aec",
+      "raw_sig_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+      "processed_results_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+      "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+      "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+      "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+    },
+    "preservation": {
+      "input_objects": 312,
+      "target_words": 142,
+      "embedded_signature_bytes": 62480,
+      "source_unchanged": true,
+      "checker_unchanged": true,
+      "geometry": {
+        "VLEN": 1024,
+        "ELEN": 64,
+        "XLEN": 32,
+        "TEST_FLEN": 32
+      }
+    },
+    "reference_receipts": [
+      {
+        "engine": "Sail",
+        "returncode": 0,
+        "status": "PASS",
+        "raw": "raw/sail-signature"
+      },
+      {
+        "engine": "QEMU",
+        "returncode": -4,
+        "status": "REFERENCE_ERROR",
+        "raw": "raw/qemu-selfcheck"
+      }
+    ],
+    "comparison": "comparison.json.gz#Vf32-vfmv.f.s"
+  },
+  {
+    "case": "Vf64-vfmv.f.s",
+    "form": "vfmv.f.s",
+    "sew": 64,
+    "geometry": {
+      "XLEN": 32,
+      "ELEN": 64,
+      "VLEN": 1024,
+      "MAXINDEXEEW": 32
+    },
+    "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+    "original_status": "REFERENCE_ERROR",
+    "prior_task": 109,
+    "original_base": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s",
+    "source": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.S",
+    "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+    "elf": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.elf",
+    "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+    "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+    "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "expected": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.results",
+    "expected_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+    "capture": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.sig",
+    "capture_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+    "oracle": {
+      "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+      "capture_elf_sha256": "29c2e57f3288833eb48571ea6f24568120d96bd6a1fac493b6ae9790ee498e24",
+      "raw_sig_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+      "processed_results_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+      "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+      "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+      "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+    },
+    "preservation": {
+      "input_objects": 304,
+      "target_words": 138,
+      "embedded_signature_bytes": 123728,
+      "source_unchanged": true,
+      "checker_unchanged": true,
+      "geometry": {
+        "VLEN": 1024,
+        "ELEN": 64,
+        "XLEN": 32,
+        "TEST_FLEN": 64
+      }
+    },
+    "reference_receipts": [
+      {
+        "engine": "Sail",
+        "returncode": 0,
+        "status": "PASS",
+        "raw": "raw/sail-signature"
+      },
+      {
+        "engine": "QEMU",
+        "returncode": -4,
+        "status": "REFERENCE_ERROR",
+        "raw": "raw/qemu-selfcheck"
+      }
+    ],
+    "comparison": "comparison.json.gz#Vf64-vfmv.f.s"
+  }
+]

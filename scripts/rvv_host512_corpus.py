@@ -41,10 +41,10 @@ def partition(original, prior, remaining):
     return dict(original=len(sets[0]), task128=len(sets[1]), task129=len(sets[2]), intersection=0)
 
 
-def validate_record(record, local, elfrun=ELFRUN, executable=REMOTE128 + '/build/bin/elfrun'):
+def validate_record(record, local, elfrun=ELFRUN, executable=REMOTE128 + '/build/bin/elfrun', library=LIBRARY):
     """Authenticate raw joins without fabricating timestamps or rerunning code."""
     pins = record['executable_pins']
-    require(sorted(pins.values()) == sorted([elfrun, LIBRARY]), 'candidate identity')
+    require(sorted(pins.values()) == sorted([elfrun, library]), 'candidate identity')
     require(record['command'][0] == executable, 'pinned executable path')
     require(read(local/'IDENTITY.json') == pins, 'per-call identity')
     require(read(local/'command.json') == record['command'], 'raw command join')
@@ -233,10 +233,10 @@ def select(path, form=None, suite=None, case=None, arm=None):
                 original_ACT_reference_blockers=index['original_ACT_reference_blockers'])
 
 
-def generate_current(docs, output, raw=Path('task138-inspection/raw')):
-    """Reuse original bindings; credit only fresh Task138 authenticated receipts."""
+def generate_current(docs, output, raw=Path('task138-inspection/raw'), task=138):
+    """Reuse original bindings; credit only the selected build’s fresh receipts."""
     docs, output, raw = Path(docs), Path(output), Path(raw)
-    current = docs/'host512-task138'
+    current = docs/f'host512-task{task}'
     historical_path = docs/'host512-task129/combined/navigation.json.gz'
     historical = read(historical_path)
     templates = {identity(r['original_call']):r for r in historical['records']}
@@ -256,17 +256,23 @@ def generate_current(docs, output, raw=Path('task138-inspection/raw')):
     require(len(receipts)==21316, 'current receipt count')
     require({identity(r['original_call']) for r in receipts}==set(templates), 'complete original call equality')
     require(len({r['receipt'] for r in receipts})==21316, 'current raw uniqueness')
-    remote='/home/vick/rvdbt-host512-task138'
+    remote=f'/home/vick/rvdbt-host512-task{task}'
     executable='/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun'
     digest='da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e'
+    library=LIBRARY
+    if task != 138:
+        configuration=read(current/'CONFIGURATION_AFTER.json')
+        executable=configuration['build']+'/bin/elfrun'
+        digest=configuration['files'][executable]
+        library=configuration['files'][configuration['build']+'/lib/libdbtjitshared.so']
     records=[]; forms=collections.defaultdict(lambda:collections.defaultdict(list))
     for receipt in receipts:
         require(receipt['receipt'].startswith(remote+'/'), 'current raw root')
         local=raw/Path(receipt['receipt']).relative_to(remote)
-        validate_record(receipt,local,elfrun=digest,executable=executable)
+        validate_record(receipt,local,elfrun=digest,executable=executable,library=library)
         require(receipt['result']['status'] in ('PASS','SCOPED_PASS'), 'current failed call')
         row=dict(templates[identity(receipt['original_call'])])
-        row.update(task=138,receipt=receipt['receipt'],local_receipt=str(local),
+        row.update(task=task,receipt=receipt['receipt'],local_receipt=str(local),
             command=receipt['command'],result=receipt['result'],executable_pins=receipt['executable_pins'],
             observed_runtime=read(local/'observer.json') if receipt['suite']=='ara' else
                 {'target_SEW_LMUL_VL_mask_tail_vstart':'UNKNOWN; original checker completion is not a runtime tuple census'},
@@ -287,6 +293,11 @@ def generate_current(docs, output, raw=Path('task138-inspection/raw')):
         guest_vlen_commands={s:dict(collections.Counter(r['guest_vlen'] for r in records if r['suite']==s)) for s in ('chips','act','ara')},
         observed_host_chunks={s:dict(collections.Counter(','.join(map(str,r['observed_runtime']['host_chunk_bytes'])) or 'UNKNOWN' for r in records if r['suite']==s)) for s in ('chips','act','ara')},
         local_host_tests='Task135/136/137 checks remain separate; no new fault/restart or local fixture execution in Task138')
+    if task != 138:
+        summary.pop('task138')
+        summary[f'task{task}']=21316
+        summary['local_host_tests']='Separate final-build interface/FRM/MMU and existing normal regressions; see TEST_SUCCESS.json'
+    summary['current_build']=dict(task=task,remote_raw=remote,executable=executable,elfrun_sha256=digest,library_sha256=library)
     require(summary['counts']=={'chips':{'PASS':11744},'act':{'PASS':7668},'ara':{'PASS':1888,'SCOPED_PASS':16}}, 'suite counts')
     require(sum(r['control'] for r in records)==212, 'control count')
     require(len(forms)==595, 'checked form union')
@@ -306,6 +317,11 @@ def generate_current(docs, output, raw=Path('task138-inspection/raw')):
         lines.append('|`'+form+'`|'+'|'.join(str(len(groups.get(s,[]))) for s in ('chips','act','ara'))+'|Task138 `'+sample['suite']+'/'+str(sample['id'])+'/'+sample['arm']+'`|')
     (output/'FORMS.md').write_text('\n'.join(lines)+'\n')
     (output/'SUMMARY.md').write_text('# Task138 complete retained corpus on exact Task137 final build\n\nAll 21,316 calls have fresh Task138 receipts on da5209ae…; prior-build credit: zero. Three unchanged pilots plus 21,313 disjoint remaining calls.\n\n| Suite | Positives / whole-file PASS | Controls PASS | Scoped PASS |\n|---|---:|---:|---:|\n| CHIPS | 11,532 | 212 | 0 |\n| ACT | 7,668 | 0 | 0 |\n| Ara | 1,888 | 0 | 16 |\n\nEach B/M1/M2/BOTH arm: CHIPS 2,883 positives + 53 controls; ACT 1,917; Ara 472 whole-file + 4 scoped. Two ACT reference blockers remain outside the queue. Checked-form union: 595. See [forms](FORMS.md), [counts](SUMMARY.json) and [reader instructions](../README.md).\n\nGuest VLEN/flags are actual command settings. Source SEW/LMUL/requested VL/mask/tail/vstart literals remain source evidence; unprinted runtime dimensions remain UNKNOWN. Enabled flags and aggregate counters are not a target-native census. No guest handler return, mapping repair, same-PC retry, new reference, fault/restart or performance campaign was executed. Earlier target-admission observations remain attributed to their original build.\n')
+    if task != 138:
+        for name in ('FORMS.md','SUMMARY.md'):
+            target=output/name
+            text=target.read_text().replace('Task138',f'Task{task}').replace('exact Task137 final build','final signal-copy build').replace('da5209ae…',digest)
+            target.write_text(text)
     return summary
 
 

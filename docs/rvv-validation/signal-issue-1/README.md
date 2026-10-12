@@ -1,20 +1,89 @@
 # Linux RV32 signal interface increment (Refs #1)
 
-## Current implementation
+Checked helpers and admitted singleton QCG memory bodies have bounded fault
+handling. The signal-copy correction below is included in the
+[final host512 regression](../host512-task142/README.md). Complete guest
+handler return/restart remains unverified; broad issue #1 is not closed.
 
-Checked helpers cover ordinary unit-stride, strided, indexed and segment memory,
-mask memory, whole-register memory and fault-only-first operations, with each
-operation retaining its own extent and fault rules. Predicted permission failures
-and owned checked-copy host faults enter the dispatcher with a recorded element
-prefix and fault location. SIGSEGV and SIGBUS actions are supported for these
-synchronous sources. See [the current signal integration](../helper-signal-task126/README.md)
-and [checked-copy integration](../production-task125/README.md) for tests and code.
+## Task141 checked signal buffers (current bounded correction)
 
-Native/bulk/gather host faults outside this boundary and complete guest restart
-remain unresolved. The sections below are retained design history with their
-original build identities, not a list of the current implementation's omissions.
+Production correction `ad5e3c8` replaces the raw guest `memcpy` in the common
+`rv32_signal::CopyIn/CopyOut` boundary with owned `rvv_host_copy::CopyElements`
+byte transfers after the existing nonwrapping, per-page permission checks.
+Calls respect the checked leaf's signed count limit. Exact access-PC ownership
+and the production SIGSEGV/SIGBUS callback return backing faults normally,
+without a callback longjmp. This supersedes the **signal frame/action/mask copy**
+part of the Task140 table below; general syscall marshalling remains open.
 
-## Initial signal-interface increment
+`rt_sigaction` and `rt_sigprocmask` return `-EFAULT` on failed output copies
+before changing action/mask state, including queries. Guest output bytes can
+retain a copied prefix after an unexpected backing fault. Delivery still refuses
+a failed frame copy; restoration still stages and validates the frame before
+architectural writeback. Signal layouts, flags, trampoline and existing
+rejection rules are unchanged.
+
+The existing production-interface regression now tests normal, denied,
+nonwrapping, cross-page and truncated-file buffers through these wrappers and
+the production callbacks. It checks EFAULT and unchanged actions/masks for
+first-byte and crossing output faults, all three mask operations, permission
+and overflow failures, and truncated delivery/restore rejection. File truncation
+happens once per isolated child; no mapping repair or guest execution occurs.
+The FRM test's obsolete host CPUState-size assertion is aligned with the already
+pinned Task131 production size (42720); no ABI layout is changed.
+
+Local engineering results: **1876 parent interface checks**, **101 input-child
+and 86 output-child checks**, **256 FRM roundtrips / 192 badframes**, and
+**27 MMU checks**, all passing. `elfrun` also builds but is not executed here.
+These checks are distinct from external corpus coverage: no external fixtures
+or corpus were rerun, and no external expected values changed. Raw builds,
+original fatal witnesses, the copy-only EFAULT failure and final results are in
+[Task141 receipt](../../../SESSION0_RESULT_141.md).
+
+Generic scalar/atomic lowering, optional gather/LLVM ownership and general
+syscall marshalling are outside this correction. Broad issue #1 remains open.
+Guest handler-return/restart, repaired-mapping and same-PC retry execution,
+including equivalents, remain prohibited and untested.
+
+## Current issue #1 acceptance on QCG (Task140, source audit only)
+
+This table supersedes the **current-work interpretation** of the historical
+Tasks113–126 descriptions below and the 961f022 `FAULT_CONTRACT.md`; their
+original build identities and results remain historical evidence. Audited source:
+**47bc1be**, with **zero dbt/CMake source differences against merged 15618a8**.
+Task139 publication and its pinned executable are unaffected.
+
+Here QCG means the serialized RV32/ELEN64 execution profile with LLVM, CCRF,
+helper AVX2 gather and emitted Z3 strided gather excluded. CLI defaults are explicit:
+`elfrun.cpp:496` selects LLVM where applicable by default, so pure QCG requires
+`--aot-use-llvm=0`; `:497` enables the common typed QCG route, while
+`:575,583,617,640` leave dedicated unit/whole SIMD, CCRF and
+helper gather off. `config.h:3067` leaves Z3 gather off. Stock pure QCG therefore
+uses more checked helpers than the retained B/M1/M2/BOTH direct-route profiles.
+The direct QCG paths below are also audited because those accepted profiles enable
+them; enabled switches alone are not proof of dynamic admission.
+
+**No new unhandled default RVV memory route was found. Broad default QCG still
+has known unhandled non-vector memory and signal-buffer host-fault paths.**
+Guest return/restart is implemented but execution acceptance remains blocked;
+it must not be listed as missing codec implementation or as restart PASS.
+
+| Acceptance item | Exact current implementation and existing evidence | Remaining action / disposition |
+|---|---|---|
+| Ordinary, strided, indexed, segment, mask and whole helpers | `rv32_interp.cpp::HBody_vle/HBody_vse` at727/748, `OrdinaryMemory` at714 and `SpecialMemory` at705 reach `rv32_vector_lower.h::memory_checked` at615 or `unit_stride_checked` at636. `dispatch_load/store_unit_stride` at3613/3620 always use the checked loop. `mmu.h::FirstDenied` at117 probes each complete field; masks/prestart skip before index/probe. `rvv_host_copy.cpp::Copy` at75 stages loads, preserves aligned width and decomposes misaligned/wrapped fields; `CopyElements` at115 exposes completed-element count. Task124 width checks, Task132's266 terminal bulk snapshots and existing unit/family/special tests establish bounded prefixes/frontiers. | No identified implementation work for these supported routes. Earlier permitted libc/SSE/fixed-copy helper bypasses were removed by132; do not reassign127's old gap. Unexpected split stores may retain byte prefixes. Finite tests are not exhaustive fault coverage. |
+| FOF | `rv32_vector_lower.h::load_fault_only_first` at790 and `rv32_interp.cpp::HBody_vleff` at800 use checked field copies: absolute element0 queues, later failures trim VL. Tasks113/126/128 retain eight exit-only delivery/control calls;132 retains two BUS observations. | No new gap found. Exit-only delivery and manual incoming-vstart checks do not establish guest return/restart. |
+| Singleton native QCG SIMD and scalar vector memory | `rv32_interp.cpp::qcgstub_rv32_native_memory_safe` at553 admits anonymous, page-contained active SIMD chunks; `qcgstub_rv32_scalar_memory_safe` at615 admits page-contained ordinary anonymous/regular-file active fields, rejecting evolving indexed-load overlap. `qemit.cpp::Emit_vmemorynative` at3274 records regular field MOV sites at3352; `NoteNativeMemorySite` at4537 records SIMD accesses. `rvv_native_fault.cpp::Register` at32 and `HandleSignal` at60 validate exact PCs/owner/footprint: SIMD owns accepted user data #PF only, scalar sites also ADRERR/OBJERR. `qcgstub_rv32_native_memory_fault` at111 queues after the emitted cold exit. Existing131:40 terminal cells,133:30 distinct whole geometries,135:44 terminal cells;135/136 audits independently decode sites/state. | No new gap in the accepted contract. File-backed SIMD, crossings, split/wrap, overlap and guard misses reach checked helpers before body access. Nonaccepted #PF/BUS/MCE remain unowned; actual OBJERR and broad geometry coverage are unverified. Provenance is not a mapping/backing lifetime pin. |
+| Prior state, memory runs, registry lifetime and dispatcher | `qra.cpp::CallOp` at988 / `visitInstRVVTypedChunkBegin` at1164 synchronize globals before guards; scalar/site annotations come from actual instruction PC. `rv32_qir.cpp:9904` enables QCG memory cuts; `rv32_vrun.cpp::FormRun` at1132 cuts memory; `qemit.cpp::Emit_rvvtypedchunkbegin` at2005 rejects multi-member memory, and `Emit_rvvtypedchunkend` at2370 uses ordered helpers and at2386 builds the cold exit. `tcache.cpp:204,223,244,259` publishes/clears ownership with code lifetime. `rv32_interp.cpp::FinishHelperMemoryFault` at51 runs after scopes; `ukernel.cpp::CaptureHelperMemoryFault` at242 and `Execute` at301 capture/deliver after `execute.cpp::Execute` at226 unwinds. Task136:ten terminal children,585 normal checks;137 full codegen PASS resolves the22 old golden failures. | No grouped native implementation task on this profile: memory uses instruction boundaries, including with M1/component order enabled. Arbitrary live/pinned recovery, concurrent guest/cache/mapping lifecycle and reordered CCRF recovery are outside this established contract. |
+| Guest signal return and instruction continuation | `rv32_signal.inc::DeliverHelperSignal` at121 builds frame/trampoline (`li a7,139; ecall`, at167); `RestoreSignalFrame` at187 validates before architectural writeback and restores PC/a0/FP/vector/mask. `SignalSyscall` at67 and `ukernel.cpp::SyscallLinux` at1267 bypass ordinary a0 writeback; dispatcher ECALL at323 advances PC before restoration. `rv32_signal_interface_test.cpp:153,163–167,202–208` and `rv32_signal_frm_test.cpp:39–61` directly call host APIs (Task126:1792 checks,256 roundtrips/192 badframes). | **Implemented; execution-blocked acceptance.** No guest sigreturn/return/restart PASS. P4-04 and equivalent repair-mapping/handler-return/same-PC-retry execution remain prohibited, including renamed/delegated variants. Retained source/codec evidence cannot discharge this row. |
+| Generic scalar integer/FP/atomic guest memory | `rv32_qir.cpp::TranslateLoad/TranslateStore` at2357/2384 emit generic `vmload/vmstore`; `qemit.cpp::Emit_vmload/Emit_vmstore` at1394/1434 emit unowned direct MOVs. Interpreter `HANDLER_Load/Store` at180/189, `HBody_flw/fld/fsw/fsd` at2148–2158 and `HBody_lrw/scw/amoswapw/amoaddw` at2463–2497 likewise bypass checked capture. `ukernel.cpp::dbt_sigaction_memory` at417 falls through to `mmu.cpp::ReportGuestFault` at155 (Panic). This is the non-vector gap already recorded in118/119, not Task135's scalar **vector** loop. No existing dedicated scalar guest-delivery regression establishes acceptance; host-copy test at308–319 only establishes deliberate fatal handling of unrelated host PCs. | **Known default-path implementation work**, if broad issue1 includes these accesses. Preserve the source-only exit-handler witness in SESSION0_RESULT_140.md. Smallest common load/store correction: checked scalar runtime transfer with architectural publication at a call boundary, stage loads, queue actual PC/raw/direction/address after normal scope return; share across integer/FP widths. Atomic RMW needs its own exact-operation boundary, never load+store decomposition. Do not close broad issue1 from RVV receipts. |
+| Signal frame/action/mask copies and syscall marshalling | `rv32_signal.inc::CopyIn/CopyOut` at41/46 check guest metadata then use unowned `memcpy`; delivery at156–174 and restore at196 consume them. `SignalSyscall` at98/108 also ignores output-copy failure. `ukernel.cpp::linux_writev/readv` at729/746 directly dereference guest iovec entries.118/126 explicitly retained frame/syscall-copy limits. Existing signal-interface test at23–48 tests predicted range/permission errors, not after-check backing loss;132's file-truncation capture tests belong to checked RVV copies only. | **Known default-path implementation boundary**, separate from missing guest-return execution. Shared signal copy can use the existing checked byte bulk leaf after range validation, returning failure normally; propagate every CopyOut failure before action/mask mutation, fail delivery/badframe cleanly. Preserve source-only truncated-buffer witness in140. General syscall marshalling needs checked guest buffers and syscall EFAULT handling, not conversion of every host syscall EFAULT into a guest signal. |
+| Optional gather/LLVM | `rv32_interp.cpp:869` gates helper AVX2 gather; `rv32_vector_gather.cpp::rvv_gather_e32_avx2` at40 only preflights permissions. `qemit.cpp::EmitRvvStridedGather` at3167 is separately default-off. LLVM native ordinary/family accesses do not inherit QCG site ownership; shared whole admission at `rv32_interp.cpp:688` refuses unowned LLVM whole bodies. Existing117 gather value/permission tests and119/132 LLVM admission tests remain their bounded evidence. | Outside default QCG acceptance. Real recovery maps/publication/exit are needed before claiming these optional native routes recover unexpected faults. Do not invent a default-profile task to restore disabled grouped/LLVM whole SIMD. |
+
+The retained **21,316 normal calls** (Task138, published by139) supply no new
+fault/return/restart, concurrency or complete-state acceptance. No new execution,
+coverage extrapolation or production correction was performed in140. Issue1 stays
+open; the actionable implementation rows and blocked execution row are distinct.
+
+## Historical Task113 increment
 
 `rt_sigaction` now installs a guest SIGSEGV action instead of returning success
 from a stub. The supported delivery ingress is a predicted element-zero FOF

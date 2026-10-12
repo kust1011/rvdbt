@@ -481,9 +481,10 @@ def act_db2_replay(index, raw, package, prior, output):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--host512-corpus', type=Path, help='offline Task128/129 navigation, or validation docs root with --host512-build')
-    p.add_argument('--host512-raw', type=Path, help='explicit extracted Task138 raw root; never falls back when supplied')
+    p.add_argument('--host512-raw', type=Path, help='explicit extracted current raw root; never falls back when supplied')
     p.add_argument('--host512-evidence', type=Path, help='extracted Task139 FILES/PATHS metadata bundle')
     p.add_argument('--host512-task138-build', action='store_true', help='audit complete current Task138 receipts and reuse original navigation bindings')
+    p.add_argument('--host512-task142-build', action='store_true', help='audit Task142 final signal-copy build using existing exact-call schema')
     p.add_argument('--host512-build', action='store_true', help='audit and merge exact retained host512 raw receipts')
     p.add_argument('--suite', choices=('chips','act','ara'))
     p.add_argument('--forms', type=Path)
@@ -506,14 +507,16 @@ def main():
     for label in ('chips', 'act', 'act-db2', 'ara'):
         p.add_argument('--' + label + '-package', type=Path)
     a = p.parse_args()
+    if a.host512_task138_build and a.host512_task142_build:
+        p.error('Select one current build')
     if a.host512_corpus:
-        if not __debug__ and (a.host512_task138_build or a.host512_raw or a.host512_evidence):
-            p.error('Task138 inspection rejects -O/-OO/PYTHONOPTIMIZE')
+        if not __debug__ and (a.host512_task138_build or a.host512_task142_build or a.host512_raw or a.host512_evidence):
+            p.error('Current evidence inspection rejects -O/-OO/PYTHONOPTIMIZE')
         from rvv_host512_corpus import generate, generate_current, select, read
-        if a.host512_task138_build:
+        if a.host512_task138_build or a.host512_task142_build:
             if not a.host512_raw:
-                p.error('--host512-task138-build requires --host512-raw')
-            result = generate_current(a.host512_corpus,a.output,a.host512_raw)
+                p.error('Current-build generation requires --host512-raw')
+            result = generate_current(a.host512_corpus,a.output,a.host512_raw,task=142 if a.host512_task142_build else 138)
             if a.host512_evidence:
                 from rvv_host512_corpus import inspect_sources
                 result['portable_sources'] = inspect_sources(read(a.output/'navigation.json.gz')['records'],
@@ -527,11 +530,14 @@ def main():
                 receipts_path = a.host512_corpus.parent/'RECEIPTS.json.gz'
                 if not receipts_path.is_file(): receipts_path = a.host512_corpus.parent.parent/'RECEIPTS.json.gz'
                 receipts = {r['receipt']:r for r in read(receipts_path)}
+                build=result['summary'].get('current_build',dict(remote_raw='/home/vick/rvdbt-host512-task138',
+                    elfrun_sha256='da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e',
+                    library_sha256='79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af',
+                    executable='/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun'))
                 for row in result['records']:
-                    local = a.host512_raw/Path(row['receipt']).relative_to('/home/vick/rvdbt-host512-task138')
+                    local = a.host512_raw/Path(row['receipt']).relative_to(build['remote_raw'])
                     validate_record(receipts[row['receipt']],local,
-                        elfrun='da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e',
-                        executable='/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun')
+                        elfrun=build['elfrun_sha256'],executable=build['executable'],library=build['library_sha256'])
                     row['local_receipt'] = str(local)
             if a.host512_evidence:
                 from rvv_host512_corpus import inspect_sources
@@ -540,7 +546,7 @@ def main():
             result['current_raw_verification'] = 'CHECKED' if a.host512_raw else 'NOT_CHECKED; supply --host512-raw'
             a.output.mkdir(parents=True,exist_ok=False)
             (a.output/'record.json').write_text(json.dumps(result,indent=2)+'\n')
-        if a.host512_task138_build and 'portable_sources' in result:
+        if (a.host512_task138_build or a.host512_task142_build) and 'portable_sources' in result:
             import gzip
             sources = result.pop('portable_sources')
             (a.output/'PORTABLE_SOURCES.json.gz').write_bytes(gzip.compress(json.dumps(sources).encode(),mtime=0))

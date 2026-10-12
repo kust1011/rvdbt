@@ -7,7 +7,7 @@ static void check(bool ok,char const *why)
 { if(!ok) { fprintf(stderr,"FRM_INTERFACE_FAILED %s\n",why); exit(2); } }
 int main()
 {
-	static_assert(sizeof(CPUState)==42704);
+	static_assert(sizeof(CPUState)==42720); // Existing production ABI (Task131).
 	u32 const stack=0x22000000,code=0x23000000;
 	u32 const host=rv32::rvdbt_mxcsr_get();
 	mmu::Init();

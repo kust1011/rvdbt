@@ -1,0 +1,13 @@
+{
+  "artifacts": [
+    {
+      "file": "task142-host512-receipts-20261013.tar.gz",
+      "bytes": 100532961,
+      "sha256": "46cd12348780b6147308e8be961c029abd48a49e7fa56cacfaec8ea05ecec582"
+    }
+  ],
+  "successful_transfers": 1,
+  "transport_failures": 0,
+  "remote_archive": "/home/vick/task142-host512-receipts.tar.gz",
+  "scope": "All direct raw receipts including TB dumps and final build/test evidence; full build, binaries, work/cache and unchanged observers remain remote"
+}
