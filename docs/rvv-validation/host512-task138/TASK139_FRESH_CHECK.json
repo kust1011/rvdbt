@@ -1,0 +1,324 @@
+{
+  "forbidden_author_path_access": true,
+  "forbidden_live_operations": true,
+  "new_guest_reference_fault_performance_executions": 0,
+  "commands": [
+    {
+      "label": "audit",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation",
+        "--host512-task138-build",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--output",
+        "/tmp/task139-fresh/checks/audit"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "regenerated-vadd",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/checks/audit/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vadd.vv",
+        "--suite",
+        "chips",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/regenerated-vadd"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "select-vadd.vv",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vadd.vv",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/select-vadd.vv"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "select-vle32.v",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vle32.v",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/select-vle32.v"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "select-vfadd.vv",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vfadd.vv",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/select-vfadd.vv"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "select-vmand.mm",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vmand.mm",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/select-vmand.mm"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "select-vsetvli",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vsetvli",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/select-vsetvli"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "missing-current",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vadd.vv",
+        "--suite",
+        "chips",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/missing-current"
+      ],
+      "status": "REJECTED",
+      "reason": "[Errno 2] No such file or directory: '/tmp/task139-fresh/inspection/current/raw/chips/raw/c7639f37d3e028a2061552c30c19222482da3581e49a68babc86d47f44ba9402/IDENTITY.json'"
+    },
+    {
+      "label": "corrupt-current",
+      "argv": [
+        "rvv_scope_report.py",
+        "--host512-corpus",
+        "/tmp/task139-fresh/repo/docs/rvv-validation/host512-task138/combined/navigation.json.gz",
+        "--host512-raw",
+        "/tmp/task139-fresh/inspection/current/raw",
+        "--host512-evidence",
+        "/tmp/task139-fresh/inspection/current",
+        "--chips-package",
+        "/tmp/task139-fresh/inspection/chips",
+        "--act-db2-package",
+        "/tmp/task139-fresh/inspection/act",
+        "--ara-package",
+        "/tmp/task139-fresh/inspection/ara",
+        "--form",
+        "vadd.vv",
+        "--suite",
+        "chips",
+        "--arm",
+        "B",
+        "--output",
+        "/tmp/task139-fresh/checks/corrupt-current"
+      ],
+      "status": "REJECTED",
+      "reason": "stream identity"
+    }
+  ],
+  "reader_sha256": {
+    "rvv_scope_report.py": "02c4af93e22b12d9035f78a78995a4afb3e046dfcfd622a7e6a3fcec36cbab66",
+    "rvv_host512_corpus.py": "89908071d38bdffc60d1b124cade775af6427e99637e9185f8516afa474301a6",
+    "rvv_ara_replay.py": "e01c94ce7ea27a981b3b340a9541c7bb11a6d7f6e0351b62c66ba98a0b2fce5a"
+  },
+  "package_manifest_sha256": {
+    "chips": "1e48e21a90a107d5ec95fdadc602ac8f95f8da633ac199b51f14e1433ed42e10",
+    "act": "353667369dd0bfbcd06897f7910cbd9e1334654b589d44db620cf208d54f7aed",
+    "ara": "b5039cc035e54e4bf584c79895d4b4346b6ab32b2f1636cae362759f1e951f62",
+    "current": "549d1eaed6a6908d90157f7b03606d7f2657e48c4e58b31cd1c5879cc98ffcd6"
+  },
+  "summary": {
+    "calls": 21316,
+    "forms": 595,
+    "source_dependencies": 7409,
+    "original_current_predicate_counts": {
+      "chips": 11744,
+      "act": 7668,
+      "ara": 1904
+    }
+  },
+  "selections": {
+    "vadd.vv": {
+      "records": 26,
+      "suites": [
+        "act",
+        "ara",
+        "chips"
+      ],
+      "original_current_predicate_counts": {
+        "chips": 21,
+        "act": 4,
+        "ara": 1
+      }
+    },
+    "vle32.v": {
+      "records": 10,
+      "suites": [
+        "act",
+        "ara",
+        "chips"
+      ],
+      "original_current_predicate_counts": {
+        "chips": 3,
+        "act": 4,
+        "ara": 3
+      }
+    },
+    "vfadd.vv": {
+      "records": 39,
+      "suites": [
+        "act",
+        "ara",
+        "chips"
+      ],
+      "original_current_predicate_counts": {
+        "chips": 27,
+        "act": 2,
+        "ara": 10
+      }
+    },
+    "vmand.mm": {
+      "records": 6,
+      "suites": [
+        "act",
+        "ara",
+        "chips"
+      ],
+      "original_current_predicate_counts": {
+        "chips": 1,
+        "act": 4,
+        "ara": 1
+      }
+    },
+    "vsetvli": {
+      "records": 3,
+      "suites": [
+        "ara",
+        "chips"
+      ],
+      "original_current_predicate_counts": {
+        "chips": 1,
+        "ara": 2
+      }
+    }
+  },
+  "status": "PASS"
+}
