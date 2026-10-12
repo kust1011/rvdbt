@@ -1,0 +1,2018 @@
+{
+  "vadd.vv": {
+    "witness": {
+      "VLEN": "128",
+      "arm": "B",
+      "assertion_selector": "sources/chips/elen64_vadd128/stage2/vadd_vv-0.S [TEST_CASE lines 72..11014; count=768]",
+      "batch": "elen64_vadd128",
+      "candidate": "clean961",
+      "case": "vadd_vv-0",
+      "cell_id": "8d17e461889163e646cd9f36d4ba15bb0dcf88903adce4e3b3a37f61dae5cf2d",
+      "configuration_selector": "sources/chips/SOURCE_GEOMETRY.csv [source=elen64_vadd128/stage2/vadd_vv-0.S]",
+      "control": "False",
+      "elf_sha256": "5d0533ff513832c0f399469ba4c8fe7cda5e08155af1c2ce77e3ca8485543d61",
+      "form": "vadd.vv",
+      "ledger_row_id": "821266a2137a22131091bb5c55ef1185f4f3a65459fb86695f40702add1a4946",
+      "receipt": "records/clean961/receipts/positive-B-elen64_vadd128-000/8d17e461889163e646cd9f36d4ba15bb0dcf88903adce4e3b3a37f61dae5cf2d",
+      "source": "sources/chips/elen64_vadd128/stage2/vadd_vv-0.S",
+      "source_chain_selector": "SOURCE_CHAIN.json [batch=elen64_vadd128,case=vadd_vv-0]",
+      "source_form": "vadd.vv",
+      "source_sha256": "b5fa9028e3474b8371d9e62f492f08a2502f54830eca910ca1173e83c13b9457"
+    },
+    "source_tuple_samples": [
+      {
+        "form": "vadd.vv",
+        "vlen": "128",
+        "requested_vl": "0",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "stage2/vadd_vv-0.S",
+        "line": "20",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "799587e2de7ef455608d644ed4c998ad4b40e680efcda88f42fa6d7c673703d0",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      },
+      {
+        "form": "vadd.vv",
+        "vlen": "128",
+        "requested_vl": "7",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "stage2/vadd_vv-0.S",
+        "line": "78",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "799587e2de7ef455608d644ed4c998ad4b40e680efcda88f42fa6d7c673703d0",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      }
+    ],
+    "literal_contexts": [],
+    "original_assertion_count": 768,
+    "original_assertions": [
+      {
+        "line": 72,
+        "text": "  TEST_CASE(2, t0, 0x32808aa4, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 73,
+        "text": "  TEST_CASE(3, t0, 0x30ac75dc, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 74,
+        "text": "  TEST_CASE(4, t0, 0x5b761295, lw t0, 0(a0); addi a0, a0, 4)"
+      }
+    ],
+    "target": [
+      {
+        "line": 64,
+        "text": "vadd.vv v20, v1, v31",
+        "source_role": "TEST_BODY"
+      },
+      {
+        "line": 122,
+        "text": "vadd.vv v20, v1, v31",
+        "source_role": "TEST_BODY"
+      }
+    ],
+    "CSR_source_lines": [
+      {
+        "line": 23,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 81,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 140,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 199,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 258,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      }
+    ],
+    "receipts": {
+      "records/clean961/receipts/positive-B-elen64_vadd128-000/8d17e461889163e646cd9f36d4ba15bb0dcf88903adce4e3b3a37f61dae5cf2d": {
+        "original_result": {
+          "id": "8d17e461889163e646cd9f36d4ba15bb0dcf88903adce4e3b3a37f61dae5cf2d",
+          "status": "PASS",
+          "control": false,
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds_for_timeout_diagnostics_only": 0.06480430398369208,
+          "elf_sha256": "5d0533ff513832c0f399469ba4c8fe7cda5e08155af1c2ce77e3ca8485543d61",
+          "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+          "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+          "checker": "registered exit code and exact stdout of self-checking guest",
+          "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+        },
+        "original_command": [
+          "/home/vick/rvdbt-validation-delivery-20261009/build-clean/bin/elfrun",
+          "--vlen=128",
+          "--aot=0",
+          "--aot-use-llvm=0",
+          "--tier0-threshold=0",
+          "--rvv-direct=1",
+          "--rvv-qcg-direct-setvl=1",
+          "--rvv-qcg-typed-chunk-mem-e64=1",
+          "--rvv-qcg-whole-reg=1",
+          "--rvv-qcg-typed-chunk=1",
+          "--rvv-qcg-typed-chunk-sub=1",
+          "--rvv-qcg-typed-chunk-mul=1",
+          "--rvv-qcg-typed-chunk-and=1",
+          "--rvv-qcg-typed-chunk-or=1",
+          "--rvv-qcg-typed-chunk-xor=1",
+          "--rvv-qcg-typed-chunk-shift=1",
+          "--rvv-qcg-typed-chunk-vle=1",
+          "--rvv-qcg-typed-chunk-vse=1",
+          "--rvv-qcg-typed-chunk-vmv=1",
+          "--rvv-qcg-partial-vl=1",
+          "--rvv-qcg-vx-mulacc=1",
+          "--rvv-qcg-typed-chunk-falu=1",
+          "--rvv-qcg-typed-chunk-fma=1",
+          "--rvv-qcg-narrow-chunk-width=1",
+          "--rvv-vector-run=0",
+          "--rvv-run-body=ssa",
+          "--rvv-run-order=member",
+          "--rvv-run-live-range-split=0",
+          "--rvv-qcg-typed-chunk-vadd-scalar=1",
+          "--rvv-qcg-fp-shared-mask=1",
+          "--qcg-code-huge-pages=0",
+          "--rvv-qcg-active-vl-mask-fusion=1",
+          "--rvv-qcg-active-mask-memory=1",
+          "--rvv-qcg-active-vl-bound=0",
+          "--rvv-qcg-active-vl-int-bound=0",
+          "--rvv-qcg-active-vl-widen-bound=0",
+          "--rvv-qcg-active-vl-narrow-bound=0",
+          "--rvv-qcg-hit-counter=1",
+          "--rvv-route-census=1",
+          "--fsroot=/home/vick/chips-campaign46/raw/positive-B-elen64_vadd128-000/8d17e461889163e646cd9f36d4ba15bb0dcf88903adce4e3b3a37f61dae5cf2d/work/fs",
+          "--cache=/home/vick/chips-campaign46/raw/positive-B-elen64_vadd128-000/8d17e461889163e646cd9f36d4ba15bb0dcf88903adce4e3b3a37f61dae5cf2d/work/cache",
+          "--",
+          "/t.elf"
+        ],
+        "stdout": "CHIPS_PASS\n",
+        "stderr_bytes": 582,
+        "expected_stdout": "CHIPS_PASS\n",
+        "expected_returncode": 0,
+        "offline_original_classify": "PASS"
+      }
+    },
+    "checker": "upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout",
+    "selected_context_count_across_same_named_cases": 1674
+  },
+  "vfadd.vv": {
+    "witness": {
+      "VLEN": "128",
+      "arm": "B",
+      "assertion_selector": "sources/chips/elen64_fp128/stage2/vfadd_vv-0.S [TEST_CASE lines 72..10990; count=744]",
+      "batch": "elen64_fp128",
+      "candidate": "clean961",
+      "case": "vfadd_vv-0",
+      "cell_id": "156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c",
+      "configuration_selector": "sources/chips/SOURCE_GEOMETRY.csv [source=elen64_fp128/stage2/vfadd_vv-0.S]",
+      "control": "False",
+      "elf_sha256": "2ae9608554ced884f4db7edca147ea45964405ade58350aabc3810631d246f14",
+      "form": "vfadd.vv",
+      "ledger_row_id": "83387e20de8aa24d958356dfb58dc2344af25548e60785069037428ddc2e3b02",
+      "receipt": "records/clean961/receipts/positive-B-elen64_fp128-000/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c",
+      "source": "sources/chips/elen64_fp128/stage2/vfadd_vv-0.S",
+      "source_chain_selector": "SOURCE_CHAIN.json [batch=elen64_fp128,case=vfadd_vv-0]",
+      "source_form": "vfadd.vv",
+      "source_sha256": "92c8a7e9d863325e86f6b59a410608e65c7c6c826eb0f0634fd2498f327b2416"
+    },
+    "source_tuple_samples": [
+      {
+        "form": "vfadd.vv",
+        "vlen": "1024",
+        "requested_vl": "0",
+        "sew": "e32",
+        "lmul": "m1",
+        "masked": "false",
+        "source": "fp1024/stage2/vfadd_vv-0.S",
+        "line": "20",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "61b5beccf97b9278de9a3daaefe3a422f9434b36f18f62253d491427cf7d3cbd",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      },
+      {
+        "form": "vfadd.vv",
+        "vlen": "1024",
+        "requested_vl": "0",
+        "sew": "e32",
+        "lmul": "m1",
+        "masked": "false",
+        "source": "fp1024/stage2/vfadd_vv-0.S",
+        "line": "106",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "61b5beccf97b9278de9a3daaefe3a422f9434b36f18f62253d491427cf7d3cbd",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      }
+    ],
+    "literal_contexts": [],
+    "original_assertion_count": 744,
+    "original_assertions": [
+      {
+        "line": 72,
+        "text": "  TEST_CASE(2, t0, 0x32808aa4, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 73,
+        "text": "  TEST_CASE(3, t0, 0x30ac75dc, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 74,
+        "text": "  TEST_CASE(4, t0, 0x5b761295, lw t0, 0(a0); addi a0, a0, 4)"
+      }
+    ],
+    "target": [
+      {
+        "line": 64,
+        "text": "vfadd.vv v17, v23, v28",
+        "source_role": "TEST_BODY"
+      },
+      {
+        "line": 122,
+        "text": "vfadd.vv v17, v23, v28",
+        "source_role": "TEST_BODY"
+      }
+    ],
+    "CSR_source_lines": [
+      {
+        "line": 23,
+        "text": "csrwi frm, 0 # RNE (Round to Nearest, ties to Even)"
+      },
+      {
+        "line": 81,
+        "text": "csrwi frm, 1 # RTZ (Round towards Zero)"
+      },
+      {
+        "line": 140,
+        "text": "csrwi frm, 2 # RDN (Round Down, towards -Inf)"
+      },
+      {
+        "line": 199,
+        "text": "csrwi frm, 3 # RUP (Round Up, towards +Inf)"
+      },
+      {
+        "line": 258,
+        "text": "csrwi frm, 4 # RMM (Round to Nearest, ties to Max Magnitude)"
+      }
+    ],
+    "receipts": {
+      "records/clean961/receipts/positive-B-elen64_fp128-000/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c": {
+        "original_result": {
+          "id": "156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c",
+          "status": "PASS",
+          "control": false,
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds_for_timeout_diagnostics_only": 0.11529195797629654,
+          "elf_sha256": "2ae9608554ced884f4db7edca147ea45964405ade58350aabc3810631d246f14",
+          "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+          "stderr_sha256": "2749ddbf3070670480c99a0d4cbe65b923c23cc7878e80841824be55388c8b43",
+          "checker": "registered exit code and exact stdout of self-checking guest",
+          "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+        },
+        "original_command": [
+          "/home/vick/rvdbt-validation-delivery-20261009/build-clean/bin/elfrun",
+          "--vlen=128",
+          "--aot=0",
+          "--aot-use-llvm=0",
+          "--tier0-threshold=0",
+          "--rvv-direct=1",
+          "--rvv-qcg-direct-setvl=1",
+          "--rvv-qcg-typed-chunk-mem-e64=1",
+          "--rvv-qcg-whole-reg=1",
+          "--rvv-qcg-typed-chunk=1",
+          "--rvv-qcg-typed-chunk-sub=1",
+          "--rvv-qcg-typed-chunk-mul=1",
+          "--rvv-qcg-typed-chunk-and=1",
+          "--rvv-qcg-typed-chunk-or=1",
+          "--rvv-qcg-typed-chunk-xor=1",
+          "--rvv-qcg-typed-chunk-shift=1",
+          "--rvv-qcg-typed-chunk-vle=1",
+          "--rvv-qcg-typed-chunk-vse=1",
+          "--rvv-qcg-typed-chunk-vmv=1",
+          "--rvv-qcg-partial-vl=1",
+          "--rvv-qcg-vx-mulacc=1",
+          "--rvv-qcg-typed-chunk-falu=1",
+          "--rvv-qcg-typed-chunk-fma=1",
+          "--rvv-qcg-narrow-chunk-width=1",
+          "--rvv-vector-run=0",
+          "--rvv-run-body=ssa",
+          "--rvv-run-order=member",
+          "--rvv-run-live-range-split=0",
+          "--rvv-qcg-typed-chunk-vadd-scalar=1",
+          "--rvv-qcg-fp-shared-mask=1",
+          "--qcg-code-huge-pages=0",
+          "--rvv-qcg-active-vl-mask-fusion=1",
+          "--rvv-qcg-active-mask-memory=1",
+          "--rvv-qcg-active-vl-bound=0",
+          "--rvv-qcg-active-vl-int-bound=0",
+          "--rvv-qcg-active-vl-widen-bound=0",
+          "--rvv-qcg-active-vl-narrow-bound=0",
+          "--rvv-qcg-hit-counter=1",
+          "--rvv-route-census=1",
+          "--fsroot=/home/vick/chips-campaign46/raw/positive-B-elen64_fp128-000/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c/work/fs",
+          "--cache=/home/vick/chips-campaign46/raw/positive-B-elen64_fp128-000/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c/work/cache",
+          "--",
+          "/t.elf"
+        ],
+        "stdout": "CHIPS_PASS\n",
+        "stderr_bytes": 583,
+        "expected_stdout": "CHIPS_PASS\n",
+        "expected_returncode": 0,
+        "offline_original_classify": "PASS"
+      }
+    },
+    "checker": "upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout",
+    "selected_context_count_across_same_named_cases": 1116
+  },
+  "vwadd.vv": {
+    "witness": {
+      "VLEN": "2048",
+      "arm": "B",
+      "assertion_selector": "sources/chips/geometry2048/stage2/vwadd_vv-0.S [TEST_CASE lines 72..30214; count=19968]",
+      "batch": "geometry2048",
+      "candidate": "clean961",
+      "case": "vwadd_vv-0",
+      "cell_id": "e321a7ffce2a0be5bfde8e578aeec5afbdc0f979c3b92ada1f74dbff20f4eb78",
+      "configuration_selector": "sources/chips/SOURCE_GEOMETRY.csv [source=geometry2048/stage2/vwadd_vv-0.S]",
+      "control": "False",
+      "elf_sha256": "694785e5b11427ce9953d316215b1b153ca17ceef0815fa855f151cca8cb2416",
+      "form": "vwadd.vv",
+      "ledger_row_id": "0eb9118fc34529dc961efda228fb05f61546df1dac460f6cf974c56d3fe68d58",
+      "receipt": "records/clean961/receipts/positive-B-geometry2048-000/e321a7ffce2a0be5bfde8e578aeec5afbdc0f979c3b92ada1f74dbff20f4eb78",
+      "source": "sources/chips/geometry2048/stage2/vwadd_vv-0.S",
+      "source_chain_selector": "SOURCE_CHAIN.json [batch=geometry2048,case=vwadd_vv-0]",
+      "source_form": "vwadd.vv",
+      "source_sha256": "a233abdc81c9d5780fd802e758878b6ab4a399a3874650fccabe8bf11f5fd0b9"
+    },
+    "source_tuple_samples": [
+      {
+        "form": "vwadd.vv",
+        "vlen": "128",
+        "requested_vl": "0",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "stage2/vwadd_vv-0.S",
+        "line": "20",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "abc2f5d508467a4e23f189da840a39fba1c443470e89aa23928b85251e511b04",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      },
+      {
+        "form": "vwadd.vv",
+        "vlen": "128",
+        "requested_vl": "7",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "stage2/vwadd_vv-0.S",
+        "line": "78",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "abc2f5d508467a4e23f189da840a39fba1c443470e89aa23928b85251e511b04",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      }
+    ],
+    "literal_contexts": [],
+    "original_assertion_count": 19968,
+    "original_assertions": [
+      {
+        "line": 72,
+        "text": "  TEST_CASE(2, t0, 0xa207fd7c, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 73,
+        "text": "  TEST_CASE(3, t0, 0xbe21a98b, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 74,
+        "text": "  TEST_CASE(4, t0, 0x9b527abe, lw t0, 0(a0); addi a0, a0, 4)"
+      }
+    ],
+    "target": [
+      {
+        "line": 64,
+        "text": "vwadd.vv v27, v1, v14",
+        "source_role": "TEST_BODY"
+      },
+      {
+        "line": 182,
+        "text": "vwadd.vv v27, v1, v14",
+        "source_role": "TEST_BODY"
+      }
+    ],
+    "CSR_source_lines": [
+      {
+        "line": 23,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 141,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 260,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 379,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 498,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      }
+    ],
+    "receipts": {
+      "records/clean961/receipts/positive-B-geometry2048-000/e321a7ffce2a0be5bfde8e578aeec5afbdc0f979c3b92ada1f74dbff20f4eb78": {
+        "original_result": {
+          "id": "e321a7ffce2a0be5bfde8e578aeec5afbdc0f979c3b92ada1f74dbff20f4eb78",
+          "status": "PASS",
+          "control": false,
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds_for_timeout_diagnostics_only": 0.2164427520474419,
+          "elf_sha256": "694785e5b11427ce9953d316215b1b153ca17ceef0815fa855f151cca8cb2416",
+          "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+          "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+          "checker": "registered exit code and exact stdout of self-checking guest",
+          "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+        },
+        "original_command": [
+          "/home/vick/rvdbt-validation-delivery-20261009/build-clean/bin/elfrun",
+          "--vlen=2048",
+          "--aot=0",
+          "--aot-use-llvm=0",
+          "--tier0-threshold=0",
+          "--rvv-direct=1",
+          "--rvv-qcg-direct-setvl=1",
+          "--rvv-qcg-typed-chunk-mem-e64=1",
+          "--rvv-qcg-whole-reg=1",
+          "--rvv-qcg-typed-chunk=1",
+          "--rvv-qcg-typed-chunk-sub=1",
+          "--rvv-qcg-typed-chunk-mul=1",
+          "--rvv-qcg-typed-chunk-and=1",
+          "--rvv-qcg-typed-chunk-or=1",
+          "--rvv-qcg-typed-chunk-xor=1",
+          "--rvv-qcg-typed-chunk-shift=1",
+          "--rvv-qcg-typed-chunk-vle=1",
+          "--rvv-qcg-typed-chunk-vse=1",
+          "--rvv-qcg-typed-chunk-vmv=1",
+          "--rvv-qcg-partial-vl=1",
+          "--rvv-qcg-vx-mulacc=1",
+          "--rvv-qcg-typed-chunk-falu=1",
+          "--rvv-qcg-typed-chunk-fma=1",
+          "--rvv-qcg-narrow-chunk-width=1",
+          "--rvv-vector-run=0",
+          "--rvv-run-body=ssa",
+          "--rvv-run-order=member",
+          "--rvv-run-live-range-split=0",
+          "--rvv-qcg-typed-chunk-vadd-scalar=1",
+          "--rvv-qcg-fp-shared-mask=1",
+          "--qcg-code-huge-pages=0",
+          "--rvv-qcg-active-vl-mask-fusion=1",
+          "--rvv-qcg-active-mask-memory=1",
+          "--rvv-qcg-active-vl-bound=0",
+          "--rvv-qcg-active-vl-int-bound=0",
+          "--rvv-qcg-active-vl-widen-bound=0",
+          "--rvv-qcg-active-vl-narrow-bound=0",
+          "--rvv-qcg-hit-counter=1",
+          "--rvv-route-census=1",
+          "--fsroot=/home/vick/chips-campaign46/raw/positive-B-geometry2048-000/e321a7ffce2a0be5bfde8e578aeec5afbdc0f979c3b92ada1f74dbff20f4eb78/work/fs",
+          "--cache=/home/vick/chips-campaign46/raw/positive-B-geometry2048-000/e321a7ffce2a0be5bfde8e578aeec5afbdc0f979c3b92ada1f74dbff20f4eb78/work/cache",
+          "--",
+          "/t.elf"
+        ],
+        "stdout": "CHIPS_PASS\n",
+        "stderr_bytes": 582,
+        "expected_stdout": "CHIPS_PASS\n",
+        "expected_returncode": 0,
+        "offline_original_classify": "PASS"
+      }
+    },
+    "checker": "upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout",
+    "selected_context_count_across_same_named_cases": 1416
+  },
+  "vredsum.vs": {
+    "witness": {
+      "VLEN": "1024",
+      "arm": "B",
+      "assertion_selector": "sources/chips/long1024/stage2/vredsum_vs-0.S [TEST_CASE lines 72..20230; count=9984]",
+      "batch": "long1024",
+      "candidate": "clean961",
+      "case": "vredsum_vs-0",
+      "cell_id": "d849bb01e8c8421699380a0c869457bf4d459b0001186acbb524c66c9262858d",
+      "configuration_selector": "sources/chips/SOURCE_GEOMETRY.csv [source=long1024/stage2/vredsum_vs-0.S]",
+      "control": "False",
+      "elf_sha256": "f55f0ee92f4d71a78e54bc2a897a55b4262267ea32c203f5224d435bc77e5f9b",
+      "form": "vredsum.vs",
+      "ledger_row_id": "9b148cb1a2c865ea4926c4245931ba1cd812c53820347c559d7392db2c12508f",
+      "receipt": "records/clean961/receipts/positive-B-long1024-000/d849bb01e8c8421699380a0c869457bf4d459b0001186acbb524c66c9262858d",
+      "source": "sources/chips/long1024/stage2/vredsum_vs-0.S",
+      "source_chain_selector": "SOURCE_CHAIN.json [batch=long1024,case=vredsum_vs-0]",
+      "source_form": "vredsum.vs",
+      "source_sha256": "7110f06fbaa659e02a15d48906d346c95a407016834ecfe31b7972fc30100f20"
+    },
+    "source_tuple_samples": [
+      {
+        "form": "vredsum.vs",
+        "vlen": "1024",
+        "requested_vl": "0",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "long1024/stage2/vredsum_vs-0.S",
+        "line": "20",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "7110f06fbaa659e02a15d48906d346c95a407016834ecfe31b7972fc30100f20",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      },
+      {
+        "form": "vredsum.vs",
+        "vlen": "1024",
+        "requested_vl": "63",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "long1024/stage2/vredsum_vs-0.S",
+        "line": "106",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "7110f06fbaa659e02a15d48906d346c95a407016834ecfe31b7972fc30100f20",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      }
+    ],
+    "literal_contexts": [],
+    "original_assertion_count": 9984,
+    "original_assertions": [
+      {
+        "line": 72,
+        "text": "  TEST_CASE(2, t0, 0xddb8bebc, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 73,
+        "text": "  TEST_CASE(3, t0, 0x3ad64ccb, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 74,
+        "text": "  TEST_CASE(4, t0, 0xddff6231, lw t0, 0(a0); addi a0, a0, 4)"
+      }
+    ],
+    "target": [
+      {
+        "line": 64,
+        "text": "vredsum.vs v4, v23, v13",
+        "source_role": "TEST_BODY"
+      },
+      {
+        "line": 150,
+        "text": "vredsum.vs v4, v23, v13",
+        "source_role": "TEST_BODY"
+      }
+    ],
+    "CSR_source_lines": [
+      {
+        "line": 23,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 109,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 196,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 283,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 370,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      }
+    ],
+    "receipts": {
+      "records/clean961/receipts/positive-B-long1024-000/d849bb01e8c8421699380a0c869457bf4d459b0001186acbb524c66c9262858d": {
+        "original_result": {
+          "id": "d849bb01e8c8421699380a0c869457bf4d459b0001186acbb524c66c9262858d",
+          "status": "PASS",
+          "control": false,
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds_for_timeout_diagnostics_only": 0.11517317499965429,
+          "elf_sha256": "f55f0ee92f4d71a78e54bc2a897a55b4262267ea32c203f5224d435bc77e5f9b",
+          "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+          "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+          "checker": "registered exit code and exact stdout of self-checking guest",
+          "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+        },
+        "original_command": [
+          "/home/vick/rvdbt-validation-delivery-20261009/build-clean/bin/elfrun",
+          "--vlen=1024",
+          "--aot=0",
+          "--aot-use-llvm=0",
+          "--tier0-threshold=0",
+          "--rvv-direct=1",
+          "--rvv-qcg-direct-setvl=1",
+          "--rvv-qcg-typed-chunk-mem-e64=1",
+          "--rvv-qcg-whole-reg=1",
+          "--rvv-qcg-typed-chunk=1",
+          "--rvv-qcg-typed-chunk-sub=1",
+          "--rvv-qcg-typed-chunk-mul=1",
+          "--rvv-qcg-typed-chunk-and=1",
+          "--rvv-qcg-typed-chunk-or=1",
+          "--rvv-qcg-typed-chunk-xor=1",
+          "--rvv-qcg-typed-chunk-shift=1",
+          "--rvv-qcg-typed-chunk-vle=1",
+          "--rvv-qcg-typed-chunk-vse=1",
+          "--rvv-qcg-typed-chunk-vmv=1",
+          "--rvv-qcg-partial-vl=1",
+          "--rvv-qcg-vx-mulacc=1",
+          "--rvv-qcg-typed-chunk-falu=1",
+          "--rvv-qcg-typed-chunk-fma=1",
+          "--rvv-qcg-narrow-chunk-width=1",
+          "--rvv-vector-run=0",
+          "--rvv-run-body=ssa",
+          "--rvv-run-order=member",
+          "--rvv-run-live-range-split=0",
+          "--rvv-qcg-typed-chunk-vadd-scalar=1",
+          "--rvv-qcg-fp-shared-mask=1",
+          "--qcg-code-huge-pages=0",
+          "--rvv-qcg-active-vl-mask-fusion=1",
+          "--rvv-qcg-active-mask-memory=1",
+          "--rvv-qcg-active-vl-bound=0",
+          "--rvv-qcg-active-vl-int-bound=0",
+          "--rvv-qcg-active-vl-widen-bound=0",
+          "--rvv-qcg-active-vl-narrow-bound=0",
+          "--rvv-qcg-hit-counter=1",
+          "--rvv-route-census=1",
+          "--fsroot=/home/vick/chips-campaign46/raw/positive-B-long1024-000/d849bb01e8c8421699380a0c869457bf4d459b0001186acbb524c66c9262858d/work/fs",
+          "--cache=/home/vick/chips-campaign46/raw/positive-B-long1024-000/d849bb01e8c8421699380a0c869457bf4d459b0001186acbb524c66c9262858d/work/cache",
+          "--",
+          "/t.elf"
+        ],
+        "stdout": "CHIPS_PASS\n",
+        "stderr_bytes": 582,
+        "expected_stdout": "CHIPS_PASS\n",
+        "expected_returncode": 0,
+        "offline_original_classify": "PASS"
+      }
+    },
+    "checker": "upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout",
+    "selected_context_count_across_same_named_cases": 372
+  },
+  "vmand.mm": {
+    "witness": {
+      "VLEN": "1024",
+      "arm": "B",
+      "assertion_selector": "sources/chips/mask1024/stage2/vmand_mm-0.S [TEST_CASE lines 63..20050; count=13824]",
+      "batch": "mask1024",
+      "candidate": "clean961",
+      "case": "vmand_mm-0",
+      "cell_id": "8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336",
+      "configuration_selector": "sources/chips/SOURCE_GEOMETRY.csv [source=mask1024/stage2/vmand_mm-0.S]",
+      "control": "False",
+      "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+      "form": "vmand.mm",
+      "ledger_row_id": "f97da69b1c66e5bb6e998ece0572400a9d99d7bfcbf37f1d75b295cb92a65efa",
+      "receipt": "records/clean961/receipts/positive-B-mask1024-000/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336",
+      "source": "sources/chips/mask1024/stage2/vmand_mm-0.S",
+      "source_chain_selector": "SOURCE_CHAIN.json [batch=mask1024,case=vmand_mm-0]",
+      "source_form": "vmand.mm",
+      "source_sha256": "f85b793aa98f420556d2e2ac58a6887c4bda4ac6824a70da6559b72e24b28955"
+    },
+    "source_tuple_samples": [
+      {
+        "form": "vmand.mm",
+        "vlen": "1024",
+        "requested_vl": "0",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "mask1024/stage2/vmand_mm-0.S",
+        "line": "20",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "f85b793aa98f420556d2e2ac58a6887c4bda4ac6824a70da6559b72e24b28955",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      },
+      {
+        "form": "vmand.mm",
+        "vlen": "1024",
+        "requested_vl": "63",
+        "sew": "e8",
+        "lmul": "mf4",
+        "masked": "false",
+        "source": "mask1024/stage2/vmand_mm-0.S",
+        "line": "97",
+        "target_occurrences": "1",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "f85b793aa98f420556d2e2ac58a6887c4bda4ac6824a70da6559b72e24b28955",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      }
+    ],
+    "literal_contexts": [],
+    "original_assertion_count": 13824,
+    "original_assertions": [
+      {
+        "line": 63,
+        "text": "  TEST_CASE(2, t0, 0xddb8bebc, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 64,
+        "text": "  TEST_CASE(3, t0, 0x3ad64ccb, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 65,
+        "text": "  TEST_CASE(4, t0, 0xddff6231, lw t0, 0(a0); addi a0, a0, 4)"
+      }
+    ],
+    "target": [
+      {
+        "line": 55,
+        "text": "vmand.mm v1, v3, v2",
+        "source_role": "TEST_BODY"
+      },
+      {
+        "line": 132,
+        "text": "vmand.mm v1, v3, v2",
+        "source_role": "TEST_BODY"
+      }
+    ],
+    "CSR_source_lines": [
+      {
+        "line": 23,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 100,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 178,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 256,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 334,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      }
+    ],
+    "receipts": {
+      "records/clean961/receipts/positive-B-mask1024-000/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336": {
+        "original_result": {
+          "id": "8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336",
+          "status": "PASS",
+          "control": false,
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds_for_timeout_diagnostics_only": 0.21747059101471677,
+          "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+          "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+          "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+          "checker": "registered exit code and exact stdout of self-checking guest",
+          "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+        },
+        "original_command": [
+          "/home/vick/rvdbt-validation-delivery-20261009/build-clean/bin/elfrun",
+          "--vlen=1024",
+          "--aot=0",
+          "--aot-use-llvm=0",
+          "--tier0-threshold=0",
+          "--rvv-direct=1",
+          "--rvv-qcg-direct-setvl=1",
+          "--rvv-qcg-typed-chunk-mem-e64=1",
+          "--rvv-qcg-whole-reg=1",
+          "--rvv-qcg-typed-chunk=1",
+          "--rvv-qcg-typed-chunk-sub=1",
+          "--rvv-qcg-typed-chunk-mul=1",
+          "--rvv-qcg-typed-chunk-and=1",
+          "--rvv-qcg-typed-chunk-or=1",
+          "--rvv-qcg-typed-chunk-xor=1",
+          "--rvv-qcg-typed-chunk-shift=1",
+          "--rvv-qcg-typed-chunk-vle=1",
+          "--rvv-qcg-typed-chunk-vse=1",
+          "--rvv-qcg-typed-chunk-vmv=1",
+          "--rvv-qcg-partial-vl=1",
+          "--rvv-qcg-vx-mulacc=1",
+          "--rvv-qcg-typed-chunk-falu=1",
+          "--rvv-qcg-typed-chunk-fma=1",
+          "--rvv-qcg-narrow-chunk-width=1",
+          "--rvv-vector-run=0",
+          "--rvv-run-body=ssa",
+          "--rvv-run-order=member",
+          "--rvv-run-live-range-split=0",
+          "--rvv-qcg-typed-chunk-vadd-scalar=1",
+          "--rvv-qcg-fp-shared-mask=1",
+          "--qcg-code-huge-pages=0",
+          "--rvv-qcg-active-vl-mask-fusion=1",
+          "--rvv-qcg-active-mask-memory=1",
+          "--rvv-qcg-active-vl-bound=0",
+          "--rvv-qcg-active-vl-int-bound=0",
+          "--rvv-qcg-active-vl-widen-bound=0",
+          "--rvv-qcg-active-vl-narrow-bound=0",
+          "--rvv-qcg-hit-counter=1",
+          "--rvv-route-census=1",
+          "--fsroot=/home/vick/chips-campaign46/raw/positive-B-mask1024-000/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336/work/fs",
+          "--cache=/home/vick/chips-campaign46/raw/positive-B-mask1024-000/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336/work/cache",
+          "--",
+          "/t.elf"
+        ],
+        "stdout": "CHIPS_PASS\n",
+        "stderr_bytes": 582,
+        "expected_stdout": "CHIPS_PASS\n",
+        "expected_returncode": 0,
+        "offline_original_classify": "PASS"
+      }
+    },
+    "checker": "upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout",
+    "selected_context_count_across_same_named_cases": 135
+  },
+  "vle32.v": {
+    "witness": {
+      "VLEN": "1024",
+      "arm": "B",
+      "assertion_selector": "sources/chips/long1024/stage2/vle32_v-0.S [TEST_CASE lines 58..11608; count=8640]",
+      "batch": "long1024",
+      "candidate": "clean961",
+      "case": "vle32_v-0",
+      "cell_id": "2447c20b0abd20a321cd9f2af19a148273cc4e74fc97844dfe96ef3774ec7a4d",
+      "configuration_selector": "sources/chips/SOURCE_GEOMETRY.csv [source=long1024/stage2/vle32_v-0.S]",
+      "control": "False",
+      "elf_sha256": "349766049e2d189b029faa1c119e311e53eecd364ba970f955f691e6c9b970e5",
+      "form": "vle32.v",
+      "ledger_row_id": "3dab18aa898f6256d164d4c9ac94f2fe394dba98b2b248b26e618b34c6e74af2",
+      "receipt": "records/clean961/receipts/positive-B-long1024-000/2447c20b0abd20a321cd9f2af19a148273cc4e74fc97844dfe96ef3774ec7a4d",
+      "source": "sources/chips/long1024/stage2/vle32_v-0.S",
+      "source_chain_selector": "SOURCE_CHAIN.json [batch=long1024,case=vle32_v-0]",
+      "source_form": "vle32.v",
+      "source_sha256": "4f3e974005dbebcadb3aacccdb77e0055da3cd65cb51933f458d3af526d95a9b"
+    },
+    "source_tuple_samples": [
+      {
+        "form": "vle32.v",
+        "vlen": "1024",
+        "requested_vl": "0",
+        "sew": "e32",
+        "lmul": "m1",
+        "masked": "false",
+        "source": "long1024/stage2/vle32_v-0.S",
+        "line": "20",
+        "target_occurrences": "3",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "4f3e974005dbebcadb3aacccdb77e0055da3cd65cb51933f458d3af526d95a9b",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      },
+      {
+        "form": "vle32.v",
+        "vlen": "1024",
+        "requested_vl": "15",
+        "sew": "e32",
+        "lmul": "m1",
+        "masked": "false",
+        "source": "long1024/stage2/vle32_v-0.S",
+        "line": "92",
+        "target_occurrences": "3",
+        "passing_arms": "B;M1;M2;BOTH",
+        "source_sha256": "4f3e974005dbebcadb3aacccdb77e0055da3cd65cb51933f458d3af526d95a9b",
+        "evidence": "SOURCE_CONFIG_IN_PASSING_FILE"
+      }
+    ],
+    "literal_contexts": [],
+    "original_assertion_count": 8640,
+    "original_assertions": [
+      {
+        "line": 58,
+        "text": "  TEST_CASE(2, t0, 0xddb8bebc, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 59,
+        "text": "  TEST_CASE(3, t0, 0x3ad64ccb, lw t0, 0(a0); addi a0, a0, 4)"
+      },
+      {
+        "line": 60,
+        "text": "  TEST_CASE(4, t0, 0xddff6231, lw t0, 0(a0); addi a0, a0, 4)"
+      }
+    ],
+    "target": [
+      {
+        "line": 50,
+        "text": "vle32.v v1, (a0)",
+        "source_role": "TEST_BODY"
+      },
+      {
+        "line": 122,
+        "text": "vle32.v v1, (a0)",
+        "source_role": "TEST_BODY"
+      }
+    ],
+    "CSR_source_lines": [
+      {
+        "line": 23,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 95,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 168,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 241,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      },
+      {
+        "line": 314,
+        "text": "csrwi vxrm, 0 # rnu (round-to-nearest-up)"
+      }
+    ],
+    "receipts": {
+      "records/clean961/receipts/positive-B-long1024-000/2447c20b0abd20a321cd9f2af19a148273cc4e74fc97844dfe96ef3774ec7a4d": {
+        "original_result": {
+          "id": "2447c20b0abd20a321cd9f2af19a148273cc4e74fc97844dfe96ef3774ec7a4d",
+          "status": "PASS",
+          "control": false,
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds_for_timeout_diagnostics_only": 0.16511678701499477,
+          "elf_sha256": "349766049e2d189b029faa1c119e311e53eecd364ba970f955f691e6c9b970e5",
+          "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+          "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+          "checker": "registered exit code and exact stdout of self-checking guest",
+          "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+        },
+        "original_command": [
+          "/home/vick/rvdbt-validation-delivery-20261009/build-clean/bin/elfrun",
+          "--vlen=1024",
+          "--aot=0",
+          "--aot-use-llvm=0",
+          "--tier0-threshold=0",
+          "--rvv-direct=1",
+          "--rvv-qcg-direct-setvl=1",
+          "--rvv-qcg-typed-chunk-mem-e64=1",
+          "--rvv-qcg-whole-reg=1",
+          "--rvv-qcg-typed-chunk=1",
+          "--rvv-qcg-typed-chunk-sub=1",
+          "--rvv-qcg-typed-chunk-mul=1",
+          "--rvv-qcg-typed-chunk-and=1",
+          "--rvv-qcg-typed-chunk-or=1",
+          "--rvv-qcg-typed-chunk-xor=1",
+          "--rvv-qcg-typed-chunk-shift=1",
+          "--rvv-qcg-typed-chunk-vle=1",
+          "--rvv-qcg-typed-chunk-vse=1",
+          "--rvv-qcg-typed-chunk-vmv=1",
+          "--rvv-qcg-partial-vl=1",
+          "--rvv-qcg-vx-mulacc=1",
+          "--rvv-qcg-typed-chunk-falu=1",
+          "--rvv-qcg-typed-chunk-fma=1",
+          "--rvv-qcg-narrow-chunk-width=1",
+          "--rvv-vector-run=0",
+          "--rvv-run-body=ssa",
+          "--rvv-run-order=member",
+          "--rvv-run-live-range-split=0",
+          "--rvv-qcg-typed-chunk-vadd-scalar=1",
+          "--rvv-qcg-fp-shared-mask=1",
+          "--qcg-code-huge-pages=0",
+          "--rvv-qcg-active-vl-mask-fusion=1",
+          "--rvv-qcg-active-mask-memory=1",
+          "--rvv-qcg-active-vl-bound=0",
+          "--rvv-qcg-active-vl-int-bound=0",
+          "--rvv-qcg-active-vl-widen-bound=0",
+          "--rvv-qcg-active-vl-narrow-bound=0",
+          "--rvv-qcg-hit-counter=1",
+          "--rvv-route-census=1",
+          "--fsroot=/home/vick/chips-campaign46/raw/positive-B-long1024-000/2447c20b0abd20a321cd9f2af19a148273cc4e74fc97844dfe96ef3774ec7a4d/work/fs",
+          "--cache=/home/vick/chips-campaign46/raw/positive-B-long1024-000/2447c20b0abd20a321cd9f2af19a148273cc4e74fc97844dfe96ef3774ec7a4d/work/cache",
+          "--",
+          "/t.elf"
+        ],
+        "stdout": "CHIPS_PASS\n",
+        "stderr_bytes": 582,
+        "expected_stdout": "CHIPS_PASS\n",
+        "expected_returncode": 0,
+        "offline_original_classify": "PASS"
+      }
+    },
+    "checker": "upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout",
+    "selected_context_count_across_same_named_cases": 234
+  },
+  "ACT": {
+    "selected_record_count": 2,
+    "representative_original_record": {
+      "DUT": [
+        {
+          "arm": "B",
+          "elf_sha256": "4d41ac26f2571e9a1acbf4349278c359bae620605aef0999a49ee07f9b3b00b3",
+          "flags": [
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--fsroot={WORK}/fs",
+            "--cache={WORK}/cache",
+            "--",
+            "/t.elf"
+          ],
+          "oracle_sha256": "f2a0b7e3327e8e4bf68e019ebe65c743b3da449afafd85b11d5b1d7988a0186a",
+          "raw": "raw/DUT-B",
+          "returncode": 0,
+          "status": "PASS"
+        }
+      ],
+      "adapter": "records/common/user_env/rvmodel_macros.h",
+      "capture_config": "records/common/reference_config/sail.json",
+      "case": "Vf32-vfadd.vf",
+      "checker": "records/common/user_env/signature.h",
+      "checker_scope": "records/cases/Vf32-vfadd.vf/CHECKER_SCOPE.json",
+      "expected": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.results",
+      "form": "vfadd.vf",
+      "input_id": "Vf32__vfadd.vf",
+      "linker": "records/common/user_link.ld",
+      "oracle": "records/cases/Vf32-vfadd.vf/ORACLE.json",
+      "original_checker": "records/common/upstream/env/signature.h",
+      "preservation": "records/cases/Vf32-vfadd.vf/PRESERVATION.json",
+      "processor": "records/common/reference_config/sig_modify.py",
+      "references": [
+        {
+          "engine": "Sail",
+          "raw": "raw/sail-signature",
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "engine": "QEMU",
+          "raw": "raw/qemu-selfcheck",
+          "returncode": 0,
+          "status": "PASS"
+        }
+      ],
+      "result": "records/cases/Vf32-vfadd.vf/RESULT.json",
+      "sew": 32,
+      "signature": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.sig",
+      "source": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.S",
+      "source_scope": "records/cases/Vf32-vfadd.vf/SCOPE_AUDIT.json",
+      "status": "PASS"
+    },
+    "representative_case_details": {
+      "original_result": {
+        "case": "Vf32-vfadd.vf",
+        "input_id": "Vf32__vfadd.vf",
+        "form": "vfadd.vf",
+        "sew": 32,
+        "source_path": "generated/rv32i/Vf32/Vf32-vfadd.vf.S",
+        "source_sha256": "65aafd292883b7756e219a9d714701bdf7d2417f1b9277ceb93c254f7adc5144",
+        "status": "PASS",
+        "DUT": [
+          {
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "raw": "raw/DUT-B",
+            "flags": [
+              "--vlen=1024",
+              "--aot=0",
+              "--aot-use-llvm=0",
+              "--tier0-threshold=0",
+              "--rvv-direct=1",
+              "--rvv-qcg-direct-setvl=1",
+              "--rvv-qcg-typed-chunk-mem-e64=1",
+              "--rvv-qcg-whole-reg=1",
+              "--rvv-qcg-typed-chunk=1",
+              "--rvv-qcg-typed-chunk-sub=1",
+              "--rvv-qcg-typed-chunk-mul=1",
+              "--rvv-qcg-typed-chunk-and=1",
+              "--rvv-qcg-typed-chunk-or=1",
+              "--rvv-qcg-typed-chunk-xor=1",
+              "--rvv-qcg-typed-chunk-shift=1",
+              "--rvv-qcg-typed-chunk-vle=1",
+              "--rvv-qcg-typed-chunk-vse=1",
+              "--rvv-qcg-typed-chunk-vmv=1",
+              "--rvv-qcg-partial-vl=1",
+              "--rvv-qcg-vx-mulacc=1",
+              "--rvv-qcg-typed-chunk-falu=1",
+              "--rvv-qcg-typed-chunk-fma=1",
+              "--rvv-qcg-narrow-chunk-width=1",
+              "--rvv-vector-run=0",
+              "--rvv-run-body=ssa",
+              "--rvv-run-order=member",
+              "--rvv-run-live-range-split=0",
+              "--rvv-qcg-typed-chunk-vadd-scalar=1",
+              "--rvv-qcg-fp-shared-mask=1",
+              "--qcg-code-huge-pages=0",
+              "--rvv-qcg-active-vl-mask-fusion=1",
+              "--rvv-qcg-active-mask-memory=1",
+              "--rvv-qcg-active-vl-bound=0",
+              "--rvv-qcg-active-vl-int-bound=0",
+              "--rvv-qcg-active-vl-widen-bound=0",
+              "--rvv-qcg-active-vl-narrow-bound=0",
+              "--rvv-stats=1",
+              "--rvv-route-census=1",
+              "--rvv-qcg-hit-counter=1",
+              "--fsroot={WORK}/fs",
+              "--cache={WORK}/cache",
+              "--",
+              "/t.elf"
+            ],
+            "elf_sha256": "4d41ac26f2571e9a1acbf4349278c359bae620605aef0999a49ee07f9b3b00b3",
+            "oracle_sha256": "f2a0b7e3327e8e4bf68e019ebe65c743b3da449afafd85b11d5b1d7988a0186a"
+          }
+        ],
+        "reference": [
+          {
+            "engine": "Sail",
+            "returncode": 0,
+            "status": "PASS",
+            "raw": "raw/sail-signature"
+          },
+          {
+            "engine": "QEMU",
+            "returncode": 0,
+            "status": "PASS",
+            "raw": "raw/qemu-selfcheck"
+          }
+        ],
+        "prior_joins": [],
+        "elf_sha256": "4d41ac26f2571e9a1acbf4349278c359bae620605aef0999a49ee07f9b3b00b3",
+        "oracle_sha256": "f2a0b7e3327e8e4bf68e019ebe65c743b3da449afafd85b11d5b1d7988a0186a",
+        "checker_sha256": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+        "targets": 653,
+        "scope": {
+          "BASE": 1264,
+          "LEN": 50,
+          "FFLAGS": 657,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 1264,
+            "RVTEST_SIGUPD_V_LEN": 50
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        },
+        "memory_status": "ALLOW_WITH_READ_LIMITATIONS"
+      },
+      "receipts": {
+        "records/cases/Vf32-vfadd.vf/raw/DUT-B": {
+          "original_command": [
+            "/home/vick/ara-clean961-stage/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--fsroot=/tmp/act53_gsnq7t10/fs",
+            "--cache=/tmp/act53_gsnq7t10/cache",
+            "--",
+            "/t.elf"
+          ],
+          "original_result": {
+            "returncode": 0,
+            "timeout": false
+          },
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "814c07b3e6d26ba232466f3a1db7c18ea76dc7671fbcdcbea06cf629669f42b9"
+        }
+      },
+      "SCOPE_AUDIT.json": {
+        "path": "records/cases/Vf32-vfadd.vf/SCOPE_AUDIT.json",
+        "sha256": "93beeed0d9e7f2d6adea1a7178ad30d2032678ed5a33c0ff0ca6460faa8a7f0d",
+        "record_sample": {
+          "case": "Vf32-vfadd.vf",
+          "source_sha256": "65aafd292883b7756e219a9d714701bdf7d2417f1b9277ceb93c254f7adc5144",
+          "target_lines": 657,
+          "compiled_target_labels": 657,
+          "target_map": [
+            {
+              "label": "Vf32_vfadd_vf_cg_cp_vd_b0",
+              "line": 63,
+              "instruction": "vfadd.vf v0, v11, f3",
+              "compiled": true,
+              "address": 2147483824,
+              "nearest_configuration": {
+                "line": 53,
+                "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+              }
+            },
+            {
+              "label": "Vf32_vfadd_vf_cg_cp_vd_b1",
+              "line": 87,
+              "instruction": "vfadd.vf v1, v31, f29",
+              "compiled": true,
+              "address": 2147484048,
+              "nearest_configuration": {
+                "line": 77,
+                "instruction": "vsetvli x0, x25, e32, m1, tu, mu"
+              }
+            }
+          ],
+          "original_checker_calls": [
+            {
+              "line": 64,
+              "macro": "RVTEST_SIGUPD_FFLAGS",
+              "args": [
+                "x2",
+                "x14",
+                "x13",
+                "Vf32_vfadd_vf_cg_cp_vd_b0",
+                "test_1_str"
+              ],
+              "nearest_target": {
+                "label": "Vf32_vfadd_vf_cg_cp_vd_b0",
+                "line": 63,
+                "instruction": "vfadd.vf v0, v11, f3",
+                "compiled": true,
+                "address": 2147483824,
+                "nearest_configuration": {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                }
+              },
+              "scope": "FFLAGS original exact flags",
+              "source_configurations": [
+                {
+                  "line": 42,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                },
+                {
+                  "line": 49,
+                  "instruction": "vsetvli x31, x0, e32, m1, tu, mu                  # Set vl = VLMAX, where x31 = VLMAX"
+                },
+                {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                }
+              ]
+            },
+            {
+              "line": 66,
+              "macro": "RVTEST_SIGUPD_V",
+              "args": [
+                "_CMP",
+                "_SIG_PTR",
+                "_LINK_REG",
+                "_TEMP_REG",
+                "_VTMP",
+                "_MTMP",
+                "_SEW",
+                "_VREG",
+                "_INST_PTR",
+                "_STR_PTR"
+              ],
+              "nearest_target": {
+                "label": "Vf32_vfadd_vf_cg_cp_vd_b0",
+                "line": 63,
+                "instruction": "vfadd.vf v0, v11, f3",
+                "compiled": true,
+                "address": 2147483824,
+                "nearest_configuration": {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                }
+              },
+              "scope": "BASE selected destination element0/bit0",
+              "source_configurations": [
+                {
+                  "line": 49,
+                  "instruction": "vsetvli x31, x0, e32, m1, tu, mu                  # Set vl = VLMAX, where x31 = VLMAX"
+                },
+                {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                },
+                {
+                  "line": 65,
+                  "instruction": "vsetivli x0, 1, e32, m1, tu, mu                   # set SEW=32, LMUL=1, VL=1 before signature check"
+                }
+              ]
+            }
+          ],
+          "checker_sha256": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+          "input_runtime_geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "source_SEW": 32
+          },
+          "observation_limit": "Static emitted/checker/ELF bindings are not dynamic branch counts; original selected-result scope only. No full32v/state/memory/fault/optimized-path claim."
+        }
+      },
+      "CHECKER_SCOPE.json": {
+        "path": "records/cases/Vf32-vfadd.vf/CHECKER_SCOPE.json",
+        "sha256": "8fe76b74a1361c5f38f4b5d62207f06cff978c5fb33d70ed0ea66ac20441e4cc",
+        "record_sample": {
+          "BASE": 1264,
+          "LEN": 50,
+          "FFLAGS": 657,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 1264,
+            "RVTEST_SIGUPD_V_LEN": 50
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        }
+      },
+      "checker_scope": {
+        "path": "records/cases/Vf32-vfadd.vf/CHECKER_SCOPE.json",
+        "sha256": "8fe76b74a1361c5f38f4b5d62207f06cff978c5fb33d70ed0ea66ac20441e4cc",
+        "record_sample": {
+          "BASE": 1264,
+          "LEN": 50,
+          "FFLAGS": 657,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 1264,
+            "RVTEST_SIGUPD_V_LEN": 50
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        }
+      },
+      "source_scope": {
+        "path": "records/cases/Vf32-vfadd.vf/SCOPE_AUDIT.json",
+        "sha256": "93beeed0d9e7f2d6adea1a7178ad30d2032678ed5a33c0ff0ca6460faa8a7f0d",
+        "record_sample": {
+          "case": "Vf32-vfadd.vf",
+          "source_sha256": "65aafd292883b7756e219a9d714701bdf7d2417f1b9277ceb93c254f7adc5144",
+          "target_lines": 657,
+          "compiled_target_labels": 657,
+          "target_map": [
+            {
+              "label": "Vf32_vfadd_vf_cg_cp_vd_b0",
+              "line": 63,
+              "instruction": "vfadd.vf v0, v11, f3",
+              "compiled": true,
+              "address": 2147483824,
+              "nearest_configuration": {
+                "line": 53,
+                "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+              }
+            },
+            {
+              "label": "Vf32_vfadd_vf_cg_cp_vd_b1",
+              "line": 87,
+              "instruction": "vfadd.vf v1, v31, f29",
+              "compiled": true,
+              "address": 2147484048,
+              "nearest_configuration": {
+                "line": 77,
+                "instruction": "vsetvli x0, x25, e32, m1, tu, mu"
+              }
+            }
+          ],
+          "original_checker_calls": [
+            {
+              "line": 64,
+              "macro": "RVTEST_SIGUPD_FFLAGS",
+              "args": [
+                "x2",
+                "x14",
+                "x13",
+                "Vf32_vfadd_vf_cg_cp_vd_b0",
+                "test_1_str"
+              ],
+              "nearest_target": {
+                "label": "Vf32_vfadd_vf_cg_cp_vd_b0",
+                "line": 63,
+                "instruction": "vfadd.vf v0, v11, f3",
+                "compiled": true,
+                "address": 2147483824,
+                "nearest_configuration": {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                }
+              },
+              "scope": "FFLAGS original exact flags",
+              "source_configurations": [
+                {
+                  "line": 42,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                },
+                {
+                  "line": 49,
+                  "instruction": "vsetvli x31, x0, e32, m1, tu, mu                  # Set vl = VLMAX, where x31 = VLMAX"
+                },
+                {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                }
+              ]
+            },
+            {
+              "line": 66,
+              "macro": "RVTEST_SIGUPD_V",
+              "args": [
+                "_CMP",
+                "_SIG_PTR",
+                "_LINK_REG",
+                "_TEMP_REG",
+                "_VTMP",
+                "_MTMP",
+                "_SEW",
+                "_VREG",
+                "_INST_PTR",
+                "_STR_PTR"
+              ],
+              "nearest_target": {
+                "label": "Vf32_vfadd_vf_cg_cp_vd_b0",
+                "line": 63,
+                "instruction": "vfadd.vf v0, v11, f3",
+                "compiled": true,
+                "address": 2147483824,
+                "nearest_configuration": {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                }
+              },
+              "scope": "BASE selected destination element0/bit0",
+              "source_configurations": [
+                {
+                  "line": 49,
+                  "instruction": "vsetvli x31, x0, e32, m1, tu, mu                  # Set vl = VLMAX, where x31 = VLMAX"
+                },
+                {
+                  "line": 53,
+                  "instruction": "vsetvli x0, x31, e32, m1, tu, mu"
+                },
+                {
+                  "line": 65,
+                  "instruction": "vsetivli x0, 1, e32, m1, tu, mu                   # set SEW=32, LMUL=1, VL=1 before signature check"
+                }
+              ]
+            }
+          ],
+          "checker_sha256": "943d320aaa7ca95dc405495a4cf993ad08275db4320e2f95df1e87d6b0a9e111",
+          "input_runtime_geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "source_SEW": 32
+          },
+          "observation_limit": "Static emitted/checker/ELF bindings are not dynamic branch counts; original selected-result scope only. No full32v/state/memory/fault/optimized-path claim."
+        }
+      },
+      "oracle": {
+        "path": "records/cases/Vf32-vfadd.vf/ORACLE.json",
+        "sha256": "2250f3d2e8ce874f72a56ae98f7f557a12a612057c849206123a40aba53928b1",
+        "record_sample": {
+          "source_sha256": "65aafd292883b7756e219a9d714701bdf7d2417f1b9277ceb93c254f7adc5144",
+          "capture_elf_sha256": "d3b195154fd451bff53ecb1a802585df7da19bcb16051112d73e582190ed035d",
+          "raw_sig_sha256": "48ce5b5afcf56ff78e27ba948fb0184c967e6fea6d5d36b3c9c5c0e63f4e5deb",
+          "processed_results_sha256": "f2a0b7e3327e8e4bf68e019ebe65c743b3da449afafd85b11d5b1d7988a0186a",
+          "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+          "processor_sha256": "1427bce89a2272f41184fea8777dc2a5ba34a64e918ac26ec1d5d044afe2e39d",
+          "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+        }
+      },
+      "expected": {
+        "path": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.results",
+        "sha256": "f2a0b7e3327e8e4bf68e019ebe65c743b3da449afafd85b11d5b1d7988a0186a"
+      }
+    },
+    "literal_sources": {
+      "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.S": {
+        "sha256": "65aafd292883b7756e219a9d714701bdf7d2417f1b9277ceb93c254f7adc5144",
+        "literal_sites": [
+          {
+            "line": 4,
+            "text": "// vfadd.vf",
+            "window_first_line": 1,
+            "window": [
+              "",
+              "# testgen_header.S",
+              "///////////////////////////////////////////",
+              "// vfadd.vf",
+              "//",
+              "// This file is autogenerated by testgen.",
+              "// Do not modify directly."
+            ]
+          },
+          {
+            "line": 63,
+            "text": "vfadd.vf v0, v11, f3",
+            "window_first_line": 55,
+            "window": [
+              "vle32.v v0, (x17)                                 # Load desired value from memory into v0",
+              "la x23, vs2_random_base_000                       # Load address of desired value",
+              "vle32.v v11, (x23)                                # Load desired value from memory into v11",
+              "LA(x10, scratch)",
+              "LI(x6, 0xd38e0b1d)                                # load x6 with value 0xd38e0b1d",
+              "sw x6, 0(x10)                                     # store 0xd38e0b1d in memory",
+              "flw f3, 0(x10)                                    # load 0xd38e0b1d from memory into f3",
+              "Vf32_vfadd_vf_cg_cp_vd_b0:",
+              "vfadd.vf v0, v11, f3",
+              "RVTEST_SIGUPD_FFLAGS(x2, x14, x13, Vf32_vfadd_vf_cg_cp_vd_b0, test_1_str)# check fflags in signature",
+              "vsetivli x0, 1, e32, m1, tu, mu                   # set SEW=32, LMUL=1, VL=1 before signature check",
+              "# RVTEST_SIGUPD_V(_CMP, _SIG_PTR, _LINK_REG, _TEMP_REG, _VTMP, _MTMP, _SEW, _VREG, _INST_PTR, _STR_PTR)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "ACT-db2": {
+    "selected_record_count": 2,
+    "representative_original_record": {
+      "capture": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.sig",
+      "case": "Vf32-vfadd.vf",
+      "checker": "records/common/user_env/signature.h",
+      "expected": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.results",
+      "form": "vfadd.vf",
+      "full_raw": "/home/vick/rvv-task109/cases/Vf32-vfadd.vf",
+      "input_id": "Vf32__vfadd.vf",
+      "oracle": "records/cases/Vf32-vfadd.vf/ORACLE.json",
+      "raw": "records/cases/Vf32-vfadd.vf/raw",
+      "result": "records/cases/Vf32-vfadd.vf/RESULT.json",
+      "sew": 32,
+      "source": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.S",
+      "status": "PASS",
+      "target_audit": "records/cases/Vf32-vfadd.vf/TARGET_EXECUTION_AUDIT.json"
+    },
+    "representative_case_details": {
+      "original_result": {
+        "case": "Vf32-vfadd.vf",
+        "input_id": "Vf32__vfadd.vf",
+        "form": "vfadd.vf",
+        "sew": 32,
+        "source_path": "generated/rv32i/Vf32/Vf32-vfadd.vf.S",
+        "source_sha256": "c62a02425e8802eb753d5ae57b8eed711350621d9dd6a037b3c3d3b20cc4dab4",
+        "status": "PASS",
+        "DUT": [
+          {
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "raw": "raw/DUT-B",
+            "flags": [
+              "--vlen=1024",
+              "--aot=0",
+              "--aot-use-llvm=0",
+              "--tier0-threshold=0",
+              "--rvv-direct=1",
+              "--rvv-qcg-direct-setvl=1",
+              "--rvv-qcg-typed-chunk-mem-e64=1",
+              "--rvv-qcg-whole-reg=1",
+              "--rvv-qcg-typed-chunk=1",
+              "--rvv-qcg-typed-chunk-sub=1",
+              "--rvv-qcg-typed-chunk-mul=1",
+              "--rvv-qcg-typed-chunk-and=1",
+              "--rvv-qcg-typed-chunk-or=1",
+              "--rvv-qcg-typed-chunk-xor=1",
+              "--rvv-qcg-typed-chunk-shift=1",
+              "--rvv-qcg-typed-chunk-vle=1",
+              "--rvv-qcg-typed-chunk-vse=1",
+              "--rvv-qcg-typed-chunk-vmv=1",
+              "--rvv-qcg-partial-vl=1",
+              "--rvv-qcg-vx-mulacc=1",
+              "--rvv-qcg-typed-chunk-falu=1",
+              "--rvv-qcg-typed-chunk-fma=1",
+              "--rvv-qcg-narrow-chunk-width=1",
+              "--rvv-vector-run=0",
+              "--rvv-run-body=ssa",
+              "--rvv-run-order=member",
+              "--rvv-run-live-range-split=0",
+              "--rvv-qcg-typed-chunk-vadd-scalar=1",
+              "--rvv-qcg-fp-shared-mask=1",
+              "--qcg-code-huge-pages=0",
+              "--rvv-qcg-active-vl-mask-fusion=1",
+              "--rvv-qcg-active-mask-memory=1",
+              "--rvv-qcg-active-vl-bound=0",
+              "--rvv-qcg-active-vl-int-bound=0",
+              "--rvv-qcg-active-vl-widen-bound=0",
+              "--rvv-qcg-active-vl-narrow-bound=0",
+              "--rvv-stats=1",
+              "--rvv-route-census=1",
+              "--rvv-qcg-hit-counter=1",
+              "--fsroot={WORK}/fs",
+              "--cache={WORK}/cache",
+              "--",
+              "/t.elf"
+            ],
+            "elf_sha256": "038ce0944c5e6678826a87c4909c192bbafa30425331ce305013eb7ea08e7962",
+            "oracle_sha256": "195cdeac1191549ed743b341ad38a89760d202d4496195b043f625f48566cce3"
+          }
+        ],
+        "reference": [
+          {
+            "engine": "Sail",
+            "returncode": 0,
+            "status": "PASS",
+            "raw": "raw/sail-signature"
+          },
+          {
+            "engine": "QEMU",
+            "returncode": 0,
+            "status": "PASS",
+            "raw": "raw/qemu-selfcheck"
+          }
+        ],
+        "prior_joins": [],
+        "elf_sha256": "038ce0944c5e6678826a87c4909c192bbafa30425331ce305013eb7ea08e7962",
+        "oracle_sha256": "195cdeac1191549ed743b341ad38a89760d202d4496195b043f625f48566cce3",
+        "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+        "targets": 657,
+        "scope": {
+          "BASE": 1264,
+          "LEN": 50,
+          "FFLAGS": 657,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 1264,
+            "RVTEST_SIGUPD_V_LEN": 50
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        },
+        "memory_status": "ALLOW_WITH_READ_LIMITATIONS"
+      },
+      "receipts": {
+        "records/cases/Vf32-vfadd.vf/raw/DUT-B": {
+          "original_command": [
+            "/home/vick/ara-clean961-stage/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--dump-tbmap=/home/vick/rvv-task109/cases/Vf32-vfadd.vf/raw/DUT-B/tbmap.txt",
+            "--fsroot=/tmp/act53_iazl99qw/fs",
+            "--cache=/tmp/act53_iazl99qw/cache",
+            "--",
+            "/t.elf"
+          ],
+          "original_result": {
+            "returncode": 0,
+            "timeout": false
+          },
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "17655fa81d527aed858827cfdc60d70cfe86cd799a37a989312cc8edd50fda39"
+        }
+      },
+      "CHECKER_SCOPE.json": {
+        "path": "records/cases/Vf32-vfadd.vf/CHECKER_SCOPE.json",
+        "sha256": "8fe76b74a1361c5f38f4b5d62207f06cff978c5fb33d70ed0ea66ac20441e4cc",
+        "record_sample": {
+          "BASE": 1264,
+          "LEN": 50,
+          "FFLAGS": 657,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 1264,
+            "RVTEST_SIGUPD_V_LEN": 50
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        }
+      },
+      "CHECKER_SCOPE_CORRECTED.json": {
+        "path": "records/cases/Vf32-vfadd.vf/CHECKER_SCOPE_CORRECTED.json",
+        "sha256": "3965f4145307450c1e6f7be170a0b01deb71ff261b7b31cadbee9f0db7acbe3b",
+        "record_sample": {
+          "all_original_macros": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 632,
+            "RVTEST_SIGUPD_V_LEN": 25
+          },
+          "compiled_macros": {
+            "RVTEST_SIGUPD_FFLAGS": 657,
+            "RVTEST_SIGUPD_V": 632,
+            "RVTEST_SIGUPD_V_LEN": 25
+          },
+          "source_macro_checks": {
+            "BASE": 632,
+            "LEN": 25,
+            "FFLAGS": 657,
+            "VXSAT": 0
+          },
+          "compiled_target_checks": {
+            "BASE": 632,
+            "LEN": 25,
+            "FFLAGS": 657,
+            "VXSAT": 0
+          },
+          "invocations": [
+            {
+              "macro": "RVTEST_SIGUPD_FFLAGS",
+              "target_labels": [
+                "Vf32_vfadd_vf_cg_cp_vd_b0"
+              ],
+              "compiled_labels": [
+                "Vf32_vfadd_vf_cg_cp_vd_b0"
+              ],
+              "compiled_target_check": true,
+              "compiled_checker": true
+            },
+            {
+              "macro": "RVTEST_SIGUPD_V",
+              "target_labels": [
+                "Vf32_vfadd_vf_cg_cp_vd_b0"
+              ],
+              "compiled_labels": [
+                "Vf32_vfadd_vf_cg_cp_vd_b0"
+              ],
+              "compiled_target_check": true,
+              "compiled_checker": true
+            }
+          ],
+          "scope": "BASE first selected element/bit or scalar; LEN active/masked/tail with original allowed agnostic alternatives; flags exact original CSR predicates; no full-state claim"
+        }
+      },
+      "TARGET_EXECUTION_AUDIT.json": {
+        "path": "records/cases/Vf32-vfadd.vf/TARGET_EXECUTION_AUDIT.json",
+        "sha256": "1aef67bfa23256ef8b74f1c9ba3400cf0af24ce504d7030be5b4bf83245cbfca",
+        "record_sample": {
+          "form": "vfadd.vf",
+          "source_target_labels": 657,
+          "compiled_targets": {
+            "scope": "original structured audit remains in package; no source dump copied here"
+          },
+          "arms": {
+            "scope": "original structured audit remains in package; no source dump copied here"
+          },
+          "method": "positive TB execution count at preceding entry; no guest control transfer before target PC; compile-time guards reflected in ELF symbols",
+          "limitations": "Checks remain selected BASE/LEN/CSR predicates; no full state or optimized admission claim"
+        }
+      },
+      "oracle": {
+        "path": "records/cases/Vf32-vfadd.vf/ORACLE.json",
+        "sha256": "3440407308aec85d984e6a223336efa38fdd1ec705ad4a768b6d97ecdb2ae015",
+        "record_sample": {
+          "source_sha256": "c62a02425e8802eb753d5ae57b8eed711350621d9dd6a037b3c3d3b20cc4dab4",
+          "capture_elf_sha256": "db3a79e5ca3d35ed4ee281050ed1e9167d67b67bce18b7af006dc1656b896aee",
+          "raw_sig_sha256": "41d570321683505e08c0f9edde74941bde89e05f91569216c80f05e26f9de0b3",
+          "processed_results_sha256": "195cdeac1191549ed743b341ad38a89760d202d4496195b043f625f48566cce3",
+          "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+          "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+          "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+        }
+      },
+      "expected": {
+        "path": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.results",
+        "sha256": "195cdeac1191549ed743b341ad38a89760d202d4496195b043f625f48566cce3"
+      },
+      "capture": {
+        "path": "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.sig",
+        "sha256": "41d570321683505e08c0f9edde74941bde89e05f91569216c80f05e26f9de0b3"
+      }
+    },
+    "literal_sources": {
+      "records/cases/Vf32-vfadd.vf/Vf32-vfadd.vf.S": {
+        "sha256": "c62a02425e8802eb753d5ae57b8eed711350621d9dd6a037b3c3d3b20cc4dab4",
+        "literal_sites": [
+          {
+            "line": 4,
+            "text": "// vfadd.vf",
+            "window_first_line": 1,
+            "window": [
+              "",
+              "# testgen_header.S",
+              "///////////////////////////////////////////",
+              "// vfadd.vf",
+              "//",
+              "// This file is autogenerated by testgen.",
+              "// Do not modify directly."
+            ]
+          },
+          {
+            "line": 63,
+            "text": "vfadd.vf v0, v11, f3",
+            "window_first_line": 55,
+            "window": [
+              "vle32.v v0, (x17)                                 # Load desired value from memory into v0",
+              "la x23, vs2_random_base_000                       # Load address of desired value",
+              "vle32.v v11, (x23)                                # Load desired value from memory into v11",
+              "LA(x10, scratch)",
+              "LI(x6, 0xd38e0b1d)                                # load x6 with value 0xd38e0b1d",
+              "sw x6, 0(x10)                                     # store 0xd38e0b1d in memory",
+              "flw f3, 0(x10)                                    # load 0xd38e0b1d from memory into f3",
+              "Vf32_vfadd_vf_cg_cp_vd_b0:",
+              "vfadd.vf v0, v11, f3",
+              "RVTEST_SIGUPD_FFLAGS(x2, x14, x13, Vf32_vfadd_vf_cg_cp_vd_b0, test_1_str)# check fflags in signature",
+              "vsetivli x0, 1, e32, m1, tu, mu                   # set SEW=32, LMUL=1, VL=1 before signature check",
+              "# RVTEST_SIGUPD_V(_CMP, _SIG_PTR, _LINK_REG, _TEMP_REG, _VTMP, _MTMP, _SEW, _VREG, _INST_PTR, _STR_PTR)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Ara": {
+    "selected_record_count": 50,
+    "representative_original_record": {
+      "adapter": "records/ara84/adapter/upstream_block_vfadd_TEST_CASE1_e32.c",
+      "arm": "reference",
+      "block_sha256": "6359b351d6576ab5e98765c51f5a3f6dbcf9640919779bfc03a0071e1c0ee478",
+      "build": "records/ara84/BUILD_COMMANDS.json",
+      "case": "upstream_block_vfadd_TEST_CASE1_e32",
+      "checker": "records/ara84/checker.py",
+      "config": "records/ara84/CONFIGS.json",
+      "form": "vfadd.vv",
+      "identity": [
+        "ara84",
+        "upstream_block_vfadd_TEST_CASE1_e32",
+        "reference",
+        "vfadd.vv"
+      ],
+      "parser_task": "ara84",
+      "positive": true,
+      "raw": "records/ara84/raw/upstream_block_vfadd_TEST_CASE1_e32/reference",
+      "scope": "EXTRACTED_FP32_64_BLOCK",
+      "source": "sources/apps/riscv-tests/isa/rv64uv/vfadd.c",
+      "source_range": [
+        50,
+        75
+      ],
+      "source_sha256": "a3dd0d5b19c5ac4588e84d43cfe8a7d05363633f33a74383ee6b4d3f71825f91",
+      "task": "ara84"
+    },
+    "representative_case_details": {
+      "original_result": {
+        "case": "upstream_block_vfadd_TEST_CASE1_e32",
+        "arm": "reference",
+        "status": "PASS",
+        "returncode": 0,
+        "original_checker_accepted": true,
+        "elf_sha256": "d45a364c323d1bbb6f36d158f1c11edc9645e96ca9945a0d9b6a16a99a43e309",
+        "diagnostic_only": false,
+        "source_disposition": "PASS"
+      },
+      "original_command": [
+        "/home/user/research/third_party/chips-spike-20261007-install/bin/spike",
+        "--isa=rv32gcv_zvl1024b",
+        "/home/user/research/third_party/riscv-pk-audit-20261006-build/pk",
+        "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/bin/upstream_block_vfadd_TEST_CASE1_e32.elf"
+      ],
+      "stdout_sha256": "ea7a849f7035c0f4624a112f848a431198665911bd2bd5004520f0aa2a90d321"
+    },
+    "literal_sources": {
+      "sources/apps/riscv-tests/isa/rv64uv/vfadd.c": {
+        "sha256": "a3dd0d5b19c5ac4588e84d43cfe8a7d05363633f33a74383ee6b4d3f71825f91",
+        "literal_sites": [
+          {
+            "line": 25,
+            "text": "    0b01011011, 0b11001100, 0b01011011, 0b11001100); asm volatile(\"vfadd.vv v1,",
+            "window_first_line": 17,
+            "window": [
+              "  /*",
+              "    VSET(16, e8, m1);",
+              "    // Enable this test only with 8-bit floating-point support on",
+              "    VLOAD_8(v2, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011); VLOAD_8(v3,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100); asm volatile(\"vfadd.vv v1,",
+              "    v2, v3\"); VCMP_U8(0, v1, 0b01011010, 0b01011010, 0b01011010, 0b01011010,",
+              "    0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010,",
+              "    0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010);"
+            ]
+          },
+          {
+            "line": 26,
+            "text": "    v2, v3\"); VCMP_U8(0, v1, 0b01011010, 0b01011010, 0b01011010, 0b01011010,",
+            "window_first_line": 18,
+            "window": [
+              "    VSET(16, e8, m1);",
+              "    // Enable this test only with 8-bit floating-point support on",
+              "    VLOAD_8(v2, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011); VLOAD_8(v3,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100, 0b01011011, 0b11001100,",
+              "    0b01011011, 0b11001100, 0b01011011, 0b11001100); asm volatile(\"vfadd.vv v1,",
+              "    v2, v3\"); VCMP_U8(0, v1, 0b01011010, 0b01011010, 0b01011010, 0b01011010,",
+              "    0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010,",
+              "    0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010, 0b01011010);",
+              "  */"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

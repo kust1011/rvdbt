@@ -132,6 +132,19 @@ class FormRecordTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'missing/escaping payload'):
             self.record()
 
+    def test_same_opcode_initialization_is_not_test_body(self):
+        self.put(self.source, '# Generating tests for VL: 7, LMUL: mf8, SEW: e8, Mask: false\n'
+                 'vadd.vv v1, v2, v3\n# TEST BEGIN\nvadd.vv v20, v1, v31\n# TEST END\n'
+                 'TEST_CASE(2, t0, 0x1234, lw t0, 0(a0))\n')
+        self.row['source_sha256'] = self.files[self.source]['sha256']
+        self.chain['source_sha256'] = self.row['source_sha256']
+        self.json('SOURCE_CHAIN.json', [self.chain])
+        self.csv('sources/chips/SOURCE_GEOMETRY.csv', [{'source':'demo/stage2/add.S',
+            'source_sha256':self.row['source_sha256'],'line':'1','requested_vl':'7',
+            'sew':'e8','lmul':'mf8','masked':'false'}])
+        roles = [r['source_role'] for r in self.record()['sources'][self.source]['target_instructions']]
+        self.assertEqual(roles, ['OUTSIDE_TEST_BODY', 'TEST_BODY'])
+
 
 if __name__ == '__main__':
     unittest.main()
