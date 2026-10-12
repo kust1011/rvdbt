@@ -33,6 +33,13 @@ an AVX-512 build on a host without the required CPU features. See the existing
 design notes below for the base translator; the RVV work extends rather than
 replaces that architecture.
 
+## RVV correctness tests: start here
+
+Read [which external suites test which behaviors, and what each script does](docs/rvv-validation.md#test-suites-and-checkers).
+The suite tests are distinct from Python unit tests of the runner. The current
+inventory has 595 applicable instruction forms with result-checked records;
+this is not exhaustive coverage of every form's configurations and fault behavior.
+
 Start with the [current 627-form table](docs/rvv-current-scope.md) and
 [real four-configuration CHIPS smoke records/workflow](docs/rvv-validation/smoke-task80/README.md).
 The [portable Ara and RVVTS replay](docs/rvv-validation/portable-external.md)
@@ -41,10 +48,12 @@ against Spike, with separate checks for actual optimized-path execution.
 The [licensed Ara inspection archive](docs/rvv-validation/ara-review-task91/README.md)
 provides accepted source/assertion/raw joins and an offline producer-parser check.
 The [primary CHIPS inspection guide](docs/rvv-validation/chips-review-task93/README.md)
-records the complete primary source/result package; its large-archive download
-is pending publication, separate from the committed manifests and tools.
-The compact view can be regenerated from committed inputs; historical raw archives
-are unpublished and must be obtained separately. See
+records the primary source/result package, available with the ACT primary data in
+[the public validation release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012).
+The later [ACT execution and replay guide](docs/rvv-validation/act-db2-task110/README.md)
+links a separate published source/signature/result archive.
+The compact view can be regenerated from committed inputs; the complete historical
+evidence tree is not bundled. See
 [validation and reproducibility](docs/rvv-validation.md) and the
 [author guide](docs/rvv-author-guide.md) for checked form scope, external evidence
 dependencies and unresolved source/signal/fault limits.

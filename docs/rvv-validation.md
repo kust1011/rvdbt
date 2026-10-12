@@ -4,6 +4,52 @@ The validation has two separate responsibilities: external test programs check
 instruction behavior, while the runner checks that the intended program ran and
 that failures propagate. Passing the runner's unit tests is not ISA coverage.
 
+## Test suites and checkers
+
+The table describes the accepted campaigns, not everything each upstream suite
+could generate. Counts are distinct instruction forms, not test executions.
+The result-checked sets overlap: their union is **595**, not their sum.
+
+| External source | What is checked | Accepted form count | Where to inspect or replay |
+|---|---|---:|---|
+| CHIPS Alliance riscv-vector-tests | Generated instruction cases compare results with reference-derived expected values; original assertions are retained. Configuration varies by case. | 595 | [Sources, assertions and raw results](rvv-validation/chips-review-task93/README.md); [one reproducible four-configuration case](rvv-validation/smoke-task80/README.md) |
+| RISC-V Architecture Compatibility Tests (ACT) | Directed cases compare destination/state results with embedded reference signatures. The later campaign obtains its signatures from Sail and retains the original checker. | 590 | [Primary campaign](rvv-validation/act-primary-task99/README.md); [later source/signature/checker/results and replay](rvv-validation/act-db2-task110/README.md) |
+| Ara instruction tests | Original case assertions check specified element values and, where present in that case, masks or floating-point/fixed-point state. | 422 | [Per-form source/assertion/raw bindings](rvv-validation/ara-review-task91/README.md); [live replay](rvv-validation/portable-external.md) |
+| RVV-ATG | Generated cases with retained target-to-result-check bindings. Individual bindings determine the actual operands and state checked. | 434 | [Per-form membership](rvv-current-scope.md), historical bindings described below; fixtures are not redistributed because the pinned tree lacks a redistribution license |
+| SiFive RIF | Retained cases with target/result-check bindings; do not infer unrecorded configuration coverage. | 200 | [Per-form membership](rvv-current-scope.md), separately retained historical bindings |
+| RVVTS / RVISmith | Instruction sequences checked at a coupled endpoint, not an independent assertion for every instruction in the sequence. | 58 / 43 endpoint forms, excluded from the result-checked count | [RVVTS replay](rvv-validation/portable-external.md); RVISmith fixture redistribution is restricted |
+| QEMU / Sail / Spike original regressions | Specific upstream regression predicates, such as a vector access not trapping or a vector sum matching its expected value. These do not establish an all-form suite. | No additional forms credited | [Adopted cases and exact limits](rvv-validation/adoption-task107/README.md) |
+
+To answer **"how was instruction X tested?"**, first find its row in the
+[form table](rvv-current-scope.md) or [CSV](rvv-validation/current-scope/forms.csv).
+Then use the relevant suite guide to follow the original source, configuration,
+checker and raw result. For Ara, `FORMS.json` selects `BINDINGS.json` records;
+for the later ACT campaign, `RESULT_INDEX.csv` selects a concrete generated file
+and its result records. A membership mark alone does not describe testing depth.
+Report the actual SEW, LMUL, VLEN, mask/tail state, operands, checked outputs and
+candidate build from those records. If a state is absent, it remains unverified.
+
+CHIPS and ACT primary raw packages are available in the
+[validation release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012);
+the later ACT package has a [separate release](https://github.com/kust1011/rvdbt/releases/tag/rvv-act-db2-20261012).
+The Ara inspection archive is linked from its guide. The complete historical
+evidence tree, including every suite's raw dependencies, is not publicly bundled.
+
+### Which scripts actually execute instruction tests?
+
+| Role | Entry points | Meaning of success |
+|---|---|---|
+| Execute registered external tests | `scripts/rvv_tests.py`, `scripts/run_rvv_smoke.py`, `scripts/run_rvv_external.py` | The selected guest completed and satisfied its registered checker; `--build-only` is not execution |
+| Rebuild/replay the later ACT cases | `scripts/replay_rvv_act_db2.py` | Follow the ACT guide for export and execution; generating a replay directory alone runs no guest |
+| Fetch/build external inputs | `scripts/fetch_rvv_external.py`, `scripts/build_rvv_chips.py` | Source acquisition or compilation, not an ISA PASS |
+| Recheck saved outputs | `scripts/audit_rvv_results.py`, `scripts/verify_rvv_chips_inspection.py`, `scripts/verify_rvv_act_inspection.py`, `scripts/verify_rvv_act_db2.py`, `scripts/verify_rvv_ara_bundle.py` | Stored outputs satisfy the retained checks; no new execution |
+| Render coverage records | `scripts/rvv_compact_scope.py`, `scripts/rvv_scope_report.py`, `scripts/rvv_complete_inventory.py` | Existing records were joined/rendered, not new coverage |
+| Package evidence | `scripts/package_rvv_*.py`, `scripts/export_rvv_*.py` | A transport/replay artifact was produced, not an ISA PASS |
+| Test validation tools themselves | `scripts/test_rvv_*.py` | Runner/checker rejection and reporting work; these are not RVV instruction tests |
+
+The suite-specific commands and prerequisites follow below. There is no single
+command in this repository that reconstructs and executes every historical suite.
+
 ## Current scope and reproducible index
 
 Start with the [generated current 627-form table](rvv-current-scope.md), its
@@ -29,8 +75,7 @@ indexes retained source, reference-generation records, original assertions and
 raw results for all 595 checked forms. Each candidate has 11,532 positive
 executions and 212 failure-control executions, kept separate. The licensed
 archive manifest and offline checks are committed; the approximately 627 MB
-archive payload is prepared but its download location is still pending.
-Do not mistake the committed manifest for a published data download.
+payload is published in the validation release linked above.
 
 The [suite execution accounting summary](rvv-validation/suite-execution-summary.md)
 and its JSON separate distinct registered DUT/reference receipts, controls, source
@@ -41,11 +86,11 @@ The [ACT primary inspection entry](rvv-validation/act-primary-task99/README.md)
 links the retained Task53 source/signature/raw chain and offline acceptance
 instructions. Python assertions must be enabled; optimized acceptance is
 explicitly rejected. The Task100 checker refresh preserves original payload
-bytes and evidence counts. Its archive remains staged on xbd, with payload
-publication and a verified download still pending.
+bytes and evidence counts. Its archive is published in the validation release;
+the reader links the recorded download and offline verification.
 
 The [ACT db2 Task109/110 delivery](rvv-validation/act-db2-task110/README.md)
-adds a separate exact output index and staged inspection/replay package:
+adds a separate exact output index and published inspection/replay package:
 1,916 new complete-file four-arm PASS, two preserved QEMU platform blockers,
 and one separate Task104 join. Offline verification evaluates original raw
 predicates and reprocesses frozen signatures without guest execution. The form
@@ -249,8 +294,8 @@ These checks use synthetic host processes to test failure handling and reporting
 The Jenkins stage runs them before building rvdbt. It does not claim to run the
 external ISA suites: those need registered fixtures, a compatible host, and a
 separately recorded DUT build. No external suite result is inferred from CI being
-green. Large raw results and third-party fixtures are separate artifacts; this
-repository addition does not yet supply a public download of those artifacts.
+green. Large raw results and third-party fixtures are separate artifacts; see
+the suite table for published packages and remaining retrieval limits.
 
 ## Review artifact inventory
 

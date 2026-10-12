@@ -48,8 +48,10 @@ The compact data cannot regenerate the full candidate/configuration/raw joins.
 
 ## Retrieval limits
 
-Historical archives and the complete evidence tree are unpublished local review
-artifacts with no assigned public download URL. Request them from the author;
+Selected CHIPS and ACT archives are public; Ara has a linked inspection bundle.
+See the [suite guide](../../rvv-validation.md#test-suites-and-checkers).
+The complete historical evidence tree and other archives remain local review
+artifacts with no assigned public download URL. Request those from the author;
 availability and permission to redistribute are not guaranteed. Their existence
 and hashes do not make them publicly reproducible. `scope-evidence.tar.gz` is
 immutable Task71 (including RIF194); it cannot supply Task76's current RIF200 and
