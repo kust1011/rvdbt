@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "publication": "STAGED_LOCAL; main owns publication after review",
+  "artifacts": [
+    {
+      "file": "task138-inspection.tar.gz",
+      "bytes": 132215236,
+      "sha256": "ba819757076db428c9059ed57502b5d933c0a708114d9ed9a512ebd2de8e9639",
+      "payload_files": 137751,
+      "manifest_sha256": "549d1eaed6a6908d90157f7b03606d7f2657e48c4e58b31cd1c5879cc98ffcd6",
+      "current_calls": 21316,
+      "new_guest_calls": 0,
+      "publication": "STAGED_LOCAL; main owns upload after review",
+      "kind": "retained_current_results_and_reader_supplement",
+      "forms": 595,
+      "intended_url": "https://github.com/kust1011/rvdbt/releases/download/rvv-validation-20261012/task138-inspection.tar.gz",
+      "licenses": "MIT local records/tools; original Ara SHL-0.51, ACT code/data notices retained; no whole-package relicensing",
+      "scope": "All authenticated direct current Task138 receipt files, build snapshots, ACT checker-site/word metadata, original Task104 frozen chain and absent Ara source/observer paths; no ELF/toolchain/work/cache/unlicensed/private inputs; no new coverage or executions"
+    }
+  ]
+}

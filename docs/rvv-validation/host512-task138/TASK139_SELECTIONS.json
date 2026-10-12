@@ -1,0 +1,3540 @@
+{
+  "forms": {
+    "vadd.vv": {
+      "selected_records": 26,
+      "examples": [
+        {
+          "suite": "chips",
+          "id": "c7639f37d3e028a2061552c30c19222482da3581e49a68babc86d47f44ba9402",
+          "case": null,
+          "arm": "B",
+          "guest_vlen": 128,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/chips/raw/c7639f37d3e028a2061552c30c19222482da3581e49a68babc86d47f44ba9402/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/chips/raw/c7639f37d3e028a2061552c30c19222482da3581e49a68babc86d47f44ba9402/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "c7639f37d3e028a2061552c30c19222482da3581e49a68babc86d47f44ba9402",
+            "status": "PASS",
+            "control": false,
+            "returncode": 0,
+            "error": null,
+            "elapsed_seconds_for_timeout_diagnostics_only": 0.11788973904913291,
+            "elf_sha256": "f92795172b1924f4b32021f2b93ac82e6e7fa6c25ccc3583414483a174b15652",
+            "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+            "stderr_sha256": "cd7ed8e06934c09b71348662d08780e0d25bfd61f2e5c1fc14224ecfc2f027da",
+            "checker": "registered exit code and exact stdout of self-checking guest",
+            "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [],
+            "host_chunk_bytes": []
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "chips/raw/c7639f37d3e028a2061552c30c19222482da3581e49a68babc86d47f44ba9402",
+          "portable_original": [
+            {
+              "source": {
+                "package": "chips",
+                "path": "/tmp/task139-fresh/inspection/chips/sources/chips/stage2/vadd_vv-0.S",
+                "package_relative": "sources/chips/stage2/vadd_vv-0.S",
+                "original_sha256": "799587e2de7ef455608d644ed4c998ad4b40e680efcda88f42fa6d7c673703d0",
+                "distributed_sha256": "799587e2de7ef455608d644ed4c998ad4b40e680efcda88f42fa6d7c673703d0",
+                "legal_restoration": null
+              },
+              "checker": "sources/chips/stage2/vadd_vv-0.S [TEST_CASE lines 72..11494; count=1248]",
+              "source_chain": "SOURCE_CHAIN.json [batch=.,case=vadd_vv-0]"
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "assertion_selector": "sources/chips/stage2/vadd_vv-0.S [TEST_CASE lines 72..11494; count=1248]",
+              "source": "sources/chips/stage2/vadd_vv-0.S",
+              "source_chain_selector": "SOURCE_CHAIN.json [batch=.,case=vadd_vv-0]",
+              "source_sha256": "799587e2de7ef455608d644ed4c998ad4b40e680efcda88f42fa6d7c673703d0",
+              "checker": "registered exit code and exact stdout of self-checking guest"
+            }
+          ]
+        },
+        {
+          "suite": "act",
+          "id": "Vx8-vadd.vv-00",
+          "case": "Vx8-vadd.vv-00",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--dump-tbmap=/home/vick/rvdbt-host512-task138/act/raw/Vx8-vadd.vv-00/B/tbmap.txt",
+            "--fsroot=/home/vick/rvdbt-host512-task138/act/raw/Vx8-vadd.vv-00/B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/act/raw/Vx8-vadd.vv-00/B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "case": "Vx8-vadd.vv-00",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "original_predicate_pass": true,
+            "elapsed_seconds": 0.1204843521118164,
+            "elf_sha256": "7324343afec9acd334d47f2b52900056f5d602fb53e2a6644595ec9ce3ce6e0b",
+            "expected_sha256": "3477edd31fb575cd23fdba42acdabe7aa4cafe76820206247d5d4ef423e36f60",
+            "source_sha256": "fd21a4d7e125273121e6215967160c4c8e2255ab17bdd9c6e311363eb2f11d97",
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr_sha256": "42d7063fb69c652ca6a7e4ad3ff2d0853b022e41a17b5a92742ce1b779ac5d73"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "act/raw/Vx8-vadd.vv-00/B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vx8-vadd.vv-00/Vx8-vadd.vv-00.S",
+                "package_relative": "records/cases/Vx8-vadd.vv-00/Vx8-vadd.vv-00.S",
+                "original_sha256": "fd21a4d7e125273121e6215967160c4c8e2255ab17bdd9c6e311363eb2f11d97",
+                "distributed_sha256": "fd21a4d7e125273121e6215967160c4c8e2255ab17bdd9c6e311363eb2f11d97",
+                "legal_restoration": null
+              },
+              "expected": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vx8-vadd.vv-00/Vx8-vadd.vv-00.results",
+                "package_relative": "records/cases/Vx8-vadd.vv-00/Vx8-vadd.vv-00.results",
+                "original_sha256": "3477edd31fb575cd23fdba42acdabe7aa4cafe76820206247d5d4ef423e36f60",
+                "distributed_sha256": "3477edd31fb575cd23fdba42acdabe7aa4cafe76820206247d5d4ef423e36f60",
+                "legal_restoration": null
+              },
+              "checker": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/common/upstream/env/signature.h",
+                "package_relative": "records/common/upstream/env/signature.h",
+                "original_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "distributed_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "legal_restoration": null
+              },
+              "literal_checker_sites": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison-sites.json.gz",
+                "package_relative": "metadata/act/comparison-sites.json.gz",
+                "original_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "distributed_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "legal_restoration": null
+              },
+              "comparison": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison.json.gz",
+                "package_relative": "metadata/act/comparison.json.gz",
+                "original_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "distributed_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "source": "/home/vick/rvv-task109/cases/Vx8-vadd.vv-00/Vx8-vadd.vv-00.S",
+              "source_sha256": "fd21a4d7e125273121e6215967160c4c8e2255ab17bdd9c6e311363eb2f11d97",
+              "expected": "/home/vick/rvv-task109/cases/Vx8-vadd.vv-00/Vx8-vadd.vv-00.results",
+              "expected_sha256": "3477edd31fb575cd23fdba42acdabe7aa4cafe76820206247d5d4ef423e36f60",
+              "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+              "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+              "literal_checker_sites": "/home/vick/act-current121/comparison-sites.json.gz#Vx8-vadd.vv-00",
+              "signature_words": "18200"
+            }
+          ]
+        },
+        {
+          "suite": "ara",
+          "id": "ara-campaign48__ara_external_pilot_20261007__vadd__vadd__B",
+          "case": "vadd",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-stats=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/ara/raw/ara-campaign48__ara_external_pilot_20261007__vadd__vadd__B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/ara/raw/ara-campaign48__ara_external_pilot_20261007__vadd__vadd__B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "ara-campaign48__ara_external_pilot_20261007__vadd__vadd__B",
+            "case": "vadd",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "accepted_scope_pass": true,
+            "whole_file_pass": true,
+            "elf_sha256": "d6dc44cc6f7ea4685d18f620ae9477db7601f85cc80d4a82760e137ed2d059a0",
+            "stdout_sha256": "5d9e401f9b4d34d484921c902d989fb367a298a9d797cedc8471b324d93521ee",
+            "stderr_sha256": "5c1247e48f24b11fd8567576767589e0f31c99318753a94b3cf4f4431396f89e",
+            "observer_sha256": "e26de85c634db4b0e02fc847644a33a38faa65aaa4dd64437487e41e3e2a9533",
+            "elapsed_seconds": 0.07207226753234863
+          },
+          "observed_runtime": {
+            "observations": [
+              "Checking the results of the test case 1:\nPASSED.\nChecking the results of the test case 2:\nPASSED.\nChecking the results of the test case 3:\nPASSED.\nChecking the results of the test case 4:\nPASSED.\nChecking the results of the test case 5:\nPASSED.\nChecking the results of the test case 6:\nPASSED.\nChecking the results of the test case 7:\nPASSED.\nChecking the results of the test case 8:\nPASSED.\nChecking the results of the test case 9:\nPASSED.\nChecking the results of the test case 10:\nPASSED.\nChecking the results of the test case 11:\nPASSED.\nChecking the results of the test case 12:\nPASSED.\nChecking the results of the test case 13:\nPASSED.\nChecking the results of the test case 14:\nPASSED.\nChecking the results of the test case 15:\nPASSED.\nChecking the results of the test case 16:\nPASSED.\nChecking the results of the test case 17:\nPASSED.\nChecking the results of the test case 18:\nPASSED.\nChecking the results of the test case 19:\nPASSED.\nChecking the results of the test case 20:\nPASSED.\nChecking the results of the test case 21:\nPASSED.\nChecking the results of the test case 22:\nPASSED.\nChecking the results of the test case 23:\nPASSED.\nChecking the results of the test case 24:\nPASSED.\nChecking the results of the test case 25:\nPASSED.\nPASSED: /home/user/research/materials/thesis_rvv_20260921/artifacts/ara_external_pilot_20261007/adapter/vadd.c!\nARA_VSET line=11 avl=16 vl=16 vtype=192\nARA_VSET line=17 avl=16 vl=16 vtype=200\nARA_VSET line=23 avl=16 vl=16 vtype=208\nARA_VSET line=29 avl=16 vl=16 vtype=216\nARA_VSET line=37 avl=16 vl=16 vtype=192\nARA_VSET line=45 avl=16 vl=16 vtype=200\nARA_VSET line=53 avl=16 vl=16 vtype=208\nARA_VSET line=61 avl=16 vl=16 vtype=216\nARA_VSET line=71 avl=16 vl=16 vtype=192\nARA_VSET line=76 avl=16 vl=16 vtype=200\nARA_VSET line=81 avl=16 vl=16 vtype=208\nARA_VSET line=86 avl=16 vl=16 vtype=216\nARA_VSET line=93 avl=16 vl=16 vtype=192\nARA_VSET line=100 avl=16 vl=16 vtype=200\nARA_VSET line=107 avl=16 vl=16 vtype=208\nARA_VSET line=114 avl=16 vl=16 vtype=216\nARA_VSET line=125 avl=16 vl=16 vtype=192\nARA_VSET line=130 avl=16 vl=16 vtype=200\nARA_VSET line=135 avl=16 vl=16 vtype=208\nARA_VSET line=140 avl=16 vl=16 vtype=216\nARA_VSET line=149 avl=16 vl=16 vtype=192\nARA_VSET line=156 avl=16 vl=16 vtype=200\nARA_VSET line=163 avl=16 vl=16 vtype=208\nARA_VSET line=170 avl=16 vl=16 vtype=216\nARA_VSET line=180 avl=16 vl=16 vtype=192\nARA_VSET line=183 avl=8 vl=8 vtype=200\nARA_VSET line=185 avl=16 vl=16 vtype=192\nARA_ASSERT id=1 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_ASSERT id=2 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1\nARA_ASSERT id=3 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1\nARA_ASSERT id=4 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1\nARA_ASSERT id=5 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_ASSERT id=6 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1\nARA_ASSERT id=7 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1\nARA_ASSERT id=8 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1\nARA_ASSERT id=9 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_ASSERT id=10 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1\nARA_ASSERT id=11 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1\nARA_ASSERT id=12 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1\nARA_ASSERT id=13 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_ASSERT id=14 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1\nARA_ASSERT id=15 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1\nARA_ASSERT id=16 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1\nARA_ASSERT id=17 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_ASSERT id=18 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1\nARA_ASSERT id=19 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1\nARA_ASSERT id=20 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1\nARA_ASSERT id=21 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_ASSERT id=22 elements=16 bytes=2 vl=16 vtype=200 comparisons=16 completed=1\nARA_ASSERT id=23 elements=16 bytes=4 vl=16 vtype=208 comparisons=16 completed=1\nARA_ASSERT id=24 elements=16 bytes=8 vl=16 vtype=216 comparisons=16 completed=1\nARA_ASSERT id=25 elements=16 bytes=1 vl=16 vtype=192 comparisons=16 completed=1\nARA_SUMMARY status=0 vsets=27 assertions=25 comparisons=400\n",
+              [
+                [
+                  11,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  17,
+                  16,
+                  16,
+                  200
+                ],
+                [
+                  23,
+                  16,
+                  16,
+                  208
+                ],
+                [
+                  29,
+                  16,
+                  16,
+                  216
+                ],
+                [
+                  37,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  45,
+                  16,
+                  16,
+                  200
+                ],
+                [
+                  53,
+                  16,
+                  16,
+                  208
+                ],
+                [
+                  61,
+                  16,
+                  16,
+                  216
+                ],
+                [
+                  71,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  76,
+                  16,
+                  16,
+                  200
+                ],
+                [
+                  81,
+                  16,
+                  16,
+                  208
+                ],
+                [
+                  86,
+                  16,
+                  16,
+                  216
+                ],
+                [
+                  93,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  100,
+                  16,
+                  16,
+                  200
+                ],
+                [
+                  107,
+                  16,
+                  16,
+                  208
+                ],
+                [
+                  114,
+                  16,
+                  16,
+                  216
+                ],
+                [
+                  125,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  130,
+                  16,
+                  16,
+                  200
+                ],
+                [
+                  135,
+                  16,
+                  16,
+                  208
+                ],
+                [
+                  140,
+                  16,
+                  16,
+                  216
+                ],
+                [
+                  149,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  156,
+                  16,
+                  16,
+                  200
+                ],
+                [
+                  163,
+                  16,
+                  16,
+                  208
+                ],
+                [
+                  170,
+                  16,
+                  16,
+                  216
+                ],
+                [
+                  180,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  183,
+                  8,
+                  8,
+                  200
+                ],
+                [
+                  185,
+                  16,
+                  16,
+                  192
+                ]
+              ],
+              [
+                [
+                  1,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ],
+                [
+                  2,
+                  16,
+                  2,
+                  16,
+                  200,
+                  16,
+                  1
+                ],
+                [
+                  3,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ],
+                [
+                  4,
+                  16,
+                  8,
+                  16,
+                  216,
+                  16,
+                  1
+                ],
+                [
+                  5,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ],
+                [
+                  6,
+                  16,
+                  2,
+                  16,
+                  200,
+                  16,
+                  1
+                ],
+                [
+                  7,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ],
+                [
+                  8,
+                  16,
+                  8,
+                  16,
+                  216,
+                  16,
+                  1
+                ],
+                [
+                  9,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ],
+                [
+                  10,
+                  16,
+                  2,
+                  16,
+                  200,
+                  16,
+                  1
+                ],
+                [
+                  11,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ],
+                [
+                  12,
+                  16,
+                  8,
+                  16,
+                  216,
+                  16,
+                  1
+                ],
+                [
+                  13,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ],
+                [
+                  14,
+                  16,
+                  2,
+                  16,
+                  200,
+                  16,
+                  1
+                ],
+                [
+                  15,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ],
+                [
+                  16,
+                  16,
+                  8,
+                  16,
+                  216,
+                  16,
+                  1
+                ],
+                [
+                  17,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ],
+                [
+                  18,
+                  16,
+                  2,
+                  16,
+                  200,
+                  16,
+                  1
+                ],
+                [
+                  19,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ],
+                [
+                  20,
+                  16,
+                  8,
+                  16,
+                  216,
+                  16,
+                  1
+                ],
+                [
+                  21,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ],
+                [
+                  22,
+                  16,
+                  2,
+                  16,
+                  200,
+                  16,
+                  1
+                ],
+                [
+                  23,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ],
+                [
+                  24,
+                  16,
+                  8,
+                  16,
+                  216,
+                  16,
+                  1
+                ],
+                [
+                  25,
+                  16,
+                  1,
+                  16,
+                  192,
+                  16,
+                  1
+                ]
+              ],
+              [
+                0,
+                27,
+                25,
+                400
+              ]
+            ],
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "ara/raw/ara-campaign48__ara_external_pilot_20261007__vadd__vadd__B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d/vadd.c",
+                "package_relative": "sources/ara/155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d/vadd.c",
+                "original_sha256": "155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d",
+                "distributed_sha256": "155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d",
+                "legal_restoration": null
+              },
+              "adapter": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d/vadd.c",
+                "package_relative": "sources/ara/155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d/vadd.c",
+                "original_sha256": "155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d",
+                "distributed_sha256": "155771811791cb8a1c10880a6c1a4ab7e41c6c5465d27f598fa582ce1f29548d",
+                "legal_restoration": null
+              },
+              "runner": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/bb228164d808be4465c094dec9efe362cb474e065bf17604427a63549839992a/run.py",
+                "package_relative": "sources/ara/bb228164d808be4465c094dec9efe362cb474e065bf17604427a63549839992a/run.py",
+                "original_sha256": "bb228164d808be4465c094dec9efe362cb474e065bf17604427a63549839992a",
+                "distributed_sha256": "bb228164d808be4465c094dec9efe362cb474e065bf17604427a63549839992a",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "checker_identity": "artifacts/ara_external_pilot_20261007/upstream/vadd.c:79",
+              "checker_scope": "original typed expected equality; 64-bit comparisons retained; not full32v/CSR/tail oracle",
+              "source_file": "artifacts/ara_external_pilot_20261007/upstream/vadd.c"
+            }
+          ]
+        }
+      ],
+      "original_ACT_reference_blockers": [
+        {
+          "case": "Vf32-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 32,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.S",
+          "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+          "elf": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.elf",
+          "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.results",
+          "expected_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+          "capture": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.sig",
+          "capture_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+          "oracle": {
+            "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+            "capture_elf_sha256": "89172806059c91f2ee937428c126167c2b22725b475d2444151c405cffc28aec",
+            "raw_sig_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+            "processed_results_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 312,
+            "target_words": 142,
+            "embedded_signature_bytes": 62480,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 32
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf32-vfmv.f.s"
+        },
+        {
+          "case": "Vf64-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 64,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.S",
+          "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+          "elf": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.elf",
+          "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.results",
+          "expected_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+          "capture": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.sig",
+          "capture_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+          "oracle": {
+            "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+            "capture_elf_sha256": "29c2e57f3288833eb48571ea6f24568120d96bd6a1fac493b6ae9790ee498e24",
+            "raw_sig_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+            "processed_results_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 304,
+            "target_words": 138,
+            "embedded_signature_bytes": 123728,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 64
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf64-vfmv.f.s"
+        }
+      ]
+    },
+    "vle32.v": {
+      "selected_records": 10,
+      "examples": [
+        {
+          "suite": "chips",
+          "id": "8f09f49ee8f269490777edba718d9933958c0b44249b07b621c5e9980a946c23",
+          "case": null,
+          "arm": "B",
+          "guest_vlen": 128,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/chips/raw/8f09f49ee8f269490777edba718d9933958c0b44249b07b621c5e9980a946c23/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/chips/raw/8f09f49ee8f269490777edba718d9933958c0b44249b07b621c5e9980a946c23/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "8f09f49ee8f269490777edba718d9933958c0b44249b07b621c5e9980a946c23",
+            "status": "PASS",
+            "control": false,
+            "returncode": 0,
+            "error": null,
+            "elapsed_seconds_for_timeout_diagnostics_only": 0.06442931899800897,
+            "elf_sha256": "dc97801805b22559f785bb3c9c8634f882c7cb97a64f9ceb7d99d8fdc2640ff3",
+            "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+            "stderr_sha256": "128f2025c7c2ff8690ab5bfbc7d68149f32ff4b7ebe3cf6ef880c0e4dc1d6167",
+            "checker": "registered exit code and exact stdout of self-checking guest",
+            "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [],
+            "host_chunk_bytes": []
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "chips/raw/8f09f49ee8f269490777edba718d9933958c0b44249b07b621c5e9980a946c23",
+          "portable_original": [
+            {
+              "source": {
+                "package": "chips",
+                "path": "/tmp/task139-fresh/inspection/chips/sources/chips/unitmemory128/stage2/vle32_v-0.S",
+                "package_relative": "sources/chips/unitmemory128/stage2/vle32_v-0.S",
+                "original_sha256": "2064b2f3925c8c12a0d0600d71f23f28f1ef8a82037aadadf5bca9efaf601d5e",
+                "distributed_sha256": "2064b2f3925c8c12a0d0600d71f23f28f1ef8a82037aadadf5bca9efaf601d5e",
+                "legal_restoration": null
+              },
+              "checker": "sources/chips/unitmemory128/stage2/vle32_v-0.S [TEST_CASE lines 58..4858; count=1152]",
+              "source_chain": "SOURCE_CHAIN.json [batch=unitmemory128,case=vle32_v-0]"
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "assertion_selector": "sources/chips/unitmemory128/stage2/vle32_v-0.S [TEST_CASE lines 58..4858; count=1152]",
+              "source": "sources/chips/unitmemory128/stage2/vle32_v-0.S",
+              "source_chain_selector": "SOURCE_CHAIN.json [batch=unitmemory128,case=vle32_v-0]",
+              "source_sha256": "2064b2f3925c8c12a0d0600d71f23f28f1ef8a82037aadadf5bca9efaf601d5e",
+              "checker": "registered exit code and exact stdout of self-checking guest"
+            }
+          ]
+        },
+        {
+          "suite": "act",
+          "id": "Vls8-vle32.v",
+          "case": "Vls8-vle32.v",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--dump-tbmap=/home/vick/rvdbt-host512-task138/act/raw/Vls8-vle32.v/B/tbmap.txt",
+            "--fsroot=/home/vick/rvdbt-host512-task138/act/raw/Vls8-vle32.v/B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/act/raw/Vls8-vle32.v/B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "case": "Vls8-vle32.v",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "original_predicate_pass": true,
+            "elapsed_seconds": 0.11868762969970703,
+            "elf_sha256": "86770117ad4e4ae268d624f3e8fc8da9ebfdac1cdbc89f8a7c2bda4ca7d1f2b2",
+            "expected_sha256": "a5f3efa26b975d72c9d99904a2da2fe23515418ec4296a136ec9ab1bfd878f9b",
+            "source_sha256": "d0056231f6ecbc252f728afcff9183cad8fd297cffd464d2827f64ee866445be",
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr_sha256": "30de2d47ea61003dbba8a4adfb65fa46167229b7ad6fba8313358292a7be1c45"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "act/raw/Vls8-vle32.v/B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vls8-vle32.v/Vls8-vle32.v.S",
+                "package_relative": "records/cases/Vls8-vle32.v/Vls8-vle32.v.S",
+                "original_sha256": "d0056231f6ecbc252f728afcff9183cad8fd297cffd464d2827f64ee866445be",
+                "distributed_sha256": "d0056231f6ecbc252f728afcff9183cad8fd297cffd464d2827f64ee866445be",
+                "legal_restoration": null
+              },
+              "expected": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vls8-vle32.v/Vls8-vle32.v.results",
+                "package_relative": "records/cases/Vls8-vle32.v/Vls8-vle32.v.results",
+                "original_sha256": "a5f3efa26b975d72c9d99904a2da2fe23515418ec4296a136ec9ab1bfd878f9b",
+                "distributed_sha256": "a5f3efa26b975d72c9d99904a2da2fe23515418ec4296a136ec9ab1bfd878f9b",
+                "legal_restoration": null
+              },
+              "checker": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/common/upstream/env/signature.h",
+                "package_relative": "records/common/upstream/env/signature.h",
+                "original_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "distributed_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "legal_restoration": null
+              },
+              "literal_checker_sites": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison-sites.json.gz",
+                "package_relative": "metadata/act/comparison-sites.json.gz",
+                "original_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "distributed_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "legal_restoration": null
+              },
+              "comparison": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison.json.gz",
+                "package_relative": "metadata/act/comparison.json.gz",
+                "original_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "distributed_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "source": "/home/vick/rvv-task109/cases/Vls8-vle32.v/Vls8-vle32.v.S",
+              "source_sha256": "d0056231f6ecbc252f728afcff9183cad8fd297cffd464d2827f64ee866445be",
+              "expected": "/home/vick/rvv-task109/cases/Vls8-vle32.v/Vls8-vle32.v.results",
+              "expected_sha256": "a5f3efa26b975d72c9d99904a2da2fe23515418ec4296a136ec9ab1bfd878f9b",
+              "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+              "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+              "literal_checker_sites": "/home/vick/act-current121/comparison-sites.json.gz#Vls8-vle32.v",
+              "signature_words": "17432"
+            }
+          ]
+        },
+        {
+          "suite": "ara",
+          "id": "ara-campaign48__ara_memory_basic_20261008__vl__vl__B",
+          "case": "vl",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-stats=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/ara/raw/ara-campaign48__ara_memory_basic_20261008__vl__vl__B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/ara/raw/ara-campaign48__ara_memory_basic_20261008__vl__vl__B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "ara-campaign48__ara_memory_basic_20261008__vl__vl__B",
+            "case": "vl",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "accepted_scope_pass": true,
+            "whole_file_pass": true,
+            "elf_sha256": "4b48171cc14b71e2739668a221d767c1d9e4bcc7309d98e51a92aaa0fc927168",
+            "stdout_sha256": "bd2bffdd831cbdcbf50503572dd1c4af87defabf3be6c2344e3f222fc7ea930e",
+            "stderr_sha256": "6d066b1705ebb5635d3187056852bc571039eba28877afacd1724635bce62f57",
+            "observer_sha256": "df02306ac0cf7267332c41101d1e6d6e02cb2878104a7d896d86f5c468cea293",
+            "elapsed_seconds": 0.07082438468933105
+          },
+          "observed_runtime": {
+            "observations": {
+              "vsets": [
+                [
+                  38,
+                  15,
+                  15,
+                  192
+                ],
+                [
+                  45,
+                  15,
+                  15,
+                  200
+                ],
+                [
+                  52,
+                  15,
+                  15,
+                  208
+                ],
+                [
+                  60,
+                  15,
+                  15,
+                  216
+                ]
+              ],
+              "assertions": [
+                [
+                  1,
+                  15,
+                  1,
+                  15,
+                  192,
+                  15,
+                  1
+                ],
+                [
+                  2,
+                  15,
+                  2,
+                  15,
+                  200,
+                  15,
+                  1
+                ],
+                [
+                  3,
+                  15,
+                  4,
+                  15,
+                  208,
+                  15,
+                  1
+                ],
+                [
+                  4,
+                  15,
+                  8,
+                  15,
+                  216,
+                  15,
+                  1
+                ]
+              ],
+              "summary": [
+                0,
+                4,
+                4,
+                60
+              ],
+              "flags": [],
+              "flag_summary": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "scalars": [],
+              "scalar_summary": [
+                0,
+                0,
+                0
+              ]
+            },
+            "samples": null,
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "ara/raw/ara-campaign48__ara_memory_basic_20261008__vl__vl__B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4/vl.c",
+                "package_relative": "sources/ara/af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4/vl.c",
+                "original_sha256": "af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4",
+                "distributed_sha256": "af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4",
+                "legal_restoration": null
+              },
+              "adapter": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4/vl.c",
+                "package_relative": "sources/ara/af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4/vl.c",
+                "original_sha256": "af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4",
+                "distributed_sha256": "af070498b2ec7031e6ff66b5e9d9f0caf802e6e767fe8348715acc75e76a62b4",
+                "legal_restoration": null
+              },
+              "runner": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/81dbeb3e07773e58487b5dcb3dab54ead9a8025cb106041634f194366d3dd79f/run.py",
+                "package_relative": "sources/ara/81dbeb3e07773e58487b5dcb3dab54ead9a8025cb106041634f194366d3dd79f/run.py",
+                "original_sha256": "81dbeb3e07773e58487b5dcb3dab54ead9a8025cb106041634f194366d3dd79f",
+                "distributed_sha256": "81dbeb3e07773e58487b5dcb3dab54ead9a8025cb106041634f194366d3dd79f",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "checker_identity": "artifacts/ara_memory_basic_20261008/upstream/vl.c:47",
+              "checker_scope": "original typed expected equality; 64-bit comparisons retained; not full32v/CSR/tail oracle; 15 loaded elements via original VSTORE/VCMP; vector operand geometry=[{\"eew\":16,\"emul\":\"1\",\"register\":1,\"register_group\":[1],\"role\":\"vector destination\"},{\"access_bytes\":30,\"access_elements\":15,\"alignment_bytes\":128,\"array\":\"ALIGNED_I16\",\"array_elements\":16,\"offset_bytes\":2,\"role\":\"memory source\"}]",
+              "source_file": "artifacts/ara_memory_basic_20261008/upstream/vl.c"
+            }
+          ]
+        }
+      ],
+      "original_ACT_reference_blockers": [
+        {
+          "case": "Vf32-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 32,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.S",
+          "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+          "elf": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.elf",
+          "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.results",
+          "expected_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+          "capture": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.sig",
+          "capture_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+          "oracle": {
+            "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+            "capture_elf_sha256": "89172806059c91f2ee937428c126167c2b22725b475d2444151c405cffc28aec",
+            "raw_sig_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+            "processed_results_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 312,
+            "target_words": 142,
+            "embedded_signature_bytes": 62480,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 32
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf32-vfmv.f.s"
+        },
+        {
+          "case": "Vf64-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 64,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.S",
+          "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+          "elf": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.elf",
+          "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.results",
+          "expected_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+          "capture": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.sig",
+          "capture_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+          "oracle": {
+            "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+            "capture_elf_sha256": "29c2e57f3288833eb48571ea6f24568120d96bd6a1fac493b6ae9790ee498e24",
+            "raw_sig_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+            "processed_results_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 304,
+            "target_words": 138,
+            "embedded_signature_bytes": 123728,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 64
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf64-vfmv.f.s"
+        }
+      ]
+    },
+    "vfadd.vv": {
+      "selected_records": 39,
+      "examples": [
+        {
+          "suite": "chips",
+          "id": "156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c",
+          "case": null,
+          "arm": "B",
+          "guest_vlen": 128,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/chips/raw/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/chips/raw/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c",
+            "status": "PASS",
+            "control": false,
+            "returncode": 0,
+            "error": null,
+            "elapsed_seconds_for_timeout_diagnostics_only": 0.06471285101724789,
+            "elf_sha256": "2ae9608554ced884f4db7edca147ea45964405ade58350aabc3810631d246f14",
+            "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+            "stderr_sha256": "18a5e69581b5f2372419f6c3d1dd721a010c917db5ba86d2015ead59c2b10291",
+            "checker": "registered exit code and exact stdout of self-checking guest",
+            "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [],
+            "host_chunk_bytes": []
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "chips/raw/156373b8a9348eb905a6932a45baaecfaf8cc8d6504a3d1566a397961567173c",
+          "portable_original": [
+            {
+              "source": {
+                "package": "chips",
+                "path": "/tmp/task139-fresh/inspection/chips/sources/chips/elen64_fp128/stage2/vfadd_vv-0.S",
+                "package_relative": "sources/chips/elen64_fp128/stage2/vfadd_vv-0.S",
+                "original_sha256": "92c8a7e9d863325e86f6b59a410608e65c7c6c826eb0f0634fd2498f327b2416",
+                "distributed_sha256": "92c8a7e9d863325e86f6b59a410608e65c7c6c826eb0f0634fd2498f327b2416",
+                "legal_restoration": null
+              },
+              "checker": "sources/chips/elen64_fp128/stage2/vfadd_vv-0.S [TEST_CASE lines 72..10990; count=744]",
+              "source_chain": "SOURCE_CHAIN.json [batch=elen64_fp128,case=vfadd_vv-0]"
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "assertion_selector": "sources/chips/elen64_fp128/stage2/vfadd_vv-0.S [TEST_CASE lines 72..10990; count=744]",
+              "source": "sources/chips/elen64_fp128/stage2/vfadd_vv-0.S",
+              "source_chain_selector": "SOURCE_CHAIN.json [batch=elen64_fp128,case=vfadd_vv-0]",
+              "source_sha256": "92c8a7e9d863325e86f6b59a410608e65c7c6c826eb0f0634fd2498f327b2416",
+              "checker": "registered exit code and exact stdout of self-checking guest"
+            }
+          ]
+        },
+        {
+          "suite": "act",
+          "id": "Vf32-vfadd.vv",
+          "case": "Vf32-vfadd.vv",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--dump-tbmap=/home/vick/rvdbt-host512-task138/act/raw/Vf32-vfadd.vv/B/tbmap.txt",
+            "--fsroot=/home/vick/rvdbt-host512-task138/act/raw/Vf32-vfadd.vv/B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/act/raw/Vf32-vfadd.vv/B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "case": "Vf32-vfadd.vv",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "original_predicate_pass": true,
+            "elapsed_seconds": 0.11717534065246582,
+            "elf_sha256": "587c88bdd905426908c048359a1167810b0518e70c01af8ed370094723da3b67",
+            "expected_sha256": "ccdf73c268101dc47858b23db4de95e18acd3be47621a0db2e5f329499f3a092",
+            "source_sha256": "34d67192cf5d519a1edec754861d340fca2746f5d9952a93ec229b8ec95b5265",
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr_sha256": "c7a2719614f3b191302bfc49f8fcc093cc7591ac3b9d18f8ddb541b88ea77e38"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "act/raw/Vf32-vfadd.vv/B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vf32-vfadd.vv/Vf32-vfadd.vv.S",
+                "package_relative": "records/cases/Vf32-vfadd.vv/Vf32-vfadd.vv.S",
+                "original_sha256": "34d67192cf5d519a1edec754861d340fca2746f5d9952a93ec229b8ec95b5265",
+                "distributed_sha256": "34d67192cf5d519a1edec754861d340fca2746f5d9952a93ec229b8ec95b5265",
+                "legal_restoration": null
+              },
+              "expected": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vf32-vfadd.vv/Vf32-vfadd.vv.results",
+                "package_relative": "records/cases/Vf32-vfadd.vv/Vf32-vfadd.vv.results",
+                "original_sha256": "ccdf73c268101dc47858b23db4de95e18acd3be47621a0db2e5f329499f3a092",
+                "distributed_sha256": "ccdf73c268101dc47858b23db4de95e18acd3be47621a0db2e5f329499f3a092",
+                "legal_restoration": null
+              },
+              "checker": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/common/upstream/env/signature.h",
+                "package_relative": "records/common/upstream/env/signature.h",
+                "original_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "distributed_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "legal_restoration": null
+              },
+              "literal_checker_sites": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison-sites.json.gz",
+                "package_relative": "metadata/act/comparison-sites.json.gz",
+                "original_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "distributed_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "legal_restoration": null
+              },
+              "comparison": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison.json.gz",
+                "package_relative": "metadata/act/comparison.json.gz",
+                "original_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "distributed_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "source": "/home/vick/rvv-task109/cases/Vf32-vfadd.vv/Vf32-vfadd.vv.S",
+              "source_sha256": "34d67192cf5d519a1edec754861d340fca2746f5d9952a93ec229b8ec95b5265",
+              "expected": "/home/vick/rvv-task109/cases/Vf32-vfadd.vv/Vf32-vfadd.vv.results",
+              "expected_sha256": "ccdf73c268101dc47858b23db4de95e18acd3be47621a0db2e5f329499f3a092",
+              "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+              "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+              "literal_checker_sites": "/home/vick/act-current121/comparison-sites.json.gz#Vf32-vfadd.vv",
+              "signature_words": "19256"
+            }
+          ]
+        },
+        {
+          "suite": "ara",
+          "id": "ara84__upstream_block_vfadd_TEST_CASE1_e32__upstream_block_vfadd_TEST_CASE1_e32__B",
+          "case": "upstream_block_vfadd_TEST_CASE1_e32",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-stats=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/ara/raw/ara84__upstream_block_vfadd_TEST_CASE1_e32__upstream_block_vfadd_TEST_CASE1_e32__B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/ara/raw/ara84__upstream_block_vfadd_TEST_CASE1_e32__upstream_block_vfadd_TEST_CASE1_e32__B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "ara84__upstream_block_vfadd_TEST_CASE1_e32__upstream_block_vfadd_TEST_CASE1_e32__B",
+            "case": "upstream_block_vfadd_TEST_CASE1_e32",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "accepted_scope_pass": true,
+            "whole_file_pass": true,
+            "elf_sha256": "d45a364c323d1bbb6f36d158f1c11edc9645e96ca9945a0d9b6a16a99a43e309",
+            "stdout_sha256": "ea7a849f7035c0f4624a112f848a431198665911bd2bd5004520f0aa2a90d321",
+            "stderr_sha256": "0f8107e0798c124b3b844fd4c780d367b9a6d57cf46084fb8614885376f5d7dc",
+            "observer_sha256": "4e6bc32ea8c66dae31ff8d8b4836a3f136a905feb8c4b6f2842ae9628d5f52ce",
+            "elapsed_seconds": 0.06890749931335449
+          },
+          "observed_runtime": {
+            "observations": {
+              "vsets": [
+                [
+                  50,
+                  16,
+                  16,
+                  208
+                ]
+              ],
+              "assertions": [
+                [
+                  2,
+                  16,
+                  4,
+                  16,
+                  208,
+                  16,
+                  1
+                ]
+              ],
+              "summary": [
+                0,
+                1,
+                1,
+                16
+              ],
+              "flags": [],
+              "flag_summary": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "scalars": [],
+              "scalar_summary": [
+                0,
+                0,
+                0
+              ]
+            },
+            "cases": [
+              {
+                "function": "TEST_CASE1",
+                "source_row_id": "15e983738d0b7c0075184a07e1f987f3f5ffeb5385be749dd12d000817000f02",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    2,
+                    16,
+                    4,
+                    16,
+                    208,
+                    16,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    50,
+                    16,
+                    16,
+                    208
+                  ]
+                ],
+                "comparisons": 16,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 2:\nPASSED.\n"
+              }
+            ],
+            "original_fp_marker_match": true,
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "ara/raw/ara84__upstream_block_vfadd_TEST_CASE1_e32__upstream_block_vfadd_TEST_CASE1_e32__B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "ara",
+                "path": "/tmp/task139-fresh/inspection/ara/records/ara84/upstream/vfadd.c",
+                "package_relative": "records/ara84/upstream/vfadd.c",
+                "original_sha256": "a3dd0d5b19c5ac4588e84d43cfe8a7d05363633f33a74383ee6b4d3f71825f91",
+                "distributed_sha256": "a3dd0d5b19c5ac4588e84d43cfe8a7d05363633f33a74383ee6b4d3f71825f91",
+                "legal_restoration": null
+              },
+              "adapter": {
+                "package": "ara",
+                "path": "/tmp/task139-fresh/inspection/ara/records/ara84/adapter/upstream_block_vfadd_TEST_CASE1_e32.c",
+                "package_relative": "records/ara84/adapter/upstream_block_vfadd_TEST_CASE1_e32.c",
+                "original_sha256": "92b757679d0ec7855a39e2279f1dd69f1864dd4350f077cac0968bf15e4a13ba",
+                "distributed_sha256": "3223239b4cbeceaba9cdc5a11259ca7b6e49de67182e786f3e69384a11b3714f",
+                "legal_restoration": {
+                  "file": "records/ara84/adapter/upstream_block_vfadd_TEST_CASE1_e32.c",
+                  "original_sha256": "92b757679d0ec7855a39e2279f1dd69f1864dd4350f077cac0968bf15e4a13ba",
+                  "notice_prefix_bytes": 369,
+                  "distributed_sha256": "3223239b4cbeceaba9cdc5a11259ca7b6e49de67182e786f3e69384a11b3714f",
+                  "source_notice": "sources/apps/riscv-tests/isa/rv64uv/vfadd.c"
+                }
+              },
+              "runner": {
+                "package": "ara",
+                "path": "/tmp/task139-fresh/inspection/ara/records/ara82/runner.py",
+                "package_relative": "records/ara82/runner.py",
+                "original_sha256": "9f309cb5f7f6c8b04e7979c31dc3d5abbe3b8a47a35ec146643757e5b35f16c7",
+                "distributed_sha256": "9f309cb5f7f6c8b04e7979c31dc3d5abbe3b8a47a35ec146643757e5b35f16c7",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "checker_identity": "/home/user/research/materials/thesis_rvv_20260921/artifacts/rvv_validation_delivery_20261009/ara84/checker.py",
+              "checker_scope": "EXTRACTED_FP32_64_BLOCK",
+              "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vfadd.c"
+            }
+          ]
+        }
+      ],
+      "original_ACT_reference_blockers": [
+        {
+          "case": "Vf32-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 32,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.S",
+          "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+          "elf": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.elf",
+          "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.results",
+          "expected_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+          "capture": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.sig",
+          "capture_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+          "oracle": {
+            "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+            "capture_elf_sha256": "89172806059c91f2ee937428c126167c2b22725b475d2444151c405cffc28aec",
+            "raw_sig_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+            "processed_results_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 312,
+            "target_words": 142,
+            "embedded_signature_bytes": 62480,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 32
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf32-vfmv.f.s"
+        },
+        {
+          "case": "Vf64-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 64,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.S",
+          "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+          "elf": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.elf",
+          "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.results",
+          "expected_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+          "capture": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.sig",
+          "capture_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+          "oracle": {
+            "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+            "capture_elf_sha256": "29c2e57f3288833eb48571ea6f24568120d96bd6a1fac493b6ae9790ee498e24",
+            "raw_sig_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+            "processed_results_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 304,
+            "target_words": 138,
+            "embedded_signature_bytes": 123728,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 64
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf64-vfmv.f.s"
+        }
+      ]
+    },
+    "vmand.mm": {
+      "selected_records": 6,
+      "examples": [
+        {
+          "suite": "chips",
+          "id": "8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336",
+          "case": null,
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/chips/raw/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/chips/raw/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336",
+            "status": "PASS",
+            "control": false,
+            "returncode": 0,
+            "error": null,
+            "elapsed_seconds_for_timeout_diagnostics_only": 0.16787830600515008,
+            "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+            "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+            "stderr_sha256": "64c9db986e39eec8bf16d28ccea14fe390ecef00b518b37d04b7df48bb530045",
+            "checker": "registered exit code and exact stdout of self-checking guest",
+            "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [],
+            "host_chunk_bytes": []
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "chips/raw/8a81c42ed9fdeea7a29699cdd965df243aeef54e9b71f5a12e0d9ee4bd9e4336",
+          "portable_original": [
+            {
+              "source": {
+                "package": "chips",
+                "path": "/tmp/task139-fresh/inspection/chips/sources/chips/mask1024/stage2/vmand_mm-0.S",
+                "package_relative": "sources/chips/mask1024/stage2/vmand_mm-0.S",
+                "original_sha256": "f85b793aa98f420556d2e2ac58a6887c4bda4ac6824a70da6559b72e24b28955",
+                "distributed_sha256": "f85b793aa98f420556d2e2ac58a6887c4bda4ac6824a70da6559b72e24b28955",
+                "legal_restoration": null
+              },
+              "checker": "sources/chips/mask1024/stage2/vmand_mm-0.S [TEST_CASE lines 63..20050; count=13824]",
+              "source_chain": "SOURCE_CHAIN.json [batch=mask1024,case=vmand_mm-0]"
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "assertion_selector": "sources/chips/mask1024/stage2/vmand_mm-0.S [TEST_CASE lines 63..20050; count=13824]",
+              "source": "sources/chips/mask1024/stage2/vmand_mm-0.S",
+              "source_chain_selector": "SOURCE_CHAIN.json [batch=mask1024,case=vmand_mm-0]",
+              "source_sha256": "f85b793aa98f420556d2e2ac58a6887c4bda4ac6824a70da6559b72e24b28955",
+              "checker": "registered exit code and exact stdout of self-checking guest"
+            }
+          ]
+        },
+        {
+          "suite": "act",
+          "id": "Vx8-vmand.mm-00",
+          "case": "Vx8-vmand.mm-00",
+          "arm": "B",
+          "guest_vlen": 1024,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=1024",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-stats=1",
+            "--rvv-route-census=1",
+            "--rvv-qcg-hit-counter=1",
+            "--dump-tbmap=/home/vick/rvdbt-host512-task138/act/raw/Vx8-vmand.mm-00/B/tbmap.txt",
+            "--fsroot=/home/vick/rvdbt-host512-task138/act/raw/Vx8-vmand.mm-00/B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/act/raw/Vx8-vmand.mm-00/B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "case": "Vx8-vmand.mm-00",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "original_predicate_pass": true,
+            "elapsed_seconds": 0.1176917552947998,
+            "elf_sha256": "62b443644619687c1229d053ba14476218529fce9f4ac2fff0f8f54a85b1116f",
+            "expected_sha256": "0565c134c485909e2be034141f2ec5960a4e760630c5db0ffaf751e845fe624d",
+            "source_sha256": "950abfec597d10a7abf0be789eb34ac807a465a5eace21d6f1474d61cc01c6f6",
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr_sha256": "4c56d141633f3c1feae64295cc1f491bc6b3893003ec6152c6c888ad355b2ad6"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [
+              "vlen=1024 chunk_bytes=64 chunks_per_reg=2 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "act/raw/Vx8-vmand.mm-00/B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vx8-vmand.mm-00/Vx8-vmand.mm-00.S",
+                "package_relative": "records/cases/Vx8-vmand.mm-00/Vx8-vmand.mm-00.S",
+                "original_sha256": "950abfec597d10a7abf0be789eb34ac807a465a5eace21d6f1474d61cc01c6f6",
+                "distributed_sha256": "950abfec597d10a7abf0be789eb34ac807a465a5eace21d6f1474d61cc01c6f6",
+                "legal_restoration": null
+              },
+              "expected": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/cases/Vx8-vmand.mm-00/Vx8-vmand.mm-00.results",
+                "package_relative": "records/cases/Vx8-vmand.mm-00/Vx8-vmand.mm-00.results",
+                "original_sha256": "0565c134c485909e2be034141f2ec5960a4e760630c5db0ffaf751e845fe624d",
+                "distributed_sha256": "0565c134c485909e2be034141f2ec5960a4e760630c5db0ffaf751e845fe624d",
+                "legal_restoration": null
+              },
+              "checker": {
+                "package": "act",
+                "path": "/tmp/task139-fresh/inspection/act/records/common/upstream/env/signature.h",
+                "package_relative": "records/common/upstream/env/signature.h",
+                "original_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "distributed_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+                "legal_restoration": null
+              },
+              "literal_checker_sites": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison-sites.json.gz",
+                "package_relative": "metadata/act/comparison-sites.json.gz",
+                "original_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "distributed_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+                "legal_restoration": null
+              },
+              "comparison": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/metadata/act/comparison.json.gz",
+                "package_relative": "metadata/act/comparison.json.gz",
+                "original_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "distributed_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "source": "/home/vick/rvv-task109/cases/Vx8-vmand.mm-00/Vx8-vmand.mm-00.S",
+              "source_sha256": "950abfec597d10a7abf0be789eb34ac807a465a5eace21d6f1474d61cc01c6f6",
+              "expected": "/home/vick/rvv-task109/cases/Vx8-vmand.mm-00/Vx8-vmand.mm-00.results",
+              "expected_sha256": "0565c134c485909e2be034141f2ec5960a4e760630c5db0ffaf751e845fe624d",
+              "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+              "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+              "literal_checker_sites": "/home/vick/act-current121/comparison-sites.json.gz#Vx8-vmand.mm-00",
+              "signature_words": "31280"
+            }
+          ]
+        },
+        {
+          "suite": "ara",
+          "id": "ara-remainder52__batch_vmand__batch_vmand__B",
+          "case": "batch_vmand",
+          "arm": "B",
+          "guest_vlen": 128,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-stats=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/ara/raw/ara-remainder52__batch_vmand__batch_vmand__B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/ara/raw/ara-remainder52__batch_vmand__batch_vmand__B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "ara-remainder52__batch_vmand__batch_vmand__B",
+            "case": "batch_vmand",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "accepted_scope_pass": true,
+            "whole_file_pass": true,
+            "elf_sha256": "dd28e13c07062a66e299c9961675c659f9ea2c08e0e5436564454b8c497175eb",
+            "stdout_sha256": "7505cecb2405837b96712a30a6d82caf76c8c49676bc2a14b4caa00858870e85",
+            "stderr_sha256": "1af78036c4feccf21cc0bda6c8ad1fc34e84339f0be23d78cec696d7100e2167",
+            "observer_sha256": "4e4abdccd53be2d7a4e3e3b057be4ea4c0b4d897f16565b45e424b0eaedbe4d4",
+            "elapsed_seconds": 0.07098150253295898
+          },
+          "observed_runtime": {
+            "observations": {
+              "vsets": [
+                [
+                  11,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  15,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  20,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  24,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  29,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  33,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  38,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  42,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  47,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  51,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  53,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  58,
+                  16,
+                  16,
+                  192
+                ],
+                [
+                  62,
+                  13,
+                  13,
+                  192
+                ]
+              ],
+              "assertions": [
+                [
+                  1,
+                  2,
+                  1,
+                  16,
+                  192,
+                  2,
+                  1
+                ],
+                [
+                  2,
+                  2,
+                  1,
+                  16,
+                  192,
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  2,
+                  1,
+                  16,
+                  192,
+                  2,
+                  1
+                ],
+                [
+                  4,
+                  2,
+                  1,
+                  16,
+                  192,
+                  2,
+                  1
+                ],
+                [
+                  5,
+                  2,
+                  1,
+                  16,
+                  192,
+                  2,
+                  1
+                ],
+                [
+                  6,
+                  8,
+                  1,
+                  13,
+                  192,
+                  8,
+                  1
+                ]
+              ],
+              "summary": [
+                0,
+                13,
+                6,
+                18
+              ],
+              "flags": [],
+              "flag_summary": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "scalars": [],
+              "scalar_summary": [
+                0,
+                0,
+                0
+              ]
+            },
+            "cases": [
+              {
+                "function": "TEST_CASE1",
+                "source_row_id": "f6d103562dc6ec4cefd578eb27ba6899c14f2959de316dbf00388fdc43ca31e3",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    1,
+                    2,
+                    1,
+                    16,
+                    192,
+                    2,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    11,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    15,
+                    16,
+                    16,
+                    192
+                  ]
+                ],
+                "comparisons": 2,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 1:\nPASSED.\n"
+              },
+              {
+                "function": "TEST_CASE2",
+                "source_row_id": "f743a6c3979b72ed0a0897eea115aef905d4fcdc7d9fdba454607b77289bb324",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    2,
+                    2,
+                    1,
+                    16,
+                    192,
+                    2,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    20,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    24,
+                    16,
+                    16,
+                    192
+                  ]
+                ],
+                "comparisons": 2,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 2:\nPASSED.\n"
+              },
+              {
+                "function": "TEST_CASE3",
+                "source_row_id": "5d669a70a7498bc29d913d1bde1cc3827fe4ca47364bf269f7ce47600b21f6e3",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    3,
+                    2,
+                    1,
+                    16,
+                    192,
+                    2,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    29,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    33,
+                    16,
+                    16,
+                    192
+                  ]
+                ],
+                "comparisons": 2,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 3:\nPASSED.\n"
+              },
+              {
+                "function": "TEST_CASE4",
+                "source_row_id": "27bf15b7807029ca3a51bdb86acffc1446f6fe9ff00d668555376a2c1fb100f8",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    4,
+                    2,
+                    1,
+                    16,
+                    192,
+                    2,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    38,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    42,
+                    16,
+                    16,
+                    192
+                  ]
+                ],
+                "comparisons": 2,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 4:\nPASSED.\n"
+              },
+              {
+                "function": "TEST_CASE5",
+                "source_row_id": "1c3e751eab6edb047dbb9edc35f7539cb2acf51416d53f7c8fee273e2ff133b4",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    5,
+                    2,
+                    1,
+                    16,
+                    192,
+                    2,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    47,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    51,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    53,
+                    16,
+                    16,
+                    192
+                  ]
+                ],
+                "comparisons": 2,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 5:\nPASSED.\n"
+              },
+              {
+                "function": "TEST_CASE6",
+                "source_row_id": "a3fe8f7cdf82d2339bd0992bc5ee152a4709c261e5f6fc3cce437a33bff38756",
+                "status": "PASS",
+                "original_checker_accepted": true,
+                "reason": "original equality/control completed",
+                "assertions": [
+                  [
+                    6,
+                    8,
+                    1,
+                    13,
+                    192,
+                    8,
+                    1
+                  ]
+                ],
+                "vsets": [
+                  [
+                    58,
+                    16,
+                    16,
+                    192
+                  ],
+                  [
+                    62,
+                    13,
+                    13,
+                    192
+                  ]
+                ],
+                "comparisons": 8,
+                "original_success_lines": 1,
+                "expected_original_checker_calls": 1,
+                "body_output": "Checking the results of the test case 6:\nPASSED.\n"
+              }
+            ],
+            "RVV_STATS": [
+              "vlen=128 chunk_bytes=64 chunks_per_reg=0 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "ara/raw/ara-remainder52__batch_vmand__batch_vmand__B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "ara",
+                "path": "/tmp/task139-fresh/inspection/ara/records/ara83/upstream/vmand.c",
+                "package_relative": "records/ara83/upstream/vmand.c",
+                "original_sha256": "e673ada41f29ffdc63fabce5f46ed3fc2fe333c03846023bec89d2c938557625",
+                "distributed_sha256": "e673ada41f29ffdc63fabce5f46ed3fc2fe333c03846023bec89d2c938557625",
+                "legal_restoration": null
+              },
+              "adapter": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/38013502d7196da06665076724157899314eff8a6a58221b6bfaab4ac8d85153/batch_vmand.c",
+                "package_relative": "sources/ara/38013502d7196da06665076724157899314eff8a6a58221b6bfaab4ac8d85153/batch_vmand.c",
+                "original_sha256": "38013502d7196da06665076724157899314eff8a6a58221b6bfaab4ac8d85153",
+                "distributed_sha256": "38013502d7196da06665076724157899314eff8a6a58221b6bfaab4ac8d85153",
+                "legal_restoration": null
+              },
+              "runner": {
+                "package": "ara",
+                "path": "/tmp/task139-fresh/inspection/ara/records/ara82/runner.py",
+                "package_relative": "records/ara82/runner.py",
+                "original_sha256": "9f309cb5f7f6c8b04e7979c31dc3d5abbe3b8a47a35ec146643757e5b35f16c7",
+                "distributed_sha256": "9f309cb5f7f6c8b04e7979c31dc3d5abbe3b8a47a35ec146643757e5b35f16c7",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "checker_identity": "{\"offline_checker\":\"241db144283ccc25aba4e7bfbea841a7650a77c5cb42dba9a7c7f323a2b53589\",\"offline_recheck\":true,\"original_predicate\":\"fb0ecf9dceeae44a7c7c14349826642cf8ab19787f1829770abc60c8530c88f2\",\"original_runtime_verdict\":\"PASS\",\"pinned_macros\":\"3688843f50f7299052cebb9071d0e6243087175cb29c84a352950f06f7caa3ae\",\"scope_metadata\":\"9ba053c7ff3c3600a81cfe2eb74cbfe9cc1aa2464fe15e7692babf5d260fcfb2\"}",
+              "checker_scope": "Unchanged original typed register/memory equality, original scalar/configuration/flags predicates. Per-function spans/call order and incomplete comparisons retained. SHARED_ENVIRONMENT_ADAPTER; target path/all-state/fault proof not inferred.",
+              "source_file": "artifacts/external_suite_coverage_20261007/ara/raw/source/apps/riscv-tests/isa/rv64uv/vmand.c"
+            }
+          ]
+        }
+      ],
+      "original_ACT_reference_blockers": [
+        {
+          "case": "Vf32-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 32,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.S",
+          "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+          "elf": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.elf",
+          "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.results",
+          "expected_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+          "capture": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.sig",
+          "capture_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+          "oracle": {
+            "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+            "capture_elf_sha256": "89172806059c91f2ee937428c126167c2b22725b475d2444151c405cffc28aec",
+            "raw_sig_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+            "processed_results_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 312,
+            "target_words": 142,
+            "embedded_signature_bytes": 62480,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 32
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf32-vfmv.f.s"
+        },
+        {
+          "case": "Vf64-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 64,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.S",
+          "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+          "elf": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.elf",
+          "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.results",
+          "expected_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+          "capture": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.sig",
+          "capture_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+          "oracle": {
+            "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+            "capture_elf_sha256": "29c2e57f3288833eb48571ea6f24568120d96bd6a1fac493b6ae9790ee498e24",
+            "raw_sig_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+            "processed_results_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 304,
+            "target_words": 138,
+            "embedded_signature_bytes": 123728,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 64
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf64-vfmv.f.s"
+        }
+      ]
+    },
+    "vsetvli": {
+      "selected_records": 3,
+      "examples": [
+        {
+          "suite": "chips",
+          "id": "ab680bbe98174af594421acf707b863e4070fdd1f778b93d0ff3cad0bab5a5e0",
+          "case": null,
+          "arm": "B",
+          "guest_vlen": 128,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/chips/raw/ab680bbe98174af594421acf707b863e4070fdd1f778b93d0ff3cad0bab5a5e0/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/chips/raw/ab680bbe98174af594421acf707b863e4070fdd1f778b93d0ff3cad0bab5a5e0/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "ab680bbe98174af594421acf707b863e4070fdd1f778b93d0ff3cad0bab5a5e0",
+            "status": "PASS",
+            "control": false,
+            "returncode": 0,
+            "error": null,
+            "elapsed_seconds_for_timeout_diagnostics_only": 0.11405282700434327,
+            "elf_sha256": "6485be17b22289f9e745867b08a38896dc47ecb899560bec2b13afef00fd8a3f",
+            "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+            "stderr_sha256": "c916995a676f46086b5f790cb22111a0ef1e7d2df845b4f8b6ed91e66bdbd59b",
+            "checker": "registered exit code and exact stdout of self-checking guest",
+            "instruction_route": "NOT_OBSERVED_BY_THIS_RUNNER"
+          },
+          "observed_runtime": {
+            "target_SEW_LMUL_VL_mask_tail_vstart": "UNKNOWN; original checker completion is not a runtime tuple census",
+            "RVV_STATS": [],
+            "host_chunk_bytes": []
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "chips/raw/ab680bbe98174af594421acf707b863e4070fdd1f778b93d0ff3cad0bab5a5e0",
+          "portable_original": [
+            {
+              "source": {
+                "package": "chips",
+                "path": "/tmp/task139-fresh/inspection/chips/sources/chips/elen64_vset128/stage2/vsetvli-0.S",
+                "package_relative": "sources/chips/elen64_vset128/stage2/vsetvli-0.S",
+                "original_sha256": "34fb3e516f9994c77ca78133b761a9c8ca776fcd5cb7008b43301b640c88efa9",
+                "distributed_sha256": "34fb3e516f9994c77ca78133b761a9c8ca776fcd5cb7008b43301b640c88efa9",
+                "legal_restoration": null
+              },
+              "checker": "sources/chips/elen64_vset128/stage2/vsetvli-0.S [TEST_CASE lines 28..9081; count=2376]",
+              "source_chain": "SOURCE_CHAIN.json [batch=elen64_vset128,case=vsetvli-0]"
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "assertion_selector": "sources/chips/elen64_vset128/stage2/vsetvli-0.S [TEST_CASE lines 28..9081; count=2376]",
+              "source": "sources/chips/elen64_vset128/stage2/vsetvli-0.S",
+              "source_chain_selector": "SOURCE_CHAIN.json [batch=elen64_vset128,case=vsetvli-0]",
+              "source_sha256": "34fb3e516f9994c77ca78133b761a9c8ca776fcd5cb7008b43301b640c88efa9",
+              "checker": "registered exit code and exact stdout of self-checking guest"
+            }
+          ]
+        },
+        {
+          "suite": "ara",
+          "id": "ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__B",
+          "case": "vsetvli",
+          "arm": "B",
+          "guest_vlen": 2048,
+          "executable_pins": {
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun": "da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e",
+            "/home/vick/rvdbt-goldens-task137/current/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+          },
+          "command": [
+            "/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun",
+            "--vlen=2048",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=0",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=0",
+            "--rvv-qcg-active-vl-int-bound=0",
+            "--rvv-qcg-active-vl-widen-bound=0",
+            "--rvv-qcg-active-vl-narrow-bound=0",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-stats=1",
+            "--fsroot=/home/vick/rvdbt-host512-task138/ara/raw/ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__B/work/fs",
+            "--cache=/home/vick/rvdbt-host512-task138/ara/raw/ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__B/work/cache",
+            "--",
+            "/t.elf"
+          ],
+          "result": {
+            "id": "ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__B",
+            "case": "vsetvli",
+            "arm": "B",
+            "status": "PASS",
+            "returncode": 0,
+            "timeout": false,
+            "accepted_scope_pass": true,
+            "whole_file_pass": true,
+            "elf_sha256": "7c4633b30fd350830739229244ded8015ee4a414106ed0658d781a361e6216ce",
+            "stdout_sha256": "efcd55852b2260276c14b9551ec7b6b71737debcc55870f928b91039ecffc625",
+            "stderr_sha256": "1a9c391e7fd5f4c768e2cfa5ce306be8e65e0c1e7e74c3bc510db38cd3a81176",
+            "observer_sha256": "ebe44eb6ef5ea414ddcc11bb4637d0073eab908d2def3b7eb2df0a30ecc0d889",
+            "elapsed_seconds": 0.0703282356262207
+          },
+          "observed_runtime": {
+            "configs": [
+              [
+                1,
+                192,
+                192,
+                250,
+                250,
+                0,
+                0
+              ],
+              [
+                2,
+                200,
+                200,
+                120,
+                120,
+                1,
+                0
+              ],
+              [
+                3,
+                208,
+                208,
+                60,
+                60,
+                2,
+                0
+              ],
+              [
+                4,
+                216,
+                216,
+                30,
+                30,
+                3,
+                0
+              ],
+              [
+                5,
+                193,
+                193,
+                350,
+                350,
+                0,
+                1
+              ],
+              [
+                6,
+                201,
+                201,
+                250,
+                250,
+                1,
+                1
+              ],
+              [
+                7,
+                209,
+                209,
+                120,
+                120,
+                2,
+                1
+              ],
+              [
+                8,
+                217,
+                217,
+                60,
+                60,
+                3,
+                1
+              ],
+              [
+                9,
+                194,
+                194,
+                350,
+                350,
+                0,
+                2
+              ],
+              [
+                10,
+                202,
+                202,
+                250,
+                250,
+                1,
+                2
+              ],
+              [
+                11,
+                210,
+                210,
+                120,
+                120,
+                2,
+                2
+              ],
+              [
+                12,
+                218,
+                218,
+                60,
+                60,
+                3,
+                2
+              ],
+              [
+                13,
+                195,
+                195,
+                350,
+                350,
+                0,
+                3
+              ],
+              [
+                14,
+                203,
+                203,
+                250,
+                250,
+                1,
+                3
+              ],
+              [
+                15,
+                211,
+                211,
+                120,
+                120,
+                2,
+                3
+              ],
+              [
+                16,
+                219,
+                219,
+                60,
+                60,
+                3,
+                3
+              ],
+              [
+                17,
+                197,
+                197,
+                30,
+                30,
+                0,
+                5
+              ],
+              [
+                18,
+                2147483648,
+                205,
+                30,
+                0,
+                1,
+                5
+              ],
+              [
+                19,
+                2147483648,
+                213,
+                15,
+                0,
+                2,
+                5
+              ],
+              [
+                20,
+                2147483648,
+                221,
+                7,
+                0,
+                3,
+                5
+              ],
+              [
+                21,
+                198,
+                198,
+                60,
+                60,
+                0,
+                6
+              ],
+              [
+                22,
+                206,
+                206,
+                30,
+                30,
+                1,
+                6
+              ],
+              [
+                23,
+                2147483648,
+                214,
+                30,
+                0,
+                2,
+                6
+              ],
+              [
+                24,
+                2147483648,
+                222,
+                15,
+                0,
+                3,
+                6
+              ],
+              [
+                25,
+                199,
+                199,
+                120,
+                120,
+                0,
+                7
+              ],
+              [
+                26,
+                207,
+                207,
+                60,
+                60,
+                1,
+                7
+              ],
+              [
+                27,
+                215,
+                215,
+                30,
+                30,
+                2,
+                7
+              ],
+              [
+                28,
+                2147483648,
+                223,
+                30,
+                0,
+                3,
+                7
+              ]
+            ],
+            "case_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "RVV_STATS": [
+              "vlen=2048 chunk_bytes=64 chunks_per_reg=4 lowering=fixed-width chunk_ops=0 tail_elems=0 ref_fallback=0 verify_ok=0 verify_fail=0"
+            ],
+            "host_chunk_bytes": [
+              64
+            ]
+          },
+          "configuration_interpretation": "Guest VLEN is an actual command setting. Source configuration literals and historical binding fields remain source/historical evidence; absent runtime dimensions are UNKNOWN.",
+          "admission": "No per-target current native admission inferred from flags, program PASS or aggregate route counters. Task128 target evidence remains historical.",
+          "current_raw_relative": "ara/raw/ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__B",
+          "portable_original": [
+            {
+              "source": {
+                "package": "ara",
+                "path": "/tmp/task139-fresh/inspection/ara/records/ara83/upstream/vsetvli.c",
+                "package_relative": "records/ara83/upstream/vsetvli.c",
+                "original_sha256": "a8f669dd16796c5382ff6fddebbe0ef64149187951f6efb193317e4e0d955ffd",
+                "distributed_sha256": "a8f669dd16796c5382ff6fddebbe0ef64149187951f6efb193317e4e0d955ffd",
+                "legal_restoration": null
+              },
+              "adapter": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/4b5a40be25f8886663a51a7c94f9f23f934ebc9a25d020bac5e899886f5f29e8/vsetvli.c",
+                "package_relative": "sources/ara/4b5a40be25f8886663a51a7c94f9f23f934ebc9a25d020bac5e899886f5f29e8/vsetvli.c",
+                "original_sha256": "4b5a40be25f8886663a51a7c94f9f23f934ebc9a25d020bac5e899886f5f29e8",
+                "distributed_sha256": "4b5a40be25f8886663a51a7c94f9f23f934ebc9a25d020bac5e899886f5f29e8",
+                "legal_restoration": null
+              },
+              "runner": {
+                "package": "evidence",
+                "path": "/tmp/task139-fresh/inspection/current/sources/ara/dc6619592e3a0260dac743a09e79d725d91e29055f9a337787e16eb319add61d/run.py",
+                "package_relative": "sources/ara/dc6619592e3a0260dac743a09e79d725d91e29055f9a337787e16eb319add61d/run.py",
+                "original_sha256": "dc6619592e3a0260dac743a09e79d725d91e29055f9a337787e16eb319add61d",
+                "distributed_sha256": "dc6619592e3a0260dac743a09e79d725d91e29055f9a337787e16eb319add61d",
+                "legal_restoration": null
+              }
+            }
+          ],
+          "original_assertion_selectors": [
+            {
+              "checker_identity": "artifacts/ara_vset_current_20261009/upstream/vector_macros.h",
+              "checker_scope": "original Ara comparator executed; each ordered case complete starts/config/PASSED block, final original PASSED, no original FAIL; illegal branch omits num_failed increment but host checks raw FAIL and completion; observation is not oracle; retained original ARA_CONFIG fields exactly equal same-ELF independent Spike observations (no new oracle formula/execution/PASS)",
+              "source_file": "artifacts/ara_vset_current_20261009/upstream/vsetvli.c"
+            }
+          ]
+        }
+      ],
+      "original_ACT_reference_blockers": [
+        {
+          "case": "Vf32-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 32,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.S",
+          "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+          "elf": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.elf",
+          "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.results",
+          "expected_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+          "capture": "/home/vick/rvv-task109/cases/Vf32-vfmv.f.s/Vf32-vfmv.f.s.sig",
+          "capture_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+          "oracle": {
+            "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+            "capture_elf_sha256": "89172806059c91f2ee937428c126167c2b22725b475d2444151c405cffc28aec",
+            "raw_sig_sha256": "6d4c31db26bd40abcfce37f1a934777e778a68f93581dd772442952f5cfd45b6",
+            "processed_results_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 312,
+            "target_words": 142,
+            "embedded_signature_bytes": 62480,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 32
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf32-vfmv.f.s"
+        },
+        {
+          "case": "Vf64-vfmv.f.s",
+          "form": "vfmv.f.s",
+          "sew": 64,
+          "geometry": {
+            "XLEN": 32,
+            "ELEN": 64,
+            "VLEN": 1024,
+            "MAXINDEXEEW": 32
+          },
+          "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+          "original_status": "REFERENCE_ERROR",
+          "prior_task": 109,
+          "original_base": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s",
+          "source": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.S",
+          "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+          "elf": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.elf",
+          "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+          "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+          "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+          "expected": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.results",
+          "expected_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+          "capture": "/home/vick/rvv-task109/cases/Vf64-vfmv.f.s/Vf64-vfmv.f.s.sig",
+          "capture_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+          "oracle": {
+            "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+            "capture_elf_sha256": "29c2e57f3288833eb48571ea6f24568120d96bd6a1fac493b6ae9790ee498e24",
+            "raw_sig_sha256": "9043d09cb5955a74dfdfeb41e69b8680dca17a976a2b6acfd6680cac8c6ad2a8",
+            "processed_results_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+            "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+            "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+            "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+          },
+          "preservation": {
+            "input_objects": 304,
+            "target_words": 138,
+            "embedded_signature_bytes": 123728,
+            "source_unchanged": true,
+            "checker_unchanged": true,
+            "geometry": {
+              "VLEN": 1024,
+              "ELEN": 64,
+              "XLEN": 32,
+              "TEST_FLEN": 64
+            }
+          },
+          "reference_receipts": [
+            {
+              "engine": "Sail",
+              "returncode": 0,
+              "status": "PASS",
+              "raw": "raw/sail-signature"
+            },
+            {
+              "engine": "QEMU",
+              "returncode": -4,
+              "status": "REFERENCE_ERROR",
+              "raw": "raw/qemu-selfcheck"
+            }
+          ],
+          "comparison": "comparison.json.gz#Vf64-vfmv.f.s"
+        }
+      ]
+    }
+  },
+  "interpretation": "Concrete inspected records from guarded fresh extraction; package_relative/current_raw_relative paths relocate; historical absolute fields are provenance; no new executions/coverage."
+}

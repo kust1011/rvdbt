@@ -217,7 +217,8 @@ def select(path, form=None, suite=None, case=None, arm=None):
     literal_contexts = []
     if source_hashes:
         for name, digest in index['source_context_files'].items():
-            source = Path(path).parent.parent/name
+            source = Path(path).parent/name
+            if not source.is_file(): source = Path(path).parent.parent/name
             require(sha(source)==digest,'source context identity')
             if name.endswith('.csv.gz'):
                 with gzip.open(source,'rt') as f:
@@ -232,7 +233,7 @@ def select(path, form=None, suite=None, case=None, arm=None):
                 original_ACT_reference_blockers=index['original_ACT_reference_blockers'])
 
 
-def generate_current(docs, output, raw=Path('/home/user/research/materials/task138-host512-raw-20261013')):
+def generate_current(docs, output, raw=Path('task138-inspection/raw')):
     """Reuse original bindings; credit only fresh Task138 authenticated receipts."""
     docs, output, raw = Path(docs), Path(output), Path(raw)
     current = docs/'host512-task138'
@@ -249,6 +250,8 @@ def generate_current(docs, output, raw=Path('/home/user/research/materials/task1
         require(len(full)==len(calls) and full==original and pilot<=full, 'same-build original pilot/full equality')
         require(len(full-pilot)==len(calls)-1, 'same-build disjoint remainder')
     require(read(current/'PARTITION.json')==read(raw/'PARTITION.json'), 'partition raw join')
+    for name, digest in historical['source_context_files'].items():
+        require(sha(current/name)==digest, 'current source context identity')
     receipts = read(current/'RECEIPTS.json.gz')
     require(len(receipts)==21316, 'current receipt count')
     require({identity(r['original_call']) for r in receipts}==set(templates), 'complete original call equality')
@@ -292,6 +295,9 @@ def generate_current(docs, output, raw=Path('/home/user/research/materials/task1
         source_context_files=historical['source_context_files'],
         inputs={str(historical_path):sha(historical_path),str(current/'RECEIPTS.json.gz'):sha(current/'RECEIPTS.json.gz')})
     output.mkdir(parents=True,exist_ok=False)
+    (output/'RECEIPTS.json.gz').write_bytes((current/'RECEIPTS.json.gz').read_bytes())
+    for name in index['source_context_files']:
+        (output/name).write_bytes((current/name).read_bytes())
     (output/'navigation.json.gz').write_bytes(gzip.compress(json.dumps(index,separators=(',',':')).encode(),mtime=0))
     (output/'SUMMARY.json').write_text(json.dumps(summary,indent=2)+'\n')
     lines=['# Task138 final retained host512 forms','','Counts are distinct current-build receipts joined to unchanged original source/checker bindings. Controls earn no positive form credit; Ara scoped acceptances retain their scope.','','Use `rvv_scope_report.py --host512-corpus navigation.json.gz --form FORM --output NEW`.','','| Form | CHIPS calls | ACT calls | Ara calls | Example current receipt |','|---|---:|---:|---:|---|']
@@ -301,3 +307,87 @@ def generate_current(docs, output, raw=Path('/home/user/research/materials/task1
     (output/'FORMS.md').write_text('\n'.join(lines)+'\n')
     (output/'SUMMARY.md').write_text('# Task138 complete retained corpus on exact Task137 final build\n\nAll 21,316 calls have fresh Task138 receipts on da5209ae…; prior-build credit: zero. Three unchanged pilots plus 21,313 disjoint remaining calls.\n\n| Suite | Positives / whole-file PASS | Controls PASS | Scoped PASS |\n|---|---:|---:|---:|\n| CHIPS | 11,532 | 212 | 0 |\n| ACT | 7,668 | 0 | 0 |\n| Ara | 1,888 | 0 | 16 |\n\nEach B/M1/M2/BOTH arm: CHIPS 2,883 positives + 53 controls; ACT 1,917; Ara 472 whole-file + 4 scoped. Two ACT reference blockers remain outside the queue. Checked-form union: 595. See [forms](FORMS.md), [counts](SUMMARY.json) and [reader instructions](../README.md).\n\nGuest VLEN/flags are actual command settings. Source SEW/LMUL/requested VL/mask/tail/vstart literals remain source evidence; unprinted runtime dimensions remain UNKNOWN. Enabled flags and aggregate counters are not a target-native census. No guest handler return, mapping repair, same-PC retry, new reference, fault/restart or performance campaign was executed. Earlier target-admission observations remain attributed to their original build.\n')
     return summary
+
+
+def inspect_sources(records, roots, check_predicates=False):
+    """Resolve original identities using existing FILES/PATHS/legal schemas only."""
+    if check_predicates and not __debug__:
+        raise RuntimeError('Task138 original predicates require assertions enabled')
+    from verify_rvv_ara_bundle import package_path
+    catalogs = {}; by_path = {}; checked = set(); joins = []
+    for label, root in roots.items():
+        if root is None: continue
+        root = Path(root)
+        manifest = read(root/'FILES.json')
+        restored = {r['file']:r for r in read(root/'LEGAL_RESTORATIONS.json')} if (root/'LEGAL_RESTORATIONS.json').exists() else {}
+        for name, item in manifest.items():
+            catalogs.setdefault(item['sha256'], []).append((label,root,name,item,None))
+            if name in restored:
+                catalogs.setdefault(restored[name]['original_sha256'], []).append((label,root,name,item,restored[name]))
+        if (root/'PATHS.json').exists():
+            for old,name in read(root/'PATHS.json').items():
+                if name in manifest: by_path[old]=(label,root,name,manifest[name],restored.get(name))
+    def resolve(digest, old=None):
+        options=catalogs.get(digest,[]) if digest else [by_path[old]] if old in by_path else []
+        require(options, 'missing portable source/checker dependency: '+str(old or digest))
+        label,root,name,item,legal=options[0]; path=package_path(root,name)
+        if str(path) not in checked:
+            require(path.stat().st_size==item['bytes'] and sha(path)==item['sha256'],'package payload identity: '+name)
+            if legal:
+                require(hashlib.sha256(path.read_bytes()[legal['notice_prefix_bytes']:]).hexdigest()==legal['original_sha256'], 'legal-prefix original identity')
+            checked.add(str(path))
+        return dict(package=label,path=str(path),package_relative=name,original_sha256=digest or (legal['original_sha256'] if legal else item['sha256']),
+                    distributed_sha256=item['sha256'],legal_restoration=legal)
+    for r in records:
+        selected=[]
+        if r['suite']=='chips':
+            for b in r['original_source_checker_bindings']:
+                selected.append(dict(source=resolve(b['source_sha256'],b['source']),
+                                     checker=b['assertion_selector'],source_chain=b['source_chain_selector']))
+        elif r['suite']=='act':
+            for b in r['original_source_checker_bindings']:
+                selected.append({k:resolve(b[k+'_sha256'],b[k]) for k in ('source','expected','checker')} |
+                    {k:resolve(None,b[k].split('#')[0]) for k in ('literal_checker_sites','comparison')})
+        else:
+            c=r['original_call']
+            selected.append({k:resolve(c[k+'_sha256'],c[k]) for k in ('source','adapter','runner')})
+        joins.append(dict(suite=r['suite'],id=r['id'],arm=r['arm'],current_receipt=r['local_receipt'],original=selected))
+    predicate_counts = {}
+    if check_predicates:
+        import tempfile, shutil
+        from rvv_ara_replay import observer
+        from verify_rvv_act_db2 import original_predicates
+        if any(r['suite']=='act' for r in records):
+            require(roots.get('act'), 'ACT predicate requires --act-db2-package')
+            act_root = Path(roots['act'])
+            act_script = act_root/'records/execute109.py'
+            resolve(sha(act_script))
+            require(sha(act_script)==read(Path(roots['evidence'])/'raw/TOOLS.json')['/home/vick/rvv-task109/execute109.py'], 'original ACT predicate tool pin')
+            predicate = original_predicates(act_script.read_text())[2]
+        with tempfile.TemporaryDirectory(prefix='task138-observers-') as scratch:
+            producers = {}
+            for r in records:
+                local = Path(r['local_receipt'])
+                if r['suite']=='act':
+                    raw=(local/'stdout').read_text(errors='replace')+(local/'stderr').read_text(errors='replace')
+                    ok=eval(predicate,{'__builtins__':{}},dict(rc=r['result']['returncode'],raw=raw,N=r['case'],sig=None))
+                    require(ok == r['result']['original_predicate_pass'], 'original ACT current predicate')
+                elif r['suite']=='ara':
+                    c=r['original_call']; old=c['producer']
+                    if old not in producers:
+                        target=Path(scratch)/str(len(producers))/'a'/'b'; target.mkdir(parents=True)
+                        for name in ('runner.py','checker.py','initializer_check.py','exact_check.py','run.py',
+                                     'run.original.py.txt','COMPILED_FLAG_MAP.json','COMPILED_SCALAR_MAP.json','PREREGISTERED.json',
+                                     *(['CASES.json'] if c['batch']=='ara_vset_current_20261009' else [])):
+                            key=old+'/'+name
+                            if key in by_path:
+                                entry=resolve(None,key); shutil.copyfile(entry['path'],target/name)
+                        producers[old]=target
+                    if c['batch']=='ara_external_pilot_20261007':
+                        upstream=producers[old]/'upstream'; upstream.mkdir(exist_ok=True)
+                        source=resolve(c['source_sha256'],c['source'])
+                        shutil.copyfile(source['path'],upstream/'vadd.c')
+                    ok,detail=observer(dict(c,_rawdir=local),r['result']['returncode'],(local/'stdout').read_bytes(),producers[old])
+                    require(ok == r['result']['accepted_scope_pass'] and json.loads(json.dumps(detail)) == read(local/'observer.json'), 'original Ara current observer')
+                predicate_counts[r['suite']]=predicate_counts.get(r['suite'],0)+1
+    return dict(records=joins,checked_payload_files=len(checked),original_current_predicate_counts=predicate_counts,interpretation='Original source/checker bytes; UNKNOWN remains UNKNOWN; historical oracle reproduction is separate.')

@@ -1,0 +1,18 @@
+{
+  "manifest_sha256": "549d1eaed6a6908d90157f7b03606d7f2657e48c4e58b31cd1c5879cc98ffcd6",
+  "files_by_root": {
+    "LEGAL_RESTORATIONS.json": 1,
+    "NOTICE.md": 1,
+    "PATHS.json": 1,
+    "PROVENANCE.json": 1,
+    "licenses": 9,
+    "metadata": 66,
+    "observers": 30,
+    "raw": 137488,
+    "sources": 153
+  },
+  "legal_restorations": 9,
+  "direct_current_receipt_files": 137472,
+  "task104_files": 64,
+  "excluded": "Unlicensed/restricted vectors, private inputs, guest ELF, executable/library, work/cache, toolchains; original author collector is not advertised as portable"
+}

@@ -481,6 +481,8 @@ def act_db2_replay(index, raw, package, prior, output):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--host512-corpus', type=Path, help='offline Task128/129 navigation, or validation docs root with --host512-build')
+    p.add_argument('--host512-raw', type=Path, help='explicit extracted Task138 raw root; never falls back when supplied')
+    p.add_argument('--host512-evidence', type=Path, help='extracted Task139 FILES/PATHS metadata bundle')
     p.add_argument('--host512-task138-build', action='store_true', help='audit complete current Task138 receipts and reuse original navigation bindings')
     p.add_argument('--host512-build', action='store_true', help='audit and merge exact retained host512 raw receipts')
     p.add_argument('--suite', choices=('chips','act','ara'))
@@ -505,15 +507,45 @@ def main():
         p.add_argument('--' + label + '-package', type=Path)
     a = p.parse_args()
     if a.host512_corpus:
-        from rvv_host512_corpus import generate, generate_current, select
+        if not __debug__ and (a.host512_task138_build or a.host512_raw or a.host512_evidence):
+            p.error('Task138 inspection rejects -O/-OO/PYTHONOPTIMIZE')
+        from rvv_host512_corpus import generate, generate_current, select, read
         if a.host512_task138_build:
-            result = generate_current(a.host512_corpus,a.output)
+            if not a.host512_raw:
+                p.error('--host512-task138-build requires --host512-raw')
+            result = generate_current(a.host512_corpus,a.output,a.host512_raw)
+            if a.host512_evidence:
+                from rvv_host512_corpus import inspect_sources
+                result['portable_sources'] = inspect_sources(read(a.output/'navigation.json.gz')['records'],
+                    {'chips':a.chips_package,'act':a.act_db2_package,'ara':a.ara_package,'evidence':a.host512_evidence},check_predicates=bool(a.host512_raw))
         elif a.host512_build:
             result = generate(a.host512_corpus,a.output)
         else:
             result = select(a.host512_corpus,a.form,a.suite,a.case,a.arm)
+            if a.host512_raw:
+                from rvv_host512_corpus import validate_record
+                receipts_path = a.host512_corpus.parent/'RECEIPTS.json.gz'
+                if not receipts_path.is_file(): receipts_path = a.host512_corpus.parent.parent/'RECEIPTS.json.gz'
+                receipts = {r['receipt']:r for r in read(receipts_path)}
+                for row in result['records']:
+                    local = a.host512_raw/Path(row['receipt']).relative_to('/home/vick/rvdbt-host512-task138')
+                    validate_record(receipts[row['receipt']],local,
+                        elfrun='da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e',
+                        executable='/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun')
+                    row['local_receipt'] = str(local)
+            if a.host512_evidence:
+                from rvv_host512_corpus import inspect_sources
+                result['portable_sources'] = inspect_sources(result['records'],
+                    {'chips':a.chips_package,'act':a.act_db2_package,'ara':a.ara_package,'evidence':a.host512_evidence},check_predicates=bool(a.host512_raw))
+            result['current_raw_verification'] = 'CHECKED' if a.host512_raw else 'NOT_CHECKED; supply --host512-raw'
             a.output.mkdir(parents=True,exist_ok=False)
             (a.output/'record.json').write_text(json.dumps(result,indent=2)+'\n')
+        if a.host512_task138_build and 'portable_sources' in result:
+            import gzip
+            sources = result.pop('portable_sources')
+            (a.output/'PORTABLE_SOURCES.json.gz').write_bytes(gzip.compress(json.dumps(sources).encode(),mtime=0))
+            result['portable_source_records'] = len(sources['records'])
+            result['original_current_predicate_counts'] = sources['original_current_predicate_counts']
         print(json.dumps(result.get('summary',result)))
         return
     roots = {k: v for k, v in [('CHIPS', a.chips_package), ('ACT', a.act_package),
