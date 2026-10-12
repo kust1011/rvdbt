@@ -1,0 +1,22 @@
+{
+  "linux-v6.12-signal.h": {
+    "url": "https://github.com/torvalds/linux/blob/v6.12/include/uapi/asm-generic/signal.h",
+    "sha256": "936247c76acb82e5c82c58c2cddfe45fcb71230465f6c137966a8a285a3dc04c",
+    "bytes": 1847
+  },
+  "linux-v6.12-riscv-signal.c": {
+    "url": "https://github.com/torvalds/linux/blob/v6.12/arch/riscv/kernel/signal.c",
+    "sha256": "6f6601a6de02076878d7d1e8a3b08e99bc97dc3df0e5b92caea0a4634fb5672c",
+    "bytes": 13404
+  },
+  "linux-v6.12-siginfo.h": {
+    "url": "https://github.com/torvalds/linux/blob/v6.12/include/uapi/asm-generic/siginfo.h",
+    "sha256": "18625c075e9ee00c53f0389f50bfca3b85da648bb994383acfc106c5dde5dce0",
+    "bytes": 10755
+  },
+  "qemu-signal.c": {
+    "url": "https://github.com/qemu/qemu/blob/ae35f033b874c627d81d51070187fbf55f0bf1a7/linux-user/signal.c",
+    "sha256": "3a3dfa65905b04865ed9e7bfe3ef8cf61152960cfb4a4bdc97fdcd3006f2ca74",
+    "bytes": 45236
+  }
+}

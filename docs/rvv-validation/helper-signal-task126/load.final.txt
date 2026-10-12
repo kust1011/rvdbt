@@ -1,0 +1,1 @@
+ 00:22:31 up 5 days,  4:00,  6 users,  load average: 0.42, 0.46, 0.55

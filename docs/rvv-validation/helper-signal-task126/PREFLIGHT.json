@@ -1,0 +1,307 @@
+[
+  {
+    "name": "first_fault_none",
+    "elf_sha256": "b4e3aa80b28cbad32f29771354fb8f4e743a5f6d1b7aefd5ee4e6c944dad2151",
+    "checker_sha256": "eb53548387e0c52280ae3a227fda41e96fb287771935bca8dd871651ee2466e0",
+    "reference_sha256": "b16282b6fdac7d30097407c4828a16fe86eb64caf19d8458ce8898cb62d86f00",
+    "reference_checker_state": {
+      "header": [
+        4,
+        0,
+        3,
+        0,
+        16,
+        128,
+        11,
+        2147484008,
+        536875008,
+        2,
+        536870912,
+        0,
+        0,
+        536875008,
+        3,
+        1
+      ],
+      "vector2_words": [
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045
+      ],
+      "mask0": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "ignored_destination_lanes": [
+        0,
+        1,
+        2
+      ],
+      "source_memory_bytes": 12288
+    },
+    "inherited_memory_gate": {
+      "name": "first_fault_none",
+      "status": "ALLOW",
+      "source_body_sha256": "dffcb41573c02afe0c68647dd5fc25df32c0a823054322039ee0c3b6b9e1188c",
+      "elf_sha256": "b4e3aa80b28cbad32f29771354fb8f4e743a5f6d1b7aefd5ee4e6c944dad2151",
+      "opcode": "0x3056107",
+      "pc": "0x80000168",
+      "vlen": 1024,
+      "arm": "B",
+      "dump_bytes_per_register": 128,
+      "dump_allocation_bytes": 512,
+      "owning_objects": [
+        {
+          "name": "state",
+          "address": 2147491856,
+          "bytes": 64
+        },
+        {
+          "name": "vector2",
+          "address": 2147491936,
+          "bytes": 512
+        },
+        {
+          "name": "mask0",
+          "address": 2147492448,
+          "bytes": 512
+        },
+        {
+          "name": "pre_state",
+          "address": 2147491920,
+          "bytes": 16
+        }
+      ],
+      "source_owner": {
+        "address": 536870912,
+        "bytes": 12288
+      },
+      "source_setup_write_ranges": [
+        [
+          536870912,
+          536883200
+        ],
+        [
+          536875008,
+          536875012
+        ]
+      ],
+      "target_read_bytes": 12,
+      "target_read_range": [
+        536875008,
+        536875020
+      ],
+      "intentional_fault_page": [
+        536875008,
+        536879104
+      ],
+      "observer_disjoint": true,
+      "permission_restore_before_source_dump": true,
+      "source_body_changed": false,
+      "checker_changed": false,
+      "oracle_validation": "original retained checker on same-ELF reference raw",
+      "guest_signal_pass_permitted": false
+    },
+    "actual_elf_ownership_and_opcode_rechecked": true,
+    "authorization": "Task113 eight exit-only helper delivery/control regressions; old candidate gates preserved",
+    "signal_frame_capacity": "5088 bytes at VLEN1024; full runtime writable extent checked before publication"
+  },
+  {
+    "name": "later_field1_none",
+    "elf_sha256": "bd03dd13ac1ee621da4284464b7987e3588f92df51b5f63f0d7e5166de6e384f",
+    "checker_sha256": "6e035756014d146df6e0576dce95a22f5a895687373b428dc693fef1603f1bac",
+    "reference_sha256": "0799dbc7bab58ba4b5b7405f8f887067c502c79c7def79c8abc05dfb2fa2cd93",
+    "reference_checker_state": {
+      "header": [
+        3,
+        0,
+        1,
+        0,
+        16,
+        128,
+        0,
+        0,
+        0,
+        0,
+        536870912,
+        0,
+        0,
+        536874996,
+        3,
+        2
+      ],
+      "field0_v2": [
+        13369344,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045
+      ],
+      "field1_v3": [
+        13369345,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045,
+        84215045
+      ],
+      "unspecified_lanes_by_field": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "mask0": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "source_memory_bytes": 12288
+    },
+    "inherited_memory_gate": {
+      "name": "later_field1_none",
+      "status": "ALREADY_EXECUTED_NO_RELAUNCH",
+      "source_body_sha256": "d7d01d81e86f87fb603bb480e5e8744a00963d141bbabf22c5841ea2fece1247",
+      "elf_sha256": "bd03dd13ac1ee621da4284464b7987e3588f92df51b5f63f0d7e5166de6e384f",
+      "opcode": "0x23056107",
+      "pc": "0x80000130",
+      "vlen": 1024,
+      "arm": "B",
+      "dump_bytes_per_register": 128,
+      "dump_allocation_bytes": 512,
+      "owning_objects": [
+        {
+          "name": "state",
+          "address": 2147491856,
+          "bytes": 64
+        },
+        {
+          "name": "vector2",
+          "address": 2147491920,
+          "bytes": 512
+        },
+        {
+          "name": "mask0",
+          "address": 2147492944,
+          "bytes": 512
+        },
+        {
+          "name": "vector3",
+          "address": 2147492432,
+          "bytes": 512
+        }
+      ],
+      "source_owner": {
+        "address": 536870912,
+        "bytes": 12288
+      },
+      "source_setup_write_ranges": [
+        [
+          536870912,
+          536883200
+        ],
+        [
+          536874996,
+          536875020
+        ]
+      ],
+      "target_read_bytes": 24,
+      "target_read_range": [
+        536874996,
+        536875020
+      ],
+      "intentional_fault_page": [
+        536875008,
+        536879104
+      ],
+      "observer_disjoint": true,
+      "permission_restore_before_source_dump": true,
+      "source_body_changed": false,
+      "checker_changed": false,
+      "oracle_validation": "original retained checker on same-ELF reference raw",
+      "guest_signal_pass_permitted": true
+    },
+    "actual_elf_ownership_and_opcode_rechecked": true,
+    "authorization": "Task113 eight exit-only helper delivery/control regressions; old candidate gates preserved",
+    "signal_frame_capacity": "5088 bytes at VLEN1024; full runtime writable extent checked before publication"
+  }
+]
