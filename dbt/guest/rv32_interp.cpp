@@ -510,15 +510,15 @@ void RvvVerifyFailed(char const *op, u32 vlen_bits, u32 vl, u32 elem_bytes)
 // The masked path is element-wise; the unmasked path goes through the width-parametric chunked
 // decomposition. Both are the shared implementations, so they cannot drift.
 // Returns only after precise state has been published by the checked loop.
-static void QueueUnitMemoryFault(CPUState *s, u32 pc, u32 raw, u32 address,
-				u32 eew, bool store)
+static void QueueOrdinaryMemoryFault(CPUState *s, u32 pc, u32 raw, u32 address,
+				u32 eew, bool store, u32 nf = 1, u32 field = 0)
 {
 	MemoryFaultEvent event;
 	event.access = store ? MemoryFaultEvent::Access::Store : MemoryFaultEvent::Access::Load;
 	event.reason = mmu::page_mapped(address) ? MemoryFaultEvent::Reason::Protection
 					      : MemoryFaultEvent::Reason::Unmapped;
 	event.pc = pc; event.raw = raw; event.address = address;
-	event.element = s->vec.vstart; event.eew_bytes = eew; event.nf = 1;
+	event.element = s->vec.vstart; event.eew_bytes = eew; event.nf = nf; event.field = field;
 	ukernel::QueueHelperMemoryFault(s, event);
 }
 
@@ -540,6 +540,46 @@ extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
 	return !mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied);
 }
 
+// Family preflight: no guest access/state mutation, before native frame bodies.
+extern "C" u32 qcgstub_rv32_family_memory_safe(CPUState *s, u32 raw)
+{
+	VType const vt{s->vec.vtype};
+	u32 const vlen = s->vec.vlenb * 8u, mop = (raw >> 26) & 3u;
+	u32 const width = (raw >> 12) & 7u, reg = (raw >> 7) & 31u, index = (raw >> 20) & 31u;
+	bool const store = (raw & 0x7f) == 0x27, vm = raw & (1u << 25);
+	if (s->vec.vlenb != config::vlen_bits / 8u || !vtype_supported(vt, vlen) ||
+	    s->vec.vstart || s->vec.vl > compute_vlmax(vt, vlen)) return 0;
+	VSegShape const seg = vseg_shape(width, mop, (raw >> 29) & 7u, vt);
+	if (seg.nf > 1 ? !vseg_registers_legal(seg, reg, index, !store, vm)
+	               : !vmemory_registers_legal(vt, width, mop, reg, index, store, vm)) return 0;
+	u32 const stride = mop == 2 ? s->gpr[index] : seg.nf * seg.data_eew;
+	for (u32 e = 0; e < s->vec.vl; ++e) {
+		// Conservative for masked frames: fallback alone owns suppression.
+		u32 const base = rvv_ref::memory_element_base(s->vec, s->gpr[(raw >> 15) & 31],
+		    e, stride, index, seg.indexed ? seg.index_eew : 0, vlen);
+		for (u32 f = 0; f < seg.nf; ++f) {
+			u32 const address = base + f * seg.data_eew;
+			u32 denied;
+			if (guest_span_wraps(address, seg.data_eew) ||
+			    mmu::FirstDenied(address, seg.data_eew, store, denied)) return 0;
+		}
+	}
+	return 1;
+}
+
+static void OrdinaryMemory(CPUState *s, u8 *vmem, u32 pc, u32 raw, u32 vlen,
+                           u32 eew, u32 index_eew, u32 nf, u32 field_regs)
+{
+	u32 const mop = (raw >> 26) & 3u, index = (raw >> 20) & 31u;
+	u32 const stride = mop == 2 ? s->gpr[index] : nf * eew;
+	bool const store = (raw & 0x7f) == 0x27;
+	u32 denied = 0, field = 0;
+	if (!rvv_ref::memory_checked(s->vec, (raw >> 7) & 31u, vmem,
+	    s->gpr[(raw >> 15) & 31u], stride, index, index_eew, vlen, s->vec.vl,
+	    eew, nf, field_regs, raw & (1u << 25), store, denied, field))
+		QueueOrdinaryMemoryFault(s, pc, raw, denied, eew, store, nf, field);
+}
+
 HANDLER(vle)
 {
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
@@ -555,7 +595,7 @@ HANDLER(vle)
 		dispatch_load_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
 	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
 						s->vec.vl, eew_bytes, i.vm(), false, denied)) {
-		QueueUnitMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, false);
+		QueueOrdinaryMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, false);
 		return;
 	}
 	s->vec.vstart = 0;
@@ -575,7 +615,7 @@ HANDLER(vse)
 		dispatch_store_unit_stride(s->vec, i.rd(), vmem, base, vlen, s->vec.vl, eew_bytes);
 	} else if (!rvv_ref::unit_stride_checked(s->vec, i.rd(), vmem, base, vlen,
 						s->vec.vl, eew_bytes, i.vm(), true, denied)) {
-		QueueUnitMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, true);
+		QueueOrdinaryMemoryFault(s, GET_GIP(), i.raw, denied, eew_bytes, true);
 		return;
 	}
 	s->vec.vstart = 0;
@@ -591,9 +631,7 @@ HANDLER(vlse)
 	i32 const emul_log2 = compute_emul_log2(vt, (u32)eew_log2);
 	RVV_REQUIRE_MASK_NO_OVERLAP(i.rd(), i.vm(), emul_log2);
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2);
-	rvv_ref::load_strided(s->vec, i.rd(), vmem, s->gpr[i.rs1()], (i32)s->gpr[i.rs2()], vlen,
-			      s->vec.vl, eew_bytes, i.vm());
-	s->vec.vstart = 0;
+	OrdinaryMemory(s, vmem, GET_GIP(), i.raw, vlen, eew_bytes, 0, 1, 1);
 }
 
 // ---- fault-only-first load ---------------------------------------------------------------------
@@ -675,9 +713,7 @@ HANDLER(vlxei)
 		s->vec.vstart = 0;
 		return;
 	}
-	rvv_ref::load_indexed(s->vec, i.rd(), i.rs2(), vmem, s->gpr[i.rs1()], vlen, s->vec.vl,
-			      data_eew, idx_eew, i.vm());
-	s->vec.vstart = 0;
+	OrdinaryMemory(s, vmem, GET_GIP(), i.raw, vlen, data_eew, idx_eew, 1, 1);
 }
 
 HANDLER(vsxei)
@@ -685,9 +721,7 @@ HANDLER(vsxei)
 	RVV_INDEXED_PROLOGUE();
 	// A scatter has no destination register, so there is no vd/v0 overlap rule here: rd names
 	// the DATA source vs3.
-	rvv_ref::store_indexed(s->vec, i.rd(), i.rs2(), vmem, s->gpr[i.rs1()], vlen, s->vec.vl,
-			       data_eew, idx_eew, i.vm());
-	s->vec.vstart = 0;
+	OrdinaryMemory(s, vmem, GET_GIP(), i.raw, vlen, data_eew, idx_eew, 1, 1);
 }
 
 // ---- segment load and store ---------------------------------------------------------------------
@@ -718,37 +752,15 @@ HANDLER(vsxei)
 HANDLER(vlseg)
 {
 	RVV_SEGMENT_PROLOGUE(i.rd(), true);
-	if (seg.indexed) { // indexed segment: each segment's base comes from the index vector
-		rvv_ref::load_segment_indexed(s->vec, i.rd(), i.rs2(), vmem, s->gpr[i.rs1()], vlen,
-					      s->vec.vl, seg.data_eew, seg.index_eew, seg.nf,
-					      seg.field_regs, i.vm(), s->vec.vstart);
-	} else {
-		// Unit-stride advances one whole SEGMENT per element; strided uses rs2's bytes.
-		i32 const stride =
-		    mop == 0b10 ? (i32)s->gpr[i.rs2()] : (i32)(seg.nf * seg.data_eew);
-		rvv_ref::load_segment(s->vec, i.rd(), vmem, s->gpr[i.rs1()], stride, vlen, s->vec.vl,
-				      seg.data_eew, seg.nf, seg.field_regs, i.vm(), s->vec.vstart);
-	}
-	s->vec.vstart = 0;
+	OrdinaryMemory(s, vmem, GET_GIP(), i.raw, vlen, seg.data_eew,
+	               seg.indexed ? seg.index_eew : 0, seg.nf, seg.field_regs);
 }
 
 HANDLER(vsseg)
 {
-	// A store has no destination register, so the masked-v0 and index-overlap rules do not apply:
-	// rd names the DATA source vs3.
 	RVV_SEGMENT_PROLOGUE(i.rd(), false);
-	if (seg.indexed) {
-		rvv_ref::store_segment_indexed(s->vec, i.rd(), i.rs2(), vmem, s->gpr[i.rs1()], vlen,
-					       s->vec.vl, seg.data_eew, seg.index_eew, seg.nf,
-					       seg.field_regs, i.vm(), s->vec.vstart);
-	} else {
-		i32 const stride =
-		    mop == 0b10 ? (i32)s->gpr[i.rs2()] : (i32)(seg.nf * seg.data_eew);
-		rvv_ref::store_segment(s->vec, i.rd(), vmem, s->gpr[i.rs1()], stride, vlen,
-				       s->vec.vl, seg.data_eew, seg.nf, seg.field_regs, i.vm(),
-				       s->vec.vstart);
-	}
-	s->vec.vstart = 0;
+	OrdinaryMemory(s, vmem, GET_GIP(), i.raw, vlen, seg.data_eew,
+	               seg.indexed ? seg.index_eew : 0, seg.nf, seg.field_regs);
 }
 
 HANDLER(vsse)
@@ -758,9 +770,7 @@ HANDLER(vsse)
 	u32 const eew_bytes = 1u << (eew_log2 - 3);
 	i32 const emul_log2 = compute_emul_log2(vt, (u32)eew_log2);
 	RVV_REQUIRE_LEGAL_GROUP(i.rd(), emul_log2); // rd holds vs3
-	rvv_ref::store_strided(s->vec, i.rd(), vmem, s->gpr[i.rs1()], (i32)s->gpr[i.rs2()], vlen,
-			       s->vec.vl, eew_bytes, i.vm());
-	s->vec.vstart = 0;
+	OrdinaryMemory(s, vmem, GET_GIP(), i.raw, vlen, eew_bytes, 0, 1, 1);
 }
 
 // vadd.vv vd, vs2, vs1 -- element-wise add at the CURRENT SEW. All three operands use EEW=SEW,

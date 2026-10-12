@@ -1976,10 +1976,14 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	rvv_typed_chunk_vl_guarded =
 	    qir::InstRVVTypedChunkBegin::GuardBoundsVlByVlmax(ins->guard_kind);
 
-	if (ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse) {
+	bool const unit_memory = ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse;
+	bool const family_memory = ins->stub == RuntimeStubId::id_rv32_vlse || ins->stub == RuntimeStubId::id_rv32_vsse ||
+	    ins->stub == RuntimeStubId::id_rv32_vlxei || ins->stub == RuntimeStubId::id_rv32_vsxei ||
+	    ins->stub == RuntimeStubId::id_rv32_vlseg || ins->stub == RuntimeStubId::id_rv32_vsseg;
+	if (unit_memory || family_memory) {
 		j.mov(x86::rdi, R_STATE);
 		j.mov(x86::esi, ins->raw);
-		j.emit(x86::Inst::kIdCall, make_stubcall_target(RuntimeStubId::id_rv32_unit_memory_safe));
+		j.emit(x86::Inst::kIdCall, make_stubcall_target((unit_memory ? RuntimeStubId::id_rv32_unit_memory_safe : RuntimeStubId::id_rv32_family_memory_safe)));
 		j.test(x86::eax, x86::eax);
 		j.jz(rvv_typed_chunk_fallback);
 	}
