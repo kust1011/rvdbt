@@ -181,13 +181,144 @@ def verify(root):
     return {'status':'PASS','payload_files':len(files),'primary_binding_rows':len(bindings),'source_chains':len(chains),'original_TEST_CASE_assertions':source_assertions,'unique_receipts':len(verified_receipts),'forms':{k:len(v) for k,v in forms.items()},'positive_source_cases':{k:len(v) for k,v in cases.items()},'controls':dict(controls),'receipt_configurations':[{'candidate':k[0],'VLEN':k[1],'arm':k[2],'positive_receipts':v} for k,v in sorted(configs.items())],'original_excluded_failure_records':historical_failures,'unsafe_original_store_sources':len(unsafe_sources),'literal_configuration_sources':len(literals),'source_geometry_rows':geometry,'source_geometry_files':len(geometry_sources),'geometry_scope':'source context only; no Cartesian product, runtime VL/branch or independent per-arm method admission','new_guest_executions':0}
 
 
+def form_record(root, rows, files):
+    """Inspect selected retained bindings only; never execute a guest or infer VL."""
+    checked = {}
+
+    def payload(name):
+        if name not in checked:
+            p = safe(root, name, files)
+            if digest(p) != files[name]['sha256']:
+                raise ValueError('payload hash ' + name)
+            checked[name] = p
+        return checked[name]
+
+    def require(condition, message):
+        if not condition:
+            raise ValueError(message)
+
+    # Selection metadata must be authenticated too, before following its paths.
+    payload('NAVIGATION.csv')
+    with payload('records/scope/PRIMARY_BINDINGS.csv').open() as stream:
+        bindings = {b['ledger_row_id']: b for b in csv.DictReader(stream)}
+    cells = {c['id']: c for c in read(payload('records/historical/MANIFEST.json'))['cells']}
+    chains = {(c['batch'], c['case']): c for c in read(payload('SOURCE_CHAIN.json'))}
+    source_names = {r['source'] for r in rows}
+    with payload('sources/chips/SOURCE_GEOMETRY.csv').open() as stream:
+        contexts = [g for g in csv.DictReader(stream)
+                    if 'sources/chips/' + g['source'] in source_names]
+    literals = [c for c in read(payload('LITERAL_CONFIG_CONTEXTS.json'))
+                if c['source'] in source_names]
+    payload('tools/runner.original.py')
+    original = producer(root, files)
+    receipts = {}
+    sources = {}
+    selected_bindings = {}
+    internal = {}
+    for n in rows:
+        b = bindings[n['ledger_row_id']]
+        cell = cells[n['cell_id']]
+        c = chains[n['batch'], n['case']]
+        require(b['candidate'] == n['candidate'] and b['arm'] == n['arm'], 'binding identity')
+        require(json.loads(b['configuration_known_json'])['VLEN'] == n['VLEN'] == str(cell['vlen']), 'configuration join')
+        require(b['acceptance'] == 'ACCEPTED_SCOPED', 'accepted binding')
+        require(b['elf_sha256'] == n['elf_sha256'] == cell['elf_sha256'] == c['elf_sha256'], 'ELF join')
+        require(json.loads(b['flags_json']) == cell['flags'], 'flags join')
+        require(n['form'] in b['result_checked_forms'].split(';'), 'form/checker join')
+        require(c['source'] == n['source'] and c['source_sha256'] == n['source_sha256'], 'source join')
+        require(digest(payload(n['source'])) == n['source_sha256'], 'source identity')
+        selected_bindings[n['ledger_row_id']] = b  # Alias rows keep their shared binding ID.
+        if n['source'] not in sources:
+            lines = payload(n['source']).read_text().splitlines()
+            sources[n['source']] = {
+                'source_sha256': n['source_sha256'],
+                'target_instructions': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
+                                        if re.match(r'^\s*' + re.escape(n['source_form']) + r'\s', s)],
+                'assertions': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
+                               if re.search(r'\bTEST_CASE\s*\(', s)],
+                'CSR_source_lines': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
+                                     if re.search(r'\bcsr\w*\b', s)],
+                'configuration_and_memory_lines': [{'line': i, 'text': s} for i, s in enumerate(lines, 1)
+                    if re.match(r'^\s*(?:vset\w*|v[ls]\w*\.v|li\s+t0|la\s+a0|li\s+a5)\b', s)],
+                'stage1': c['stage1'], 'capture_patch': c['capture_patch'],
+                'scope': 'literal source and assertions; no per-instruction runtime trace'}
+            for name in ('stage1', 'capture_patch'):
+                payload(c[name])
+            require(len(sources[n['source']]['assertions']) == c['assertions']['count'], 'assertion count')
+            for g in contexts:
+                if 'sources/chips/' + g['source'] == n['source']:
+                    require(g['source_sha256'] == n['source_sha256'], 'geometry source hash')
+                    require(lines[int(g['line']) - 1] ==
+                            '# Generating tests for VL: {requested_vl}, LMUL: {lmul}, SEW: {sew}, Mask: {masked}'.format(**g),
+                            'geometry source line')
+            internal[n['source']] = c
+            hashes = read(payload(c['original_hash_manifest']))
+            base = 'sources/chips/' + (c['batch'] + '/' if c['batch'] != '.' else '')
+            for name in ('source', 'stage1', 'capture_patch'):
+                rel = c[name].removeprefix(base)
+                if rel in hashes:
+                    require(digest(payload(c[name])) == hashes[rel], 'original source/capture hash')
+            for build in c['build_commands']:
+                require(read(payload(build['file']))[build['ordinal'] - 1] == build['record'], 'build navigation')
+        receipt = n['receipt']
+        if receipt not in receipts:
+            result = read(payload(receipt + '/result.json'))
+            stdout = payload(receipt + '/stdout').read_bytes()
+            stderr = payload(receipt + '/stderr').read_bytes()
+            require(hashlib.sha256(stdout).hexdigest() == result['stdout_sha256'], 'stdout identity')
+            require(hashlib.sha256(stderr).hexdigest() == result['stderr_sha256'], 'stderr identity')
+            require(result['id'] == cell['id'] and result['elf_sha256'] == cell['elf_sha256'], 'result identity')
+            if n['candidate'] == 'clean961':
+                case = read(payload(receipt + '/case.json'))
+                for field in ('id', 'elf_sha256', 'vlen', 'flags', 'control', 'expected_returncode', 'expected_stdout'):
+                    require(case[field] == cell[field], 'registered expectation changed: ' + field)
+            command = read(payload(receipt + '/command.json'))
+            require(len(command) == len(cell['flags']) + 1, 'command size')
+            for actual, expected in zip(command[1:], cell['flags']):
+                if '{WORK}' in expected:
+                    prefix, suffix = expected.split('{WORK}')
+                    require(actual.startswith(prefix) and actual.endswith(suffix), 'command path')
+                else:
+                    require(actual == expected, 'command flag')
+            status = original.classify(result['returncode'], stdout, cell,
+                                       error=result.get('error'), timed_out=result.get('status') == 'TIMEOUT')
+            require(status == result.get('status', result.get('classification')) == b['result'] == 'PASS',
+                    'original assertion/exit acceptance rejected ' + receipt + ' ' + status)
+            receipts[receipt] = {'original_result': result, 'original_command': command,
+                                 'stdout': stdout.decode(), 'stderr_bytes': len(stderr),
+                                 'expected_stdout': cell['expected_stdout'],
+                                 'expected_returncode': cell['expected_returncode'],
+                                 'offline_original_classify': status}
+    for context in literals:
+        lines = payload(context['source']).read_text().splitlines()
+        require(digest(payload(context['source'])) == context['source_sha256'], 'literal source hash')
+        for entry in context['headers'] + context['instructions']:
+            require(lines[entry['line'] - 1] == entry['text'], 'literal source line')
+            if 'window' in entry:
+                start = entry['window_first_line'] - 1
+                require(lines[start:start + len(entry['window'])] == entry['window'], 'literal source window')
+    return {'witnesses': rows, 'bindings': list(selected_bindings.values()),
+            'source_contexts': contexts, 'literal_contexts': literals,
+            'sources': sources, 'receipts': receipts,
+            'checker': 'upstream TEST_CASE in the retained guest; tools/runner.original.py classify on stored exit/stdout',
+            'internal_build_provenance': internal,
+            'inspected_payload_sha256': {name: files[name]['sha256'] for name in sorted(checked)},
+            'scope': 'selected retained program checks; exact source tuples are source context, not runtime VL/branch coverage',
+            'new_guest_executions': 0}
+
+
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('root',type=Path);ap.add_argument('--form');ap.add_argument('--candidate',choices=['clean961','historical2af5']);ap.add_argument('--vlen');ap.add_argument('--arm');ap.add_argument('--batch');ap.add_argument('--case');ap.add_argument('--contexts',action='store_true');a=ap.parse_args()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('root',type=Path);ap.add_argument('--form');ap.add_argument('--candidate',choices=['clean961','historical2af5']);ap.add_argument('--vlen');ap.add_argument('--arm');ap.add_argument('--batch');ap.add_argument('--case');ap.add_argument('--contexts',action='store_true')
+    ap.add_argument('--record', action='store_true', help='inspect selected source/checker/raw bindings and original predicates; no guest runs')
+    a=ap.parse_args()
+    if a.record and not a.form:ap.error('--record requires --form')
     try:
         if a.form:
             files=read(safe(a.root,'FILES.json',{'FILES.json':None}))
             rows=[r for r in csv.DictReader(safe(a.root,'NAVIGATION.csv',files).open()) if r['form']==a.form and all(v is None or r[k]==v for k,v in [('candidate',a.candidate),('VLEN',a.vlen),('arm',a.arm),('batch',a.batch),('case',a.case)])]
-            if a.contexts:
+            if a.record:
+                print(json.dumps(form_record(a.root, rows, files), indent=2))
+            elif a.contexts:
                 source_names={str(Path(r['source']).relative_to('sources/chips')) for r in rows}
                 contexts=[g for g in csv.DictReader(safe(a.root,'sources/chips/SOURCE_GEOMETRY.csv',files).open()) if g['source'] in source_names]
                 print(json.dumps({'witnesses':rows,'source_contexts':contexts,'literal_contexts':[c for c in read(safe(a.root,'LITERAL_CONFIG_CONTEXTS.json',files)) if c['source'] in {r['source'] for r in rows}],'scope':'source configurations; exact source lines; not runtime branch coverage'},indent=2))

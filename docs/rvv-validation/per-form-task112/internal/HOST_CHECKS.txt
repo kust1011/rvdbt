@@ -1,0 +1,36 @@
+Focused host tests only; no ISA executions.
+
+test_aliases_keep_witnesses_but_share_receipt_and_binding (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_changed_registered_expectation_rejected (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_changed_source_rejected_before_reporting (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_exact_tuples_unknown_runtime_and_literal_assertions (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_exit_and_timeout_rejected (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_missing_raw_and_wrong_join_rejected (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_source_geometry_is_checked_against_literal_line (test_rvv_chips_form_record.FormRecordTests) ... ok
+test_wrong_output_with_updated_transport_hashes_rejected (test_rvv_chips_form_record.FormRecordTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.079s
+
+OK
+test_conflicting_applicability_headers_rejected (test_rvv_scope_report.ScopeTests) ... ok
+test_delivered_compact_forms_header_preserves_report (test_rvv_scope_report.ScopeTests) ... ok
+test_overlap_endpoint_and_diagnostic_do_not_inflate_checked_union (test_rvv_scope_report.ScopeTests) ... ok
+test_unknown_forms_duplicate_forms_and_unknown_stage_members_rejected (test_rvv_scope_report.ScopeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+test_copy_replaces_stale_equal_size_destination (test_rvv_chips_inspection.InspectionHelpers) ... ok
+test_invalid_paths (test_rvv_chips_inspection.InspectionHelpers) ... ok
+test_symlink_file_and_directory (test_rvv_chips_inspection.InspectionHelpers) ... ok
+test_symlink_manifest (test_rvv_chips_inspection.InspectionHelpers) ... ok
+test_symlink_root_component (test_rvv_chips_inspection.InspectionHelpers) ... ok
+test_unmanifested_existing_file (test_rvv_chips_inspection.InspectionHelpers) ... ok
+test_valid_manifested_file (test_rvv_chips_inspection.InspectionHelpers) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.007s
+
+OK

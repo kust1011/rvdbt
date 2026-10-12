@@ -1,0 +1,8 @@
+{
+  "binary": "/home/user/research/materials/thesis_rvv_20260921/artifacts/chips_validation_20261007/elen64_generator/worktree/build/generator",
+  "sha256": "4438042c888a92151fdf0d857d884cd36b59a7c9401fa8bceb8e336759e36493",
+  "xlen": 32,
+  "elen": 64,
+  "vlen": 128,
+  "configs": "/home/user/research/third_party/riscv-vector-tests-20261007/configs"
+}

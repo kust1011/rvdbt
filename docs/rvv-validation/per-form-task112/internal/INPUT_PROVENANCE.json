@@ -1,0 +1,44 @@
+[
+  {
+    "root": "/home/vick/rvv-task90/task90",
+    "file": "ACTUAL_FORM_VALIDATION_BINDINGS.csv",
+    "bytes": 177839772,
+    "sha256": "6e1bc2547c9a51119e2eb6583564fc6a0e9c2a68eb3acd749a10ecba61c51130"
+  },
+  {
+    "root": "/home/vick/rvv-task90/task90",
+    "file": "ACTUAL_FORM_VALIDATION_SUMMARY.json",
+    "bytes": 1423992,
+    "sha256": "933dbef88a3948851555200489d3a916d38042bf19b27adf87d761bd50c95ffe"
+  },
+  {
+    "root": "/home/vick/rvv-task90/task90",
+    "file": "forms.csv",
+    "bytes": 141196,
+    "sha256": "989d18a1b2ac4910996bdc627d66c2e030200a3886578100f4b70567544da65d"
+  },
+  {
+    "root": "/home/vick/rvv-task93/inspection-task94-clean",
+    "file": "FILES.json",
+    "bytes": 41202720,
+    "sha256": "1e48e21a90a107d5ec95fdadc602ac8f95f8da633ac199b51f14e1433ed42e10"
+  },
+  {
+    "root": "/home/vick/rvv-task93/inspection-task94-clean",
+    "file": "NAVIGATION.csv",
+    "bytes": 16946360,
+    "sha256": "641f900c4bf92f086344a4e86c0f4a6449ee304d46b1b47ed89a4be76a187831"
+  },
+  {
+    "root": "/home/vick/rvv-task93/inspection-task94-clean",
+    "file": "SOURCE_CHAIN.json",
+    "bytes": 5685710,
+    "sha256": "f8e84cd7f09a5b637219790bce8dde7b53dd1bf3424eaa1c6d2a02c0331961ea"
+  },
+  {
+    "root": "/home/vick/rvv-task93/inspection-task94-clean",
+    "file": "records/scope/PRIMARY_BINDINGS.csv",
+    "bytes": 67794339,
+    "sha256": "ac0a3b8c43fd24271051410f0cb96bcf4da709c662ad0ef88c68d9b0cdce2ac5"
+  }
+]

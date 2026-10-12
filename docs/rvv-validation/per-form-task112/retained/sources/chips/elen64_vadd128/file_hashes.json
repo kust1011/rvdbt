@@ -1,0 +1,19 @@
+{
+  "stage1/vadd_vv-0.S": "3f0975ce9572bc2dd8493e791928039b5ccd20cc012f7b724e93bb5d0d09a405",
+  "stage1/vadd_vv-1.S": "2f260d563a984e58bb5a1ee656256e16cf0ca91b151dda1e273d1fafdc8f1e4f",
+  "stage1/vadd_vv-2.S": "e29e6b8d7652e1fc8e681a38b8757fe0cc727dbce91587e4e3ee33be31309e87",
+  "patches/vadd_vv-0.patch": "0b54c257f4337638fcc6cef5df5cfbebfd65096275a606fb38ded125d29f8bbe",
+  "patches/vadd_vv-1.patch": "2c4525e37131b307fe6334e254a8d8404ed08e47224efa8bd6555feb22dfe042",
+  "patches/vadd_vv-2.patch": "fce587046421662b8b5f9aa6d9515ce40758ed5ae67c29fe3f6d0b920ee20b84",
+  "stage2/vadd_vv-0.S": "b5fa9028e3474b8371d9e62f492f08a2502f54830eca910ca1173e83c13b9457",
+  "stage2/vadd_vv-1.S": "349061b3dbd6cbf7c931fcddd459620ec8e0abda61156c4d1c873f1b0c89f07e",
+  "stage2/vadd_vv-2.S": "18d73885a5643e33d42d011b48a64567110bcbd95c455fd28307bd8bcc73ef37",
+  "user-bin/fail256.elf": "0118b9f4e62da3a656779c39cb02e69c0b1e12495b2b502ec4158ac3d0d920ef",
+  "user-bin/vadd_vv-0.elf": "5d0533ff513832c0f399469ba4c8fe7cda5e08155af1c2ce77e3ca8485543d61",
+  "user-bin/vadd_vv-1.elf": "a79ee8c194c1b98611f5e1e36766950c8717b247d39b8c9a393d1bd4571aa100",
+  "user-bin/vadd_vv-2.elf": "a0e880db11420df0a88f9fb142eddbc6acb755e2c9db3488101f701b0265f50f",
+  "user-bin/wrong-answer.elf": "ec9b71760efb864301180ab8339aa8a91c80ac2240e1870d958f06755b3ecf83",
+  "machine-bin/vadd_vv-0.elf": "d609d6801da4aaa847cf562a8112bab39d6f706fe44e96dfb91c98c1d57ed0cf",
+  "machine-bin/vadd_vv-1.elf": "9a4dc36e29249027479c47868e1be7910884bc8c5337576acf5b85be6dfc0d79",
+  "machine-bin/vadd_vv-2.elf": "11251d1062545966aca06c8c57c7867963ef26ee04d54a8696f817283c2150d9"
+}
