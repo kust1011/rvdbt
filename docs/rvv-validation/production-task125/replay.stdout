@@ -1,0 +1,61 @@
+QUEUE {'chips': 1948, 'act': 3828, 'ara': 128}
+PROGRESS {'chips': Counter({'PASS': 100})}
+PROGRESS {'chips': Counter({'PASS': 200})}
+PROGRESS {'chips': Counter({'PASS': 300})}
+PROGRESS {'chips': Counter({'PASS': 400})}
+PROGRESS {'chips': Counter({'PASS': 500})}
+PROGRESS {'chips': Counter({'PASS': 600})}
+PROGRESS {'chips': Counter({'PASS': 700})}
+PROGRESS {'chips': Counter({'PASS': 800})}
+PROGRESS {'chips': Counter({'PASS': 900})}
+PROGRESS {'chips': Counter({'PASS': 1000})}
+PROGRESS {'chips': Counter({'PASS': 1100})}
+PROGRESS {'chips': Counter({'PASS': 1200})}
+PROGRESS {'chips': Counter({'PASS': 1300})}
+PROGRESS {'chips': Counter({'PASS': 1400})}
+PROGRESS {'chips': Counter({'PASS': 1500})}
+PROGRESS {'chips': Counter({'PASS': 1600})}
+PROGRESS {'chips': Counter({'PASS': 1700})}
+PROGRESS {'chips': Counter({'PASS': 1800})}
+PROGRESS {'chips': Counter({'PASS': 1900})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 52})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 152})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 252})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 352})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 452})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 552})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 652})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 752})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 852})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 952})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1052})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1152})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1252})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1352})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1452})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1552})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1652})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1752})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1852})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 1952})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2052})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2152})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2252})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2352})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2452})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2552})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2652})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2752})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2852})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 2952})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3052})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3152})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3252})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3352})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3452})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3552})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3652})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3752})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3828}), 'ara': Counter({'PASS': 24})}
+PROGRESS {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3828}), 'ara': Counter({'PASS': 124})}
+COMPLETE {'chips': Counter({'PASS': 1948}), 'act': Counter({'PASS': 3828}), 'ara': Counter({'PASS': 128})}

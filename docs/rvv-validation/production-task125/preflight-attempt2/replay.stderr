@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/vick/rvdbt-production-task125/replay_memory_task125.py", line 91, in <module>
+    assert sha(p) == c[field+'_sha256'], str(p)
+           ^^^^^^
+  File "/home/vick/chips-current120/runner.py", line 22, in digest
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/vick/rvdbt-production-task125/ara/observers/ara83/adapter/legacy_extract_vsux.c'

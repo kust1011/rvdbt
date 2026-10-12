@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "object": "build/dbt/CMakeFiles/dbtstatic.dir/rvv_host_copy.cpp.o",
+  "HandleSignal_calls": 0,
+  "TLS_resolver_calls": 0,
+  "executable_undefined_symbols": 0,
+  "library_standalone_unresolved": "dbt::Panic(char const*) is exported/resolved by the executable; not a new dependency"
+}

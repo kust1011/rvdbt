@@ -1,0 +1,18 @@
+Fresh source root: cp -a /home/vick/rvdbt-host-fault-task124/source /home/vick/rvdbt-production-task125/source; overlay tracked current dbt/CMake inputs (source-overlay.tar.gz), then the three new test sources and dbt/CMakeLists.txt.
+Initial configure:
+timeout 180 nice -n 10 taskset -c 28-31 cmake -S source -B build -DCMAKE_C_COMPILER=clang-22 -DCMAKE_CXX_COMPILER=clang++-22 -DCMAKE_BUILD_TYPE=Release -DLLVM_DIR=/usr/lib/llvm-22/lib/cmake/llvm -DRVV_HOST_CHUNK_BITS=128
+Initial production build:
+timeout 900 nice -n 10 taskset -c 28-31 cmake --build build --target elfrun dbtjitshared rvv_llvm_wholereg_mem_test rvv_whole_reg_mem_route_test -j4
+New test integration builds follow cmake -S source -B build; retained admission-build.attempt1/2, final admission-build.log, linkage-build.log and linkage-build.final.log.
+timeout 300 nice -n 10 taskset -c 28-31 cmake --build build --target rv32_llvm_memory_admission_test rv32_memory_run_scanner_test -j4
+timeout 120 nice -n 10 taskset -c 28 build/bin/rv32_llvm_memory_admission_test
+timeout 120 nice -n 10 taskset -c 28 build/bin/rv32_memory_run_scanner_test
+timeout 120 nice -n 10 taskset -c 28 build/bin/rvv_llvm_wholereg_mem_test
+timeout 120 nice -n 10 taskset -c 28 build/bin/rvv_whole_reg_mem_route_test
+timeout 180 nice -n 10 taskset -c 28-31 cmake --build build --target rv32_host_copy_linkage_test -j4
+timeout 90 nice -n 10 taskset -c 28 build/bin/rv32_host_copy_linkage_test /home/vick/rvdbt-production-task125/linkage-fixture/fs /home/vick/rvdbt-production-task125/linkage-fixture-final/cache
+Replay after recorded load check:
+nohup nice -n 10 taskset -c 28-31 python3 replay_memory_task125.py /home/vick/rvdbt-production-task125 > replay.stdout 2> replay.stderr < /dev/null &
+Read-only audit:
+timeout 180 nice -n 10 taskset -c 28 python3 collect_memory_task125.py /home/vick/rvdbt-production-task125
+Core dumps disabled by replay script. No guest retry or reference execution.

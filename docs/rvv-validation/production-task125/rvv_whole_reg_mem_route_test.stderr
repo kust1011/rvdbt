@@ -1,0 +1,32 @@
+A14: whole-register transfers under the guest-memory contract
+[1] shape + guard at VLEN 128/256/512/1024 x nf x EEW (loads) / nf (stores)
+    VLEN  128 nf 1: 1 native chunks, batches <= 4
+    VLEN  128 nf 2: 2 native chunks, batches <= 4
+    VLEN  128 nf 4: 4 native chunks, batches <= 4
+    VLEN  128 nf 8: 8 native chunks, batches <= 4
+    VLEN  256 nf 1: 1 native chunks, batches <= 4
+    VLEN  256 nf 2: 2 native chunks, batches <= 4
+    VLEN  256 nf 4: 4 native chunks, batches <= 4
+    VLEN  256 nf 8: 8 native chunks, batches <= 4
+    VLEN  512 nf 1: 1 native chunks, batches <= 4
+    VLEN  512 nf 2: 2 native chunks, batches <= 4
+    VLEN  512 nf 4: 4 native chunks, batches <= 4
+    VLEN  512 nf 8: 8 native chunks, batches <= 4
+    VLEN 1024 nf 1: 2 native chunks, batches <= 4
+    VLEN 1024 nf 2: 4 native chunks, batches <= 4
+    VLEN 1024 nf 4: 8 native chunks, batches <= 4
+    VLEN 1024 nf 8: 16 native chunks, batches <= 4
+    VLEN 2048 nf 1: 4 native chunks, batches <= 4
+    VLEN 2048 nf 2: 8 native chunks, batches <= 4
+    VLEN 2048 nf 4: 16 native chunks, batches <= 4
+    VLEN 2048 nf 8: 32 native chunks, batches <= 4
+    VLEN 4096 nf 1: 8 native chunks, batches <= 4
+    VLEN 4096 nf 2: 16 native chunks, batches <= 4
+    VLEN 4096 nf 4: 32 native chunks, batches <= 4
+    VLEN 4096 nf 8: 64 native chunks, batches <= 4
+[2] fail-closed
+    exclusions checked, including global direct=0; 128/256 admitted
+[3] constructor
+[4] A14-RESTART: the helper honours vstart (suffix moved, prefix kept, >= evl moves nothing)
+    3 VLEN x 4 nf x 4 EEW x 5 vstart: prefix kept, suffix moved, >= evl untouched
+PASSED

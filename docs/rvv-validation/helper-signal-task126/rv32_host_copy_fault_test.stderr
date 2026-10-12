@@ -1,0 +1,26 @@
+RVDBT_SIGNAL_DELIVERED signal=11 pc=80001234 frame=25007a20 size=1504 handler=80001234 code=2 access=load
+RVDBT_SIGNAL_DELIVERED signal=11 pc=80001234 frame=25007a20 size=1504 handler=80001234 code=2 access=load
+RVDBT_SIGNAL_DELIVERED signal=11 pc=80001234 frame=25007a20 size=1504 handler=80001234 code=2 access=store
+RVDBT_SIGNAL_DELIVERED signal=11 pc=80001234 frame=25007a20 size=1504 handler=80001234 code=2 access=store
+RVDBT_SIGNAL_DELIVERED signal=7 pc=80001234 frame=25007a20 size=1504 handler=8000123c code=2 access=load
+RVDBT_SIGNAL_DELIVERED signal=7 pc=80001234 frame=25007a20 size=1504 handler=8000123c code=2 access=load
+RVDBT_SIGNAL_DELIVERED signal=7 pc=80001234 frame=25007a20 size=1504 handler=8000123c code=2 access=store
+RVDBT_SIGNAL_DELIVERED signal=7 pc=80001234 frame=25007a20 size=1504 handler=8000123c code=2 access=store
+Panic: Memory fault in host address space
+backtrace
+	at build/bin/rv32_host_copy_fault_test(+0x11510) [0x5d0e0b1ac510]
+	at build/bin/rv32_host_copy_fault_test(+0x114ef) [0x5d0e0b1ac4ef]
+	at build/bin/rv32_host_copy_fault_test(+0x17391) [0x5d0e0b1b2391]
+	at build/bin/rv32_host_copy_fault_test(+0x20cd1) [0x5d0e0b1bbcd1]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x78bcd6245330]
+	at build/bin/rv32_host_copy_fault_test(+0x2092b) [0x5d0e0b1bb92b]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x78bcd622a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x78bcd622a28b]
+Panic: Memory fault in host address space
+backtrace
+	at build/bin/rv32_host_copy_fault_test(+0x11510) [0x5d0e0b1ac510]
+	at build/bin/rv32_host_copy_fault_test(+0x114ef) [0x5d0e0b1ac4ef]
+	at build/bin/rv32_host_copy_fault_test(+0x17391) [0x5d0e0b1b2391]
+	at build/bin/rv32_host_copy_fault_test(+0x20cd1) [0x5d0e0b1bbcd1]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x78bcd6245330]
+	at build/bin/rv32_host_copy_fault_test(+0x2ef16) [0x5d0e0b1c9f16]

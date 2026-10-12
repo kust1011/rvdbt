@@ -1,0 +1,339 @@
+{
+  "external_counters": [
+    {
+      "case": "Vls8-vle32.v",
+      "arm": "B",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls8-vle32.v/B",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 62,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=796 guard_fallbacks=62"
+      ]
+    },
+    {
+      "case": "Vls8-vle32.v",
+      "arm": "M1",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls8-vle32.v/M1",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 62,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=767 guard_fallbacks=62"
+      ]
+    },
+    {
+      "case": "Vls8-vle32.v",
+      "arm": "M2",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls8-vle32.v/M2",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 62,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=796 guard_fallbacks=62"
+      ]
+    },
+    {
+      "case": "Vls8-vle32.v",
+      "arm": "BOTH",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls8-vle32.v/BOTH",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 62,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=767 guard_fallbacks=62"
+      ]
+    },
+    {
+      "case": "Vls32-vle32.v",
+      "arm": "B",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vle32.v/B",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=844 guard_fallbacks=0"
+      ]
+    },
+    {
+      "case": "Vls32-vle32.v",
+      "arm": "M1",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vle32.v/M1",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=815 guard_fallbacks=0"
+      ]
+    },
+    {
+      "case": "Vls32-vle32.v",
+      "arm": "M2",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vle32.v/M2",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=844 guard_fallbacks=0"
+      ]
+    },
+    {
+      "case": "Vls32-vle32.v",
+      "arm": "BOTH",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vle32.v/BOTH",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 0,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=815 guard_fallbacks=0"
+      ]
+    },
+    {
+      "case": "Vls32-vse32.v",
+      "arm": "B",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vse32.v/B",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 4,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=997 guard_fallbacks=2"
+      ]
+    },
+    {
+      "case": "Vls32-vse32.v",
+      "arm": "M1",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vse32.v/M1",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 4,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=968 guard_fallbacks=2"
+      ]
+    },
+    {
+      "case": "Vls32-vse32.v",
+      "arm": "M2",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vse32.v/M2",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 4,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=997 guard_fallbacks=2"
+      ]
+    },
+    {
+      "case": "Vls32-vse32.v",
+      "arm": "BOTH",
+      "receipt": "/home/vick/rvdbt-production-task125/act/raw/Vls32-vse32.v/BOTH",
+      "routes": {
+        "vsetvli": 0,
+        "vle32.v": 0,
+        "vse32.v": 4,
+        "vadd.vv": 0,
+        "vsub.vv": 0,
+        "vmul.vv": 0,
+        "vand.vv": 0,
+        "vor.vv": 0,
+        "vxor.vv": 0,
+        "vsll.vi": 0,
+        "vsrl.vi": 0,
+        "vmv.v.x": 0,
+        "vadd.vx": 0,
+        "vmv.v.i": 0,
+        "vmv.v.v": 0,
+        "vadd.vi": 0,
+        "other-vector": 0
+      },
+      "direct": [
+        "enabled=1 hit_counter=1 inline_hits=968 guard_fallbacks=2"
+      ]
+    }
+  ],
+  "interpretation": "Vls8-vle32.v has 62 successful vle32 handler entries per arm. Vls32-vle32.v has zero vle32 handler entries and positive aggregate direct hits per arm; original target assertions establish actual normal execution. Vls32-vse32.v has 4 successful vse32 helper entries per arm; aggregate direct counts cannot isolate every remaining store target. other-vector merges other families; no per-target admission inferred from switches or aggregate hits.",
+  "LLVM_execution": {
+    "native": 8,
+    "denied": 4,
+    "forced_successful_helper": 4,
+    "checks": 268
+  },
+  "scanner": {
+    "rows": 13,
+    "failures": 0
+  }
+}

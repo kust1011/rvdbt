@@ -519,6 +519,12 @@ static void QueueOrdinaryMemoryFault(CPUState *s, u32 pc, u32 raw, u32 address,
 					      : MemoryFaultEvent::Reason::Unmapped;
 	event.pc = pc; event.raw = raw; event.address = address;
 	event.element = s->vec.vstart; event.eew_bytes = eew; event.nf = nf; event.field = field;
+	auto const host = rvv_host_copy::LastFault();
+	if (host.signal) {
+		event.origin = MemoryFaultEvent::Origin::HostCopy;
+		event.reason = MemoryFaultEvent::Reason::HostFault;
+		event.host_signal = host.signal; event.host_code = host.code;
+	}
 	ukernel::QueueHelperMemoryFault(s, event);
 }
 
@@ -721,6 +727,12 @@ HANDLER(vleff)
 		event.eew_bytes = seg.data_eew; // VSegShape already expresses EEW in bytes
 		event.nf = seg.nf;
 		event.field = (fault_gaddr - s->gpr[i.rs1()]) / event.eew_bytes;
+		auto const host = rvv_host_copy::LastFault();
+		if (host.signal) {
+			event.origin = MemoryFaultEvent::Origin::HostCopy;
+			event.reason = MemoryFaultEvent::Reason::HostFault;
+			event.host_signal = host.signal; event.host_code = host.code;
+		}
 		ukernel::QueueHelperMemoryFault(s, event);
 		return; // preserve VL/vstart and every already committed vector byte
 	}

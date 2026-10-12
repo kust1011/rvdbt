@@ -1,4 +1,5 @@
 #pragma once
+#include "dbt/rvv_host_copy.h"
 
 // Width-parametric decomposition of scalable RVV operations onto FIXED-WIDTH host vectors.
 //
@@ -616,6 +617,7 @@ inline bool memory_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
                            u32 vl, u32 eew, u32 nf, u32 field_regs, bool vm,
                            bool store, u32 &denied, u32 &field)
 {
+	rvv_host_copy::ResetFault();
 	for (u32 e = vs.vstart; e < vl; ++e) {
 		if (!vm && !vs.mask_get(0, e)) continue;
 		vs.vstart = e;
@@ -624,8 +626,7 @@ inline bool memory_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
 			u32 const address = element_base + field * eew;
 			if (mmu::FirstDenied(address, eew, store, denied)) return false;
 			u8 *element = vs.elem_ptr(reg + field * field_regs, e, eew, vlen);
-			if (store) guest_store_elem(vmem, address, element, eew);
-			else guest_load_elem(element, vmem, address, eew);
+			if (!rvv_host_copy::Copy(element, vmem, address, eew, store, denied)) return false;
 		}
 	}
 	vs.vstart = 0;
@@ -763,6 +764,7 @@ inline u32 load_fault_only_first(VectorState &vs, u32 vd, u8 *vmem, u32 base, u3
 				 u32 vl, u32 vstart, u32 eew_bytes, bool vm, bool &faulted_at_start,
 				 u32 &fault_gaddr, u32 nf = 1, u32 field_stride_regs = 1)
 {
+	rvv_host_copy::ResetFault();
 	faulted_at_start = false;
 	fault_gaddr = base;
 	u32 const seg_bytes = nf * eew_bytes;
@@ -789,8 +791,11 @@ inline u32 load_fault_only_first(VectorState &vs, u32 vd, u8 *vmem, u32 base, u3
 			// element that CROSSES the top of the address space wrap instead of running
 			// off the reservation. Same contract as the non-segment unit-stride path.
 			u32 const gaddr = addr + f * eew_bytes;
-			guest_load_elem(vs.elem_ptr(vd + f * field_stride_regs, e, eew_bytes, vlen_bits),
-					vmem, gaddr, eew_bytes);
+			if (!rvv_host_copy::Copy(vs.elem_ptr(vd + f * field_stride_regs, e, eew_bytes, vlen_bits),
+					vmem, gaddr, eew_bytes, false, fault_gaddr)) {
+				faulted_at_start = e == 0;
+				return e == 0 ? vl : e;
+			}
 		}
 	}
 	return vl;

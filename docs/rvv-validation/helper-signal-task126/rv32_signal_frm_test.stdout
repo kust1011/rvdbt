@@ -1,0 +1,1 @@
+FRM_INTERFACE_PASS frm=0..7 fflags=0..31 roundtrips=256 high_bit_badframes=192 operation_admission_unchanged guest_calls=0 external_ISA_tests=0

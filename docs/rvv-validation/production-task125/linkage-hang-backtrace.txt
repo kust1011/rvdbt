@@ -1,0 +1,28 @@
+[New LWP 3375008]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+futex_wait (private=<optimized out>, expected=12, futex_word=0x5d2fdcb0b5e4 <dbt::fsmanager::g_fsmanager+116>) at ../sysdeps/nptl/futex-internal.h:146
+
+warning: 146	../sysdeps/nptl/futex-internal.h: No such file or directory
+
+Thread 2 (Thread 0x7efcc3dff6c0 (LWP 3375008) "rv32_host_copy_"):
+#0  0x00007efcc5898e51 in __futex_abstimed_wait_common64 (private=-1874242107, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5d2fdcb0b5ec <dbt::fsmanager::g_fsmanager+124>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=-1874242107, abstime=0x0, clockid=0, expected=0, futex_word=0x5d2fdcb0b5ec <dbt::fsmanager::g_fsmanager+124>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5d2fdcb0b5ec <dbt::fsmanager::g_fsmanager+124>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007efcc589b8cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5d2fdcb0b598 <dbt::fsmanager::g_fsmanager+40>, cond=0x5d2fdcb0b5c0 <dbt::fsmanager::g_fsmanager+80>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x5d2fdcb0b5c0 <dbt::fsmanager::g_fsmanager+80>, mutex=0x5d2fdcb0b598 <dbt::fsmanager::g_fsmanager+40>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005d2fdc8d6ff6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<dbt::fsmanager::Init(char const*)::$_0::operator()() const::{lambda()#1}> > >::_M_run() ()
+#6  0x00007efcc3eecdb4 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007efcc589cb84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007efcc5929ecc in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 1 (Thread 0x7efcc5a20880 (LWP 3375007) "rv32_host_copy_"):
+#0  futex_wait (private=<optimized out>, expected=12, futex_word=0x5d2fdcb0b5e4 <dbt::fsmanager::g_fsmanager+116>) at ../sysdeps/nptl/futex-internal.h:146
+#1  futex_wait_simple (private=<optimized out>, expected=12, futex_word=0x5d2fdcb0b5e4 <dbt::fsmanager::g_fsmanager+116>) at ../sysdeps/nptl/futex-internal.h:177
+#2  __GI___pthread_cond_destroy (cond=0x5d2fdcb0b5c0 <dbt::fsmanager::g_fsmanager+80>) at ./nptl/pthread_cond_destroy.c:53
+#3  0x00007efcc5847a76 in __run_exit_handlers (status=0, listp=<optimized out>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at ./stdlib/exit.c:108
+#4  0x00007efcc5847bbe in __GI_exit (status=<optimized out>) at ./stdlib/exit.c:138
+#5  0x00007efcc582a1d1 in __libc_start_call_main (main=main@entry=0x5d2fdc8d5ac0 <main>, argc=argc@entry=3, argv=argv@entry=0x7ffdbe838b88) at ../sysdeps/nptl/libc_start_call_main.h:74
+#6  0x00007efcc582a28b in __libc_start_main_impl (main=0x5d2fdc8d5ac0 <main>, argc=3, argv=0x7ffdbe838b88, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffdbe838b78) at ../csu/libc-start.c:360
+#7  0x00005d2fdc8d59f5 in _start ()
+[Inferior 1 (process 3375007) detached]

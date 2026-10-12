@@ -11,12 +11,13 @@
 //   * UNORDERED only. RVV distinguishes vluxei (unordered, mop=01) from vloxei (ordered, mop=11).
 //     Only the unordered form lets an implementation perform the element accesses in arbitrary
 //     order, which is exactly what a host gather does. The ordered form keeps the reference.
-//   * FAULT-FREEDOM IS PROVEN, NOT ASSUMED. A host gather that faults part-way cannot report a
-//     precise vstart, so instead of recovering we refuse unless no access can fault: the index
+//   * GUEST PERMISSION ADMISSION. A host gather that faults part-way cannot report a
+//     precise vstart, so we refuse guest permission denials: the index
 //     vector is pre-scanned for its min and max byte offset and the whole touched range is checked
 //     against guest read permissions. If any page in it denies reading, the fast path refuses and the
 //     checked fallback runs. The pre-scan reads the same indices the gather
-//     will use, so it cannot disagree with them.
+//     will use, so it cannot disagree with them. File truncation/SIGBUS or a host
+//     mapping change after admission still can fault; native recovery is unimplemented.
 //   * unmasked (vm=1), vstart == 0, and data EEW == index EEW == 4. Other widths, masks and a
 //     non-zero vstart all fall through to the reference.
 #include "dbt/guest/rv32_vector.h"
@@ -55,7 +56,7 @@ extern "C" bool rvv_gather_e32_avx2(void *vs_void, unsigned vd, unsigned vs2, un
 	}
 	if (hi < lo)
 		return false;
-	// Fault-freedom obligation. 4 bytes per element, so the last touched byte is hi+3.
+	// Permission preflight only. 4 bytes per element, so the last touched byte is hi+3.
 	// AVX2 i32 gather sign-extends offsets; only the positive half is safe
 	// relative to vmem. Reject overflow and guest read denial before any access.
 	if (hi > 0x7ffffffcu || !mmu::range_readable(lo, (hi - lo) + 4)) {

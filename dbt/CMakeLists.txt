@@ -31,6 +31,8 @@ add_library(dbtstatic STATIC
 	ccrf_materializer.cpp
 	fault_snapshot.cpp
 	mmu.cpp
+	rvv_host_copy.cpp
+	rvv_host_copy.S
 	execute.cpp
 	ukernel.cpp
 
@@ -1263,7 +1265,18 @@ target_link_libraries(rvv_ssa_edge_commit_test PUBLIC dbtstatic)
 
 # Signal interface tests include the production ukernel TU to inspect its private
 # owner state. Normal archive extraction links the remaining runtime definitions.
-foreach(signal_test rv32_signal_frm_test rv32_signal_interface_test rv32_unit_memory_fault_test rv32_family_memory_fault_test rv32_special_memory_fault_test)
+foreach(signal_test rv32_host_copy_fault_test rv32_signal_frm_test rv32_signal_interface_test rv32_unit_memory_fault_test rv32_family_memory_fault_test rv32_special_memory_fault_test)
   add_executable(${signal_test} ${signal_test}.cpp)
   target_link_libraries(${signal_test} PUBLIC dbtstatic)
 endforeach()
+
+# Task119 executable admission checks reuse the existing translator/fault fixtures.
+foreach(admission_test rv32_llvm_memory_admission_test rv32_memory_run_scanner_test)
+  add_executable(${admission_test} ${admission_test}.cpp)
+  target_include_directories(${admission_test} PRIVATE "${PROJECT_SOURCE_DIR}")
+  target_link_libraries(${admission_test} PRIVATE dbtstatic)
+endforeach()
+llvm_map_components_to_libnames(admission_llvm_libs mcjit executionengine native)
+target_link_libraries(rv32_llvm_memory_admission_test PRIVATE ${admission_llvm_libs})
+add_executable(rv32_host_copy_linkage_test rv32_host_copy_linkage_test.cpp)
+target_link_libraries(rv32_host_copy_linkage_test PRIVATE dbtstatic)

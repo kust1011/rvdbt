@@ -1,0 +1,25 @@
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=11 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+RVDBT_SIGNAL_UNDELIVERABLE host_copy signal=7 code=2
+Panic: Memory fault in host address space
+backtrace
+	at build-clang/bin/rv32_host_copy_fault_test(+0x11500) [0x5e6fe6f55500]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x114df) [0x5e6fe6f554df]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x17261) [0x5e6fe6f5b261]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x76cb69a45330]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x1f642) [0x5e6fe6f63642]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x76cb69a2a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x76cb69a2a28b]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x149f5) [0x5e6fe6f589f5]
+Panic: Memory fault in host address space
+backtrace
+	at build-clang/bin/rv32_host_copy_fault_test(+0x11500) [0x5e6fe6f55500]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x114df) [0x5e6fe6f554df]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x17261) [0x5e6fe6f5b261]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x76cb69a45330]
+	at build-clang/bin/rv32_host_copy_fault_test(+0x2d576) [0x5e6fe6f71576]

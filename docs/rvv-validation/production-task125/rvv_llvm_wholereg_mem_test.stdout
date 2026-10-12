@@ -1,0 +1,5 @@
+rvv_llvm_wholereg_mem_test
+[C1-1] the emitted guard tests vlenb AND vstart AND the address bound
+[C1-3] capacity, legality and the zero-chunk fail-open case keep the helper
+[C1-4] the {512,1024} width list equals its own derivation
+PASS (0 failures)

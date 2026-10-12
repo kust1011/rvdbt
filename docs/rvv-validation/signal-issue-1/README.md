@@ -220,3 +220,32 @@ original flags print helper census but omit RVV_DIRECT, so no native hit count
 is invented. These results do not close issue #1 or transfer older full-suite or
 performance results to this binary. Unexpected host faults/concurrent remapping,
 complete restart, whole-register/mask EVL precision and additional FOF work remain.
+
+## Task126 captured helper synchronous delivery
+
+The current interface additionally installs SIGBUS (RV32 number 7) with the
+same flags 0/SA_SIGINFO and default-disposition rules as SIGSEGV (11). It delivers
+only existing predicted-helper events or owned checked-leaf HostCopy captures.
+Queue validation and delivery share the explicit host-to-RV32 mapping:
+SEGV_MAPERR→SIGSEGV/1, SEGV_ACCERR→SIGSEGV/2, BUS_ADRERR→SIGBUS/2,
+BUS_OBJERR→SIGBUS/3. Predicted Unmapped/Protection remain SIGSEGV/1 or /2.
+BUS_ADRALN, hardware poison, SI_USER/SI_KERNEL, unknown sources/codes and all
+other signal installations remain unsupported. No new action flags are accepted.
+
+The dispatcher uses the selected signal's action, mask bit, handler a0 and
+siginfo number/code. Address is the already translated denied guest byte; PC,
+GPR/FP/vector state, vstart and VL come from the existing clean snapshot. Linux
+fault siginfo has no load/store field: direction and lane/field geometry stay in
+the value-only event and snapshot; the delivery diagnostic also names direction.
+Blocked/default/ignored faults, either kind of nested fault and invalid frames
+retain the existing explicit termination behavior. A local API restore checks the
+codec without executing a guest handler, sigreturn, repaired mapping or retry.
+
+The callback still redirects only the owned leaf PC to its normal failed return.
+Its kernel signal return restores the host mask before helper return/unwind;
+Task126 adds no sigprocmask, allocation or longjmp to that callback. Frame
+allocation remains on the normal dispatcher stack after helper scopes close.
+Unrelated host faults remain fatal. Native, permitted bulk, gather, mapping-race
+and guest restart limitations remain; this is no general OS signal subsystem.
+See [Task126 report](../../../SESSION0_RESULT_126.md) for the new build/tests;
+historical Task113–125 receipt identities and results above remain unchanged.

@@ -1,3 +1,4 @@
+#include "dbt/rvv_host_copy.h"
 #include "dbt/ukernel.h"
 #include "dbt/execute.h"
 #include "dbt/qmc/ngr.h"
@@ -220,13 +221,12 @@ ukernel::Process ukernel::process{};
 void ukernel::QueueHelperMemoryFault(CPUState *state, MemoryFaultEvent const &event)
 {
 	auto *ut = state->GetUThread();
+	u32 signal=0, code=0;
 	if (state != CPUState::Current() || ut->memory_fault_pending ||
 	    state->trapno != rv32::TrapCode::NONE ||
-	    event.origin != MemoryFaultEvent::Origin::PredictedHelper ||
+	    !rv32_signal::HelperSiginfo(event,signal,code) ||
 	    (event.access != MemoryFaultEvent::Access::Load &&
 	     event.access != MemoryFaultEvent::Access::Store) ||
-	    (event.reason != MemoryFaultEvent::Reason::Protection &&
-	     event.reason != MemoryFaultEvent::Reason::Unmapped) ||
 	    (event.eew_bytes != 1 && event.eew_bytes != 2 &&
 	     event.eew_bytes != 4 && event.eew_bytes != 8) ||
 	    event.nf < 1 || event.nf > 8 || event.field >= event.nf)
@@ -263,12 +263,15 @@ void ukernel::WriteMemoryFaultSnapshot(FILE *out, MemoryFaultSnapshot const &s)
 	auto const &e = s.event;
 	fprintf(out, "RVDBT_MEMORY_FAULT_SNAPSHOT {\"schema_version\":1,"
 		"\"status\":\"HELPER_FAULT_CAPTURED\","
-		"\"origin\":\"PredictedHelper\",\"access\":\"%s\","
+		"\"origin\":\"%s\",\"host_signal\":%d,\"host_code\":%d,\"access\":\"%s\","
 		"\"reason\":\"%s\",\"pc\":%u,\"raw\":%u,\"address\":%u,"
 		"\"element\":%u,\"field\":%u,\"eew_bytes\":%u,\"nf\":%u,"
 		"\"fp_run_closed\":true,\"vlenb\":%u,\"gpr\":[",
+		e.origin == MemoryFaultEvent::Origin::HostCopy ? "HostCopy" : "PredictedHelper",
+		e.host_signal, e.host_code,
 		e.access == MemoryFaultEvent::Access::Store ? "store" : "load",
-		e.reason == MemoryFaultEvent::Reason::Protection ? "protection" : "unmapped",
+		e.reason == MemoryFaultEvent::Reason::HostFault ? "host_fault" :
+		 e.reason == MemoryFaultEvent::Reason::Protection ? "protection" : "unmapped",
 		s.pc, e.raw, e.address, e.element, e.field, e.eew_bytes, e.nf, s.vlenb);
 	for (u32 r = 0; r < 32; ++r) fprintf(out, "%s%u", r ? "," : "", s.gpr[r]);
 	fprintf(out, "],\"fpr_hex\":[");
@@ -412,6 +415,7 @@ static void DumpFaultState(ucontext_t *uc, siginfo_t *sinfo, CPUState *state)
 static void dbt_sigaction_memory(int signo, siginfo_t *sinfo, void *uctx_raw)
 {
 	auto uc = static_cast<ucontext_t *>(uctx_raw);
+	if (rvv_host_copy::HandleSignal(signo, sinfo, uc)) return;
 
 	auto hpc = uc->uc_mcontext.gregs[REG_RIP];
 
@@ -451,13 +455,12 @@ static void dbt_sigaction_memory(int signo, siginfo_t *sinfo, void *uctx_raw)
 								: "unknown");
 }
 
-// Host faults remain diagnostic; guest predicted-helper delivery is separate.
+// Exact checked-copy leaf faults return to the helper; all other host faults
+// retain the diagnostic path. Guest signal delivery remains a dispatcher action.
 void ukernel::InitSignals(CPUState *state)
 {
-	struct sigaction sa;
-	sigset_t sset;
-
-	sigfillset(&sset);
+	struct sigaction sa{};
+	sigfillset(&sa.sa_mask);
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = dbt_sigaction_memory;
 

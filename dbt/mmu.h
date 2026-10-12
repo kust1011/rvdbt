@@ -63,8 +63,8 @@ struct mmu {
 	//
 	// Added for fault-only-first loads, which must PREDICT a fault rather than take one: the
 	// architecture requires that a fault on any element after the first trims vl and completes
-	// without trapping, and there is no way to unwind out of a faulting memcpy inside a helper
-	// called from generated code. used_pages is already maintained on both mmap paths
+	// without trapping. Permission prediction alone cannot catch host backing faults; checked
+	// FOF field copies now use the separate Linux/x86-64 RVV leaf fault boundary. used_pages is already maintained on both mmap paths
 	// (MAP_FIXED at mmu.cpp:92 and the searched path at mmu.cpp:137), so this is a read of
 	// existing state, not new bookkeeping.
 	static ALWAYS_INLINE bool page_mapped(u32 gaddr)

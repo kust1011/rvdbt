@@ -1,0 +1,1 @@
+PASS: all eight exact-PC RDI opcodes match architectural widths; HandleSignal has no calls or __tls_get_addr.

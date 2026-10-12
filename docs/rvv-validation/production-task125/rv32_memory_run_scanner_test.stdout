@@ -1,0 +1,14 @@
+SCANNER scalar writes later load base members=1 cut=scalar_insn
+SCANNER scalar writes later store base members=1 cut=scalar_insn
+SCANNER unrelated scalar bridge members=3 cut=region_boundary
+SCANNER base changes after its final access members=3 cut=region_boundary
+SCANNER arithmetic then two bases members=3 cut=region_boundary
+SCANNER vset geometry barrier members=1 cut=guard_state_write
+SCANNER vstart CSR barrier members=1 cut=scalar_insn
+SCANNER unit memory barrier members=1 cut=vector_memory
+SCANNER strided memory barrier members=1 cut=vector_memory
+SCANNER indexed memory barrier members=1 cut=vector_memory
+SCANNER mask memory barrier members=1 cut=vector_memory
+SCANNER segment memory barrier members=1 cut=vector_memory
+SCANNER v0 changes before whole memory members=2 cut=region_boundary
+SCANNER_CHECK PASS rows=13 failures=0

@@ -54,6 +54,95 @@ int main()
  check(!mmu::CheckedRange(a+4096,8,PROT_READ),"guest write-only not readable");
  check(mmu::munmap(a+4096,4096)==0 && !mmu::CheckedRange(a+4096,1,PROT_WRITE),"unmap metadata");
  check(ukernel_syscall::linux_tgkill(1,1,11)==-ENOSYS,"tgkill unsupported");
+ // Explicit host-to-RV32 mapping tests: synthetic metadata for all accepted
+ // codes, both directions and supported action flags. No guest handler runs.
+ struct Mapping { int host_signal, host_code; u32 signal, code; };
+ for(auto m : {Mapping{SIGSEGV,SEGV_MAPERR,11,1}, Mapping{SIGSEGV,SEGV_ACCERR,11,2},
+               Mapping{SIGBUS,BUS_ADRERR,7,2}, Mapping{SIGBUS,BUS_OBJERR,7,3},
+               Mapping{0,0,11,1}, Mapping{0,0,11,2}})
+ for(bool store : {false,true}) for(u32 flags : {0u,4u}) {
+  put32(action,code+(m.signal==7?8:0));put32(action+4,flags);put64(action+8,1ull<<20);
+  CopyOut(a,action,16);check(call(s,134,m.signal,a,0)==0,"install both synchronous signals");
+  s->vec.Reset(128);s->vec.vtype=16;s->vec.vl=3;s->vec.vstart=1;
+  for(u32 r=0;r<32;++r)s->vec.vreg[r].fill(0x21+r);
+  s->gpr[2]=a+32768;s->gpr[10]=0xabcdef01;s->fpu.fround_run_open=false;
+  ut->guest_signal_mask=1ull<<30;
+  MemoryFaultEvent event;event.pc=code;event.address=0x24001002;event.eew_bytes=4;event.nf=2;event.field=1;
+  event.element=1;event.access=store?MemoryFaultEvent::Access::Store:MemoryFaultEvent::Access::Load;
+  if(m.host_signal) {
+   event.origin=MemoryFaultEvent::Origin::HostCopy;event.reason=MemoryFaultEvent::Reason::HostFault;
+   event.host_signal=m.host_signal;event.host_code=m.host_code;
+  } else event.reason=m.code==1?MemoryFaultEvent::Reason::Unmapped:MemoryFaultEvent::Reason::Protection;
+  ukernel::QueueHelperMemoryFault(s,event);auto v=ukernel::CaptureHelperMemoryFault(s);
+  ut->memory_fault_pending=false;
+  sigprocmask(SIG_SETMASK,nullptr,&before);
+  check(ukernel::DeliverHelperSignal(s,v),"all synchronous mappings delivered");
+  u32 f=s->gpr[2];std::vector<u8> b(FrameSize(16));check(CopyIn(b.data(),f,b.size()),"mapped frame read");
+  check(get32(b.data()+Info)==m.signal && get32(b.data()+Info+4)==0 &&
+        get32(b.data()+Info+8)==m.code && get32(b.data()+Info+12)==event.address,"RV32 siginfo exact mapping");
+  check(s->gpr[10]==m.signal && s->gpr[11]==f && s->gpr[12]==f+UC &&
+        s->ip==code+(m.signal==7?8:0),"signal-specific action and handler args");
+  check(get32(b.data()+MC)==v.pc && get32(b.data()+MC+40)==v.gpr[10] &&
+        get32(b.data()+VS)==1 && get32(b.data()+VS+4)==3,"fault PC GPR vstart VL");
+  for(u32 r=0;r<32;++r)check(!memcmp(b.data()+Data+16*r,v.vreg[r].data(),16),"captured vector frame bytes");
+  check(v.event.access==event.access && v.event.field==1 && v.event.element==1 &&
+        v.event.host_signal==m.host_signal && v.event.host_code==m.host_code,"metadata direction retained");
+  check(get64(b.data()+Mask)==(1ull<<30) &&
+        ut->guest_signal_mask==((1ull<<30)|(1ull<<20)|(1ull<<(m.signal-1))),"signal-specific mask");
+  check(!ukernel::DeliverHelperSignal(s,v),"cross/same signal nesting rejected");
+  auto other=v;other.event.origin=MemoryFaultEvent::Origin::HostCopy;other.event.reason=MemoryFaultEvent::Reason::HostFault;
+  other.event.host_signal=m.signal==7?SIGSEGV:SIGBUS;other.event.host_code=m.signal==7?int(SEGV_MAPERR):int(BUS_ADRERR);
+  check(!ukernel::DeliverHelperSignal(s,other),"cross signal nesting rejected");
+  u8 bad[4];put32(bad,0);CopyOut(f+Header,bad,4);
+  auto regs=s->gpr;auto mask_saved=ut->guest_signal_mask;
+  check(!ukernel::RestoreSignalFrame(s) && s->gpr==regs && ut->guest_signal_mask==mask_saved &&
+        ut->signal_frame==f,"both signals badframe atomic");
+  CopyOut(f,b.data(),b.size());check(ukernel::RestoreSignalFrame(s),"local frame restore both signals");
+  check(ut->guest_signal_mask==(1ull<<30) && s->vec.vstart==1 && s->vec.vl==3 && s->ip==code,
+        "architectural state restored locally");
+  sigprocmask(SIG_SETMASK,nullptr,&after);check(!memcmp(&before,&after,sizeof(before)),"delivery/restore host mask unchanged");
+  for(u32 handler : {0u,1u,code+1,0x24000000u}) {
+   ut->signal_actions[m.signal-1].handler=handler;
+   check(!ukernel::DeliverHelperSignal(s,v),"default ignored odd unmapped handler refused");
+  }
+  ut->signal_actions[m.signal-1]={code,flags,0};ut->guest_signal_mask=1ull<<(m.signal-1);
+  check(!ukernel::DeliverHelperSignal(s,v),"matching blocked signal refused");
+  ut->guest_signal_mask=1ull<<(m.signal==7?10:6);
+  s->gpr[2]=a+32768;
+  check(ukernel::DeliverHelperSignal(s,v),"other fault signal mask does not block");
+  check(ukernel::RestoreSignalFrame(s),"local second frame restore");
+  ut->guest_signal_mask=0;s->gpr[2]=16;
+  check(!ukernel::DeliverHelperSignal(s,v),"stack underflow refused");
+  s->gpr[2]=code+4096;check(!ukernel::DeliverHelperSignal(s,v),"unwritable stack refused");
+  s->gpr[2]=a+32768;ut->signal_actions[m.signal-1].flags=0x40000000;
+  check(!ukernel::DeliverHelperSignal(s,v),"unsupported action flags refused at delivery");
+ }
+ for(u32 sig : {7u,11u}) {
+  for(u32 flags : {0x08000000u,0x10000000u,0x40000000u,0x80000000u,0x04000000u,1u}) {
+   put32(action,code);put32(action+4,flags);CopyOut(a,action,16);
+   auto saved=ut->signal_actions[sig-1];
+   check(call(s,134,sig,a,a+32)==-EOPNOTSUPP,"both signals unsupported flags");
+   check(ut->signal_actions[sig-1].handler==saved.handler && ut->signal_actions[sig-1].flags==saved.flags,
+         "unsupported installation atomic");
+  }
+  put32(action,1);put32(action+4,4);CopyOut(a,action,16);
+  check(call(s,134,sig,a,0)==-EOPNOTSUPP,"both signals ignore installation unsupported");
+ }
+ // Reject codes/sources outside the captured leaf contract without creating a frame.
+ s->vec.Reset(128);s->gpr[2]=a+32768;ut->guest_signal_mask=0;
+ MemoryFaultSnapshot unsupported{};unsupported.vlenb=16;unsupported.pc=code;
+ unsupported.event.origin=MemoryFaultEvent::Origin::HostCopy;
+ unsupported.event.reason=MemoryFaultEvent::Reason::HostFault;
+ for(auto m : {Mapping{SIGBUS,BUS_ADRALN,0,0}, Mapping{SIGBUS,SI_USER,0,0},
+               Mapping{SIGSEGV,SI_KERNEL,0,0}, Mapping{SIGSEGV,SI_USER,0,0},
+               Mapping{SIGILL,1,0,0}, Mapping{SIGBUS,999,0,0}}) {
+  unsupported.event.host_signal=m.host_signal;unsupported.event.host_code=m.host_code;
+  check(!ukernel::DeliverHelperSignal(s,unsupported) && !ut->signal_frame,"unsupported source/code explicit");
+ }
+ unsupported.event.origin=MemoryFaultEvent::Origin::PredictedHelper;
+ check(!ukernel::DeliverHelperSignal(s,unsupported),"predicted event cannot carry host provenance");
+ unsupported.event.origin=static_cast<MemoryFaultEvent::Origin>(99);
+ check(!ukernel::DeliverHelperSignal(s,unsupported),"unknown source refused");
  // Exercise validation and restoration on an explicitly queued helper event.
  s->vec.Reset(1024);s->vec.vtype=16;s->vec.vl=9;s->vec.vstart=7;
  s->gpr[2]=a+32768;s->gpr[10]=0x12345678;s->fpu.fround_run_open=false;
