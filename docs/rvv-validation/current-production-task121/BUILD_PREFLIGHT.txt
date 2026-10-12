@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/vick/rvdbt-special-memory-20261012-task118/build'
+ninja: no work to do.

@@ -73,3 +73,8 @@ Original build identities remain internal to the records. None of these historic
 reporters and offline readers only, with zero new guest executions or ISA coverage.
 [Counts](COUNTS.json), [acceptance checks](CHECKS.json), and
 [sampled original assertions](SAMPLES.json) document the actual retained inputs.
+
+[Task121 current-production ACT db2 receipts](../current-production-task121/README.md)
+join these same source selectors to 7,668 new original selfchecks, exact expected
+signature words and literal destination/CSR checker calls. Its actual checked
+union is 590; old records and broader 595-form claims remain separate.

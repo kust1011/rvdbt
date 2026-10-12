@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "transport_sha256": "b91c736021f499123082c8f6298b387dc04b5f63ba3a1008e404049df1c87e28",
+  "result_receipts_verified": 7668,
+  "stream_and_identity_files_verified": 30672,
+  "counts": {
+    "PASS": 7668
+  },
+  "per_arm": {
+    "B": 1917,
+    "M1": 1917,
+    "M2": 1917,
+    "BOTH": 1917
+  },
+  "reporter_matches_executed_raw": true
+}

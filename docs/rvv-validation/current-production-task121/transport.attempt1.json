@@ -1,0 +1,14 @@
+{
+  "attempt": 1,
+  "status": "PASS",
+  "source": "xbd:/home/vick/act-current121-receipts.tar.gz",
+  "destination": "/home/user/research/materials/act-current121-raw-20261012/receipts.tar.gz",
+  "bytes": 114839753,
+  "sha256": "b91c736021f499123082c8f6298b387dc04b5f63ba3a1008e404049df1c87e28",
+  "exclusions": [
+    "per-call work/cache",
+    "controls copies",
+    "empty setup-attempt1.txt"
+  ],
+  "full_remote_raw_preserved": true
+}

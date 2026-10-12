@@ -344,6 +344,140 @@ def chips_replay(index, raw, original_manifest, output, original_runner=None):
 
 
 
+def act_db2_replay(index, raw, package, prior, output):
+    """Join new-build original ACT selfchecks to frozen source/signature navigation."""
+    import collections
+    import gzip
+    from verify_rvv_act_db2 import original_predicates, require
+    def read(p):
+        return json.loads(p.read_text())
+    manifest = read(package / 'FILES.json')
+    require(digest(package / 'FILES.json') == index['packages']['ACT-db2']['manifest_sha256'], 'db2 package identity')
+    def payload(name):
+        p = package / name
+        require(digest(p) == manifest[name]['sha256'], 'altered original: ' + name)
+        return p
+    queue = read(raw / 'QUEUE.json')
+    original = json.loads(payload('records/EXACT_QUEUE.json').read_text())
+    require(queue['original_queue_sha256'] == digest(payload('records/EXACT_QUEUE.json')), 'queue identity')
+    require(queue['original_runner_sha256'] == digest(payload('records/execute109.py')), 'original runner identity')
+    launch = json.loads(payload('records/LAUNCH_REGISTRATION.json').read_text())
+    require(queue['original_launch_sha256'] == digest(payload('records/LAUNCH_REGISTRATION.json')), 'original launch identity')
+    predicate = original_predicates(payload('records/execute109.py').read_text())[2]
+    identities = read(raw / 'IDENTITY_BEFORE.json')
+    require(identities == read(raw / 'IDENTITY_AFTER.json') == queue['counts']['executable_pins'], 'candidate changed')
+    require(read(raw / 'PRODUCTION_EQUALITY.json')['production_matches'], 'production equality')
+    require(digest(raw / 'run121.py') == queue['launcher_sha256'], 'invoked launcher changed')
+    full = {r['original']: r for r in json.loads(payload('FULL_RAW_INDEX.json').read_text())}
+    prior_manifest = {r['path']: r for r in read(prior / 'FILES_104.json')}
+    seal = read(prior / 'SEAL_104.json')
+    require(digest(prior / 'FILES_104.json') == seal['file_index_sha256'], 'Task104 seal')
+    def prior_payload(p):
+        relative = str(p.relative_to(prior))
+        require(digest(p) == prior_manifest[relative]['sha256'], 'Task104 identity: ' + relative)
+        return p
+    entries = {e['case']: e for e in queue['entries']}
+    require(len(entries) == len(queue['entries']) == len(original) == 1919, 'output denominator')
+    comparisons = {c['case']: c for c in json.loads(gzip.decompress((raw / 'comparison.json.gz').read_bytes()))}
+    literal_sites = {c['case']: c for c in json.loads(gzip.decompress((raw / 'comparison-sites.json.gz').read_bytes()))}
+    require(set(literal_sites) == set(entries), 'literal comparison denominator')
+    require(set(entries) == set(comparisons), 'comparison denominator')
+    selectors = {r['case']: (i, r) for i, r in enumerate(index['packages']['ACT-db2']['records'])}
+    original_outputs = {q['output']['case']: q for q in original}
+    for n, e in entries.items():
+        q = original_outputs[n]
+        require(e['source_sha256'] == q['output']['sha256'] and e['form'] == q['input']['form'] and e['sew'] == q['input']['sew'], 'original source selection')
+        for field in ('source', 'expected', 'capture', 'checker', 'elf'):
+            require(digest(Path(e[field])) == e[field + '_sha256'], 'retained original changed: ' + field)
+        import re
+        sites = [dict(line=i, text=line) for i, line in enumerate(Path(e['source']).read_text().splitlines(), 1)
+                 if re.search(r'\bRVTEST_SIGUPD\w*\s*\(', line)]
+        require(literal_sites[n]['source_sha256'] == e['source_sha256'] and literal_sites[n]['literal_checker_sites'] == sites, 'literal destination/CSR sites changed')
+        c = comparisons[n]
+        require(c['source_sha256'] == e['source_sha256'] and c['expected_sha256'] == e['expected_sha256'], 'comparison binding')
+        if e['prior_task'] == 104:
+            require(n == 'Vls32-vluxei32.v' and q['output']['disposition'] == 'TASK104_ACCEPTED', 'Task104 selection')
+            base = prior / 'pilot' / n
+            for field, suffix in [('source', '.S'), ('expected', '.results'), ('capture', '.sig'), ('elf', '.elf')]:
+                require(digest(prior_payload(base / (n + suffix))) == e[field + '_sha256'], 'Task104 ' + field)
+            expected = prior_payload(base / (n + '.results'))
+            scope = read(prior_payload(prior / 'CHECKER_SCOPE_104.json'))
+            require(e['oracle'] == read(prior_payload(base / 'ORACLE.json')) and e['preservation'] == read(prior_payload(base / 'PRESERVATION.json')), 'Task104 oracle/preservation')
+            prior_payload(prior / 'common-final2/user_env/signature.h')
+        else:
+            _, s = selectors[n]
+            for field in ('source', 'expected', 'capture', 'checker'):
+                require(digest(payload(s[field])) == e[field + '_sha256'], 'original ' + field + ': ' + n)
+            expected = payload(s['expected'])
+            r = json.loads(payload(s['result']).read_text())
+            require(e['original_status'] == r['status'] and e['elf_sha256'] == r['elf_sha256'] == full[e['elf']]['sha256'], 'ELF/status identity')
+            scope_name = 'CHECKER_SCOPE_CORRECTED.json' if r['status'] == 'PASS' else 'CHECKER_SCOPE.json'
+            scope = json.loads(payload(str(Path(s['result']).parent / scope_name)).read_text())
+            require(e['oracle'] == json.loads(payload(s['oracle']).read_text()) and e['preservation'] == json.loads(payload(str(Path(s['result']).parent / 'PRESERVATION.json')).read_text()), 'original oracle/preservation')
+        words = [line.split('0x')[1].lower() for line in expected.read_text().splitlines() if line.startswith('.word 0x')]
+        require(words == c['signature_words_hex'] and len(words) * 4 == c['embedded_bytes'] == e['preservation']['embedded_signature_bytes'], 'signature words changed')
+        require(scope == c['original_checker_scope'], 'destination/CSR checker scope changed')
+    cells = {(c['case'], c['arm']): c for c in queue['calls']}
+    require(len(cells) == len(queue['calls']) == 7668, 'call denominator')
+    blocked = {n for n, e in entries.items() if e['original_status'] == 'REFERENCE_ERROR'}
+    require(blocked == {'Vf32-vfmv.f.s', 'Vf64-vfmv.f.s'}, 'blocker classification')
+    require(set(cells) == {(n, a) for n in set(entries) - blocked for a in ('B', 'M1', 'M2', 'BOTH')}, 'selected arms')
+    records = []; counts = collections.Counter(); by_arm = collections.defaultdict(collections.Counter)
+    for (n, arm), cell in cells.items():
+        e = entries[n]; d = raw / 'raw' / n / arm
+        r = read(d / 'result.json'); command = read(d / 'command.json')
+        require(read(d / 'IDENTITY.json') == read(d / 'IDENTITY_AFTER.json') == identities, 'case candidate changed')
+        require(command[0] in identities, 'unregistered executable')
+        original_command = cell['original_command']
+        if e['prior_task'] == 104:
+            old_command = read(prior_payload(prior / 'pilot' / n / 'raw' / ('DUT-' + arm) / 'command.json'))
+        else:
+            old_command = json.loads(payload('records/cases/' + n + '/raw/DUT-' + arm + '/command.json').read_text())
+        require(original_command == old_command, 'original command changed')
+        def normalize(cmd):
+            return ['--fsroot={WORK}/fs' if a.startswith('--fsroot=') else '--cache={WORK}/cache' if a.startswith('--cache=') else '--dump-tbmap={WORK}/tbmap.txt' if a.startswith('--dump-tbmap=') else '--dump-tbcode={WORK}/tbcode.txt' if a.startswith('--dump-tbcode=') else a for a in cmd[1:]]
+        require(normalize(command) == normalize(old_command) and cell['timeout'] == launch['timeout'] == 300, 'flags/timeout changed')
+        for field in ('source', 'expected', 'elf'):
+            require(r[field + '_sha256'] == cell[field + '_sha256'] == e[field + '_sha256'], 'case identity')
+        require(digest(d / 'stdout') == r['stdout_sha256'] and digest(d / 'stderr') == r['stderr_sha256'], 'altered stream')
+        text = (d / 'stdout').read_text(errors='replace') + (d / 'stderr').read_text(errors='replace')
+        ok = eval(predicate, {'__builtins__': {}}, dict(rc=r['returncode'], raw=text, N=n, sig=None))
+        status = 'TIMEOUT' if r['timeout'] else 'PASS' if ok else 'CRASH' if r['returncode'] < 0 else 'RESULT_MISMATCH'
+        require(status == r['status'] and ok == r['original_predicate_pass'], 'original predicate classification')
+        counts[status] += 1; by_arm[arm][status] += 1
+        records.append(dict(case=n, form=e['form'], sew=e['sew'], arm=arm, VLEN=1024, XLEN=32, ELEN=64,
+                            prior_task=e['prior_task'], original_selector=selectors[n][0] if n in selectors else 'TASK104_JOIN.json#0',
+                            source=e['source'], source_sha256=e['source_sha256'], elf=e['elf'], elf_sha256=e['elf_sha256'],
+                            expected=e['expected'], expected_sha256=e['expected_sha256'], checker=e['checker'], checker_sha256=e['checker_sha256'],
+                            literal_checker_sites=str(raw / 'comparison-sites.json.gz') + '#' + n,
+                            signature_words=len(comparisons[n]['signature_words_hex']), comparison=str(raw / 'comparison.json.gz') + '#' + n,
+                            original_receipt=cell['original_raw'], receipt=str(d), result=status, returncode=r['returncode'],
+                            executable_sha256=identities[command[0]], flags_json=json.dumps(command[1:]),
+                            stdout_sha256=r['stdout_sha256'], stderr_sha256=r['stderr_sha256']))
+    require(dict(counts) == read(raw / 'EXECUTION_COUNTS.json'), 'execution count mismatch')
+    forms = []
+    for f in index['forms']:
+        rows = [r for r in records if r['form'] == f['form']]
+        forms.append(dict(form=f['form'], applicability=f['applicability'], family=f['family'], original_selectors=f['selectors'],
+                          source_cases=sorted({r['case'] for r in rows}), tested_configurations=sorted({(r['arm'], r['VLEN']) for r in rows}),
+                          checked=any(r['result'] == 'PASS' for r in rows), counts=dict(collections.Counter(r['result'] for r in rows)),
+                          comparisons=sorted({r['comparison'] for r in rows}),
+                          literal_checker_sites=sorted({r['literal_checker_sites'] for r in rows}), receipts=sorted({r['receipt'] for r in rows}),
+                          blocked_original_sources=sorted(n for n in blocked if entries[n]['form'] == f['form'])))
+    result = dict(total=7668, counts=dict(counts), counts_by_arm={a: dict(c) for a, c in by_arm.items()},
+                  unattempted=0, original_reference_blocked_outputs=2, withheld_blocked_arm_slots=8,
+                  blocked_cases=sorted(blocked), new_reference_calls=0, tested_original_outputs=1917,
+                  checked_union_count=sum(f['checked'] for f in forms), per_form=forms,
+                  comparison_sha256=digest(raw / 'comparison.json.gz'), comparison_sites_sha256=digest(raw / 'comparison-sites.json.gz'),
+                  inputs={str(p): digest(p) for p in (raw / 'QUEUE.json', package / 'FILES.json', prior / 'FILES_104.json')},
+                  scope='Original destination/CSR/signature predicates on retained data only. Static source setup is not runtime geometry; signature words are frozen expectations, not complete actual snapshots. General semantic obligations and per-PC optimized admission remain untested.')
+    output.mkdir(parents=True, exist_ok=False)
+    with (output / 'replay-receipts.csv').open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, list(records[0]), lineterminator='\n'); writer.writeheader(); writer.writerows(records)
+    (output / 'scope.json').write_text(json.dumps(result, indent=2) + '\n')
+    return result
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--forms', type=Path)
@@ -355,6 +489,8 @@ def main():
     p.add_argument('--candidate')
     p.add_argument('--arm')
     p.add_argument('--navigation', type=Path, help='select from compressed original-case index')
+    p.add_argument('--act-db2-replay', type=Path, help='audit current-build original ACT db2 selfchecks')
+    p.add_argument('--act-prior-root', type=Path, help='retained Task104 sealed raw root')
     p.add_argument('--chips-replay', type=Path, help='audit new-build raw with retained CHIPS selectors')
     p.add_argument('--original-manifest', type=Path, help='unchanged sealed CHIPS manifest')
     p.add_argument('--original-runner', type=Path, help='retained unchanged CHIPS runner')
@@ -367,6 +503,15 @@ def main():
                               ('ACT-db2', a.act_db2_package), ('Ara', a.ara_package)] if v}
     if a.navigation:
         import gzip
+        if a.act_db2_replay:
+            if not a.act_db2_package or not a.act_prior_root:
+                p.error('--act-db2-replay requires --act-db2-package and --act-prior-root')
+            index = json.loads(gzip.decompress(a.navigation.read_bytes()))
+            result = act_db2_replay(index, a.act_db2_replay, a.act_db2_package, a.act_prior_root, a.output)
+            result['inputs'][str(a.navigation)] = digest(a.navigation)
+            (a.output / 'scope.json').write_text(json.dumps(result, indent=2) + '\n')
+            print(json.dumps({k: result[k] for k in ('total', 'counts', 'checked_union_count', 'unattempted')}))
+            return
         if a.chips_replay:
             if not a.original_manifest or not a.original_runner:
                 p.error('--chips-replay requires --original-manifest and --original-runner')

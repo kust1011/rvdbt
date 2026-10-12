@@ -25,6 +25,12 @@ The accepted form union stays **595**. The retained clean961 executable/library
 and tool identities are in `records/LAUNCH_REGISTRATION.json`; these receipts do
 not transfer to newer builds.
 
+The [Task121 current-production regression](../current-production-task121/README.md)
+reexecutes all 1,917 accepted original files, including the Task104 reuse: 7,668
+DUT PASS, zero failures/timeouts/eligible-unattempted, 590 checked forms in this
+corpus. Both original reference blockers stay distinct; no reference was rerun.
+Original Task109/110/111 counts below remain historical.
+
 The unchanged inspection archive is published in
 [Release rvv-act-db2-20261012](https://github.com/kust1011/rvdbt/releases/tag/rvv-act-db2-20261012)
 in [kust1011/rvdbt](https://github.com/kust1011/rvdbt), tagged at reviewed delivery

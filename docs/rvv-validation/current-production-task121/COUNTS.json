@@ -1,0 +1,63 @@
+{
+  "outputs": 1919,
+  "applicable_accepted_outputs": 1917,
+  "Task109_accepted_outputs": 1916,
+  "Task104_reused_output": 1,
+  "original_reference_blocked_outputs": 2,
+  "blocked_cases": [
+    "Vf32-vfmv.f.s",
+    "Vf64-vfmv.f.s"
+  ],
+  "scheduled_DUT_calls": 7668,
+  "per_arm": {
+    "B": 1917,
+    "M1": 1917,
+    "M2": 1917,
+    "BOTH": 1917
+  },
+  "VLEN": 1024,
+  "XLEN": 32,
+  "ELEN": 64,
+  "by_source_sew": {
+    "8": 399,
+    "16": 437,
+    "32": 568,
+    "64": 513
+  },
+  "workers": 4,
+  "timeout": 300,
+  "new_reference_calls": 0,
+  "executable_pins": {
+    "/home/vick/rvdbt-special-memory-20261012-task118/build/bin/elfrun": "533443050f4d1ad4dc49ca74f3e5ac4ca1ccc576f2b107d3771412a218ac3e31",
+    "/home/vick/rvdbt-special-memory-20261012-task118/build/lib/libdbtjitshared.so": "1773ca2bf867b0d3bdd76f1b60b168cbeda6d620a71ebd0ae9653d6da6feea6d"
+  },
+  "PASS": 7668,
+  "FAIL": 0,
+  "CRASH": 0,
+  "TIMEOUT": 0,
+  "RUNNER_ERROR": 0,
+  "eligible_unattempted": 0,
+  "withheld_blocked_arm_slots": 8,
+  "checked_union": 590,
+  "checked_by_arm": {
+    "B": 590,
+    "M1": 590,
+    "M2": 590,
+    "BOTH": 590
+  },
+  "source_equality_inputs": 282,
+  "test_only_source_difference": "dbt/qmc/llvmgen/rvv_llvm_wholereg_mem_test.cpp",
+  "signature_words_tested_files": 52804952,
+  "literal_checker_sites_all_1919_outputs": 1393130,
+  "raw_remote": "xbd:/home/vick/act-current121",
+  "raw_local": "/home/user/research/materials/act-current121-raw-20261012",
+  "comparison_sha256": "7690c3648c506ad0c8dd59003302e87d32640a898fdb0441edd32d1ef9b03480",
+  "comparison_sites_sha256": "f6cab77795ac088a96b97b33c6e9abccc984089ffcc7c4902d0858fe739ac7b0",
+  "queue_sha256": "080e18c7bfbc983cd60f91d098f62a0121e2dda54dc363a1811361e6764e365d",
+  "original_queue_sha256": "50e4653dc3a58249f73db41024531f2351c080be5737babfe17058a49ba39d04",
+  "original_runner_sha256": "8c0d53ca1d33b05a8248725444938dd2e509efb1e81e82ef40c2f57147cb4257",
+  "launcher_sha256": "c19c6de5d52cee8328d94b31d026ddf7e9cf55c8aa79f4ea2241147ea4e8b410",
+  "reporter_sha256": "ee294e1940c827f7073ceb17140757e30c38e4a23c5ca5c9399952bd4a90f46a",
+  "transport_attempts": 1,
+  "transport_failures": 0
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "attempt": 1,
+    "phase": "source equality",
+    "error": "assertion used qcg instead of llvmgen for the sole host-test path",
+    "guest_calls": 0
+  },
+  {
+    "attempt": 2,
+    "phase": "source equality",
+    "status": "PASS",
+    "guest_calls": 0
+  }
+]
