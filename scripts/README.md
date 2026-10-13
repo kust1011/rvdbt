@@ -46,4 +46,5 @@ Portable full Ara vredsum and retained RVVTS API sequence replay: see
 controls use the pinned original MachineState comparator. They do not add ISA counts.
 
 The [reviewer entry](../docs/rvv-validation/delivery-task182/README.md) uses
-`rvv_verify.py list|show|command|smoke` and the existing directed executor/checkers.
+`rvv_verify.py list|show|command|smoke|preflight|export` and the existing directed executor/checkers. `rvv_reproduce.py preflight|run`
+builds and checks one ordinary vadd unit with installed pinned reference/DUT tools.

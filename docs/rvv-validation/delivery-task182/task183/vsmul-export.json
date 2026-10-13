@@ -1,0 +1,183 @@
+{
+  "entry": "b159-016",
+  "unit": "vsmul-w128-e8-mf8-vv-zero",
+  "cases": 124,
+  "source_manifest_sha256": "55514b9feb3c8bc18036a54588359d1c7a2bbe0da49b881adaa8e46b46c30b99",
+  "source_selector_sha256": "29990c2c64b12550ecc1e41f780292694a6fcff23a75f0aa8c2721b7c5ba92fc",
+  "files": {
+    "vsmul-w128-e8-mf8-vv-zero/test.S": {
+      "bytes": 703388,
+      "sha256": "02ddccaaf785213b9066862fe262db9d6ebbee41d6fc6814c9f4c3968ae3dd00"
+    },
+    "vsmul-w128-e8-mf8-vv-zero/test.elf": {
+      "bytes": 349696,
+      "sha256": "e253d801eab422d035a60bb50b4de4768c29a62cd6305ad908911fbddc797b03"
+    },
+    "runs/vsmul-w128-e8-mf8-vv-zero/B/command.json": {
+      "bytes": 1765,
+      "sha256": "0a0bc7d27ee1cbe1a6318a4a10a8eaea4dcf2ccc4c59772c70fc006c527c56fc"
+    },
+    "runs/vsmul-w128-e8-mf8-vv-zero/Reference/command.json": {
+      "bytes": 215,
+      "sha256": "9dc053993e5ceabf2ed94ece4b73a63610aeaea78045d31020ea3eb88658cafc"
+    },
+    "runs/vsmul-w128-e8-mf8-vv-zero/Reference/execution.json": {
+      "bytes": 283,
+      "sha256": "5e2fd1c780828c2cf147efe9cdc5c5744e71860002b463c3481812168059c7ce"
+    },
+    "runs/vsmul-w128-e8-mf8-vv-zero/Reference/checks.json": {
+      "bytes": 43481,
+      "sha256": "c10eeb14cdbf1356a9db0e86371098a539d9036ba0bdb5a4830ae3d50ff3e828"
+    },
+    "runs/vsmul-w128-e8-mf8-vv-zero/Reference/packets.bin": {
+      "bytes": 138880,
+      "sha256": "eb3f543ac285a702d3ef1a36da84452b89f47d587022e3582a6d4a41e9d3a5ee"
+    },
+    "manifest.json": {
+      "bytes": 62307,
+      "sha256": "f03400e04dd2b548d601aec697794eee64429c55acd1e6668d8e522bd30bfb6d"
+    },
+    "build-commands.json": {
+      "bytes": 369,
+      "sha256": "643e2d3d6458851e7cf25dfc0ff1f298893b0a6593fa6eaf2cb9e1e90a57a1cc"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/audit.py": {
+      "bytes": 12387,
+      "sha256": "6802ee9c2b583a453d103f82062e0b2e9a191f1b288d15aa988a7e9f72d955c6"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/carry149_next.py": {
+      "bytes": 8846,
+      "sha256": "89d6fb64cd9822d1b595350280c20f704e1a7ab667ea627049b2ccfc953f20e7"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/config.py": {
+      "bytes": 8571,
+      "sha256": "345cd856dd870872a368a7b57c85be55b2cf8cf18613307f54607edcde6178f1"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/config148.py": {
+      "bytes": 2287,
+      "sha256": "83bb5a51474fab1fe524f557761449b3665271bf6d47d2c50a21c5e002c5a3b3"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/fixedpoint155.py": {
+      "bytes": 5145,
+      "sha256": "fbce71e33856c2755e925e7c0b89701d75fd8d427cf5adaf73c4a2b9d7e90567"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/mergemove150_next.py": {
+      "bytes": 5935,
+      "sha256": "4616587e8f9dadafd4ce734ced5576bdcdb23fc214d438dbafb9b02e37fc0ba5"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/muldiv149.py": {
+      "bytes": 4582,
+      "sha256": "0c0c7ff68625c8d3421c27e9dadddbfff2b6983f7ad1307bf896e36586d4277e"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/narrowing155_next.py": {
+      "bytes": 3000,
+      "sha256": "037517f287288cc9f74946be8e0ca198f3ce455c1a391ec3f3ff70cb821e6597"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject.py": {
+      "bytes": 4763,
+      "sha256": "d55a6f24ee741eff9e7c68104f7d251be67dfca893f8634bd740f8d048637cf9"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject148.py": {
+      "bytes": 7009,
+      "sha256": "83dd59fd0c9228d17116dc75d642a0b94289520dc66e8881aba465bf5f0c5d29"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject149.py": {
+      "bytes": 6316,
+      "sha256": "b9b5601488cd7306f0e51823cfb024888c6ba3eb2ac3a90feed01aef8485bff2"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject150.py": {
+      "bytes": 4221,
+      "sha256": "b2113c9c454c9dd164e5d7a0bce7e38eed6fed9a60e0746b0be06bf2188a21b2"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject153.py": {
+      "bytes": 3065,
+      "sha256": "aef5b10ed668da8596354f5053170a4b23e1ea1d21667faf9d75a82e6de6917a"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject153_boundaries.py": {
+      "bytes": 1863,
+      "sha256": "c10702657dc8ca9a2f83510be878ca8ef65c0ca8250ffef2b35c03b9d92376d7"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject_config.py": {
+      "bytes": 4999,
+      "sha256": "8909eae14d8270c4964d61b979205ffb479e86761b3807d3acb4a4235ac17df9"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject_fixedpoint155.py": {
+      "bytes": 2866,
+      "sha256": "03631d8968ef4d792cd5ea12092d593f0feaa865d4ef34f4f1dcf5813067da37"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject_mergemove150_next.py": {
+      "bytes": 3609,
+      "sha256": "38dfd7f937e7cb97389529af102f2603e0519090cf32611389e280e31cd11755"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject_rounding153_next.py": {
+      "bytes": 2875,
+      "sha256": "9eaf76732c800591345d9ea7bfa21d5e5a3122711fdd0cd0db9514a4c62bbb4e"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/reject_zero149.py": {
+      "bytes": 1782,
+      "sha256": "9e3378418d073622ffebbd275862639972976523e7d97d4975e317580c639459"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/repair_aliases149.py": {
+      "bytes": 2562,
+      "sha256": "8b67b364f729f47a1b373e8531c7610bc44544477dc3f0ce45ae4f1efa249e3a"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/review149.py": {
+      "bytes": 3016,
+      "sha256": "2d8da1e2d19a31be3ad72c69da8977b1695cd6e85a433810d8154c3e893b91f5"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/rounding153_next.py": {
+      "bytes": 5069,
+      "sha256": "d0996f6af3ac2e90bb6a0933b8386a8d1565353d62cffd8108a68c6d08ac94f7"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/saturation153.py": {
+      "bytes": 6664,
+      "sha256": "82f28a8d8e099d122d3cd3ceff32fbb51014fd0b74072e41058e7123ed4f8c21"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/scaling155_next.py": {
+      "bytes": 2694,
+      "sha256": "4a51efd031d04f26f4b1b1af464b2072260a20b383144e26a3d0b091ff781ef2"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/shift148.py": {
+      "bytes": 4068,
+      "sha256": "e2b617e07fdf37e2a999e81d4e38aaa87a1abe81ab234d107292183fa7c5f535"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/storage149.py": {
+      "bytes": 4367,
+      "sha256": "57ab6ecbd6e1246ed621abab4c649fda1ee0c248a370288ac513251660fa39c6"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/summarize148.py": {
+      "bytes": 2839,
+      "sha256": "ba8431ae49f5c3f40ea1f57568f20b956de27377b5668ea22eba0e136f4e1685"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/test_carry149_next.py": {
+      "bytes": 6547,
+      "sha256": "9874d05597444bd4437302357cd2419ad35990d03ef321da6be40457da671be0"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/test_fixedpoint155.py": {
+      "bytes": 1752,
+      "sha256": "b05994349ba2d7742a8f347c17280fc991a1976092dd0acfcdc38c92da575478"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/test_mergemove150_next.py": {
+      "bytes": 4296,
+      "sha256": "e37f990832c1bb4608daae878b24d169c0b97b7445ffec8e18ae69da8a18cf81"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/test_rounding153_next.py": {
+      "bytes": 1536,
+      "sha256": "8b998969a038adf19cfe4dd5d8ca131a25726462446e115940c83c35214e942d"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/test_storage149.py": {
+      "bytes": 2632,
+      "sha256": "d838cd5263caf778e452b955afafdf1539fe9e3172d7496290827e43e08ea71f"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/test_vadd.py": {
+      "bytes": 2277,
+      "sha256": "fbfe3dbeec0bba13e4c7943230343fac8000bd5fe88560c6e2495c5f8e6ef981"
+    },
+    "__source__/rvv-task159-full/scaling/scripts/vadd.py": {
+      "bytes": 27132,
+      "sha256": "8e1a72435517d0d4a8f27a21ffeef82bdca14f99d5f377dcc1e895e64f7e91bf"
+    }
+  },
+  "bytes": 1471956,
+  "scope": "one complete accepted unit; retained ELF/reference, exact pinned source/data; no installed binary dependencies"
+}

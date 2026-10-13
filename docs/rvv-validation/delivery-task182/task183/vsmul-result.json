@@ -1,0 +1,527 @@
+{
+  "status": "PASS_BOUNDED_UNIT",
+  "form": "vsmul.vv",
+  "arm": "B",
+  "checks": 124,
+  "guest_calls": 1,
+  "reference_calls": 0,
+  "ELF_rebuilds": 0,
+  "DUT_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+  "library_sha256": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+  "guest_sha256": "e253d801eab422d035a60bb50b4de4768c29a62cd6305ad908911fbddc797b03",
+  "reference_sha256": "eb3f543ac285a702d3ef1a36da84452b89f47d587022e3582a6d4a41e9d3a5ee",
+  "output_sha256": "eb3f543ac285a702d3ef1a36da84452b89f47d587022e3582a6d4a41e9d3a5ee",
+  "reference_command": [
+    "/home/vick/rvv-directed-task145/deps/spike",
+    "--isa=rv32gcv_zvl128b",
+    "/home/vick/rvv-directed-task145/deps/pk",
+    "/dev/shm/rvv-task158-fixedpoint-full/scaling/corpus/vsmul-w128-e8-mf8-vv-zero/test.elf"
+  ],
+  "checker_sha256": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56",
+  "checker_modules": {
+    "/tmp/rvv-delivery-reproduce183/scripts/rvv/directed/storage149.py": "57ab6ecbd6e1246ed621abab4c649fda1ee0c248a370288ac513251660fa39c6",
+    "/tmp/rvv-delivery-reproduce183/scripts/rvv/directed/vadd.py": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56",
+    "/tmp/rvv-delivery-reproduce183/scripts/rvv/directed/saturation153.py": "82f28a8d8e099d122d3cd3ceff32fbb51014fd0b74072e41058e7123ed4f8c21",
+    "/tmp/rvv-delivery-reproduce183/scripts/rvv/directed/fixedpoint155.py": "fbce71e33856c2755e925e7c0b89701d75fd8d427cf5adaf73c4a2b9d7e90567",
+    "/tmp/rvv-delivery-reproduce183/scripts/rvv/directed/rounding153_next.py": "d0996f6af3ac2e90bb6a0933b8386a8d1565353d62cffd8108a68c6d08ac94f7",
+    "/tmp/rvv-delivery-reproduce183/scripts/rvv/directed/delivery155_adapter.py": "bb336b89e5f920eef7238dbde7ef36be84bce0109453f1453f9c518022337d73"
+  },
+  "cases": [
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length0-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length0-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length0-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length0-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length1-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length1-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length1-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length1-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length2-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length2-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length2-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-length2-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-all-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-all-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-all-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-all-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-off-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-off-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-off-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-off-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-alternating-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-alternating-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-alternating-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-alternating-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-on-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-on-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-on-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-on-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-off-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-off-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-off-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-mask-single-off-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy01-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy01-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy01-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy01-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy10-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy10-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy10-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy10-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy11-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy11-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy11-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-policy11-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source2-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source2-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source2-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source2-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-end-group-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-end-group-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-end-group-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-end-group-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source1-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source1-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source1-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-dest-source1-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-same-sources-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-same-sources-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-same-sources-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-same-sources-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,128-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,127-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair127,127-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair1,64-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair3,64-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-1,64-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-3,64-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,0-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,-1-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-sticky-preserved-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat0-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat1-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-saturation-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-zero-saturation-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-tail-saturation-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-partial-saturation-rm0",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,128-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,127-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair127,127-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair1,64-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair3,64-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-1,64-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-3,64-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,0-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,-1-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-sticky-preserved-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat0-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat1-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-saturation-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-zero-saturation-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-tail-saturation-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-partial-saturation-rm1",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,128-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,127-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair127,127-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair1,64-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair3,64-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-1,64-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-3,64-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,0-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,-1-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-sticky-preserved-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat0-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat1-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-saturation-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-zero-saturation-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-tail-saturation-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-partial-saturation-rm2",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,128-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,127-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair127,127-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair1,64-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair3,64-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-1,64-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair-3,64-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,0-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-pair128,-1-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-sticky-preserved-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat0-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-saturating-sat1-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-saturation-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-zero-saturation-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-tail-saturation-rm3",
+      "status": "PASS"
+    },
+    {
+      "case": "vsmul-w128-e8-mf8-vv-masked-partial-saturation-rm3",
+      "status": "PASS"
+    }
+  ]
+}

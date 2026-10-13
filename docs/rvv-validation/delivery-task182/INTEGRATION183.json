@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "scripts/rvv/directed/fixedpoint155.py",
+      "sha256": "fbce71e33856c2755e925e7c0b89701d75fd8d427cf5adaf73c4a2b9d7e90567",
+      "dirty_source": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/directed/fixedpoint155.py",
+      "accepted_snapshot": "xbd:/home/vick/rvv-task159-full/scaling/scripts/fixedpoint155.py",
+      "source_commit": "481bfb56362952551be7367fc12d48abb198074b plus uncommitted file; exact byte import, not a claimed source commit"
+    },
+    {
+      "path": "scripts/rvv/directed/scaling155_next.py",
+      "sha256": "4a51efd031d04f26f4b1b1af464b2072260a20b383144e26a3d0b091ff781ef2",
+      "dirty_source": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/directed/scaling155_next.py",
+      "accepted_snapshot": "xbd:/home/vick/rvv-task159-full/scaling/scripts/scaling155_next.py",
+      "source_commit": "481bfb56362952551be7367fc12d48abb198074b plus uncommitted file; exact byte import, not a claimed source commit"
+    },
+    {
+      "path": "scripts/rvv/directed/narrowing155_next.py",
+      "sha256": "037517f287288cc9f74946be8e0ca198f3ce455c1a391ec3f3ff70cb821e6597",
+      "dirty_source": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/directed/narrowing155_next.py",
+      "accepted_snapshot": "xbd:/home/vick/rvv-task159-full/scaling/scripts/narrowing155_next.py",
+      "source_commit": "481bfb56362952551be7367fc12d48abb198074b plus uncommitted file; exact byte import, not a claimed source commit"
+    }
+  ],
+  "shared_dispatcher": "preserved 9b768b6",
+  "default_adapter": "scripts/rvv/directed/delivery155_adapter.py",
+  "archival_bundles": "directed-task173/tools and directed-task176/tools retain historical dispatchers; not default sys.path"
+}

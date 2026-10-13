@@ -60,7 +60,11 @@ Keep raw inputs outside the repository. `--raw-root` replaces the index's
 original `/home/vick` prefix: e.g. `RAW/rvv-directed-task145/corpus`. Existing
 extractions with another layout can be arranged using directory symlinks in a
 staging root. Original inputs remain read-only. `--entry` selects another
-accepted batch entry for the form; `--unit` selects an exact existing unit.
+accepted batch entry for the form; `--unit` selects an exact existing unit. Compact accepted row ranges are persisted
+in the index and verified against their original selector hashes. Rejected/reserved
+rows cannot be selected; a unit containing any excluded row is refused. With no
+`--entry`, selection searches later accepted entries if an earlier entry has no
+matching complete unit. Missing retained entry directories are reported if no match exists.
 `--sew`, `--lmul`, `--vlen`, `--mask`, `--vstart`, `--vl` and
 `--length zero|partial|full` filter real rows. No match fails.
 
@@ -79,8 +83,8 @@ nice -n 10 python3 scripts/rvv_verify.py smoke --form vadd.vv \
 
 `command` prints the selected row, complete unit, relocated recorded DUT flags,
 existing build/reference recipes and input locations without running a guest.
-Historical build/reference recipes retain source/output locators: relocate those
-arguments before invoking the existing family build/driver entry. Optional
+Historical recipes are inspection records. The executable fresh vadd path below
+uses current APIs and relocates all paths; other families use selected retained packages. Optional
 `--compiler`, `--link`, `--spike`, `--pk`, `--sail` substitute tool paths in
 these inspection recipes. The smoke reuses inputs and needs none of these
 executables. `--checkout`, `--index`, `--tools`, `--dut`, `--dut-lib`,
@@ -101,18 +105,101 @@ do not expose online checking. Its own usage is one guest/one predicate process,
 own8/2 and shared16/4 limits; capacity failure is explicit, never a silent skip.
 Do not launch multiple copies to bypass admission.
 
-Use the entry's pinned accepted raw `tools` snapshot with `--tools` for families
-whose current shared checkout dispatcher differs. Supplied `--tools` Python snapshots must match the entry's exact source pins.
-Legacy `check` snapshots use
-the same existing check API through a compatibility call. The default checkout
-is demonstrated for vadd. [INTEGRATION.json](INTEGRATION.json) lists the precise
-committed files imported from session3 `481bfb56362952551be7367fc12d48abb198074b`.
-The current shared `vadd.py`/`audit.py` remain at9b768b6; older session3 versions
-must not replace them. Task155's final `fixedpoint155.py`, `scaling155_next.py`,
-`narrowing155_next.py` and shared dispatcher changes, and Task181's queue/tools,
-are still dirty owner work: they are not copied or committed here. Until their
-owner delivers commits, use the retained pinned raw tools for those families.
-Missing modules/data fail explicitly.
+Default execution uses the current checkout dispatcher and family adapters.
+[INTEGRATION183.json](INTEGRATION183.json) records exact imports of finalized
+`fixedpoint155.py`, `scaling155_next.py`, and `narrowing155_next.py`: the original
+Task155 dirty files equal the accepted Task159 snapshots byte for byte. The
+small delivery adapter routes retained fixed-point/averaging packets without
+replacing shared `vadd.py` or `audit.py`. This is file provenance, not a fabricated
+owner commit. Task181 queue modules remain owner work and are not imported.
+The older Task173/176 tool directories are archival bundles with their original
+relative data, not default dispatcher replacements. [INTEGRATION.json](INTEGRATION.json)
+retains the original27 committed imports.
+
+For another family's exact historical snapshot, use `--tools`; Python files
+must match the entry pins. The export below includes pinned source/data paths
+so those snapshots need no dirty worker checkout. A legacy `check` API is
+adapted to existing ISA/reference calls. Missing modules/data fail explicitly.
+
+## Fresh clean-checkout vadd demonstration
+
+Python3 on Linux with the existing179-compatible x86 host/runtime, an installed
+Clang RV32 assembler and LLD, and existing pinned Spike/pk executables are
+required. No download/install, binary dependency bundling, or reference rebuild
+is performed. Historical compilation used Clang20; the actual183 demonstration
+uses installed `/usr/bin/clang-22` and records its distinct hash, with no
+historical ELF identity claim. The generator and predicates remain the checkout's
+existing `vadd.py`/`storage149.py` APIs. Linker input is committed and hash checked.
+Spike source is pinned to `20feb9c2bf2a7deab964d8190b0cbd4b4131bec3`; pk source
+is pinned to `9c61d29846d8521d9487a57739330f9682d5b542` in
+[sources.lock.json](../../../scripts/rvv/sources.lock.json). Executable hashes
+are enforced from [Task145 identities](../directed-task145/IDENTITIES.json),
+with the179 DUT/library hashes enforced separately. These retained executables
+must be supplied; the script does not attempt to recreate their build environments.
+
+Actual xbd commands from the fresh source stage `/tmp/rvv-delivery-reproduce183`:
+
+```sh
+cd /tmp/rvv-delivery-reproduce183
+# Replace these roots with existing installed tools on your host.
+DUT=/home/vick/rvdbt-host512-task179-build/build/bin/elfrun
+LIB=/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so
+REF=/home/vick/rvv-directed-task145/deps
+python3 scripts/rvv_reproduce.py preflight --compiler /usr/bin/clang-22 \
+  --spike "$REF/spike" --pk "$REF/pk" --dut "$DUT" --dut-lib "$LIB" \
+  --output /home/vick/rvv-task183-new-vadd
+nice -n 10 python3 scripts/rvv_reproduce.py run --compiler /usr/bin/clang-22 \
+  --spike "$REF/spike" --pk "$REF/pk" --dut "$DUT" --dut-lib "$LIB" \
+  --output /home/vick/rvv-task183-new-vadd-final
+```
+
+The run uses `vadd.build(..., selected_units=[...], jobs=1)`, then existing
+`execute` and independent `check_isa`/`check_reference` calls. It generates one
+17-case `w128-e32-m1-vv-zero` unit, builds one ELF, executes one pinned Spike/pk
+reference and one179 B DUT call. It covers the unit's existing masks/policies/
+aliases and lengths without expanding the generator. Output must be new;
+`--link`, `--library-path` and bounded `--timeout` are configurable. Both scripts
+use Task181 shared guest admission and its predicate-slot locks; the fresh path
+also checks the shared build pool. The fresh path waits at most30 seconds for
+a predicate slot (`--admission-timeout 0..60`); other occupied capacity fails for later retry.
+No full queue, all-form rebuild, or general portability is claimed.
+
+## Compact retained packages for other families
+
+General fresh regeneration is not exposed for other families: historical
+snapshots have different dispatch/generator APIs, some require adjacent JSON/
+spec data, and current dispatcher assembly routing is not universal. Required
+input is one **complete accepted unit** with original manifest/build identity,
+`test.S`, `test.elf`, chosen-arm command, successful Reference command/execution/
+checks/packets, and the entry's pinned tool/data files. `preflight` verifies
+those sources and prints file hashes/size; it runs no guest. `export` verifies
+the large originals once, writes logical selected files, and derives a compact
+one-unit index with original manifest/selector provenance in `EXPORT.json`.
+The exported row retains historical marginal dimensions; it does not claim the
+small package contains every indexed configuration. Use its explicit `export_provenance`
+unit/case count for package contents; original row counts describe the source index. No unselected streams,
+caches or installed compiler/reference/DUT binaries are copied.
+
+```sh
+nice -n 10 python3 scripts/rvv_verify.py preflight --form vsmul.vv \
+  --unit vsmul-w128-e8-mf8-vv-zero --raw-root /home/vick \
+  --output /home/vick/rvv-task183-vsmul-package
+nice -n 10 python3 scripts/rvv_verify.py export --form vsmul.vv \
+  --unit vsmul-w128-e8-mf8-vv-zero --raw-root /home/vick \
+  --output /home/vick/rvv-task183-vsmul-package
+PKG=/home/vick/rvv-task183-vsmul-package
+nice -n 10 python3 scripts/rvv_verify.py smoke --form vsmul.vv \
+  --index "$PKG/index.json.gz" --raw-root "$PKG/raw" --dut "$DUT" \
+  --unit vsmul-w128-e8-mf8-vv-zero --output /home/vick/rvv-task183-vsmul
+```
+
+Transfer only that package to the reviewer. The shown smoke uses the checkout's
+new adapter; `--tools` may instead point to the exported snapshot path printed
+by `export` for families needing a historical dispatcher. Replace form/unit
+for another selected package; units above128 cases need existing family APIs
+and are refused by this bounded smoke. Selecting reserved/nonaccepted rows or
+an incomplete accepted unit always fails. Retained package checks preserve
+independent references and oracle semantics; export is not new ISA acceptance.
 
 ## Demonstration and rejection protocol
 
@@ -174,7 +261,9 @@ and P4-04 execution remain prohibited. Retain the two ACT reference blockers
 and Ara's16 scoped MAC calls with original TEST_CASE3/4 failures; no whole-file
 PASS or completed fullRVV proof follows from595 finite forms.
 
-P5 still needs Task155/181 committed integration and reviewed final179 directed,
+P5 still needs owner-reviewed Task155/181 integration and reviewed final179 directed,
 external, focused-fault and resource receipts; then main-owned thesis/PDF,
 author guide and reply draft updates. This local code/test delivery does not
 publish, email, or close those dependencies.
+
+Task183 actual bounded results and remaining gaps: [SESSION0_RESULT_183.md](../../../SESSION0_RESULT_183.md).

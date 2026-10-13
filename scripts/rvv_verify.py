@@ -15,6 +15,47 @@ def form(c):
  op=c.get('mnemonic','vadd');return op if '.' in op or op.startswith('vset') else op+'.'+c['form']
 def relocated(path,old,new):
  return Path(new)/Path(path).relative_to(old)
+def ranges(indices):
+ out=[]
+ for i in indices:
+  if out and i==out[-1][1]:out[-1][1]=i+1
+  else:out.append([i,i+1])
+ return out
+def accepted_cases(e,cs):
+ rr=e.get('accepted_ranges')
+ if rr is None:raise ValueError('index lacks accepted selectors; regenerate index')
+ indices=[];last=0
+ for lo,hi in rr:
+  if not (isinstance(lo,int) and isinstance(hi,int) and last<=lo<hi<=len(cs)):raise ValueError('invalid accepted range')
+  indices.extend(range(lo,hi));last=hi
+ if sha(json.dumps(indices,separators=(',',':')).encode())!=e['accepted_selector_sha256']:raise ValueError('accepted selector identity')
+ return [(i,cs[i]) for i in indices]
+def matches(c,a):
+ length='UNKNOWN'
+ if 'vl' in c and 'vlmax' in c:
+  length='zero' if c['vl']==0 else 'full' if c['vl']==c['vlmax'] else 'partial' if 0<c['vl']<c['vlmax'] else 'UNKNOWN'
+ return form(c)==a.form and all(getattr(a,k) is None or c.get(k)==getattr(a,k) for k in ('sew','lmul','vlen','mask','vstart','vl')) and (a.length is None or length==a.length) and (not a.unit or c['unit']==a.unit)
+def select(index,row,a):
+ ids=[r['entry'] for r in row['entries']]
+ if a.entry and a.entry not in ids:raise ValueError('entry does not own form')
+ unavailable=[]
+ for entry_id in ([a.entry] if a.entry else ids):
+  e=index['entries'][entry_id];original=relocated(e['original'],index['original_root'],a.raw_root)
+  try:raw=(original/'manifest.json').read_bytes()
+  except FileNotFoundError:
+   unavailable.append(entry_id);continue
+  if sha(raw)!=e['manifest_sha256']:raise ValueError('manifest identity mismatch '+entry_id)
+  cs=json.loads(raw)['cases'];accepted=accepted_cases(e,cs);allowed={i for i,c in accepted}
+  selected=[c for i,c in accepted if matches(c,a)]
+  units=collections.defaultdict(list);excluded=set()
+  for i,c in enumerate(cs):
+   units[c['unit']].append(c)
+   if i not in allowed:excluded.add(c['unit'])
+  for c in selected:
+   if c['unit'] in excluded:continue
+   group=units[c['unit']]
+   return entry_id,e,original,c,group
+ raise ValueError('configuration has no complete accepted unit; unavailable entries: '+','.join(unavailable))
 def compile_index(a):
  plan=load(a.plan);historical=load(a.historical);rows={r[0]:r for r in historical['rows']}
  assert len(rows)==595 and set(rows)==set(plan['owners'])
@@ -39,6 +80,7 @@ def compile_index(a):
   entries[e['id']]={k:e[k] for k in ('batch','original','tools','install','family','manifest_sha256','build_commands_sha256','flags','tool_pins')}
   entries[e['id']]['generator_module']=e['install'] or GENERATORS.get(e['family'],'UNKNOWN')
   entries[e['id']]['source_test']='manifest unit/test.S; test.elf + build-commands.json; same-ELF Spike or Sail entry/exit adapter'
+  entries[e['id']]['accepted_ranges']=ranges(e['accepted_indices'])
   entries[e['id']]['accepted_selector_sha256']=sha(json.dumps(e['accepted_indices'],separators=(',',':')).encode())
   for f in counts:
    agg[f]['entries'].append(dict(entry=e['id'],cases=counts[f],example=sample[f]))
@@ -57,6 +99,44 @@ def compile_index(a):
   r['replay_command']='python3 scripts/rvv_verify.py command --form '+f+' --raw-root RAW --tools TOOLS --dut DUT --output NEW'
  out={'schema':1,'forms':595,'historical_scope':'finite mixed builds only','P3':'docs/rvv-validation/directed-task180/FINAL_TOTALS.json','final179':'PENDING_TASK181_NOT_IMPORTED','selection_plan_sha256':sha(Path(a.plan).read_bytes()),'original_root':str(a.original_root),'dimension_interpretation':'exact marginal values of selected manifest rows; NOT a Cartesian product or runtime-observed configuration; missing fields remain unknown','entries':entries,'rows':[agg[f] for f in sorted(agg)]}
  Path(a.output).write_bytes(gzip.compress(json.dumps(out,separators=(',',':')).encode(),mtime=0));print('generated 595 forms;',sum(r['case_count'] for r in agg.values()),'selected manifest cases')
+def export_unit(index,row,entry_id,e,original,group,a):
+ # Verify the large source once; the resulting selected package is independently usable.
+ sys.path.insert(0,str(a.checkout/'scripts/rvv/directed'));import storage149 as storage
+ b=original/'build-commands.json'
+ if sha(b.read_bytes())!=e['build_commands_sha256']:raise ValueError('build records identity')
+ unit=group[0]['unit'];builds=[r for r in load(b) if Path(r['command'][-1]).parent.name==unit]
+ files={}
+ for name in ('test.S','test.elf'):
+  files[unit+'/'+name]=storage.verify(original/unit/name)
+ for arm in (a.arm,'Reference'):
+  for name in (('command.json','execution.json','checks.json','packets.bin') if arm=='Reference' else ('command.json',)):
+   path='runs/'+unit+'/'+arm+'/'+name
+   files[path]=storage.verify(original/path)
+ for r in builds:
+  if r['returncode']!=0:raise ValueError('failed selected build')
+  if Path(r['command'][-1]).name=='test.elf' and sha(files[unit+'/test.elf'])!=r['elf_sha256']:raise ValueError('guest identity')
+ rr=load(original/'runs'/unit/'Reference'/'execution.json')
+ if rr['returncode']!=0 or rr['timeout']:raise ValueError('failed reference execution')
+ if sha(files['runs/'+unit+'/Reference/packets.bin'])!=rr['stdout_sha256']:raise ValueError('reference stream identity')
+ refs=load(original/'runs'/unit/'Reference'/'checks.json');passed={r['case'] for r in refs if r['status']=='PASS'}
+ if any(c['id'] not in passed for c in group):raise ValueError('unaccepted reference unit')
+ files['manifest.json']=json.dumps(dict(project_tests=True,family=e['family'],cases=group,units=1)).encode()
+ files['build-commands.json']=json.dumps(builds).encode()
+ # Retain every pinned snapshot source/data dependency, including paths outside tools.
+ for name,h in e['tool_pins'].items():
+  path=relocated(name,index['original_root'],a.raw_root);raw=path.read_bytes()
+  if sha(raw)!=h:raise ValueError('source snapshot identity '+name)
+  files['__source__/'+str(Path(name).relative_to(index['original_root']))]=raw
+ report=dict(entry=entry_id,unit=unit,cases=len(group),source_manifest_sha256=e['manifest_sha256'],source_selector_sha256=e['accepted_selector_sha256'],files={n:dict(bytes=len(v),sha256=sha(v)) for n,v in files.items()},bytes=sum(map(len,files.values())),scope='one complete accepted unit; retained ELF/reference, exact pinned source/data; no installed binary dependencies')
+ if a.action=='preflight':print(json.dumps(report,indent=2));return
+ a.output.mkdir();rawroot=a.output/'raw';target=relocated(e['original'],index['original_root'],rawroot)
+ for n,raw in files.items():
+  dest=rawroot/n.removeprefix('__source__/') if n.startswith('__source__/') else target/n
+  dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw)
+ subset=json.loads(json.dumps(index));ee=subset['entries'][entry_id];ee['manifest_sha256']=sha(files['manifest.json']);ee['build_commands_sha256']=sha(files['build-commands.json']);ee['accepted_ranges']=[[0,len(group)]];ee['accepted_selector_sha256']=sha(json.dumps(list(range(len(group))),separators=(',',':')).encode())
+ subset['entries']={entry_id:ee};rr=json.loads(json.dumps(row));rr['entries']=[r for r in rr['entries'] if r['entry']==entry_id];subset['rows']=[rr];subset['forms']=1;subset['export_provenance']=report
+ (a.output/'index.json.gz').write_bytes(gzip.compress(json.dumps(subset,separators=(',',':')).encode(),mtime=0));save(a.output/'EXPORT.json',report)
+ print(json.dumps(dict(package=str(a.output),raw_root=str(rawroot),index=str(a.output/'index.json.gz'),tools=str(relocated(e['tools'],index['original_root'],rawroot)),bytes=report['bytes']),indent=2))
 def census():
  guests=[];offline=[];external_offline=[];task181_live=False
  for p in Path('/proc').iterdir():
@@ -85,7 +165,7 @@ def validate_packets(v,group,out,ref,rec):
   packet=out[i*size:(i+1)*size];rp=ref[i*size:(i+1)*size];v.check_isa(c,rp,0,False);v.check_isa(c,packet,rec['returncode'],rec['timeout']);v.check_reference(c,packet,rp);result.append(dict(case=c['id'],status='PASS'))
  return result
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['generate','list','show','command','smoke']);p.add_argument('--index',type=Path,default=INDEX);p.add_argument('--checkout',type=Path,default=ROOT);p.add_argument('--form');p.add_argument('--entry');p.add_argument('--unit');p.add_argument('--sew',type=int);p.add_argument('--lmul');p.add_argument('--vl',type=int);p.add_argument('--length',choices=['zero','partial','full']);p.add_argument('--vlen',type=int);p.add_argument('--mask');p.add_argument('--vstart',type=int)
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['generate','list','show','command','smoke','export','preflight']);p.add_argument('--index',type=Path,default=INDEX);p.add_argument('--checkout',type=Path,default=ROOT);p.add_argument('--form');p.add_argument('--entry');p.add_argument('--unit');p.add_argument('--sew',type=int);p.add_argument('--lmul');p.add_argument('--vl',type=int);p.add_argument('--length',choices=['zero','partial','full']);p.add_argument('--vlen',type=int);p.add_argument('--mask');p.add_argument('--vstart',type=int)
  for k in ('plan','historical','raw-root','original-root','tools','dut','dut-lib','spike','pk','sail','compiler','link','output'):p.add_argument('--'+k,type=Path)
  p.add_argument('--library-path',default='');p.add_argument('--arm',choices=['B','M1','M2','BOTH'],default='B');p.add_argument('--timeout',type=int,default=60);a=p.parse_args()
  if a.action=='generate':
@@ -96,17 +176,13 @@ def main():
  row=next((r for r in index['rows'] if r['form']==a.form),None)
  if row is None:p.error('select a known --form')
  if a.action=='show':print(json.dumps(row,indent=2));return
- if not all((a.raw_root,a.dut,a.output)):p.error('command/smoke requires --raw-root --dut --output')
+ if not all((a.raw_root,a.output)) or (a.action in ('command','smoke') and not a.dut):p.error('requires --raw-root --output; command/smoke also requires --dut')
  if a.output.exists():raise ValueError('output already exists; never overwrite')
- ids=[r['entry'] for r in row['entries']]
- entry_id=a.entry or ids[0]
- if entry_id not in ids:raise ValueError('entry does not own form')
- e=index['entries'][entry_id];original=relocated(e['original'],index['original_root'],a.raw_root);manifest=original/'manifest.json';raw=manifest.read_bytes()
- if sha(raw)!=e['manifest_sha256']:raise ValueError('manifest identity mismatch')
- cs=json.loads(raw)['cases'];selected=[c for c in cs if form(c)==a.form and all(getattr(a,k) is None or c.get(k)==getattr(a,k) for k in ('sew','lmul','vlen','mask','vstart','vl')) and (a.length is None or ('zero' if c.get('vl')==0 else 'full' if c.get('vl')==c.get('vlmax') else 'partial' if 0<c.get('vl',-1)<c.get('vlmax',-1) else 'UNKNOWN')==a.length) and (not a.unit or c['unit']==a.unit)]
- if not selected:raise ValueError('configuration has no manifest rows')
- unit=selected[0]['unit'];group=[c for c in cs if c['unit']==unit]
+ entry_id,e,original,selected_case,group=select(index,row,a)
+ unit=selected_case['unit']
  if len({c['vlen'] for c in group})!=1:raise ValueError('mixed VLEN unit')
+ if a.action in ('export','preflight'):
+  export_unit(index,row,entry_id,e,original,group,a);return
  recorded=load(original/'runs'/unit/a.arm/'command.json');d=a.output/'run';fs=a.output/'fs';cache=a.output/'cache';cmd=[str(a.dut),*recorded[1:]]
  for i,x in enumerate(cmd):
   for flag,target in [('fsroot',fs),('cache',cache),('dump-tbmap',d/'tbmap'),('dump-tbcode',d/'tbcode'),('rvv-pc-census-out',d/'pc-census.csv')]:
@@ -122,7 +198,7 @@ def main():
  elif a.spike:
   refcmd[0]=str(a.spike)
   if a.pk:refcmd[2]=str(a.pk)
- detail=dict(build_recipe=build_command,reference_recipe=refcmd,recipes_scope='historical build/reference recipes for inspection; smoke reuses inputs; relocate remaining source/output arguments before rebuilding',form=a.form,entry=entry_id,unit=unit,unit_cases=len(group),selected_case=selected[0],command=cmd,shell='nice -n 10 '+shlex.join(cmd),reference_reused=str(original/'runs'/unit/'Reference'),new_reference_calls=0,new_build_calls=0,tools=str(a.tools or a.checkout/'scripts/rvv/directed'),toolchain=str(a.compiler) if a.compiler else 'NOT_NEEDED_REUSE',spike=str(a.spike) if a.spike else 'NOT_NEEDED_REUSE',sail=str(a.sail) if a.sail else 'NOT_NEEDED_REUSE')
+ detail=dict(build_recipe=build_command,reference_recipe=refcmd,recipes_scope='historical inspection records; fresh vadd uses scripts/rvv_reproduce.py; other families require selected retained packages',form=a.form,entry=entry_id,unit=unit,unit_cases=len(group),selected_case=selected_case,command=cmd,shell='nice -n 10 '+shlex.join(cmd),reference_reused=str(original/'runs'/unit/'Reference'),new_reference_calls=0,new_build_calls=0,tools=str(a.tools or a.checkout/'scripts/rvv/directed'),toolchain=str(a.compiler) if a.compiler else 'NOT_NEEDED_REUSE',spike=str(a.spike) if a.spike else 'NOT_NEEDED_REUSE',sail=str(a.sail) if a.sail else 'NOT_NEEDED_REUSE')
  if a.action=='command':print(json.dumps(detail,indent=2));return
  if os.getpriority(os.PRIO_PROCESS,0)!=10:raise ValueError('smoke requires nice -n 10')
  if not 1<=a.timeout<=120:raise ValueError('smoke timeout must be 1..120')
@@ -133,6 +209,7 @@ def main():
    if sha((a.tools/name).read_bytes())!=h:raise ValueError('tool snapshot identity '+name)
  sys.path.insert(0,str(a.tools or a.checkout/'scripts/rvv/directed'));v=importlib.import_module('vadd')
  if e['install']:importlib.import_module(e['install']).install(v)
+ elif not a.tools and e['family'] in ('rounding153-next','scaling155-next','narrowing155-next','saturation153','saturation153-boundary'):importlib.import_module('delivery155_adapter').install(v)
  if not hasattr(v,'check_isa'):
   if not hasattr(v,'check'):raise ValueError('checker snapshot lacks required check API')
   v.check_isa=lambda c,raw,rc=0,timeout=False:v.check(c,raw,rc,timeout)
@@ -152,6 +229,13 @@ def main():
  # Match historical accepted reference checks, rather than treating all source rows as PASS.
  checks=load(refdir/'checks.json');accepted={r['case'] for r in checks if r['status']=='PASS'}
  if any(c['id'] not in accepted for c in group):raise ValueError('smoke unit contains unaccepted reference rows; select another unit')
+ predicate_lock=None
+ for n in range(2):
+  lock=open('/tmp/rvv-task181-predicate-%d.lock'%n,'a')
+  try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  except BlockingIOError:lock.close();continue
+  predicate_lock=lock;break
+ if predicate_lock is None:raise RuntimeError('Task181 predicate slots occupied; retry later')
  admission_lock=open('/tmp/rvv-shared-admission.lock','a');fcntl.flock(admission_lock,fcntl.LOCK_EX)
  snap=census()
  if len(snap['guests'])>8 or snap['offline_budget_used']>2:raise RuntimeError('shared capacity unavailable; '+json.dumps(snap))
@@ -163,6 +247,7 @@ def main():
  result=validate_packets(v,group,out,ref,rec)
  if sha(a.dut.read_bytes())!=pin or sha(lib.read_bytes())!=libpin:raise ValueError('DUT/library changed during smoke')
  save(a.output/'result.json',dict(status='PASS_BOUNDED_UNIT',form=a.form,arm=a.arm,checks=len(result),guest_calls=1,reference_calls=0,ELF_rebuilds=0,DUT_sha256=pin,library_sha256=libpin,guest_sha256=sha(guest),reference_sha256=sha(ref),output_sha256=sha(out),reference_command=load(refdir/'command.json'),checker_sha256=sha(Path(v.__file__).read_bytes()),checker_modules={str(Path(m.__file__)):sha(Path(m.__file__).read_bytes()) for m in list(sys.modules.values()) if getattr(m,'__file__',None) and Path(m.__file__).resolve().is_relative_to(Path(v.__file__).resolve().parent) and Path(m.__file__).suffix=='.py'},cases=result))
+ predicate_lock.close()
  print('PASS_BOUNDED_UNIT',unit,len(result),'checks')
 if __name__=='__main__':
  try:main()

@@ -1,0 +1,13 @@
+{
+  "retained_failures": [
+    {"output": "xbd:/home/vick/rvv-task183-new-vadd", "error": "Task181 predicate slots occupied; retry later", "compiler_calls": 0, "reference_calls": 0, "DUT_calls": 0},
+    {"output": "xbd:/home/vick/rvv-task183-new-vadd-admitted", "error": "TypeError: Object of type PosixPath is not JSON serializable", "phase": "compiler succeeded; existing build API could not serialize supplied Path compiler argument; caller corrected to string", "compiler_calls": 1, "reference_calls": 0, "DUT_calls": 0}
+  ],
+  "successful_outputs": ["xbd:/home/vick/rvv-task183-vsmul", "xbd:/home/vick/rvv-task183-new-vadd-final"],
+  "total_task183_compiler_calls": 2,
+  "total_task183_reference_calls": 1,
+  "total_task183_DUT_calls": 2,
+  "total_task183_DUT_cases": 141,
+  "total_task183_reference_cases": 17,
+  "historical_failures": "All previous receipts and raw worker trees retained unchanged; no failure reclassified."
+}

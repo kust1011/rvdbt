@@ -1,0 +1,103 @@
+{
+  "entry": "b176-099",
+  "unit": "vfsqrt-v-w128-e32-m1-zero",
+  "cases": 610,
+  "source_manifest_sha256": "51ed0c19d36b53f09dadbffa8bdbe79c05030508ace522acbd094f10c8ed5d7d",
+  "source_selector_sha256": "7fed7a7f5a7226e5a7f12e89d2a400194d2c634c0bb0a7172b29a744fb32bcc1",
+  "files": {
+    "vfsqrt-v-w128-e32-m1-zero/test.S": {
+      "bytes": 3556056,
+      "sha256": "3f379a79df91faf4bc4e7d44f456368b287382b56fa6383cc70610434e878d26"
+    },
+    "vfsqrt-v-w128-e32-m1-zero/test.elf": {
+      "bytes": 1746144,
+      "sha256": "86ab753ed819d069f71c8e82e43d287c3d25a50ac061313d95d24f7cec886551"
+    },
+    "runs/vfsqrt-v-w128-e32-m1-zero/B/command.json": {
+      "bytes": 1699,
+      "sha256": "7b2dea2fa6998255058ae411fbd4f8a397c31ff98f8c9b01081d01fa2c6600bc"
+    },
+    "runs/vfsqrt-v-w128-e32-m1-zero/Reference/command.json": {
+      "bytes": 193,
+      "sha256": "8964cda1a7b8db20334dfbc80416c7f575bb7c6b32e31edfe5efdd13029e1c15"
+    },
+    "runs/vfsqrt-v-w128-e32-m1-zero/Reference/execution.json": {
+      "bytes": 283,
+      "sha256": "3d12d8738e55874d23d4e621b9c677ac8cf7d51401e341de29a64e7d46af3dff"
+    },
+    "runs/vfsqrt-v-w128-e32-m1-zero/Reference/checks.json": {
+      "bytes": 200737,
+      "sha256": "f89f42c3e5bedce6ed38acb1dedf313e61db34e2b566b9dd07fb3fbbd5e279d0"
+    },
+    "runs/vfsqrt-v-w128-e32-m1-zero/Reference/packets.bin": {
+      "bytes": 692960,
+      "sha256": "779d847eb5d4e22ebba25ba4eee0b574e965ef5c9b9fbb5276e2c7a46c21d5d3"
+    },
+    "manifest.json": {
+      "bytes": 337560,
+      "sha256": "9b708b0347b3928a02b62fa57fb29ba5ebd5fac9123fb8c0aa816ab451779062"
+    },
+    "build-commands.json": {
+      "bytes": 438,
+      "sha256": "d407691992b168c825949026f14c9a0ea77a4259b73e3739bf8042fd5da767a7"
+    },
+    "__source__/rvv-task176/tools/admission176.py": {
+      "bytes": 1987,
+      "sha256": "9f97a25324b9f169bb679602d0b0cbd14d29c802c932633f252db87a30f9b1ad"
+    },
+    "__source__/rvv-task176/tools/audit.py": {
+      "bytes": 13093,
+      "sha256": "2708a0fd2cd9c35130a669aa1f73593255b550c6dc84c4fcd1f121756f203ab6"
+    },
+    "__source__/rvv-task176/tools/controls176.py": {
+      "bytes": 4260,
+      "sha256": "04fce5c91f0df58f62a0cda466a09e9d9b3fa9c1984e4d44a44ebe58de1e8b8c"
+    },
+    "__source__/rvv-task176/tools/crosscheck176.py": {
+      "bytes": 3093,
+      "sha256": "5f90086ca2d6d8a869c75cc7732bf7e2edd0cf80cda7ac77f74cd0f456f9e9f9"
+    },
+    "__source__/rvv-task176/tools/export176.py": {
+      "bytes": 4946,
+      "sha256": "c192ff8def2db9bc78b3d6469e04906a30cf7030b3ffe958ca2d0143d7d24a5f"
+    },
+    "__source__/rvv-task176/tools/finalize176.py": {
+      "bytes": 4199,
+      "sha256": "aefb0c5ac51b956a554efb3b98928b923732d6df7fa2dfbbb5a16e4b778a17f0"
+    },
+    "__source__/rvv-task176/tools/fp157.py": {
+      "bytes": 16743,
+      "sha256": "62802316b6ea5351b72091c40c528677f11c75e5d96d5d4fb4c4d8264f215145"
+    },
+    "__source__/rvv-task176/tools/fpunary176.py": {
+      "bytes": 8565,
+      "sha256": "f1a86376dc0a639777be9c3427e3dec88c9ccb0c06b8d7531105dcd9eaae1e84"
+    },
+    "__source__/rvv-task176/tools/join_audit176.py": {
+      "bytes": 3686,
+      "sha256": "f1d0fa7644603453525659c0fd9dc7134e95ae5088335f9e98f3fd5c8ba5fdee"
+    },
+    "__source__/rvv-task176/tools/prepare176.py": {
+      "bytes": 2167,
+      "sha256": "a6c73ea9d66ae1a39372b44e37290ca9fa203958042c1105f8d696e0d74d32fa"
+    },
+    "__source__/rvv-task176/tools/qemu_sqrt176.json": {
+      "bytes": 261,
+      "sha256": "fba2b5f9d44c2c1b6f7927e048d029bbda7e7aff65fa7372aed3a75f6f9d3b30"
+    },
+    "__source__/rvv-task176/tools/run176.py": {
+      "bytes": 1169,
+      "sha256": "5d6637c549cb6216d37ffe5e27c9586f1f87e3024b4dc7d6ea8f5add8b69fcab"
+    },
+    "__source__/rvv-task176/tools/storage149.py": {
+      "bytes": 4367,
+      "sha256": "57ab6ecbd6e1246ed621abab4c649fda1ee0c248a370288ac513251660fa39c6"
+    },
+    "__source__/rvv-task176/tools/vadd.py": {
+      "bytes": 29964,
+      "sha256": "35eadf19fce0a143b7dd7b0ba10436ade3222279d7da5dd563386dc44afbffb6"
+    }
+  },
+  "bytes": 6634570,
+  "scope": "one complete accepted unit; retained ELF/reference, exact pinned source/data; no installed binary dependencies"
+}

@@ -1,0 +1,35 @@
+{
+  "unit": "w128-e32-m1-vv-zero",
+  "prerequisites": {
+    "compiler": {
+      "path": "/usr/bin/clang-22",
+      "sha256": "271764e9b47729e011b19740b79022842f1158dcfea1ff29336968738c909551"
+    },
+    "dut": {
+      "path": "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun",
+      "sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281"
+    },
+    "dut_lib": {
+      "path": "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so",
+      "sha256": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+    },
+    "spike": {
+      "path": "/home/vick/rvv-directed-task145/deps/spike",
+      "sha256": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994"
+    },
+    "pk": {
+      "path": "/home/vick/rvv-directed-task145/deps/pk",
+      "sha256": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad"
+    },
+    "link": {
+      "path": "/tmp/rvv-delivery-reproduce183/scripts/rvv/fixtures/rvvts-20261089/link.ld",
+      "sha256": "671d4a06b5298dc776ad61cee92acf0f249e35262d87fa039ec4033950720c71"
+    }
+  },
+  "source_modules": {
+    "vadd.py": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56",
+    "storage149.py": "57ab6ecbd6e1246ed621abab4c649fda1ee0c248a370288ac513251660fa39c6"
+  },
+  "scope": "new ordinary 17-case B demonstration; historical compiler was clang20, configurable compiler is separately recorded; no historical acceptance or final181 credit",
+  "reference_source": "CHIPS Spike 20feb9c2bf2a7deab964d8190b0cbd4b4131bec3; retained pk binary pin in Task145 IDENTITIES; no reference rebuild"
+}

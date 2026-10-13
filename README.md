@@ -14,7 +14,8 @@ experimental AOT/tiering paths; their presence does not make them evaluated
 thesis results. Benchmark guest binaries and restricted input datasets are not
 redistributed here.
 
-For finite per-form verification and a bounded replay, use the
+For finite per-form verification, compact selected-unit exports, and an executable
+clean-checkout vadd build/reference/DUT demonstration, use the
 [reviewer verification entry](docs/rvv-validation/delivery-task182/README.md).
 Its595-row index keeps historical mixed builds separate from final179 acceptance.
 
