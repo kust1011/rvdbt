@@ -1,0 +1,56 @@
+{
+  "form": "vfmul.vv",
+  "planned_per_arm": 392,
+  "arms": {
+    "Reference": {
+      "executed": 392,
+      "statuses": {
+        "PASS": 392
+      },
+      "semantic_statuses": {
+        "PASS": 384,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "B": {
+      "executed": 392,
+      "statuses": {
+        "PASS": 392
+      },
+      "semantic_statuses": {
+        "PASS": 384,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M1": {
+      "executed": 392,
+      "statuses": {
+        "PASS": 392
+      },
+      "semantic_statuses": {
+        "PASS": 384,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M2": {
+      "executed": 392,
+      "statuses": {
+        "PASS": 392
+      },
+      "semantic_statuses": {
+        "PASS": 384,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "BOTH": {
+      "executed": 392,
+      "statuses": {
+        "PASS": 392
+      },
+      "semantic_statuses": {
+        "PASS": 384,
+        "PROFILE_RESERVED_START": 8
+      }
+    }
+  }
+}

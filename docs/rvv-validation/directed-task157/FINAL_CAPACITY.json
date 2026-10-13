@@ -1,0 +1,10 @@
+{
+  "disk_free_bytes": 98576678912,
+  "reserve_bytes": 10737418240,
+  "full_allowance_bytes": 4294967296,
+  "snapshot": "/home/vick/rvv-directed-task157/fp-full-final",
+  "full_cases": 126062,
+  "full_guest_execution": "NOT_RUN",
+  "capacity_pass": true,
+  "memory_available_kib": 35571160
+}

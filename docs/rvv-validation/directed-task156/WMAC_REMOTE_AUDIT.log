@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-directed-task156/wmac-full2/scripts/audit.py", line 166, in <module>
+    p=argparse.ArgumentParser();p.add_argument('root',type=Path);p.add_argument('output',type=Path);a=p.parse_args();audit(a.root,a.output)
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task156/wmac-full2/scripts/audit.py", line 25, in audit
+    v.storage.reserve(out.parent,1024**3)
+  File "/home/vick/rvv-directed-task156/wmac-full2/scripts/storage149.py", line 13, in reserve
+    raise RuntimeError('storage reserve: require 10GiB plus next batch estimate')
+RuntimeError: storage reserve: require 10GiB plus next batch estimate

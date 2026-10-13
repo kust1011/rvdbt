@@ -1,0 +1,161 @@
+{
+  "pilots": [
+    {
+      "snapshot": "pilot2-corrected",
+      "cases": 3914,
+      "units": 280,
+      "checks": 19570,
+      "commands": 1400,
+      "guest_seconds": 54.487997414020356,
+      "audit_status": "PASS",
+      "controls": {
+        "rejected": 6120,
+        "allowed": 20,
+        "actual_packets": 206,
+        "guest_reruns": 0
+      },
+      "geometries": [
+        [
+          128,
+          32,
+          "m1"
+        ],
+        [
+          128,
+          64,
+          "m1"
+        ],
+        [
+          1024,
+          64,
+          "m1"
+        ]
+      ]
+    },
+    {
+      "snapshot": "edge-pilot",
+      "cases": 1756,
+      "units": 140,
+      "checks": 8780,
+      "commands": 700,
+      "guest_seconds": 29.016277524002362,
+      "audit_status": "PASS",
+      "controls": {
+        "rejected": 7980,
+        "allowed": 20,
+        "actual_packets": 280,
+        "guest_reruns": 0
+      },
+      "geometries": [
+        [
+          128,
+          32,
+          "mf2"
+        ],
+        [
+          1024,
+          64,
+          "m8"
+        ]
+      ]
+    }
+  ],
+  "combined_cases": 5670,
+  "combined_checks": 28350,
+  "combined_commands": 2100,
+  "combined_units": 420,
+  "per_form": [
+    {
+      "form": "vfadd.vv",
+      "cases_per_arm": 570,
+      "ordinary_per_arm": 556,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfadd.vf",
+      "cases_per_arm": 565,
+      "ordinary_per_arm": 551,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsub.vv",
+      "cases_per_arm": 570,
+      "ordinary_per_arm": 556,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsub.vf",
+      "cases_per_arm": 565,
+      "ordinary_per_arm": 551,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmul.vv",
+      "cases_per_arm": 570,
+      "ordinary_per_arm": 556,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmul.vf",
+      "cases_per_arm": 565,
+      "ordinary_per_arm": 551,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfdiv.vv",
+      "cases_per_arm": 570,
+      "ordinary_per_arm": 556,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfdiv.vf",
+      "cases_per_arm": 565,
+      "ordinary_per_arm": 551,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfrsub.vf",
+      "cases_per_arm": 565,
+      "ordinary_per_arm": 551,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    },
+    {
+      "form": "vfrdiv.vf",
+      "cases_per_arm": 565,
+      "ordinary_per_arm": 551,
+      "reserved_start_per_arm": 14,
+      "all_arms": "PASS",
+      "full_execution": "NOT_RUN"
+    }
+  ],
+  "full_cases": 126062,
+  "full_units": 9180,
+  "full_execution": "READY_NOT_RUN",
+  "outside_pilot": 120392,
+  "known_DUT_failures": 0,
+  "original_failed_checker_receipts_retained": true,
+  "Task156_guest_reruns": 0,
+  "main_audits_or_transfers_repeated": 0,
+  "remote_offline_audit_workers": 0,
+  "local_offline_audit_workers": 1,
+  "capacity_latest": "gate passes; see FINAL_CAPACITY.json",
+  "project_diff_check": "PASS; unchanged hashed upstream QEMU/SoftFloat source whitespace excluded"
+}

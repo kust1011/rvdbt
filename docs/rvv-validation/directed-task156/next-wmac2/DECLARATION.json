@@ -1,0 +1,319 @@
+{
+  "forms": [
+    "vwmaccu.vv",
+    "vwmaccu.vx",
+    "vwmacc.vv",
+    "vwmacc.vx",
+    "vwmaccsu.vv",
+    "vwmaccsu.vx",
+    "vwmaccus.vx"
+  ],
+  "cases": 25069,
+  "units": 1260,
+  "ordinary": 23767,
+  "reserved_start": 1302,
+  "reserved_encodings": [
+    {
+      "form": "vwmaccu.vv",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vv",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vv",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vv",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vv",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vv",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vv",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccu.vx",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vv",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmacc.vx",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vv",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccsu.vx",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "destination-EMUL16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "destination-EEW128",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "misaligned-wide-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "low-part-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "fractional-narrow-source-overlap",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vx",
+      "kind": "wide-addend-narrow-source-overlap-even-high-part",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vwmaccus.vv",
+      "kind": "unallocated-form",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ],
+  "execution": "NOT_RUN",
+  "guest_credit": 0
+}

@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+AssertionError: need 10GiB reserve plus estimated 2GiB batch budget

@@ -1,0 +1,12 @@
+{
+  "stage": "WIDEN_FULL_CAPACITY_BLOCKED",
+  "free_bytes": 12762669056,
+  "required_bytes": 12884901888,
+  "error": "need 10GiB reserve plus estimated 2GiB batch budget",
+  "entry": "/home/vick/rvv-directed-task154/widen-full/launch.sh",
+  "cases": 69328,
+  "forms": 22,
+  "guest_executions": 0,
+  "next": "develop and pilot wmac156; main owns space",
+  "snapshot_changed": false
+}

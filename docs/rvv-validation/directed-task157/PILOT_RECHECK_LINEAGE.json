@@ -1,0 +1,22 @@
+{
+  "original": "/home/user/research/raw/rvv-directed-task157/fp-pilot2/corpus",
+  "original_receipt_hashes": {
+    "manifest.json": "960ef9ec62bcfa91fc0f61daacae9451323c7ecfc724b3d8f991d472b2a13d0b",
+    "results.json": "07aff42f4f19c6330c995e83028c666bd1ae50d2c026436d500fb7384c62e2b8",
+    "summary.json": "4b92646992f1e8ff4fad370a345a223920ebf5819849c0cef7a9360904b3ca58",
+    "build-commands.json": "23b66a8f107789c53274bbc1cc208d084648279b70e91ee4f332f3cdb8b7949f"
+  },
+  "original_counts": {
+    "PASS": 19146,
+    "FAIL": 20,
+    "ISA_ONLY_REFERENCE_BLOCKED": 404
+  },
+  "revised_counts": {
+    "PASS": 19570
+  },
+  "reason": "after-rounding tininess must use precision rounding with unbounded exponent, not final encoding",
+  "checker_sha256": "a0a66695efb1c22b05911e62f772bf63b7b59862e96429ce419d159c1c6e1793",
+  "unchanged_manifest": true,
+  "new_guest_commands": 0,
+  "original_raw_and_scripts_mutations": 0
+}

@@ -1,0 +1,21 @@
+{
+  "widen_full": "CAPACITY_BLOCKED_NOT_RUN",
+  "wmac_full_guest": {
+    "cases": 25069,
+    "checks": 125345,
+    "commands": 6300,
+    "run": 0
+  },
+  "wmac_remote_audit": {
+    "audit": 1,
+    "reason": "10GiB plus1GiB next audit allowance refused"
+  },
+  "extend_pilot": "CAPACITY_BLOCKED_NOT_RUN",
+  "destchunk_pilot": "NOT_RUN_QUEUE_STOPPED",
+  "destchunk_full": "NOT_RUN",
+  "free_bytes": 10812354560,
+  "reserve_bytes": 10737418240,
+  "local_audit": "IN_PROGRESS using frozen scripts and raw excluding work/cache",
+  "deleted_artifacts": 0,
+  "modified_active_snapshots": 0
+}

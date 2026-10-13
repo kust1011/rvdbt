@@ -1,0 +1,14 @@
+{
+  "snapshot": "/dev/shm/rvv-directed-task157/fp-pilot",
+  "first_build": 0,
+  "first_run": 1,
+  "last_observation": "final vfrdiv units printed PASS; full run log, summary and raw disappeared before inspection",
+  "raw_unavailable": true,
+  "credit": 0,
+  "classification": "unresolved infrastructure/raw-lifetime failure; cannot classify run1 as DUT failure without evidence",
+  "remote_uptime": "513374.84s; no reboot observed",
+  "removed_by_this_task": 0,
+  "repeat": "separate identical fp-pilot2 with SSH session held until raw retained locally",
+  "task156_guest_reruns": 0,
+  "subsequent_identical_pilot2_adjudication": "four ISA checker underflow defects in all five arms; corrected separate raw replay; first missing raw cannot independently classify exact outcomes"
+}

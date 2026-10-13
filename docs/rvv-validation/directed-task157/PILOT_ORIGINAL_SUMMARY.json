@@ -1,0 +1,38 @@
+{
+  "planned_cases": 3914,
+  "planned_executions": 19570,
+  "executed": 19570,
+  "counts": {
+    "PASS": 19146,
+    "FAIL": 20,
+    "ISA_ONLY_REFERENCE_BLOCKED": 404
+  },
+  "arms": {
+    "Reference": {
+      "PASS": 3910,
+      "FAIL": 4
+    },
+    "B": {
+      "PASS": 3809,
+      "ISA_ONLY_REFERENCE_BLOCKED": 101,
+      "FAIL": 4
+    },
+    "M1": {
+      "PASS": 3809,
+      "ISA_ONLY_REFERENCE_BLOCKED": 101,
+      "FAIL": 4
+    },
+    "M2": {
+      "PASS": 3809,
+      "ISA_ONLY_REFERENCE_BLOCKED": 101,
+      "FAIL": 4
+    },
+    "BOTH": {
+      "PASS": 3809,
+      "ISA_ONLY_REFERENCE_BLOCKED": 101,
+      "FAIL": 4
+    }
+  },
+  "seconds": 54.487997414020356,
+  "jobs": 8
+}

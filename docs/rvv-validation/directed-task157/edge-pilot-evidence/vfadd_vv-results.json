@@ -1,0 +1,56 @@
+{
+  "form": "vfadd.vv",
+  "planned_per_arm": 178,
+  "arms": {
+    "Reference": {
+      "executed": 178,
+      "statuses": {
+        "PASS": 178
+      },
+      "semantic_statuses": {
+        "PASS": 172,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "B": {
+      "executed": 178,
+      "statuses": {
+        "PASS": 178
+      },
+      "semantic_statuses": {
+        "PASS": 172,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "M1": {
+      "executed": 178,
+      "statuses": {
+        "PASS": 178
+      },
+      "semantic_statuses": {
+        "PASS": 172,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "M2": {
+      "executed": 178,
+      "statuses": {
+        "PASS": 178
+      },
+      "semantic_statuses": {
+        "PASS": 172,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "BOTH": {
+      "executed": 178,
+      "statuses": {
+        "PASS": 178
+      },
+      "semantic_statuses": {
+        "PASS": 172,
+        "PROFILE_RESERVED_START": 6
+      }
+    }
+  }
+}

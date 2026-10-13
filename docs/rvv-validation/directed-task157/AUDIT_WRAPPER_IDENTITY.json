@@ -1,0 +1,6 @@
+{
+  "path": "/home/user/research/materials/rvdbt-validation-throughput-20261013/scripts/rvv/directed/audit_parallel.py",
+  "sha256": "57f09622ff8ded1451674f33a4b3eb649b72ef2d39328ee58a7ffc3aa386009f",
+  "jobs": 1,
+  "inputs": "new FP pilots only; Task155 and Task156 full replay not repeated"
+}

@@ -1,0 +1,15 @@
+{
+  "original": "/home/vick/rvv-directed-task156/wmac-full2",
+  "retained_local_copy": "/home/user/research/raw/rvv-directed-task156/wmac-full2",
+  "new_review_output": "/home/user/research/raw/rvv-directed-task156/wmac-full2-review",
+  "transport": "rsync -a, ControlPath=none, ControlMaster=no, no --delete",
+  "excluded": [
+    "corpus/work including caches",
+    "tbmap files"
+  ],
+  "raw_or_snapshot_remote_mutations": 0,
+  "reserve_changed": false,
+  "initial_transport_error": "shared SSH multiplexed master broke pipe; tar Unexpected EOF",
+  "initial_incomplete_copy_audit_error": "FileNotFoundError corpus/manifest.json; output retained in audit-local.log",
+  "guest_reruns": 0
+}

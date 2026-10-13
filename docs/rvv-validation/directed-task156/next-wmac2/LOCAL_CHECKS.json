@@ -1,0 +1,14 @@
+{
+  "checks": 432,
+  "encodings": 87,
+  "layouts": 25069,
+  "geometry_extents": 180,
+  "semantic_controls": {
+    "controls": 322,
+    "rejected": 322,
+    "allowed": 7
+  },
+  "pilot_units": 56,
+  "pilot_cases": 1063,
+  "guest_executions": 0
+}

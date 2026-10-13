@@ -1,0 +1,56 @@
+{
+  "form": "vfrsub.vf",
+  "planned_per_arm": 174,
+  "arms": {
+    "Reference": {
+      "executed": 174,
+      "statuses": {
+        "PASS": 174
+      },
+      "semantic_statuses": {
+        "PASS": 168,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "B": {
+      "executed": 174,
+      "statuses": {
+        "PASS": 174
+      },
+      "semantic_statuses": {
+        "PASS": 168,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "M1": {
+      "executed": 174,
+      "statuses": {
+        "PASS": 174
+      },
+      "semantic_statuses": {
+        "PASS": 168,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "M2": {
+      "executed": 174,
+      "statuses": {
+        "PASS": 174
+      },
+      "semantic_statuses": {
+        "PASS": 168,
+        "PROFILE_RESERVED_START": 6
+      }
+    },
+    "BOTH": {
+      "executed": 174,
+      "statuses": {
+        "PASS": 174
+      },
+      "semantic_statuses": {
+        "PASS": 168,
+        "PROFILE_RESERVED_START": 6
+      }
+    }
+  }
+}

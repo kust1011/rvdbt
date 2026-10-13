@@ -1,0 +1,46 @@
+{
+  "commit": "7a35c902707087c8e1b77a3c82c54b73ffa17703",
+  "files": [
+    {
+      "path": "tests/riscv/vector/case/vwmaccu_vv.c",
+      "sha256": "0729e3dcc86b464be2d9277fd9b6f842c59fac3207cc40b8f3ff752adc646241"
+    },
+    {
+      "path": "tests/riscv/vector/case/vwmaccu_vx.c",
+      "sha256": "59ea0981aad9237eccabad4ed045b77732d781ac36c4bc227b7466fa24ded87a"
+    },
+    {
+      "path": "tests/riscv/vector/case/vwmacc_vv.c",
+      "sha256": "6f02940c5605273ae29bd933078780d8e9dc88e4e018e35239bd2e126fed9704"
+    },
+    {
+      "path": "tests/riscv/vector/case/vwmacc_vx.c",
+      "sha256": "71dc82e119a4f29d8d8f566fa46aa0c03a8316e88fb7c171b548e78c2b5c6773"
+    },
+    {
+      "path": "tests/riscv/vector/case/vwmaccsu_vv.c",
+      "sha256": "6bb0747033773aa67627c064286806b3c69fc56d9bcd412de935483dbaaa76d3"
+    },
+    {
+      "path": "tests/riscv/vector/case/vwmaccsu_vx.c",
+      "sha256": "df4c4d2f3c5cf00f99b794bb564ff5b6a2b7987d5c751b7c41c60016926174dc"
+    },
+    {
+      "path": "tests/riscv/vector/case/vwmaccus_vx.c",
+      "sha256": "11a21d329ca8a9183c827b0f0fb605bb2d29357096124ceb52afcc51d0bfc650"
+    },
+    {
+      "path": "tests/riscv/vector/case/rvv_ch12.inc",
+      "sha256": "9d37b904660bd6e2043d069d02e5caca8b24658892bf26551e9e0219f3f2b49f"
+    },
+    {
+      "path": "tests/riscv/vector/case/rvv_insn.S",
+      "sha256": "4d61684e8bf1c78d60a908ba4f728cc7422b02f00cbb3f4aa55655d16f3a289e"
+    },
+    {
+      "path": "tests/riscv/vector/case/rvv_insn.h",
+      "sha256": "c1297d78f9d11438d626f099ccff320762db5905a1b5455adb14638143e5c4f6"
+    }
+  ],
+  "wrappers": 42
+}

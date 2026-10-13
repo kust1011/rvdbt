@@ -1,0 +1,56 @@
+{
+  "form": "vwmaccus.vx",
+  "planned_per_arm": 157,
+  "arms": {
+    "Reference": {
+      "executed": 157,
+      "statuses": {
+        "PASS": 157
+      },
+      "semantic_statuses": {
+        "PASS": 149,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "B": {
+      "executed": 157,
+      "statuses": {
+        "PASS": 157
+      },
+      "semantic_statuses": {
+        "PASS": 149,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M1": {
+      "executed": 157,
+      "statuses": {
+        "PASS": 157
+      },
+      "semantic_statuses": {
+        "PASS": 149,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M2": {
+      "executed": 157,
+      "statuses": {
+        "PASS": 157
+      },
+      "semantic_statuses": {
+        "PASS": 149,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "BOTH": {
+      "executed": 157,
+      "statuses": {
+        "PASS": 157
+      },
+      "semantic_statuses": {
+        "PASS": 149,
+        "PROFILE_RESERVED_START": 8
+      }
+    }
+  }
+}

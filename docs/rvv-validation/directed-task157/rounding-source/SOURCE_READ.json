@@ -1,0 +1,14 @@
+{
+  "commit": "a0c6494cdc11865811dec815d5c0049fba9d82a8",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/ucb-bar/berkeley-softfloat-3/a0c6494cdc11865811dec815d5c0049fba9d82a8/source/s_roundPackToF32.c",
+      "sha256": "aac61a425bed4e973c9e0e1fb254f74cb7c04602131509ed98513269da83e45a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ucb-bar/berkeley-softfloat-3/a0c6494cdc11865811dec815d5c0049fba9d82a8/source/s_roundPackToF64.c",
+      "sha256": "e549468a71417c8fefd927d582ec8481e2d6f595c406a4db5efff9b462f8e2c8"
+    }
+  ],
+  "purpose": "adjudicate rational-predicate tininess defect; not a new guest oracle"
+}

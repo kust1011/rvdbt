@@ -1,0 +1,28 @@
+{
+  "planned_cases": 3914,
+  "planned_executions": 19570,
+  "executed": 19570,
+  "counts": {
+    "PASS": 19570
+  },
+  "arms": {
+    "Reference": {
+      "PASS": 3914
+    },
+    "B": {
+      "PASS": 3914
+    },
+    "M1": {
+      "PASS": 3914
+    },
+    "M2": {
+      "PASS": 3914
+    },
+    "BOTH": {
+      "PASS": 3914
+    }
+  },
+  "seconds": 54.487997414020356,
+  "jobs": 8,
+  "receipt_origin": "corrected checker replay of unchanged raw; no new guest commands"
+}

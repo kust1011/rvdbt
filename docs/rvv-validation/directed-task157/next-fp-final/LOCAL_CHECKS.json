@@ -1,0 +1,12 @@
+{
+  "layouts": 126062,
+  "distinct_compiled_encodings": 84,
+  "synthetic_pilot_predicates": 5670,
+  "pilot_units": 420,
+  "pilot_cases": 5670,
+  "pilot_checks": 28350,
+  "pilot_commands": 2100,
+  "delta_pilot_units": 140,
+  "delta_pilot_cases": 1756,
+  "guest_credit": 0
+}

@@ -1,0 +1,27 @@
+{
+  "pilot2": {
+    "build": 0,
+    "original_runner": 1,
+    "original_runner_reason": "four tininess-predicate failures in each arm; original receipts retained",
+    "derived_recheck": 0,
+    "audit": 0,
+    "controls": 0,
+    "summary": 0,
+    "new_guest_commands_for_checker_fix": 0
+  },
+  "edge_pilot": {
+    "build": 0,
+    "run": 0,
+    "audit": 0,
+    "controls": 0,
+    "summary": 0
+  },
+  "full": "READY_NOT_RUN",
+  "first_unretained_pilot": {
+    "build": 0,
+    "run": 1,
+    "audit": "NOT_RUN_RAW_UNAVAILABLE",
+    "credit": 0
+  },
+  "production_edits": 0
+}

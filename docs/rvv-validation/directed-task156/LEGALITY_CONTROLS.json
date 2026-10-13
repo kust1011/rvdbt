@@ -1,0 +1,18 @@
+[
+  {
+    "control": "low-part",
+    "rejected": true
+  },
+  {
+    "control": "high-part-wide-addend-source",
+    "rejected": true
+  },
+  {
+    "control": "wide-addend-source1",
+    "rejected": true
+  },
+  {
+    "control": "extension-high-part-narrow-source",
+    "legal": true
+  }
+]

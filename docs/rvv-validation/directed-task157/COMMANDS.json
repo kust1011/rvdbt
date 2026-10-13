@@ -1,0 +1,14 @@
+{
+  "FP pilot": "nice -n 10 bash launch.sh /dev/shm/rvv-directed-task157/fp-pilot2 (SSH session held until persistence)",
+  "FP delta": "nice -n 10 bash launch.sh /dev/shm/rvv-directed-task157/fp-edge-pilot (SSH session held until persistence)",
+  "full_next": "ssh -o ControlPath=none -o ControlMaster=no xbd 'cd /home/vick/rvv-directed-task157/fp-full-final; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task157/fp-full-final > launcher.log 2>&1 < /dev/null &'",
+  "Task156 audits": "main only; use own audit_parallel.py on /home/vick/rvv-directed-task156/wmac-full2/corpus with its original scripts/audit.py into separate /dev/shm/rvv-main-audit156-wmac; estimate derived output <1GiB with healthy memory and current pool allocation",
+  "remote_audit_workers_used": 0,
+  "local_audit_workers_used": 1,
+  "build_jobs": 4,
+  "run_jobs": 8,
+  "niceness": 10,
+  "affinity": "none",
+  "Task156_guest_reruns": 0,
+  "production_changes": 0
+}

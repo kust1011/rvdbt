@@ -1,0 +1,12 @@
+{
+  "original": "/home/user/research/raw/rvv-directed-task157/fp-full",
+  "new": "/home/user/research/raw/rvv-directed-task157/fp-full-corrected",
+  "same_manifest": true,
+  "change": "rational after-rounding tininess checker; reference-only crosscheck/recheck helper added",
+  "guest_credit": 0,
+  "execution": "CAPACITY_BLOCKED_NOT_RUN",
+  "superseded_by_final": "/home/user/research/raw/rvv-directed-task157/fp-full-final",
+  "final_additive_cases": 32400,
+  "final_total_cases": 126062,
+  "final_status": "READY_NOT_RUN"
+}

@@ -1,0 +1,43 @@
+{
+  "classification": "generator reserved-encoding defect",
+  "raw": "/home/vick/rvv-directed-task156/wmac-pilot",
+  "obsolete_full": "/home/vick/rvv-directed-task156/wmac-full",
+  "original_cases": 26149,
+  "original_pilot_cases": 1123,
+  "original_stage": {
+    "build": 0,
+    "run": 1,
+    "audit": 1,
+    "controls": 125,
+    "summary": 125
+  },
+  "example": {
+    "pc": "0x00014b44",
+    "instruction": "0xf29c2457",
+    "mnemonic": "vwmaccu.vv",
+    "vd": 8,
+    "vs2": 9,
+    "vs1": 24,
+    "sew": 8,
+    "lmul": "m1"
+  },
+  "reason": "old wide vd is also a source; source registers cannot be read at both narrow and wide EEW, including high-part overlap",
+  "spec": "norm:vreg_source_eew_rsv",
+  "correction": "all destination/narrow-source MAC overlap reserved; legal same-EEW narrow sources may alias; corrected distinct pilot2/full2",
+  "removed_reserved_case_ids": 1080,
+  "production_edits": 0,
+  "first_pilot_packet_outcomes": {
+    "PASS": 1871,
+    "FAIL": 3744,
+    "per_DUT_arm": {
+      "PASS": 250,
+      "FAIL": 873
+    },
+    "Reference": {
+      "PASS": 871,
+      "FAIL": 252
+    }
+  },
+  "first_audit_error": "missing Sail signature after reserved-encoding execution exited1",
+  "destination_chunk_delta": "Follow-up coverage gap: source chunk512/SEW differs from destination512/(2*SEW); separately frozen deduplicated delta adds5103cases,994units,161pilot cases."
+}

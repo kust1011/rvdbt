@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-directed-task156/wmac-pilot/scripts/audit.py", line 166, in <module>
+    p=argparse.ArgumentParser();p.add_argument('root',type=Path);p.add_argument('output',type=Path);a=p.parse_args();audit(a.root,a.output)
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task156/wmac-pilot/scripts/audit.py", line 127, in audit
+    extracted=b''.join(int(line,16).to_bytes(4,'little') for line in v.storage.text(d/'signature').splitlines())
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task156/wmac-pilot/scripts/storage149.py", line 21, in text
+    def text(path):return read(path).decode()
+                          ^^^^^^^^^^
+  File "/home/vick/rvv-directed-task156/wmac-pilot/scripts/storage149.py", line 20, in read
+    return gzip.decompress(p.read_bytes()) if p!=Path(path) else p.read_bytes()
+                           ^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'corpus/runs/vwmaccu-w128-e8-m1-vv-start/Reference/signature.gz'

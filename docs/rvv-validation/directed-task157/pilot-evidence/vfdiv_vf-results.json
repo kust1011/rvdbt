@@ -1,0 +1,56 @@
+{
+  "form": "vfdiv.vf",
+  "planned_per_arm": 391,
+  "arms": {
+    "Reference": {
+      "executed": 391,
+      "statuses": {
+        "PASS": 391
+      },
+      "semantic_statuses": {
+        "PASS": 383,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "B": {
+      "executed": 391,
+      "statuses": {
+        "PASS": 391
+      },
+      "semantic_statuses": {
+        "PASS": 383,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M1": {
+      "executed": 391,
+      "statuses": {
+        "PASS": 391
+      },
+      "semantic_statuses": {
+        "PASS": 383,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M2": {
+      "executed": 391,
+      "statuses": {
+        "PASS": 391
+      },
+      "semantic_statuses": {
+        "PASS": 383,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "BOTH": {
+      "executed": 391,
+      "statuses": {
+        "PASS": 391
+      },
+      "semantic_statuses": {
+        "PASS": 383,
+        "PROFILE_RESERVED_START": 8
+      }
+    }
+  }
+}

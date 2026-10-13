@@ -1,0 +1,32 @@
+[
+  {
+    "directory": "next-wmac2",
+    "cases": 25069,
+    "pilot_cases": 1063,
+    "pilot_ordinary": 1007,
+    "pilot_reserved_start": 56,
+    "forms": 7,
+    "geometries": 90,
+    "reproduces_manifest": true
+  },
+  {
+    "directory": "next-extend",
+    "cases": 10354,
+    "pilot_cases": 660,
+    "pilot_ordinary": 620,
+    "pilot_reserved_start": 40,
+    "forms": 6,
+    "geometries": 90,
+    "reproduces_manifest": true
+  },
+  {
+    "directory": "destchunk-delta2",
+    "cases": 5103,
+    "pilot_cases": 161,
+    "pilot_ordinary": 161,
+    "pilot_reserved_start": 0,
+    "forms": 7,
+    "geometries": 71,
+    "reproduces_manifest": true
+  }
+]

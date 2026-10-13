@@ -1,0 +1,28 @@
+{
+  "checks": 90,
+  "widths": [
+    32,
+    64
+  ],
+  "frm": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "obligations": [
+    "halfway-even",
+    "halfway-odd",
+    "underflow-after-rounding",
+    "signed-zero-cancellation",
+    "overflow-directed-rounding",
+    "divide-zero",
+    "zero-times-infinity",
+    "quiet-NaN",
+    "signaling-NaN"
+  ],
+  "result": "PASS",
+  "guest_credit": 0,
+  "legacy_harness_tests": 12
+}

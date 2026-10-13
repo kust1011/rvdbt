@@ -1,0 +1,7 @@
+{
+  "commit": "7a35c902707087c8e1b77a3c82c54b73ffa17703",
+  "api_tree_truncated": false,
+  "matching_paths": [],
+  "disposition": "No matching RVV0.7.1 integer-extension case/wrapper; no QEMU-derived extension credit",
+  "wrapper_file": "tests/riscv/vector/case/rvv_ch12.inc"
+}

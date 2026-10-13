@@ -1,0 +1,2685 @@
+{
+  "controls": 330,
+  "rejected": 330,
+  "allowed": 7,
+  "records": [
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0000.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0000.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0002.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0003.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0003.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0005.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0006.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0007.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0008.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0009.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0010.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0011.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0012.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0013.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0014.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0015.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0016.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0017.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0018.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0019.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0020.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0021.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0022.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0023.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0024.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0025.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0026.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0027.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0028.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0029.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0030.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0031.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0032.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0033.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0033.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0035.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0035.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0037.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0037.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0039.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0039.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0041.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0041.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0043.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0043.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0045.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0046.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0046.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0048.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0049.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0049.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0051.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0052.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0053.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0054.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0055.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0056.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0057.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0058.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0059.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0060.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0061.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0062.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0063.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0064.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0065.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0066.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0067.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0068.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0069.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0070.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0071.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0072.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0073.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0074.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0075.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0076.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0077.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0078.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0079.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0079.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0081.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0081.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0083.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0083.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0085.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0085.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0087.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0087.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0089.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0089.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0091.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0091.bin"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0093.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0094.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0094.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0096.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0097.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0097.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0099.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0100.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0101.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0102.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0103.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0104.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0105.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0106.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0107.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0108.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0109.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0110.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0111.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0112.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0113.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0114.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0115.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0116.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0117.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0118.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0119.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0120.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0121.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0122.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0123.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0124.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0125.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0126.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0127.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0127.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0129.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0129.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0131.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0131.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0133.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0133.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0135.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0135.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0137.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0137.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0139.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0140.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0140.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0142.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0143.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0143.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0145.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0146.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0147.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0148.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0149.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0150.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0151.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0152.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0153.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0154.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0155.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0156.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0157.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0158.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0159.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0160.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0161.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0162.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0163.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0164.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0165.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0166.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0167.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0168.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0169.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0170.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0171.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0172.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0173.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0173.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0175.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0175.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0177.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0177.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0179.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0179.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0181.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0181.bin"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0183.bin"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0183.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0185.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0185.bin"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0187.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0188.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0188.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0190.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0191.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0191.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0193.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0194.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0195.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0196.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0197.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0198.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0199.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0200.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0201.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0202.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0203.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0204.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0205.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0206.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0207.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0208.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0209.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0210.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0211.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0212.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0213.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0214.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0215.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0216.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0217.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0218.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0219.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0220.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0221.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0221.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0223.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0223.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0225.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0225.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0227.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0227.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0229.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0229.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0231.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0231.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0233.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0234.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0234.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0236.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0237.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0237.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0239.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0240.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0241.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0242.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0243.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0244.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0245.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0246.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0247.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0248.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0249.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0250.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0251.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0252.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0253.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0254.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0255.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0256.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0257.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0258.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0259.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0260.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0261.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0262.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0263.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0264.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0265.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0266.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0267.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0267.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0269.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0269.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0271.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0271.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0273.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0273.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0275.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0275.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0277.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0277.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0279.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0279.bin"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0281.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0282.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0282.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "masked",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0284.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0285.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "upper-result",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0285.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "prestate",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "prestate",
+      "corrupt": "0287.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "other-register",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "other register",
+      "corrupt": "0288.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0289.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0290.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0291.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0292.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0293.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0294.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0295.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0296.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0297.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0298.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "pre-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0299.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vl",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0300.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vtype",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0301.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vlenb",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0302.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vstart",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0303.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxrm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0304.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vxsat",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0305.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-vcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0306.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-fflags",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0307.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-frm",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0308.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-fcsr",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0309.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-even",
+      "control": "post-s0",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "CSR/scalar",
+      "corrupt": "0310.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-partial",
+      "control": "qemu-partial-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 15",
+      "corrupt": "0311.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-qemu-odd",
+      "control": "qemu-odd-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0312.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-start-partial-active-tu",
+      "control": "start-partial-active-tu-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0313.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-start-zero-vl-maxcsr",
+      "control": "start-zero-vl-maxcsr-preserved",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 0",
+      "corrupt": "0314.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0315.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "wrong-signedness",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0315.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0317.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-distinct",
+      "control": "erased-wide-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0317.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0319.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-addend",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0319.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0321.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-unsigned-signed",
+      "control": "narrow-product",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0321.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0323.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-witness-distinct",
+      "control": "old-destination-multiplicand",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0323.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0325.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-operand2147483648",
+      "control": "RV32-wrong-scalar-extension",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0325.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "widened active lane 0",
+      "corrupt": "0327.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-active",
+      "mode": "reference",
+      "rejected": true,
+      "error": "independent reference widened lane",
+      "corrupt": "0327.bin"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-invalid",
+      "mode": "ISA",
+      "rejected": true,
+      "error": "preserved lane 1",
+      "corrupt": "0329.bin"
+    }
+  ],
+  "allowed_records": [
+    {
+      "case": "vwmaccu-w128-e8-m1-vv-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    },
+    {
+      "case": "vwmaccu-w128-e8-m1-vx-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vv-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    },
+    {
+      "case": "vwmacc-w128-e8-m1-vx-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vv-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    },
+    {
+      "case": "vwmaccsu-w128-e8-m1-vx-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    },
+    {
+      "case": "vwmaccus-w128-e8-m1-vx-dest-high-source2-mask",
+      "accepted": true,
+      "control": "overlap-inactive-all-ones"
+    }
+  ],
+  "guest_executions": 0
+}

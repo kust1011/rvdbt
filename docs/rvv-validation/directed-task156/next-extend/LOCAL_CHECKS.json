@@ -1,0 +1,5267 @@
+{
+  "checks": 72,
+  "encodings": 84,
+  "layouts": 10354,
+  "synthetic_controls": 876,
+  "records": [
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "wrong-extension",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "upper-result",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "wrong-extension",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "upper-result",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "wrong-extension",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "upper-result",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "wrong-extension",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "upper-result",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-length1",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-mask-alternating",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-policy11",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf4-vf2-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-mf2-vf2-start-partial-active-tu",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e16-m2-vf2-dest-high-source-mask",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "wrong-extension",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "upper-result",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-length1",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-mask-alternating",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-policy11",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-mf2-vf4-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m1-vf4-start-partial-active-tu",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e32-m4-vf4-dest-high-source-mask",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "wrong-extension",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "upper-result",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-length1",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-mask-alternating",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-policy11",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m1-vf8-start-zero-vl-maxcsr",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "preserved lane"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m2-vf8-start-partial-active-tu",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "destination-corruption",
+      "rejected": true,
+      "error": "extended active lane"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "other-register",
+      "rejected": true,
+      "error": "other register"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-8-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-0",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-1",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-2",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-3",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-4",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-5",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-6",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-7",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-8",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-9",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "CSR-scalar-52-10",
+      "rejected": true,
+      "error": "CSR/scalar"
+    }
+  ],
+  "pilot_units": 40,
+  "pilot_cases": 660,
+  "guest_executions": 0
+}

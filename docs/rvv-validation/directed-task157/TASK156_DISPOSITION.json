@@ -1,0 +1,86 @@
+{
+  "DUT": "e2559c5c",
+  "guest_reruns": 0,
+  "widening": {
+    "full_cases": 69328,
+    "completed_pilot_cases": 2948,
+    "full": "CAPACITY_BLOCKED_NOT_RUN",
+    "snapshot": "xbd:/home/vick/rvv-directed-task154/widen-full",
+    "current": "READY_NOT_RUN; original capacity refusal retained"
+  },
+  "wmac": {
+    "full_cases": 25069,
+    "runner_checks": 125345,
+    "commands": 6300,
+    "runner": "PASS",
+    "pilot_cases": 1063,
+    "pilot_checks": 5315,
+    "pilot_stages": "all zero",
+    "snapshot": "xbd:/home/vick/rvv-directed-task156/wmac-full2",
+    "audit": "DISK_RESERVE_BLOCKED; RAM launcher failed freeze before audit",
+    "ram_failed": "xbd:/dev/shm/rvv-directed-task156-review",
+    "local_copy": "/home/user/research/raw/rvv-directed-task156/wmac-full2",
+    "local_copy_missing_required_paths": 23952,
+    "main_replay_input": "/home/vick/rvv-directed-task156/wmac-full2/corpus",
+    "main_replay_auditor": "/home/vick/rvv-directed-task156/wmac-full2/scripts/audit.py",
+    "suggested_new_output": "/dev/shm/rvv-main-audit156-wmac",
+    "controls_script": "/home/vick/rvv-directed-task156/wmac-full2/scripts/reject_wmac156.py",
+    "audit_owner": "main; do not duplicate",
+    "current_audit": "MAIN_QUEUED; original full guest PASS, no repeated audit here"
+  },
+  "destination_chunk": {
+    "cases": 5103,
+    "units": 994,
+    "pilot_cases": 161,
+    "pilot_units": 28,
+    "pilot": "NOT_RUN_QUEUE_STOPPED",
+    "full": "NOT_RUN",
+    "snapshots": [
+      "xbd:/home/vick/rvv-directed-task156/destchunk-pilot",
+      "xbd:/home/vick/rvv-directed-task156/destchunk-full"
+    ],
+    "current_pilot": "READY_NOT_RUN; stopped queues not restarted"
+  },
+  "extension": {
+    "cases": 10354,
+    "units": 672,
+    "pilot": "CAPACITY_BLOCKED_NOT_RUN",
+    "full": "NOT_RUN",
+    "snapshots": [
+      "xbd:/home/vick/rvv-directed-task156/extend-pilot",
+      "xbd:/home/vick/rvv-directed-task156/extend-full"
+    ],
+    "pilot_units": 40,
+    "pilot_cases": 660,
+    "current_pilot": "READY_NOT_RUN; original capacity refusal retained"
+  },
+  "preservation": "Original scripts, raw, first reserved-encoding failures, QEMU0.7.1/1.0 adaptation notes retained; no deletes, reserve changes or snapshot edits",
+  "latest_capacity": {
+    "disk_free_bytes": 98576678912,
+    "reserve_bytes": 10737418240,
+    "full_allowance_bytes": 4294967296,
+    "snapshot": "/home/vick/rvv-directed-task157/fp-full-final",
+    "full_cases": 126062,
+    "full_guest_execution": "NOT_RUN",
+    "capacity_pass": true,
+    "memory_available_kib": 35571160
+  },
+  "fp": {
+    "full_cases": 126062,
+    "full_units": 9180,
+    "full_execution": "READY_NOT_RUN",
+    "pilot_cases": 5670,
+    "pilot_checks": 28350,
+    "pilot_commands": 2100,
+    "replay1": "/home/user/research/raw/rvv-directed-task157/fp-pilot2-recheck-audit/audit",
+    "replay2": "/home/user/research/raw/rvv-directed-task157/fp-edge-pilot-audit/audit",
+    "raw1": "/home/user/research/raw/rvv-directed-task157/fp-pilot2",
+    "raw2": "/home/user/research/raw/rvv-directed-task157/fp-edge-pilot",
+    "corrected_scripts": "/home/user/research/raw/rvv-directed-task157/fp-corrected-scripts",
+    "corrected_lineage": "/home/user/research/raw/rvv-directed-task157/fp-pilot2-recheck/RECHECK_LINEAGE.json",
+    "final_full_snapshot": "xbd:/home/vick/rvv-directed-task157/fp-full-final",
+    "production_edits": 0,
+    "known_DUT_failures": 0,
+    "initial_checker_failures": "preserved; tininess adjudicated against primary source and Spike/Sail"
+  }
+}
