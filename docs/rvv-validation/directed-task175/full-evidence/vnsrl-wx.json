@@ -1,0 +1,17 @@
+{
+  "form": "vnsrl.wx",
+  "status": "PASS_FINITE_SCOPE",
+  "main_cases_per_arm": 3640,
+  "supplement_cases_per_arm": 270,
+  "cases_per_arm": 3910,
+  "arms": {
+    "Reference": 3910,
+    "B": 3910,
+    "M1": 3910,
+    "M2": 3910,
+    "BOTH": 3910
+  },
+  "configurations": 90,
+  "build_sha256": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "failures": 0
+}

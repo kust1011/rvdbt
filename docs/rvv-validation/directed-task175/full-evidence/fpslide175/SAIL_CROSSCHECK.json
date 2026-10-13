@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "unit": "vfslide1down-vf-w128-e32-mf2-zero",
+      "cases": 40,
+      "elf_sha256": "0945234bc622e244b09e8a04ee28e1ccb3105bc9b049da1e00e06eceffb988e8",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.41516766091808677,
+        "stdout_sha256": "e9ee7d5c7214723c92e611af845ff7bbd2917048e2edbd16d9f915536ff5b5a4",
+        "stderr_sha256": "8ca1d655cc4165f385b30bc96049bc57a0218cf2ddd198b6df387a7ad8f18752",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfslide1down-vf-w128-e64-m1-zero",
+      "cases": 37,
+      "elf_sha256": "678124cf7d5e4b53b57d12d4c5faadec9743c41aef52d53bce31e30ca1650d80",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.3667575709987432,
+        "stdout_sha256": "5ce1be5431e06593fa7bd559d073bfd905446514336ff19d2a8293a423aa4a1d",
+        "stderr_sha256": "9a34aa2103c7590b76c42719674a73fe04c1b010bd7dab9e2a7afff2bac44c08",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfslide1up-vf-w128-e32-mf2-zero",
+      "cases": 39,
+      "elf_sha256": "3b034920f61e822d0369c4d1f329c24c5666093b478b327b3c7555f17166c030",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4145649899728596,
+        "stdout_sha256": "7da5906b7033dcebb7a1728d1645bd4071f69158168c7b0520796ba52e211752",
+        "stderr_sha256": "c722b8db56a3dc17ac20b41793d2113608f4679287a53453572fecbeaef5c813",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfslide1up-vf-w128-e64-m1-zero",
+      "cases": 36,
+      "elf_sha256": "ddd716a71ee5d815248736a2c1d9b1e4711e87ce9f82f690864047b18b175c99",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.3644444290548563,
+        "stdout_sha256": "7e04abbb2bd420dbf9425e3c5cd1016ffdc9de9d2211111a7c5dd0c34e3ee5b3",
+        "stderr_sha256": "6600aff10f0eb96c3ad50510d3e8017ad3c0349fb0bdd29fb7ae12e37fef5a7f",
+        "storage": "lossless-gzip-v1"
+      }
+    }
+  ],
+  "case_checks": 152,
+  "commands": 4,
+  "ordinary_credit": 0,
+  "config": "pinned Sail defaults; no vstart-success override",
+  "packet_rule": "independent allowed-result predicate; no arbitrary Spike bit equality"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "selected_actual_packets": 3420,
+  "effective_rejections": 20980,
+  "rejections": {
+    "exact-sticky-flags": 3420,
+    "FP-scalar": 3420,
+    "integer-scalar": 3420,
+    "other-register": 3420,
+    "prestart-or-VL0": 540,
+    "active-result": 6010,
+    "undisturbed-tail": 750
+  },
+  "changed_allowed": 300,
+  "allowances": {
+    "changed-tail-ones": 300
+  },
+  "checker_sha256": "aadcb04d993921235971bb62b30a421343bff7b30dc33493ad2d5f0a22fa698c",
+  "guest_executions": 0
+}

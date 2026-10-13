@@ -1,0 +1,77 @@
+{
+  "files": [
+    {
+      "file": "rvv_ch12.inc",
+      "sha256": "9d37b904660bd6e2043d069d02e5caca8b24658892bf26551e9e0219f3f2b49f",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "rvv_ch14.inc",
+      "sha256": "20a08a6df9ba538961d222bffe9aba54462629929ce72a6674142bc3be8d8fd7",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "rvv_ch8.inc",
+      "sha256": "351688519afa8784250c5d7dfa752214d9733d866bcc3141f504d2e99c5eaaa3",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "rvv_insn.S",
+      "sha256": "4d61684e8bf1c78d60a908ba4f728cc7422b02f00cbb3f4aa55655d16f3a289e",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vfmerge_vfm.c",
+      "sha256": "f381547f46a4ce4595105500ffff3000996709efc3262a4709519b7a04bcec57",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vnsra_vi.c",
+      "sha256": "dba072df330fa6e2ffeda2796a389111085c6615cc3a8943e2fefb104dbfe8d7",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vnsra_vv.c",
+      "sha256": "1100e76e0cac60206bb83bd15cd1e2ff8b00d07f572b4be7f0064e50553a0934",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vnsra_vx.c",
+      "sha256": "1d2f8f7200ee82c5ccd326bac282379e78042ff49e6dbfbfb0c366c495d88f5c",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vnsrl_vi.c",
+      "sha256": "96a86573f47f64427deb83684c55ac61c0935b218368f1b927af12421a43fa29",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vnsrl_vv.c",
+      "sha256": "7cd988d3d0a4b3696ac9c456adc8b79b9dd9cfe7fa224c576911fc6aead70621",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    },
+    {
+      "file": "vnsrl_vx.c",
+      "sha256": "17f803c6ddbfd000a5db1b1565992944e463cb5efb19b2b3359940a84054f230",
+      "license": "original C-SKY LGPL-2-or-later notice retained",
+      "review": "case inputs/wrappers only; expected arrays never used"
+    }
+  ],
+  "original_fp_slide_cases": "ABSENT in pinned complete QEMU tree; vfmerge and six legacy vnsr cases exist",
+  "fp_slide_404_attempt": "vfslide1up_vf.c/vfslide1down_vf.c; no QEMU original-case PASS claimed",
+  "spec": {
+    "path": "../directed-task174/v-spec.adoc",
+    "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+    "sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19"
+  }
+}

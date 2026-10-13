@@ -1,0 +1,9 @@
+{
+  "raw_root": "/home/vick/rvv-directed-task175/fpmerge175",
+  "guest_elf_identities": 162,
+  "cases": 3144,
+  "checks": 15720,
+  "commands": 540,
+  "adapter_verified_units": 54,
+  "extra_raw_file_inventory": "NONE"
+}

@@ -1,0 +1,24 @@
+{
+  "parts": [
+    {
+      "original": "/home/vick/rvv-directed-task175/fpslide175/pilot/corpus",
+      "cases": 418,
+      "units": 16,
+      "manifest_sha256": "5b0902fe394b797c5f3360c5a2f784dd77983ff3cf304c8b6c695546e34235bc",
+      "results_sha256": "22bdb41ced43d0217e2d07f99ce3144f270750ad84cfdd9d69f93a0bcb9a4ad7"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task175/fpslide175/remaining/corpus",
+      "cases": 5600,
+      "units": 200,
+      "manifest_sha256": "b312812bdb95e0c49973c042cec79ac7c48f747e33a7165b15ed0fd78895bb65",
+      "results_sha256": "de125f37a714ff72d4f590ee351398dc4c0be85a036af25ebad842456cf15850"
+    }
+  ],
+  "cases": 6018,
+  "checks": 30090,
+  "units": 216,
+  "guest_executions_added": 0,
+  "reference_executions_added": 0,
+  "disjoint_units": true
+}

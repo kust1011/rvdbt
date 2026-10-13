@@ -1,0 +1,20 @@
+{
+  "family": "fpslide175",
+  "forms": [
+    "vfslide1up.vf",
+    "vfslide1down.vf"
+  ],
+  "cases": 6018,
+  "units": 216,
+  "checks": 30090,
+  "commands": 1080,
+  "per_form": {
+    "vfslide1up.vf": 2982,
+    "vfslide1down.vf": 3036
+  },
+  "pilot_cases": 418,
+  "pilot_units": 16,
+  "synthetic_checks": 6018,
+  "encodings": 15,
+  "guest_credit": 0
+}

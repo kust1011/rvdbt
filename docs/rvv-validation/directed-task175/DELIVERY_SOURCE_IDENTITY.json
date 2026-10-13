@@ -1,0 +1,25 @@
+{
+  "files": {
+    "scripts/rvv/directed/vadd.py": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56",
+    "scripts/rvv/directed/fp157.py": "ad2d81bb2bd48bdac5d480c885cbc052d4aac279c727561a7d437633e14abbeb",
+    "scripts/rvv/directed/audit.py": "0811252ec7e54773ed88491fc3edd4092c2bddaa3df6034297135b43251f5e3e",
+    "scripts/rvv/directed/gaps175.py": "e236c669ab6b8fbbe84a5c366c700a17d229c2d6e5f80d59de89d5215d1a93d4",
+    "scripts/rvv/directed/fpslide175_next.py": "7d02f2c25442e7d43fc9c77a67867cf15586901cc099b74397a9a49ac3c7d8f6",
+    "scripts/rvv/directed/prepare_gaps175.py": "c17469d096d3636a48bb6d7823401f6302c91af27b75421b48f7aa341a35ff8b",
+    "scripts/rvv/directed/review_gaps175.py": "33ad25e4aaae3fb86c7594654e61467e170e028b504742abe2cd0c6c96acc029",
+    "scripts/rvv/directed/controls_gaps175.py": "c000603e993575f63d9504b7c3b6891f90a6687f761c38c7ac3539dc942af38a",
+    "scripts/rvv/directed/crosscheck_gaps175.py": "29b0746ee9b6d30bc0cfe043521decce2c39a98e48bcc2cc535743786a2ffe8b",
+    "scripts/rvv/directed/supplement_gaps175.py": "5e51854255bfcf535c129a7070c344c35faaa54ac6c23b5ac65b3b00b1a96847",
+    "scripts/rvv/directed/export_gaps175.py": "f00cde4799408b7eedf5f92751e1741f44d3783c1db02e84a4c1ff8ee5b81fe7",
+    "scripts/rvv/directed/inventory175.py": "7104f0a80be6cfcfd10957cb86d6fa688319812ed4edfa85c91e62c70bb406dd",
+    "scripts/rvv/directed/qemu_gaps175.json": "4a0bf2b6d7d5b8a50900991164eee14eadcead26f377f6d7a7aeab0bf3caead3",
+    "scripts/rvv/directed/run_gaps175.sh": "1df9e12ca026b015d4375cb40bede13836d4be2c687b50bde6a2b37daa57077f",
+    "scripts/rvv/directed/run_supplement175.sh": "baff23a21e1aaf488b0efcf028c338b3cc5848a3fe27b2132772725399268b9b"
+  },
+  "execution_snapshot_scope": "raw immutable tools/tools-next/tools-review175/tools-supp-v2; separate freezes identify executed revisions",
+  "delivery_change_notes": [
+    "final base generator normalizes JSON list fields",
+    "supplement adds odd/custom mask prestate support without changing original main cases",
+    "final crosscheck utility waits for guest completion and recognizes relative own guest arguments; original525 crosschecks retain actual original tool in tools-supp"
+  ]
+}

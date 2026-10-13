@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "unit": "vfmerge-vfm-w128-e32-mf2-zero",
+      "cases": 42,
+      "elf_sha256": "a61a6634127f92c502acfdb95ca37cc624d8df44496a75d247e8b584b6fbf08e",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.41475552902556956,
+        "stdout_sha256": "ac35b83f8809a7a8fbfb1119bb3963327a1057611af369b7d558a721a768fa16",
+        "stderr_sha256": "a00ca02b7c27c956efd57d1e4cd450e3cbbd865f45644002a3c90a58a0b930de",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfmerge-vfm-w128-e64-m1-zero",
+      "cases": 39,
+      "elf_sha256": "99cab46d83868fc11952ac32e5a72b862c3b945dd92066a331c96469911f5ff1",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.414673010003753,
+        "stdout_sha256": "7da5906b7033dcebb7a1728d1645bd4071f69158168c7b0520796ba52e211752",
+        "stderr_sha256": "52e60b2a704c478b8132723371b51763d7509405a56b4241512eae523fd4f772",
+        "storage": "lossless-gzip-v1"
+      }
+    }
+  ],
+  "case_checks": 81,
+  "commands": 2,
+  "ordinary_credit": 0,
+  "config": "pinned Sail defaults; no vstart-success override",
+  "packet_rule": "independent allowed-result predicate; no arbitrary Spike bit equality"
+}

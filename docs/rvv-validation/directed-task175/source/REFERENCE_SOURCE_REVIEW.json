@@ -1,0 +1,74 @@
+{
+  "sources": [
+    {
+      "file": "spike-vfslide1up_vf.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfslide1up_vf.h",
+      "sha256": "42c96b9aea30415f6df3d6b6310ab0fb1fc66304830bfbf893b2d0812ad1f1c3"
+    },
+    {
+      "file": "spike-vfslide1down_vf.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfslide1down_vf.h",
+      "sha256": "0518ab93be69e1aaa32274beb5ac53d6ec994a7726a02d63136990314e8c0dc7"
+    },
+    {
+      "file": "spike-vfmerge_vfm.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfmerge_vfm.h",
+      "sha256": "3043b5438fcc08992bbaf349a989b7b59c3a07d965ceb02c8164b87802623026"
+    },
+    {
+      "file": "spike-vnsra_wv.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vnsra_wv.h",
+      "sha256": "89950d164be5f4df7566ae94e488763fb205d858c097eb62dc6b0482c72749e5"
+    },
+    {
+      "file": "spike-vnsra_wx.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vnsra_wx.h",
+      "sha256": "d1e5ec80fea4c6091ef4c0a3d3fed2dc8fac6a441d7dabcb72f150a10e6699a2"
+    },
+    {
+      "file": "spike-vnsra_wi.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vnsra_wi.h",
+      "sha256": "49e3795450b492fc77fc1e68cc3dd9980a8260b0a12b0b4fc757362449052c9b"
+    },
+    {
+      "file": "spike-vnsrl_wv.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vnsrl_wv.h",
+      "sha256": "f3aedfa5710f1fbe77996d764d470fc6bafa5dd27449a673a3f9641f7638e723"
+    },
+    {
+      "file": "spike-vnsrl_wx.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vnsrl_wx.h",
+      "sha256": "d9b304732c6455fd140519acd7f41795af123312c3409b3795265647e589bb64"
+    },
+    {
+      "file": "spike-vnsrl_wi.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vnsrl_wi.h",
+      "sha256": "9fe83dd20f6b93c68034930986afb469d104df1aacc3d0ac444dbf77d003e4c3"
+    },
+    {
+      "file": "sail-vext_fp_insts.sail",
+      "url": "https://raw.githubusercontent.com/riscv/sail-riscv/0.14.1/model/extensions/V/vext_fp_insts.sail",
+      "sha256": "feb3a2a1e162a6091d12acd264c9bc598dabede463a8d9eb30e479499a1b7d54"
+    },
+    {
+      "file": "sail-vext_fp_red_insts.sail",
+      "url": "https://raw.githubusercontent.com/riscv/sail-riscv/0.14.1/model/extensions/V/vext_fp_red_insts.sail",
+      "sha256": "cff4a0e03b3781a5e45b04aa76c745a03f91c3cbcd54dbfaac71556c82aef5d8"
+    },
+    {
+      "file": "sail-vext_fp_utils_insts.sail",
+      "url": "https://raw.githubusercontent.com/riscv/sail-riscv/0.14.1/model/extensions/V/vext_fp_utils_insts.sail",
+      "sha256": "e0eac3157e5daaf9dd92d6b5853c3c7b4a33e0953ac076e5d9daffb1764d72c3"
+    },
+    {
+      "file": "sail-vext_fp_vm_insts.sail",
+      "url": "https://raw.githubusercontent.com/riscv/sail-riscv/0.14.1/model/extensions/V/vext_fp_vm_insts.sail",
+      "sha256": "847b48049222aa344733ad690a4059f86bc6ae2d6b973e184bb78de88e991a42"
+    },
+    {
+      "file": "sail-vext_arith_insts.sail",
+      "url": "https://raw.githubusercontent.com/riscv/sail-riscv/0.14.1/model/extensions/V/vext_arith_insts.sail",
+      "sha256": "4c0255bbc2dde0da80891983fa2bf80c42b12d4a3aea9c61a72298d8a4b6620d"
+    }
+  ]
+}

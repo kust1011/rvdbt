@@ -1,0 +1,9 @@
+{
+  "raw_root": "/home/vick/rvv-directed-task175/fpslide175",
+  "guest_elf_identities": 324,
+  "cases": 6018,
+  "checks": 30090,
+  "commands": 1080,
+  "adapter_verified_units": 108,
+  "extra_raw_file_inventory": "NONE"
+}

@@ -1,0 +1,9 @@
+{
+  "raw_root": "/home/vick/rvv-directed-task175/supplement",
+  "guest_elf_identities": 1026,
+  "cases": 2700,
+  "checks": 13500,
+  "commands": 4320,
+  "adapter_verified_units": 162,
+  "extra_raw_file_inventory": "NONE"
+}

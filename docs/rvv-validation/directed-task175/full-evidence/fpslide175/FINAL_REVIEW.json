@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_pipeline_stage": "audit",
+  "original_returncode": 1,
+  "corrected_audit": "review/audit-parallel-v2/audit",
+  "guest_replay": 0,
+  "checker_change": "canonical JSON list normalization only",
+  "original_tools": "/home/vick/rvv-directed-task175/tools",
+  "review_tools": "/home/vick/rvv-directed-task175/tools-review175"
+}

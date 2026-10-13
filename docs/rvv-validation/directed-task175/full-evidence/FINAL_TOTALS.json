@@ -1,0 +1,56 @@
+{
+  "status": "PASS_FINITE_SCOPE",
+  "forms": 9,
+  "cases_per_arm": 33390,
+  "checks": 166950,
+  "dut_checks": 133560,
+  "units": 2268,
+  "commands": 11340,
+  "reference_commands": 2268,
+  "dut_commands": 9072,
+  "pilot_cases": 1537,
+  "supplement_cases": 2700,
+  "partitions": [
+    {
+      "family": "fpslide175",
+      "cases": 6018,
+      "units": 216,
+      "checks": 30090,
+      "commands": 1080
+    },
+    {
+      "family": "fpmerge175",
+      "cases": 3144,
+      "units": 108,
+      "checks": 15720,
+      "commands": 540
+    },
+    {
+      "family": "narrow175",
+      "cases": 21528,
+      "units": 1080,
+      "checks": 107640,
+      "commands": 5400
+    },
+    {
+      "family": "supplement",
+      "cases": 2700,
+      "units": 864,
+      "checks": 13500,
+      "commands": 4320
+    }
+  ],
+  "effective_rejections": 291480,
+  "changed_allowed": 8160,
+  "Sail_zero_start_crosscheck_commands": 18,
+  "Sail_zero_start_crosscheck_checks": 525,
+  "crosscheck_ordinary_credit": 0,
+  "form_configurations": 702,
+  "accepted_before175": 565,
+  "accepted_after175": 574,
+  "remaining_forms": 21,
+  "task173_forms": 18,
+  "session3_unary_forms": 3,
+  "final_common_build_validation": "NOT_RUN",
+  "production_changes": 0
+}

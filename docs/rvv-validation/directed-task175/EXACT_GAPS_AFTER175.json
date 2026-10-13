@@ -1,0 +1,31 @@
+{
+  "required": 595,
+  "accepted": 574,
+  "gaps": [
+    "vfrec7.v",
+    "vfrsqrt7.v",
+    "vfsqrt.v",
+    "vfwadd.vf",
+    "vfwadd.vv",
+    "vfwadd.wf",
+    "vfwadd.wv",
+    "vfwmacc.vf",
+    "vfwmacc.vv",
+    "vfwmsac.vf",
+    "vfwmsac.vv",
+    "vfwmul.vf",
+    "vfwmul.vv",
+    "vfwnmacc.vf",
+    "vfwnmacc.vv",
+    "vfwnmsac.vf",
+    "vfwnmsac.vv",
+    "vfwsub.vf",
+    "vfwsub.vv",
+    "vfwsub.wf",
+    "vfwsub.wv"
+  ],
+  "task173_pending": 18,
+  "session3_unary": 3,
+  "task175_unresolved": 0,
+  "final_common_build_validation": "NOT_RUN"
+}

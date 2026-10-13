@@ -1,0 +1,17 @@
+{
+  "form": "vfslide1down.vf",
+  "status": "PASS_FINITE_SCOPE",
+  "main_cases_per_arm": 3036,
+  "supplement_cases_per_arm": 378,
+  "cases_per_arm": 3414,
+  "arms": {
+    "Reference": 3414,
+    "B": 3414,
+    "M1": 3414,
+    "M2": 3414,
+    "BOTH": 3414
+  },
+  "configurations": 54,
+  "build_sha256": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "failures": 0
+}

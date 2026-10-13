@@ -1,0 +1,11 @@
+form,arm,status,checks
+vfslide1down.vf,B,PASS,3036
+vfslide1down.vf,BOTH,PASS,3036
+vfslide1down.vf,M1,PASS,3036
+vfslide1down.vf,M2,PASS,3036
+vfslide1down.vf,Reference,PASS,3036
+vfslide1up.vf,B,PASS,2982
+vfslide1up.vf,BOTH,PASS,2982
+vfslide1up.vf,M1,PASS,2982
+vfslide1up.vf,M2,PASS,2982
+vfslide1up.vf,Reference,PASS,2982

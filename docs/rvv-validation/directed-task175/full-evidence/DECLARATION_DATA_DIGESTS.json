@@ -1,0 +1,18 @@
+{
+  "fpslide175": {
+    "cases": 6018,
+    "sha256": "65023d59c6896de2aff3fad80f285e4400a0acb224573190f2684f938d3fd4db"
+  },
+  "fpmerge175": {
+    "cases": 3144,
+    "sha256": "b2949ef25544c8340c60ffc81a5598790d731a13f85df5849e8c5246805c6477"
+  },
+  "narrow175": {
+    "cases": 21528,
+    "sha256": "01fedabf897ca23f2a0d69711d3f0ad800d2b728bf11df5c1439cec3e379f9db"
+  },
+  "supplement": {
+    "cases": 2700,
+    "sha256": "a982311f4d044ee81c1e636d8b8a0599f9f4f3b9425d251e5103db1a6d2f3e8b"
+  }
+}

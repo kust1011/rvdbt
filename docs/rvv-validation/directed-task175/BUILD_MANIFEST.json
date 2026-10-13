@@ -1,0 +1,15 @@
+{
+  "build": "combined immutable174 (reviewed167 FMA +171 insertion +172 conversion)",
+  "source_build_root": "xbd:/home/vick/rvdbt-host512-task174-build",
+  "executable_sha256": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "library_sha256": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+  "original_integration_manifest": "../directed-task174/BUILD_MANIFEST.json",
+  "production_changes_task175": [],
+  "old_build_overwrites": false,
+  "raw_root": "xbd:/home/vick/rvv-directed-task175",
+  "execution_tools": {"fpslide175": "tools", "fpmerge175": "tools-next", "narrow175": "tools-next", "supplement": "tools-supp-v2"},
+  "review_tools": {"fpslide175": "tools-review175", "fpmerge175": "tools-next", "narrow175": "tools-next", "supplement": "tools-supp-v2"},
+  "reference_pins": "full-evidence/IDENTITIES.json",
+  "source_provenance_old_forms_rerun": false,
+  "final_common_build_all_accepted_families": "NOT_RUN"
+}

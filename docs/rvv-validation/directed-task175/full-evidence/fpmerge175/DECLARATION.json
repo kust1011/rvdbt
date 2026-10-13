@@ -1,0 +1,18 @@
+{
+  "family": "fpmerge175",
+  "forms": [
+    "vfmerge.vfm"
+  ],
+  "cases": 3144,
+  "units": 108,
+  "checks": 15720,
+  "commands": 540,
+  "per_form": {
+    "vfmerge.vfm": 3144
+  },
+  "pilot_cases": 219,
+  "pilot_units": 8,
+  "synthetic_checks": 3144,
+  "encodings": 6,
+  "guest_credit": 0
+}

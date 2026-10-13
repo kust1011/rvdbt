@@ -1,0 +1,28 @@
+{
+  "family": "narrow175",
+  "forms": [
+    "vnsrl.wv",
+    "vnsrl.wx",
+    "vnsrl.wi",
+    "vnsra.wv",
+    "vnsra.wx",
+    "vnsra.wi"
+  ],
+  "cases": 21528,
+  "units": 1080,
+  "checks": 107640,
+  "commands": 5400,
+  "per_form": {
+    "vnsrl.wv": 3730,
+    "vnsrl.wx": 3640,
+    "vnsrl.wi": 3394,
+    "vnsra.wv": 3730,
+    "vnsra.wx": 3640,
+    "vnsra.wi": 3394
+  },
+  "pilot_cases": 900,
+  "pilot_units": 48,
+  "synthetic_checks": 21528,
+  "encodings": 62,
+  "guest_credit": 0
+}

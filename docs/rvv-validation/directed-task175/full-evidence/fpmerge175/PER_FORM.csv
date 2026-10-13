@@ -1,0 +1,6 @@
+form,arm,status,checks
+vfmerge.vfm,B,PASS,3144
+vfmerge.vfm,BOTH,PASS,3144
+vfmerge.vfm,M1,PASS,3144
+vfmerge.vfm,M2,PASS,3144
+vfmerge.vfm,Reference,PASS,3144

@@ -145,6 +145,9 @@ def pairs(bits):
         ('inexact','one','three')]]
 
 def scalar(c):
+    if c.get('family') in ('fpslide175','fpmerge175','narrow175'):
+        import gaps175
+        return gaps175.scalar(c)
     if c.get('family') == 'fpreduce174':
         import fpreduce174
         return fpreduce174.scalar(c)
@@ -162,6 +165,9 @@ def scalar_operand(c):
     return scalar(c) & ((1 << c['sew'])-1)
 
 def initial(c):
+    if c.get('family') in ('fpslide175','fpmerge175','narrow175'):
+        import gaps175
+        return gaps175.initial(c)
     if c.get('family') == 'fpreduce174':
         import fpreduce174
         return fpreduce174.initial(c)
@@ -192,6 +198,9 @@ def initial(c):
     return bytes(raw)
 
 def target(c):
+    if c.get('family') in ('fpslide175','fpmerge175','narrow175'):
+        import gaps175
+        return gaps175.target(c)
     if c.get('family') == 'fpreduce174':
         import fpreduce174
         return fpreduce174.target(c)
@@ -208,6 +217,9 @@ def target(c):
     return f'{c["mnemonic"]}.{c["form"]} v{c["vd"]},v{c["vs2"]},{rhs}' + (',v0.t' if c['mask'] != 'none' else '')
 
 def instruction(c):
+    if c.get('family') in ('fpslide175','fpmerge175','narrow175'):
+        import gaps175
+        return gaps175.instruction(c)
     if c.get('family') == 'fpreduce174':
         import fpreduce174
         return fpreduce174.instruction(c)
@@ -260,6 +272,9 @@ def csr_expected(c, post=False, before=None):
     return rows
 
 def check_isa(c, raw, rc=0, timeout=False):
+    if c.get('family') in ('fpslide175','fpmerge175','narrow175'):
+        import gaps175
+        return gaps175.check_isa(c, raw, rc, timeout)
     if c.get('family') == 'fpreduce174':
         import fpreduce174
         return fpreduce174.check_isa(c, raw, rc, timeout)
@@ -297,6 +312,9 @@ def check_isa(c, raw, rc=0, timeout=False):
     return True
 
 def check_reference(c, raw, reference):
+    if c.get('family') in ('fpslide175','fpmerge175','narrow175'):
+        import gaps175
+        return gaps175.check_reference(c, raw, reference)
     if c.get('family') == 'fpreduce174':
         import fpreduce174
         return fpreduce174.check_reference(c, raw, reference)

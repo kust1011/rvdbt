@@ -1,0 +1,17 @@
+{
+  "cases": 2700,
+  "units": 864,
+  "per_form": {
+    "vfslide1up.vf": 324,
+    "vfslide1down.vf": 378,
+    "vfmerge.vfm": 378,
+    "vnsrl.wv": 270,
+    "vnsrl.wx": 270,
+    "vnsrl.wi": 270,
+    "vnsra.wv": 270,
+    "vnsra.wx": 270,
+    "vnsra.wi": 270
+  },
+  "disjoint_ids": true,
+  "scope": "odd complement, high sources/aliases, scalar lanes/masks/prestart"
+}
