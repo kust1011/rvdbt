@@ -1,0 +1,13 @@
+{
+  "build": ["python3", "scripts/rvv/directed/vadd.py", "build", "--family", "configuration147", "--build-jobs", "4", "--output", "/home/user/research/materials/task147-work/corpus", "--link", "scripts/rvv/fixtures/rvvts-20261089/link.ld"],
+  "run": ["taskset", "-c", "28-31", "nice", "-n", "10", "python3", "vadd.py", "run", "--root", "/home/vick/rvv-directed-task147/corpus", "--engine", "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun", "--spike", "/home/vick/rvv-directed-task145/deps/spike", "--pk", "/home/vick/rvv-directed-task145/deps/pk", "--sail", "/home/vick/rvv-act4-tools/bin/sail_riscv_sim", "--flags", "external-flags.json", "--jobs", "4"],
+  "audit": ["python3", "audit.py", "corpus", "audit"],
+  "reject": ["python3", "reject_config.py", "corpus", "rejections"],
+  "examples": ["python3", "examples.py"],
+  "export": ["python3", "export.py", "/home/vick/rvv-directed-task147", "/home/vick/rvv-directed-task147/evidence"],
+  "package": ["python3", "package.py"],
+  "shell_directory": "/home/vick/rvv-directed-task147",
+  "formal_command_details": "corpus/runs/<unit>/<arm>/command.json",
+  "compile_command_details": "corpus/build-commands.json",
+  "classification_amendment": "classification-amendment.json, made before formal execution; source/ELFs unchanged"
+}

@@ -1,0 +1,42 @@
+{
+  "per_arm_permitted_differences": {
+    "B": 1168,
+    "M1": 1168,
+    "M2": 1168,
+    "BOTH": 1168
+  },
+  "examples": [
+    {
+      "case": "w128-e8-mf4-vsetvli-p00-deterministic-repeat",
+      "arm": "B",
+      "reference_vl": 3,
+      "dut_vl": 4,
+      "raw": "runs/w128-e8-mf4-vsetvli-start/B/packets.bin",
+      "offset": 0
+    },
+    {
+      "case": "w128-e8-mf4-vsetvli-p01-deterministic-repeat",
+      "arm": "B",
+      "reference_vl": 3,
+      "dut_vl": 4,
+      "raw": "runs/w128-e8-mf4-vsetvli-start/B/packets.bin",
+      "offset": 13440
+    },
+    {
+      "case": "w128-e8-mf4-vsetvli-p10-deterministic-repeat",
+      "arm": "B",
+      "reference_vl": 3,
+      "dut_vl": 4,
+      "raw": "runs/w128-e8-mf4-vsetvli-start/B/packets.bin",
+      "offset": 26880
+    },
+    {
+      "case": "w128-e8-mf4-vsetvli-p11-deterministic-repeat",
+      "arm": "B",
+      "reference_vl": 3,
+      "dut_vl": 4,
+      "raw": "runs/w128-e8-mf4-vsetvli-start/B/packets.bin",
+      "offset": 40320
+    }
+  ]
+}

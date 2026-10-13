@@ -1,0 +1,28 @@
+{
+  "cases": 48630,
+  "units": 792,
+  "case_checks": 243150,
+  "commands": 3960,
+  "per_form": {
+    "vsetvli": 12896,
+    "vsetivli": 6464,
+    "vsetvl": 29270
+  },
+  "classes": {
+    "legal": 30750,
+    "reserved-vstart-profile": 1512,
+    "reserved-preserve": 1056,
+    "unsupported-vtype": 15312
+  },
+  "max_workers": 4,
+  "guest_vlens": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "manifest_sha256": "18be56f5574ed67a3e38dabd6b4193238337a1d35f6458a206e99e569920aaff",
+  "manifest_before_execution": true
+}

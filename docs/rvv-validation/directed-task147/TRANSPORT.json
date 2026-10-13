@@ -1,0 +1,14 @@
+{
+  "archive": "/home/user/research/materials/task147-directed-raw-20261013/task147-directed-final-v2-raw.tar.gz",
+  "remote_archive": "xbd:/home/vick/task147-directed-final-v2-raw.tar.gz",
+  "archive_sha256": "48153f088cafa00c44b979d20a73b3d204f57bf112b070f086a5f631754c1d9b",
+  "archive_bytes": 100969401,
+  "payload_files": 36711,
+  "payload_bytes": 8406050833,
+  "missing": [],
+  "extra": [],
+  "hash_errors": [],
+  "manifest_sha256": "24aacf2b39cb04889b43665200780b79d6611f6fe35d05ff917c03907a843059",
+  "original_first_snapshot_retained": "xbd:/home/vick/task147-directed-final-raw.tar.gz",
+  "old145_146_packaged": false
+}

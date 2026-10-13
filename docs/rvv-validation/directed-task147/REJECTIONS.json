@@ -1,0 +1,2636 @@
+{
+  "count": 293,
+  "rejected": 293,
+  "controls": [
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "e11300a3a365eb51b0d2196ab9cec6f4823df22631b0eb652998de604e877802"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "9a14442024277bb9698a17cc4283d770b6239df24149b2644b8375d12cfb7cf1"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "e258082f1e004b819b74fd8173c1dae1dba9b138749f982dc816c477013d9e96"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "fb61298435a30f9c2062b76b2a36af968ae698558ce3702d3b46b58d23be86fc"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "64a50d36e5483990f177f9a47a214991c555c0748e461aea5c240fbda815a8e1"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "9cc2c0d787e6b8ad5add85cbd457e314c8e8a5af56bdb0cc57707125d050e453"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "9b00e9c9e1789bd38f7c2c4d2d7609f59a1eca627b937232af24c95e1839b91e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "c10f20455b84a1d9f45ca6fe86d9d307c600aa6802a6e4c0f640c89574b2acf2"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl0-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "92ae65a4811b3903543d583fad406b07cb89f6d8c49a9717bcf2a0e59fb45631"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl0",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "17329e8e4599a28b85ba8b30ef3365e9fb0826f9bd22653c94035959a7c0f924"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "4460e9eff81fe9be4c0af8f097bd474a0ac04f6106be3395bba6d20067c1129c"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "7d675bdfea4d91a49754f23a28654054b3e96672024733c0c2584b41fb98b167"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "9a0ea4c319a645f0df33baa9c8544a17be796a4f0cbcbbfda6225de073559ec9"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "7a3ff54d1f70a64f3bf9596ed07376670a3ddf202af24fc8520843e53b3257ff"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "63079c1461856d94d6a94abebdc6abc74ad4e978eee8d1a8ee133f3ca66e8fc0"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "8e80a97a1a75a19848525d948152b546841b452a1e5724bee3df738fc11cd6d0"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "fc35e9f657a67f1309710e082da5e29316510c6710edf004c3ade9a8dadcfbaa"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-avl1-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "02df44414b43aefd3d8a9865e6aaed30989936cb890763ac7592467541b64e87"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-avl1",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "bab4d966b7edb817ce8e0e0ac1c3e2b9a5a3ea83cb77d3d09816bb244d6930b8"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "cd61228f5c50837cd960935c5af4dfe20b0b60ca5a90c3a63c06ebc797d05cb6"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "e995f7e6b549d98f5a3e4f82b92c85cae33aad544db620233b1c1e50bb316e5e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "7cdeefbd0bfdd065e1dbde4842b59258c035fecd32032363c9bba8a6e18a69a1"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "69ce3a988ec5b96512a0b72e96b467a2f3d20f8569549c0314c2e79564185e10"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "6f3f6d121a12d90cd32b70fcd6e2ac530454a52205498ab4d9ad87a92d8780ab"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "16887034c1dabf0d692fd0b153133a07e0bac10f53b6bb95d94470468682ef3c"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "aad71e4f5bcbf816ad03ad204b53cea4baf042640b4ff0e9a80841f2d8ff2d44"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "0f9a98e21b40cfb95734196150500b3ac1b0ad0d98042ae4c100e2bcbca41b48"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "coherent-rd-vl-outside-set",
+      "rejected": true,
+      "error": "VL 8 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-deterministic-repeat-below-bound.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "078d7e533d26e36ae1cae863029488537101da2f4d2881d67ccdfe36c1ba96ae"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "a7fe25ac39e8a568284c656b1057c10fb49c73d65985018bb7dba743a451cda6"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "80e43d5de2c969fcfd7e08fa089a7d40fd52c1adbf1b3ee4e84ae677dc3aa8cf"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "b48209f42f401e1ccb656f68854a7a517b05d21dd0dfafb09d084a876c7fb869"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "3007488786f8cc96af289b7efe0e0f251dae5773042f56d425727e1dd0f2bc06"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "4faae5f9f8cf86bd0d3cfd40a26bce827b08bf0ed998665faa530e1c133463f0"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "fd0fb74ac00ee3e919d452ff5f94732e31da84b3278fc9aaae7134d935ffd977"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "fa2be27aea9a5d68ba1249a68f2096db07257ac000f5493e9b00af126c51894e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-vill-recovery-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "b55ae23d1fe385b7ead05f60ccf9f3a190c752fbb51d663817f721da68b36bce"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-vill-recovery",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "0a936e235e4416ce08fa3e8e685eb715de3519640dd44509ec12d495f3556e65"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [16,16]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "ed7df37666a6f8bdc64348ff7a9649149ba8c5b2f6223f1679d973fe10e77b9a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "7ce506960439238f5fed64701b1124a70dd1abc21af3061101a5c23196ea2385"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "d1c372fb0071c5149442644b00208f5ac2da8075da6bcd7537090ef47e839698"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "ede33c8caa09087d1d5a60b45946d685277f139ab64bc093be434a77ee204606"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "cd783e8f9380198781f8dbdc838963d8714f9d9cb49537d03936ed81b938a51a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "1c1e5da853c1acc2ece7f7aec55feab2ae6682e190a13cf50fc498164db42820"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "def1df8b500c2265a43f177e266d624758c634123e5f3e8f6b919a261c905220"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 1] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 0]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-zero-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "0af28c35e0e9eb3c30b8a09914ccb829f2a4d73771a62980c479c8194958dbf5"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-zero",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "a92cb59bbcf9d41444b0b1d44f3680b0b70ed392fcef62256d090ecbd4bdc0cc"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "b22f3000db111abca55d66112172006c8db50c961c20e1b36063cc0b8bba9931"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "356c0d8693d88ffd36fc198c1a16f981207cb96a1bf6e6d4b1aae95265fbbb29"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "9c357dd4fa0f42d2a3c77727ff08a3497f48d0e8fc5d2625ff587e92f6b67f2e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "d17cb99a6c7db2ca181cc6ab1a008067b53dbcb5f0c9f7912ea9105a5f4d4026"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "da44311e062234f1031b382efa8bd2e03e73408c402cd74da6b4044daeff4e22"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "9c90bb6db6332e3cd8e443021186e56288a339709c85e22f5b6a3c2f432d859a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "68abf4952f335a7dde7af7adf17908845ff90865f3cfb7ee5d177c6bcf826d74"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 16] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 17]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "b644161103fafc12902c3f63bdeba9d8a07fa1c452e1e08f1bb91b7d0424c7de"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "coherent-rd-vl-outside-set",
+      "rejected": true,
+      "error": "VL 8 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-below-bound.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "b6a5e52b116d788939741862411ffb26452abdd6b4168a942039cf87e2982e5c"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "99ca31a2fe248ed560f4fb4ffb00e1bf969dcd72f5bada2ed16a727cd6a129a3"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "c86848d14011d7c0b5b656e3c4fbff38d25135319204d2a666f16d661d281314"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "aae037d20accc8295d72ab8e4cd9cbae0967d6336e109d603ceae01d4bc2c9a8"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "3cb511c14c468c7a30c0837def74e7afef4a81c55d695ea6c92d0c9d4200fd47"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "97cb1a38fad39dd56e8323f1669c946fdf4833270294a20ced6b79392631cae5"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "6d0fbf75bedfb7e8c5674108bd7be8e5f75f2fe38d9c38cdcdd78798f4d48afb"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "90d1e9115cdff9b67fa08d3574421a20c0aac92ef2bdbf8d81ff6a9251137e5d"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [1, 192, 16, 1, 2, 1, 5, 21, 3, 117, 1] != [1, 192, 16, 1, 2, 1, 5, 21, 3, 117, 0]",
+      "corrupt": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvli-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "0b5dfeb04cb4092cd645143dd96d059a6bd5801fa248937d4bd2edd7839a8c4c"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-preserve-policy-vl1",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "3671db1cdf31a8f0e08a48f07129d9fde0fffd2223450545ec93c089d5ea909e"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "de97803541ab4791abb78b427e1ff147ddd002c99d974ed06c81a4c704192256"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "5f99a2a5cf9aa23979660edbd5e07cd0846a56130ac79e035ab620a0ce416ceb"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "2e854e7d6fb153235f60b9c8cfec53847d1ec87c40162a92c7714a933a08c50f"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "404dbc5d4705d12587ad5820f8a63ee6843cdc5468d76b3c7bc8db4b0d422e67"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "62fb09e0d8f7b2ea92182b2e840e1c1740bd91b096aff6d4a566c2e1dfcfe2e0"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "d13354713a8f90bd39e915730b216e6055ea1661effc57a765f19c02b6d80887"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "63eacd5fd48d006ca5ad18821190e49af5c3c97fef099bc69cd17fa9191baf18"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl0-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "2975b49af3baa19da56165266c1c08b06ec08a4dbffb6e49c4652a7894904051"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl0",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "92a82f3f8d0a79af775a5e4b10a42c88e7b87aee06af950e8fb7c3c36c5938b4"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "db64379a778a269ab86314f50db319abeed6d3d16db612a64ae3ac68c5d45931"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "413abdabb02d83fa03a6d689d52fa1847c431a558f5323c872b49fd748f5544e"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "e21dc40952947dcc5a3b974d901bcc8650f98f93bf4685aa4baa89ce886c9b53"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "587fd10aa8da6c17d692cf27076425ba6d9a9957231130abf607a11c660a07a6"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "118d82e1e8669965ec7ac4ade7e54acbe40d6ace6dd87cb55c7ddf57744730eb"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "52da227ae9b31b91266e475b6466d41ccee0c60ed71d58e691c0699329a702b4"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "04e48786160cac5147ab5b633a4cea1b336f8f63ca071c4257343e780f6b3297"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-avl1-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "eda9aad42e9466aa54eee9140e3596b17d7fed5bc96ea2b5f9778eca18f906c7"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-avl1",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "b481537bb189737118a19ec586af5cc15dbd84c9c1e075b173902a3272e47b81"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "4a88c1d971f85f0946ad6c8673e94b7e0366dc12738241bc54656d1e6946c319"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "c760c831707a82a4f0222642787bbfd0813f31982a29cab724cfd847da7c299d"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "09c42f960829ae974ba4244d0c537231adc3e71ee1c58820b1465f9c46b5da8a"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "e443e048d1a83f52036e7c5160411359b9d03a9478e18ab57cd3f065b4d026ab"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "dc5a5608599a8641ae1e90b5f17bb06878a4883337bcbd22c4d3cf8d0ffd0f03"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "f34a2d209c5d6d7a6eb46dd27f46f20fa9b6183732538f4a9627b49233060df7"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "c8e9465d5de23ce469a69e75af562594ff268f8719924e9a9b32a2e0061ee420"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "755854d25b5a422393f080885fc36871bed4f0f672ec4ce1e81adce0e423723e"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "coherent-rd-vl-outside-set",
+      "rejected": true,
+      "error": "VL 8 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-deterministic-repeat-below-bound.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "f9da0811dc3cea9db014d5c1213f54aae1f9e11fc7b1e94601356e598d6f4979"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "d778c3dfca5c3b97fc68867e920da86c03fac16098cf6c4e064be9ee55591734"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "f19511c2969b2db389195ac30a48d86a8a6ea7b1ae44a464cfb568f65c8de52e"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "263d71793f6ef8b51936554a6b570e80fa33c7f0e077dd2f2db9994b7883e45a"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "ef3702122a47e9e23b4e58af13ee9da3b477fee8145e6add5881f3db5413bb1b"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "1a651d1b5e482e1e5f409cd0a3727aba818f23573216f09b3e0dbf0d25fa30dc"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "9d3a3580d82a39ab7fd17ea94227e1d9d27e57f22ae1a93ce893b2487159cf21"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "16b8bdbd4669867abfffe3b5bd2a22f33f7f99823c3e07fff0387cb58c64c5a4"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-vill-recovery-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "5c94778cbdee0b80821357d97c151ae0635b2561cc58c67baf82f8a2ac9d0bc8"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-vill-recovery",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "0f7209c3884408e268689cdc7d85ae616599273460401aae0dacf0d8685fff2a"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [16,16]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "e62970ca15b30df2ad343bdbedd9ab079277ec3c21c5f23e6c12b0d51a16a670"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "ed9397a96f3dcaa48f8bab8356f1a70651801f52c83531e737517b866a2d674c"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "d33c1f5591dcb3e8ade104c83512df9b5f0466b7ca0dcc08c7fb6b3e9ba4d73c"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "0a8469b889cf019805a5353a0ddf63906a95e5113ebf79051241d222a0021643"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "3a733f7f2f0e08e037282c49928e3fd10541f750cf163bacd93003a28c7259c4"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "c7483eb96f950daae4d3d8ba396606971b70356d6998609ca7ab2f8660f948d0"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "849407ce3a97abb79ea462a76d52b1d15c006cc224d74c2e172cc0ee5f3e7ed4"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 1] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 0]",
+      "corrupt": "w128-e8-m1-vsetivli-p00-rd-zero-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetivli-zero/B/packets.bin",
+      "offset": 8960,
+      "sha256": "fce53d5d2caf8788465ef531af930a10400ae3ed5561a75c04821b7db667175b"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-rd-zero",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "01a8a61e447e14a71c4cabfe5fe77a03ee9ec808b23357eed3a82acf3074cd05"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "77064fde79100a01df0d0a31410dfc8ce59708e797ab896eba6465d215277053"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "37e3ef56b138bd79a85fdd841226ebd9de54bf01c62588b6dd433cda2967e34d"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "e496d6590d575d4278e9fc10716b4c2b106e8ea033de84259a7d2d779dbc154a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "fc1ebde3fc532f1ea60aae6097a0340ee11fb75bd85f9eeb14d35b3ec7515870"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "c1e3b5ff92a3ed31b3fc24a9c13ac5b9d763e6918e25f19997eaebe60b8d139d"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "328998545a2da330a199152b347f07c5863e4b96686a8e7bdbadddaf984ab94e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "4fc52e2f963348d5941a569e539c3b9fc0da79a383cf5e6677d96841d48e3767"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl0-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 0,
+      "sha256": "61c35f4e3dac091013cd7e2e307a2a2b6d125ccd633e484042d2021c08cb6f10"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl0",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "430de3034daddc7c449544d9e8914f206f2418d06576ddc6c5d962f5f994a707"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "2d11e87ed7753337d37021fd2920a5fce4ae9f8add14b662631b215645098bc7"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "6f9ecbb64736542e6bada5d4c531ee7d87f6c25a03dc80a43c76bf1935218e10"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "642be03505d431442510a2e2c33bd05e51ec0069ccd3093c2cc945bf0a15aa7e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "b3c57cc52857ad123a51c81bf4f183752f4b6f2162d5d1c1213aff66bb87858e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "3a8f10418149e3a6497a6834f4c83c346620448f3d76034aef1f62ddd4e4b610"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "1d9b5bc881d21925e70da1ef1cb46e32c034d9e36e771e2d1483eb983d095d3f"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "0717dc8166ee181b0ca1a97730595c74d94a1fa3853de985fdd873d4154fa16a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-avl1-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 1120,
+      "sha256": "56d6f64fd85a1d66b74a64e21238bbed5c9f1fad78da3a39ddff47131b429fb9"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-avl1",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "9ba8f0384a71317602fe26567a55dfa23d3103899d3a404259a9cf06b734b47a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "6c40b6eff59e8f77099c8685fa1df9c12f84e1dd1f968cb61373a38f1bca6bb7"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "63a2cf60d381b3000e760b6c01295461bc808fb79474c82c933202027c6c69f6"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "e2b200ce124b9a05860d81bedcaaef79ce659bb120e4769765948a65cd28bedb"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "584ad1d8680c70682277595e6bbc2f02b250fede2171debfa0e22041641bf65f"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "175c9f38014a2835262422ba1ff4a8377a265d98e728badd9e58cac85046e477"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "895c85e0a0d10fefe434ca472fe7d9566868b0eb13c36e4e86ace364b91b195e"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "ff7161d3d9e8e6e6ad7e135a16a7b49a7e28ffecf158c414158256ee8f63e95a"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 0,
+      "sha256": "744caace0c5963bf6159760fd19fd2b297439641f9725a93a66c1b19ed6672e6"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "coherent-rd-vl-outside-set",
+      "rejected": true,
+      "error": "VL 8 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-deterministic-repeat-below-bound.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "2a39f1f0a120c18f67801ac31f340deb9e2a550d49ab181126df226572847567"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "e3bc888a868d8103a47be1b8372864dc4da1af534796e1848d6c4e7d217f7150"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "d291f5d93d8c4dfe827d4f14b4c263d439465dcee13d9ac078f6235d2e0807c3"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "df03aeb5de51da027137b8304cc51c033ef8012fa5cef606ee4c556973586b7b"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "69ede88f8f8bf24160b82c933e765255bbc3068f3e3f2349db46468b58a902a8"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "652cf17b8c3e815bd42683f7bc36df738c2e45cbbe0acf459e8edbbe3723dcf2"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "d17958b0ae8a0e81b1c9956020bae96886a098c95b3f40f284b125320bd79e71"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "8de1a5801e4d4b2e56fe4e7a5628f521af81f66aa23ba95b3abf3faecae4a5b1"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-vill-recovery-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 3360,
+      "sha256": "01796a4175f412c18e173e2cd39dedced039ce9f32ce8cb766d33bcbb2342a2b"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-vill-recovery",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "cf118125952e9bb316636b9e39ab294004063cef4a456195b27e1cdbe0e88436"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [16,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "f2c4bbb53b514d946282706a06f31cc2f9977b38310f37d25ca6418fd03eedb1"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "4f1cf39dc5b8ecf4496c803850bca487d8899fd49bf76b5c3d3d189d7281a7b4"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "491f331319097b7ca0ed5e0fd46c5604fc61ecdf81f22008dcf3bcf4c314d080"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "99beed63c2073f7b5fde90de8f6796a627222a7f81c4bdfec521a6a1d9a67a2b"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "bde6b9fffe4ab9e4ce1ab7817e1f73e3e132599c59a4cbce952607fe02698142"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "b152cfc9d4441a2b904b3a9e18551050ddb33ed8305d0e7d735e679c49195ee4"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "65585e112114d6d44505669f1fe0b4fcea2495824c198dae71257144e67e23ba"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 1] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 0]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-zero-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 11200,
+      "sha256": "d042382eabf71542c70af2e66d2206d43b63506a4a4bae583dba1e3047dab900"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-zero",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "cba8857a7bb0b5f2613087e864e6b33c149f455e40ab559f87edfbed60e3c36f"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "1844518b9d24fe889b03503d806345199a4cbcde10e51d67aef99d0792cd8e96"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "2509d89147fb90beb4de7190a54b40deb727c7fe54d40d384ac877e773bf9630"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "b248a419c952f11c8e3d6fb03d1dd4972645b169277559782272aa2fedde9114"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "95ba18d39b399a0d1c3072eaab6d3ab2b5589104c000f18f97be19d9e3002219"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "eea8100cf8e197a63a7e8367dd6f400b2dc09bc63b727041dabeeb7f683264b0"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "c9baefb1a88fe95b6303a519e391f7be028a9117525e623645e795daa162758d"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "cca23b3f52d508c07c290ec752d1cb4fedce5bec91279a2a9c8ed086bb6f6be3"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 16] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 17]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 12320,
+      "sha256": "155ab3ad86ec1ce770e930abb6bd8dc3ab2affecabd4a97223b17fc327985b07"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "coherent-rd-vl-outside-set",
+      "rejected": true,
+      "error": "VL 8 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-below-bound.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "cb967a3be68b4d863534094223c97f3c6d70e966be7c23fce1cc118731d7c066"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "b4ea8ab9bcb4acd800faf6fe864476a5b9c96e2dea9a5bd7243b0725bc849618"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "d946d5a06e32da953ccd0cd22d8b0aff8ea8d21c18e4654cb9903e1c24dc7cff"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "70fb880e02061112b265709870ad29c0062b587f3abd2e031d7e5dc4fc3e3e45"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "3d813e67c2824b7f3c8c5d9e9fd38ccb3ffdc0771651a9b4908e87b426ea6d73"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "d27fd6b6810adf44524cb3e6bb66f10da3ca091d1da1e48cff8590ac2b03fe3d"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "927eaf925b058229a2270b26900b27dbea1477d7ea01a72bcd5d857fae5afca7"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "369f423c18ae19baee42481f44219a01db785a289eac3756398069455ef851c6"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [1, 192, 16, 1, 2, 1, 5, 21, 3, 117, 1] != [1, 192, 16, 1, 2, 1, 5, 21, 3, 117, 0]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 6720,
+      "sha256": "0a472c48632cf101828955332a5308eb46f1d3bd2b36048faf2d9811a06c5399"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-preserve-policy-vl1",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "c6ea6130bd2914859b710a2dd9d0f698ba4c8dc0c17b6d002811d2ed0a97e7ca"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 17 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "43f653096dec521e53598d1c40c0a2934895d2d3c5dd6f0ba63d4296525d3cfe"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "0f9f5d5de76b6ab09599b028a19160870a5391933b8b3f74e2284cb395f0f5c9"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "6ed7bba79bb00df9ce6bd8cc142c5e2ef889e77595809ebd298c2b7268322575"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "1369d0893a835ba355321f113fcf374229c7fbe2be83f89e8a3d3cf77ab9e0ab"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "bdf1639f959bb7c46f91628e4e8384e8b2e700335312461378b0773f9509c95c"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "b27c6716cd99bf3f83b4dd4a0ec552a594f5a56be9d11cae3d03044c2a9770d4"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "ddb3d37c675239ea19f6c8e99b46b5184cb6186b56d14dadef10d17a794590be"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 1] != [8, 192, 16, 0, 2, 1, 5, 21, 3, 117, 0]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-zero/B/packets.bin",
+      "offset": 14560,
+      "sha256": "cda37880e23fedd185d1fbff1bd3252283fc43866a385e7c01456fa9c2eb3dc5"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "coherent-rd-vl-outside-set",
+      "rejected": true,
+      "error": "VL 8 outside allowed [9,16]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-below-bound.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "547610358c1a2a21649787f1a1e9df04716d7e17a94fdc5c853cd87ee693b7fc"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "73c7a48766d04d9fb506ca57b0e7efe7c7818c39d8cdfb162f9678d845588c4f"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "c59d5af68d62f33cc8d27b863c2f1259d34853a1d0195e25bcfdd697c7c9c91b"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "24623f99b1e20a3336e11ceec29715f83c07afc9294a011845505716e38cad2d"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "cf27c9c83589630eef5257e8139a65279cb9f330a13e575db79a02173e255a33"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "7372eb3faf44c23d501efc049a293b82765a98d04b0dcb47c86200b494f80c78"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "14151ecaeb15485ef322cd1a8718beaebcb8a74e44e2f8f95671a149519abcc4"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "d9e060b979ab90dc7cd65a141c3d890aee029a3463bb98bd0370c9a90608aaa5"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-upper-bit31-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 39200,
+      "sha256": "5be274b018809476fa1a59d7d303a048bc3c96e55394f05095f9d959aadc1569"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-upper-bit31",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "3cc5bcfd572f34f6c41fbf8b5f00eed1236fb11023d18c439dda8d5debd43991"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-vl.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "b3115a46a70d139118a91c6b4c5ce2abee484ac65e4d325ccb7376bce149c6d9"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-vtype.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "9a907d813848234195feb7c5e14db96b618d5ec756c054a81c6b6bd3ed787f36"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-vstart.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "a56c42d45261904c64fe43633039faf88d143b1c9da964adb4a86b7a40b37fdd"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-vlenb.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "461e53bcb2b7d2da53ae18e628b4de1205400ae4b06b3ec77c443aee76103fac"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "other-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-other-csr.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "2dbcf131b5f636e7df951635896fede12c9e8e9570e0483dfc56a0657fd00b9b"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "vector-output",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-vector-output.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "72ae36de835e6f652f1fc35dc22d6b3cd16eb76c39fff8b17113410ecf7ada23"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "pre-vector",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-pre-vector.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "437a4e4c2c2a8d34a691728d22f950051aef0f9483830c9ba86bb8396040ac36"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "corrupt": "w128-e8-m1-vsetvl-p00-unsupported-lmul100-pre-rd.bin",
+      "source": "corpus/runs/w128-e8-m1-vsetvl-start/B/packets.bin",
+      "offset": 40320,
+      "sha256": "773241c04bf1a8cbe63233c689e1b5fee420cc92da0328924a734179b5241da1"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-unsupported-lmul100",
+      "control": "reference-comparison-only",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "control": "determinism-with-individually-legal-vl",
+      "rejected": true,
+      "corrupt": "determinism-legal-vl-corruption.bin"
+    }
+  ],
+  "allowed_choice_controls": [
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "vl": 16,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvli-p00-deterministic-repeat-allowed16.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-deterministic-repeat",
+      "vl": 9,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvli-p00-deterministic-repeat-allowed9.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "vl": 16,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-allowed16.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap",
+      "vl": 9,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvli-p00-rd-rs1-overlap-allowed9.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "vl": 16,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetivli-p00-deterministic-repeat-allowed16.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetivli-p00-deterministic-repeat",
+      "vl": 9,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetivli-p00-deterministic-repeat-allowed9.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "vl": 16,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvl-p00-deterministic-repeat-allowed16.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-deterministic-repeat",
+      "vl": 9,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvl-p00-deterministic-repeat-allowed9.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "vl": 16,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-allowed16.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap",
+      "vl": 9,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvl-p00-rd-rs1-overlap-allowed9.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "vl": 16,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-allowed16.bin"
+    },
+    {
+      "case": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap",
+      "vl": 9,
+      "accepted": true,
+      "packet": "w128-e8-m1-vsetvl-p00-rd-rs2-overlap-allowed9.bin"
+    }
+  ]
+}

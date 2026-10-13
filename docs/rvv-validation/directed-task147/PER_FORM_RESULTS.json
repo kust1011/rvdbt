@@ -1,0 +1,102 @@
+{
+  "vsetvli": {
+    "planned": 12896,
+    "classes": {
+      "legal": 11864,
+      "reserved-vstart-profile": 504,
+      "reserved-preserve": 528
+    },
+    "arms": {
+      "Reference": {
+        "PASS": 11864,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "B": {
+        "PASS": 11864,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "M1": {
+        "PASS": 11864,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "M2": {
+        "PASS": 11864,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "BOTH": {
+        "PASS": 11864,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      }
+    }
+  },
+  "vsetivli": {
+    "planned": 6464,
+    "classes": {
+      "legal": 5960,
+      "reserved-vstart-profile": 504
+    },
+    "arms": {
+      "Reference": {
+        "PASS": 5960,
+        "PROFILE_PASS": 504
+      },
+      "B": {
+        "PASS": 5960,
+        "PROFILE_PASS": 504
+      },
+      "M1": {
+        "PASS": 5960,
+        "PROFILE_PASS": 504
+      },
+      "M2": {
+        "PASS": 5960,
+        "PROFILE_PASS": 504
+      },
+      "BOTH": {
+        "PASS": 5960,
+        "PROFILE_PASS": 504
+      }
+    }
+  },
+  "vsetvl": {
+    "planned": 29270,
+    "classes": {
+      "legal": 12926,
+      "reserved-vstart-profile": 504,
+      "reserved-preserve": 528,
+      "unsupported-vtype": 15312
+    },
+    "arms": {
+      "Reference": {
+        "PASS": 28238,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "B": {
+        "PASS": 28238,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "M1": {
+        "PASS": 28238,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "M2": {
+        "PASS": 28238,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      },
+      "BOTH": {
+        "PASS": 28238,
+        "OBSERVED_RESERVED": 528,
+        "PROFILE_PASS": 504
+      }
+    }
+  }
+}
