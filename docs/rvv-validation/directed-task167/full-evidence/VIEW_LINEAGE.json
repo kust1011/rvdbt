@@ -1,0 +1,12 @@
+{
+  "original": "/home/vick/rvv-directed-task164/full/corpus",
+  "new_DUT": "/home/vick/rvv-directed-task167/full",
+  "reference_receipts_reused": 237664,
+  "new_DUT_checks": 950656,
+  "new_reference_executions": 0,
+  "original_manifest_sha256": "39ddaef0630739cea04e8d311f408c89b669c5a0a2d932c09c4eed1ce9f8b2a7",
+  "original_results_sha256": "4985925afedbe3329cc04097a730f914e5d3bf3072ee9954aba1f792e33a2046",
+  "new_results_sha256": "dcca152d5848504cdfb70b9e7f0baf5e8ceb937bf53915441609d33f1121bf66",
+  "checker_sha256": "e85483f5db838d02dc2879ee53a407ce24784331a5e6ef1a7752a5f076a36f6c",
+  "auditor_sha256": "0694993504462e525d62a8c3c3f0beb49dcbacfdf712b7f7c8aff2fb22fcaeff"
+}

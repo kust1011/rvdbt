@@ -27,6 +27,7 @@
 #include <type_traits>
 #include "dbt/config.h"
 #include "dbt/guest/rv32_fpu.h"
+#include "dbt/guest/rv32_vector_fma_invalid.h"
 #include "dbt/guest/rv32_softfp.h"
 #include "dbt/mmu.h"
 #include "dbt/guest/rv32_vector.h"
@@ -259,10 +260,12 @@ ALWAYS_INLINE host_fchunk32_t fchunk32_splat(float v) { return _mm_set1_ps(v); }
 #ifdef __FMA__
 ALWAYS_INLINE host_fchunk32_t fchunk32_fma(host_fchunk32_t x, host_fchunk32_t y, host_fchunk32_t z)
 {
+	fma_invalid::product(x, y);
 	return _mm_fmadd_ps(x, y, z);
 }
 ALWAYS_INLINE host_fchunk64_t fchunk64_fma(host_fchunk64_t x, host_fchunk64_t y, host_fchunk64_t z)
 {
+	fma_invalid::product(x, y);
 	return _mm_fmadd_pd(x, y, z);
 }
 #endif
@@ -372,10 +375,12 @@ ALWAYS_INLINE host_fchunk32_t fchunk32_splat(float v) { return _mm256_set1_ps(v)
 #ifdef __FMA__
 ALWAYS_INLINE host_fchunk32_t fchunk32_fma(host_fchunk32_t x, host_fchunk32_t y, host_fchunk32_t z)
 {
+	fma_invalid::product(x, y);
 	return _mm256_fmadd_ps(x, y, z);
 }
 ALWAYS_INLINE host_fchunk64_t fchunk64_fma(host_fchunk64_t x, host_fchunk64_t y, host_fchunk64_t z)
 {
+	fma_invalid::product(x, y);
 	return _mm256_fmadd_pd(x, y, z);
 }
 #endif
@@ -487,10 +492,12 @@ ALWAYS_INLINE host_fchunk32_t fchunk32_splat(float v) { return _mm512_set1_ps(v)
 #ifdef __FMA__
 ALWAYS_INLINE host_fchunk32_t fchunk32_fma(host_fchunk32_t x, host_fchunk32_t y, host_fchunk32_t z)
 {
+	fma_invalid::product(x, y);
 	return _mm512_fmadd_ps(x, y, z);
 }
 ALWAYS_INLINE host_fchunk64_t fchunk64_fma(host_fchunk64_t x, host_fchunk64_t y, host_fchunk64_t z)
 {
+	fma_invalid::product(x, y);
 	return _mm512_fmadd_pd(x, y, z);
 }
 #endif
@@ -2055,6 +2062,10 @@ inline void vfma(VectorState &vs, FPUState &fs, u32 f6, bool is_vf, u32 vd, u32 
 			vs.elem_put(vd, e, sew, vlen, z);
 			continue;
 		}
+		u64 const product_x = vf_bits(vs, f6 < VF6_VFMACC ? vd : vs2, e, sew, vlen);
+		u64 const product_y = is_vf ? (sew == 4 ? (u64)f32_unbox(fs.f[vs1]) : fs.f[vs1])
+					  : vf_bits(vs, vs1, e, sew, vlen);
+		if (fma_invalid::product(product_x, product_y, sew)) fs.raise(FFLAG_NV);
 		if (sew == 4) {
 			// binary32 FMA must use fmaf: the fused product-sum is NOT covered by the
 			// double-rounding exactness argument, so double-then-narrow can differ.
@@ -3183,6 +3194,7 @@ inline void vfwarith(VectorState &vs, FPUState &fs, u32 f6, bool is_vf, u32 vd, 
 		case VF6_VFWMUL: z = a * b; break;
 		default: {
 			double const d = bits_to_f64(vf_bits(vs, vd, e, wsew, vlen));
+			if (fma_invalid::product(raw_a, raw_b, sew)) fs.raise(FFLAG_NV);
 			switch (f6) {
 			case VF6_VFWMACC:  z = std::fma(a, b, d); break;
 			case VF6_VFWNMACC: z = std::fma(-a, b, -d); break;

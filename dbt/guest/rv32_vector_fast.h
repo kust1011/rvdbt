@@ -1787,6 +1787,7 @@ inline bool try_fma(VectorState &vs, FPUState &fs, u32 f6, bool is_vf, u32 vd, u
 		u64 const bb = is_vf ? (sew == 4 ? (u64)f32_unbox(fs.f[vs1]) : fs.f[vs1])
 				     : vs.elem_u(vs1 + r, i, sew, vlen);
 		u64 const db = vs.elem_u(vd + r, i, sew, vlen);
+		if (fma_invalid::product(f6 < VF6_VFMACC ? db : ab, bb, sew)) fs.raise(FFLAG_NV);
 		if (sew == 4) {
 			float const a = bits_to_f32((u32)ab), b = bits_to_f32((u32)bb),
 				    d = bits_to_f32((u32)db);

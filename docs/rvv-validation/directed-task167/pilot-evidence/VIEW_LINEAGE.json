@@ -1,0 +1,12 @@
+{
+  "original": "/home/vick/rvv-directed-task164/pilot/corpus",
+  "new_DUT": "/home/vick/rvv-directed-task167/pilot",
+  "reference_receipts_reused": 11024,
+  "new_DUT_checks": 44096,
+  "new_reference_executions": 0,
+  "original_manifest_sha256": "b58c872c21c5ac25aef72582ca7ec2158d016133c2291a6888eb4b56e9c612ed",
+  "original_results_sha256": "96b963fdcee96132b17b50ad338856a2759d50b32cd19f9830d1e2e3277a0519",
+  "new_results_sha256": "510a7087dd11da3256c6234d6e066f9d55d194dbae2c2e41bf27612e9eb4ddd9",
+  "checker_sha256": "e85483f5db838d02dc2879ee53a407ce24784331a5e6ef1a7752a5f076a36f6c",
+  "auditor_sha256": "0694993504462e525d62a8c3c3f0beb49dcbacfdf712b7f7c8aff2fb22fcaeff"
+}

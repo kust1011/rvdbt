@@ -1,0 +1,231 @@
+{
+  "final_full_controls": {
+    "actual_packets": 9456,
+    "rejected": 303584,
+    "allowed": 864,
+    "geometries": 54,
+    "forms": [
+      "vfmacc.vf",
+      "vfmacc.vv",
+      "vfmadd.vf",
+      "vfmadd.vv",
+      "vfmsac.vf",
+      "vfmsac.vv",
+      "vfmsub.vf",
+      "vfmsub.vv",
+      "vfnmacc.vf",
+      "vfnmacc.vv",
+      "vfnmadd.vf",
+      "vfnmadd.vv",
+      "vfnmsac.vf",
+      "vfnmsac.vv",
+      "vfnmsub.vf",
+      "vfnmsub.vv"
+    ],
+    "rounding_modes": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "guest_reruns": 0,
+    "by_control": {
+      "CSR-scalar-8-0": 9456,
+      "CSR-scalar-8-1": 9456,
+      "CSR-scalar-8-2": 9456,
+      "CSR-scalar-8-3": 9456,
+      "CSR-scalar-8-4": 9456,
+      "CSR-scalar-8-5": 9456,
+      "CSR-scalar-8-6": 9456,
+      "CSR-scalar-8-7": 9456,
+      "CSR-scalar-8-8": 9456,
+      "CSR-scalar-8-9": 9456,
+      "CSR-scalar-8-10": 9456,
+      "CSR-scalar-52-0": 9456,
+      "CSR-scalar-52-1": 9456,
+      "CSR-scalar-52-2": 9456,
+      "CSR-scalar-52-3": 9456,
+      "CSR-scalar-52-4": 9456,
+      "CSR-scalar-52-5": 9456,
+      "CSR-scalar-52-6": 9456,
+      "CSR-scalar-52-7": 9456,
+      "CSR-scalar-52-8": 9456,
+      "CSR-scalar-52-9": 9456,
+      "CSR-scalar-52-10": 9456,
+      "fs0-pre": 9456,
+      "fs0-post": 9456,
+      "captured-source": 9456,
+      "captured-old-dest": 9456,
+      "other-register": 9456,
+      "active-low": 7728,
+      "active-high": 7728,
+      "independent-active": 7728,
+      "independent-fflags": 7728,
+      "preservation": 7440,
+      "nonfused-two-roundings": 3968,
+      "wrong-destructive-role": 1984,
+      "wrong-product-sign": 1984,
+      "wrong-addend-sign": 1984
+    }
+  },
+  "preliminary_controls": {
+    "path": "/home/vick/rvv-directed-task167/full-review/controls",
+    "selection": "frozen pilot control snapshot over full geometry; retained and superseded by exact full snapshot"
+  },
+  "status": "SEMANTIC_PASS_WITH_RESOURCE_LIMIT_EXCEPTION",
+  "old_artifacts_unchanged": {
+    "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+    "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "new_artifacts_unchanged": {
+    "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+    "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "original_reference_binary_identities_unchanged": {
+    "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+    "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+    "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+    "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+  },
+  "old_pinned_source_verified_files": 297,
+  "original_freezes": "pilot/full PASS",
+  "checker_files": {
+    "vadd.py": {
+      "task164": "e85483f5db838d02dc2879ee53a407ce24784331a5e6ef1a7752a5f076a36f6c",
+      "task167": "e85483f5db838d02dc2879ee53a407ce24784331a5e6ef1a7752a5f076a36f6c"
+    },
+    "fp157.py": {
+      "task164": "881a5f6a92049236b5160e113d57cde47af543d2c9d05a4536ca290e4898f688",
+      "task167": "881a5f6a92049236b5160e113d57cde47af543d2c9d05a4536ca290e4898f688"
+    },
+    "fma164.py": {
+      "task164": "1b42ae3fe4380deda65a6d4d02c9315243d827f9e03980d700e3468ac50a303b",
+      "task167": "1b42ae3fe4380deda65a6d4d02c9315243d827f9e03980d700e3468ac50a303b"
+    },
+    "qemu_fma164.json": {
+      "task164": "ea3d2924e9fb98f39a26bdcde298c3c107d1f8799d99af5a1282271de47bc6bd",
+      "task167": "ea3d2924e9fb98f39a26bdcde298c3c107d1f8799d99af5a1282271de47bc6bd"
+    },
+    "audit.py": {
+      "task164": "0694993504462e525d62a8c3c3f0beb49dcbacfdf712b7f7c8aff2fb22fcaeff",
+      "task167": "0694993504462e525d62a8c3c3f0beb49dcbacfdf712b7f7c8aff2fb22fcaeff"
+    },
+    "controls_fma164.py": {
+      "task164": "30b905e006fe3be005bebf49b38acd8e70804eea509631da3e0777a0e0b03641",
+      "task167": "30b905e006fe3be005bebf49b38acd8e70804eea509631da3e0777a0e0b03641"
+    }
+  },
+  "resources": {
+    "samples": 227,
+    "sample_scope": "late full DUT execution plus full offline review; startup/build periods separately retained in logs",
+    "raw_max_offline_processes": 6,
+    "controller_exclusion": "audit_parallel.py orchestrators are not worker traversals",
+    "max_observed_guests": 10,
+    "max_observed_offline_workers": 5,
+    "max_own_offline_workers": 4,
+    "resource_limit_exceptions": [
+      {
+        "time": 1791908719.3228164,
+        "workers": [
+          {
+            "pid": 2635420,
+            "ppid": 2634339,
+            "nice": 10,
+            "guest": false,
+            "offline": true,
+            "task163_owner": false,
+            "args": [
+              "/usr/bin/python3",
+              "/home/vick/rvv-directed-task167/scripts/audit.py",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-00/corpus",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-00/audit"
+            ],
+            "affinity": "Cpus_allowed_list:\t0-31"
+          },
+          {
+            "pid": 2635421,
+            "ppid": 2634339,
+            "nice": 10,
+            "guest": false,
+            "offline": true,
+            "task163_owner": false,
+            "args": [
+              "/usr/bin/python3",
+              "/home/vick/rvv-directed-task167/scripts/audit.py",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-01/corpus",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-01/audit"
+            ],
+            "affinity": "Cpus_allowed_list:\t0-31"
+          },
+          {
+            "pid": 2635422,
+            "ppid": 2634339,
+            "nice": 10,
+            "guest": false,
+            "offline": true,
+            "task163_owner": false,
+            "args": [
+              "/usr/bin/python3",
+              "/home/vick/rvv-directed-task167/scripts/audit.py",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-02/corpus",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-02/audit"
+            ],
+            "affinity": "Cpus_allowed_list:\t0-31"
+          },
+          {
+            "pid": 2635423,
+            "ppid": 2634339,
+            "nice": 10,
+            "guest": false,
+            "offline": true,
+            "task163_owner": false,
+            "args": [
+              "/usr/bin/python3",
+              "/home/vick/rvv-directed-task167/scripts/audit.py",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-03/corpus",
+              "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-03/audit"
+            ],
+            "affinity": "Cpus_allowed_list:\t0-31"
+          },
+          {
+            "pid": 2644678,
+            "ppid": 1,
+            "nice": 10,
+            "guest": false,
+            "offline": true,
+            "task163_owner": false,
+            "args": [
+              "python3",
+              "tools/focused_audit168.py",
+              "/home/vick/rvv-task168"
+            ],
+            "affinity": "Cpus_allowed_list:\t0-31"
+          }
+        ],
+        "shared_workers": 5,
+        "own_workers": 4
+      }
+    ],
+    "minimum_sampled_free_bytes": 56659095552,
+    "current_free_bytes": 55952211968,
+    "reserve_bytes": 10737418240,
+    "nice": 10,
+    "affinity": "none",
+    "own_guest_limit": 8,
+    "build_jobs": 4
+  },
+  "retention": {
+    "base": "/home/vick/rvv-directed-task167",
+    "allocated_bytes": 7126269952,
+    "logical_bytes": 5192111592,
+    "counts": {
+      "files": 598812,
+      "packet_files": 43525
+    },
+    "original_deletions": 0
+  },
+  "new_reference_executions": 0,
+  "scope": "FMA only; broader same-build final regression queued separately"
+}

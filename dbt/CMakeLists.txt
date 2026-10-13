@@ -260,6 +260,10 @@ target_link_libraries(rvv_entry_hint_test PUBLIC dbtstatic)
 # CPUState image and compared byte for byte against the rv32::vfma helper. It DOES emit AVX-512+FMA3
 # code, but TestCompilerRuntime never mmaps that buffer (let alone PROT_EXEC), so nothing in this
 # binary ever executes it; it runs on a host with none of those features.
+add_executable(rv32_vector_fma_invalid_test guest/rv32_vector_fma_invalid_test.cpp)
+target_include_directories(rv32_vector_fma_invalid_test PUBLIC "${PROJECT_SOURCE_DIR}")
+target_link_libraries(rv32_vector_fma_invalid_test PUBLIC dbtstatic)
+
 add_executable(vfma_typedchunk_route_test qmc/qcg/vfma_typedchunk_route_test.cpp)
 target_include_directories(vfma_typedchunk_route_test PUBLIC "${PROJECT_SOURCE_DIR}")
 target_link_libraries(vfma_typedchunk_route_test PUBLIC dbtstatic)

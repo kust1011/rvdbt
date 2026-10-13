@@ -1,0 +1,187 @@
+{
+  "witness": "vfmacc-vv-rm0-w128-e32-mf2-semantic-fp-zero-inf-qnan",
+  "guest_elf_sha256": "4881952d673eba428238d8aea1b559c3d4293bfb1ed95d9a53b48bb25aa6f420",
+  "target_pc": "0x12464",
+  "target_word": "57140cb3",
+  "retained_tbmap_sha256": "ffab4ef83c91a6dd3d0938be507e82d9336b2d82bcdf9bcc4c190629dd54603e",
+  "containing_TB": {
+    "guest_ip": "00012404",
+    "host_start": "0x730864823358",
+    "host_bytes": "2912",
+    "exec_count": "1"
+  },
+  "assembly_vector_instruction_counts": {
+    "vl1re8.v": 1472,
+    "vs1r.v": 2944,
+    "vsetvli": 46,
+    "vfmacc.vv": 46
+  },
+  "retained_routes": [
+    "RVV_FAST enabled=0 classes=15 chunk_bytes=64 admitted=0 chunks=0 residue_elems=0 refuse_shape=0 refuse_class=0 refuse_frm=0 fround_run_continued=0 fround_run_tb_exit_open=0 sig_checks=0 sig_hit=0 sig_miss_stale=0 sig_miss_evict=0 fuse_scan_attempted=0 fuse_scan_found=0 handler_legality_would_trap=0",
+    "RVV_DIRECT enabled=1 hit_counter=1 inline_hits=46 guard_fallbacks=4416",
+    "RVV_ROUTE vsetvli handler_calls=0",
+    "RVV_ROUTE vle32.v handler_calls=0",
+    "RVV_ROUTE vse32.v handler_calls=0",
+    "RVV_ROUTE vadd.vv handler_calls=0",
+    "RVV_ROUTE vsub.vv handler_calls=0",
+    "RVV_ROUTE vmul.vv handler_calls=0",
+    "RVV_ROUTE vand.vv handler_calls=0",
+    "RVV_ROUTE vor.vv handler_calls=0",
+    "RVV_ROUTE vxor.vv handler_calls=0",
+    "RVV_ROUTE vsll.vi handler_calls=0",
+    "RVV_ROUTE vsrl.vi handler_calls=0",
+    "RVV_ROUTE vmv.v.x handler_calls=0",
+    "RVV_ROUTE vadd.vx handler_calls=0",
+    "RVV_ROUTE vmv.v.i handler_calls=0",
+    "RVV_ROUTE vmv.v.v handler_calls=0",
+    "RVV_ROUTE vadd.vi handler_calls=0",
+    "RVV_ROUTE other-vector handler_calls=4416"
+  ],
+  "pinned_source_revision": "8111040faad84ded7f84fc5bd34d10461bfc50ca",
+  "provenance_files": {
+    "/home/vick/rvdbt-host512-task142-build/SOURCE_EQUALITY.json": "0bba5af369d10f712230b059f89be596ccc301efa4ca1ec1c462dc1cba02e9a7",
+    "/home/vick/rvdbt-host512-task142-build/BUILD_SUCCESS.json": "34694bc7dfb65384baa7a08fcc6efea8aa53ab3dda6e7b329618184a35539601",
+    "/home/vick/rvdbt-host512-task142-build/CONFIGURATION_MATCH_137.json": "7e0e78c0a796eaaeee3cf41cc000282530442a63d562ddd505d31ccb13215e6d",
+    "/home/vick/rvdbt-host512-task142-build/build/compile_commands.json": "01d32ae513a5f4c12cbdd087391e388fb5b8ac4d1f8b55229395f0bf786084aa"
+  },
+  "pinned_source_files": {
+    "dbt/qmc/qcg/qemit.cpp": "dce9805e3659309b062e3e6e9e21de1b40de7d803e13d722edca06000dd7de74",
+    "dbt/guest/rv32_vector_lower.h": "4040b2f619fef9e73e791704883b48bd67468000f4aefff0b1245761e523c083",
+    "dbt/guest/rv32_vector_fast.h": "3ccc42405e6b48af43b9a3dfec54d6400190ba4f73a96c15213f1409591ba7eb",
+    "dbt/guest/rv32_vector_runs.inc": "5d53fc95b75f346d90e5fa0a6bbfbcd0b0c4e73ae0983ece1d59879943847bc5",
+    "dbt/guest/rv32_interp.cpp": "99176560fa60f321685f0e070de57e2c638d5f42b40044053cb97b921c1c7e63",
+    "dbt/guest/rv32_qir.cpp": "7ccee999bf3f6b16d29b83d7b4adf0ce8be9df90ed196bed53e1dae8d7846e07"
+  },
+  "packets": {
+    "original_DUT": {
+      "raw": "/home/vick/rvv-directed-task164/pilot/corpus/runs/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/B/packets.bin",
+      "offset": 9088,
+      "bytes": 1136,
+      "sha256": "ed37de20d4f0d915ed749e24e7f6f92c42a8c2d59b3aadc5b2a890732647d2de",
+      "pre": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        0,
+        0,
+        0,
+        2147483649
+      ],
+      "post": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        0,
+        0,
+        0,
+        2147483649
+      ]
+    },
+    "rerun_old_DUT": {
+      "raw": "/home/vick/rvv-directed-task167/old-witness/runs/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/B/packets.bin",
+      "offset": 9088,
+      "bytes": 1136,
+      "sha256": "ed37de20d4f0d915ed749e24e7f6f92c42a8c2d59b3aadc5b2a890732647d2de",
+      "pre": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        0,
+        0,
+        0,
+        2147483649
+      ],
+      "post": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        0,
+        0,
+        0,
+        2147483649
+      ]
+    },
+    "fixed_DUT": {
+      "raw": "/home/vick/rvv-directed-task167/pilot/runs/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/B/packets.bin",
+      "offset": 9088,
+      "bytes": 1136,
+      "sha256": "fd403f24d7db2e5719363375fdd06905e5f31b815f9df12534e2b80fa66988af",
+      "pre": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        0,
+        0,
+        0,
+        2147483649
+      ],
+      "post": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        16,
+        0,
+        16,
+        2147483649
+      ]
+    },
+    "reference": {
+      "raw": "/home/vick/rvv-directed-task164/pilot/corpus/runs/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/Reference/packets.bin",
+      "offset": 9088,
+      "bytes": 1136,
+      "sha256": "fd403f24d7db2e5719363375fdd06905e5f31b815f9df12534e2b80fa66988af",
+      "pre": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        0,
+        0,
+        0,
+        2147483649
+      ],
+      "post": [
+        1,
+        23,
+        16,
+        0,
+        2,
+        1,
+        5,
+        16,
+        0,
+        16,
+        2147483649
+      ]
+    }
+  },
+  "old_rerun_identical_full_unit": true,
+  "route": "All 46 FMA targets are typed/direct. 4416 helper calls equal 2944 vs1r.v plus 1472 vl1re8.v capture instructions. vsetvli has no handler calls and Emit_rvvsetvl does not increment typed-frame hits. Target 0x12464 is in retained TB 0x12404 executed once. The original witness is Emit_vchunkfma, not a fast or reference helper."
+}

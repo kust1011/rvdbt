@@ -1,0 +1,14 @@
+{
+  "production_manifest_sha256": "c6c9370522234297a2ad218dc991b0b26734a185089d660a37afd30727664580",
+  "production_archive_sha256": "9c6d4fb6364a72cbac3e1f6768ca3a22c7d2e64cd597565559ea815463554cf9",
+  "source_sha256": "6ba0fe864901ec81236fe725e0425ad9485f6257b133675d8048010cf0c4ddd6",
+  "executable_sha256": "266f3b9b5930f1835589d97a34930aadfad4afc8b2b4aa37aa756536ba29ef2f",
+  "source_delta": "add CLI selection of full-VL mask fusion; production source and archive unchanged",
+  "nice": 10,
+  "build_jobs": 1,
+  "affinity": "none",
+  "results": {
+    "default.log": "646c63e8d77fe3d94cb582091634eb1829bc972f753e51f0ed321d2e2d0e94d5",
+    "full-fusion.log": "2747c23b87f5cdfa387c70d12926bff79c0abf5b6dd018dd43dc8c963840f91b"
+  }
+}

@@ -25,6 +25,7 @@
 
 #include <cstdint>
 #include <immintrin.h>
+#include "dbt/guest/rv32_vector_fma_invalid.h"
 
 #define RVVRUN_CAT2(a, b) a##b
 #define RVVRUN_CAT(a, b) RVVRUN_CAT2(a, b)
@@ -124,8 +125,8 @@ static inline dv dcanon(dv r)
 	return _mm_or_pd(_mm_and_pd(m, c), _mm_andnot_pd(m, r));
 }
 #if defined(__FMA__)
-static inline fv ffma(fv a, fv b, fv c) { return _mm_fmadd_ps(a, b, c); }
-static inline dv dfma(dv a, dv b, dv c) { return _mm_fmadd_pd(a, b, c); }
+static inline fv ffma(fv a, fv b, fv c) { dbt::rv32::fma_invalid::product(a, b); return _mm_fmadd_ps(a, b, c); }
+static inline dv dfma(dv a, dv b, dv c) { dbt::rv32::fma_invalid::product(a, b); return _mm_fmadd_pd(a, b, c); }
 static inline fv fneg(fv a)
 {
 	return _mm_xor_ps(a, _mm_castsi128_ps(_mm_set1_epi32((int)0x80000000u)));
@@ -194,8 +195,8 @@ static inline dv dcanon(dv r)
 	dv const c = _mm256_castsi256_pd(_mm256_set1_epi64x((long long)0x7ff8000000000000ull));
 	return _mm256_blendv_pd(r, c, m);
 }
-static inline fv ffma(fv a, fv b, fv c) { return _mm256_fmadd_ps(a, b, c); }
-static inline dv dfma(dv a, dv b, dv c) { return _mm256_fmadd_pd(a, b, c); }
+static inline fv ffma(fv a, fv b, fv c) { dbt::rv32::fma_invalid::product(a, b); return _mm256_fmadd_ps(a, b, c); }
+static inline dv dfma(dv a, dv b, dv c) { dbt::rv32::fma_invalid::product(a, b); return _mm256_fmadd_pd(a, b, c); }
 static inline fv fneg(fv a)
 {
 	return _mm256_xor_ps(a, _mm256_castsi256_ps(_mm256_set1_epi32((int)0x80000000u)));
@@ -264,8 +265,8 @@ static inline dv dcanon(dv r)
 	dv const c = _mm512_castsi512_pd(_mm512_set1_epi64((long long)0x7ff8000000000000ull));
 	return _mm512_mask_blend_pd(m, r, c);
 }
-static inline fv ffma(fv a, fv b, fv c) { return _mm512_fmadd_ps(a, b, c); }
-static inline dv dfma(dv a, dv b, dv c) { return _mm512_fmadd_pd(a, b, c); }
+static inline fv ffma(fv a, fv b, fv c) { dbt::rv32::fma_invalid::product(a, b); return _mm512_fmadd_ps(a, b, c); }
+static inline dv dfma(dv a, dv b, dv c) { dbt::rv32::fma_invalid::product(a, b); return _mm512_fmadd_pd(a, b, c); }
 static inline fv fneg(fv a)
 {
 	return _mm512_castsi512_ps(

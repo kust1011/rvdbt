@@ -897,6 +897,7 @@ struct Operand {
 	std::string gpr;       // GPR name as written
 	unsigned kmask = 0;    // 0 = none, else the {kN} writemask on this operand
 	i64 disp = 0;          // MEM
+	bool stack = false, broadcast = false;
 	unsigned memsize = 0;  // MEM: bytes
 	u64 imm = 0;           // IMM
 };
@@ -919,6 +920,8 @@ bool ParseOperand(std::string t, Operand *out)
 		std::string m = t.substr(br + 1, end - br - 1);
 		if (m.size() == 2 && m[0] == 'k' && isdigit((unsigned char)m[1]))
 			out->kmask = (unsigned)(m[1] - '0');
+		else if (m.compare(0, 3, "1to") == 0)
+			out->broadcast = true;
 		else
 			return false;
 		t = t.substr(0, br) + t.substr(end + 1);
@@ -943,6 +946,7 @@ bool ParseOperand(std::string t, Operand *out)
 	size_t lb = t.find('[');
 	if (lb != std::string::npos) {
 		std::string sz = t.substr(0, lb);
+		out->broadcast = out->broadcast || sz.find("BCST") != std::string::npos;
 		unsigned bytes = 0;
 		if (sz.find("ZMMWORD") != std::string::npos)
 			bytes = 64;
@@ -958,7 +962,8 @@ bool ParseOperand(std::string t, Operand *out)
 		if (inner.empty() || inner.back() != ']')
 			return false;
 		inner.pop_back();
-		if (inner.compare(0, 3, "r13") != 0)
+		out->stack = inner.compare(0, 3, "rsp") == 0;
+		if (!out->stack && inner.compare(0, 3, "r13") != 0)
 			return false;
 		i64 d = 0;
 		if (inner.size() > 3) {
@@ -1332,6 +1337,7 @@ bool FmaSem(std::string const &m, double dst, double s1, double s2, double *out)
 struct Machine {
 	std::array<std::array<u8, 64>, 32> zmm{};
 	u32 k[8]{};
+	std::array<u8, 2048> stack{};
 	std::map<std::string, u64> gpr;
 	u8 *mem = nullptr;
 	size_t memsz = 0;
@@ -1369,6 +1375,7 @@ void LaneSet(std::array<u8, 64> &z, unsigned lane, unsigned sew, double v)
 // silent reinterpretation.
 void Interpret(Machine &M, std::vector<Insn> const &v, size_t lo, size_t hi)
 {
+	M.gpr["rsp"] = 1024;
 	std::map<u64, size_t> by_addr;
 	for (size_t i = 0; i < v.size(); ++i)
 		by_addr[v[i].addr] = i;
@@ -1388,8 +1395,11 @@ void Interpret(Machine &M, std::vector<Insn> const &v, size_t lo, size_t hi)
 		auto const &o = n.ops;
 		std::string const &m = n.mnem;
 		size_t next = pc + 1;
-		auto memchk = [&](i64 d, size_t sz) {
-			if (d < 0 || (size_t)d + sz > M.memsz) {
+		auto address = [&](Operand const &op) { return op.stack ? M.stack.data() + M.gpr["rsp"] + op.disp : M.mem + op.disp; };
+		auto memchk = [&](Operand const &op, size_t sz) {
+			i64 d = op.disp + (op.stack ? M.gpr["rsp"] : 0);
+			size_t extent = op.stack ? M.stack.size() : M.memsz;
+			if (d < 0 || (size_t)d + sz > extent) {
 				fail("memory access outside CPUState: " + n.text);
 				return false;
 			}
@@ -1406,23 +1416,51 @@ void Interpret(Machine &M, std::vector<Insn> const &v, size_t lo, size_t hi)
 		};
 		bool const movdqu = m.compare(0, 7, "vmovdqu") == 0;
 		unsigned const mov_lane = m == "vmovdqu32" ? 4u : 8u;
-		if (movdqu && o.size() == 2 && o[0].kind == Operand::Kind::ZMM &&
+		if ((m == "vpslld" || m == "vpsrld" || m == "vpsllq" || m == "vpsrlq") &&
+		    o.size() == 3 && o[0].kind == Operand::Kind::ZMM && o[1].kind == Operand::Kind::ZMM && o[2].kind == Operand::Kind::IMM) {
+			unsigned sw = m.back() == 'd' ? 4 : 8;
+			for (unsigned lane=0; lane<64/sw; ++lane) {
+				u64 bits=0;memcpy(&bits,M.zmm[o[1].reg].data()+lane*sw,sw);
+				bits=o[2].imm>=sw*8 ? 0 : m[3]=='l' ? bits<<o[2].imm : bits>>o[2].imm;
+				memcpy(M.zmm[o[0].reg].data()+lane*sw,&bits,sw);
+			}
+		} else if ((m == "vpcmpeqd" || m == "vpcmpeqq") && o.size()==3 && o[0].kind==Operand::Kind::KREG && o[1].kind==Operand::Kind::ZMM && o[2].kind==Operand::Kind::MEM && o[2].broadcast) {
+			unsigned sw=m.back()=='d'?4:8;
+			if(!memchk(o[2],sw)) return;
+			u64 compare=0;memcpy(&compare,address(o[2]),sw);u32 mask=0;
+			for(unsigned lane=0;lane<64/sw;++lane) {u64 bits=0;memcpy(&bits,M.zmm[o[1].reg].data()+lane*sw,sw);if(bits==compare)mask|=1u<<lane;}
+			M.k[o[0].reg]=mask;
+		} else if (m=="kmovw" && o.size()==2 && o[0].kind==Operand::Kind::GPR && o[1].kind==Operand::Kind::KREG) {
+			M.gpr[o[0].gpr]=M.k[o[1].reg]&0xffffu;
+		} else if (m=="mov" && o.size()==2 && o[0].kind==Operand::Kind::MEM && o[1].kind==Operand::Kind::GPR) {
+			if(!memchk(o[0],o[0].memsize)) return;
+			u64 val=M.gpr[o[1].gpr];memcpy(address(o[0]),&val,o[0].memsize);
+		} else if ((m=="and" || m=="or") && o.size()==2 && o[0].kind==Operand::Kind::GPR && o[1].kind==Operand::Kind::GPR) {
+			u64 &dst=M.gpr[o[0].gpr];dst=m=="and"?dst&M.gpr[o[1].gpr]:dst|M.gpr[o[1].gpr];
+		} else if(m=="or" && o.size()==2 && o[0].kind==Operand::Kind::MEM && o[1].kind==Operand::Kind::IMM) {
+			if(!memchk(o[0],o[0].memsize)) return;
+			u64 val=0;memcpy(&val,address(o[0]),o[0].memsize);val|=o[1].imm;memcpy(address(o[0]),&val,o[0].memsize);
+		} else if(m=="test" && o.size()==2 && o[0].kind==Operand::Kind::GPR && o[1].kind==Operand::Kind::GPR) {
+			M.cmp_l=M.gpr[o[0].gpr]&M.gpr[o[1].gpr];M.cmp_r=0;
+		} else if(m=="add" && o.size()==2 && o[0].kind==Operand::Kind::GPR && o[1].kind==Operand::Kind::IMM) {
+			M.gpr[o[0].gpr]+=o[1].imm;
+		} else if (movdqu && o.size() == 2 && o[0].kind == Operand::Kind::ZMM &&
 		    o[1].kind == Operand::Kind::MEM && o[1].memsize == 64) {
-			if (!memchk(o[1].disp, 64))
+			if (!memchk(o[1], 64))
 				return;
 			u32 const mask = o[0].kmask ? M.k[o[0].kmask] : 0xffffffffu;
 			for (unsigned l = 0; l < 64u / mov_lane; ++l)
 				if (mask & (1u << l))
 					memcpy(M.zmm[o[0].reg].data() + l * mov_lane,
-					       M.mem + o[1].disp + l * mov_lane, mov_lane);
+					       address(o[1]) + l * mov_lane, mov_lane);
 		} else if (movdqu && o.size() == 2 && o[0].kind == Operand::Kind::MEM &&
 			   o[0].memsize == 64 && o[1].kind == Operand::Kind::ZMM) {
-			if (!memchk(o[0].disp, 64))
+			if (!memchk(o[0], 64))
 				return;
 			u32 const mask = o[0].kmask ? M.k[o[0].kmask] : 0xffffffffu;
 			for (unsigned l = 0; l < 64u / mov_lane; ++l)
 				if (mask & (1u << l))
-					memcpy(M.mem + o[0].disp + l * mov_lane,
+					memcpy(address(o[0]) + l * mov_lane,
 					       M.zmm[o[1].reg].data() + l * mov_lane, mov_lane);
 		} else if (movdqu && o.size() == 2 && o[0].kind == Operand::Kind::ZMM &&
 			   o[1].kind == Operand::Kind::ZMM) {
@@ -1537,9 +1575,9 @@ void Interpret(Machine &M, std::vector<Insn> const &v, size_t lo, size_t hi)
 			unsigned const w = m.back() == 'q' ? 8u : 4u;
 			u64 val = 0;
 			if (o[1].kind == Operand::Kind::MEM) {
-				if (o[1].memsize != w || !memchk(o[1].disp, w))
+				if (o[1].memsize != w || !memchk(o[1], w))
 					return;
-				memcpy(&val, M.mem + o[1].disp, w);
+				memcpy(&val, address(o[1]), w);
 			} else if (o[1].kind == Operand::Kind::GPR) {
 				val = M.gpr[o[1].gpr];
 			} else {
@@ -1553,19 +1591,19 @@ void Interpret(Machine &M, std::vector<Insn> const &v, size_t lo, size_t hi)
 			M.k[o[0].reg] = (u32)(M.gpr[o[1].gpr] & 0xffffu);
 		} else if (m == "mov" && o.size() == 2 && o[0].kind == Operand::Kind::MEM &&
 			   o[1].kind == Operand::Kind::IMM) {
-			if (!memchk(o[0].disp, o[0].memsize))
+			if (!memchk(o[0], o[0].memsize))
 				return;
 			u64 const val = o[1].imm;
-			memcpy(M.mem + o[0].disp, &val, o[0].memsize);
+			memcpy(address(o[0]), &val, o[0].memsize);
 		} else if ((m == "mov" || m == "movabs") && o.size() == 2 &&
 			   o[0].kind == Operand::Kind::GPR) {
 			if (o[1].kind == Operand::Kind::IMM) {
 				M.gpr[o[0].gpr] = o[1].imm;
 			} else if (o[1].kind == Operand::Kind::MEM) {
-				if (!memchk(o[1].disp, o[1].memsize))
+				if (!memchk(o[1], o[1].memsize))
 					return;
 				u64 val = 0;
-				memcpy(&val, M.mem + o[1].disp, o[1].memsize);
+				memcpy(&val, address(o[1]), o[1].memsize);
 				M.gpr[o[0].gpr] = val;
 			} else if (o[1].kind == Operand::Kind::GPR) {
 				M.gpr[o[0].gpr] = M.gpr[o[1].gpr];

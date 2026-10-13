@@ -5559,6 +5559,45 @@ void QEmit::Emit_vchunkfma(qir::InstVChunkFMA *ins)
 		if (base % 8) j.shr(x86::eax, base % 8);
 		j.kmovw(kscr, x86::eax); j.kandw(kact, kact, kscr);
 	}
+	// x86 FMA can omit invalid for 0*inf + qNaN. Classify the actual
+	// multiplicands before overwriting vd. Integer operations ignore NaN
+	// signalling and signs, and intersecting with kact suppresses inactive lanes.
+	auto product_x = ins->funct6 < 0b101100 ? dold : a;
+	auto classify = [&](x86::Vec x, x86::Gp zero, x86::Gp inf) {
+		if (sew == 4) {
+			j.vpslld(scratch(), x, 1); j.vpsrld(scratch(), scratch(), 1);
+		} else {
+			j.vpsllq(scratch(), x, 1); j.vpsrlq(scratch(), scratch(), 1);
+		}
+		// Compare against scalar broadcasts without borrowing another VPR.
+		j.sub(x86::rsp, 16);
+		j.mov(x86::qword_ptr(x86::rsp), 0);
+		if (sew == 4) {
+			j.vpcmpeqd(kscr, scratch(), (chunk_w == 16 ? x86::dword_ptr(x86::rsp)._1to4() : chunk_w == 32 ? x86::dword_ptr(x86::rsp)._1to8() : x86::dword_ptr(x86::rsp)._1to16()));
+		} else {
+			j.vpcmpeqq(kscr, scratch(), (chunk_w == 16 ? x86::qword_ptr(x86::rsp)._1to2() : chunk_w == 32 ? x86::qword_ptr(x86::rsp)._1to4() : x86::qword_ptr(x86::rsp)._1to8()));
+		}
+		j.kmovw(zero, kscr);
+		if (sew == 4) {
+			j.mov(x86::dword_ptr(x86::rsp), 0x7f800000u);
+			j.vpcmpeqd(kscr, scratch(), (chunk_w == 16 ? x86::dword_ptr(x86::rsp)._1to4() : chunk_w == 32 ? x86::dword_ptr(x86::rsp)._1to8() : x86::dword_ptr(x86::rsp)._1to16()));
+		} else {
+			j.mov(x86::rax, 0x7ff0000000000000ull);
+			j.mov(x86::qword_ptr(x86::rsp), x86::rax);
+			j.vpcmpeqq(kscr, scratch(), (chunk_w == 16 ? x86::qword_ptr(x86::rsp)._1to2() : chunk_w == 32 ? x86::qword_ptr(x86::rsp)._1to4() : x86::qword_ptr(x86::rsp)._1to8()));
+		}
+		j.kmovw(inf, kscr); j.add(x86::rsp, 16);
+	};
+	classify(product_x, x86::edi, x86::esi);
+	classify(b, x86::edx, x86::eax);
+	j.and_(x86::edi, x86::eax); j.and_(x86::esi, x86::edx);
+	j.or_(x86::edi, x86::esi);
+	if (!full_vl) { j.kmovw(x86::eax, kact); j.and_(x86::edi, x86::eax); }
+	auto no_invalid_product = j.newLabel();
+	j.test(x86::edi, x86::edi); j.jz(no_invalid_product);
+	j.or_(x86::dword_ptr(R_STATE, (int32_t)offsetof(CPUState, fpu) +
+		(int32_t)offsetof(rv32::FPUState, fcsr)), rv32::FFLAG_NV);
+	j.bind(no_invalid_product);
 	// The destination starts as the OLD vd, for two independent reasons: the 213 form needs it
 	// there as the multiplicand, and it is what leaves the inactive lanes holding a defined
 	// value (the same role `vmovdqu64 out, a` plays in Emit_vchunkfalu).

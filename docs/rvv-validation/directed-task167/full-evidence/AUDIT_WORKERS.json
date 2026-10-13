@@ -1,0 +1,30 @@
+[
+  {
+    "view": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-00/corpus",
+    "output": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-00/audit",
+    "log": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-00/worker.log",
+    "returncode": 0,
+    "seconds": 284.67080956394784
+  },
+  {
+    "view": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-01/corpus",
+    "output": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-01/audit",
+    "log": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-01/worker.log",
+    "returncode": 0,
+    "seconds": 287.5251958089648
+  },
+  {
+    "view": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-02/corpus",
+    "output": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-02/audit",
+    "log": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-02/worker.log",
+    "returncode": 0,
+    "seconds": 287.0440017899964
+  },
+  {
+    "view": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-03/corpus",
+    "output": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-03/audit",
+    "log": "/home/vick/rvv-directed-task167/full-review/audit-parallel/shard-03/worker.log",
+    "returncode": 0,
+    "seconds": 290.64038363995496
+  }
+]

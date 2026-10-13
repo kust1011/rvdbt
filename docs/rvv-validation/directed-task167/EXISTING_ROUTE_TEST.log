@@ -1,0 +1,60 @@
+P7I-B vfma typed-chunk route test
+[1] chunk count = emul_group_regs(LMUL) * (VLEN/512), n_typed = 4k+3
+    VLEN 512  e64,m1  -> 1 chunk(s)
+    VLEN 512  e64,m2  -> 2 chunk(s)
+    VLEN 512  e32,m1  -> 1 chunk(s)
+    VLEN 512  e32,m2  -> 2 chunk(s)
+    VLEN 1024 e64,m1  -> 2 chunk(s)
+    VLEN 1024 e64,m2  -> 4 chunk(s)
+    VLEN 1024 e32,m1  -> 2 chunk(s)
+    VLEN 1024 e32,m2  -> 4 chunk(s)
+[2] the two P7D/P7H-measured miniWeather words, operand by operand
+    VLEN 512  vfmadd.vf v9,fs0,v8    -> DIRECT, 1 chunk(s), f6=40, 0 helpers
+    VLEN 512  vfnmsub.vf v9,fa3,v8   -> DIRECT, 1 chunk(s), f6=43, 0 helpers
+    VLEN 1024 vfmadd.vf v9,fs0,v8    -> DIRECT, 2 chunk(s), f6=40, 0 helpers
+    VLEN 1024 vfnmsub.vf v9,fa3,v8   -> DIRECT, 2 chunk(s), f6=43, 0 helpers
+[3] vfmadd and vfnmsub stay distinguishable through the whole frame
+    funct6 40 and 43 reach the node distinctly at both VLENs
+[4] every load precedes every store, including when vd == vs2
+    load-major holds at both VLENs, both LMULs, aliased and disjoint
+[5] 2 chunks means two different tilings
+    e64,m1@1024 = one register +0/+64 ; e64,m2@512 = v8 and v9
+[6] fail-closed matrix
+    6.1 no observed vsetvli -> helper (stricter than the falu route)
+    6.2 mf2 / e16 / e8 refused at both VLENs
+    6.2b m1/m2/m4/m8 admitted for .vf and .vv with the right chunk and node counts; mf2 still refused
+    6.3 masked m1 admitted; odd group at m2 refused; OPFVV admitted at m1 and refused at m2 for its odd vs1
+    6.4 all eight FMA funct6 values admitted in .vf and .vv, funct6 carried onto the node; the neighbours of the range refused
+    6.5 VLEN 128/256 / switch off / --rvv-verify / LLVM / --rvv-direct 0
+    6.6 host avx512f+fma+bmi2 = present -> admission without force-emit = yes
+[7] real emitted host bytes, disassembled by objdump
+    e64,m1@512  vfmadd.vf    -> 1 x vfmadd213pd   k1-masked, bracket ok
+    e64,m1@512  vfnmsub.vf   -> 1 x vfnmadd213pd  k1-masked, bracket ok
+    e64,m1@1024 vfmadd.vf    -> 2 x vfmadd213pd   k1-masked, bracket ok
+    e64,m1@1024 vfnmsub.vf   -> 2 x vfnmadd213pd  k1-masked, bracket ok
+    e32,m1@512  vfmadd.vf    -> 1 x vfmadd213ps   k1-masked, bracket ok
+    e32,m1@512  vfnmsub.vf   -> 1 x vfnmadd213ps  k1-masked, bracket ok
+    e64,m2@512  vfmadd.vf    -> 2 x vfmadd213pd   k1-masked, bracket ok
+[7b] the emitted fflags accrual matches FRound::finish's mapping
+    IE->NV ZE->DZ OE->OF UE->UF PE->NX, all into [r13+0xa638]
+[8] value differential: interpreted emitted bytes vs rv32::vfma helper
+    double-rounding witness: vfmadd fma=0x1p-54 split=0x0p+0 ; vfnmsub fma=-0x1p-54 split=0x0p+0
+    NaN-canon witness: raw fma of a sNaN = 0x7ff8000000000001 (must differ from 0x7ff8000000000000)
+    e64,m1@512 vfmadd.vf  full VL      : 8/8 lanes byte-identical to the helper
+    e64,m1@512 vfnmsub.vf full VL      : 8/8 lanes byte-identical to the helper
+    e64,m1@512 vfmadd.vf  vl=5         : 5/5 lanes byte-identical to the helper
+    e64,m1@512 vfnmsub.vf vl=3         : 3/3 lanes byte-identical to the helper
+    e64,m1@512 vfmadd.vf  extremes     : 8/8 lanes byte-identical to the helper
+    e64,m1@512 vfnmsub.vf extremes     : 8/8 lanes byte-identical to the helper
+    e64,m1@1024 vfmadd.vf  full VL     : 16/16 lanes byte-identical to the helper
+    e64,m1@1024 vfnmsub.vf vl=11       : 11/11 lanes byte-identical to the helper
+    e32,m1@512 vfmadd.vf boxed         : 16/16 lanes byte-identical to the helper
+    e32,m1@512 vfmadd.vf UNBOXED       : 16/16 lanes byte-identical to the helper
+    e32,m1@512 vfnmsub.vf boxed        : 16/16 lanes byte-identical to the helper
+    e64,m2@512 vfmadd.vf full VL       : 16/16 lanes byte-identical to the helper
+    e64,m2@512 vfnmsub.vf vl=13        : 13/13 lanes byte-identical to the helper
+[9] the lane-mask prologue is instruction-identical to the falu route's
+    mov cmp mov cmova mov bzhi mov cmp jbe cmp jae bzhi xor jmp xor kmovw 
+[N2c] control: the same cases admit in the ordinary build
+    24/24 admitted
+OK
