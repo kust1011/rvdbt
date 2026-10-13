@@ -1,0 +1,9 @@
+{
+  "guests": [
+    1554656
+  ],
+  "offline": [],
+  "task181_live": true,
+  "offline_budget_used": 2,
+  "policy": "Reserve Task181 two predicate slots, including online checks invisible in process names"
+}

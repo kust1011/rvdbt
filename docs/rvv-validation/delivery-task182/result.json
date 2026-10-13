@@ -1,0 +1,95 @@
+{
+  "status": "PASS_BOUNDED_UNIT",
+  "form": "vadd.vv",
+  "arm": "B",
+  "checks": 17,
+  "guest_calls": 1,
+  "reference_calls": 0,
+  "ELF_rebuilds": 0,
+  "DUT_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+  "library_sha256": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+  "guest_sha256": "d0b158be2821c055479223548daacb020994f3996322659fe022b1b1769b7ffe",
+  "reference_sha256": "ffd45d308763827e7310e40fa842b0fde9b00373d8c493298c5400f33c0bc918",
+  "output_sha256": "ffd45d308763827e7310e40fa842b0fde9b00373d8c493298c5400f33c0bc918",
+  "reference_command": [
+    "/home/vick/rvv-directed-task145/deps/spike",
+    "--isa=rv32gcv_zvl128b",
+    "/home/vick/rvv-directed-task145/deps/pk",
+    "/home/vick/rvv-directed-task145/corpus/w128-e32-m1-vv-zero/test.elf"
+  ],
+  "checker_sha256": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56",
+  "checker_modules": {
+    "/tmp/rvv-delivery-entry182/scripts/rvv/directed/storage149.py": "57ab6ecbd6e1246ed621abab4c649fda1ee0c248a370288ac513251660fa39c6",
+    "/tmp/rvv-delivery-entry182/scripts/rvv/directed/vadd.py": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56"
+  },
+  "cases": [
+    {
+      "case": "w128-e32-m1-vv-length0",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-length1",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-length2",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-length3",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-length4",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-mask-all",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-mask-off",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-mask-alternating",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-mask-single-on",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-mask-single-off",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-policy01",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-policy10",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-policy11",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-dest-source2",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-end-group",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-dest-source1",
+      "status": "PASS"
+    },
+    {
+      "case": "w128-e32-m1-vv-same-sources",
+      "status": "PASS"
+    }
+  ]
+}

@@ -14,6 +14,10 @@ experimental AOT/tiering paths; their presence does not make them evaluated
 thesis results. Benchmark guest binaries and restricted input datasets are not
 redistributed here.
 
+For finite per-form verification and a bounded replay, use the
+[reviewer verification entry](docs/rvv-validation/delivery-task182/README.md).
+Its595-row index keeps historical mixed builds separate from final179 acceptance.
+
 See [the RVV QCG design and code map](docs/rvv-qcg.md) for the translation
 path, M1/M2 legality, and focused checks.
 

@@ -44,3 +44,6 @@ Portable full Ara vredsum and retained RVVTS API sequence replay: see
 `fetch_rvv_external.py`, `run_rvv_external.py`, `verify_rvv_external_elf.py` and
 `audit_rvv_external_admission.py` extend the existing RVV tooling; full-packet
 controls use the pinned original MachineState comparator. They do not add ISA counts.
+
+The [reviewer entry](../docs/rvv-validation/delivery-task182/README.md) uses
+`rvv_verify.py list|show|command|smoke` and the existing directed executor/checkers.

@@ -1,0 +1,2576 @@
+{
+  "status": "PASS",
+  "cases_per_arm": 170910,
+  "units": 7440,
+  "observations": 854550,
+  "DUT_packets": 683640,
+  "reference_packets": 170910,
+  "arms": [
+    "B",
+    "M1",
+    "M2",
+    "BOTH"
+  ],
+  "forms": 18,
+  "geometries": 24,
+  "configurations": 2160,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "per_form_per_arm": {
+    "vfwadd.vv": 8520,
+    "vfwadd.vf": 8670,
+    "vfwadd.wv": 9240,
+    "vfwadd.wf": 9390,
+    "vfwsub.vv": 8520,
+    "vfwsub.vf": 8670,
+    "vfwsub.wv": 9240,
+    "vfwsub.wf": 9390,
+    "vfwmul.vv": 8520,
+    "vfwmul.vf": 8670,
+    "vfwmacc.vv": 10140,
+    "vfwmacc.vf": 10380,
+    "vfwnmacc.vv": 10140,
+    "vfwnmacc.vf": 10380,
+    "vfwmsac.vv": 10140,
+    "vfwmsac.vf": 10380,
+    "vfwnmsac.vv": 10140,
+    "vfwnmsac.vf": 10380
+  },
+  "effective_rejections": 1061760,
+  "allowed_variants": 2160,
+  "sail_crosscheck": {
+    "units": 90,
+    "case_checks": 4430,
+    "reference_commands": 90,
+    "DUT_commands": 0,
+    "family_case_credit": 0,
+    "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+    "receipts": [
+      {
+        "unit": "vfwadd-vv-w128-mf2-rm0-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "2a1463e6e15c7b44f5356b6e980d04bcba801a1eec27fb708e0b007a28df9f16",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.611584008904174,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "8931a396b2aa80c748ea83a37ad80315d17b7a066665b943a68162ac3ec2dee3"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vv-w128-mf2-rm1-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "3de42330cc2839fee741817e70ac51f349c6a378bbc6eb6bb78ca7d4439bb93a",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.48986241803504527,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "4a15fec255b3b2ad9d1a221b6edbebc91f99ccfc4fa74a58d330e98dde1fb37d"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vv-w128-mf2-rm2-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "5f8756adc037d858394378926124e94998e4ca0c7de87477a5419d40181d7f9e",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5450327160069719,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "fa713df0123cb5be868bfa1d054f76dcfd5dfb375891cc7c3e7caa14d0c754ef"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vv-w128-mf2-rm3-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "c8e75d1ddfb5890a17d6ac7e7f2586ecb0fb9c1210e4070a336bf0adeeaa1793",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5297305299900472,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "316d1eda919f456214245ed9c646ad548db48b2a7c190794702b8feddf6e89b6"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vv-w128-mf2-rm4-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "e1786ac17756ac83f6775b699accee84a43a1439e1bb05bc75fe8ff1eee72ebc",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6193508619908243,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "a8c0f45f8822d0058bc03c134562c72797a8a9ca9bd7e1a294334202d8e7c417"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vf-w128-mf2-rm0-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "9dc6eb1b1c69c19800320140c344c875b1ec2911c005a863396827db7ce7bb82",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5023695640265942,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "b28411b5b80e2ae6e5e5d6b6d699cfef038274c4c75373886e5da1235b12bf9b"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vf-w128-mf2-rm1-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "8c73450b9898be7b620bed027f8d243f861cdc703d6f270dbda375bf3dc23fd4",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6897577600320801,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "1433dae39f0b68fe745f22999770d6ab880ce208929d9a2bbc47ff9af9c09494"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vf-w128-mf2-rm2-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "14acaf5e6784a19ed6a864dff2914faa2bcf2e6df9dea67f073079ae138acc55",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5235164139885455,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "a0b79007f3be2b3634e93bdce64d787a488cc61a1ab8f9f5768fc1b9c282bf88"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vf-w128-mf2-rm3-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "b5787f0d33db42bdaed5dac64c336d24ca0d40cd89120f60303b670df3118112",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.541135351988487,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "77aad62f4248a7664677996f1636ccc98bce554aa6db469292231cf02479a641"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-vf-w128-mf2-rm4-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "326da9551a9f13920b3a3383cff37a7fa104b713feb6ca5973a8fb5fd95e76db",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5180782719980925,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "2e2cae0a9a20c87feb237ac6e1629890538bb86028ed31d9eac8aa9f0ba7364e"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wv-w128-mf2-rm0-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "d5ce2d1ed4f9e51b9446f0fc4730a9f1bde26608b585569447ee510643a8953b",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.606592508032918,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "db7d0e894e5f02e7d0ac7eb65d1e2e827243b237b0844bfd823747357f0f1173"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wv-w128-mf2-rm1-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "3abafdfd40d24a078ba6457d5275a645a52d701c4e7d8c6fe6ef6403bfa60c08",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6967777820536867,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "ab6fec0106d3cabfde8ee3387ee1132d4b63a2b1f0b303027b3d823593fdf82a"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wv-w128-mf2-rm2-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "9ea991bac67022f4d6524b6c5f71c6f70e32c7fe0947ffc37f0fede0212b483f",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5703394460724667,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "e5dcfea546f5ec527e6759e0d1fbcdc858f7bb864c4cb4e543a2f1dc8d89c654"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wv-w128-mf2-rm3-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "fecf909b1353bde82a0b23f2bfcc856c57e103046c6e9326a9c30d1e91fddd84",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6621661509852856,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "2f69a57545fe0e31a07fb3b187e1ac4a8c754e4f2d47faf21ca8f7564e8d22e3"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wv-w128-mf2-rm4-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "a4f9067731b20801849c6cef0ff502b7987777e14265efb00d43fe5f92a332d5",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5412189610069618,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "8ceb5934be48909f7019d650cf2279e354d3c743287117f2e9849a3fccc35b9c"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wf-w128-mf2-rm0-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "600a44d77de502990e923ed21830aec570fa95829636258da1b517b3b9582200",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.7561607649549842,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "a90bab800d4742bbe6da3deba3d3c68f801b24bbc097c567547e40a8eb8c321b"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wf-w128-mf2-rm1-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "190684eb713ce6acce05d795b62df10bee17665b049f789bf08b257d8c6b9418",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5922775460639969,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "8bcd50bf086d1c97da479daf26dfc479f8f59405349bbc7c91ae88edc61e9f00"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wf-w128-mf2-rm2-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "b78103a5358192a19a5560cac14a043250e41f561526e931c1b931b5f0d6ed0d",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6292483150027692,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "35c510aa039293a0b2f904643ded6533225ec3aa83f3135ba2344405f137e6d9"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wf-w128-mf2-rm3-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "296130a7427cfb8b970b2a1c0622f71041f0e2c16c085bdfee499572d59dab9c",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5963442539796233,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "180181d086d1c61dfb8bf4dffd2a0e0470861228ab8fa3bef44db9cf455b06a1"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwadd-wf-w128-mf2-rm4-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwadd-wf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwadd-wf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "5d4e950ab74dc1d2d063ea40d346268d99959cf196a21419869ab6b656ab9490",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6580126120243222,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "66c07c931184ad6fef249c7974fdff7e6d8e9ccfb26265b4841b97a7904ffa74"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vv-w128-mf2-rm0-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "d68f70bb4bfcca524a11adfe8115b698ab4b642a780aa180d60a71c453ff1fc4",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5500613709446043,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "eaabd0b92a22f136f88ab2d2f85e79719f305e4ddcb2411d39dfa8dbf913a3a5"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vv-w128-mf2-rm1-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "dc85b63f199adcc44fb39d95d8ec87ee0aea9b438619b7d52922d722cc5897e5",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.582351184100844,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "25c91471964bbc110fd1fbe9095c659b502d237d562dd025d340971d9ace88d8"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vv-w128-mf2-rm2-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "52bceec4d2897f5ec2c69381a8d38593e4590c3625eda61ef957f22acaad042e",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5235741949873045,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "2748d9c2c204c523c34acf1736a6d77ce8a104b4a57627b845bda79671fe2049"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vv-w128-mf2-rm3-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "5b3b90f05578a0551f85b27905a30e4c94d51366470f3522936472a8d5146a36",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5627302851062268,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "4f0b56465a3eb73df5287bcca93878afb487a5e8ca6df49a76b6a820fcb8eb97"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vv-w128-mf2-rm4-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "9d7b5f89061b6143ffbe6c94e243510e37ec36b97c7e01bb5774d70eb794e3e7",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.4890254440251738,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "ca4bb16ded12f1e29994d7b4438231d6e3a286aba7e6540d352b86dc4c547f60"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vf-w128-mf2-rm0-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "2d0b3dc929f0ada43b66c38fdb249f63346f901c1ad44cdadaca73b12479350a",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5588891849620268,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "15579acfa75cdecac3f21a75329ef7e8f8ac436e66b02c23f0425835c5bbfd48"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vf-w128-mf2-rm1-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "b985e7d7f0fe34f18de214f184fa4c5beaff0122db1fccfb8fe546dc9cea4984",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5453769549494609,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "8cd4c7523fa3f1c928735a4a3d63f6799d9d6f3527414424cea9ad97bab9ecc9"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vf-w128-mf2-rm2-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "6b90e490e63b5a0e2a9367aeea5e234ae72cc97340cda615042c69b6980ca9ac",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5237385570071638,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "7f856c2fba9d605188144fb56b66854e27c786615ad1cc1bfd8a287fb875a93a"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vf-w128-mf2-rm3-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "15199ddd8f616edc04cbff0ef569ec2f0894a68c52452424fdbe177c9baedb40",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.555236226064153,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "e7149085a425af6fb73cd6daab3d36d76c5edc2feaa985651c67cf4e7daeb969"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-vf-w128-mf2-rm4-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "e50797750913d3ac13e536db5310bd933d392a06441ef4ae71519f82c596bdc2",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5006380480481312,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "94b969a4ee0df97b1ad29898e356c3d6987b395b2561cc92e12eef95c0b39a53"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wv-w128-mf2-rm0-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "4ac5bc4a53e2543140805b5aafa1ba58f459f32cb0b4df9709cc010ffea8690f",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5986972040263936,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "c62b571ebac6477b8ee15af18568e8b82d56139845c1eb1d88b24bb7c0f82c78"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wv-w128-mf2-rm1-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "b1f302e5d4a867dce7e16495a27a641e782926ec791a9ac8a070c7b9fcd3e6ed",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5388049080502242,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "f9ceedb89ceb4ce811319225c468c19fd7c10f63a89b524acdd9200f08800ee7"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wv-w128-mf2-rm2-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "5a563a193c23593e30b02d7eef4b1f9ef9141becac436f228db4d7f741c17054",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.585114638088271,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "d742c3805586283f96219e5e90b9fd00401fdefd9136097c98cdb2c9a5d86d91"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wv-w128-mf2-rm3-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "40de136ab30a829c4bdd93f05614f6b2865ebddd2121c3e7a1228279e99926db",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6458858069963753,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "ae9b639d407ff5a8d96f21e86727dfa4b41da7f81304491f99039dd2788b44e1"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wv-w128-mf2-rm4-zero",
+        "cases": 48,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "ccbe754e1a11b40bba946259438aef23825c0518925224e23a1b8dba0cd3d261",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6447161919204518,
+          "stdout_sha256": "441fb4c7f6b1ba93cf1f07d1cf116b8057ff913002e30122977e007468fa8a3d",
+          "stderr_sha256": "d55969983e249304df6edfc6a6a66c66ed5393c97f624452e0029ce44cdbb9e1"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wf-w128-mf2-rm0-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "6e6841d7044213f38cb4bea217f773606ed4f1537bfcbf72207b2a53485a11b7",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5354626820189878,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "988c7970706f450ab33702fd2aae1228b96dea96469fd28c0d3250479dab0ba4"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wf-w128-mf2-rm1-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "bfb0e33e087250cfb9455be59915126a62383505cc355e8da05c5438efc51b8b",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5686156190931797,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "c6fb186152ce43c54cf03125ef23ee87f1978020a359acb721c5de2b01d23a22"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wf-w128-mf2-rm2-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "e825971acdd2f3640d7a0928041136ed0255199672b9c9f04e5416585fd810b2",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5833603299688548,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "329ac7e5d0de0e40297b3196ab01b4ed4d8512fb8a0c0a013423659b3709e70e"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wf-w128-mf2-rm3-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "2f4854830d0bafa896203427a1604867a9196be3cfe7ebcd922e775973a99a60",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6056458259699866,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "29d8aab426ea08d01282f50d0e25f38484fb2c67ab29d80ce6c912056aa09db3"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwsub-wf-w128-mf2-rm4-zero",
+        "cases": 50,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwsub-wf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwsub-wf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "8ca1f9577bbc88901fcdde86e1a30d68cdbdb14328837cdbb45363df3fba25cf",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6149524569045752,
+          "stdout_sha256": "c0a49332f2fff393bc7f788b57e57fa66219e09bb8d25cde95eb9a530ff3ea62",
+          "stderr_sha256": "4c384748c99d08a64744952bfc974855e45db225eb4d1d8ccdf33b55e6c5bb6e"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vv-w128-mf2-rm0-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "477673308c8ecb78fa5e209f24fb50382d1128081dd85dd538d2f8b94c49d441",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5383079639868811,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "b0512af5f25de0764373ec0fa4db0d43d5bab3502b3681bfadf713b1e4d4d336"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vv-w128-mf2-rm1-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "2d01cca47769dba5993ee5e86dc58dfc677d84f07ba619acc1f6b1d6c7d16acf",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5215454320423305,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "65e5479527ef95629fe752bf0b7e3e44d91f0dd431724cb3549a1b330e2635e2"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vv-w128-mf2-rm2-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "441da81aff88cba5cbecbf15a190cb223754ef14741c2149c7ad57574f7734fa",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.636423981981352,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "8f17084cd57852a42e501c75efbd99102aac8daa29c91c75a6eb17131ca2ffa4"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vv-w128-mf2-rm3-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "c5464e51a624c6f1a460d835770330a09475734de64f99f18ea20f94f97c1830",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.514752199058421,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "d6427af906a24019a9b3f1cfb187fcbf377b538b68f88f996b40c92e0eb7f194"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vv-w128-mf2-rm4-zero",
+        "cases": 42,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "f610c08297e6251f094f48f87cd328abe1b0a0a587875ee38d118bdc98e0a5a2",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5238545750034973,
+          "stdout_sha256": "439ff33ad1fab4720e0931521b63bbef9c744ff13643d78b75a48ce8215c3ed0",
+          "stderr_sha256": "269589f1cc3172a7705589ef993b18519f1c96c45216b31bfa93f6e0585d8eae"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vf-w128-mf2-rm0-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "1f4009b933a881b29ee257a540b793411a5aa5cfc13ea6e9265785d54f16cda1",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.4826822989853099,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "d8313a010810ef133166ea37a506a9e75e2ed7986a7799ac951192117f4faa31"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vf-w128-mf2-rm1-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "52dd37652e79862658c460196aceedc9e5be423f20c2951735e6de9dd158744e",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5109762019710615,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "7cf54200f97710f213f4ed0962a9e7dd06a73fa1d66ca907ee9b2b22758dc1bc"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vf-w128-mf2-rm2-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "fda92024450ef285e2e944917d8695866984842dcf43b095218cbff8bf7ec7db",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5764839140465483,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "b9bfa2832098b5cba4fa807be798d0814214db990c6b60abc8b01ec0e5c9c804"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vf-w128-mf2-rm3-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "f4c684c3b2da0a45013fb58f22b1ca6b34ede55c0688e7620b7af0d0bebd8f70",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.531036444939673,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "8456bebe3a057d004e546d6acda1ca6686b9a119254f47c70777f818f3e10f6a"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmul-vf-w128-mf2-rm4-zero",
+        "cases": 44,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmul-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmul-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "bbcbfdd7f63fa7fb30d249945c180e24f37f76d91c537a951fb350c064e7d44c",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5724828509846702,
+          "stdout_sha256": "9c1b1827e38cbb5c0ec1643a5253189bcb20108a7245e9c858a4ef7d34942fe8",
+          "stderr_sha256": "f1529cc3cf8bb495b277ff4c75832fc6baa04c1dba5820d91d88e415111d574f"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vv-w128-mf2-rm0-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "beeb8b7e0fb33e9e48a3961752a4f125f09e62dd4b4741ba32ced1775b4a31dc",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6311657810583711,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "363360243c6ed64e3a8e38b9bfc8f084f230e860e8866210b379ff6b8d1ceb5f"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vv-w128-mf2-rm1-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "79af355da0ffe2d9bd03ab38cfeedcacf50682567e049392f4bdda5d25e98dd8",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6842876620357856,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "556d446afafcb7df7faa53fa7fa52d3802ca6f9968b4ab367fb43796e8ddb289"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vv-w128-mf2-rm2-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "62486b241ba84d3b62e176281e841e63614666905f368d00ac86dcb7d1d012b3",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.8232030660146847,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "cabc88d29378c39a6e877faa2b07bc8f24a3e341ed5971d012a34864e563c02a"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vv-w128-mf2-rm3-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "8f71e9ce2f1596a8d91bc095515804bb475c16a70749e35f5700dd7fa6c69b22",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.7517086010193452,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "9de7862169abffa1cd41b9c65f369e157a1ab433e34afefaaef21875d25b8920"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vv-w128-mf2-rm4-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "3886586a61c95c45b93d18efa40518bb69c589c1573d056fb129b04916d0fb51",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6897848909720778,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "c803c911946f980e3054223496453bd7216b82f289b5ea5c25b10f7126494719"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vf-w128-mf2-rm0-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "be6761b9eba20b7bccfed677885d623e56ed1b84d10a219ee4a956206d8fb3dd",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6266976710176095,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "d50f29572998fc7b5b05fad7866f4b7126162c3feb73fb7422bba15d3a79bf3d"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vf-w128-mf2-rm1-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "e57315a5391c000309d74818c484856cddc7e996cf8da39b54c94d3b47a55a77",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.8295004490064457,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "c6c31abfb0ffb79f779aee573ede5e5303aa3f6e756acd7bec56d16f0ae14f64"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vf-w128-mf2-rm2-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "b8e152b6545158a6d0cf9072a7aa32f5f697f0d1f964b8ee7894144ac308dabf",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6427284000674263,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "43303925a4bdbfeb1d06936803ff0a07a114e69b7a16454055f011e02a9bbce1"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vf-w128-mf2-rm3-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "8c4f732aab43a53959cc78953c62413af0f7301e48bd940b2402b8a7f850c5d7",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6079540810314938,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "32197b2c57de63786b56402d37f11ad021d45ad4580866343c6a0c508a7b988d"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmacc-vf-w128-mf2-rm4-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmacc-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmacc-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "07051481a3d1cbffea5672785f48110a7a534a7a5679ee80f5deb4dabe68906f",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5887761480407789,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "66c7fc722c32a10720f78e8378e01f521a3848857c23cb3ae1466dcf65ad1d2f"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vv-w128-mf2-rm0-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "deba9f4f69db807673753eb45edec1721103ca3489b0d3128246a3a3b40c5a2b",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.7851126960013062,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "e227ebb51005b505b06793767a2a6cf9151ef0031876b4a970b0d4db56195032"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vv-w128-mf2-rm1-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "6023a11879fc47decd1bfed4c57c9a760e76cbaeb70948b261ef24552314f019",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6127012410433963,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "59cbb7a63c475ea320a930f3ef84b6792ca0e682fa88a82d5f5b00297a290f1c"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vv-w128-mf2-rm2-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "5b1ff2d5b4dec153b706b097aaca07a10490f39444c51f46d917ebec300f7ce7",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6689876980381086,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "451c3d7dfdcf754e1b227622d9ada24ee7b8e4aec71c86c9f62c74be09eb7dec"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vv-w128-mf2-rm3-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "7b0f1bd1cdad9a164292b4ba8c10d9f3850e4240dfa6380d6d7ecbb8241d739e",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.680878775077872,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "c6231a3b09d4c428f097fe4cd4e2106ea696ae1b705a7718891b3c5f8a97505c"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vv-w128-mf2-rm4-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "291e98650bf1e11f5fe6e7dad6f18ebd039066f0a0484a8c236d74421dc46c69",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5950476250145584,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "1103a38edaece482141289b367afaeb15c5645dbf7eb98c66ad1739c7c7b2633"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vf-w128-mf2-rm0-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "2573c65c59a464b39e7e2b537487fbd7cb3eddcc1a54932a2642ada896d5cc14",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5979100409895182,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "b2372359d973749b1abba43901cbb3d9d4e7a7e3d64994dc6e48e566b527bbca"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vf-w128-mf2-rm1-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "2f426ac11f13f72b93e053fac7d3f238ff7dcbe3c9f3e4c7b06171ddcf558e40",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6627516970038414,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "6edef31487d7162b904f4a6ace198aff52bf007fcd3e543b9c352aa436aa95e0"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vf-w128-mf2-rm2-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "6de58783ba434b38e4e02662507b15a869d0a2dfbfecb71bd14948ac5effa1e5",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6582066339906305,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "ceaef23e59c06a453e880254bb830322530d79cfa39429e44b0090190ba9a784"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vf-w128-mf2-rm3-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "6af83f376476539dd03691cbcdcaf4976c499cc2b5b7dfafeb246eebdce9b3aa",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6124741670209914,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "9c773403d83d691f08797acf00a7452709349515a13123f55abb7086f2f69854"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmacc-vf-w128-mf2-rm4-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmacc-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmacc-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "e57fea213b0886105d6b44630a22f36e12d0d458196d1bfb07f7ebf386149d82",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5959296940127388,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "3c9af46adcdd8e1ff456b9a4ea06e9ac1e1cd9e72ec8d7d45154cbbce7d2d575"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vv-w128-mf2-rm0-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "308e7438b06d66f1cb6922d39245fe457354a4257b07d836dba82a8683ceaa64",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6828562410082668,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "91d53e00ac80f59d8c5df2bb57c1d340b6d2a52ea4e0be36941a92329868f408"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vv-w128-mf2-rm1-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "e4c6ad7565a50f112f330bd9f8ac136666ba87a005ae9a8968882f610f052494",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.7044532030122355,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "dee97abb6b45951af3d5090cd909452347ae4b473cf644f8f1d0a203dc791f5b"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vv-w128-mf2-rm2-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "7371090ad79070f369c695d719edbc923469aeaa45bb5e954b225b66a4ce1d49",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6096505870809779,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "b5252d8d231d342b0fbe45d996af3907c33fecd066b6e4f363cb3de92b9e9165"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vv-w128-mf2-rm3-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "1dda66bb392a022c469965f0ab84a70b15094bdf1cb057577d877c161c2d4b4d",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5969203879358247,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "af90f93d0d7da13685b70b3a39a4f90cc555e73e274639fac56f291b677482af"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vv-w128-mf2-rm4-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "96d158af4c5cfc69b3b5664e95d655d337052df088d98849876f8b634f2c97e7",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6602439909474924,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "66e058315137242c8abb71085e2a7be5d3f9f4df7ccbec65e2b20c5f7a25ea24"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vf-w128-mf2-rm0-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "b5c52d72fec3b3cc028464859e3d20aec4fa065bcb79b83d1da75499a5a67486",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6502993539907038,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "248ea3dee3d1f2e4d8346ae6d329bf1926298aa2cf904a98ed58f6a292e42de8"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vf-w128-mf2-rm1-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "c52d1b90cc872ece0d249f9fcf7bf9552f4aa86adcd57b99b3209a7f939c2d28",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6354752311017364,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "28238760fd9dd4c265ffdf803a524f3785a229f1450e0d2ab4277a0147f0f534"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vf-w128-mf2-rm2-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "8985fd70693ae1520531764fc730b74bf0e1f0c3cd4a7b5ca163f93338159011",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.5913855209946632,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "42da18b21ca084872b304c2612437664705e2a6cb6131a5eb19105d5628d2086"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vf-w128-mf2-rm3-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "922f93880f12d9c2b76901afc65adcfdcaa2734d17583aff2923d36214680881",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6596313359914348,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "f25ed80940d60a5405377f953f402b3eb9c5e119ace724742bead13881ce1f42"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwmsac-vf-w128-mf2-rm4-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwmsac-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwmsac-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "bc873004c2cf033aabe5be289746e3f97fce8066378f6b73378de20ed175e95c",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.602028775960207,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "d5c03bcf4aacd0ab395b99713e4d0cffb1ebbded45acbea9c7749d1e96c29e9f"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vv-w128-mf2-rm0-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vv-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "f6396af78dddd2e5f55003a786765dbe4d1afa87062f62d6f5ad1f9e8f2dc557",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6111469609895721,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "ceef5ddba2261314bc7ba143dfd901bc06c9cdd4a44f84b9cb0647d925005684"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vv-w128-mf2-rm1-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vv-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "73bb001a39b1f0d2ba5cae7ad6fe9a0bb2c6c174fdfae5639f7bc51fab00035c",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.628220085054636,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "41f060cb1116fc02fa02d0200960252a0d3c430a0dbd1ddcceab983b552e62ef"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vv-w128-mf2-rm2-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vv-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "13500d017a90d43c0a79932dadd956c42abcb48e5cc34d0c7ccdec830daaba31",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6042542179347947,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "649b61fc287458d65123e632834a80cf7160124ae2a7688b2d101ec73e241472"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vv-w128-mf2-rm3-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vv-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "1dd54d5aeaafb6dd15e5bdbfdedd3cb4e4c72362780862ff8dc3aa829b5c2f6e",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6426805990049616,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "2908010683167084234b4091aa7da37deb3c634d700186cca1016ef0551b551c"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vv-w128-mf2-rm4-zero",
+        "cases": 53,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vv-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vv-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "da40d4c50ff1b0f9c3f2b435695c4ecda65ecdddf0f02486d606eaa3c430c757",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.586096543003805,
+          "stdout_sha256": "9e5c3a65939cea6aeb1862fdd612de61b6fd9500ce03e850f54d5289d9ac250a",
+          "stderr_sha256": "32f1730b01f0204ce445cfebd730ad6eeba4ea8a19ad60ba5ec6c1b2a44d7a5d"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vf-w128-mf2-rm0-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vf-w128-mf2-rm0-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm0-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm0-zero/sail.elf"
+        ],
+        "elf_sha256": "760c84b210343daa57838331911eb5e142266cf761f269d52d759eb0c7dc24a8",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6755445670569316,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "bcb10e233d68487f325433caaa557ac83a1e890d17d2168ab8be0406c2e4a21b"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vf-w128-mf2-rm1-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vf-w128-mf2-rm1-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm1-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm1-zero/sail.elf"
+        ],
+        "elf_sha256": "9c0b44094cecb0d688b85d128c6bfef4ab418eb1c4f441c9aedcd27335b96704",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.584684178000316,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "fd20b9737bfd7b4176262ca9d382b77000c1f2d4e55a8161a2867ca56fc2b835"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vf-w128-mf2-rm2-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vf-w128-mf2-rm2-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm2-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm2-zero/sail.elf"
+        ],
+        "elf_sha256": "793fdfd7a582e80386a08759f3aed990a271ac5dfbf96e722d3c0373c9b07a5b",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6362303890055045,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "70c627451cab30490a63929fb4ebd2c6d8f6da58883ebafa8eb5e1320c7a1101"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vf-w128-mf2-rm3-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vf-w128-mf2-rm3-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm3-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm3-zero/sail.elf"
+        ],
+        "elf_sha256": "4f50f90b1240973e8d39bd709ebb6310694f5433f778a45b85b886ed3b725f5b",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.6013294720323756,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "1918bd9973ac97ca5e4d342219f28df81cb331650ff71da2745e71da7df8f19f"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      },
+      {
+        "unit": "vfwnmsac-vf-w128-mf2-rm4-zero",
+        "cases": 55,
+        "build": [
+          "clang-22",
+          "--target=riscv32-unknown-elf",
+          "-march=rv32gcv",
+          "-mabi=ilp32d",
+          "-nostdlib",
+          "-static",
+          "-fuse-ld=lld",
+          "-Wl,--no-relax",
+          "-Wl,-T,sail-crosscheck/vfwnmsac-vf-w128-mf2-rm4-zero/sail.ld",
+          "-DSAIL",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm4-zero/test.S",
+          "-o",
+          "sail-crosscheck/vfwnmsac-vf-w128-mf2-rm4-zero/sail.elf"
+        ],
+        "elf_sha256": "53952912a9dea2b21468895810d8ff02bbd27fc8ab73fc62d54e654b562614d1",
+        "execution": {
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 0.721514750039205,
+          "stdout_sha256": "39ed777501c995fc44ba23503e2ab227a3c411daac49f2d58052cbe6cfba0683",
+          "stderr_sha256": "f7b221f0311a39b605f27162c0bb54ff57e315d1405edca329cc77f7bf22d5db"
+        },
+        "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+      }
+    ]
+  }
+}

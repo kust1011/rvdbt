@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "positive_checks": 17,
+  "rejections": [
+    {
+      "control": "missing-output",
+      "result": "REJECTED",
+      "reason": "failed or missing DUT output: {\"returncode\": 0, \"timeout\": false}"
+    },
+    {
+      "control": "truncated-output",
+      "result": "REJECTED",
+      "reason": "failed or missing DUT output: {\"returncode\": 0, \"timeout\": false}"
+    },
+    {
+      "control": "nonzero-exit",
+      "result": "REJECTED",
+      "reason": "failed or missing DUT output: {\"returncode\": 1, \"timeout\": false}"
+    },
+    {
+      "control": "timeout",
+      "result": "REJECTED",
+      "reason": "failed or missing DUT output: {\"returncode\": 0, \"timeout\": true}"
+    },
+    {
+      "control": "corrupted-CSR",
+      "result": "REJECTED",
+      "reason": "pre CSR/scalar mismatch"
+    }
+  ]
+}
