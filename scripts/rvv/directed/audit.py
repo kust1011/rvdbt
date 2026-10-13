@@ -52,7 +52,7 @@ def audit(root,out):
         for c in cs:
             pc=syms['target_'+str(c['ordinal'])];textaddr,code=user['.text'];insn=code[pc-textaddr:pc-textaddr+4]
             word=int.from_bytes(insn,'little')
-            if c.get('family')=='configuration147':
+            if c.get('family') in ('configuration147','configuration148'):
                 import config
                 if word&127!=0x57 or (word>>12)&7!=7 or (word>>7)&31!=c['rd']:raise ValueError('configuration opcode/rd mismatch')
                 if c['form']=='vsetvli':
@@ -66,7 +66,11 @@ def audit(root,out):
             else:
                 f3={'vv':0,'vx':4,'vi':3}[c['form']]
                 operand=c['vs1'] if c['form']=='vv' else 8 if c['form']=='vx' else c['operand']&31
-                expected_word=(v.FUNCT6[c.get('mnemonic','vadd')]<<26)|(int(c['mask']=='none')<<25)|(c['vs2']<<20)|(operand<<15)|(f3<<12)|(c['vd']<<7)|0x57
+                funct6=v.FUNCT6
+                if c.get('family')=='shiftminmax148':
+                    import shift148
+                    funct6=shift148.FUNCT6
+                expected_word=(funct6[c.get('mnemonic','vadd')]<<26)|(int(c['mask']=='none')<<25)|(c['vs2']<<20)|(operand<<15)|(f3<<12)|(c['vd']<<7)|0x57
             if word!=expected_word:raise ValueError('target opcode mismatch')
             targets.append(dict(case=c['id'],user_pc=hex(pc),instruction_hex=insn.hex()))
         if cs[0]['vstart']:
@@ -118,15 +122,19 @@ def audit(root,out):
                 if error:first_failures.append(dict(case=c['id'],arm=arm,error=error))
                 observed=v.decode(c,packet) if len(packet)==size else None
                 rows.append(dict(case=c['id'],arm=arm,status=status,isa_status=isa_status,reference_status=reference_status,vstart_class=c.get('classification', 'zero-start' if c['vstart']==0 else 'reserved-start-profile' if c['vstart']>=c['vlmax'] else 'ordinary-nonzero-start'),pre_csrs=json.dumps(observed[0]) if observed else '',post_csrs=json.dumps(observed[1]) if observed else '',pre_register_sha256=hashlib.sha256(observed[2]).hexdigest() if observed else '',post_register_sha256=hashlib.sha256(observed[3]).hexdigest() if observed else '',raw=str((d/'packets.bin').relative_to(root)),offset=i*size,bytes=size,oracle='Sail0.14.1+ISA' if c['vstart'] else 'Spike20feb9c2+ISA'))
-    if manifest.get('family')=='configuration147':
+    if manifest.get('family') in ('configuration147','configuration148'):
         for row in rows:
             classification=ids[row['case']]['classification']
-            row['semantic_status']=row['status'] if row['status']!='PASS' else 'OBSERVED_RESERVED' if classification=='reserved-preserve' else 'PROFILE_PASS' if classification=='reserved-vstart-profile' else 'PASS'
+            row['semantic_status']=row['status'] if row['status']!='PASS' else 'OBSERVED_RESERVED' if classification=='reserved-preserve' else 'PROFILE_PASS' if classification=='reserved-vstart-profile' else 'PROFILE_UNSUPPORTED_VTYPE' if classification=='unsupported-vtype' and manifest.get('family')=='configuration148' else 'PASS'
+    if manifest.get('family')=='shiftminmax148':
+        for row in rows:
+            c=ids[row['case']]
+            row['semantic_status']=row['status'] if row['status']!='PASS' else 'PROFILE_RESERVED_START' if c['vstart']>=c['vlmax'] else 'PASS'
     with gzip.open(out/'observed-checks.csv.gz','wt') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     v.save(out/'adapter-verification.json',adapter);v.save(out/'guest-pins.json',pins)
-    v.save(out/'audit.json',dict(planned_cases=len(cases),executed_case_checks=len(rows),planned_commands=len(units)*5,executed_commands=command_count,aggregate_command_seconds=runtime,counts={a:{s:counts[(a,s)] for s in ['PASS','FAIL','ISA_ONLY_REFERENCE_BLOCKED']} for a in ['Reference','B','M1','M2','BOTH']},failures=first_failures,adapter_verified_units=len(adapter),full_state='32 vector registers, 10 CSRs and actual rd pre/post' if manifest.get('family')=='configuration147' else '32 vector registers, 10 CSRs and scalar s0 pre/post',method_admission='NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission'))
-    if manifest.get('family')=='configuration147':
+    v.save(out/'audit.json',dict(planned_cases=len(cases),executed_case_checks=len(rows),planned_commands=len(units)*5,executed_commands=command_count,aggregate_command_seconds=runtime,counts={a:{s:counts[(a,s)] for s in ['PASS','FAIL','ISA_ONLY_REFERENCE_BLOCKED']} for a in ['Reference','B','M1','M2','BOTH']},failures=first_failures,adapter_verified_units=len(adapter),full_state='32 vector registers, 10 CSRs and actual rd pre/post' if manifest.get('family') in ('configuration147','configuration148') else '32 vector registers, 10 CSRs and scalar s0 pre/post',method_admission='NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission'))
+    if manifest.get('family') in ('configuration147','configuration148'):
         import config
         deterministic=config.determinism(root);v.save(out/'determinism.json',deterministic)
         if deterministic['failures']: raise ValueError('configuration determinism failures')

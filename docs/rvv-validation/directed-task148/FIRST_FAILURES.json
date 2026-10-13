@@ -1,0 +1,52 @@
+[
+  {
+    "step": "delta",
+    "kind": "generator-routing",
+    "error": "ValueError: unknown selected unit",
+    "cause": "Initial configuration147 route also matched configuration148 before the new route.",
+    "retained": "Tool-observed traceback; empty /tmp/task148-delta-pilot; initial routing condition documented here.",
+    "resolution": "Route configuration147 alone; new delta route selects config148.cases().",
+    "guest_execution": false
+  },
+  {
+    "step": "delta",
+    "kind": "launch-order",
+    "error": "sha256sum: FREEZE.sha256: No such file or directory",
+    "cause": "Background launcher was started before the asynchronous transfer/freeze finished.",
+    "retained": "xbd:delta/launch-before-transfer-complete.log",
+    "resolution": "Waited for transfer/freeze then relaunched; no guest run had started.",
+    "guest_execution": false
+  },
+  {
+    "step": "shift",
+    "kind": "manifest-uniqueness",
+    "error": "AssertionError: duplicate case ids",
+    "cause": "Translating both negative immediate operand tags to31 produced duplicates.",
+    "retained": "Tool-observed assertion; no shift pilot guest executed in this attempt.",
+    "resolution": "Operand tags use encoded unsigned value; non-operand default separately uses31.",
+    "guest_execution": false
+  },
+  {
+    "step": "shift",
+    "kind": "control-witness",
+    "error": "AssertionError: five-bit-mask corruption did not differ",
+    "cause": "Arithmetic right shift of all ones has the same value for both counts.",
+    "retained": "xbd:shift/pilot-v2-controls.log, pilot-v2-controls/, reject148-first.py",
+    "resolution": "Expanded pilot with SEW64/m4 and selected a differing lane; unsigned immediate control also selects a differing lane."
+  },
+  {
+    "step": "shift",
+    "kind": "control-witness",
+    "error": "ValueError: no unmasked-count witness",
+    "cause": "SEW8 arithmetic right shift by255 and masked7 both saturate to the same sign value.",
+    "retained": "xbd:shift/pilot-v3-controls.log, pilot-v3-controls/, reject148-second.py",
+    "resolution": "Use operand8 to distinguish count8 from masked0; final457 controls reject."
+  },
+  {
+    "step": "shift",
+    "kind": "transport",
+    "error": "rsync code255: connection unexpectedly closed",
+    "resolution": "Resumed compressed rsync before any full guest launch; local/remote manifest SHA256 identical and full runner/audit authenticate all ELFs/source.",
+    "guest_execution": false
+  }
+]

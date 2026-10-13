@@ -1,0 +1,41 @@
+{
+  "snapshot": "scripts",
+  "files": [
+    {
+      "path": "scripts/audit.py",
+      "sha256": "36e9abb6569854a8f5b26de4ebbd1c170da0afb190d95fa16aaeb064db51be99"
+    },
+    {
+      "path": "scripts/config.py",
+      "sha256": "345cd856dd870872a368a7b57c85be55b2cf8cf18613307f54607edcde6178f1"
+    },
+    {
+      "path": "scripts/config148.py",
+      "sha256": "83bb5a51474fab1fe524f557761449b3665271bf6d47d2c50a21c5e002c5a3b3"
+    },
+    {
+      "path": "scripts/reject148.py",
+      "sha256": "83dd59fd0c9228d17116dc75d642a0b94289520dc66e8881aba465bf5f0c5d29"
+    },
+    {
+      "path": "scripts/shift148.py",
+      "sha256": "e2b617e07fdf37e2a999e81d4e38aaa87a1abe81ab234d107292183fa7c5f535"
+    },
+    {
+      "path": "scripts/summarize148.py",
+      "sha256": "ba8431ae49f5c3f40ea1f57568f20b956de27377b5668ea22eba0e136f4e1685"
+    },
+    {
+      "path": "scripts/vadd.py",
+      "sha256": "1d7424e59682b4db5b08ebb1ab277f8774a2d27405cf1049e967661b088e8f8a"
+    },
+    {
+      "path": "corpus/manifest.json",
+      "sha256": "dc6a92f9e4cee02784fd05e7eedfdcb4a0ec65c5535ef5976326533860076135"
+    },
+    {
+      "path": "../FLAGS.json",
+      "sha256": "b6a8e0ba8fce2f70668b14c8d7bfa1194908249f21415fc1e2289bbef9dd802c"
+    }
+  ]
+}

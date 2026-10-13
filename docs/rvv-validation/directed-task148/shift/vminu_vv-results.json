@@ -1,0 +1,56 @@
+{
+  "form": "vminu.vv",
+  "planned_per_arm": 4501,
+  "arms": {
+    "Reference": {
+      "executed": 4501,
+      "statuses": {
+        "PASS": 4501
+      },
+      "semantic_statuses": {
+        "PASS": 4241,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 4501,
+      "statuses": {
+        "PASS": 4501
+      },
+      "semantic_statuses": {
+        "PASS": 4241,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 4501,
+      "statuses": {
+        "PASS": 4501
+      },
+      "semantic_statuses": {
+        "PASS": 4241,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 4501,
+      "statuses": {
+        "PASS": 4501
+      },
+      "semantic_statuses": {
+        "PASS": 4241,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 4501,
+      "statuses": {
+        "PASS": 4501
+      },
+      "semantic_statuses": {
+        "PASS": 4241,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

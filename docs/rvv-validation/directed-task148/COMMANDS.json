@@ -1,0 +1,44 @@
+[
+  {
+    "step": "delta",
+    "family": "configuration148",
+    "build": [
+      "python3",
+      "scripts/rvv/directed/vadd.py",
+      "build",
+      "--family",
+      "configuration148",
+      "--build-jobs",
+      "4",
+      "--compiler",
+      "clang-20",
+      "--output",
+      "/tmp/task148-delta-full",
+      "--link",
+      "scripts/rvv/fixtures/rvvts-20261089/link.ld"
+    ],
+    "root": "xbd:/home/vick/rvv-directed-task148/delta",
+    "launcher": "launch-delta.sh"
+  },
+  {
+    "step": "shift/minmax",
+    "family": "shiftminmax148",
+    "build": [
+      "python3",
+      "scripts/rvv/directed/vadd.py",
+      "build",
+      "--family",
+      "shiftminmax148",
+      "--build-jobs",
+      "4",
+      "--compiler",
+      "clang-20",
+      "--output",
+      "/tmp/task148-shift-full",
+      "--link",
+      "scripts/rvv/fixtures/rvvts-20261089/link.ld"
+    ],
+    "root": "xbd:/home/vick/rvv-directed-task148/shift",
+    "launcher": "launch-shift.sh"
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "form": "vmaxu.vx",
+  "planned_per_arm": 6613,
+  "arms": {
+    "Reference": {
+      "executed": 6613,
+      "statuses": {
+        "PASS": 6613
+      },
+      "semantic_statuses": {
+        "PASS": 6353,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 6613,
+      "statuses": {
+        "PASS": 6613
+      },
+      "semantic_statuses": {
+        "PASS": 6353,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 6613,
+      "statuses": {
+        "PASS": 6613
+      },
+      "semantic_statuses": {
+        "PASS": 6353,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 6613,
+      "statuses": {
+        "PASS": 6613
+      },
+      "semantic_statuses": {
+        "PASS": 6353,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 6613,
+      "statuses": {
+        "PASS": 6613
+      },
+      "semantic_statuses": {
+        "PASS": 6353,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

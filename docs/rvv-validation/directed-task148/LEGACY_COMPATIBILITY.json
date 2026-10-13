@@ -1,0 +1,47 @@
+[
+  {
+    "family": "vadd145",
+    "manifest_equal": true,
+    "cases": 9393,
+    "source_units": [
+      "w1024-e16-m1-vi-start",
+      "w1024-e16-m1-vi-zero",
+      "w128-e64-m1-vi-start",
+      "w256-e16-m1-vi-start",
+      "w4096-e64-m1-vi-start",
+      "w512-e8-mf8-vx-start",
+      "w512-e8-mf8-vx-zero"
+    ],
+    "source_equal": true
+  },
+  {
+    "family": "integer146",
+    "manifest_equal": true,
+    "cases": 70696,
+    "source_units": [
+      "vadd-w1024-e16-m1-vi-start",
+      "vadd-w1024-e16-m1-vi-zero",
+      "vand-w2048-e16-m1-vi-start",
+      "vor-w4096-e16-m1-vi-start",
+      "vsub-w256-e16-m1-vv-start",
+      "vxor-w512-e8-mf8-vx-start",
+      "vxor-w512-e8-mf8-vx-zero"
+    ],
+    "source_equal": true
+  },
+  {
+    "family": "configuration147",
+    "manifest_equal": true,
+    "cases": 48630,
+    "source_units": [
+      "w1024-e16-m1-vsetivli-start",
+      "w1024-e16-m1-vsetivli-zero",
+      "w128-e64-m1-vsetivli-start",
+      "w256-e16-m1-vsetivli-start",
+      "w4096-e64-m1-vsetivli-start",
+      "w512-e8-mf8-vsetvli-start",
+      "w512-e8-mf8-vsetvli-zero"
+    ],
+    "source_equal": true
+  }
+]

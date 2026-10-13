@@ -1,0 +1,56 @@
+{
+  "form": "vsetivli",
+  "planned_per_arm": 3024,
+  "arms": {
+    "Reference": {
+      "executed": 3024,
+      "statuses": {
+        "PASS": 3024
+      },
+      "semantic_statuses": {
+        "PROFILE_UNSUPPORTED_VTYPE": 2880,
+        "PASS": 144
+      }
+    },
+    "B": {
+      "executed": 3024,
+      "statuses": {
+        "PASS": 3024
+      },
+      "semantic_statuses": {
+        "PROFILE_UNSUPPORTED_VTYPE": 2880,
+        "PASS": 144
+      }
+    },
+    "M1": {
+      "executed": 3024,
+      "statuses": {
+        "PASS": 3024
+      },
+      "semantic_statuses": {
+        "PROFILE_UNSUPPORTED_VTYPE": 2880,
+        "PASS": 144
+      }
+    },
+    "M2": {
+      "executed": 3024,
+      "statuses": {
+        "PASS": 3024
+      },
+      "semantic_statuses": {
+        "PROFILE_UNSUPPORTED_VTYPE": 2880,
+        "PASS": 144
+      }
+    },
+    "BOTH": {
+      "executed": 3024,
+      "statuses": {
+        "PASS": 3024
+      },
+      "semantic_statuses": {
+        "PROFILE_UNSUPPORTED_VTYPE": 2880,
+        "PASS": 144
+      }
+    }
+  }
+}

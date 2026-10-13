@@ -1,0 +1,56 @@
+{
+  "form": "vsra.vi",
+  "planned_per_arm": 8329,
+  "arms": {
+    "Reference": {
+      "executed": 8329,
+      "statuses": {
+        "PASS": 8329
+      },
+      "semantic_statuses": {
+        "PASS": 8069,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 8329,
+      "statuses": {
+        "PASS": 8329
+      },
+      "semantic_statuses": {
+        "PASS": 8069,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 8329,
+      "statuses": {
+        "PASS": 8329
+      },
+      "semantic_statuses": {
+        "PASS": 8069,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 8329,
+      "statuses": {
+        "PASS": 8329
+      },
+      "semantic_statuses": {
+        "PASS": 8069,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 8329,
+      "statuses": {
+        "PASS": 8329
+      },
+      "semantic_statuses": {
+        "PASS": 8069,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

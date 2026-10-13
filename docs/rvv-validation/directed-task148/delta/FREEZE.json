@@ -1,0 +1,29 @@
+{
+  "snapshot": "scripts",
+  "files": [
+    {
+      "path": "scripts/audit.py",
+      "sha256": "46305c009584ef21af60ef797a0a2995e6e1b866cea0f20cf716fb8010c10551"
+    },
+    {
+      "path": "scripts/config.py",
+      "sha256": "345cd856dd870872a368a7b57c85be55b2cf8cf18613307f54607edcde6178f1"
+    },
+    {
+      "path": "scripts/config148.py",
+      "sha256": "83bb5a51474fab1fe524f557761449b3665271bf6d47d2c50a21c5e002c5a3b3"
+    },
+    {
+      "path": "scripts/reject148.py",
+      "sha256": "f876016cbe75f978889423310cff1f46f6da79782498cbfe5ac3861fb0eed317"
+    },
+    {
+      "path": "scripts/vadd.py",
+      "sha256": "71d82f1afcee58ed53857989edd2c4ec97efa8ee09d3fdbb56674dabffee694b"
+    },
+    {
+      "path": "corpus/manifest.json",
+      "sha256": "56cdb6fcac95b7238408bc4293e33fe6a81a1ed589fd264bc1999668bef600a5"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "delta": {
+    "summary": {
+      "planned_cases": 292,
+      "planned_executions": 1460,
+      "executed": 1460,
+      "counts": {
+        "PASS": 1460
+      },
+      "arms": {
+        "Reference": {
+          "PASS": 292
+        },
+        "B": {
+          "PASS": 292
+        },
+        "M1": {
+          "PASS": 292
+        },
+        "M2": {
+          "PASS": 292
+        },
+        "BOTH": {
+          "PASS": 292
+        }
+      },
+      "seconds": 1.9964730709907599,
+      "jobs": 2
+    },
+    "audited_checks": 1460,
+    "controls": 156,
+    "rejected": 156,
+    "retained": "xbd:/home/vick/rvv-directed-task148/delta/pilot-v2*"
+  },
+  "shift": {
+    "summary": {
+      "planned_cases": 2078,
+      "planned_executions": 10390,
+      "executed": 10390,
+      "counts": {
+        "PASS": 10390
+      },
+      "arms": {
+        "Reference": {
+          "PASS": 2078
+        },
+        "B": {
+          "PASS": 2078
+        },
+        "M1": {
+          "PASS": 2078
+        },
+        "M2": {
+          "PASS": 2078
+        },
+        "BOTH": {
+          "PASS": 2078
+        }
+      },
+      "seconds": 18.58490072202403,
+      "jobs": 2
+    },
+    "audit": {
+      "planned_cases": 2078,
+      "executed_case_checks": 10390,
+      "planned_commands": 540,
+      "executed_commands": 540,
+      "aggregate_command_seconds": 35.048394159879535,
+      "counts": {
+        "Reference": {
+          "PASS": 2078,
+          "FAIL": 0,
+          "ISA_ONLY_REFERENCE_BLOCKED": 0
+        },
+        "B": {
+          "PASS": 2078,
+          "FAIL": 0,
+          "ISA_ONLY_REFERENCE_BLOCKED": 0
+        },
+        "M1": {
+          "PASS": 2078,
+          "FAIL": 0,
+          "ISA_ONLY_REFERENCE_BLOCKED": 0
+        },
+        "M2": {
+          "PASS": 2078,
+          "FAIL": 0,
+          "ISA_ONLY_REFERENCE_BLOCKED": 0
+        },
+        "BOTH": {
+          "PASS": 2078,
+          "FAIL": 0,
+          "ISA_ONLY_REFERENCE_BLOCKED": 0
+        }
+      },
+      "failures": [],
+      "adapter_verified_units": 54,
+      "full_state": "32 vector registers, 10 CSRs and scalar s0 pre/post",
+      "method_admission": "NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission"
+    },
+    "controls": 457,
+    "rejected": 457,
+    "retained": "xbd:/home/vick/rvv-directed-task148/shift/pilot-v3*"
+  }
+}

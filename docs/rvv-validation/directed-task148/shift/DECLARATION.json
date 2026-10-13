@@ -1,0 +1,95 @@
+{
+  "declared_before_execution": true,
+  "family": "shiftminmax148",
+  "planned_cases": 102785,
+  "planned_checks": 513925,
+  "planned_commands": 22440,
+  "manifest_sha256": "dc6a92f9e4cee02784fd05e7eedfdcb4a0ec65c5535ef5976326533860076135",
+  "per_form": {
+    "vsll.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vsll.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    },
+    "vsll.vi": {
+      "cases": 8329,
+      "ordinary": 8069,
+      "reserved_start_profile": 260
+    },
+    "vsrl.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vsrl.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    },
+    "vsrl.vi": {
+      "cases": 8329,
+      "ordinary": 8069,
+      "reserved_start_profile": 260
+    },
+    "vsra.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vsra.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    },
+    "vsra.vi": {
+      "cases": 8329,
+      "ordinary": 8069,
+      "reserved_start_profile": 260
+    },
+    "vmin.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vmin.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    },
+    "vminu.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vminu.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    },
+    "vmax.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vmax.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    },
+    "vmaxu.vv": {
+      "cases": 4501,
+      "ordinary": 4241,
+      "reserved_start_profile": 260
+    },
+    "vmaxu.vx": {
+      "cases": 6613,
+      "ordinary": 6353,
+      "reserved_start_profile": 260
+    }
+  }
+}

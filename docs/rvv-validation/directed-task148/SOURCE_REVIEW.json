@@ -1,0 +1,127 @@
+{
+  "spec": "riscv-v-spec/v1.0",
+  "spike": "20feb9c2bf2a7deab964d8190b0cbd4b4131bec3",
+  "sail": "0.14.1/e4b243f",
+  "files": [
+    {
+      "path": "spike/decode_macros.h",
+      "sha256": "cd35b24e4fd1e1c8cb2917a944ff2dc684784ce2d518a87ff564198c3a9e1a83"
+    },
+    {
+      "path": "spike/v_ext_macros.h",
+      "sha256": "c8663bcd609c60796bb130016b72ad1cf1adc3617184d13333f64020b5845329"
+    },
+    {
+      "path": "spike/vmax_vv.h",
+      "sha256": "521b12ff8c80e9231d226bc253524bee2838f88ef3d3e12dcf5c7e56b0d91f75"
+    },
+    {
+      "path": "spike/vmax_vx.h",
+      "sha256": "e83bb14226e121bf92981596b542600a366089879c06b572a9f078fcea125951"
+    },
+    {
+      "path": "spike/vmaxu_vv.h",
+      "sha256": "5a30198ef192c9fd30db1c98e1020e30f3fc78c2cc1edda69c302cce841c28a7"
+    },
+    {
+      "path": "spike/vmaxu_vx.h",
+      "sha256": "ab9cbe44de5c7ff1b50f7d0d8a47c51833f112387b33b774177a32d9e4117e2f"
+    },
+    {
+      "path": "spike/vmin_vv.h",
+      "sha256": "5c1265e14b6c242ad6de170720ab2cf824dead715c67b21872795c52ba77c6e8"
+    },
+    {
+      "path": "spike/vmin_vx.h",
+      "sha256": "325cbd31243c6b9864487887d47936868f1cb59e3d87f1fe4a25cf78d054c78b"
+    },
+    {
+      "path": "spike/vminu_vv.h",
+      "sha256": "ab246a4d0a3156f51d0c404a3c7c8cfe272b58f514d9e9b59b0a733e00402b8c"
+    },
+    {
+      "path": "spike/vminu_vx.h",
+      "sha256": "6cdb6fd953a78a3550eb106da996d36d7f57b7d39f92ea711dac5d545df183af"
+    },
+    {
+      "path": "spike/vsll_vi.h",
+      "sha256": "0a3915efebb5d7c3c48c8b3af72d8f6af4a5638d919fce6eb635c8171200fe6b"
+    },
+    {
+      "path": "spike/vsll_vv.h",
+      "sha256": "dea09ca379d2f9ca744013ee619f7a168c2a1bafe8bac7045ef05c5c4ee5d15d"
+    },
+    {
+      "path": "spike/vsll_vx.h",
+      "sha256": "79575d3e4d6a0b3000debf0704ffe3e31000a0f849363e62254533a2b45f9a34"
+    },
+    {
+      "path": "spike/vsra_vi.h",
+      "sha256": "f60917103b2e597d8d0e5c9ed1c81e3fc71c4e99839ab13f045ef92b07e960ba"
+    },
+    {
+      "path": "spike/vsra_vv.h",
+      "sha256": "1d0f9cdf237768bb1fa1fbd119ff2b310d6866dcb564170a691e177780dd532e"
+    },
+    {
+      "path": "spike/vsra_vx.h",
+      "sha256": "236a773cb597f9b492332359b09fbfe0c643a00bc68edc3c8efa82261f05142e"
+    },
+    {
+      "path": "spike/vsrl_vi.h",
+      "sha256": "fce1c18d17a23776515a4dca07cabb2a8ebc554af338df500c1a260c260aa864"
+    },
+    {
+      "path": "spike/vsrl_vv.h",
+      "sha256": "4be6e27522c61a3868d1754d07b2a82a3f10899f387903ec3f1666c554be1ca4"
+    },
+    {
+      "path": "spike/vsrl_vx.h",
+      "sha256": "c70a2887c0dc63cdeed1531e2b569bf286ec2b69950290d9d9b05bf721b43947"
+    },
+    {
+      "path": "v-spec.adoc",
+      "sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19"
+    },
+    {
+      "path": "vector_unit.cc",
+      "sha256": "9892999526151d6ae0ee3aeb9dee3700cf1a322969f5b616c20192b92fcbbb99"
+    },
+    {
+      "path": "vext_arith_insts.sail",
+      "sha256": "4c0255bbc2dde0da80891983fa2bf80c42b12d4a3aea9c61a72298d8a4b6620d"
+    },
+    {
+      "path": "vext_control.sail",
+      "sha256": "610dc59de8000d3e89bce648e1f685328f943071ecd5698f5e26aeafb61f4d67"
+    },
+    {
+      "path": "vext_regs.sail",
+      "sha256": "31c7301c4d0cccdebcc2e7b377cfecc6b94549ee94929f38eebb9d31dc2d23e3"
+    },
+    {
+      "path": "vext_types.sail",
+      "sha256": "eeaab9ad850708059ac794bbb24ceba4605a153d8d70bbabead092cb879ef1e6"
+    },
+    {
+      "path": "vext_utils_insts.sail",
+      "sha256": "1aa60f234e79c807ad6559cff3b119f7355e4a3f42ea950efe4cc03ae305371a"
+    },
+    {
+      "path": "vext_vset_insts.sail",
+      "sha256": "f984e6f5d9485d37adbe0cf18816baaeb450ce42399770c3b348c48738a9581f"
+    },
+    {
+      "path": "vreg_type.sail",
+      "sha256": "da5fd64798b2a5e203fc9e8159b8aaf395fad01aa49c128ae2b2a6aaf3d74e5c"
+    },
+    {
+      "path": "vsetivli.h",
+      "sha256": "4a6d43f5b0b0145fb3b2b37e745128be421c1bd40d4b008f934025901a1b8abc"
+    },
+    {
+      "path": "vsetvli.h",
+      "sha256": "648db3a7777202a9030bb0dc034b27ea9349e2bf946ca31e098b31bc4165baa8"
+    }
+  ]
+}

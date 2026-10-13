@@ -1,0 +1,25 @@
+ 12:42:44 up 5 days, 16:20,  6 users,  load average: 0.37, 0.46, 0.92
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  1.9T  1.7T   57G  97% /
+ 12:58:43 up 5 days, 16:36,  6 users,  load average: 0.52, 0.75, 0.86
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  1.9T  1.7T   51G  98% /
+    PID %CPU COMMAND
+3572115  1.0 envoy
+ 630920  0.8 claude
+3571292  0.7 service
+   1969  0.7 dockerd
+3536383  0.7 kworker/u129:0-pm
+  13441  0.6 claude
+2831991  0.6 claude
+ 272816  0.6 claude
+ 648389  0.6 claude
+   3360  0.5 java
+ 619233  0.5 claude
+scripts/audit.py: OK
+scripts/config.py: OK
+scripts/config148.py: OK
+scripts/reject148.py: OK
+scripts/vadd.py: OK
+corpus/manifest.json: OK
+{"run":0,"audit":0,"controls":0,"summary":0}

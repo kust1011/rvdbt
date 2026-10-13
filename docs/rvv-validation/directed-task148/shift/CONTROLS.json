@@ -1,0 +1,4576 @@
+{
+  "controls": 457,
+  "rejected": 457,
+  "records": [
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0180 != 0080",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0000-active.bin",
+      "sha256": "a511d7803326e840438d3521f6329ec904684af5602bab30b142d2cc8648407e"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0001-tail.bin",
+      "sha256": "3bf23a04fe8d89bc74e72b6ebd91de6bce87c0cd76574fe6bffe9d871cc6f0a1"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0002-source.bin",
+      "sha256": "6cec8f780d6b22983262abd78427f88d684fa7922235139868a43a6a05bd3fe7"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0003-pre-source.bin",
+      "sha256": "b17832daffe9afb96d6d01f1a9af67c0e21b7c040e189736f8935064f9def7f2"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0004-scalar.bin",
+      "sha256": "4c35949133fb9e42a57ae284f097867710765ac79b9f796819a6d84381ec5a63"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0005-post-vl.bin",
+      "sha256": "0d0775048a9bcbd154c5dc170051201e7e71b14180ef147bc8c4ab72d4244cd8"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0006-post-vtype.bin",
+      "sha256": "4f6b63d28ae3f734f796eb731b32708cff136fdac00529ff232a92f98455c4c2"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0007-post-vlenb.bin",
+      "sha256": "7ad91efd4d6500aa34b6be9add259d08bacb3f8d27a0c6e02f1c8c8a58a164dc"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0008-post-vstart.bin",
+      "sha256": "8f56cf8025e0bd1d86add8cc43f8fa04e87a98bd1354bc9b4b69c1e573ac6794"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0009-post-vxrm.bin",
+      "sha256": "5ae2d1a4ebb56e3ec9284fdda2620e54243e2aa7279c9d56f936f2911443bae9"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0010-post-vxsat.bin",
+      "sha256": "4123ff0a4c6ba5c97be93428bf5bb8227f0296f41956b2113ac796be43e21665"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0011-post-vcsr.bin",
+      "sha256": "46d26ea60ec95045025b0219672b86b0a8e92fda8c2a0731312ee11e0d54ca31"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0012-post-fflags.bin",
+      "sha256": "7ef80a5c05982cc767be25482a01eded00451dfe3865b9086b364765897b6d7f"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0013-post-frm.bin",
+      "sha256": "e296884a00d1507f76abd250a1fd7a68475b3e007c971bd219f5a8c15bf5f723"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0014-post-fcsr.bin",
+      "sha256": "da0db5b758cc19491f51e0530519d3d6bf4e8e3823a5aab73f3d68d015070b9b"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0015-missing.bin",
+      "sha256": "892956090125a924e4d8a7940ceba55389bcc48f62f66d4009374e7468222066"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0016-crash.bin",
+      "sha256": "4dbcf365c0187d5f10bd046f59b07623760cc79962d4f3eec500381853ebc2dc"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0017-timeout.bin",
+      "sha256": "4dbcf365c0187d5f10bd046f59b07623760cc79962d4f3eec500381853ebc2dc"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0018-masked-undisturbed.bin",
+      "sha256": "6d2297854363166499de255f3d71f2583bce3fb782b4d06f1cb9a9cd48928f52"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0019-start1-preserve.bin",
+      "sha256": "4674fc94e81801a9814830686aab4e6b48fc513fb56b7b85217f05981d331d7a"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0020-start-zero-vl-preserve.bin",
+      "sha256": "1b8fae99cd687730456b2464a4de3660d194a1f33728c6f7c790a0c822147e72"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0021-start-equal-partial-preserve.bin",
+      "sha256": "3eb280f219dce181897661a29befa0a6634cf09e7d30a66fcaa04be0a38789e5"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0022-start-above-partial-preserve.bin",
+      "sha256": "0cba044047f2441a51395dde69ad4a15cd9fef961df6fd221432b9e98e3fa794"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0023-start-partial-active-preserve.bin",
+      "sha256": "fc185268f6175cff447347c38a28b2eccee56d07db014200144c016af11aa1f5"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: 0100000000000000 != 0000000000000080",
+      "source": "corpus/runs/vsll-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0024-wrong-signedness-or-operation.bin",
+      "sha256": "33c75682854f7728d6fe02262f0f84aa14da37c206b9fc05b5e6c36dc596bf15"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsll-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0025-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "33c75682854f7728d6fe02262f0f84aa14da37c206b9fc05b5e6c36dc596bf15"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: ffff != feff",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0026-active.bin",
+      "sha256": "80b86c6232dcc0c942d61dad3257fa42dcaea0edc33e5b1e8128000f6421cff5"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0027-tail.bin",
+      "sha256": "897af083a0f85adcc4842fdeb63e32249704df42d457e53fbbf0b60a99fca2b0"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0028-source.bin",
+      "sha256": "5ac63b56cc23cabe195f1c1668b50043c305b76c5b45ff351bf6965a34886a59"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0029-pre-source.bin",
+      "sha256": "42d2fa90f33312b2c3bb88bd4151c8ef0bec5681375a07940903f989c1987574"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0030-scalar.bin",
+      "sha256": "08dd2781ab2234142996935eadc64d5529367d7b67b744ad689732bef52f9f47"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0031-post-vl.bin",
+      "sha256": "7cacd96567fd4ef4be041b039b6cedfb50e1689a173502156a13561feaffebe3"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0032-post-vtype.bin",
+      "sha256": "4aa388bfb4b0947d2b5656a4ae6c35c2246bc2c93d48b3fc95c9ec9e66ad4368"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0033-post-vlenb.bin",
+      "sha256": "75054c39fe4f42c7cd63cc4b6106b0b51aa56930592bff9d89d2d24d3ad0f0e4"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0034-post-vstart.bin",
+      "sha256": "5182014633d6c9c0ed0768cb0ddcbcff0ed0003bc00432bf9d7bfd0ae6805410"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0035-post-vxrm.bin",
+      "sha256": "900d143a2e9cbce1bbb1356921e1d246d844e91de3c10b92b66d0891afba256c"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0036-post-vxsat.bin",
+      "sha256": "a34074c65dc67f488253f5f809ec50bf8118e78d7ba86e5f97a48bf518f75877"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0037-post-vcsr.bin",
+      "sha256": "9bb153dc8793e3931c299d218c8025314c86e7ebf7b47f60bfa3f3184e9b2d07"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0038-post-fflags.bin",
+      "sha256": "34fc47e3e8c3e4a0d3e2d19ad198d06e184f80818bb0fad5dc4dfbdecd85abe3"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0039-post-frm.bin",
+      "sha256": "16583dbe823202da06fcb407742e4ee311650750b11460f66f8a218fc7c8de0d"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0040-post-fcsr.bin",
+      "sha256": "143de160690088ef382e128a44f289e13c58dc3e8b0d6feb02ada00890a9036b"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0041-missing.bin",
+      "sha256": "50bfee767868d1d488a3d0e78479edfb529702f80bb8674df6d877f555dd2f25"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0042-crash.bin",
+      "sha256": "8c4089bedcdb66769f62d6f3030cb6e622d5a8ef0d32fb5bc35e4a9a98d5d74b"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0043-timeout.bin",
+      "sha256": "8c4089bedcdb66769f62d6f3030cb6e622d5a8ef0d32fb5bc35e4a9a98d5d74b"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0044-masked-undisturbed.bin",
+      "sha256": "c5fc4b8a522526f01e27a14d9a23a7b411d68560f4d08003b42a54ca5c5716b5"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0045-start1-preserve.bin",
+      "sha256": "100847631e2e23158f56360065253cfda2b75f5609cac4fc7fab43d7d27a719d"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0046-start-zero-vl-preserve.bin",
+      "sha256": "7c50d18e7897ad080ac267edd95678840d6a3dcdab8e6dfeaa07a248adb71fec"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0047-start-equal-partial-preserve.bin",
+      "sha256": "2964caf9fa5051aa8546f57aa4f41c3f8dabf3ee59997f180e67b2a7409fa6c2"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0048-start-above-partial-preserve.bin",
+      "sha256": "8c18d307dc8f7adb2b472e844ba61b60214fa2e3ce140410ed7c051a60c6be6f"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0049-start-partial-active-preserve.bin",
+      "sha256": "8f920c244f59e3343b31641e35e9c01581cb3130ae6e77cdf3f15c408afdce27"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vx-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffff7f != feffffffffffffff",
+      "source": "corpus/runs/vsll-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0050-wrong-signedness-or-operation.bin",
+      "sha256": "34d67efa7e5143cf79893c3b85367ae32198a93b2a5d42505e2196200ac852f4"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vx-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsll-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0051-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "34d67efa7e5143cf79893c3b85367ae32198a93b2a5d42505e2196200ac852f4"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0180 != 0080",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0052-active.bin",
+      "sha256": "66988e598afe0671887a1571e26717156c9919652d14deb629d7fafa50407ff8"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0053-tail.bin",
+      "sha256": "06639b2b6ded46ce31303543beb8e951b05b1c8397877e558d4f86aa719def76"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0054-source.bin",
+      "sha256": "332f57b62b9741d7634dfa6131bd49794b9c739fe76400c26c2da4ab03b71b0f"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0055-pre-source.bin",
+      "sha256": "9d9091dc6b4cf5467357fc0f2748bf830b3044230e0c92b671486cc8945c2c72"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0056-scalar.bin",
+      "sha256": "f9055a75471f79bca1a3c77eb77d5623634a18ea06fca6f3afa14e14ff46e5ea"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0057-post-vl.bin",
+      "sha256": "e8aba9535f2171bc467db6d967e1ca19e1f9c7bcb3d4678ac4497caf5e7062d7"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0058-post-vtype.bin",
+      "sha256": "6f29f235f6e65cc5610a052563bfb56932b1ff5aa0e7cca6a816263563a8af53"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0059-post-vlenb.bin",
+      "sha256": "cea95191ef3a86a4bd762d45c4a9ad4a319e4ef639349cec8f7b53acfdbbb61e"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0060-post-vstart.bin",
+      "sha256": "7a8dad1df324093fd33f2b878f5b59ec36dc9f26b5ed017ef3e6970f5d528592"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0061-post-vxrm.bin",
+      "sha256": "483d7acae041c54cd7eebdacebdb55170d56eef63e39e80d577006084c587023"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0062-post-vxsat.bin",
+      "sha256": "1bc65ca730cf5a39f4de4065f9d80712c62ec618090958100781a0e39b9eff77"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0063-post-vcsr.bin",
+      "sha256": "72177d0a00e6c403ca39de5d7f2bfa1cd6db69226b2e4dcb184431e78c22ca74"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0064-post-fflags.bin",
+      "sha256": "3f9f32c1821b92a5f09a25508a000002f5a2e5cfd07a96e1c5d582f348c9222e"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0065-post-frm.bin",
+      "sha256": "c2ed446751169357530747615d403dbdc268e1b3dcd67375e4d39c565ecf7582"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0066-post-fcsr.bin",
+      "sha256": "f54c7d2040e57401dfcc08ca3b7012de885a9709cb56dd0358e43cfed9bb6d49"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0067-missing.bin",
+      "sha256": "c23b91c13b96fabcbdd11069923b87521628669d98a5a5686c31fb4d167ef1b2"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0068-crash.bin",
+      "sha256": "012bd4cc5078eb7733490a4057c1f2ecb3fc32ba71a0855f222943c19638d538"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0069-timeout.bin",
+      "sha256": "012bd4cc5078eb7733490a4057c1f2ecb3fc32ba71a0855f222943c19638d538"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0070-masked-undisturbed.bin",
+      "sha256": "558e1f5de595bc51515ac9f14594f610563033f12d82b76441e90dbb8717b65c"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0071-start1-preserve.bin",
+      "sha256": "6c860fe70f0c076757868511d7cdfa22eecbe706fa04b2d563c1bbed9056f40d"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0072-start-zero-vl-preserve.bin",
+      "sha256": "f52ad906c1b7c5da8b264b57ffc4a2f30f4f6cce99685e77277228918cf52704"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0073-start-equal-partial-preserve.bin",
+      "sha256": "56bbeae9a0dfbd040ca5419e9652eeecfcb0592e59128b987b0dfdf939648fa1"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0074-start-above-partial-preserve.bin",
+      "sha256": "36a3cad4f498759ae822b1eb11e77a9e4ccaa5e4b76a16e065e66c75bf970149"
+    },
+    {
+      "case": "vsll-w128-e16-m1-vi-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsll-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0075-start-partial-active-preserve.bin",
+      "sha256": "e824c36f24589264a049745959101d6756716f89e822479d8aa2f0b91da737bb"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vi-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffff01000000 != 00000080ffffffff",
+      "source": "corpus/runs/vsll-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0076-wrong-signedness-or-operation.bin",
+      "sha256": "d0d33c9c75a6428a1bcb9c78e65d3097e8edb87d64a447c2039d04a0a5d91410"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vi-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsll-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0077-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "d0d33c9c75a6428a1bcb9c78e65d3097e8edb87d64a447c2039d04a0a5d91410"
+    },
+    {
+      "case": "vsll-w128-e64-m1-vi-length2",
+      "control": "signed-immediate-count",
+      "rejected": true,
+      "error": "active element 0: 0000000000000080 != 00000080ffffffff",
+      "source": "corpus/runs/vsll-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0078-signed-immediate-count.bin",
+      "sha256": "4bfa0066ee9161b614bfcd28e2c5b77261e6fdf887b63b4c211d5270bed483a0"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0000 != 0100",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0079-active.bin",
+      "sha256": "bfe8e8168e2f687d53115b0febd3b8504de16596da58ab5cab0796431a56cf42"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0080-tail.bin",
+      "sha256": "91bf98f1e5f56a02c30a8d9498f1055dc0536506733766b3110b0644e283b940"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0081-source.bin",
+      "sha256": "a5a15ecbb07c5822d91c8f4398fe6aed007b10de9c00f9b3dbf5e35f9970bc6d"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0082-pre-source.bin",
+      "sha256": "86c8f642f5b98851fcdc87cb725b43ae33b6b0c89df94a18300eff4815f1c56a"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0083-scalar.bin",
+      "sha256": "91dca0e4cd61810cab2aa59d86b83aab0f5a3122062971c895e7f98d415574be"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0084-post-vl.bin",
+      "sha256": "d9fd848e6d99c9636a683d176b69b3081c9d53b07c9eecb887883de65e6c59f0"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0085-post-vtype.bin",
+      "sha256": "a11d03edb90f608107d052a999df3ef782fb6088266be9e8d59442ba7af6e9f4"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0086-post-vlenb.bin",
+      "sha256": "7aa16f7915d397c17752098877ad799c276decc4c5e0e4db83747d4c4f0937d7"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0087-post-vstart.bin",
+      "sha256": "ebbe417549896a6db27ae122da470a5a5c3a37ee5357fbe9bbed9eb123dbe585"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0088-post-vxrm.bin",
+      "sha256": "20a48c706fac34ef0693fd99f6e547011feb4a7555bf072a49f94cf2eb0e70c9"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0089-post-vxsat.bin",
+      "sha256": "05115c449a53c561f5e286c60337fbcc3bbeaa96b7fcc7078cd88d2c4a82de88"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0090-post-vcsr.bin",
+      "sha256": "eb315dde86579da0f768db2329b5eab3d4bf6f91cee465bcf0fc74f89aa3cb80"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0091-post-fflags.bin",
+      "sha256": "4c314cfb052a96d4ffd669061cae852588070da79e35a7142e4460451c989652"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0092-post-frm.bin",
+      "sha256": "9af3f5d4dc4481daa1325edf2cc3554646ea037aab54e21778356b22bffcf27c"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0093-post-fcsr.bin",
+      "sha256": "05c4be857a6c7bc0401a8160d3c4935b8913e67a65f518d513207561e44de8c7"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0094-missing.bin",
+      "sha256": "a3f04600137116a8dad43268b8df0df8ba8bca020d67a63037cb2bd6582aa27d"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0095-crash.bin",
+      "sha256": "3d2885f231cd14103a341fc089703f47756d63aa247fc0c77bb2125a92b405af"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0096-timeout.bin",
+      "sha256": "3d2885f231cd14103a341fc089703f47756d63aa247fc0c77bb2125a92b405af"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0097-masked-undisturbed.bin",
+      "sha256": "214e8bc61ef4a2e1db377df038ccc8241aea86714bf4e58cab6b0b2da7f99151"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0098-start1-preserve.bin",
+      "sha256": "9b161838b6ff1bb794bc5318773afa0c326e89daccec87da1a5f63337c21e17e"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0099-start-zero-vl-preserve.bin",
+      "sha256": "2077f151e693b19e00b1f65174b137226533b97b16b1e2e8c61034558ce350ae"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0100-start-equal-partial-preserve.bin",
+      "sha256": "4ed45163234df7e490dded06aac0858db3a3b7b5145b2006696f1a74d3275f96"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0101-start-above-partial-preserve.bin",
+      "sha256": "b65bd2e7134fa2ade496a37526c85459ac74fa7401a55019d840d7b176a800c2"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0102-start-partial-active-preserve.bin",
+      "sha256": "6f3a48783323f1731bb82dc2302ea1daafefbafb1422184e861fb08f747d0347"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0100000000000000",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0103-wrong-signedness-or-operation.bin",
+      "sha256": "89e2a805478b4a5fbad82e1bfb00981e897f4b8fb38344f5467850455aee24e7"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0104-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "89e2a805478b4a5fbad82e1bfb00981e897f4b8fb38344f5467850455aee24e7"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: fe7f != ff7f",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0105-active.bin",
+      "sha256": "56583bd9442b994de0a971a18ddac6fea39ae190f551ae7c8e1b942763a55d30"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0106-tail.bin",
+      "sha256": "9d41bee946df071468758214da1255edc95ff67a0f6c08746590bfc42b92f00b"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0107-source.bin",
+      "sha256": "6e6a4c60fafb4a91e3075854195cb9b25f8a75ba6b9ca1fdedc0fd24e25f8b13"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0108-pre-source.bin",
+      "sha256": "0fb3d2e79ab19f9eb1a78bacd6d6fa25f3b054dea04a445ea74637c34c214b8d"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0109-scalar.bin",
+      "sha256": "1e8a3cb8bd58673a34523d41a306183ea6f649e1bf507bdae0ea32730ad7889c"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0110-post-vl.bin",
+      "sha256": "a7a3d95c44e2bfad87b3c514da312da596739e4f213ffddc108b6516128d930e"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0111-post-vtype.bin",
+      "sha256": "6ad959d0e1b6471ef848c6b267cb2af29ebf6d001ed81886c42a474e7865e95e"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0112-post-vlenb.bin",
+      "sha256": "54fd51267b74044b41123f59a41562776b5513ae9f1311e6f1894749ea0ac838"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0113-post-vstart.bin",
+      "sha256": "43deb4b77f8e82e45530048b9c804e7532ddee4e81a6d1f9e77e17e273fec2bb"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0114-post-vxrm.bin",
+      "sha256": "42112811e28be279f15b51fd4dd7eb48af2b665d543b473345d48c1ea6caa30d"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0115-post-vxsat.bin",
+      "sha256": "0c654f9677f8c003849d40120f2453fb4f372c0b9369b97a08ae747d7c94cdf4"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0116-post-vcsr.bin",
+      "sha256": "05464ccba1cb3e56c03db3acee42a7f519304577f879c17f4949dfc37b0c5d85"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0117-post-fflags.bin",
+      "sha256": "a7abe5099544f33186194316e8928e70d801e988c8b8f9025f704b16dd70d98e"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0118-post-frm.bin",
+      "sha256": "cc15785bf5484e19b598bc66f8bcec7d929315abf4dbc4e3a8ce253624ac1d67"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0119-post-fcsr.bin",
+      "sha256": "bb05d5c8176611e49f7f873d723c726ee0d1fa3365bd3f363ae139a33180f52b"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0120-missing.bin",
+      "sha256": "efb1e57347b37bc35cdc42cd9fc99ae0594e6a24cb874c105a249c0f6d66dbd0"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0121-crash.bin",
+      "sha256": "79f189116962555d59c8ae9d8a36f47f51573912724507b9d81f2ea1b023737c"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0122-timeout.bin",
+      "sha256": "79f189116962555d59c8ae9d8a36f47f51573912724507b9d81f2ea1b023737c"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0123-masked-undisturbed.bin",
+      "sha256": "b977111a8e5f21d748eca2aa44de18efb51cc3defa0211d02093fb89fdbf4db5"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0124-start1-preserve.bin",
+      "sha256": "dba065e325482525cd2c158b4e113d0ae07d23dc147c357a96908fde957e5079"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0125-start-zero-vl-preserve.bin",
+      "sha256": "8d3f2322dfdfe0f90038c2ad61f41f27ea0422f78344cd9fe51298d217764df5"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0126-start-equal-partial-preserve.bin",
+      "sha256": "d363b1e0a521bc46eaf56ff6b50564d5898c7936fe34b26792f19da7a283429e"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0127-start-above-partial-preserve.bin",
+      "sha256": "2449caffee4abf4dea6c679e9da070bb4a84a9f26da706d67276983edd8984d5"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0128-start-partial-active-preserve.bin",
+      "sha256": "7e3fb18a38df239f8d78981700aa1b7b37296ca31df1373a573e86df791c1b18"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vx-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != ffffffffffffff7f",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0129-wrong-signedness-or-operation.bin",
+      "sha256": "c3d5acab76fdf6071713fc3515b6e4eb4525b53255358e4d662e6b487c6f1dcc"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vx-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0130-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "c3d5acab76fdf6071713fc3515b6e4eb4525b53255358e4d662e6b487c6f1dcc"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0000 != 0100",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0131-active.bin",
+      "sha256": "d04305d80d79c219cd037ac92fda7598ac1adf96a5ff5433952cbff606c6503c"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0132-tail.bin",
+      "sha256": "1574796b6d89a0e7f632df81fd9ffbd99792aea6abf0ee4cb9052b012b961cca"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0133-source.bin",
+      "sha256": "be68b350a46da73560e7069acd824cb0d7db6fcdfd85e1a78b5c8ba789a532ea"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0134-pre-source.bin",
+      "sha256": "cf4489f7ab80e866f260f1f5b063b659c28b4a0b04eb6cf90cc6aacea5f13897"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0135-scalar.bin",
+      "sha256": "16501ed00583546a9d088b610344517bc7118d037d3ce838a0d25d1aeebf247b"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0136-post-vl.bin",
+      "sha256": "41aea512e3e4d12df6769e2d874dc30cfadc6e9b9b1859dda3931536d331852f"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0137-post-vtype.bin",
+      "sha256": "52992b38c6ea0ee1688d7ce97faed14cb01de7de3822e6dd1fd4c3cd479edcfe"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0138-post-vlenb.bin",
+      "sha256": "2a1efec88769ef0d61456e1f6904541d132bc90204d06a12600cb5d8e04a1d89"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0139-post-vstart.bin",
+      "sha256": "3b3931379f46c65170561727b0a8969b43ef6d7af69088bc90d8943471796db8"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0140-post-vxrm.bin",
+      "sha256": "83dd783d27cadf0d6bc2e9d126edd321fc1b633c94446cd8b186abc4b5ad6822"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0141-post-vxsat.bin",
+      "sha256": "1c196d74419766ad2fcb4823881e3704220b5a0c4383917375350f15b8b054ed"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0142-post-vcsr.bin",
+      "sha256": "1e6d6cb0a02407e29917dadc00915a0b6a4e7cccf1795b46fe75b8210c738a09"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0143-post-fflags.bin",
+      "sha256": "37624d4f5bb86b855054b057aef988ec727ab1d7ca724ba216741af4828d7f3d"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0144-post-frm.bin",
+      "sha256": "451f8293448261e872f9ea0c3483318ec0b7ca28606635d8895dca6686dda9eb"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0145-post-fcsr.bin",
+      "sha256": "69c78087fa7f3c1872ab0aac35c28298d55209892aaa770137dd761c8ac8ada5"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0146-missing.bin",
+      "sha256": "9796282f694547e559cd91ecbd4f6f8b71bb05bc2327d5f65cf6d3479905a2ba"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0147-crash.bin",
+      "sha256": "f7e54f21c9a4fe65d777633a320571529d86428a696c27c4c55a0d9dee030e52"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0148-timeout.bin",
+      "sha256": "f7e54f21c9a4fe65d777633a320571529d86428a696c27c4c55a0d9dee030e52"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0149-masked-undisturbed.bin",
+      "sha256": "214056fa9154c6e632ccd56fe814290770738f916bdf9e7c4b0eae5fe870753a"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0150-start1-preserve.bin",
+      "sha256": "71fcfbc8d32af99227e9ddcd92391251f420cab11cab46e9980609a767af7237"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0151-start-zero-vl-preserve.bin",
+      "sha256": "b5b465dc6b20c2b8bf747c3bfa3a95796fdc04cb17c9eea5794c742c7775518c"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0152-start-equal-partial-preserve.bin",
+      "sha256": "225ccbf9290851f394630f32240358c365d840710da5ad19db663bbb549b8be5"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0153-start-above-partial-preserve.bin",
+      "sha256": "64d5d3c3217dcf142a6f7fca0e42a04304facc0fa9eb508db3879f4e63de535f"
+    },
+    {
+      "case": "vsrl-w128-e16-m1-vi-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsrl-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0154-start-partial-active-preserve.bin",
+      "sha256": "da2a46142e50596d1158712d31701a8db47b4a4b4c124b1b90e85c17c1ffc786"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vi-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != ffffffff01000000",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0155-wrong-signedness-or-operation.bin",
+      "sha256": "933c36acc762ca9ba809d59afd0930ffcdbf85680e6736c41c6e9b558eaa3571"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vi-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0156-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "933c36acc762ca9ba809d59afd0930ffcdbf85680e6736c41c6e9b558eaa3571"
+    },
+    {
+      "case": "vsrl-w128-e64-m1-vi-length2",
+      "control": "signed-immediate-count",
+      "rejected": true,
+      "error": "active element 0: 0100000000000000 != ffffffff01000000",
+      "source": "corpus/runs/vsrl-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0157-signed-immediate-count.bin",
+      "sha256": "0d00bb078abd7595e5a7390226deb7d9fd37a2969541dea9fea1f86fa5f905f4"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0158-active.bin",
+      "sha256": "f3f2805dd8ad2ce4fc953813c2a985d85202f96c6fd81f0c305d4d63ad1cd479"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0159-tail.bin",
+      "sha256": "70cb5e9f0a2e310260c423e13da91cd3bb086e43112239a2e6347dbdc191d49b"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0160-source.bin",
+      "sha256": "1d71530495d8afa70a274ed7a2308ccfbf6aaa023ae49f2f136ffe2a48c4fcc5"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0161-pre-source.bin",
+      "sha256": "53331fa77c117c4be3c9d382801759b3de09e32d785a3f75e783d42c87eb279d"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0162-scalar.bin",
+      "sha256": "e35a0fd945ab70aed0dd7860df900956442dc49272a18cc3d7cb7f2ac2d3ff30"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0163-post-vl.bin",
+      "sha256": "d244ea748b1aceb77c7c01b1c5e793527638e7552e1c45a242bb6a590bc724d7"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0164-post-vtype.bin",
+      "sha256": "50d580329faa859c5227576a654970172bf35827ccbb3719879d50aab1161778"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0165-post-vlenb.bin",
+      "sha256": "f1b06e1a9fa408bc69da0057f79ec706357b9db6dfb18b327081eaf3611c2536"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0166-post-vstart.bin",
+      "sha256": "547f484b7fa75e946b783eec6cbcbed481acf8ad9e5df37af7e7656aa8a82647"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0167-post-vxrm.bin",
+      "sha256": "547c062367259f9929eed64fa392c06c604e109a819f01edd2a77574e3528c48"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0168-post-vxsat.bin",
+      "sha256": "140a3adec8db094c9467c94b37b2954574584749c48122ac4c0bf4cf1e1f1d4a"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0169-post-vcsr.bin",
+      "sha256": "900f08788b17e09982247c13dbc1b11b2cf06c6a7c6af1581c856f05e81c09e4"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0170-post-fflags.bin",
+      "sha256": "9ab942ed4f41ab08f78973ba589d68679f8d63452a0869d8c9248e4aa5daf931"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0171-post-frm.bin",
+      "sha256": "31f8b4991f912d27dee0b841306430809732b69224802ef6da6433739a44f13a"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0172-post-fcsr.bin",
+      "sha256": "abca9a0f7e945ae75a26a9f6af4019a4d1ad6122baeaa9576a7f8c29e05b7fbf"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0173-missing.bin",
+      "sha256": "11c92bbf3d7a1a6f2a6bd4139adf40f8804516a5f1fab424482ca1fae60510a0"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0174-crash.bin",
+      "sha256": "54c38bed24c7638992a0983059130c20a65ce0df02b73c43c6c7e509ec7cf79f"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0175-timeout.bin",
+      "sha256": "54c38bed24c7638992a0983059130c20a65ce0df02b73c43c6c7e509ec7cf79f"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0176-masked-undisturbed.bin",
+      "sha256": "f2f71ceae669ae97570a767c72db4050d9f57e90f14a2f740c88ff52ed4836b2"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0177-start1-preserve.bin",
+      "sha256": "67c47b9509078c9973fc2a1d5672d9fd64d7d35ca96599c7efa02e4c7950e692"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0178-start-zero-vl-preserve.bin",
+      "sha256": "9dafb91dc83ec3e9c0f0ddc5ff7c5b2ac0d2c9b1a321803ebf8823b3a94e2012"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0179-start-equal-partial-preserve.bin",
+      "sha256": "7818c88273d74c5a5506bfcc324ae8558c6a7422750613af2612d3ccaa18a4d0"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0180-start-above-partial-preserve.bin",
+      "sha256": "b5bbe015fb60a9046fb9181cbca61c764c2cc2014e9bbc4a048f176f776d0b7f"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0181-start-partial-active-preserve.bin",
+      "sha256": "ebcb107f7f24175bc4a419b2e3703c0e7dcba289f059ac35afb7ac216c2ba2ef"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: 0100000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/vsra-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0182-wrong-signedness-or-operation.bin",
+      "sha256": "66287509d878271e06b2f8bf23613acadb020cf80b26f5f842325b33f43cb441"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsra-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0183-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "66287509d878271e06b2f8bf23613acadb020cf80b26f5f842325b33f43cb441"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0184-active.bin",
+      "sha256": "5c3fa2a6ff2ebc8576014646bc7e43806481f25a8d3d9298039e2973b65d2a9c"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0185-tail.bin",
+      "sha256": "ba048d3f17e884759f6a7f295456d35a771f31ec86330298d0a9d97fac021a54"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0186-source.bin",
+      "sha256": "9bcce91d855e0d40506ffffc1d2f1b3d257cf35721fb9be8b5871c69af9b5820"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0187-pre-source.bin",
+      "sha256": "14178c5a1107dca206d28c9ce8c459f921fcd8cbc3cf67b48140a7d3bff0ccfb"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0188-scalar.bin",
+      "sha256": "3bb5103c33c61ffdea7c9ab55df2c0753ccc32e1da2aa7aa011bf2d8e6dc8471"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0189-post-vl.bin",
+      "sha256": "13ad21690b4d48db869089b34207b101d7ede25058c13ff0e4d9b1e11787e898"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0190-post-vtype.bin",
+      "sha256": "e2bcfd7a5cef1010664fc41e8574ecd0201979df22414ce25bad54fe4374baf1"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0191-post-vlenb.bin",
+      "sha256": "fac3be4634c6568d1b1eb337f5d3a348cc373060001409b21bef2c47dc7d5fbe"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0192-post-vstart.bin",
+      "sha256": "7e70da05f0a1ca5dcb6a378e73eac2182304924a4c0f560644a0e146763ebb05"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0193-post-vxrm.bin",
+      "sha256": "d3cf7544f580f78434ddb310af3fe5d17884ba14b3510fadb041c1396ce2a324"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0194-post-vxsat.bin",
+      "sha256": "fceebb7d7113d0bd6c96a35a617ab63547fb7e9d02dbb36021f3df063628504d"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0195-post-vcsr.bin",
+      "sha256": "a2118f34307d4848d665472204d32bab4925579511e28d0695629c0775a4150d"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0196-post-fflags.bin",
+      "sha256": "42f012b82855f493be01da564eb03a9a05a6796fb25728a4498ef4e83ba782fd"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0197-post-frm.bin",
+      "sha256": "0629d6f65745363d3d86708dfde919464b3de05b2ba7803f28af57ec748d1a0e"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0198-post-fcsr.bin",
+      "sha256": "bb845e3d09b04986e5b83e2e80bc5d28e79084ccfc2de101a0e06109c4a48888"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0199-missing.bin",
+      "sha256": "945a409c0bfb97ce22e49841a5f9a6daaa1777816702eee9c86d411189c6a9aa"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0200-crash.bin",
+      "sha256": "0a93fbbdcebc81393d4c2ddce84404d382c383ab35e441f19560d056ba2f88d9"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0201-timeout.bin",
+      "sha256": "0a93fbbdcebc81393d4c2ddce84404d382c383ab35e441f19560d056ba2f88d9"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0202-masked-undisturbed.bin",
+      "sha256": "8ae4cde188da08aebf6d79a74efe8ab4d974af00cba9275cbfa34eb3ea863dde"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0203-start1-preserve.bin",
+      "sha256": "d84caed13a3331a58d7e8932ecfdf8c4ec3e5dbe3ec37bd2cafa33d840e6bd59"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0204-start-zero-vl-preserve.bin",
+      "sha256": "979b615579609c29c290ff5aa892d53c77120afb52ec6ad5ab216ce19d75d2b2"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0205-start-equal-partial-preserve.bin",
+      "sha256": "91d3eda75da3b82627061a8b023bc4cad9cc15cbf599323c87743f9669910262"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0206-start-above-partial-preserve.bin",
+      "sha256": "d682fc28c4be7e716edba504abdcdf3b6b0267aa27bd6a320db3b640bd640c8e"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0207-start-partial-active-preserve.bin",
+      "sha256": "a524108e8263bc08475aab8c27dc360b45119081a0a5b45448a39036622e3236"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vx-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffff7f != ffffffffffffffff",
+      "source": "corpus/runs/vsra-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0208-wrong-signedness-or-operation.bin",
+      "sha256": "4e9d6650e0d761a79428156e9dbc5bc8a1444bd8bcc7dc607bc67ad5bf0a1ed7"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vx-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsra-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0209-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "4e9d6650e0d761a79428156e9dbc5bc8a1444bd8bcc7dc607bc67ad5bf0a1ed7"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0210-active.bin",
+      "sha256": "cf435c84ba681affb18bd80178a84a60779e23673e552341cc58ec15d2c58ab0"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0211-tail.bin",
+      "sha256": "3508dde4fc5bf202012ea3e99cf7688de90458d2becd4dc6f2f2b3c1a0248567"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0212-source.bin",
+      "sha256": "19f90f5f33e934660493861792ea370f94ef2402f7fae4ad2c4275a1aa982259"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0213-pre-source.bin",
+      "sha256": "1a7673ac9146f824b11bae8550759ee41299cf7161e747f0dcf40b1999b0ffef"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0214-scalar.bin",
+      "sha256": "804f50d68920d1073a6beb5a5c1cb74bf206506fd8ed38498ad4f35705ca5eaa"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0215-post-vl.bin",
+      "sha256": "6110571a5159dd9eacebc1133524eca93b61aa344f41f670e2ca0df9106a0898"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0216-post-vtype.bin",
+      "sha256": "17023046898b39067812084b7e0759efb948c5dc625d39b5495301af362d3550"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0217-post-vlenb.bin",
+      "sha256": "da0731b73f63d2738bc8801b06f3d666b48ebab1d0bb0afb6b85f7e026466b53"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0218-post-vstart.bin",
+      "sha256": "c7d9f6edea08f3ce245c99a2545819116b98957b9e1a70c1f3f513c5a72f3c57"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0219-post-vxrm.bin",
+      "sha256": "8d294df668cc5ee1f79751f2c0072d89ddc8fcf1cd554be5608b661ccf4ff759"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0220-post-vxsat.bin",
+      "sha256": "278384c2bd4b5ac791a0a49802503aaa1f4fd429a31e744fa6e631c6772044e1"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0221-post-vcsr.bin",
+      "sha256": "e46dfd970b988fafbdf7238458358fb2ad88bc01880f7565c07d4064bc0d3793"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0222-post-fflags.bin",
+      "sha256": "7e0d093410f0af2827768967653f5ec801ddb8f5847c0c783d81807dfc1e632c"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0223-post-frm.bin",
+      "sha256": "fb93983ef6eae93d3a5636523cf2123e1e8f7bb3f24f20978cfc3f4d600f5f3e"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0224-post-fcsr.bin",
+      "sha256": "e94913cc0a6ecc1942740eb1c760c0061957f2ece9901cc1ac0fee1702fbd054"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0225-missing.bin",
+      "sha256": "e1113d0baaa2ea0038dca7702230c48b6ea70e9ca344c6797b0dd0859a627ae4"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0226-crash.bin",
+      "sha256": "5b9b4ad33e309b3aef532a48af864d7112a1a201a53e7d4858322ed5adb1716b"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0227-timeout.bin",
+      "sha256": "5b9b4ad33e309b3aef532a48af864d7112a1a201a53e7d4858322ed5adb1716b"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0228-masked-undisturbed.bin",
+      "sha256": "570ee198aa4beb62475f8d1a967a574f62a02596991cbd2ae15ac662fac11d39"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0229-start1-preserve.bin",
+      "sha256": "c76c1cd965bd8d4a997f726a647c95710e81effc9f21bd8da3729c79e2018e1e"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0230-start-zero-vl-preserve.bin",
+      "sha256": "fd17852c693d6b285146739d22e20d1b8e42dd809c40311655ad4508fb5985e6"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0231-start-equal-partial-preserve.bin",
+      "sha256": "dc02270cf7a5e167d9776ee91a8c653a38b5825bfb6fc7e3d051b8a5a4a90908"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0232-start-above-partial-preserve.bin",
+      "sha256": "dadaf6b88de19729fddcbd8c7effbd41b1eea254f8e222c6d8c025e497eb27f9"
+    },
+    {
+      "case": "vsra-w128-e16-m1-vi-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vsra-w128-e16-m1-vi-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0233-start-partial-active-preserve.bin",
+      "sha256": "5867d16f1cb728b980fdb1c3cd66924baa7e7ffa9760916f286ea06325729e5e"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vi-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffff01000000 != ffffffffffffffff",
+      "source": "corpus/runs/vsra-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0234-wrong-signedness-or-operation.bin",
+      "sha256": "791563d169e4f37e4aaa14feb8ff855d752fcabc52274d9cf128ede394ef1ffd"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vi-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vsra-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0235-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "791563d169e4f37e4aaa14feb8ff855d752fcabc52274d9cf128ede394ef1ffd"
+    },
+    {
+      "case": "vsra-w128-e64-m1-vi-length2",
+      "control": "signed-immediate-count",
+      "rejected": true,
+      "error": "active element 1: ffffffffffffffff != 00000000ffffffff",
+      "source": "corpus/runs/vsra-w128-e64-m1-vi-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0236-signed-immediate-count.bin",
+      "sha256": "72ad30e9d614b356fcbbebfdcb1ce1b686a8edda5b9dc344affd53d7bcd2e880"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0237-active.bin",
+      "sha256": "c954abdd7c7b606892701d7c3305b4ebc9d91129182c53ec41d36f72c69a9c4d"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0238-tail.bin",
+      "sha256": "fac2987098a466a13e8f12e7d4c9d82498d0d288ee8183e0a81e1eaf7e11c32c"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0239-source.bin",
+      "sha256": "81ad39e435d21b076b755ac7c679449b0330bafb4795744749080e4625895ec5"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0240-pre-source.bin",
+      "sha256": "302b9d2309890473e1302c29f356cf2248c88f7e8ea83d1acf98db0438f74f21"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0241-scalar.bin",
+      "sha256": "f07546446ccf81781448584049f2c9eda33928945e69b238336d1c9cdc2855ef"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0242-post-vl.bin",
+      "sha256": "80479a31f2e07c36609c119c3f7d89552d76d4dd730ff7750fff0187b73c8f6f"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0243-post-vtype.bin",
+      "sha256": "aee458f4f90c4cbf535870cd8312a647a57fd0331533462ff9a23d4c361e0f3a"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0244-post-vlenb.bin",
+      "sha256": "e2be5c191443ed65249e941bd506076404662e6200b812175b93521500bd1fb4"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0245-post-vstart.bin",
+      "sha256": "5c56e8d133ba3d082c38c01570e123a92213dabaa9222190f1c1a5c32aa42e49"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0246-post-vxrm.bin",
+      "sha256": "2459b703451275dc6fcb7a66db89c69a7d92573aba667711f0f3a56b6898ac6a"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0247-post-vxsat.bin",
+      "sha256": "b57586ae2d0a2b51448ecae880540c1624231926d282ad283fbe6e89587d5e7e"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0248-post-vcsr.bin",
+      "sha256": "de1a9e3f4e0e84f3893ba8862a1c52854c53237a02c3dbc46db50fc5f13bb48f"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0249-post-fflags.bin",
+      "sha256": "d33c436d7f5fb66af02dd2428281383586ed72fd998f9246f1d1f78af4320760"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0250-post-frm.bin",
+      "sha256": "78b242d38efe90b2119ef7fd7640f36de95900975a07ddc61ec135af0f2654d6"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0251-post-fcsr.bin",
+      "sha256": "df69cb3fc84589a218e599b2c9dee9062ddaf018a29c34ce453065a24fd86bd6"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0252-missing.bin",
+      "sha256": "dd2fd26fc4a71cffb17226e4a3fc12de90374bbebce466ef2d51e218d7735fa6"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0253-crash.bin",
+      "sha256": "4bde1e08e7a04256e3e21fff26e8e6d0be79bbad4c46c84c9b6463b659dc75be"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0254-timeout.bin",
+      "sha256": "4bde1e08e7a04256e3e21fff26e8e6d0be79bbad4c46c84c9b6463b659dc75be"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0255-masked-undisturbed.bin",
+      "sha256": "57a9f63a0e442b537b41f2ecd93fbaf1081af841bf59c365ee663f5eb5e258ff"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0256-start1-preserve.bin",
+      "sha256": "a9bc3bdecfbbb031a39a7db8b999e4b3f6641c233becc4ef1f7577f57c277e2b"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0257-start-zero-vl-preserve.bin",
+      "sha256": "c43cc0ced4807c0d897bae91a4a8bc46230f9eecf227754cf409fc58748e80b7"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0258-start-equal-partial-preserve.bin",
+      "sha256": "692e60d953b802e6acb52e306f87afd4f2c9cb567c4c663d0c3629629cb090f9"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0259-start-above-partial-preserve.bin",
+      "sha256": "a548d0400bb3fd513d1b13d30c387f84484813c0d9a98cbb4e4d470bfac28e49"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0260-start-partial-active-preserve.bin",
+      "sha256": "f9a5d52ce4fee70c17c09baf4e9adefdc330b4dffc5675c7ddfc51c7570ed248"
+    },
+    {
+      "case": "vmin-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: 0100000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/vmin-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0261-wrong-signedness-or-operation.bin",
+      "sha256": "b9364671f403be9b21fa57c3f37415123b6592e2a3bab02e3eaa836e2aa8dbd2"
+    },
+    {
+      "case": "vmin-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vmin-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0262-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "b9364671f403be9b21fa57c3f37415123b6592e2a3bab02e3eaa836e2aa8dbd2"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0263-active.bin",
+      "sha256": "2ee3370c7a56320a3df487e3ad326fd4c4623d5ba4a9c30db026e0f4481a7f66"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0264-tail.bin",
+      "sha256": "b8733d22a54fa6c25960c3cd017326f8b6c206658350a67c9add058d26b822d8"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0265-source.bin",
+      "sha256": "24038898329da8df130c5aa2f99d2a8bcf865f60b0b5edc2b439b5ef7beef518"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0266-pre-source.bin",
+      "sha256": "6fb1845c012581eab10919213bea2a7a34fe6052dcc0f8920566a3ec1e7f3aa8"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0267-scalar.bin",
+      "sha256": "d1a44fd1b52884144c13c4ab296bbc145194bb15df12d62cff2f8bdcb67e0b43"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0268-post-vl.bin",
+      "sha256": "764650a57c2d757b59a1678f149b39703518ee2c78d73278bac138bccd68b625"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0269-post-vtype.bin",
+      "sha256": "d6b70788eaa82124388963cfbe846bd3bd05831ce50eeebdc39e9914b9338c87"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0270-post-vlenb.bin",
+      "sha256": "9749b4e30a90d11a11237c8dd46cdb9263392d2d0dde599a97a22f51f34bb53f"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0271-post-vstart.bin",
+      "sha256": "2243abb0d2debcbbb93d851f01cd5c9d0b712f3b9368e0f19d5fcf90d69bbf43"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0272-post-vxrm.bin",
+      "sha256": "48866be90d1627437ad8ae7ab27625271c501908a79a30ab5586e33f82f1575d"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0273-post-vxsat.bin",
+      "sha256": "070362d9b5ff0b80baee8db358adcda5d3339fbebd2ef44ebf553593c7b6784d"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0274-post-vcsr.bin",
+      "sha256": "74ce11c7f28c506442d9c6b2046e1b0c1e6f495cbabc5e09a28ce399def5c88b"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0275-post-fflags.bin",
+      "sha256": "ee4e9c802c08c4a93a0a98512fff3379a35dcf77cf25ba0a59b5d587a615da8f"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0276-post-frm.bin",
+      "sha256": "94519661115fbe5db2d0765d37ae3951314b82b7d8ace4ae2eee67d77e7193d0"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0277-post-fcsr.bin",
+      "sha256": "1026d9128db83fb58b46bfa3042e3fe7cba0152f5972e3372a0c1da0d1b1258e"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0278-missing.bin",
+      "sha256": "feafcdd8ec6f2fe4855f90edcf8398e192049537491befad712bec96e425151a"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0279-crash.bin",
+      "sha256": "58d16271a765544828792828956f98fb5f22b428c9102202138bccc7d03cf5d0"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0280-timeout.bin",
+      "sha256": "58d16271a765544828792828956f98fb5f22b428c9102202138bccc7d03cf5d0"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0281-masked-undisturbed.bin",
+      "sha256": "938871a5a3d9d34dffc1c4eb2df6261a9b8123e0498203eb93cad0365ef71e67"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0282-start1-preserve.bin",
+      "sha256": "74d0c006aa45f2700c01c1c46b44954d578877d8296273238ae2b19fb777e449"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0283-start-zero-vl-preserve.bin",
+      "sha256": "6784a03f36c8edce449ccc5ac9844adf25d3aaf05c34b47b888a094071e665b9"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0284-start-equal-partial-preserve.bin",
+      "sha256": "3bba57f5183946673ea9a9b69d811985e348e02d87748316ea19379ee961e57e"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0285-start-above-partial-preserve.bin",
+      "sha256": "854df48e645be03c28be6aa0651cf9884606e48c440a5f81664827d7ff1857e0"
+    },
+    {
+      "case": "vmin-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmin-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0286-start-partial-active-preserve.bin",
+      "sha256": "1fab71ae35e68751c10c56d55698d2fed81e980abc2a1fff29d9bbcdf93d7206"
+    },
+    {
+      "case": "vmin-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 01000080ffffffff",
+      "source": "corpus/runs/vmin-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0287-zero-extended-scalar.bin",
+      "sha256": "56f586baa150475025010d4f61c47d005401c5665f3c942d2fa477e395350639"
+    },
+    {
+      "case": "vmin-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vmin-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0288-zero-extended-scalar-reference-only.bin",
+      "sha256": "56f586baa150475025010d4f61c47d005401c5665f3c942d2fa477e395350639"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0000 != 0100",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0289-active.bin",
+      "sha256": "55bacbb56fb60d8fd8c29829f554a73ac1368fdf0aee39ac4433c688ef4a9e71"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0290-tail.bin",
+      "sha256": "00fa7e89e714a3872d90972ceb543bb88f4262e8451c5c7ed493ea903d72f76e"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0291-source.bin",
+      "sha256": "03040a779bb5d6b4d31e845aa67afb55396e007207bd98d622ece69722465b51"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0292-pre-source.bin",
+      "sha256": "266d0da6c02a8dc159b11f895988ead421107557b6fa254acdc0d13a79c61065"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0293-scalar.bin",
+      "sha256": "3a290f069c65c3437930d2349dd706facff97a3f0bbca2dc2a5498a82e147500"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0294-post-vl.bin",
+      "sha256": "101e80e1185c909e10e90b8268263a1135bf00c228ce9399a622ef5525a57801"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0295-post-vtype.bin",
+      "sha256": "f025937351bd32741564d714a18745a836f92aec3e90b2791d8481ad902580c7"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0296-post-vlenb.bin",
+      "sha256": "b06cfe71076ceb8bfee0c5fd582aa4f89a419b2a2a9f5db571c0264226493dc1"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0297-post-vstart.bin",
+      "sha256": "7ff08981b8a97fc485e800fe24031d35365a83c9f949af8995af9ff91d479bfd"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0298-post-vxrm.bin",
+      "sha256": "540d2d6e9bb18dd0f2fc2b10b0e6e59d134f35c7e2914c3786b88ecf3f8e1785"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0299-post-vxsat.bin",
+      "sha256": "b1f3bf7dcbd5abf9bbb48592801565680f98291225309b0aa3a46635424b0e67"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0300-post-vcsr.bin",
+      "sha256": "c8901efc777a0e0f8e21a38d5ad378be0d6a95177e5da74edaf6f2d99fdf1537"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0301-post-fflags.bin",
+      "sha256": "3dee850b897682f5179687d662010675660b2228bba62368bb51dc56aba52ebe"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0302-post-frm.bin",
+      "sha256": "aad8b959f04d3193d4b2a75ad4032204afcfe22d632f7283c67cf94e1d09cfa3"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0303-post-fcsr.bin",
+      "sha256": "d3989318236fbb572f2611f080e71050916a8db2ee20214c28295936865ed26f"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0304-missing.bin",
+      "sha256": "12c35da20f3d6c1c6fb4f13d2c57a82f00f9aa17175068a6486bf82c2878de3e"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0305-crash.bin",
+      "sha256": "73e5d185278dde1bf3ff0307153db1fa41bda920d39a467489f54eb10797ab48"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0306-timeout.bin",
+      "sha256": "73e5d185278dde1bf3ff0307153db1fa41bda920d39a467489f54eb10797ab48"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0307-masked-undisturbed.bin",
+      "sha256": "5325a4821d0d9bb6abe89c99bd2fb7dd360b5db787d15579fc1130642506f37f"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0308-start1-preserve.bin",
+      "sha256": "70e05258404e1967737b6efbfd671a0a3a716191a696eced238d55f6ad65e579"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0309-start-zero-vl-preserve.bin",
+      "sha256": "cbe3a0b577f0ada9a5c20ea0418a47c2f35b72219d667fa206325f40cfa9065e"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0310-start-equal-partial-preserve.bin",
+      "sha256": "1887d6f271f086adc4609f8fd5b6066a3ea14ad353f1567ce81dec7086f15fde"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0311-start-above-partial-preserve.bin",
+      "sha256": "9794f283337b25b16879e2fa404932e124aea8a97f6f793b1abccc8200f962f7"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0312-start-partial-active-preserve.bin",
+      "sha256": "7cea4c6dd98a3e7d40f04f7a71d507f15bd0736d5d01f2df37a1454031385b92"
+    },
+    {
+      "case": "vminu-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0100000000000000",
+      "source": "corpus/runs/vminu-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0313-wrong-signedness-or-operation.bin",
+      "sha256": "69d49701878baff3ea699094eb6335f46f17193e547e906dcca9ad770ddd32ca"
+    },
+    {
+      "case": "vminu-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vminu-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0314-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "69d49701878baff3ea699094eb6335f46f17193e547e906dcca9ad770ddd32ca"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0000 != 0100",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0315-active.bin",
+      "sha256": "cb7e3eeae5dd0a519b72cb80140419fae89c3b688f85a23aeb7eb2f70f81a16e"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0316-tail.bin",
+      "sha256": "cda468d0e4f2c49910419bf6d56e7b8b1b08bd0a17c78628986c0d2966652380"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0317-source.bin",
+      "sha256": "28bea87e53d3de79656c672fb83169365ecc3587f3e95afcf32dba6ee4701276"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0318-pre-source.bin",
+      "sha256": "f560d922c678682181d90c7b9ddb673d617c0fcb2b290bd00bdd4e54556583c6"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0319-scalar.bin",
+      "sha256": "9f6b71efab19bfd02724303a20a74262fbecca629aabc24c875e8abad7d33e37"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0320-post-vl.bin",
+      "sha256": "fc25e2d0208072ac29889ae16aff7fb9f1b47d12ddd9762c27318d71fb363b15"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0321-post-vtype.bin",
+      "sha256": "3992bff7f2f7471a4665bb2c9d7599a72b02cbb6cf2bdfc0c8677fa1a2f9cab0"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0322-post-vlenb.bin",
+      "sha256": "70c0012a9c889ed7335e5b9bef6ff51528b800ac4b5935eeba2e66b97ce976ad"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0323-post-vstart.bin",
+      "sha256": "97a0ff1407730300036feb3ba32f5c1978c850f9a1a2f74455b57dc15ec8c3b9"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0324-post-vxrm.bin",
+      "sha256": "c183ef03ee7292eca0ebd5e42dd817e501e30fa937ee4ad743844f8a06532213"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0325-post-vxsat.bin",
+      "sha256": "69b191a7060839d3cfcdc425228dc3938f6f3b01a870808a6ae2e25124de7534"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0326-post-vcsr.bin",
+      "sha256": "08b043293f853d7a312acdb715a6e4febfdf01f5d4f00008770c1128e58c4245"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0327-post-fflags.bin",
+      "sha256": "2da158824275a33c995a0663d3351900d66eab1a016ca5f3a64ea5c2f9a5861c"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0328-post-frm.bin",
+      "sha256": "c8f05b6b13f2b0b75a37019968f7f8071b2478c6f1d8a6799f019dfc7592fd06"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0329-post-fcsr.bin",
+      "sha256": "ef5a24dca0b1bbf22b6aa29a08896cb3ba448fbec35c334e620e143fdb48781a"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0330-missing.bin",
+      "sha256": "b5b1707bad3779feaaaefc9b9ee1e243e389408755f91dc9bd6f3625dfb542fc"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0331-crash.bin",
+      "sha256": "ad4f9393dbbae8b197ab23133d2f2ea8217e7164679c13c8d84a5e049305e838"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0332-timeout.bin",
+      "sha256": "ad4f9393dbbae8b197ab23133d2f2ea8217e7164679c13c8d84a5e049305e838"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0333-masked-undisturbed.bin",
+      "sha256": "ad5398155152ef09826763afaf805a313a175d313fbd1f6437bf4796acbb82ad"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0334-start1-preserve.bin",
+      "sha256": "b619df2111762adaf495dd20fa79eb93ba18dab6c363e23c0d8af1c995464337"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0335-start-zero-vl-preserve.bin",
+      "sha256": "9d25ae8a2da3c97419af8b600861f0743784b83ac90e5eba74c9aaff1b1cc604"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0336-start-equal-partial-preserve.bin",
+      "sha256": "edd4baabbf543e6f36d0d8926d5ee4f587ead0d3760985e67d3bb42ae9dac192"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0337-start-above-partial-preserve.bin",
+      "sha256": "b2591969193dc890446baaa516b6467d625b9558cde7935cd710bad17754d198"
+    },
+    {
+      "case": "vminu-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vminu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0338-start-partial-active-preserve.bin",
+      "sha256": "75b612e27c8f46eb11ad755c26975bd54da7b6fa2e50e92a85408c03df6c719c"
+    },
+    {
+      "case": "vminu-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar",
+      "rejected": true,
+      "error": "active element 0: 0100008000000000 != 01000080ffffffff",
+      "source": "corpus/runs/vminu-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0339-zero-extended-scalar.bin",
+      "sha256": "2033f17afbb439bff3ca5c67adf3ed056f1b3a5e8e77698a3c92e09bbbe8e87b"
+    },
+    {
+      "case": "vminu-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vminu-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0340-zero-extended-scalar-reference-only.bin",
+      "sha256": "2033f17afbb439bff3ca5c67adf3ed056f1b3a5e8e77698a3c92e09bbbe8e87b"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0000 != 0100",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0341-active.bin",
+      "sha256": "8d899af0ce02983d56ce7663c393137e5fb2fcf5a71ed7c9cd5967b8556127a9"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0342-tail.bin",
+      "sha256": "9fc60366797a7cfa93ee6cbae0cd5db464b9f0c48fe10cbebc83abe0e5b3aeaf"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0343-source.bin",
+      "sha256": "f7ef43bfce697c8890accb7e480438e7bc99c78f0591ceccf13851b03b2409a2"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0344-pre-source.bin",
+      "sha256": "04674ae45a7aee1dc9ff6015463e1359d0c54d7de945edb545bb952b9695e618"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0345-scalar.bin",
+      "sha256": "91b925fb82f1b71fb59f9f9574c0e18c75a3852b909418b767e822df497766a0"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0346-post-vl.bin",
+      "sha256": "13c3f66202b491848701f6daad1d32ae8917b0249cd24449fbb8a22db192942c"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0347-post-vtype.bin",
+      "sha256": "366b987191e8a23ae8735f26e775ce45f890cf10cb5b2871787e8fe5cab9575d"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0348-post-vlenb.bin",
+      "sha256": "5e251cbb4822792b53efeabc4f17bcd24cbc52302eb3780d12ed188361ce0b28"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0349-post-vstart.bin",
+      "sha256": "dd04fab851798525936c0bdefcb1868a34dae1000f93f39764b519a8ff72686a"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0350-post-vxrm.bin",
+      "sha256": "cbc2a6f14067a1800075b7b3d7b9c6ab29c7ed38a6c1233a643ef45d83f0da00"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0351-post-vxsat.bin",
+      "sha256": "a3339bf8afef5ed0747a9f2f493d035d89d4d85dcaac8ec48861f723b015abbb"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0352-post-vcsr.bin",
+      "sha256": "b1c5fc2ce9c64a284e3dcdf41ff2c4b449239c6fa37aa9a7645a56d199e6947b"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0353-post-fflags.bin",
+      "sha256": "f8860dc068797e983a7605f4e40cacbe476cc4eed9d4cb87a9414097c61cbdd9"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0354-post-frm.bin",
+      "sha256": "4d47ef75ac0c710e8274e8d70bf397db382dfbe797a12f01909d9d52b3d45d9e"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0355-post-fcsr.bin",
+      "sha256": "731f08047101de0a9bdf21019ecf129a222399b68c3972f7b825a34852aa38a9"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0356-missing.bin",
+      "sha256": "1d413b492c60b3565b5c787e1e8afc6b2d41aeb048e88259cba84e1b8ec161f2"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0357-crash.bin",
+      "sha256": "4ced45c4ddc7fc62b0fb8edbbe7d13faeaf4d69b977251259f83e816f1163c82"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0358-timeout.bin",
+      "sha256": "4ced45c4ddc7fc62b0fb8edbbe7d13faeaf4d69b977251259f83e816f1163c82"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0359-masked-undisturbed.bin",
+      "sha256": "0a74b8ec00ac465b24a54858aac60df31b633b3076b5483d0af472c81ea7c246"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0360-start1-preserve.bin",
+      "sha256": "8ae040fa1945d6388b79654946e5cf53a7510350042ad37580b7f9be2d820018"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0361-start-zero-vl-preserve.bin",
+      "sha256": "3c988308bf0d5e00fcf8394b4801ffa26f8dc710a6577665904002051ab7758c"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0362-start-equal-partial-preserve.bin",
+      "sha256": "d33b569e1aef677c896b1abc1b257befbd87700064569df9bc2ffc4ab639b2ea"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0363-start-above-partial-preserve.bin",
+      "sha256": "a0b58ffcdf2b818eb56ca6467e1b5987e57aa88d575188585ea4407bd318fe14"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0364-start-partial-active-preserve.bin",
+      "sha256": "ece4582631ff714f55dd03c7d663c55c2f7007e856c9b6ac770a0619f4fe0bda"
+    },
+    {
+      "case": "vmax-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0100000000000000",
+      "source": "corpus/runs/vmax-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0365-wrong-signedness-or-operation.bin",
+      "sha256": "2501fca941046e014cce2040ab8b54b8fc7179a7795f4f3223eeeede39cdbf12"
+    },
+    {
+      "case": "vmax-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vmax-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0366-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "2501fca941046e014cce2040ab8b54b8fc7179a7795f4f3223eeeede39cdbf12"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: 0000 != 0100",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0367-active.bin",
+      "sha256": "4be9501cc56e3bf59eb353079ba89c0eb0eb340a0fdb0ca372955e1c6c0ae736"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0368-tail.bin",
+      "sha256": "cefbf2fa8dc2db4ccce361bdc414a49475ac0236fc9652d52fd330c8d5713908"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0369-source.bin",
+      "sha256": "d61535fcf7d1dfa008dd088c836fc1deacdd9cad21e403d84b84d8016792a553"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0370-pre-source.bin",
+      "sha256": "9294eeca2b79d3eebbfb28ce919d5f63ddbdc2d115ad972d5286a10e3c42f5af"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0371-scalar.bin",
+      "sha256": "c925ff3058a4ee0b0dfc0ae112cad4c8d763ab9187cb69ce5ab77a96a5cdcae7"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0372-post-vl.bin",
+      "sha256": "13f46ad87fc68436c9450d3010d22fc0890c2a94bc11de4ff8a0ce9268428276"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0373-post-vtype.bin",
+      "sha256": "5380283624f27d77730bb6c4bbf9c7df490350ced15b1b9500e284f3eb049b5b"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0374-post-vlenb.bin",
+      "sha256": "69cb9460e71d3365a11ace85c8239cc775ee17d889bdfbc02a169498fa868f63"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0375-post-vstart.bin",
+      "sha256": "eac24babd111c9b0564867729af5487d6065f351534f41f82f12efbdfc25b7ef"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0376-post-vxrm.bin",
+      "sha256": "75f93226eb399a426fc9e50663eb005b36ad4cfeaadab2b08a7ca9ec987d60e6"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0377-post-vxsat.bin",
+      "sha256": "71585136cd2c0cbfb44a204e4d2b4079321fa7c3a240b3772723ee581750f499"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0378-post-vcsr.bin",
+      "sha256": "645b4e47f74ac5cae95cb4927008da127f0712e1f6a23f2e00bbd869dbe918b9"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0379-post-fflags.bin",
+      "sha256": "eb698e8e54cbbd84904120e2057ecd77a65ac4f808acb4dbe6f84e620ecb71f9"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0380-post-frm.bin",
+      "sha256": "dcc8ed657ec3acf3f1db526ce282e679cff307f471eb9a57ccfd3b36f40507dd"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0381-post-fcsr.bin",
+      "sha256": "4ab903f6389e67ce179e87ec655b605aa30b5f76cb5c34c7ec1fabcaa582fdcb"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0382-missing.bin",
+      "sha256": "95e26304021b18fad9233647cafd85e749b026babdb286845bed2e59b5336f9b"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0383-crash.bin",
+      "sha256": "3a378ce0fb75d928a94efc000f2639897984d406e738f60f878acd827c8bfdc3"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0384-timeout.bin",
+      "sha256": "3a378ce0fb75d928a94efc000f2639897984d406e738f60f878acd827c8bfdc3"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0385-masked-undisturbed.bin",
+      "sha256": "ccfbbec6c1532a7e862471caf3f04a72cf77961b0e7cd921022826aa12b99c25"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0386-start1-preserve.bin",
+      "sha256": "c5f59d98d416b121af5c24712aedd8460c3aedf35727739d0c6028e25dced24f"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0387-start-zero-vl-preserve.bin",
+      "sha256": "db0c3c52b2fd16035671a4ae625d2aab9ce848e3187972854dd7d19e2db907ec"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0388-start-equal-partial-preserve.bin",
+      "sha256": "e8b8eadb58df1b4d79c2769f599951e4bfada8c08b301ada5fb01588e720af07"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0389-start-above-partial-preserve.bin",
+      "sha256": "79b567095af7f9a5ea82fea310839558de261164698d9f030ab99c429180b0a2"
+    },
+    {
+      "case": "vmax-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmax-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0390-start-partial-active-preserve.bin",
+      "sha256": "d9a91edb4499d5bcb11bd2f6df06fe688d138bdd29496040452f55fd4a988ead"
+    },
+    {
+      "case": "vmax-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar",
+      "rejected": true,
+      "error": "active element 0: 0100008000000000 != ffffffffffffffff",
+      "source": "corpus/runs/vmax-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0391-zero-extended-scalar.bin",
+      "sha256": "a5ae19551915f9e4f8241704c8d71836f3eb0a8b8a5e42d320dc7523475d0cb4"
+    },
+    {
+      "case": "vmax-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vmax-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0392-zero-extended-scalar-reference-only.bin",
+      "sha256": "a5ae19551915f9e4f8241704c8d71836f3eb0a8b8a5e42d320dc7523475d0cb4"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0393-active.bin",
+      "sha256": "d87cacf06d417cfa65e856b67aa98f60aeb713ce1327747c0279fd4a84b86ea3"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0394-tail.bin",
+      "sha256": "e76be45990a324e8c4640eb30e17ceb75c7b1534e1e65dca97312842bf181a42"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0395-source.bin",
+      "sha256": "06dc4a5452639112c9d82f88ae2e41c2ac1dbe4998785e3c3889b463d4eddbec"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0396-pre-source.bin",
+      "sha256": "db2a35e98da0510057f38b71a10766393a2eec1554075d85212966f41ec7ce46"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0397-scalar.bin",
+      "sha256": "db3f14e4036446290f7cc639a267b17e7a51b76d152f49c807b11f2318af290f"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0398-post-vl.bin",
+      "sha256": "fbb550b7129e6cd5b9c5b56c6e764c711cbc2313ad62d9e4e522574ff47a5013"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0399-post-vtype.bin",
+      "sha256": "22f6224a138136f5b2297ed114104cc1d2a3f4725ecddeb5ee11d29819b589bc"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0400-post-vlenb.bin",
+      "sha256": "1956f7133b1ee272861611c768a038ec660d533ea091cc5c7e526e7eff81e550"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0401-post-vstart.bin",
+      "sha256": "a62a074eef6ca6baaa278c2adf9a84d637fec2214204ee21d43e3f8f03d93abb"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0402-post-vxrm.bin",
+      "sha256": "722ba1e88cbeb9287780ada04c0e9be13003fd7ec039621f10cfd63bc8ea0361"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0403-post-vxsat.bin",
+      "sha256": "e8c7b62216ccfc1db649ae9cae01351e3cda57d952ba11aa9839eb38d745dc90"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0404-post-vcsr.bin",
+      "sha256": "b52365a09972d9a574ff47d884e580078232ec795a7c47f5ee5cde5a585a6eff"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0405-post-fflags.bin",
+      "sha256": "7f1da626416d84c70c5e16176901fd158b084adb44b9abd6b303f6ba82018d9e"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0406-post-frm.bin",
+      "sha256": "ea87c219c9d92f03a413f991f87a45c8b555f3bcae63aed2d1e315e14c34a0b2"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0407-post-fcsr.bin",
+      "sha256": "c65a67017866e2954fa5f870a4444109434c69d07795aac26d359ea76003a306"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0408-missing.bin",
+      "sha256": "b52e328145b6768a8ef539cd7e2788ee5abde2ecdec93259b197874d48a55373"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0409-crash.bin",
+      "sha256": "7916230d8c8514f495109a0c634e46dc388f89acc1e108dcc26a048b53cda2c0"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0410-timeout.bin",
+      "sha256": "7916230d8c8514f495109a0c634e46dc388f89acc1e108dcc26a048b53cda2c0"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0411-masked-undisturbed.bin",
+      "sha256": "f5c1e418d068ffb61dd8def3ebbc158db415b83b58ab0e64185b23fc994edf0e"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0412-start1-preserve.bin",
+      "sha256": "bb0178f945554bce2ebedcca0accd7e84ac8da1163727f87cfeade2356218add"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0413-start-zero-vl-preserve.bin",
+      "sha256": "7224e8885836bf5e763c087d8f14efde1f8b4a70e451dafd8c33e87eff17dbd8"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0414-start-equal-partial-preserve.bin",
+      "sha256": "b1275493837436f38de0b14e3c55603872f8e612e21ea5373be1f07e9d8fb913"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0415-start-above-partial-preserve.bin",
+      "sha256": "70d9f3ae425ef06d609e4741deb5598184c5ff05084f9fa32183644c0254c560"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vv-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vv-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0416-start-partial-active-preserve.bin",
+      "sha256": "9a0283e4347cad77886fb6e9fa62c9637a038cddfbf97b1ca938987fa1c27016"
+    },
+    {
+      "case": "vmaxu-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation",
+      "rejected": true,
+      "error": "active element 0: 0100000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/vmaxu-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0417-wrong-signedness-or-operation.bin",
+      "sha256": "f5348726f575cfe89f3984786d0610c69cdd3b85ecec730ef42df8e17e76bdc7"
+    },
+    {
+      "case": "vmaxu-w128-e64-m1-vv-length2",
+      "control": "wrong-signedness-or-operation-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vmaxu-w128-e64-m1-vv-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0418-wrong-signedness-or-operation-reference-only.bin",
+      "sha256": "f5348726f575cfe89f3984786d0610c69cdd3b85ecec730ef42df8e17e76bdc7"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "active",
+      "rejected": true,
+      "error": "active element 0: feff != ffff",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0419-active.bin",
+      "sha256": "7459fb6429e2934b6bb1804a83d7ca6c8eb4b82d365183b1fd1b4c3b0c713d92"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0420-tail.bin",
+      "sha256": "08e9fa83579e0cbc955765e2f9adac66ecadb7f2143abf71e0ace144f592fb8a"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "source",
+      "rejected": true,
+      "error": "preserved non-destination register",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0421-source.bin",
+      "sha256": "abb93a5929056fc9a76b9efd780ea6096348d3b4bbf749d55bebbd0ee169c558"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "pre-source",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0422-pre-source.bin",
+      "sha256": "9cc91aa0608602666b586f36961e3c07773b01b30625f9e5edc773ecd3e71060"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "scalar",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0423-scalar.bin",
+      "sha256": "27c261abde52961289da1e43518e8cbc0c97733db35a38591093b258feac3de2"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vl",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0424-post-vl.bin",
+      "sha256": "b2826927f7925465829b2415e03b48138d9be98d466673ded5442cffcace8ea3"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vtype",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0425-post-vtype.bin",
+      "sha256": "c2710abf6fb83c8f557d76eb4589e9b6477a76ea86345d5610f543fe5a31df45"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vlenb",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0426-post-vlenb.bin",
+      "sha256": "2096af0c67c71548ee0ea4f058520f6bdb9dab4a82587f52ada71edae54583c6"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0427-post-vstart.bin",
+      "sha256": "34d24007a025242bd27858879f2d3aeb13460841a0e19536074a8f6511e296d5"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vxrm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0428-post-vxrm.bin",
+      "sha256": "52745cf539829bc3489ce39de77e62e77ce005a014bd06a14932938d5159e6f8"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vxsat",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0429-post-vxsat.bin",
+      "sha256": "d1506f4c8bbff1ce168594e66c56e7142e375df64e2d20c00b645ecc23cafa33"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-vcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0430-post-vcsr.bin",
+      "sha256": "164b5008fb7ae43bdc6a23d3d59493764ed176342196133e91a52fa9e6f81a1b"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-fflags",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0431-post-fflags.bin",
+      "sha256": "8089d9d480ef3b3949c10c2f8f6c3b1d3d3cf16da49d87c7e43c4c3e12e28044"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-frm",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0432-post-frm.bin",
+      "sha256": "ebc038fe5d88957fdd32af88ade3995201160f5c184e728d532ead5ef713f54d"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "post-fcsr",
+      "rejected": true,
+      "error": "post CSR/scalar mismatch",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0433-post-fcsr.bin",
+      "sha256": "fbed92a8be0ad4ae0da4e432706909879c22e26c3e7d22f67cc80f028e4bac93"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0434-missing.bin",
+      "sha256": "cd5290240d530d23f4974ca37e00cc5fc6ae6aa63693506e2452865eacdf4778"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0435-crash.bin",
+      "sha256": "337d0f077748fa72da08e83a359d635fa636cf389e3fcadc76a49591eb0a26b6"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-length1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0436-timeout.bin",
+      "sha256": "337d0f077748fa72da08e83a359d635fa636cf389e3fcadc76a49591eb0a26b6"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-mask-alternating",
+      "control": "masked-undisturbed",
+      "rejected": true,
+      "error": "preserved/agnostic element 1",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0437-masked-undisturbed.bin",
+      "sha256": "0aa2aeecca9f4dec8ccba1ec4a37228ce674ec25a029b06d8fbfc13a2f59b989"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-start1",
+      "control": "start1-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 0,
+      "corrupt": "0438-start1-preserve.bin",
+      "sha256": "8d64acc2ed3fcabd7be1dad0d2161966feca410315ea63041296b9189cf7830e"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-start-zero-vl",
+      "control": "start-zero-vl-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0439-start-zero-vl-preserve.bin",
+      "sha256": "4f76cc8ce98c22d618b74aff6433ee112ca7c28a4ca5dea3a39d5e535f4fd473"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-start-equal-partial",
+      "control": "start-equal-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "0440-start-equal-partial-preserve.bin",
+      "sha256": "9126b0667c7302ebae1ede277b11045deaf3f769acb99afc83173c07a3d2c671"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-start-above-partial",
+      "control": "start-above-partial-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "0441-start-above-partial-preserve.bin",
+      "sha256": "1b4c76139e98a19266aeef526565c4a90d1248e1bbc1a2801fb7788b3b0a0466"
+    },
+    {
+      "case": "vmaxu-w128-e16-m1-vx-start-partial-active",
+      "control": "start-partial-active-preserve",
+      "rejected": true,
+      "error": "preserved/agnostic element 0",
+      "source": "corpus/runs/vmaxu-w128-e16-m1-vx-start/B/packets.bin",
+      "offset": 8960,
+      "corrupt": "0442-start-partial-active-preserve.bin",
+      "sha256": "7794651a90f543836f5e9311f0dad676b8d54ad8a84a93f01de1846ef9d0a9fe"
+    },
+    {
+      "case": "vmaxu-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar",
+      "rejected": true,
+      "error": "active element 1: 0000000000000080 != 01000080ffffffff",
+      "source": "corpus/runs/vmaxu-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0443-zero-extended-scalar.bin",
+      "sha256": "9a923bba062e7c8bf7eb355bd05fb66c79b4b8b3383a5097b502ddfc97cc3f2e"
+    },
+    {
+      "case": "vmaxu-w128-e64-m1-vx-length2",
+      "control": "zero-extended-scalar-reference-only",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/vmaxu-w128-e64-m1-vx-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "0444-zero-extended-scalar-reference-only.bin",
+      "sha256": "9a923bba062e7c8bf7eb355bd05fb66c79b4b8b3383a5097b502ddfc97cc3f2e"
+    },
+    {
+      "case": "vsll-w128-e64-m4-vv-count-edges",
+      "control": "fixed-five-bit-count-mask",
+      "rejected": true,
+      "error": "active element 0: 00000080ffffffff != 0000000000000080",
+      "source": "corpus/runs/vsll-w128-e64-m4-vv-zero/B/packets.bin",
+      "offset": 19040,
+      "corrupt": "0445-fixed-five-bit-count-mask.bin",
+      "sha256": "ca2ec52f476e4345abcdbcf3b0c5ca910087abf39d37f87efafb31cd28cd0a80"
+    },
+    {
+      "case": "vsrl-w128-e64-m4-vv-count-edges",
+      "control": "fixed-five-bit-count-mask",
+      "rejected": true,
+      "error": "active element 0: ffffffff01000000 != 0100000000000000",
+      "source": "corpus/runs/vsrl-w128-e64-m4-vv-zero/B/packets.bin",
+      "offset": 19040,
+      "corrupt": "0446-fixed-five-bit-count-mask.bin",
+      "sha256": "a6f53b8d0e74b0a5f8e58b0ede18fb360050c965d3ded735d35875f3d0221048"
+    },
+    {
+      "case": "vsra-w128-e64-m4-vv-count-edges",
+      "control": "fixed-five-bit-count-mask",
+      "rejected": true,
+      "error": "active element 5: 00000000ffffffff != ffffffffffffffff",
+      "source": "corpus/runs/vsra-w128-e64-m4-vv-zero/B/packets.bin",
+      "offset": 19040,
+      "corrupt": "0447-fixed-five-bit-count-mask.bin",
+      "sha256": "e386cca0d31ad83452fa4ae875b590b591d9e2385fe44eed5694d21a27545232"
+    },
+    {
+      "case": "vsll-w128-e8-m1-vv-count-edges",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 4: 00 != 01",
+      "source": "corpus/runs/vsll-w128-e8-m1-vv-zero/B/packets.bin",
+      "offset": 19040,
+      "corrupt": "0448-unmasked-shift-count.bin",
+      "sha256": "56ffa12bd521bc3291f7368d2a16a7785e9b05a7851e3c3fc8116216ed58364e"
+    },
+    {
+      "case": "vsll-w128-e8-m1-vx-operand8",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 0: 00 != ff",
+      "source": "corpus/runs/vsll-w128-e8-m1-vx-zero/B/packets.bin",
+      "offset": 23520,
+      "corrupt": "0449-unmasked-shift-count.bin",
+      "sha256": "851d33478a924cabbc48f44cc1598dd4935e3743727b3fb7cea89bc7a4830a42"
+    },
+    {
+      "case": "vsll-w128-e8-m1-vi-operand8",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 0: 00 != ff",
+      "source": "corpus/runs/vsll-w128-e8-m1-vi-zero/B/packets.bin",
+      "offset": 29120,
+      "corrupt": "0450-unmasked-shift-count.bin",
+      "sha256": "df84153b35355b2247c29be21a3ac321f65dc66e38be0214974530944a63bad3"
+    },
+    {
+      "case": "vsrl-w128-e8-m1-vv-count-edges",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 1: 00 != 40",
+      "source": "corpus/runs/vsrl-w128-e8-m1-vv-zero/B/packets.bin",
+      "offset": 19040,
+      "corrupt": "0451-unmasked-shift-count.bin",
+      "sha256": "c2f1eb48768df6eddb3f96870fe1270392bd1520202f9df0abb10ea684b4f1d2"
+    },
+    {
+      "case": "vsrl-w128-e8-m1-vx-operand8",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 0: 00 != ff",
+      "source": "corpus/runs/vsrl-w128-e8-m1-vx-zero/B/packets.bin",
+      "offset": 23520,
+      "corrupt": "0452-unmasked-shift-count.bin",
+      "sha256": "0b0ac4863f5e78d17a5339e52c32e483fcaf7ae8cd19d0885b3be9ffa713c492"
+    },
+    {
+      "case": "vsrl-w128-e8-m1-vi-operand8",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 0: 00 != ff",
+      "source": "corpus/runs/vsrl-w128-e8-m1-vi-zero/B/packets.bin",
+      "offset": 29120,
+      "corrupt": "0453-unmasked-shift-count.bin",
+      "sha256": "5bb241030cf8e8981b0c086f10cf2007c3509e138f901957195d54d75263d08a"
+    },
+    {
+      "case": "vsra-w128-e8-m1-vv-count-edges",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 1: ff != c0",
+      "source": "corpus/runs/vsra-w128-e8-m1-vv-zero/B/packets.bin",
+      "offset": 19040,
+      "corrupt": "0454-unmasked-shift-count.bin",
+      "sha256": "22aff7b0fd4769a5378dae00ec519a72e89f4be324d88ea217eb4973ee9df537"
+    },
+    {
+      "case": "vsra-w128-e8-m1-vx-operand8",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 1: ff != 80",
+      "source": "corpus/runs/vsra-w128-e8-m1-vx-zero/B/packets.bin",
+      "offset": 23520,
+      "corrupt": "0455-unmasked-shift-count.bin",
+      "sha256": "d6eaa6af5430c5ee30a3ac334aa0b4a2ad736eb485bd72b816fa827c6b9ee3b1"
+    },
+    {
+      "case": "vsra-w128-e8-m1-vi-operand8",
+      "control": "unmasked-shift-count",
+      "rejected": true,
+      "error": "active element 1: ff != 80",
+      "source": "corpus/runs/vsra-w128-e8-m1-vi-zero/B/packets.bin",
+      "offset": 29120,
+      "corrupt": "0456-unmasked-shift-count.bin",
+      "sha256": "58573fb692b4bc295bd24a6e4be5506d1b168869c6ab5c5c04ebcb0bfe71f446"
+    }
+  ]
+}

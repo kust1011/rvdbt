@@ -1,0 +1,1566 @@
+{
+  "controls": 156,
+  "rejected": 156,
+  "records": [
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0000-rd.bin",
+      "sha256": "70325c3184cc5f7998381f994ba8bb5fa8d0c1cb43325e66a1c438b2b2b03399"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0001-vl.bin",
+      "sha256": "711fae244d521aa77f28342ef429ccbc3ce5ba9b9a6e654a3c561a24974e7327"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0002-vtype.bin",
+      "sha256": "f787a46fed2b8057f71b79210c01233bee7b47562d883ac6e53ac1e041686747"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0003-vstart.bin",
+      "sha256": "46def1ca68487b3194341c9e9ec3e17a9bfadfdc49b9b6869b8ee08bb53f464d"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0004-vlenb.bin",
+      "sha256": "5165b6f34aae24900bf2f7a09e409aaa450be89854b051f9b4e402b82aee4b99"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0005-preserved-csr.bin",
+      "sha256": "b4af1b1cd29b5220c85686d8e01e58c512953283568e2b7335c521cb74ccf8c8"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0006-pre-rd.bin",
+      "sha256": "66be6dcbd4a049e71c69f83b62d43e4a7ef0c36988fb236191961a3f2c7520ba"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0007-pre-register.bin",
+      "sha256": "a2063bd8e1be8c596ee63b7f585f4a4f0af0d94a860347169c6016e3ff437a5c"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0008-post-register.bin",
+      "sha256": "7a987510e7eb1fb4ea7bbc591868c551c4786d574fdd61d95f7e59e63cac977c"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0009-missing.bin",
+      "sha256": "8739f8ce71f8e307fd50b3f274e30c9357c722fb0f0503f0a9c7b5593f99fd5c"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0010-crash.bin",
+      "sha256": "4132326068a2d977f8b3433e7e0e2e63040c507261a2af1c4c8626ae85aea8b9"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0011-timeout.bin",
+      "sha256": "4132326068a2d977f8b3433e7e0e2e63040c507261a2af1c4c8626ae85aea8b9"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-lmul100-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0012-independent-csr.bin",
+      "sha256": "b4af1b1cd29b5220c85686d8e01e58c512953283568e2b7335c521cb74ccf8c8"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0013-rd.bin",
+      "sha256": "78f21f028a5dca2a780eb035abad5faf5459da2e7605443612417a97a35e8f05"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0014-vl.bin",
+      "sha256": "f7b092233c2a8161b323c68db38fbf17a4b89ed85a24c0ee4bbaaed0bd8cdd99"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0015-vtype.bin",
+      "sha256": "9ad071b8287f483cdf2412cb47b5adf0f5c8db4cea0e26ed02d0e8baa8b7e83a"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0016-vstart.bin",
+      "sha256": "9c45ecf0b677012263bca0565fa8d354938185c847bcca5e0ebb0e6ef9e4762d"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0017-vlenb.bin",
+      "sha256": "f7161fd670d0d2ae5d23963b9cfc2b3319a80e1d963e4c115a89c4980e9b5e9a"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0018-preserved-csr.bin",
+      "sha256": "193064e72c1693a40e35c726cf4683a1953a875ea10d5eb9dfa94ec9abeb4ae5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0019-pre-rd.bin",
+      "sha256": "11a7ed69e99321dc2649885d431192141853a5f672c34084236977d8de14a7c1"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0020-pre-register.bin",
+      "sha256": "a59072d6acb703e41d85ef250f7df230540ff31da3930e6350ed0c1803cbd986"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0021-post-register.bin",
+      "sha256": "2dff807948efc5e86bb0fe9e5acf4620ecc2e9f69b16b243f1fff224a45e7236"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0022-missing.bin",
+      "sha256": "4dc5cde44bcf1f9a7d04bf0a921a26ec2806fc5ee9b1474417bf82712d5a6928"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0023-crash.bin",
+      "sha256": "ff1cfbbca6ad1e7914a149123f99acc9829480fa688e01355831213da5088e7e"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0024-timeout.bin",
+      "sha256": "ff1cfbbca6ad1e7914a149123f99acc9829480fa688e01355831213da5088e7e"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-sew-encoding4-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "0025-independent-csr.bin",
+      "sha256": "193064e72c1693a40e35c726cf4683a1953a875ea10d5eb9dfa94ec9abeb4ae5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0026-rd.bin",
+      "sha256": "9aeb3607c38877023e585dc6cd21c0a4d4c7079b6d62be2c291039495c63d261"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0027-vl.bin",
+      "sha256": "dfaa220991226622aad431ec89a21e2af2b71890baa0a06c417f17b765b47da5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0028-vtype.bin",
+      "sha256": "f7b5b7fa7206bafeb15096a224b83cc1bc21f97248ef1e5f7feeea14a01172fb"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0029-vstart.bin",
+      "sha256": "1fcf807b8317bdf0d8f2a040e70186950cc038d51427e442d43eeec63c8fbbea"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0030-vlenb.bin",
+      "sha256": "6bae4b68abf7b28b4908327e789fc3e6ff1a9c80762b4df0116dbb8f7cbd6386"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0031-preserved-csr.bin",
+      "sha256": "96fa4eb546d0becf4ddf8ec13447ca473ff031e0b0bc6ef15fc42ba66f01e0e1"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0032-pre-rd.bin",
+      "sha256": "e6715c0a28fe41975403d2781abb9ece1c2f5ecfc368d2b106b266621401d217"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0033-pre-register.bin",
+      "sha256": "2b2d502b1a019b76e2af46c1b6d09d424f66df8c7ed288d37741e2b425ff4e98"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0034-post-register.bin",
+      "sha256": "975d0ff4908e7d782f201dc5dcdcc8eff39c763d00cc19443d7f65d78daac935"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0035-missing.bin",
+      "sha256": "2b30113f358aaa973ddc46245ca66a4f962018142560e2370c4d4710b8a6ba01"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0036-crash.bin",
+      "sha256": "f1f582451a3a9cea837a929527f6f1b0dc2edc680139fa8d3f329f1e71cb04d5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0037-timeout.bin",
+      "sha256": "f1f582451a3a9cea837a929527f6f1b0dc2edc680139fa8d3f329f1e71cb04d5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-e64-mf2-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 68320,
+      "corrupt": "0038-independent-csr.bin",
+      "sha256": "96fa4eb546d0becf4ddf8ec13447ca473ff031e0b0bc6ef15fc42ba66f01e0e1"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0039-rd.bin",
+      "sha256": "36c977e35a6ae45222a779f4eb2f9a1cc033df293cf87597fb4b9c08efaa47e9"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0040-vl.bin",
+      "sha256": "649fb337ec83c2bf259df1e886e95f0fdcf726975e255f9bdb97ea22ae5d49c2"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0041-vtype.bin",
+      "sha256": "e8cc2b9704f18206bfcf68ff67653791e25cfa517da08bff7d06cc61cb522107"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0042-vstart.bin",
+      "sha256": "c27eb7bb79e0096e532386640c893525e342406f18d8b416e126a0896ccd5050"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0043-vlenb.bin",
+      "sha256": "4892ca3e6114895e9c5ac6ba184d155b01ca264bb13cfb4b3ac0019197c7604d"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0044-preserved-csr.bin",
+      "sha256": "34d0d1d8234ca1717e3ce380b9d79459812ea211e528904245caec0332bc5ba5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0045-pre-rd.bin",
+      "sha256": "f8716a767fa1eb10f23cfd3029643fcf510c540e2802ffd62154f45d620c1985"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0046-pre-register.bin",
+      "sha256": "882f2430e9326172021836bf197e6de88a0c00145106c78584839e35135d0870"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0047-post-register.bin",
+      "sha256": "16aff78fb1d5a5e74ab714cff7d2c6e74c848ae90baf17e9c6a7beeb9f81109b"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0048-missing.bin",
+      "sha256": "f8b3aa1f2d2b1b8561c2abe32bed95b2cf9312e8ab21c1b529b5adab29b17a48"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0049-crash.bin",
+      "sha256": "8e86583844ed838f02de5fb077877e497669f92fa28a5c06e442071b0d8f58ac"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0050-timeout.bin",
+      "sha256": "8e86583844ed838f02de5fb077877e497669f92fa28a5c06e442071b0d8f58ac"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-upper-bit8-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 75040,
+      "corrupt": "0051-independent-csr.bin",
+      "sha256": "34d0d1d8234ca1717e3ce380b9d79459812ea211e528904245caec0332bc5ba5"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0052-rd.bin",
+      "sha256": "dc272fec1ec9da4b29dbdf726091bf73ea50ad4c48b3deb6c7676ff398f47a1a"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0053-vl.bin",
+      "sha256": "8d47715b5bbed371fa763c356b4c6f09c6edbaf10db9bf3fd9d7d7d5e8c9e735"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0054-vtype.bin",
+      "sha256": "327aa2d649d0afac2d065adced29875565aa21717907df462101599a85041af9"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0055-vstart.bin",
+      "sha256": "f3b3147f54c55eb4a73ba896b88b20faf976aa2a841e66d368ede5fa1bd8e21f"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0056-vlenb.bin",
+      "sha256": "5ee9dc9d4e254e10e514c9a1f8f1a20ef471db05bf20aef3ed57e4f72329d39a"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0057-preserved-csr.bin",
+      "sha256": "6b509ba8c00779ad8dfbc3001683c24d9f09402fabd62f7e936686025d7d38c6"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0058-pre-rd.bin",
+      "sha256": "3b70a34a80d1965c5766eb0f64fdeea4eb78d3cd3fe54a49a40ccd68f9c82948"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0059-pre-register.bin",
+      "sha256": "79ca1c9a39974cbdbd4e629c4bd156959e7ffbc5cf48f6e899844331d16ac4ed"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0060-post-register.bin",
+      "sha256": "d7f576ef4f953903ac6209add8c0d2b28c1089e9bd8a5ab0983fc432d96333bb"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0061-missing.bin",
+      "sha256": "49b2d5a3d055c58cf51473c72796d273fa646b173a5f05d893c51ec342bf5e77"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0062-crash.bin",
+      "sha256": "7497da1651d4ac7e52fd4839846f583239986c37771462d1f01a2b4f317173fe"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0063-timeout.bin",
+      "sha256": "7497da1651d4ac7e52fd4839846f583239986c37771462d1f01a2b4f317173fe"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-all-upper-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 95200,
+      "corrupt": "0064-independent-csr.bin",
+      "sha256": "6b509ba8c00779ad8dfbc3001683c24d9f09402fabd62f7e936686025d7d38c6"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0065-rd.bin",
+      "sha256": "0ddd27d38bacf94c3699fd5f08936b6306f7d9acb23b02786f8d021968f6c1a8"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0066-vl.bin",
+      "sha256": "088d56c5fddd7a889aa46c0211cc4c86e6223722946d617b137f50b8bf577b56"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0067-vtype.bin",
+      "sha256": "74c26d0cbffc755fcfd3dee783023464a0eb6a22bc1d4c3057f6aec0ae9cd357"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0068-vstart.bin",
+      "sha256": "a7e0c8f7d24a732c46ae9b3205965d20d72dfb4f6343178ce2e0a4361763aa4a"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0069-vlenb.bin",
+      "sha256": "e5363e4c3a235fe3579ff3b7e8330b659de1ecaf435e40a8291edfe9451648c9"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0070-preserved-csr.bin",
+      "sha256": "3d6aa95b69acda3440150f0db0255b3338208c76aedc488cb20b267cea3d387e"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0071-pre-rd.bin",
+      "sha256": "4a7482ddd23602a369aabd7869e0b7da3da8b5d5af68cc6910d8b7f470f91891"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0072-pre-register.bin",
+      "sha256": "061d80062928e4ddffb29cc8bd4cd0ee2b8dcc385ee164420a7f5f69d032363a"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0073-post-register.bin",
+      "sha256": "f3b334185c94a384316c333e1f619ea96c8a04ef745ce818f31f4fe04fd2f3f7"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0074-missing.bin",
+      "sha256": "d1859d5d640f4617555877c69bc66fbb0f972736fb717b31389ad55283cba22c"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0075-crash.bin",
+      "sha256": "39129fab63cde9ac2ac80325b47ccf52e3fc6384d8116a9e1964954fc3dbc18b"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0076-timeout.bin",
+      "sha256": "39129fab63cde9ac2ac80325b47ccf52e3fc6384d8116a9e1964954fc3dbc18b"
+    },
+    {
+      "case": "delta148-w128-vsetvli-p00-vill-recovery-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetvli-p00-start/B/packets.bin",
+      "offset": 108640,
+      "corrupt": "0077-independent-csr.bin",
+      "sha256": "3d6aa95b69acda3440150f0db0255b3338208c76aedc488cb20b267cea3d387e"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0078-rd.bin",
+      "sha256": "b292e485e72178381f662842b29bdc98f78eee1484de02308c236841ca725e9c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0079-vl.bin",
+      "sha256": "0f43860bf994b8d71fba8e450484687cd94db7f125a84a5bc9195770ae429674"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0080-vtype.bin",
+      "sha256": "699c34dee2ff450b973b6046bdb214e7136e48d091b5d02a3408dc0d3d0a2a4f"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0081-vstart.bin",
+      "sha256": "74fd01eb61461e0289f55a6c8cf3d7f535c6d4d5a89d86abe3952d504e91d731"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0082-vlenb.bin",
+      "sha256": "9a572652c8ff969f3121f17816812769d6b687c680c5bade5cf0cbd74c965529"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0083-preserved-csr.bin",
+      "sha256": "e15f68bfe97cc2be97bae726bd2f19aca6f063e95faa0344acda28a8fe8e90c3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0084-pre-rd.bin",
+      "sha256": "0f60c0408b030b26a0e968c571d86d0d27c49662b0f47d96e67583b9e545bbac"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0085-pre-register.bin",
+      "sha256": "8f400a3a58f2dec9bc892496bd6d42b79f51a1ffe2a1eba364801719ae687fe4"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0086-post-register.bin",
+      "sha256": "a554ec1e4b980df1c2f685b847023621d62c887c8b1f183f7f4248df8c105e9f"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0087-missing.bin",
+      "sha256": "c3a0526e659362c192ea07a1d8dc5f2134404a6b5afdcb4cada313de8ca3981c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0088-crash.bin",
+      "sha256": "7dedd4e1b96b43c529ba042443ef5d579a68580716833238ee175ca8d59d164c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0089-timeout.bin",
+      "sha256": "7dedd4e1b96b43c529ba042443ef5d579a68580716833238ee175ca8d59d164c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-lmul100-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "0090-independent-csr.bin",
+      "sha256": "e15f68bfe97cc2be97bae726bd2f19aca6f063e95faa0344acda28a8fe8e90c3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0091-rd.bin",
+      "sha256": "1d142ee9b5e89dbfd3ba0db07acc1480dde45070e1e73dfd411ed9f0b6ddaea3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0092-vl.bin",
+      "sha256": "b2168f2ec8fd41f410f2997a935886712fd1d2271d1938d841f0a11d7d8c511a"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0093-vtype.bin",
+      "sha256": "1ee47a1145e266bb1fa5554a1880bed9a356d4f36d311f69a98db97cc91ee1c3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0094-vstart.bin",
+      "sha256": "2a1b7c8bc8fe3b066e1e98868b4df576c7790c907e5abfd4b99d45629de760bd"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0095-vlenb.bin",
+      "sha256": "4e64413a86b76b17aa86d7985f827c3d55ec121b8c04ec6732d9335f8aca818a"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0096-preserved-csr.bin",
+      "sha256": "44bf614dbde0a7987dd4ea28abac402e9cd4261372f78d52f59b969b5ec8a4f3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0097-pre-rd.bin",
+      "sha256": "7813590d8bb06ca03cb37f1623a6e25b86aa4039cf9d02ecd545cc9fe6773614"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0098-pre-register.bin",
+      "sha256": "707f4ab0b5b5b12717284f59218331cdf9b6dc4c7c09e0e3b69976c12292dba5"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0099-post-register.bin",
+      "sha256": "fde03673c45788a1ec4fb09e42be7585e6dc57cc49ae30a7c5f5313227999401"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0100-missing.bin",
+      "sha256": "caa1ebcbc63a8267e94bc80fac31c92979a0eb55aaf9a1dbe114c0a18d8e2142"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0101-crash.bin",
+      "sha256": "244fb3dddbbdc02b00359c356f9b7ed6c382ba4d9e7b5833a8766e52be1732e5"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0102-timeout.bin",
+      "sha256": "244fb3dddbbdc02b00359c356f9b7ed6c382ba4d9e7b5833a8766e52be1732e5"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-sew-encoding4-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "0103-independent-csr.bin",
+      "sha256": "44bf614dbde0a7987dd4ea28abac402e9cd4261372f78d52f59b969b5ec8a4f3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0104-rd.bin",
+      "sha256": "0f62e27b2a06a3f2cc263936f359c15e72fe78a4451d43fbb2a5f3129b857879"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0105-vl.bin",
+      "sha256": "9b38e3a34219490a50745c3df9da85eb0e057e92da222c406a64595d60c20c2e"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0106-vtype.bin",
+      "sha256": "75da7f445095f90e61d1e48665f408353ad3f5d38ef15161a01fc3d7ebe57c1d"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0107-vstart.bin",
+      "sha256": "9723e492a50a69eac10f1e53f7de39524632090f04f05b6c2fb04733d33724d8"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0108-vlenb.bin",
+      "sha256": "c7b2c7df6ec849d55ee48d915431a81d775994df30677d904e7b24997f571f05"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0109-preserved-csr.bin",
+      "sha256": "4398359c85a4b74fe8241a6130e3175d50eb99b8dff980379da3b6a23a28b653"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0110-pre-rd.bin",
+      "sha256": "c52e9a76de718ac7a8daabe13ae0de9dc947c04a6497fdc8d1b600ba651c5b7c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0111-pre-register.bin",
+      "sha256": "3bba7fde1ac799d7dbc7187c3a32b3da0273d636d068490afb3c479ac27268b3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0112-post-register.bin",
+      "sha256": "7dcc14603e0d9dfee018ca3fee9f3079cd0422129eb9550087f1c944385fa0ad"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0113-missing.bin",
+      "sha256": "4972ff4e7b76917b9c0202ee7455360a91131707c3bf3ee9dc954458e5dfd3f2"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0114-crash.bin",
+      "sha256": "e51d6d4e508968d0e85486b8a763e49a6b90862d6edcfe666985f6a5f2c6c5d3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0115-timeout.bin",
+      "sha256": "e51d6d4e508968d0e85486b8a763e49a6b90862d6edcfe666985f6a5f2c6c5d3"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-e64-mf2-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 57120,
+      "corrupt": "0116-independent-csr.bin",
+      "sha256": "4398359c85a4b74fe8241a6130e3175d50eb99b8dff980379da3b6a23a28b653"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0117-rd.bin",
+      "sha256": "3036d05bc4a17eaf6692f444cc6677971e6b8e55a230e7bf21af3c8b2107064b"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0118-vl.bin",
+      "sha256": "10efddf7d053ab77d1c569fb40709b4a337eec28d97206a456c8ec801cb11912"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0119-vtype.bin",
+      "sha256": "936e609995b3e3cb3aa42a5d020e62224e8f47d178632a60f2afe6825e66e056"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0120-vstart.bin",
+      "sha256": "ab4211c894cb5f26ada24d64947ff13cfe420cd96775a55e703465920833607f"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0121-vlenb.bin",
+      "sha256": "80f06f99218ff3ee343e0005a23d6ce8a28f9f807203c208964a201876eec099"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0122-preserved-csr.bin",
+      "sha256": "e997e1529aed0a98ea6b7c90c05573d170f0fac83c5068d403eb07062823a762"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0123-pre-rd.bin",
+      "sha256": "a25bffe7b347285d1100a089125401b35c4f68e4ccfea28420d9d870095e4e37"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0124-pre-register.bin",
+      "sha256": "394d506b13489788f24a8d4156b6d2fa248e0b98243544f03bc30c83f7888f43"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0125-post-register.bin",
+      "sha256": "0bdaee6631ac1756dce2c39849e50e43e7adeeeb1c8d420a4658476cf983b196"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0126-missing.bin",
+      "sha256": "cc865f34635cefeae3315786839245bae766d203a55bee51af8df4c98f83037a"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0127-crash.bin",
+      "sha256": "a36e1cbc317e391c4c59602e1c8d1bafef26e17a5bac710719625a3d762863fc"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0128-timeout.bin",
+      "sha256": "a36e1cbc317e391c4c59602e1c8d1bafef26e17a5bac710719625a3d762863fc"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-upper-bit8-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 62720,
+      "corrupt": "0129-independent-csr.bin",
+      "sha256": "e997e1529aed0a98ea6b7c90c05573d170f0fac83c5068d403eb07062823a762"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0130-rd.bin",
+      "sha256": "6be5f9221fbfa2a010410bbbb67e160c7d5328aed603301bc2a9c37ff5112f8c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 1 outside allowed [0,0]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0131-vl.bin",
+      "sha256": "044ce4bff83185ab0803c82322bdc6c054df63736234a716d51b84537f5ccfd0"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 80000001 != 80000000",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0132-vtype.bin",
+      "sha256": "368ce324d8922b786b1a50a9bee5717c61f2fbf3f076d1757d1c6feb8ba0e658"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0133-vstart.bin",
+      "sha256": "0c835d5937ab007f5c6143012be1f78d689b9a539b4bfd75dd1b0d06ac853b8c"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0134-vlenb.bin",
+      "sha256": "40dbcd76b75f7c451f38e1c9c0c9016f79cc62c9f566415f4c8d1a26b1503d18"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0135-preserved-csr.bin",
+      "sha256": "3f604ae165fb090db16eec2f219c5cd8acfe6337390f381e2336f8451b353df6"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [8, 192, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0136-pre-rd.bin",
+      "sha256": "a2836bc415324dc98bc223cd68fb206456f9409522107d6fe4114f7b7845df9a"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0137-pre-register.bin",
+      "sha256": "6584517b979b599dc6d1bb99601ace0db657084bf58b3b606987c894c27983ed"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0138-post-register.bin",
+      "sha256": "505e14817c86cdf19a5d231afd0937c5aa870d1fa8ce1b8492df80981e2d8e57"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0139-missing.bin",
+      "sha256": "e35e2215b8d0ff6df2667471c9ba6d6895ff31f94a5cdc3e85b2a44cda0f450f"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0140-crash.bin",
+      "sha256": "959a69e483b6ec314d7bca7492d13a72d43993e62d83e9392888e54273afe085"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0141-timeout.bin",
+      "sha256": "959a69e483b6ec314d7bca7492d13a72d43993e62d83e9392888e54273afe085"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-all-upper-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 73920,
+      "corrupt": "0142-independent-csr.bin",
+      "sha256": "3f604ae165fb090db16eec2f219c5cd8acfe6337390f381e2336f8451b353df6"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "rd",
+      "rejected": true,
+      "error": "actual rd does not equal VL/x0",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0143-rd.bin",
+      "sha256": "c2f41177e33ac8e5592938cb6e6fbff2dd58ad1d6a9743a7b51fbfd616852ad6"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "vl",
+      "rejected": true,
+      "error": "VL 0 outside allowed [1,1]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0144-vl.bin",
+      "sha256": "3c3d5fdf72cbe6db20d20800911ce31b23eddfe8ff0e19ee4dc58777981281d5"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "vtype",
+      "rejected": true,
+      "error": "post vtype 00000001 != 00000000",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0145-vtype.bin",
+      "sha256": "b7d4d0f9a392c8d5606243ac45c60361ddc7dac86758cbb6fb9dca4b483e6772"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "vstart",
+      "rejected": true,
+      "error": "vstart not cleared",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0146-vstart.bin",
+      "sha256": "dc9e0014461b34de30586e111da314e49755c8b7dea49ee939ae4414cf069638"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "vlenb",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0147-vlenb.bin",
+      "sha256": "62b901078c0ce85a62f5e336edd86f659fa8a803e144eec752f0a0147661eebc"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "preserved-csr",
+      "rejected": true,
+      "error": "preserved CSR mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0148-preserved-csr.bin",
+      "sha256": "0d9192d9d9732af1bf11656aef69627008cf3267025b1f9f1c11830c5a3d1d47"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "pre-rd",
+      "rejected": true,
+      "error": "pre CSR/rd mismatch: [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474252] != [0, 2147483648, 16, 1, 2, 1, 5, 21, 3, 117, 21474253]",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0149-pre-rd.bin",
+      "sha256": "31e29821a9fada0ea8d784247b6fe333ea99b4082ba10f147b73823e1480e145"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "pre-register",
+      "rejected": true,
+      "error": "observed pre-register mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0150-pre-register.bin",
+      "sha256": "905085b85731426af97e0b6fd5cd38439faa5aeb6c9497ebfa8b3cebf9f38475"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "post-register",
+      "rejected": true,
+      "error": "configuration changed vector registers",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0151-post-register.bin",
+      "sha256": "ba4f026107e7a815f7ef23c8cd63a5ad662d9d6b9d32b8791a60a2bc36fa40fb"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "missing",
+      "rejected": true,
+      "error": "missing/extra packet bytes",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0152-missing.bin",
+      "sha256": "fad112428d92079a9a40480770057e49826a1d9a6349c77125f086332fcacfbf"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "crash",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0153-crash.bin",
+      "sha256": "bd70bee89b419936948e28855075fc04f9325a9811ce8dae0f698a19f11f48f6"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "timeout",
+      "rejected": true,
+      "error": "failed execution/timeout",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0154-timeout.bin",
+      "sha256": "bd70bee89b419936948e28855075fc04f9325a9811ce8dae0f698a19f11f48f6"
+    },
+    {
+      "case": "delta148-w128-vsetivli-p00-vill-recovery-avl1-start1",
+      "control": "independent-csr",
+      "rejected": true,
+      "error": "independent invariant CSR/rd mismatch",
+      "source": "corpus/runs/delta148-w128-vsetivli-p00-start/B/packets.bin",
+      "offset": 85120,
+      "corrupt": "0155-independent-csr.bin",
+      "sha256": "0d9192d9d9732af1bf11656aef69627008cf3267025b1f9f1c11830c5a3d1d47"
+    }
+  ]
+}

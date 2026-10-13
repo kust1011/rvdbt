@@ -84,11 +84,20 @@ def manifest_cases(family):
     if family=='configuration147':
       import config
       return config.cases()
+    if family=='configuration148':
+      import config148
+      return config148.cases()
+    if family=='shiftminmax148':
+      import shift148
+      return shift148.cases()
     raise ValueError('unknown finite family '+family)
 
 def arithmetic(c,a,z):
     # Specification predicates; fixed Spike/Sail, never this function, supplies
     # the independently executed reference packet.
+    if c.get('family')=='shiftminmax148':
+      import shift148
+      return shift148.arithmetic(c,a,z)
     op=c.get('mnemonic','vadd')
     if op=='vadd': value=a+z
     elif op=='vsub': value=a-z
@@ -100,6 +109,9 @@ def arithmetic(c,a,z):
     return (value % (1<<c['sew'])).to_bytes(c['sew']//8,'little')
 
 def initial(c):
+    if c.get('family')=='shiftminmax148':
+      import shift148
+      return shift148.initial(c)
     b=c['vlen']//8; e=c['sew']//8; limit=(1<<c['sew'])-1
     raw=bytearray((r*37+i*13+0x53)&255 for r in range(32) for i in range(b))
     # Full source groups: wrap, signed edge, low32 carry and distinct high64.
@@ -133,7 +145,7 @@ def decode(c,raw):
     return pre,post,raw[96:96+32*b],raw[96+32*b:]
 
 def check_isa(c,raw,rc=0,timeout=False):
-    if c.get('family')=='configuration147':
+    if c.get('family') in ('configuration147','configuration148'):
       import config
       return config.check_isa(c,raw,rc,timeout)
     if rc!=0 or timeout: raise ValueError('failed execution/timeout')
@@ -160,7 +172,7 @@ def check_isa(c,raw,rc=0,timeout=False):
     return True
 
 def check_reference(c,raw,reference):
-    if c.get('family')=='configuration147':
+    if c.get('family') in ('configuration147','configuration148'):
       import config
       return config.check_reference(c,raw,reference)
     # ISA validity (including permitted agnostic sets) is checked separately.
@@ -185,12 +197,12 @@ def assembly(cs):
     # do not modify vector registers. CSR capture precedes all post vector stores.
     for c in cs:
       tag=c['ordinal'];lines += ['csrwi vstart,0']
-      if c.get('family')=='configuration147': lines += ['vsetvli t2,zero,e8,m1,tu,mu']
+      if c.get('family') in ('configuration147','configuration148'): lines += ['vsetvli t2,zero,e8,m1,tu,mu']
       lines += [f'la t0, initial_{tag}']
       for r in range(32): lines += [f'vl1re8.v v{r}, (t0)',f'addi t0,t0,{b}']
       lines += [f'la a3, packet_{tag}','li t0,0x145add','sw t0,0(a3)',f'li t0,{tag}','sw t0,4(a3)','addi t1,a3,96']
       for r in range(32): lines += [f'vs1r.v v{r},(t1)',f'addi t1,t1,{b}']
-      configuration=c.get('family')=='configuration147'
+      configuration=c.get('family') in ('configuration147','configuration148')
       if configuration:
         import config
         lines += config.setup(c)
@@ -288,7 +300,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
     for row in build_rows:
       original=Path(row['command'][-1]);guest=root/original.parent.name/original.name
       if row['returncode']!=0 or sha(guest)!=row['elf_sha256']: raise ValueError('guest build identity mismatch')
-    save(root/'runner-identity.json',{'runner_sha256':sha(__file__),'configuration_module_sha256':sha(Path(__file__).with_name('config.py')) if manifest.get('family')=='configuration147' else None,'manifest_sha256':sha(root/'manifest.json'),'flags_sha256':sha(flags_path)})
+    save(root/'runner-identity.json',{'runner_sha256':sha(__file__),'configuration_module_sha256':sha(Path(__file__).with_name('config.py')) if manifest.get('family') in ('configuration147','configuration148') else None,'manifest_sha256':sha(root/'manifest.json'),'flags_sha256':sha(flags_path)})
     def worker(item):
       unit,cs=item;w=cs[0]['vlen'];results=[];reference=None
       for arm in ['Reference','B','M1','M2','BOTH']:
@@ -297,9 +309,9 @@ def run(root,engine,spike,pk,sail,flags,jobs):
           if cs[0]['vstart']:
             config=root/unit/'sail-config.json'
             vector_config={'vlen_exp':w.bit_length()-1,'elen_exp':6,'vstart':{'zero_required':{'arith':False}}}
-            if manifest.get('family')=='configuration147':
+            if manifest.get('family') in ('configuration147','configuration148'):
               vector_config['vl_use_ceil']=True
-            if manifest.get('family')=='integer146':
+            if manifest.get('family') in ('integer146','shiftminmax148'):
               vector_config['reserved_behavior']={'vstart_out_of_bounds':'Vstart_Ignore'}
             save(config,{'base':{'xlen':32},'extensions':{'V':vector_config,'D':{'supported':True}}})
             cmd=[sail,'--rv32','--config-override',config,'--stop-at-pc',sail_stop(root/unit/'sail.elf'),'--inst-limit','10000000','--test-signature',d/'signature','--signature-granularity','4',root/unit/'sail.elf']
@@ -342,7 +354,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
     save(root/'results.json',results);save(root/'identities-after.json',{str(p):sha(p) for p in paths})
     assert pins=={str(p):sha(p) for p in paths}
     save(root/'summary.json',dict(planned_cases=len(manifest['cases']),planned_executions=len(manifest['cases'])*5,executed=len(results),counts=dict(collections.Counter(r['status'] for r in results)),arms={a:dict(collections.Counter(r['status'] for r in results if r['arm']==a)) for a in ['Reference','B','M1','M2','BOTH']},seconds=time.monotonic()-start,jobs=jobs))
-    if manifest.get('family')=='configuration147':
+    if manifest.get('family') in ('configuration147','configuration148'):
       import config
       deterministic=config.determinism(root);save(root/'determinism.json',deterministic)
       if deterministic['failures']: raise SystemExit(1)
@@ -350,7 +362,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='action',required=True)
-    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147'],default='vadd145');b.add_argument('--link',type=Path,required=True)
+    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148'],default='vadd145');b.add_argument('--link',type=Path,required=True)
     r=sub.add_parser('run');r.add_argument('--root',type=Path,required=True)
     for n in ['engine','spike','pk','sail','flags']: r.add_argument('--'+n,type=Path,required=True)
     r.add_argument('--jobs',type=int,default=2)

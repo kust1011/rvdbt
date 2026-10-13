@@ -1,0 +1,954 @@
+[
+  {
+    "form": "vsll.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsll.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsll.vi",
+    "planned_per_arm": 8329,
+    "arms": {
+      "Reference": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsrl.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsrl.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsrl.vi",
+    "planned_per_arm": 8329,
+    "arms": {
+      "Reference": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsra.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsra.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vsra.vi",
+    "planned_per_arm": 8329,
+    "arms": {
+      "Reference": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 8329,
+        "statuses": {
+          "PASS": 8329
+        },
+        "semantic_statuses": {
+          "PASS": 8069,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vmin.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vmin.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vminu.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vminu.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vmax.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vmax.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vmaxu.vv",
+    "planned_per_arm": 4501,
+    "arms": {
+      "Reference": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 4501,
+        "statuses": {
+          "PASS": 4501
+        },
+        "semantic_statuses": {
+          "PASS": 4241,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  },
+  {
+    "form": "vmaxu.vx",
+    "planned_per_arm": 6613,
+    "arms": {
+      "Reference": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "B": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M1": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "M2": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      },
+      "BOTH": {
+        "executed": 6613,
+        "statuses": {
+          "PASS": 6613
+        },
+        "semantic_statuses": {
+          "PASS": 6353,
+          "PROFILE_RESERVED_START": 260
+        }
+      }
+    }
+  }
+]
