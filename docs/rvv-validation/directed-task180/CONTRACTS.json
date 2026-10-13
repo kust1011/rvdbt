@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "suites": 7,
+  "rows": [
+    {
+      "test": "rvv_both_boundary_value_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task179/CONTRACT_DETAILS.json",
+      "new_execution": false,
+      "retained_build_sha256": "412543a7969498c9d0aa28d120a76d0cc8613c3f84c217019113e95461f7e029"
+    },
+    {
+      "test": "rvv_run_live_range_split_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task179/CONTRACT_DETAILS.json",
+      "new_execution": false,
+      "retained_build_sha256": "deabf2d56a71548774bf9c9c3142b3cc7dfc5fb6c617d9805858c2d4e304f031"
+    },
+    {
+      "test": "rvv_rvv_contract_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task179/CONTRACT_DETAILS.json",
+      "new_execution": false,
+      "retained_build_sha256": "bccea241743c8aee318e84e33beb1b245f9ba4e207ecf0c43735418e99632174"
+    },
+    {
+      "test": "rvv_ssa_edge_commit_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task179/CONTRACT_DETAILS.json",
+      "new_execution": false,
+      "retained_build_sha256": "5f70cf37351c333b89450d5ac1952d2c32b8c806c8cbedde218dee6fa79a0fca"
+    },
+    {
+      "test": "rvv_vector_run_admission_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task179/CONTRACT_DETAILS.json",
+      "new_execution": false,
+      "retained_build_sha256": "b253fda174e5ec6d235f51acdbfd5881424182d8faa0a74a07cf30efb34be063"
+    },
+    {
+      "test": "rvv_vector_run_codegen_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task180/RESTORED_ASSERTIONS_RESULT.json",
+      "new_execution": true,
+      "all_four_assertions_restored": true
+    },
+    {
+      "test": "rvv_vector_run_value_test",
+      "result": "PASS",
+      "evidence": "docs/rvv-validation/directed-task179/CONTRACT_DETAILS.json",
+      "new_execution": false,
+      "retained_build_sha256": "9fac204db28bd80a90e3260b71e7fd8771c7e7198c1c076d7b7fab3cad2ac4be"
+    }
+  ],
+  "scope": "original declared suite scopes retained; IR/model suites are not guest execution"
+}

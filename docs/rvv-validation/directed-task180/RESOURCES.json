@@ -1,0 +1,16 @@
+{
+  "samples": 2604,
+  "sampled_own_guest_peak": 7,
+  "sampled_own_guest_nice": [
+    10
+  ],
+  "own_guest_workers": 8,
+  "own_build_workers": 1,
+  "own_offline_workers": 1,
+  "owner_semaphore": "/home/vick/rvv-directed-task179.own-semaphore",
+  "nice": 10,
+  "affinity": "none assigned",
+  "minimum_free_bytes": 29960425472,
+  "sampled_shared_guest_peak": 10,
+  "limitations": "preflight samples, bounded own pools, not continuous shared occupancy proof"
+}

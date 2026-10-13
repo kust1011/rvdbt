@@ -1,0 +1,12 @@
+{
+  "status": "PASS_FOCUSED179_RETAINED",
+  "cases_per_arm": 54,
+  "DUT_checks": 216,
+  "commands": 44,
+  "evidence": "docs/rvv-validation/directed-task179/EXECUTION_RECEIPTS.json.gz",
+  "manifest": "docs/rvv-validation/directed-task179/MANIFESTS.json.gz",
+  "audit_main": "docs/rvv-validation/directed-task179/AUDIT_TRACE1_main.json",
+  "audit_cache64": "docs/rvv-validation/directed-task179/AUDIT_TRACE1_cache64.json",
+  "new_execution": false,
+  "full_trace1_matrix": "NOT_RUN"
+}

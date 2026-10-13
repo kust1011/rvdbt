@@ -1,0 +1,1250 @@
+[
+  {
+    "vlen": 1024,
+    "arm": "B",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 1024,
+    "arm": "M1",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 1024,
+    "arm": "M2",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 1024,
+    "arm": "BOTH",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 128,
+    "arm": "B",
+    "PCs": [
+      "0x102f0",
+      "0x102f4"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 128,
+    "arm": "M1",
+    "PCs": [
+      "0x102f0",
+      "0x102f4"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 128,
+    "arm": "M2",
+    "PCs": [
+      "0x102f0",
+      "0x102f4"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 128,
+    "arm": "BOTH",
+    "PCs": [
+      "0x102f0",
+      "0x102f4"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 256,
+    "arm": "B",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 256,
+    "arm": "M1",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 256,
+    "arm": "M2",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 256,
+    "arm": "BOTH",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 512,
+    "arm": "B",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 512,
+    "arm": "M1",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 512,
+    "arm": "M2",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 512,
+    "arm": "BOTH",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 2048,
+    "arm": "B",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 2048,
+    "arm": "M1",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 2048,
+    "arm": "M2",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 2048,
+    "arm": "BOTH",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "MULTI_MEMBER_MIXED",
+        "MULTI_MEMBER_MIXED"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      2,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 4096,
+    "arm": "B",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 4096,
+    "arm": "M1",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 4096,
+    "arm": "M2",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  },
+  {
+    "vlen": 4096,
+    "arm": "BOTH",
+    "PCs": [
+      "0x102f4",
+      "0x102f8"
+    ],
+    "arithmetic_words_and_inputs_equal": true,
+    "first_entry_vtype": [
+      16,
+      24
+    ],
+    "phase_vtypes": [
+      [
+        16,
+        24,
+        16
+      ],
+      [
+        24,
+        16,
+        24
+      ]
+    ],
+    "cached_entry_visits_each": 3,
+    "entry_paths": [
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ],
+      [
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK",
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK"
+      ]
+    ],
+    "first_entry_fast_counts": [
+      null,
+      null
+    ],
+    "helper_calls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "result": "PASS",
+    "scope": "distinct process-local entries with different first observed vtype; cached TB reused after VL/vtype changes; no invented vtype cache key or persistent AOT claim"
+  }
+]

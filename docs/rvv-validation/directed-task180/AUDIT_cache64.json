@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "cases": 6,
+  "checks": 30,
+  "arms": {
+    "Reference": 6,
+    "B": 6,
+    "M1": 6,
+    "M2": 6,
+    "BOTH": 6
+  },
+  "target_pc_arm_rows": 48,
+  "multi_frames": 0,
+  "native_multi_frames": 0,
+  "fp_frames_with_component_completion_proof": 0,
+  "paths": {
+    "SINGLETON_HANDLER_OR_GUARD_FALLBACK": 48
+  },
+  "all_packet_outcomes_checked": true,
+  "prior_family_reruns": 0,
+  "controls": "separate one-pass over these actual packets"
+}

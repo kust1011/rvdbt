@@ -4040,34 +4040,46 @@ void P6C_CheckExtendedFamilyOrderIdentity()
 			for (int m = 0; m < 2; ++m) {
 				auto const &ab = (m == 0 ? mem : chk);
 				size_t const g = FirstGuardIndex(ab.insns);
-                // FMA classification uses a balanced 16-byte scalar broadcast
-                // scratch window. It is not an allocator spill. Reject all other
-                // stack traffic and any branch/call while that window is open.
-                unsigned depth = 0, refs = 0;
-                for (size_t i = g; i < ab.spans[0].first; ++i) {
-                    auto const &t = ab.insns[i].text;
-                    CHECK(!Has(t, "rbp"));
-                    if (StartsWith(t, "sub ") && Has(t, "rsp,0x10")) {
-                        CHECK_EQ(depth, 0u); depth = 16; refs = 1;
-                    } else if (StartsWith(t, "add ") && Has(t, "rsp,0x10")) {
-                        CHECK_EQ(depth, 16u); CHECK_EQ(refs, 5u); depth = 0;
-                    } else if (Has(t, "rsp")) {
-                        CHECK_EQ(depth, 16u);
-                        CHECK(Has(t, "[rsp]") &&
-                            ((StartsWith(t, "mov ") &&
-                              (Has(t, "QWORD PTR [rsp],0x0") ||
-                               Has(t, "DWORD PTR [rsp],0x7f800000") ||
-                               Has(t, "QWORD PTR [rsp],rax"))) ||
-                             ((StartsWith(t, "vpcmpeqd ") || StartsWith(t, "vpcmpeqq ")) &&
-                              Has(t, "BCST [rsp]"))));
-                        ++refs;
-                    }
-                    if (depth) {
-                        CHECK(!StartsWith(t, "j"));
-                        CHECK(!Has(t, "call "));
-                    }
-                }
-                CHECK_EQ(depth, 0u);
+				// FMA classification uses a balanced 16-byte scalar broadcast
+				// scratch window. It is not an allocator spill. Reject all other
+				// stack traffic and any branch/call while that window is open.
+				unsigned depth = 0, refs = 0;
+				for (size_t i = g; i < ab.spans[0].first; ++i) {
+					auto const &t = ab.insns[i].text;
+					CHECK(!Has(t, "rbp"));
+					if (StartsWith(t, "sub ") && Has(t, "rsp,0x10")) {
+						CHECK_EQ(depth, 0u); depth = 16; refs = 1;
+					} else if (StartsWith(t, "add ") && Has(t, "rsp,0x10")) {
+						CHECK_EQ(depth, 16u); CHECK_EQ(refs, 5u); depth = 0;
+					} else if (Has(t, "rsp")) {
+						CHECK_EQ(depth, 16u);
+						CHECK(Has(t, "[rsp]") &&
+							((StartsWith(t, "mov ") &&
+							(Has(t, "QWORD PTR [rsp],0x0") ||
+							Has(t, "DWORD PTR [rsp],0x7f800000") ||
+							Has(t, "QWORD PTR [rsp],rax"))) ||
+							((StartsWith(t, "vpcmpeqd ") || StartsWith(t, "vpcmpeqq ")) &&
+							Has(t, "BCST [rsp]"))));
+						++refs;
+					}
+					if (depth) {
+						CHECK(!StartsWith(t, "j"));
+						CHECK(!Has(t, "call "));
+					}
+				}
+				CHECK_EQ(depth, 0u);
+			}
+			CHECK(SpanText(mem.insns, 0, FirstGuardIndex(mem.insns)) ==
+			      SpanText(chk.insns, 0, FirstGuardIndex(chk.insns)));
+			CHECK(SpanText(mem.insns, mem.spans[0].first, mem.spans[0].second) ==
+			      SpanText(chk.insns, chk.spans[0].first, chk.spans[0].second));
+
+			unsigned n0 = 0, n1 = 0;
+			bool const same_text = NormalizedDisasm(mem.b.lines, &n0) ==
+					       NormalizedDisasm(chk.b.lines, &n1);
+			CHECK_EQ(mem.b.code.size(), chk.b.code.size());
+			if (k == 1) {
+				CHECK(same_text);
 			}
 			printf("    ok  %-8s vlen=%-5u k=%u m=%-2u qir=%-3u typed=%-3u insns=%-4u "
 			       "%s\n",

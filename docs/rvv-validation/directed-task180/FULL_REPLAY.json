@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "cases_per_arm": 2418,
+  "DUT_checks": 9672,
+  "new_DUT_checks": 9456,
+  "reused_DUT_checks": 216,
+  "new_commands": 2596,
+  "reused_commands": 44,
+  "reference_executions": 0,
+  "ELF_rebuilds": 0,
+  "guest_workers": 8,
+  "roots": [
+    "/home/vick/rvv-directed-task180/trace0/integer/pilot",
+    "/home/vick/rvv-directed-task180/trace0/integer/remaining",
+    "/home/vick/rvv-directed-task180/trace0/fp/pilot",
+    "/home/vick/rvv-directed-task180/trace0/fp/remaining",
+    "/home/vick/rvv-directed-task180/trace0/cache/pilot",
+    "/home/vick/rvv-directed-task180/trace0/cache/remaining",
+    "/home/vick/rvv-directed-task180/trace0/cache64/pilot",
+    "/home/vick/rvv-directed-task180/trace0/cache64/remaining"
+  ],
+  "trace": 0
+}

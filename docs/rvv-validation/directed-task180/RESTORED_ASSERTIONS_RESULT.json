@@ -1,0 +1,24 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "seconds": 4.721292018075474,
+  "stdout_sha256": "d96e6df5b4ad7b16573341d4fec53dcdf8f645b4061d36c24e991a9879444432",
+  "stderr_sha256": "65c723c490708ee882ec66ec11ccf40e747f72f3a6abc5dee190e39ae477d64c",
+  "storage": "lossless-gzip-v1",
+  "test_sha256": "788d86b4376281f640d458d2d76dfe4bd3268bb36c68921041f7df6b10cbbc42",
+  "source_sha256": "47e7d7046438b2315ffe09e1cc8512effc249689520db81ebbf63cc6fe16c629",
+  "all_four_assertions_restored": true,
+  "balanced_scratch_check_retained": true,
+  "production_unchanged": {
+    "build/lib/libdbtstatic.a": "164fed9dcd33e0a661985d32abab18acc8222442611e90249469aa95b44f67dd",
+    "build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "build/bin/rvv_both_boundary_value_test": "412543a7969498c9d0aa28d120a76d0cc8613c3f84c217019113e95461f7e029",
+    "build/bin/rvv_run_live_range_split_test": "deabf2d56a71548774bf9c9c3142b3cc7dfc5fb6c617d9805858c2d4e304f031",
+    "build/bin/rvv_rvv_contract_test": "bccea241743c8aee318e84e33beb1b245f9ba4e207ecf0c43735418e99632174",
+    "build/bin/rvv_ssa_edge_commit_test": "5f70cf37351c333b89450d5ac1952d2c32b8c806c8cbedde218dee6fa79a0fca",
+    "build/bin/rvv_vector_run_admission_test": "b253fda174e5ec6d235f51acdbfd5881424182d8faa0a74a07cf30efb34be063",
+    "build/bin/rvv_vector_run_codegen_test": "07ed6bc64c87accb7d4482da69883f3c58b0c1595417a14a6b07e8add2868ce0",
+    "build/bin/rvv_vector_run_value_test": "9fac204db28bd80a90e3260b71e7fd8771c7e7198c1c076d7b7fab3cad2ac4be"
+  }
+}

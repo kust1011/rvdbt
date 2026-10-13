@@ -1,0 +1,12 @@
+{
+  "actual_packets": 12090,
+  "effective_rejections": 531960,
+  "changed_allowed_tail_outcomes": 2929,
+  "passes_per_acceptance_observation": 1,
+  "DUT_packets": 9672,
+  "new_DUT_packets": 9456,
+  "reused_DUT_packets": 216,
+  "original_reference_packet_rereads": 2418,
+  "reference_reread_policy": "original177 reference controls retained, with new validation rereads disclosed separately; no reference execution",
+  "guest_calls": 0
+}

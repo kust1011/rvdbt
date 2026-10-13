@@ -1,0 +1,28 @@
+{
+  "artifacts": {
+    "build/lib/libdbtstatic.a": "164fed9dcd33e0a661985d32abab18acc8222442611e90249469aa95b44f67dd",
+    "build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "build/bin/rvv_both_boundary_value_test": "412543a7969498c9d0aa28d120a76d0cc8613c3f84c217019113e95461f7e029",
+    "build/bin/rvv_run_live_range_split_test": "deabf2d56a71548774bf9c9c3142b3cc7dfc5fb6c617d9805858c2d4e304f031",
+    "build/bin/rvv_rvv_contract_test": "bccea241743c8aee318e84e33beb1b245f9ba4e207ecf0c43735418e99632174",
+    "build/bin/rvv_ssa_edge_commit_test": "5f70cf37351c333b89450d5ac1952d2c32b8c806c8cbedde218dee6fa79a0fca",
+    "build/bin/rvv_vector_run_admission_test": "b253fda174e5ec6d235f51acdbfd5881424182d8faa0a74a07cf30efb34be063",
+    "build/bin/rvv_vector_run_codegen_test": "07ed6bc64c87accb7d4482da69883f3c58b0c1595417a14a6b07e8add2868ce0",
+    "build/bin/rvv_vector_run_value_test": "9fac204db28bd80a90e3260b71e7fd8771c7e7198c1c076d7b7fab3cad2ac4be"
+  },
+  "source_changes": [
+    {
+      "path": "dbt/qmc/qcg/qemit.cpp",
+      "old_sha256": "bebdf15e356a7c71b8345dde050483ccfa3ac89ff29d36da6e400a46ae63f9ef",
+      "new_sha256": "f0f15512374111dd4ac01842457670387e5132ce33207d4a58554451adf086c7"
+    },
+    {
+      "path": "dbt/qmc/qcg/rvv_vector_run_codegen_test.cpp",
+      "old_sha256": "18352353da33b473cac1abfeb3147e7243bd62127f448b9ece4c4592cbaa02a0",
+      "new_sha256": "48746c48945a2d229ec04a4aa3f9d122f46ed5d65f7eb442d7ab20154fe61070"
+    }
+  ],
+  "manifest_sha256": "8ff1b79b85a429cf92f342026fa5de369e6cf598cb9a3c783135bf08e951f239",
+  "production_modified_by180": false
+}

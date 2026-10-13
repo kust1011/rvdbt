@@ -1,0 +1,8 @@
+{
+  "replay_launch_ssh_exit": 255,
+  "remote_controller_continued": true,
+  "remote_controller_pid": 1230315,
+  "replay_not_restarted": true,
+  "DUT_failure": false,
+  "credit": "only completed execution/check/audit receipts count"
+}

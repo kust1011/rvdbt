@@ -1,0 +1,25 @@
+{
+  "required": 595,
+  "accepted": 595,
+  "gaps": [],
+  "scope": {
+    "per_form": "595/595 finite historical forms; mixed actual build pins including accepted176",
+    "final179_P3": "PASS_FINITE_FULL177_MATRIX_TRACE0",
+    "P3_candidate_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "P3_receipt": "docs/rvv-validation/directed-task180/FINAL_TOTALS.json",
+    "P3_cases_per_arm": 2418,
+    "P3_DUT_checks": 9672,
+    "new_form_credit": 0,
+    "all_form_common179": "NOT_RUN",
+    "external_common179": "NOT_RUN",
+    "P4": "Session3 moving to explicit179 namespace; historical174 results remain174"
+  },
+  "restored_assertions": "PASS",
+  "contract_suites": 7,
+  "focused179_trace1": "PASS_RETAINED;54 cases per DUT arm; no full trace1 claim",
+  "remaining": [
+    "all-form/external common179 outside Task180",
+    "full2418 trace1 not run",
+    "proof outside actual scanner subset and fault-return/repair/retry not supplied"
+  ]
+}
