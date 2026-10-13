@@ -1,0 +1,380 @@
+{
+  "commit": "7a35c902707087c8e1b77a3c82c54b73ffa17703",
+  "cases": [
+    {
+      "file": "vwadd_vv.c",
+      "sha256": "0d1451e82c5e463c5fd3fe105fa45154bf534e150abd22422cbf44b8b74f8bf3",
+      "calls": [
+        "test_vwadd_vv_8(vlmax_8 - 1, src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], pad.fixs16[0]);",
+        "test_vwadd_vv_8_vm(src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwadd_vv_8_vm(src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwadd_vv_16(vlmax_16 - 1, src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], pad.fixs32[0]);",
+        "test_vwadd_vv_16_vm(src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwadd_vv_16_vm(src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwadd_vv_32(vlmax_32 - 1, src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], pad.fixs64[0]);",
+        "test_vwadd_vv_32_vm(src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwadd_vv_32_vm(src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwadd_vx.c",
+      "sha256": "ffbf45cfc0969c559eeb2b2e050c6b2aba14ab10a84d235656f2e8e0d0cbf6f8",
+      "calls": [
+        "test_vwadd_vx_8(vlmax_8 - 1, src0[i].fixs8[0], src1, res.fixs16[0], pad.fixs16[0]);",
+        "test_vwadd_vx_8_vm(src0[i].fixs8[0], src1, res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwadd_vx_8_vm(src0[i].fixs8[0], src1, res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwadd_vx_16(vlmax_16 - 1, src0[i].fixs16[0], src1, res.fixs32[0], pad.fixs32[0]);",
+        "test_vwadd_vx_16_vm(src0[i].fixs16[0], src1, res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwadd_vx_16_vm(src0[i].fixs16[0], src1, res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwadd_vx_32(vlmax_32 - 1, src0[i].fixs32[0], src1, res.fixs64[0], pad.fixs64[0]);",
+        "test_vwadd_vx_32_vm(src0[i].fixs32[0], src1, res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwadd_vx_32_vm(src0[i].fixs32[0], src1, res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": [
+        "int64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwadd_wv.c",
+      "sha256": "362f9eb4f557e38dce6b5ea9a898381ddf4dbb24edf65ce821050872a1a59740",
+      "calls": [
+        "test_vwadd_wv_8(vlmax_8 - 1, src0[i].fixs16[0], src1[i].fixs8[0], res.fixs16[0], pad.fixs16[0]);",
+        "test_vwadd_wv_8_vm(src0[i].fixs16[0], src1[i].fixs8[0], res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwadd_wv_8_vm(src0[i].fixs16[0], src1[i].fixs8[0], res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwadd_wv_16(vlmax_16 - 1, src0[i].fixs32[0], src1[i].fixs16[0], res.fixs32[0], pad.fixs32[0]);",
+        "test_vwadd_wv_16_vm(src0[i].fixs32[0], src1[i].fixs16[0], res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwadd_wv_16_vm(src0[i].fixs32[0], src1[i].fixs16[0], res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwadd_wv_32(vlmax_32 - 1, src0[i].fixs64[0], src1[i].fixs32[0], res.fixs64[0], pad.fixs64[0]);",
+        "test_vwadd_wv_32_vm(src0[i].fixs64[0], src1[i].fixs32[0], res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwadd_wv_32_vm(src0[i].fixs64[0], src1[i].fixs32[0], res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwadd_wx.c",
+      "sha256": "88150f6858255b3e4e50f86d88e5208456fc187ed1c87c0520f09380a206293a",
+      "calls": [
+        "test_vwadd_wx_8(vlmax_8 - 1, src0[i].fixs16[0], src1, res.fixs16[0], pad.fixs16[0]);",
+        "test_vwadd_wx_8_vm(src0[i].fixs16[0], src1, res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwadd_wx_8_vm(src0[i].fixs16[0], src1, res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwadd_wx_16(vlmax_16 - 1, src0[i].fixs32[0], src1, res.fixs32[0], pad.fixs32[0]);",
+        "test_vwadd_wx_16_vm(src0[i].fixs32[0], src1, res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwadd_wx_16_vm(src0[i].fixs32[0], src1, res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwadd_wx_32(vlmax_32 - 1, src0[i].fixs64[0], src1, res.fixs64[0], pad.fixs64[0]);",
+        "test_vwadd_wx_32_vm(src0[i].fixs64[0], src1, res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwadd_wx_32_vm(src0[i].fixs64[0], src1, res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": [
+        "int64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwaddu_vv.c",
+      "sha256": "996a69a1f6f0deadd5fe21269d4e6ee1543dd39721ee5206e58ae2d7c2844222",
+      "calls": [
+        "test_vwaddu_vv_8(vlmax_8 - 1, src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], pad.fixu16[0]);",
+        "test_vwaddu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_vv_16(vlmax_16 - 1, src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], pad.fixu32[0]);",
+        "test_vwaddu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_vv_32(vlmax_32 - 1, src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], pad.fixu64[0]);",
+        "test_vwaddu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwaddu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwaddu_vx.c",
+      "sha256": "6b5489145b0b1953359fbae8714acbce22184d90c4816a52cce65a15a78d719f",
+      "calls": [
+        "test_vwaddu_vx_8(vlmax_8 - 1, src0[i].fixu8[0], src1, res.fixu16[0], pad.fixu16[0]);",
+        "test_vwaddu_vx_8_vm(src0[i].fixu8[0], src1, res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_vx_8_vm(src0[i].fixu8[0], src1, res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_vx_16(vlmax_16 - 1, src0[i].fixu16[0], src1, res.fixu32[0], pad.fixu32[0]);",
+        "test_vwaddu_vx_16_vm(src0[i].fixu16[0], src1, res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_vx_16_vm(src0[i].fixu16[0], src1, res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_vx_32(vlmax_32 - 1, src0[i].fixu32[0], src1, res.fixu64[0], pad.fixu64[0]);",
+        "test_vwaddu_vx_32_vm(src0[i].fixu32[0], src1, res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwaddu_vx_32_vm(src0[i].fixu32[0], src1, res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwaddu_wv.c",
+      "sha256": "0f7299d02727b9e8c332e7ae86475cd6d833b0dd66b4cc2f6303059f1df852c6",
+      "calls": [
+        "test_vwaddu_wv_8(vlmax_8 - 1, src0[i].fixu16[0], src1[i].fixu8[0], res.fixu16[0], pad.fixu16[0]);",
+        "test_vwaddu_wv_8_vm(src0[i].fixu16[0], src1[i].fixu8[0], res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_wv_8_vm(src0[i].fixu16[0], src1[i].fixu8[0], res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_wv_16(vlmax_16 - 1, src0[i].fixu32[0], src1[i].fixu16[0], res.fixu32[0], pad.fixu32[0]);",
+        "test_vwaddu_wv_16_vm(src0[i].fixu32[0], src1[i].fixu16[0], res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_wv_16_vm(src0[i].fixu32[0], src1[i].fixu16[0], res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_wv_32(vlmax_32 - 1, src0[i].fixu64[0], src1[i].fixu32[0], res.fixu64[0], pad.fixu64[0]);",
+        "test_vwaddu_wv_32_vm(src0[i].fixu64[0], src1[i].fixu32[0], res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwaddu_wv_32_vm(src0[i].fixu64[0], src1[i].fixu32[0], res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwaddu_wx.c",
+      "sha256": "d8a42a375445b3007a6c9453336d36a774166b13161268b20c8e2b674d613f1b",
+      "calls": [
+        "test_vwaddu_wx_8(vlmax_8 - 1, src0[i].fixu16[0], src1, res.fixu16[0], pad.fixu16[0]);",
+        "test_vwaddu_wx_8_vm(src0[i].fixu16[0], src1, res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_wx_8_vm(src0[i].fixu16[0], src1, res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwaddu_wx_16(vlmax_16 - 1, src0[i].fixu32[0], src1, res.fixu32[0], pad.fixu32[0]);",
+        "test_vwaddu_wx_16_vm(src0[i].fixu32[0], src1, res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_wx_16_vm(src0[i].fixu32[0], src1, res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwaddu_wx_32(vlmax_32 - 1, src0[i].fixu64[0], src1, res.fixu64[0], pad.fixu64[0]);",
+        "test_vwaddu_wx_32_vm(src0[i].fixu64[0], src1, res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwaddu_wx_32_vm(src0[i].fixu64[0], src1, res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwmul_vv.c",
+      "sha256": "238c49f7fc44979cc9a59056d1620381ac5f2cfe4e9d4ae1ccee3c3f65122a01",
+      "calls": [
+        "test_vwmul_vv_8(vlmax_8 - 1, src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], pad.fixs16[0]);",
+        "test_vwmul_vv_8_vm(src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwmul_vv_8_vm(src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwmul_vv_16(vlmax_16 - 1, src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], pad.fixs32[0]);",
+        "test_vwmul_vv_16_vm(src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwmul_vv_16_vm(src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwmul_vv_32(vlmax_32 - 1, src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], pad.fixs64[0]);",
+        "test_vwmul_vv_32_vm(src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwmul_vv_32_vm(src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwmul_vx.c",
+      "sha256": "f1bbc343ccdf48ae90e8d7744b218eb6a21174601ab58042f962124bfb112ed8",
+      "calls": [
+        "test_vwmul_vx_8(vlmax_8 - 1, src0[i].fixs8[0], src1, res.fixs16[0], pad.fixs16[0]);",
+        "test_vwmul_vx_8_vm(src0[i].fixs8[0], src1, res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwmul_vx_8_vm(src0[i].fixs8[0], src1, res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwmul_vx_16(vlmax_16 - 1, src0[i].fixs16[0], src1, res.fixs32[0], pad.fixs32[0]);",
+        "test_vwmul_vx_16_vm(src0[i].fixs16[0], src1, res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwmul_vx_16_vm(src0[i].fixs16[0], src1, res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwmul_vx_32(vlmax_32 - 1, src0[i].fixs32[0], src1, res.fixs64[0], pad.fixs64[0]);",
+        "test_vwmul_vx_32_vm(src0[i].fixs32[0], src1, res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwmul_vx_32_vm(src0[i].fixs32[0], src1, res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwmulsu_vv.c",
+      "sha256": "b294475bad5322f9624d439f28caf03674aa29c9807ecdc721f9f2995ca72b3c",
+      "calls": [
+        "test_vwmulsu_vv_8(vlmax_8 - 1, src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], pad.fixu16[0]);",
+        "test_vwmulsu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwmulsu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwmulsu_vv_16(vlmax_16 - 1, src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], pad.fixu32[0]);",
+        "test_vwmulsu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwmulsu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwmulsu_vv_32(vlmax_32 - 1, src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], pad.fixu64[0]);",
+        "test_vwmulsu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwmulsu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwmulsu_vx.c",
+      "sha256": "3c73d4ede24062909da0f40244ff1cf718ae577fcc7acdcf462c054e62a4924b",
+      "calls": [
+        "test_vwmulsu_vx_8(vlmax_8 - 1, src0[i].fixs8[0], (uint8_t)src1, res.fixs16[0], pad.fixs16[0]);",
+        "test_vwmulsu_vx_8_vm(src0[i].fixs8[0], (uint8_t)src1, res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwmulsu_vx_8_vm(src0[i].fixs8[0], (uint8_t)src1, res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwmulsu_vx_16(vlmax_16 - 1, src0[i].fixs16[0], (uint16_t)src1, res.fixs32[0], pad.fixs32[0]);",
+        "test_vwmulsu_vx_16_vm(src0[i].fixs16[0], (uint16_t)src1, res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwmulsu_vx_16_vm(src0[i].fixs16[0], (uint16_t)src1, res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwmulsu_vx_32(vlmax_32 - 1, src0[i].fixs32[0], (uint32_t)src1, res.fixs64[0], pad.fixs64[0]);",
+        "test_vwmulsu_vx_32_vm(src0[i].fixs32[0], (uint32_t)src1, res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwmulsu_vx_32_vm(src0[i].fixs32[0], (uint32_t)src1, res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwmulu_vv.c",
+      "sha256": "8efe3a0447327bb4354b953bf3a707ea8fa1ddabf72b921a3e096a80b9abe57b",
+      "calls": [
+        "test_vwmulu_vv_8(vlmax_8 - 1, src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], pad.fixu16[0]);",
+        "test_vwmulu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwmulu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwmulu_vv_16(vlmax_16 - 1, src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], pad.fixu32[0]);",
+        "test_vwmulu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwmulu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwmulu_vv_32(vlmax_32 - 1, src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], pad.fixu64[0]);",
+        "test_vwmulu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwmulu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwmulu_vx.c",
+      "sha256": "f4e9b978eb3d23e4871bca39aa45a450f0a15adb862e2ff4c346c565a35f5d7f",
+      "calls": [
+        "test_vwmulu_vx_8(vlmax_8 - 1, src0[i].fixu8[0], src1, res.fixu16[0], pad.fixu16[0]);",
+        "test_vwmulu_vx_8_vm(src0[i].fixu8[0], src1, res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwmulu_vx_8_vm(src0[i].fixu8[0], src1, res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwmulu_vx_16(vlmax_16 - 1, src0[i].fixu16[0], src1, res.fixu32[0], pad.fixu32[0]);",
+        "test_vwmulu_vx_16_vm(src0[i].fixu16[0], src1, res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwmulu_vx_16_vm(src0[i].fixu16[0], src1, res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwmulu_vx_32(vlmax_32 - 1, src0[i].fixu32[0], src1, res.fixu64[0], pad.fixu64[0]);",
+        "test_vwmulu_vx_32_vm(src0[i].fixu32[0], src1, res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwmulu_vx_32_vm(src0[i].fixu32[0], src1, res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwsub_vv.c",
+      "sha256": "0721d71bf14486266268508a1d0b8445b56205afebf1d67de750f4de9cbda911",
+      "calls": [
+        "test_vwsub_vv_8(vlmax_8 - 1, src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], pad.fixs16[0]);",
+        "test_vwsub_vv_8_vm(src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwsub_vv_8_vm(src0[i].fixs8[0], src1[i].fixs8[0], res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwsub_vv_16(vlmax_16 - 1, src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], pad.fixs32[0]);",
+        "test_vwsub_vv_16_vm(src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwsub_vv_16_vm(src0[i].fixs16[0], src1[i].fixs16[0], res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwsub_vv_32(vlmax_32 - 1, src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], pad.fixs64[0]);",
+        "test_vwsub_vv_32_vm(src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwsub_vv_32_vm(src0[i].fixs32[0], src1[i].fixs32[0], res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwsub_vx.c",
+      "sha256": "0a21fc526a6d96a615e548696e2a2946bba05939d5a2667ef6c1a36d7854a6ed",
+      "calls": [
+        "test_vwsub_vx_8(vlmax_8 - 1, src0[i].fixs8[0], src1, res.fixs16[0], pad.fixs16[0]);",
+        "test_vwsub_vx_8_vm(src0[i].fixs8[0], src1, res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwsub_vx_8_vm(src0[i].fixs8[0], src1, res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwsub_vx_16(vlmax_16 - 1, src0[i].fixs16[0], src1, res.fixs32[0], pad.fixs32[0]);",
+        "test_vwsub_vx_16_vm(src0[i].fixs16[0], src1, res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwsub_vx_16_vm(src0[i].fixs16[0], src1, res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwsub_vx_32(vlmax_32 - 1, src0[i].fixs32[0], src1, res.fixs64[0], pad.fixs64[0]);",
+        "test_vwsub_vx_32_vm(src0[i].fixs32[0], src1, res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwsub_vx_32_vm(src0[i].fixs32[0], src1, res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": [
+        "int64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwsub_wv.c",
+      "sha256": "47af091b10feb171e3dda4bee69a527ccf8a5a186c911cc8961f8843879dc0ea",
+      "calls": [
+        "test_vwsub_wv_8(vlmax_8 - 1, src0[i].fixs16[0], src1[i].fixs8[0], res.fixs16[0], pad.fixs16[0]);",
+        "test_vwsub_wv_8_vm(src0[i].fixs16[0], src1[i].fixs8[0], res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwsub_wv_8_vm(src0[i].fixs16[0], src1[i].fixs8[0], res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwsub_wv_16(vlmax_16 - 1, src0[i].fixs32[0], src1[i].fixs16[0], res.fixs32[0], pad.fixs32[0]);",
+        "test_vwsub_wv_16_vm(src0[i].fixs32[0], src1[i].fixs16[0], res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwsub_wv_16_vm(src0[i].fixs32[0], src1[i].fixs16[0], res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwsub_wv_32(vlmax_32 - 1, src0[i].fixs64[0], src1[i].fixs32[0], res.fixs64[0], pad.fixs64[0]);",
+        "test_vwsub_wv_32_vm(src0[i].fixs64[0], src1[i].fixs32[0], res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwsub_wv_32_vm(src0[i].fixs64[0], src1[i].fixs32[0], res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwsub_wx.c",
+      "sha256": "1a4848c9941ab3a8ec04c42586b446d99ab89286787c119f8b58cf3683bc8a30",
+      "calls": [
+        "test_vwsub_wx_8(vlmax_8 - 1, src0[i].fixs16[0], src1, res.fixs16[0], pad.fixs16[0]);",
+        "test_vwsub_wx_8_vm(src0[i].fixs16[0], src1, res.fixs16[0], vme.fixs8, pad.fixs16[0]);",
+        "test_vwsub_wx_8_vm(src0[i].fixs16[0], src1, res.fixs16[0], vmo.fixs8, pad.fixs16[0]);",
+        "test_vwsub_wx_16(vlmax_16 - 1, src0[i].fixs32[0], src1, res.fixs32[0], pad.fixs32[0]);",
+        "test_vwsub_wx_16_vm(src0[i].fixs32[0], src1, res.fixs32[0], vme.fixs16, pad.fixs32[0]);",
+        "test_vwsub_wx_16_vm(src0[i].fixs32[0], src1, res.fixs32[0], vmo.fixs16, pad.fixs32[0]);",
+        "test_vwsub_wx_32(vlmax_32 - 1, src0[i].fixs64[0], src1, res.fixs64[0], pad.fixs64[0]);",
+        "test_vwsub_wx_32_vm(src0[i].fixs64[0], src1, res.fixs64[0], vme.fixs32, pad.fixs64[0]);",
+        "test_vwsub_wx_32_vm(src0[i].fixs64[0], src1, res.fixs64[0], vmo.fixs32, pad.fixs64[0]);"
+      ],
+      "scalar": [
+        "int64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwsubu_vv.c",
+      "sha256": "4d8eda4c4e610256e09373681159130d40fdaee26434195a0c0edbbf7e7c3fe5",
+      "calls": [
+        "test_vwsubu_vv_8(vlmax_8 - 1, src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], pad.fixu16[0]);",
+        "test_vwsubu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_vv_8_vm(src0[i].fixu8[0], src1[i].fixu8[0], res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_vv_16(vlmax_16 - 1, src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], pad.fixu32[0]);",
+        "test_vwsubu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_vv_16_vm(src0[i].fixu16[0], src1[i].fixu16[0], res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_vv_32(vlmax_32 - 1, src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], pad.fixu64[0]);",
+        "test_vwsubu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwsubu_vv_32_vm(src0[i].fixu32[0], src1[i].fixu32[0], res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwsubu_vx.c",
+      "sha256": "47108427e31c8df84ed08698e23cad84f653540e2f4c5ef22d09f7a9b6098bc0",
+      "calls": [
+        "test_vwsubu_vx_8(vlmax_8 - 1, src0[i].fixu8[0], src1, res.fixu16[0], pad.fixu16[0]);",
+        "test_vwsubu_vx_8_vm(src0[i].fixu8[0], src1, res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_vx_8_vm(src0[i].fixu8[0], src1, res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_vx_16(vlmax_16 - 1, src0[i].fixu16[0], src1, res.fixu32[0], pad.fixu32[0]);",
+        "test_vwsubu_vx_16_vm(src0[i].fixu16[0], src1, res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_vx_16_vm(src0[i].fixu16[0], src1, res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_vx_32(vlmax_32 - 1, src0[i].fixu32[0], src1, res.fixu64[0], pad.fixu64[0]);",
+        "test_vwsubu_vx_32_vm(src0[i].fixu32[0], src1, res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwsubu_vx_32_vm(src0[i].fixu32[0], src1, res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    },
+    {
+      "file": "vwsubu_wv.c",
+      "sha256": "e70b9a8738394d0110043df8a877c528b5623ee121e5c55d5c26be577e92a104",
+      "calls": [
+        "test_vwsubu_wv_8(vlmax_8 - 1, src0[i].fixu16[0], src1[i].fixu8[0], res.fixu16[0], pad.fixu16[0]);",
+        "test_vwsubu_wv_8_vm(src0[i].fixu16[0], src1[i].fixu8[0], res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_wv_8_vm(src0[i].fixu16[0], src1[i].fixu8[0], res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_wv_16(vlmax_16 - 1, src0[i].fixu32[0], src1[i].fixu16[0], res.fixu32[0], pad.fixu32[0]);",
+        "test_vwsubu_wv_16_vm(src0[i].fixu32[0], src1[i].fixu16[0], res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_wv_16_vm(src0[i].fixu32[0], src1[i].fixu16[0], res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_wv_32(vlmax_32 - 1, src0[i].fixu64[0], src1[i].fixu32[0], res.fixu64[0], pad.fixu64[0]);",
+        "test_vwsubu_wv_32_vm(src0[i].fixu64[0], src1[i].fixu32[0], res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwsubu_wv_32_vm(src0[i].fixu64[0], src1[i].fixu32[0], res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": []
+    },
+    {
+      "file": "vwsubu_wx.c",
+      "sha256": "ad6d6ff60520a517a8fb8bf763aad538f9fdeddcf12e717bd3bffe592ada0493",
+      "calls": [
+        "test_vwsubu_wx_8(vlmax_8 - 1, src0[i].fixu16[0], src1, res.fixu16[0], pad.fixu16[0]);",
+        "test_vwsubu_wx_8_vm(src0[i].fixu16[0], src1, res.fixu16[0], vme.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_wx_8_vm(src0[i].fixu16[0], src1, res.fixu16[0], vmo.fixu8, pad.fixu16[0]);",
+        "test_vwsubu_wx_16(vlmax_16 - 1, src0[i].fixu32[0], src1, res.fixu32[0], pad.fixu32[0]);",
+        "test_vwsubu_wx_16_vm(src0[i].fixu32[0], src1, res.fixu32[0], vme.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_wx_16_vm(src0[i].fixu32[0], src1, res.fixu32[0], vmo.fixu16, pad.fixu32[0]);",
+        "test_vwsubu_wx_32(vlmax_32 - 1, src0[i].fixu64[0], src1, res.fixu64[0], pad.fixu64[0]);",
+        "test_vwsubu_wx_32_vm(src0[i].fixu64[0], src1, res.fixu64[0], vme.fixu32, pad.fixu64[0]);",
+        "test_vwsubu_wx_32_vm(src0[i].fixu64[0], src1, res.fixu64[0], vmo.fixu32, pad.fixu64[0]);"
+      ],
+      "scalar": [
+        "uint64_t src1 = 0x1122334455667788;"
+      ]
+    }
+  ],
+  "wrappers": 132
+}

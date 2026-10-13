@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-13 10:08:29 UTC",
+  "free_bytes": 12700303360,
+  "reserve_bytes": 10737418240,
+  "estimated_batch_bytes": 2147483648,
+  "can_launch": false,
+  "execution": "NOT_RUN",
+  "reason": "capacity preflight for full widening; no existing artifacts deleted"
+}

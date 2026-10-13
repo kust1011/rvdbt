@@ -1,0 +1,1 @@
+[{"stage":"local layout generation; no guest", "error":"AssertionError: end-group destination overlapped low narrow source1", "correction":"relocate end-group source1 to v8, retain high-part legal overlap cases", "DUT_failure":false}]

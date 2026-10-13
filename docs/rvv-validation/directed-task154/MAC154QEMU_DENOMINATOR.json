@@ -1,0 +1,31 @@
+{
+  "family": "mac154qemu",
+  "cases": 96,
+  "checks": 480,
+  "units": 32,
+  "commands": 160,
+  "ordinary": 96,
+  "reserved_start": 0,
+  "geometries": [
+    [
+      128,
+      8,
+      "m1"
+    ],
+    [
+      128,
+      64,
+      "m4"
+    ],
+    [
+      1024,
+      8,
+      "m8"
+    ],
+    [
+      4096,
+      8,
+      "m8"
+    ]
+  ]
+}

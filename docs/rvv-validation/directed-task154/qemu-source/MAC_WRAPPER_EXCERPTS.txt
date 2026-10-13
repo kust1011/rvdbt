@@ -1,0 +1,895 @@
+TEST_FUNC(test_vnmsub_vx_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vnmsub.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vx_8, .-test_vnmsub_vx_8
+
+TEST_FUNC(test_vnmsub_vx_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vnmsub.vx         v6, a1, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vx_8_vm, .-test_vnmsub_vx_8_vm
+
+TEST_FUNC(test_vnmsub_vx_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vnmsub.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vx_16, .-test_vnmsub_vx_16
+
+TEST_FUNC(test_vnmsub_vx_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vnmsub.vx        v6, a1, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vx_16_vm, .-test_vnmsub_vx_16_vm
+
+TEST_FUNC(test_vnmsub_vx_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vnmsub.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vx_32, .-test_vnmsub_vx_32
+
+TEST_FUNC(test_vnmsub_vx_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vnmsub.vx        v6, a1, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vx_32_vm, .-test_vnmsub_vx_32_vm
+
+TEST_FUNC(test_vnmsub_vx_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vnmsub.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vx_64, .-test_vnmsub_vx_64
+
+TEST_FUNC(test_vnmsub_vx_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vnmsub.vx         v6, a1, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vx_64_vm, .-test_vnmsub_vx_64_vm
+
+TEST_FUNC(test_vnmsub_vv_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vlb.v           v4, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vnmsub.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vv_8, .-test_vnmsub_vv_8
+
+TEST_FUNC(test_vnmsub_vv_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vlb.v           v4, (a1)
+        vnmsub.vv         v6, v4, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vv_8_vm, .-test_vnmsub_vv_8_vm
+
+TEST_FUNC(test_vnmsub_vv_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vlh.v           v4, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vnmsub.vv       v6, v4, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vv_16, .-test_vnmsub_vv_16
+
+TEST_FUNC(test_vnmsub_vv_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vlh.v           v4, (a1)
+        vnmsub.vv       v6, v4, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vv_16_vm, .-test_vnmsub_vv_16_vm
+
+TEST_FUNC(test_vnmsub_vv_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vlw.v           v4, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vnmsub.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vv_32, .-test_vnmsub_vv_32
+
+TEST_FUNC(test_vnmsub_vv_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vlw.v           v4, (a1)
+        vnmsub.vv         v6, v4, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vv_32_vm, .-test_vnmsub_vv_32_vm
+
+TEST_FUNC(test_vnmsub_vv_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vle.v           v4, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vnmsub.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vnmsub_vv_64, .-test_vnmsub_vv_64
+
+TEST_FUNC(test_vnmsub_vv_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vle.v           v4, (a1)
+        vnmsub.vv         v6, v4, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vnmsub_vv_64_vm, .-test_vnmsub_vv_64_vm
+
+TEST_FUNC(test_vmadd_vx_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vmadd.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vmadd_vx_8, .-test_vmadd_vx_8
+
+TEST_FUNC(test_vmadd_vx_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vmadd.vx         v6, a1, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vmadd_vx_8_vm, .-test_vmadd_vx_8_vm
+
+TEST_FUNC(test_vmadd_vx_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vmadd.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vmadd_vx_16, .-test_vmadd_vx_16
+
+TEST_FUNC(test_vmadd_vx_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vmadd.vx        v6, a1, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vmadd_vx_16_vm, .-test_vmadd_vx_16_vm
+
+TEST_FUNC(test_vmadd_vx_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vmadd.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vmadd_vx_32, .-test_vmadd_vx_32
+
+TEST_FUNC(test_vmadd_vx_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vmadd.vx        v6, a1, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vmadd_vx_32_vm, .-test_vmadd_vx_32_vm
+
+TEST_FUNC(test_vmadd_vx_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vmadd.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vmadd_vx_64, .-test_vmadd_vx_64
+
+TEST_FUNC(test_vmadd_vx_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vmadd.vx         v6, a1, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vmadd_vx_64_vm, .-test_vmadd_vx_64_vm
+
+TEST_FUNC(test_vmadd_vv_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vlb.v           v4, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vmadd.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vmadd_vv_8, .-test_vmadd_vv_8
+
+TEST_FUNC(test_vmadd_vv_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vlb.v           v4, (a1)
+        vmadd.vv         v6, v4, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vmadd_vv_8_vm, .-test_vmadd_vv_8_vm
+
+TEST_FUNC(test_vmadd_vv_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vlh.v           v4, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vmadd.vv       v6, v4, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vmadd_vv_16, .-test_vmadd_vv_16
+
+TEST_FUNC(test_vmadd_vv_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vlh.v           v4, (a1)
+        vmadd.vv       v6, v4, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vmadd_vv_16_vm, .-test_vmadd_vv_16_vm
+
+TEST_FUNC(test_vmadd_vv_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vlw.v           v4, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vmadd.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vmadd_vv_32, .-test_vmadd_vv_32
+
+TEST_FUNC(test_vmadd_vv_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vlw.v           v4, (a1)
+        vmadd.vv         v6, v4, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vmadd_vv_32_vm, .-test_vmadd_vv_32_vm
+
+TEST_FUNC(test_vmadd_vv_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vle.v           v4, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vmadd.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vmadd_vv_64, .-test_vmadd_vv_64
+
+TEST_FUNC(test_vmadd_vv_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vle.v           v4, (a1)
+        vmadd.vv         v6, v4, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vmadd_vv_64_vm, .-test_vmadd_vv_64_vm
+
+TEST_FUNC(test_vnmsac_vx_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vnmsac.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vx_8, .-test_vnmsac_vx_8
+
+TEST_FUNC(test_vnmsac_vx_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vnmsac.vx         v6, a1, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vx_8_vm, .-test_vnmsac_vx_8_vm
+
+TEST_FUNC(test_vnmsac_vx_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vnmsac.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vx_16, .-test_vnmsac_vx_16
+
+TEST_FUNC(test_vnmsac_vx_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vnmsac.vx        v6, a1, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vx_16_vm, .-test_vnmsac_vx_16_vm
+
+TEST_FUNC(test_vnmsac_vx_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vnmsac.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vx_32, .-test_vnmsac_vx_32
+
+TEST_FUNC(test_vnmsac_vx_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vnmsac.vx        v6, a1, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vx_32_vm, .-test_vnmsac_vx_32_vm
+
+TEST_FUNC(test_vnmsac_vx_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vnmsac.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vx_64, .-test_vnmsac_vx_64
+
+TEST_FUNC(test_vnmsac_vx_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vnmsac.vx         v6, a1, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vx_64_vm, .-test_vnmsac_vx_64_vm
+
+TEST_FUNC(test_vnmsac_vv_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vlb.v           v4, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vnmsac.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vv_8, .-test_vnmsac_vv_8
+
+TEST_FUNC(test_vnmsac_vv_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vlb.v           v4, (a1)
+        vnmsac.vv         v6, v4, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vv_8_vm, .-test_vnmsac_vv_8_vm
+
+TEST_FUNC(test_vnmsac_vv_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vlh.v           v4, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vnmsac.vv       v6, v4, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vv_16, .-test_vnmsac_vv_16
+
+TEST_FUNC(test_vnmsac_vv_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vlh.v           v4, (a1)
+        vnmsac.vv       v6, v4, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vv_16_vm, .-test_vnmsac_vv_16_vm
+
+TEST_FUNC(test_vnmsac_vv_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vlw.v           v4, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vnmsac.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vv_32, .-test_vnmsac_vv_32
+
+TEST_FUNC(test_vnmsac_vv_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vlw.v           v4, (a1)
+        vnmsac.vv         v6, v4, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vv_32_vm, .-test_vnmsac_vv_32_vm
+
+TEST_FUNC(test_vnmsac_vv_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vle.v           v4, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vnmsac.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vnmsac_vv_64, .-test_vnmsac_vv_64
+
+TEST_FUNC(test_vnmsac_vv_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vle.v           v4, (a1)
+        vnmsac.vv         v6, v4, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vnmsac_vv_64_vm, .-test_vnmsac_vv_64_vm
+
+TEST_FUNC(test_vmacc_vx_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vmacc.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vmacc_vx_8, .-test_vmacc_vx_8
+
+TEST_FUNC(test_vmacc_vx_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vmacc.vx         v6, a1, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vmacc_vx_8_vm, .-test_vmacc_vx_8_vm
+
+TEST_FUNC(test_vmacc_vx_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vmacc.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vmacc_vx_16, .-test_vmacc_vx_16
+
+TEST_FUNC(test_vmacc_vx_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vmacc.vx        v6, a1, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vmacc_vx_16_vm, .-test_vmacc_vx_16_vm
+
+TEST_FUNC(test_vmacc_vx_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vmacc.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vmacc_vx_32, .-test_vmacc_vx_32
+
+TEST_FUNC(test_vmacc_vx_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vmacc.vx        v6, a1, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vmacc_vx_32_vm, .-test_vmacc_vx_32_vm
+
+TEST_FUNC(test_vmacc_vx_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vmacc.vx        v6, a2, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vmacc_vx_64, .-test_vmacc_vx_64
+
+TEST_FUNC(test_vmacc_vx_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vmacc.vx         v6, a1, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vmacc_vx_64_vm, .-test_vmacc_vx_64_vm
+
+TEST_FUNC(test_vmacc_vv_8)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a5)
+        vsb.v           v6, (a3)
+        vlb.v           v2, (a1)
+        vlb.v           v4, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a4)
+        vsetvli         t1, a0, e8, m2
+        vmacc.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e8, m2
+        vsb.v           v6, (a3)
+        ret
+        .size   test_vmacc_vv_8, .-test_vmacc_vv_8
+
+TEST_FUNC(test_vmacc_vv_8_vm)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v6, (a4)
+        vsb.v           v6, (a2)
+        vsetvli         t1, x0, e8, m1
+        vlb.v           v0, (a3)
+        vsetvli         t1, x0, e8, m2
+        vlb.v           v2, (a0)
+        vlb.v           v4, (a1)
+        vmacc.vv         v6, v4, v2, v0.t
+        vsb.v           v6, (a2)
+        ret
+        .size   test_vmacc_vv_8_vm, .-test_vmacc_vv_8_vm
+
+TEST_FUNC(test_vmacc_vv_16)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a5)
+        vsh.v           v6, (a3)
+        vlh.v           v2, (a1)
+        vlh.v           v4, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a4)
+        vsetvli         t1, a0, e16, m2
+        vmacc.vv       v6, v4, v2, v0.t
+        vsetvli         t1, x0, e16, m2
+        vsh.v           v6, (a3)
+        ret
+        .size   test_vmacc_vv_16, .-test_vmacc_vv_16
+
+TEST_FUNC(test_vmacc_vv_16_vm)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v6, (a4)
+        vsh.v           v6, (a2)
+        vsetvli         t1, x0, e16, m1
+        vlh.v           v0, (a3)
+        vsetvli         t1, x0, e16, m2
+        vlh.v           v2, (a0)
+        vlh.v           v4, (a1)
+        vmacc.vv       v6, v4, v2, v0.t
+        vsh.v           v6, (a2)
+        ret
+        .size   test_vmacc_vv_16_vm, .-test_vmacc_vv_16_vm
+
+TEST_FUNC(test_vmacc_vv_32)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a5)
+        vsw.v           v6, (a3)
+        vlw.v           v2, (a1)
+        vlw.v           v4, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a4)
+        vsetvli         t1, a0, e32, m2
+        vmacc.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e32, m2
+        vsw.v           v6, (a3)
+        ret
+        .size   test_vmacc_vv_32, .-test_vmacc_vv_32
+
+TEST_FUNC(test_vmacc_vv_32_vm)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v6, (a4)
+        vsw.v           v6, (a2)
+        vsetvli         t1, x0, e32, m1
+        vlw.v           v0, (a3)
+        vsetvli         t1, x0, e32, m2
+        vlw.v           v2, (a0)
+        vlw.v           v4, (a1)
+        vmacc.vv         v6, v4, v2, v0.t
+        vsw.v           v6, (a2)
+        ret
+        .size   test_vmacc_vv_32_vm, .-test_vmacc_vv_32_vm
+
+TEST_FUNC(test_vmacc_vv_64)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a5)
+        vse.v           v6, (a3)
+        vle.v           v2, (a1)
+        vle.v           v4, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a4)
+        vsetvli         t1, a0, e64, m2
+        vmacc.vv        v6, v4, v2, v0.t
+        vsetvli         t1, x0, e64, m2
+        vse.v           v6, (a3)
+        ret
+        .size   test_vmacc_vv_64, .-test_vmacc_vv_64
+
+TEST_FUNC(test_vmacc_vv_64_vm)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v6, (a4)
+        vse.v           v6, (a2)
+        vsetvli         t1, x0, e64, m1
+        vle.v           v0, (a3)
+        vsetvli         t1, x0, e64, m2
+        vle.v           v2, (a0)
+        vle.v           v4, (a1)
+        vmacc.vv         v6, v4, v2, v0.t
+        vse.v           v6, (a2)
+        ret
+        .size   test_vmacc_vv_64_vm, .-test_vmacc_vv_64_vm

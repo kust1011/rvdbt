@@ -1,0 +1,56 @@
+{
+  "form": "vnmsub.vx",
+  "planned_per_arm": 152,
+  "arms": {
+    "Reference": {
+      "executed": 152,
+      "statuses": {
+        "PASS": 152
+      },
+      "semantic_statuses": {
+        "PASS": 148,
+        "PROFILE_RESERVED_START": 4
+      }
+    },
+    "B": {
+      "executed": 152,
+      "statuses": {
+        "PASS": 152
+      },
+      "semantic_statuses": {
+        "PASS": 148,
+        "PROFILE_RESERVED_START": 4
+      }
+    },
+    "M1": {
+      "executed": 152,
+      "statuses": {
+        "PASS": 152
+      },
+      "semantic_statuses": {
+        "PASS": 148,
+        "PROFILE_RESERVED_START": 4
+      }
+    },
+    "M2": {
+      "executed": 152,
+      "statuses": {
+        "PASS": 152
+      },
+      "semantic_statuses": {
+        "PASS": 148,
+        "PROFILE_RESERVED_START": 4
+      }
+    },
+    "BOTH": {
+      "executed": 152,
+      "statuses": {
+        "PASS": 152
+      },
+      "semantic_statuses": {
+        "PASS": 148,
+        "PROFILE_RESERVED_START": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Byte-exact acquisition copies stay local; hashes and matching excerpts are committed.
+rvv_ch*.inc
+rvv_insn.S
+rvv_insn.h

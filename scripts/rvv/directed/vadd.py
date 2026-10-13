@@ -80,6 +80,15 @@ def integer_cases():
     return result
 
 def manifest_cases(family):
+    if family=='widen154':
+      import widen154_next
+      return widen154_next.cases()
+    if family=='mac154qemu':
+      import mac152_next
+      return mac152_next.qemu_cases()
+    if family=='mac154':
+      import mac152_next
+      return mac152_next.cases()
     if family=='compare152':
       import compare151_next
       return compare151_next.cases()
@@ -125,6 +134,12 @@ def arithmetic(c,a,z):
     return (value % (1<<c['sew'])).to_bytes(c['sew']//8,'little')
 
 def initial(c):
+    if c.get('family')=='widen154':
+      import widen154_next
+      return widen154_next.initial(c)
+    if c.get('family')=='mac154':
+      import mac152_next
+      return mac152_next.initial(c)
     if c.get('family')=='compare152':
       import compare151_next
       return compare151_next.initial(c)
@@ -173,6 +188,12 @@ def decode(c,raw):
     return pre,post,raw[96:96+32*b],raw[96+32*b:]
 
 def check_isa(c,raw,rc=0,timeout=False):
+    if c.get('family')=='widen154':
+      import widen154_next
+      return widen154_next.check_isa(c,raw,rc,timeout)
+    if c.get('family')=='mac154':
+      import mac152_next
+      return mac152_next.check_isa(c,raw,rc,timeout)
     if c.get('family')=='compare152':
       import compare151_next
       return compare151_next.check_isa(c,raw,rc,timeout)
@@ -209,6 +230,12 @@ def check_isa(c,raw,rc=0,timeout=False):
     return True
 
 def check_reference(c,raw,reference):
+    if c.get('family')=='widen154':
+      import widen154_next
+      return widen154_next.check_reference(c,raw,reference)
+    if c.get('family')=='mac154':
+      import mac152_next
+      return mac152_next.check_reference(c,raw,reference)
     if c.get('family')=='compare152':
       import compare151_next
       return compare151_next.check_reference(c,raw,reference)
@@ -259,6 +286,12 @@ def assembly(cs):
       lines += [f'sw {scalar},48(a3)',f'.globl target_{tag}',f'target_{tag}:']
       if configuration:
         lines += [config.target(c)]
+      elif c.get('family')=='widen154':
+        import widen154_next
+        lines += [widen154_next.target(c)]
+      elif c.get('family')=='mac154':
+        import mac152_next
+        lines += [mac152_next.target(c)]
       elif c.get('family')=='compare152':
         import compare151_next
         lines += [compare151_next.target(c)]
@@ -369,7 +402,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
             vector_config={'vlen_exp':w.bit_length()-1,'elen_exp':6,'vstart':{'zero_required':{'arith':False}}}
             if manifest.get('family') in ('configuration147','configuration148'):
               vector_config['vl_use_ceil']=True
-            if manifest.get('family') in ('integer146','shiftminmax148','muldiv149','carry150','mergemove151','compare152'):
+            if manifest.get('family') in ('integer146','shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu'):
               vector_config['reserved_behavior']={'vstart_out_of_bounds':'Vstart_Ignore'}
             save(config,{'base':{'xlen':32},'extensions':{'V':vector_config,'D':{'supported':True}}})
             cmd=[sail,'--rv32','--config-override',config,'--stop-at-pc',sail_stop(root/unit/'sail.elf'),'--inst-limit','10000000','--test-signature',d/'signature','--signature-granularity','4',root/unit/'sail.elf']
@@ -427,7 +460,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='action',required=True)
-    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148','muldiv149','carry150','mergemove151','compare152'],default='vadd145');b.add_argument('--link',type=Path,required=True)
+    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu'],default='vadd145');b.add_argument('--link',type=Path,required=True)
     r=sub.add_parser('run');r.add_argument('--root',type=Path,required=True)
     for n in ['engine','spike','pk','sail','flags']: r.add_argument('--'+n,type=Path,required=True)
     r.add_argument('--jobs',type=int,default=2)

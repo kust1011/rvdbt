@@ -1,0 +1,12 @@
+{
+  "source": "https://raw.githubusercontent.com/riscv/riscv-isa-manual/main/src/unpriv/vector-common.adoc",
+  "sha256": "953eade975979f04181c1d34065696880cfa1b1ff7f0a6f185eaefe007d2316d",
+  "sections": [
+    "Vector Single-Width Integer Multiply-Add Instructions",
+    "Vector Widening Integer Add/Subtract",
+    "Vector Widening Integer Multiply Instructions",
+    "vreg_overlap_legal",
+    "vreg_source_eew_rsv",
+    "vreg_overlap_agn"
+  ]
+}

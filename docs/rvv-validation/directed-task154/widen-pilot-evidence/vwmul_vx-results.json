@@ -1,0 +1,56 @@
+{
+  "form": "vwmul.vx",
+  "planned_per_arm": 139,
+  "arms": {
+    "Reference": {
+      "executed": 139,
+      "statuses": {
+        "PASS": 139
+      },
+      "semantic_statuses": {
+        "PASS": 131,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "B": {
+      "executed": 139,
+      "statuses": {
+        "PASS": 139
+      },
+      "semantic_statuses": {
+        "PASS": 131,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M1": {
+      "executed": 139,
+      "statuses": {
+        "PASS": 139
+      },
+      "semantic_statuses": {
+        "PASS": 131,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M2": {
+      "executed": 139,
+      "statuses": {
+        "PASS": 139
+      },
+      "semantic_statuses": {
+        "PASS": 131,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "BOTH": {
+      "executed": 139,
+      "statuses": {
+        "PASS": 139
+      },
+      "semantic_statuses": {
+        "PASS": 131,
+        "PROFILE_RESERVED_START": 8
+      }
+    }
+  }
+}

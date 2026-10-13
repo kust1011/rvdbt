@@ -64,6 +64,12 @@ def audit(root,out):
                     valid=word>>25==0x40 and (word>>15)&31==c['rs1'] and (word>>20)&31==c['rs2']
                 if not valid:raise ValueError('configuration form/operand mismatch')
                 expected_word=word
+            elif c.get('family')=='widen154':
+                import widen154_next
+                expected_word=widen154_next.instruction(c)
+            elif c.get('family')=='mac154':
+                import mac152_next
+                expected_word=mac152_next.instruction(c)
             elif c.get('family')=='compare152':
                 import compare151_next
                 expected_word=compare151_next.instruction(c)
@@ -140,7 +146,7 @@ def audit(root,out):
         for row in rows:
             classification=ids[row['case']]['classification']
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'OBSERVED_RESERVED' if classification=='reserved-preserve' else 'PROFILE_PASS' if classification=='reserved-vstart-profile' else 'PROFILE_UNSUPPORTED_VTYPE' if classification=='unsupported-vtype' and manifest.get('family')=='configuration148' else 'PASS'
-    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150','mergemove151','compare152'):
+    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu'):
         for row in rows:
             c=ids[row['case']]
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'PROFILE_RESERVED_START' if c['vstart']>=c['vlmax'] else 'PASS'

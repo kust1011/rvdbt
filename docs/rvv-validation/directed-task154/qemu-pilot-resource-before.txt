@@ -1,0 +1,28 @@
+ 18:06:09 up 5 days, 21:44,  9 users,  load average: 14.13, 13.68, 10.71
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056  9845469184  3782168576    37900288 36207984640 39170895872
+Swap:     8589930496  4021780480  4568150016
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1898597412864 13013434368 100% /
+Cpus_allowed:	ffffffff
+Cpus_allowed_list:	0-31
+USER         PID  NI %CPU %MEM COMMAND
+vick     2147579  10  382  1.8 python3
+vick     2453852  10  100  0.0 sail_riscv_sim
+vick     2453855  10  100  0.0 sail_riscv_sim
+vick     2453869  10  100  0.0 sail_riscv_sim
+vick     2453866  10 99.6  0.0 sail_riscv_sim
+vick     2454117  10 96.7  0.5 python3
+vick     2454415  10 60.0  0.0 spike
+vick     2410159  10  2.6  0.0 python3
+vick     2423667  10  1.2  0.0 python3
+root     3572115   0  0.9  0.0 envoy
+kyle0     630920   0  0.8  0.6 claude
+root        1969   0  0.7  0.9 dockerd
+kyle0      13441   0  0.6  0.6 claude
+kyle0     272816   0  0.6  0.6 claude
+kyle0    2831991   0  0.6  0.7 claude
+kyle0     648389   0  0.6  0.5 claude
+10001    3571292   0  0.6  0.1 service
+kyle0     619233   0  0.5  0.5 claude
+room502     3360   0  0.5  0.6 java

@@ -1,0 +1,23 @@
+{
+  "repository": "romanheros/qemu",
+  "commit": "7a35c902707087c8e1b77a3c82c54b73ffa17703",
+  "files": {
+    "rvv_insn.S": "4d61684e8bf1c78d60a908ba4f728cc7422b02f00cbb3f4aa55655d16f3a289e",
+    "vnmsub_vx.c": "3210fe86aa2fcbb48b031e18e3253f2d1bd3e641c2067ed886b3c590cd4f07b5",
+    "MAC_WRAPPER_EXCERPTS.txt": "6ba68fda5fc24202b788d1d1b06b88cf6b676fd217ffd9b3169bd5c5246a82e3",
+    "rvv_ch8.inc": "351688519afa8784250c5d7dfa752214d9733d866bcc3141f504d2e99c5eaaa3",
+    "rvv_insn.h": "c1297d78f9d11438d626f099ccff320762db5905a1b5455adb14638143e5c4f6",
+    "vnmsac_vv.c": "ee41c749a7107e4e7a73a02abedd1b3e5943c49d5d6fbafc33c7eab618012c7d",
+    "vmacc_vx.c": "b0948a23edac001bed732fe8db2c77410fcdbfa40f5007e29e0b8b286c7fb8f2",
+    "vnmsub_vv.c": "e4c12203d71e58b7a8885af5c5fff9f74a3ae570bd85c9175b16b3f54d2102e8",
+    "vmadd_vx.c": "ca135ae3673526217d1e94afde47cb7294ec538096f6d440725bc30619545321",
+    "vmadd_vv.c": "91de713f084a554c23fb75f1c0bf3e8a13ad0175156bc6acf29e0f884d80bd0f",
+    "rvv_ch12.inc": "9d37b904660bd6e2043d069d02e5caca8b24658892bf26551e9e0219f3f2b49f",
+    "vmacc_vv.c": "de7f4b305f59f3f2c2f35be2450002c831a3a68685a43aa04817c388282e1974",
+    "vnmsac_vx.c": "1c061ffbb0d6c1f1481e11dee7c7f72f85226993de79016514b252b02b474b15",
+    "rvv_ch14.inc": "20a08a6df9ba538961d222bffe9aba54462629929ce72a6674142bc3be8d8fd7",
+    "rvv_ch16_17.inc": "b3e6b3d528f7a73485efa289d1c143f61fe028f702268fa94f3ed2a15b6a16b8"
+  },
+  "matching_wrappers": 64,
+  "excerpt_adaptation": "matching bodies only; trailing whitespace normalized, original rvv_ch12.inc hash retained"
+}

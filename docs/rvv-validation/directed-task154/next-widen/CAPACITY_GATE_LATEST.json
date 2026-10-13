@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-13 10:11:58 UTC",
+  "free_bytes": 13145706496,
+  "reserve_bytes": 10737418240,
+  "estimated_batch_bytes": 2147483648,
+  "can_launch": true,
+  "execution": "NOT_RUN",
+  "note": "Task154 develops and pilots widening; full batch is the next executable entry. Initial failed capacity preflight remains in CAPACITY_GATE.json."
+}

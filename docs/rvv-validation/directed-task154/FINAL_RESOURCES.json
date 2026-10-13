@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-13 10:11:58 UTC",
+  "free_bytes": 13145706496,
+  "reserve_bytes": 10737418240,
+  "estimated_widen_batch_bytes": 2147483648,
+  "nice": 10,
+  "build_jobs": 4,
+  "run_jobs": 8,
+  "taskset": false,
+  "guest_workers_per_task154": 8,
+  "combined_guest_worker_limit": 16,
+  "load": "18:11:58 up 5 days, 21:50,  7 users,  load average: 7.16, 10.33, 10.28",
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:     49016365056 11627999232  2711273472    37888000 35500474368 37388365824\nSwap:     8589930496  4021714944  4568215552\n",
+  "guests": [
+    " 10 python3 scripts/vadd.py run --root /home/vick/rvv-directed-task155/full/corpus --engine /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --spike /home/vick/rvv-directed-task145/deps/spike --pk /home/vick/rvv-directed-task145/deps/pk --sail /home/vick/rvv-act4-tools/bin/sail_riscv_sim --flags /home/vick/rvv-directed-task153/FLAGS.json --jobs 8"
+  ],
+  "can_launch_next_widen_capacity": true
+}

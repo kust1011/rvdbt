@@ -1,0 +1,51 @@
+{
+  "form": "vmacc.vx",
+  "planned_per_arm": 12,
+  "arms": {
+    "Reference": {
+      "executed": 12,
+      "statuses": {
+        "PASS": 12
+      },
+      "semantic_statuses": {
+        "PASS": 12
+      }
+    },
+    "B": {
+      "executed": 12,
+      "statuses": {
+        "PASS": 12
+      },
+      "semantic_statuses": {
+        "PASS": 12
+      }
+    },
+    "M1": {
+      "executed": 12,
+      "statuses": {
+        "PASS": 12
+      },
+      "semantic_statuses": {
+        "PASS": 12
+      }
+    },
+    "M2": {
+      "executed": 12,
+      "statuses": {
+        "PASS": 12
+      },
+      "semantic_statuses": {
+        "PASS": 12
+      }
+    },
+    "BOTH": {
+      "executed": 12,
+      "statuses": {
+        "PASS": 12
+      },
+      "semantic_statuses": {
+        "PASS": 12
+      }
+    }
+  }
+}

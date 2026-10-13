@@ -1,0 +1,56 @@
+{
+  "form": "vwsub.wx",
+  "planned_per_arm": 137,
+  "arms": {
+    "Reference": {
+      "executed": 137,
+      "statuses": {
+        "PASS": 137
+      },
+      "semantic_statuses": {
+        "PASS": 129,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "B": {
+      "executed": 137,
+      "statuses": {
+        "PASS": 137
+      },
+      "semantic_statuses": {
+        "PASS": 129,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M1": {
+      "executed": 137,
+      "statuses": {
+        "PASS": 137
+      },
+      "semantic_statuses": {
+        "PASS": 129,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "M2": {
+      "executed": 137,
+      "statuses": {
+        "PASS": 137
+      },
+      "semantic_statuses": {
+        "PASS": 129,
+        "PROFILE_RESERVED_START": 8
+      }
+    },
+    "BOTH": {
+      "executed": 137,
+      "statuses": {
+        "PASS": 137
+      },
+      "semantic_statuses": {
+        "PASS": 129,
+        "PROFILE_RESERVED_START": 8
+      }
+    }
+  }
+}

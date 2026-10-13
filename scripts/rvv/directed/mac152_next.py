@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Prepared destructive integer multiply-add; guest admission NOT_RUN."""
+"""Prepared destructive integer multiply-add; independent fixed-reference execution."""
 FORMS={op:('vv','vx') for op in ('vmacc','vnmsac','vmadd','vnmsub')}
 FUNCT6={'vmadd':41,'vnmsub':43,'vmacc':45,'vnmsac':47}
 
@@ -22,6 +22,7 @@ def initial(c):
       for i in range(c['group_registers']*b//e):
         value=c.get(('witness_a','witness_z','witness_d')[col],triples[i%len(triples)][col])&m
         raw[reg*b+i*e:reg*b+(i+1)*e]=value.to_bytes(e,'little')
+    if c.get("qemu_odd"):raw[:b]=bytes([0xaa])*b
     return bytes(raw)
 
 def lane(c,before,i):
@@ -57,7 +58,13 @@ def check_isa(c,raw,rc=0,timeout=False):
 
 def check_reference(c,raw,reference):
     import vadd as v
-    return v.check_reference(dict(c,family='baseline-mac152'),raw,reference)
+    if not c.get('qemu_odd'):return v.check_reference(dict(c,family='baseline-mac152'),raw,reference)
+    before=v.decode(c,raw)[2];after=v.decode(c,raw)[3];expected=v.decode(c,reference)[3];b=c['vlen']//8;e=c['sew']//8
+    for i in range(c['vstart'],c['vl']):
+      if before[i//8]>>(i%8)&1:
+        off=c['vd']*b+i*e
+        if after[off:off+e]!=expected[off:off+e]:raise ValueError('independent reference active mismatch')
+    return True
 
 def cases():
     import vadd as v
@@ -65,7 +72,7 @@ def cases():
     for op in FORMS:
       current=[]
       for old in template:
-        c=dict(old,mnemonic=op,family='mac-next152',seed=154,execution='NOT_RUN')
+        c=dict(old,mnemonic=op,family='mac154',seed=154)
         c['id']=old['id'].replace('vadd-',op+'-',1);c['unit']=old['unit'].replace('vadd-',op+'-',1)
         rows.append(c);current.append(c)
       for base in [c for c in current if c['tag']=='length0']:
@@ -79,3 +86,14 @@ def cases():
 
 def reserved_declarations():
     return [dict(form=op+'.'+form,kind=kind,execution='NOT_RUN',expected='reserved encoding') for op,forms in FORMS.items() for form in forms for kind in ('masked-nonmask-destination-overlap-v0','misaligned-integer-LMUL-group')]
+
+
+def qemu_cases():
+    """New Task154 source-inspired scenarios; distinct from prepared full manifest."""
+    rows=[]
+    for base in cases():
+      if base['tag']!='length0' or (base['vlen'],base['sew'],base['lmul']) not in [(128,8,'m1'),(128,64,'m4'),(1024,8,'m8'),(4096,8,'m8')]:continue
+      for tag,mask,vl,odd in [('qemu-partial','none',base['vlmax']-1,False),('qemu-even','alternating',base['vlmax'],False),('qemu-odd','alternating',base['vlmax'],True)]:
+        c=dict(base,tag=tag,mask=mask,vl=vl,qemu_odd=odd,witness_d=int.from_bytes(bytes([0x11])*(base['sew']//8),'little'),operand=0x55667788)
+        c['id']=base['id'].removesuffix('length0')+tag;c['unit']=base['unit']+'-qemu';rows.append(c)
+    return rows

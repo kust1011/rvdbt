@@ -1,0 +1,56 @@
+{
+  "form": "vmacc.vv",
+  "planned_per_arm": 4897,
+  "arms": {
+    "Reference": {
+      "executed": 4897,
+      "statuses": {
+        "PASS": 4897
+      },
+      "semantic_statuses": {
+        "PASS": 4637,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 4897,
+      "statuses": {
+        "PASS": 4897
+      },
+      "semantic_statuses": {
+        "PASS": 4637,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 4897,
+      "statuses": {
+        "PASS": 4897
+      },
+      "semantic_statuses": {
+        "PASS": 4637,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 4897,
+      "statuses": {
+        "PASS": 4897
+      },
+      "semantic_statuses": {
+        "PASS": 4637,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 4897,
+      "statuses": {
+        "PASS": 4897
+      },
+      "semantic_statuses": {
+        "PASS": 4637,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}
