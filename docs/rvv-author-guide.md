@@ -15,14 +15,48 @@ libriscv records remain in the archive but are not used for this validation
 claim. The immutable scope archive is the Task71 snapshot; the current scope
 and Ara review package linked below supersede its aggregate counts.
 
-The final current-build evidence is [Task142](rvv-validation/host512-task142/README.md):
+The retained historical external-build evidence is [Task142](rvv-validation/host512-task142/README.md):
 source `8111040` with reviewed signal-copy correction `ad5e3c8`, executable
 `e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b`.
 Its 21,316 retained CHIPS/ACT/Ara calls reuse original inputs and predicates;
 595 checked forms remain the same union. Earlier builds, including Task138,
-retain historical attribution and earn no final-build credit. Use the explicit
+retain historical attribution and earn no credit for a later build. Use the explicit
 Task142 raw root and already published source/checker packages in that reader;
 main publishes the new raw asset and reviewed source revision after review.
+
+## Current directed-method handoff
+
+Use the [delivery entry](rvv-validation/delivery-task182/README.md) and
+`python3 scripts/rvv_verify.py show --form vadd.vv` to inspect a form. The
+627-form catalog has 595 applicable forms and 32 profile exclusions; its directed
+index joins each applicable mnemonic/operand form to accepted manifest rows,
+selected dimensions, exact oracle scope, build/receipt identities and source/read
+commands. Historical family PASS is mixed-build evidence. Final179 all-form and
+external replay remain pending Task181; the selection plan is not an execution total.
+
+Each directed case initializes prestate, runs the target and captures poststate.
+The checker runs outside the DUT and validates input/packet identities, full
+observer state, independent ISA predicates and defined values against pinned
+executed references. Agnostic values use allowed sets; exact-subtree predicates
+bound unordered FP reductions. Read the form's actual dimensions and missing
+fields: they are not a Cartesian product. For an external original case, use
+[all-form navigation](rvv-validation/all-form-records/README.md), follow its
+source/assertion/package reader and distinguish offline rechecking from guest
+replay. For directed reruns, `command` prints the exact complete accepted unit
+and `smoke` reuses that unit; fresh vadd and retained package procedures are in
+the delivery entry. Supply pinned tools/raw inputs and a new output directory.
+
+The completed [P3 receipt](rvv-validation/directed-task180/FINAL_TOTALS.json)
+checks 2,418 cases per arm and 9,672 DUT checks on frozen179 trace0. Its code/PC/
+frame audit verifies M1 producer-consumer retention and Both publication/skip
+ordering in the declared sequences; full trace1 remains unrun. This adds no form
+credit. Tests found FMA missing NV for zero×infinity with a qNaN addend, RMM
+FP64→FP32 narrowing missing UF while returning minimum-normal bits, and scalar
+insertion overwriting prestart element0 for nonzero vstart. Repairs retain old
+failures and unchanged predicates. Source and before/after pointers are in
+SESSION0_RESULT_167/172 and `73fc8e2:SESSION3_RESULT_171.md`;174 integrates the
+three fixes. The historical21316 external calls below and the original performance
+campaign retain their own identities. No later all-form PASS is inferred.
 
 When writing about this result, distinguish four evidence classes:
 

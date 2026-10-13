@@ -267,3 +267,14 @@ author guide and reply draft updates. This local code/test delivery does not
 publish, email, or close those dependencies.
 
 Task183 actual bounded results and remaining gaps: [SESSION0_RESULT_183.md](../../../SESSION0_RESULT_183.md).
+
+## Thesis and author handoff
+
+Task184 updated the existing [author guide](../../rvv-author-guide.md) and the
+local bilingual thesis §3.6/§5.7 plus appendix generator. The author guide answers
+form indexing, compared state/oracles, original-case inspection/replay and the
+three semantic defects actually found. P3 is completed on179 trace0; full181
+all-form/external totals remain pending. Historical142 external21316 calls and
+performance records keep their original attribution. Exact prose replacements,
+evidence paths and completed documentation checks are recorded in
+`SESSION0_RESULT_184.md`; the thesis README holds the editor-side replacement list.
