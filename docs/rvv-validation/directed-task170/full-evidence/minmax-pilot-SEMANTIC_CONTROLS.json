@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "actual_mutations": 660,
+  "effective_rejections": 660,
+  "effective_allowed_variants": 80,
+  "by_form_control": [
+    {
+      "form": "vfmax.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "min-max-swapped",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "wrong-qNaN-number-selection",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "wrong-zero-tie-sign",
+      "count": 40
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "min-max-swapped",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "wrong-qNaN-number-selection",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "wrong-zero-tie-sign",
+      "count": 40
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "min-max-swapped",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "wrong-qNaN-number-selection",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "wrong-zero-tie-sign",
+      "count": 40
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "min-max-swapped",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "wrong-qNaN-number-selection",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "wrong-zero-tie-sign",
+      "count": 40
+    }
+  ],
+  "allowed_by_form": [
+    {
+      "form": "vfmax.vf",
+      "control": "vector-tail",
+      "count": 20
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "vector-tail",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "vector-tail",
+      "count": 20
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "vector-tail",
+      "count": 20
+    }
+  ],
+  "checker_sha256": "880cfa8132e25ff975f8bb41bbf41dcb1ac5d963a74518358b918d3960a8df1d"
+}

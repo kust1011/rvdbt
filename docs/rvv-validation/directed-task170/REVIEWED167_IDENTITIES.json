@@ -1,0 +1,14 @@
+{
+  "dbt/qmc/qcg/qra.cpp": "ab2f2e54f65f6a8f1259581049fdd7a42bcc60424aad2a14f96c913be1508ce4",
+  "dbt/qmc/qcg/arch_traits.h": "d07c9170d0239ca8fd26335fbadec5e471c64d8f840f9d847c684e351887ed6b",
+  "dbt/guest/rv32_qir.cpp": "7ccee999bf3f6b16d29b83d7b4adf0ce8be9df90ed196bed53e1dae8d7846e07",
+  "dbt/qmc/qcg/qemit.cpp": "7f558d9b3a65938beaaaa02e38b60c7508b5c228edd9a0326bbcbf605807572c",
+  "dbt/guest/rv32_vector_fma_invalid_test.cpp": "6ba0fe864901ec81236fe725e0425ad9485f6257b133675d8048010cf0c4ddd6",
+  "scripts/rvv/directed/replay_fma167.py": "b852eb37e34c8d86fa2a84af117b7aa6655aa884d916957c8a7b46cdb9e4f23d",
+  "scripts/rvv/directed/review_fma167.py": "8e15a7ab1162a8a74c8d6f4aaf44bbad6c289a5892c2ac0af50f6b0f10fd993e",
+  "docs/rvv-validation/directed-task167/BUILD_MANIFEST.json": "c6c9370522234297a2ad218dc991b0b26734a185089d660a37afd30727664580",
+  "docs/rvv-validation/directed-task167/REGRESSION_MANIFEST.json": "cbc5513c986e73d3e32f98d2aaa8a8779434c3ab7e5ec6f27da357727d43479b",
+  "docs/rvv-validation/directed-task167/WITNESS_ROUTING_AND_BEFORE_AFTER.json": "1048d787478e86759e25008c767359d75e7c1aa3a0d2638bc225dc93897dd715",
+  "docs/rvv-validation/directed-task167/PER_PC_ROUTING.json": "36d12a1a719ba845357ed2b47a987f992518142f2905d0cd70d68b28e26c1bf0",
+  "docs/rvv-validation/directed-task167/full-evidence/AUDIT.json": "c230de88f963039fce3c6e0d668752ffff801d661773b31bfd3499632d6cab06"
+}

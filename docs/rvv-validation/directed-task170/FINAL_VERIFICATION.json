@@ -1,0 +1,611 @@
+{
+  "status": "PASS",
+  "final_audit": {
+    "planned_cases": 96681,
+    "executed_case_checks": 483405,
+    "planned_commands": 11340,
+    "executed_commands": 11340,
+    "aggregate_command_seconds": 2730.372390198754,
+    "counts": {
+      "Reference": {
+        "PASS": 96681,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "B": {
+        "PASS": 96681,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "M1": {
+        "PASS": 96681,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "M2": {
+        "PASS": 96681,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "BOTH": {
+        "PASS": 96681,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      }
+    },
+    "failures": [],
+    "adapter_verified_units": 1134,
+    "full_state": "32 vector registers, 10 CSRs, scalar s0 and fs0 raw bits pre/post",
+    "method_admission": "NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission"
+  },
+  "controls": {
+    "parts": [
+      {
+        "part": "/home/vick/rvv-directed-task170/minmax-pilot",
+        "generic_rejections": 4670,
+        "semantic_rejections": 660,
+        "effective_allowed_variants": 80,
+        "generic_sha256": "b562fc217aec508cc679adacc8c0c99456a5bb4a3c27660d3f631d5ec725d985",
+        "semantic_sha256": "116a37c9a11cf1e880c73f55a094ca65c3b9eb8d64828951eb18411af98e0333"
+      },
+      {
+        "part": "/home/vick/rvv-directed-task170/minmax-remaining",
+        "generic_rejections": 59010,
+        "semantic_rejections": 8280,
+        "effective_allowed_variants": 1000,
+        "generic_sha256": "406a35d727354a53f1753b24d006dd3e5728bbe5a89d60b20a551ef9db8bfe7c",
+        "semantic_sha256": "ba210c02aff49048e52266462ccea233a4a58f540ad0e211f7d6073933ed2f3f"
+      },
+      {
+        "part": "/home/vick/rvv-directed-task170/sign-pilot",
+        "generic_rejections": 7005,
+        "semantic_rejections": 2010,
+        "effective_allowed_variants": 120,
+        "generic_sha256": "366e030e5e83fff0efa08e9acd0b2f720b3bda5a8a88faea79aae669ca296e39",
+        "semantic_sha256": "c46e8d34e5ae5b3450b77f14563c148eb41b3655447c5fd63997cdb2b054e92b"
+      },
+      {
+        "part": "/home/vick/rvv-directed-task170/sign-remaining",
+        "generic_rejections": 88515,
+        "semantic_rejections": 25260,
+        "effective_allowed_variants": 1500,
+        "generic_sha256": "b7f13d937b511c4864daf47cd081f4e928ccf18d5bd59be48dc71cebbd37cab3",
+        "semantic_sha256": "bf6512175c49f8ab979c784ebf59c01a52d14894d9d4792e246be0b2c87298ec"
+      },
+      {
+        "part": "/home/vick/rvv-directed-task170/compare-class-pilot-v2",
+        "generic_rejections": 14170,
+        "semantic_rejections": 3180,
+        "effective_allowed_variants": 2780,
+        "generic_sha256": "ffe89ba30b0b71f7b53c1e568992bd7309fb53561058375b7d2052b5a3ec9a42",
+        "semantic_sha256": "2e42feda1351cf8ebd86e647647e5e5291bfffe6622ebdf1bcd6fceba38dd461"
+      },
+      {
+        "part": "/home/vick/rvv-directed-task170/compare-class-remaining-v2",
+        "generic_rejections": 174360,
+        "semantic_rejections": 39930,
+        "effective_allowed_variants": 35590,
+        "generic_sha256": "a2cfa444fa55c41b63cceb84a4408b0f28b449fdf9c28d84b895525fde4e167a",
+        "semantic_sha256": "5ef536fba296fb45eb8873e9f38babc9340e70d5a68ffc9232272071bca87418"
+      }
+    ],
+    "selected_generic_actual_packets": 87060,
+    "generic_effective_rejections": 347730,
+    "semantic_effective_rejections": 79320,
+    "total_effective_rejections": 427050,
+    "effective_allowed_variants": 41070,
+    "generic_by_control": {
+      "NV-sticky-or-suppression": 87060,
+      "other-register": 86760,
+      "scalar-preservation-box": 87060,
+      "active-result": 75510,
+      "prestart-preservation": 11340
+    },
+    "semantic_by_form_control": [
+      {
+        "form": "vfclass.v",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vfclass.v",
+        "control": "wrong-class-bit-or-upper-bits",
+        "count": 2700
+      },
+      {
+        "form": "vfmax.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vfmax.vf",
+        "control": "min-max-swapped",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vf",
+        "control": "obsolete-sNaN-canonical-result",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vf",
+        "control": "wrong-qNaN-number-selection",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vf",
+        "control": "wrong-zero-tie-sign",
+        "count": 540
+      },
+      {
+        "form": "vfmax.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vfmax.vv",
+        "control": "min-max-swapped",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vv",
+        "control": "obsolete-sNaN-canonical-result",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vv",
+        "control": "wrong-qNaN-number-selection",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vv",
+        "control": "wrong-zero-tie-sign",
+        "count": 540
+      },
+      {
+        "form": "vfmin.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vfmin.vf",
+        "control": "min-max-swapped",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vf",
+        "control": "obsolete-sNaN-canonical-result",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vf",
+        "control": "wrong-qNaN-number-selection",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vf",
+        "control": "wrong-zero-tie-sign",
+        "count": 540
+      },
+      {
+        "form": "vfmin.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vfmin.vv",
+        "control": "min-max-swapped",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vv",
+        "control": "obsolete-sNaN-canonical-result",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vv",
+        "control": "wrong-qNaN-number-selection",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vv",
+        "control": "wrong-zero-tie-sign",
+        "count": 540
+      },
+      {
+        "form": "vfsgnj.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vfsgnj.vf",
+        "control": "wrong-NaN-canonicalization",
+        "count": 960
+      },
+      {
+        "form": "vfsgnj.vf",
+        "control": "wrong-sign-injection",
+        "count": 2850
+      },
+      {
+        "form": "vfsgnj.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vfsgnj.vv",
+        "control": "wrong-NaN-canonicalization",
+        "count": 810
+      },
+      {
+        "form": "vfsgnj.vv",
+        "control": "wrong-sign-injection",
+        "count": 2700
+      },
+      {
+        "form": "vfsgnjn.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vfsgnjn.vf",
+        "control": "wrong-NaN-canonicalization",
+        "count": 960
+      },
+      {
+        "form": "vfsgnjn.vf",
+        "control": "wrong-sign-injection",
+        "count": 2850
+      },
+      {
+        "form": "vfsgnjn.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vfsgnjn.vv",
+        "control": "wrong-NaN-canonicalization",
+        "count": 810
+      },
+      {
+        "form": "vfsgnjn.vv",
+        "control": "wrong-sign-injection",
+        "count": 2700
+      },
+      {
+        "form": "vfsgnjx.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vfsgnjx.vf",
+        "control": "wrong-NaN-canonicalization",
+        "count": 960
+      },
+      {
+        "form": "vfsgnjx.vf",
+        "control": "wrong-sign-injection",
+        "count": 2850
+      },
+      {
+        "form": "vfsgnjx.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vfsgnjx.vv",
+        "control": "wrong-NaN-canonicalization",
+        "count": 810
+      },
+      {
+        "form": "vfsgnjx.vv",
+        "control": "wrong-sign-injection",
+        "count": 2700
+      },
+      {
+        "form": "vmfeq.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vmfeq.vf",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 3120
+      },
+      {
+        "form": "vmfeq.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vmfeq.vv",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 2970
+      },
+      {
+        "form": "vmfge.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vmfge.vf",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 3120
+      },
+      {
+        "form": "vmfgt.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vmfgt.vf",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 3120
+      },
+      {
+        "form": "vmfle.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vmfle.vf",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 3120
+      },
+      {
+        "form": "vmfle.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vmfle.vv",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 2970
+      },
+      {
+        "form": "vmflt.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vmflt.vf",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 3120
+      },
+      {
+        "form": "vmflt.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vmflt.vv",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 2970
+      },
+      {
+        "form": "vmfne.vf",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 960
+      },
+      {
+        "form": "vmfne.vf",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 3120
+      },
+      {
+        "form": "vmfne.vv",
+        "control": "exact-NaN-NV-or-boxing",
+        "count": 810
+      },
+      {
+        "form": "vmfne.vv",
+        "control": "wrong-ordered-or-unordered-bit",
+        "count": 2970
+      }
+    ],
+    "effective_allow_by_form": [
+      {
+        "form": "vfclass.v",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vf",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfmax.vv",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vf",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfmin.vv",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfsgnj.vf",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfsgnj.vv",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfsgnjn.vf",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfsgnjn.vv",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfsgnjx.vf",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vfsgnjx.vv",
+        "control": "vector-tail",
+        "count": 270
+      },
+      {
+        "form": "vmfeq.vf",
+        "control": "mask-tail",
+        "count": 3660
+      },
+      {
+        "form": "vmfeq.vf",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfeq.vv",
+        "control": "mask-tail",
+        "count": 3510
+      },
+      {
+        "form": "vmfeq.vv",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfge.vf",
+        "control": "mask-tail",
+        "count": 3660
+      },
+      {
+        "form": "vmfge.vf",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfgt.vf",
+        "control": "mask-tail",
+        "count": 3660
+      },
+      {
+        "form": "vmfgt.vf",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfle.vf",
+        "control": "mask-tail",
+        "count": 3660
+      },
+      {
+        "form": "vmfle.vf",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfle.vv",
+        "control": "mask-tail",
+        "count": 3510
+      },
+      {
+        "form": "vmfle.vv",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmflt.vf",
+        "control": "mask-tail",
+        "count": 3660
+      },
+      {
+        "form": "vmflt.vf",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmflt.vv",
+        "control": "mask-tail",
+        "count": 3510
+      },
+      {
+        "form": "vmflt.vv",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfne.vf",
+        "control": "mask-tail",
+        "count": 3660
+      },
+      {
+        "form": "vmfne.vf",
+        "control": "masked-body",
+        "count": 210
+      },
+      {
+        "form": "vmfne.vv",
+        "control": "mask-tail",
+        "count": 3510
+      },
+      {
+        "form": "vmfne.vv",
+        "control": "masked-body",
+        "count": 210
+      }
+    ],
+    "generic_allowance_checks_including_identity_calls": {
+      "vector-tail-agnostic": 3300,
+      "mask-tail-independent-variant": 70900
+    },
+    "metadata_note": "The semantic tool actual_mutations field counts logged rejection/mask records and omits vector-tail allowance records. Exact effective totals here use its separately asserted rejection/changed-allowance counters. Generic allowance calls may be identity variants and receive no effective-allowance credit."
+  },
+  "source": {
+    "scripts/rvv/directed/fpcompare170.py": "e75a12143f19baec99424f385629fbe0a6e4ab2401c0a6a6416a2069ae288957",
+    "scripts/rvv/directed/fp157.py": "31062b611a55c745f4ba3f35fdc998cc9122fda9071892d4a23cbc2d723631db",
+    "scripts/rvv/directed/vadd.py": "c12efce60e83ac9a7fd837f3e700fd616b1b668227e661184ad95826199c19aa",
+    "scripts/rvv/directed/audit.py": "45f94e3dca002e40f55804417b70df09a1eb15d17e2ca441f956eceaae4f4429",
+    "scripts/rvv/directed/prepare_fpcompare170.py": "65eb22479ae5c4651cebb8a0e9cd08705a9f126380f57947d4507db46892d734",
+    "scripts/rvv/directed/controls_fpcompare170.py": "c09ec4b5c35a62b8e8547dcc2798c53448fb88b924e9baa1d12e2e09728bcdfb",
+    "scripts/rvv/directed/semantic_controls170.py": "da15515b40cbc46a80c7c33ab76a29554da9cbc677bf3666cbe0d813f0cbcbd0",
+    "scripts/rvv/directed/live_scalar170.py": "9eba064e7d5a081cb4ef21e37d5465d90a52c709ea161b8cae553ae8e0d883c8",
+    "scripts/rvv/directed/repair_fpcompare170.py": "87e29803c811d28b52540fe1354ec52ea0fd9cc278f031be27bd17cc497fec4d",
+    "scripts/rvv/directed/review_fpcompare170.py": "ec448975e0cd9780ea9c946493ac53039f7249eb94f4db9387ee690529653af8",
+    "scripts/rvv/directed/run_fpcompare170.sh": "c99a8f56648bed948d4ef59b0b31db4b721c5bb39cb676573df8a241aa568bdf",
+    "scripts/rvv/directed/run_repaired_fpcompare170.sh": "66f34486c6afff743412333151fb2ab040fe2146cf83cccf7da371c8441657ab",
+    "scripts/rvv/directed/finalize_fpcompare170.sh": "be9b9cd7336ecaf39b881a2ffb60cfe95a22b7f9fdbeb8b7f406ab4398714ce3",
+    "scripts/rvv/directed/finalize_repaired_fpcompare170.sh": "82a73600c740a9b8670014b0798905a118004857a926e1a374d7a975fb8984bc",
+    "scripts/rvv/directed/source_fpcompare170.py": "46b3ea797566e497e0aa7d393703f14cc1341a280b4b167648453ceda2423815",
+    "scripts/rvv/directed/export_fpcompare170.py": "e796c20e87d7f1d0a314cb2982e0985b408e6af144b3b24b813ff1d9c9fc69cf",
+    "scripts/rvv/directed/qemu_fpcompare170.json": "99e86d0c258f63a4cb478caf6dfacb42109b2523d708d62dc9287cfbf060bf55"
+  },
+  "compact_evidence_hashes_verified": 35,
+  "retention": {
+    "path": "xbd:/home/vick/rvv-directed-task170",
+    "hashed_physical_files": 173815,
+    "manifest_sha256": "89559ad11266357e60870f0c6bf27b89d54abe57ff4091dd822b0d11a6db9d1f",
+    "verified_physical_files": 173815,
+    "all_verified": true,
+    "allocated_bytes": 2500730880,
+    "limits": "Snapshot excludes its own checksum/receipt and the subsequently written verification log. Original snapshots, raw failures, successful references and repaired raw remain retained; no guest was rerun for packaging."
+  },
+  "frozen167_DUT": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+  "old_session3_DUT_preserved": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+  "library": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+  "source_scope": "No production/allocator change; admitted frame review and focused scalar guest regression complete",
+  "external_tree": "Read-only xbd:/home/vick/rvv-directed-task170 after final verification",
+  "freeze_checks": {
+    "original": 87,
+    "semantic_controls": 1,
+    "repaired_tools": 74,
+    "repaired_manifest": 13,
+    "repaired_controller": 7
+  },
+  "signals": "requested after owned local commit, outside frozen evidence tree"
+}

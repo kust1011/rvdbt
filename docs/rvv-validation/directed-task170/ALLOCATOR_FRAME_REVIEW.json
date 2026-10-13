@@ -1,0 +1,63 @@
+{
+  "conclusion": "No live frame-internal scalar virtual value is destroyed in admitted production FMA frames; no allocator defect found",
+  "source_equality": {
+    "dbt/qmc/qcg/qra.cpp": {
+      "current": "ab2f2e54f65f6a8f1259581049fdd7a42bcc60424aad2a14f96c913be1508ce4",
+      "frozen167": "ab2f2e54f65f6a8f1259581049fdd7a42bcc60424aad2a14f96c913be1508ce4"
+    },
+    "dbt/qmc/qcg/arch_traits.h": {
+      "current": "d07c9170d0239ca8fd26335fbadec5e471c64d8f840f9d847c684e351887ed6b",
+      "frozen167": "d07c9170d0239ca8fd26335fbadec5e471c64d8f840f9d847c684e351887ed6b"
+    },
+    "dbt/guest/rv32_qir.cpp": {
+      "current": "7ccee999bf3f6b16d29b83d7b4adf0ce8be9df90ed196bed53e1dae8d7846e07",
+      "frozen167": "7ccee999bf3f6b16d29b83d7b4adf0ce8be9df90ed196bed53e1dae8d7846e07"
+    },
+    "dbt/qmc/qcg/qemit.cpp": {
+      "current": "7f558d9b3a65938beaaaa02e38b60c7508b5c228edd9a0326bbcbf605807572c",
+      "frozen167": "7f558d9b3a65938beaaaa02e38b60c7508b5c228edd9a0326bbcbf605807572c"
+    }
+  },
+  "allocator": {
+    "pool": "RDI/RSI are allocatable GPR_POOL entries",
+    "call_clobber": "both in GPR_CALL_CLOBBER",
+    "entry": "visitInstRVVTypedChunkBegin calls CallOp(true) BEFORE NoteChunkGroup(true)",
+    "spill": "CallOp spills every call-clobbered GPR local plus every dirty global",
+    "pinning": "PinSelect observes HAS_CALLS and returns without pinning when has_call is true. Independently, its call-free pinnable pool explicitly excludes RSI/RDI as codegen_scratch. Thus no pinned RDI/RSI global can bypass the frame entry spill."
+  },
+  "frame_closure": {
+    "standalone": "RvvEmitTypedFmaChunkGroup -> RvvEmitTypedFpChunkBody constructs VPR values only, state-relative loads/stores, VPR fbroadcast, masks/bracket; no scalar virtual definition or use",
+    "widening": "RvvEmitTypedFWidenChunkGroup uses vector widening and the same vchunkfma; no scalar virtual live through classification",
+    "run": "RvvEmitVectorRunGroup component SSA, f/x scalar broadcasts produce VPRs directly from CPUState; memory base offsets are state-backed, not allocated scalar virtuals; scalar guest instructions cut FormRun",
+    "scratch": "RAX/RDX/RDI/RSI are emitter-internal temporaries; no temporary read at subsequent member boundary; VPR0 and kscr are reserved; kact preserved; 16-byte stack classification slots balanced",
+    "run_memory": "InstVChunkLoad state-relative constructor supplies input0 as an I32 constant zero and uses base_state_offs/disp, rather than an address virtual GPR; the address-VOperand constructor is not used by production whole-load members. arch_traits.cpp assigns CT(vchunkload,r_ru32), so the zero constant remains an immediate; broadcasts use CT(...,r) with no scalar input operands."
+  },
+  "regression": {
+    "path": "xbd:/home/vick/rvv-directed-task170/live-scalar-v2",
+    "checks": 896,
+    "guest_units": 8,
+    "DUT_commands": 32,
+    "precisions": [
+      32,
+      64
+    ],
+    "forms": [
+      "vv",
+      "vf"
+    ],
+    "scalar_registers": "28 dirty guest GPRs, all except x0/sp/gp/tp, consumed after frame",
+    "consecutive": "four adjacent FMA targets, not a claim of multi-member M1 admission",
+    "initial_harness_failure": "live-scalar/ vf assembly operand order invalid; retained; no defect or DUT failure credit"
+  },
+  "review167": {
+    "production_diff": "f238a5d; invalid product classified independently of NaN addend in emitters/helper/kernels",
+    "regression": "read executable regression source and finalized manifests/receipts; no old corpus replay",
+    "replay": "read replay_fma167.py/review_fma167.py: pins, independent reference predicate before reuse, original FAIL receipts excluded from new-DUT view; unchanged old/fixed packet provenance retained",
+    "original_artifacts": "No Task164/167 frozen artifact overwritten"
+  },
+  "limits": "Source closure and focused guest scalar preservation establish the requested safety question; no arbitrary hand-constructed QIR scalar inserted into a production frame, no LLVM/Linux expansion",
+  "additional_source": {
+    "dbt/qmc/qir.h": "6aca72bc0f1026a325718c335f817a8c7dfd5a7bcd96517a106a0c65b2bc2506",
+    "dbt/qmc/qcg/arch_traits.cpp": "0edebcd1e53908b3bf56a773645e62fb0e53aa440bcde2518d45edac8fa17481"
+  }
+}

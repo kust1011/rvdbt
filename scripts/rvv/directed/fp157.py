@@ -156,6 +156,9 @@ def scalar_operand(c):
     return scalar(c) & ((1 << c['sew'])-1)
 
 def initial(c):
+    if c.get('family') == 'fpcompare170':
+        import fpcompare170
+        return fpcompare170.initial(c)
     if c.get('family') == 'fma164':
         import fma164
         return fma164.initial(c)
@@ -177,6 +180,9 @@ def initial(c):
     return bytes(raw)
 
 def target(c):
+    if c.get('family') == 'fpcompare170':
+        import fpcompare170
+        return fpcompare170.target(c)
     if c.get('family') == 'fma164':
         import fma164
         return fma164.target(c)
@@ -184,6 +190,9 @@ def target(c):
     return f'{c["mnemonic"]}.{c["form"]} v{c["vd"]},v{c["vs2"]},{rhs}' + (',v0.t' if c['mask'] != 'none' else '')
 
 def instruction(c):
+    if c.get('family') == 'fpcompare170':
+        import fpcompare170
+        return fpcompare170.instruction(c)
     if c.get('family') == 'fma164':
         import fma164
         return fma164.instruction(c)
@@ -193,6 +202,9 @@ def active(c, before, i):
     return c['vstart'] <= i < c['vl'] and (c['mask']=='none' or before[i//8] >> (i%8) & 1)
 
 def lane(c, before, i):
+    if c.get('family') == 'fpcompare170':
+        import fpcompare170
+        return fpcompare170.lane(c, before, i)
     if c.get('family') == 'fma164':
         import fma164
         return fma164.lane(c, before, i)
@@ -218,6 +230,9 @@ def csr_expected(c, post=False, before=None):
     return rows
 
 def check_isa(c, raw, rc=0, timeout=False):
+    if c.get('family') == 'fpcompare170':
+        import fpcompare170
+        return fpcompare170.check_isa(c, raw, rc, timeout)
     import vadd as v
     if rc or timeout:
         raise ValueError('execution/timeout')
@@ -246,6 +261,9 @@ def check_isa(c, raw, rc=0, timeout=False):
     return True
 
 def check_reference(c, raw, reference):
+    if c.get('family') == 'fpcompare170':
+        import fpcompare170
+        return fpcompare170.check_reference(c, raw, reference)
     import vadd as v
     pre, post, before, after = v.decode(c, raw)
     _, refpost, _, refafter = v.decode(c, reference)

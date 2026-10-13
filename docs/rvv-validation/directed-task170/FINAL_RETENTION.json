@@ -1,0 +1,9 @@
+{
+  "path": "xbd:/home/vick/rvv-directed-task170",
+  "hashed_physical_files": 173815,
+  "manifest_sha256": "89559ad11266357e60870f0c6bf27b89d54abe57ff4091dd822b0d11a6db9d1f",
+  "verified_physical_files": 173815,
+  "all_verified": true,
+  "allocated_bytes": 2500730880,
+  "limits": "Snapshot excludes its own checksum/receipt and the subsequently written verification log. Original snapshots, raw failures, successful references and repaired raw remain retained; no guest was rerun for packaging."
+}

@@ -1,0 +1,961 @@
+{
+  "ordinary_legal_cases": 96681,
+  "reserved_declared_not_run": [
+    {
+      "form": "vfmin.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ],
+  "additional_reserved_not_run": [
+    {
+      "form": "vfmin.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "frm5",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "frm6",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "frm7",
+      "basis": "V1.0 invalid dynamic rounding mode reserved even for non-rounding FP operations",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "non-lowest-mask-source-overlap",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "vstart-out-of-bounds",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "misaligned-destination-group",
+      "execution": "NOT_RUN",
+      "basis": "Ratified V1.0 operand/vstart rules; separate from ordinary corrected corpus"
+    }
+  ],
+  "vstart_out_of_bounds": "vstart>=VLMAX separate reserved NOT_RUN, never ordinary PASS credit",
+  "blocked_reference_ordinary": 0,
+  "unsupported_extensions": "FP16 and FP128 are outside RV32GCV ELEN64 profile; no expansion",
+  "initial_manifest_disposition": "Initial DECLARATION/PREPARED_MANIFEST retained; 552 full-manifest layouts required correction (18 pilot target declarations in 10 units). Corrected freeze-v2 replaces illegal overlap candidates one-for-one with lowest-register mask/source overlap or a disjoint end-register layout. Original failures receive no ordinary DUT-defect credit.",
+  "non_lowest_mask_overlap": "Reserved NOT_RUN outside the retained initial accidental pilot; no ordinary PASS credit for those original targets",
+  "full_ISA_proof": "Not claimed; nonzero-vstart execution uses the fixed supported DUT/Sail profile and does not establish every implementation restart capability."
+}

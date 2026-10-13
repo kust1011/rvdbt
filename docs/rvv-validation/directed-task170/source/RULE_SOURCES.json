@@ -1,0 +1,18 @@
+[
+  {
+    "path": "docs/rvv-validation/directed-task164/source/RVV1.0.adoc",
+    "sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19"
+  },
+  {
+    "path": "docs/rvv-validation/directed-task164/source/F.adoc",
+    "sha256": "695edb2aa38d7b1c8711b4b2565b081bbee208d64f56db2cd0007420c947957b"
+  },
+  {
+    "path": "docs/rvv-validation/directed-task164/source/D.adoc",
+    "sha256": "a2cb9d87bfff2fb99f1584cca13ed224639212083476fc374c0cc07cd2e8b639"
+  },
+  {
+    "path": "docs/rvv-validation/directed-task164/source/sail-vext_fp_insts.sail",
+    "sha256": "feb3a2a1e162a6091d12acd264c9bc598dabede463a8d9eb30e479499a1b7d54"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "samples": 133,
+  "own_guest_peak": 7,
+  "shared_guest_peak": 7,
+  "own_offline_peak": 4,
+  "shared_offline_peak": 4,
+  "sampled_min_free_bytes": 51288965120,
+  "own_guest_offline_nice_values": [
+    10
+  ],
+  "observed_affinities": [
+    "Cpus_allowed_list:\t0-31"
+  ],
+  "build_parallelism": "CLI --build-jobs4, one build stage at a time; compiler processes not sampled by this observer",
+  "startup_limits": "8 guest / 4 build / 4 offline; shared16/4; 10GiB reserve",
+  "sampling_limits": "monitor began after min/max pilot; a gap separates the stopped original controller from the repaired controller. Samples are observations, not a claim of continuous early/startup coverage. Existing Task168 offline admission and resources164 guest gate receipts remain with each stage."
+}

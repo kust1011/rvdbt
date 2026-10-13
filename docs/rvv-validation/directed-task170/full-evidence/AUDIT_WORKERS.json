@@ -1,0 +1,30 @@
+[
+  {
+    "view": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-00/corpus",
+    "output": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-00/audit",
+    "log": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-00/worker.log",
+    "returncode": 0,
+    "seconds": 135.6807971659582
+  },
+  {
+    "view": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-01/corpus",
+    "output": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-01/audit",
+    "log": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-01/worker.log",
+    "returncode": 0,
+    "seconds": 121.58333271101583
+  },
+  {
+    "view": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-02/corpus",
+    "output": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-02/audit",
+    "log": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-02/worker.log",
+    "returncode": 0,
+    "seconds": 120.11223898397293
+  },
+  {
+    "view": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-03/corpus",
+    "output": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-03/audit",
+    "log": "/home/vick/rvv-directed-task170/review/audit-parallel/shard-03/worker.log",
+    "returncode": 0,
+    "seconds": 127.51643385598436
+  }
+]

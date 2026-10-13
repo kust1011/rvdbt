@@ -1,0 +1,528 @@
+{
+  "parts": [
+    {
+      "part": "/home/vick/rvv-directed-task170/minmax-pilot",
+      "generic_rejections": 4670,
+      "semantic_rejections": 660,
+      "effective_allowed_variants": 80,
+      "generic_sha256": "b562fc217aec508cc679adacc8c0c99456a5bb4a3c27660d3f631d5ec725d985",
+      "semantic_sha256": "116a37c9a11cf1e880c73f55a094ca65c3b9eb8d64828951eb18411af98e0333"
+    },
+    {
+      "part": "/home/vick/rvv-directed-task170/minmax-remaining",
+      "generic_rejections": 59010,
+      "semantic_rejections": 8280,
+      "effective_allowed_variants": 1000,
+      "generic_sha256": "406a35d727354a53f1753b24d006dd3e5728bbe5a89d60b20a551ef9db8bfe7c",
+      "semantic_sha256": "ba210c02aff49048e52266462ccea233a4a58f540ad0e211f7d6073933ed2f3f"
+    },
+    {
+      "part": "/home/vick/rvv-directed-task170/sign-pilot",
+      "generic_rejections": 7005,
+      "semantic_rejections": 2010,
+      "effective_allowed_variants": 120,
+      "generic_sha256": "366e030e5e83fff0efa08e9acd0b2f720b3bda5a8a88faea79aae669ca296e39",
+      "semantic_sha256": "c46e8d34e5ae5b3450b77f14563c148eb41b3655447c5fd63997cdb2b054e92b"
+    },
+    {
+      "part": "/home/vick/rvv-directed-task170/sign-remaining",
+      "generic_rejections": 88515,
+      "semantic_rejections": 25260,
+      "effective_allowed_variants": 1500,
+      "generic_sha256": "b7f13d937b511c4864daf47cd081f4e928ccf18d5bd59be48dc71cebbd37cab3",
+      "semantic_sha256": "bf6512175c49f8ab979c784ebf59c01a52d14894d9d4792e246be0b2c87298ec"
+    },
+    {
+      "part": "/home/vick/rvv-directed-task170/compare-class-pilot-v2",
+      "generic_rejections": 14170,
+      "semantic_rejections": 3180,
+      "effective_allowed_variants": 2780,
+      "generic_sha256": "ffe89ba30b0b71f7b53c1e568992bd7309fb53561058375b7d2052b5a3ec9a42",
+      "semantic_sha256": "2e42feda1351cf8ebd86e647647e5e5291bfffe6622ebdf1bcd6fceba38dd461"
+    },
+    {
+      "part": "/home/vick/rvv-directed-task170/compare-class-remaining-v2",
+      "generic_rejections": 174360,
+      "semantic_rejections": 39930,
+      "effective_allowed_variants": 35590,
+      "generic_sha256": "a2cfa444fa55c41b63cceb84a4408b0f28b449fdf9c28d84b895525fde4e167a",
+      "semantic_sha256": "5ef536fba296fb45eb8873e9f38babc9340e70d5a68ffc9232272071bca87418"
+    }
+  ],
+  "selected_generic_actual_packets": 87060,
+  "generic_effective_rejections": 347730,
+  "semantic_effective_rejections": 79320,
+  "total_effective_rejections": 427050,
+  "effective_allowed_variants": 41070,
+  "generic_by_control": {
+    "NV-sticky-or-suppression": 87060,
+    "other-register": 86760,
+    "scalar-preservation-box": 87060,
+    "active-result": 75510,
+    "prestart-preservation": 11340
+  },
+  "semantic_by_form_control": [
+    {
+      "form": "vfclass.v",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vfclass.v",
+      "control": "wrong-class-bit-or-upper-bits",
+      "count": 2700
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "min-max-swapped",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "wrong-qNaN-number-selection",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "wrong-zero-tie-sign",
+      "count": 540
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "min-max-swapped",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "wrong-qNaN-number-selection",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "wrong-zero-tie-sign",
+      "count": 540
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "min-max-swapped",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "wrong-qNaN-number-selection",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "wrong-zero-tie-sign",
+      "count": 540
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "min-max-swapped",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "obsolete-sNaN-canonical-result",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "wrong-qNaN-number-selection",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "wrong-zero-tie-sign",
+      "count": 540
+    },
+    {
+      "form": "vfsgnj.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vfsgnj.vf",
+      "control": "wrong-NaN-canonicalization",
+      "count": 960
+    },
+    {
+      "form": "vfsgnj.vf",
+      "control": "wrong-sign-injection",
+      "count": 2850
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "wrong-NaN-canonicalization",
+      "count": 810
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "wrong-sign-injection",
+      "count": 2700
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "wrong-NaN-canonicalization",
+      "count": 960
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "wrong-sign-injection",
+      "count": 2850
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "wrong-NaN-canonicalization",
+      "count": 810
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "wrong-sign-injection",
+      "count": 2700
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "wrong-NaN-canonicalization",
+      "count": 960
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "wrong-sign-injection",
+      "count": 2850
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "wrong-NaN-canonicalization",
+      "count": 810
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "wrong-sign-injection",
+      "count": 2700
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 3120
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 2970
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 3120
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 3120
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 3120
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 2970
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 3120
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 2970
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 960
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 3120
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 810
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 2970
+    }
+  ],
+  "effective_allow_by_form": [
+    {
+      "form": "vfclass.v",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vf",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfmax.vv",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vf",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfmin.vv",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfsgnj.vf",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "vector-tail",
+      "count": 270
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "mask-tail",
+      "count": 3660
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "mask-tail",
+      "count": 3510
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "mask-tail",
+      "count": 3660
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "mask-tail",
+      "count": 3660
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "mask-tail",
+      "count": 3660
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "mask-tail",
+      "count": 3510
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "mask-tail",
+      "count": 3660
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "mask-tail",
+      "count": 3510
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "mask-tail",
+      "count": 3660
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "masked-body",
+      "count": 210
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "mask-tail",
+      "count": 3510
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "masked-body",
+      "count": 210
+    }
+  ],
+  "generic_allowance_checks_including_identity_calls": {
+    "vector-tail-agnostic": 3300,
+    "mask-tail-independent-variant": 70900
+  },
+  "metadata_note": "The semantic tool actual_mutations field counts logged rejection/mask records and omits vector-tail allowance records. Exact effective totals here use its separately asserted rejection/changed-allowance counters. Generic allowance calls may be identity variants and receive no effective-allowance credit."
+}

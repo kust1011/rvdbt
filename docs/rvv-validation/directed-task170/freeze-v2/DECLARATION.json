@@ -1,0 +1,378 @@
+{
+  "forms": [
+    "vfmin.vv",
+    "vfmin.vf",
+    "vfmax.vv",
+    "vfmax.vf",
+    "vfsgnj.vv",
+    "vfsgnj.vf",
+    "vfsgnjn.vv",
+    "vfsgnjn.vf",
+    "vfsgnjx.vv",
+    "vfsgnjx.vf",
+    "vmfeq.vv",
+    "vmfeq.vf",
+    "vmfne.vv",
+    "vmfne.vf",
+    "vmflt.vv",
+    "vmflt.vf",
+    "vmfle.vv",
+    "vmfle.vf",
+    "vmfgt.vf",
+    "vmfge.vf",
+    "vfclass.v"
+  ],
+  "cases": 96681,
+  "units": 2268,
+  "checks": 483405,
+  "commands": 11340,
+  "ordinary": 96681,
+  "reserved": [
+    {
+      "form": "vfmin.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfeq.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfne.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmflt.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vv",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfle.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfgt.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmfge.vf",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "misaligned-source-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmin.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmax.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfclass.v",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ],
+  "reserved_vstart": "vstart>=VLMAX excluded; separate NOT_RUN",
+  "blocked": "none declared for supported FP32/64 ordinary cases",
+  "geometries": 54,
+  "per_form": {
+    "vfmin.vv": 4531,
+    "vfmin.vf": 4513,
+    "vfmax.vv": 4531,
+    "vfmax.vf": 4513,
+    "vfsgnj.vv": 4531,
+    "vfsgnj.vf": 4513,
+    "vfsgnjn.vv": 4531,
+    "vfsgnjn.vf": 4513,
+    "vfsgnjx.vv": 4531,
+    "vfsgnjx.vf": 4513,
+    "vmfeq.vv": 4747,
+    "vmfeq.vf": 4675,
+    "vmfne.vv": 4747,
+    "vmfne.vf": 4675,
+    "vmflt.vv": 4747,
+    "vmflt.vf": 4675,
+    "vmfle.vv": 4747,
+    "vmfle.vf": 4675,
+    "vmfgt.vf": 4675,
+    "vmfge.vf": 4675,
+    "vfclass.v": 4423
+  },
+  "execution": "NOT_RUN",
+  "guest_credit": 0
+}

@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "actual_mutations": 25260,
+  "effective_rejections": 25260,
+  "effective_allowed_variants": 1500,
+  "by_form_control": [
+    {
+      "form": "vfsgnj.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 890
+    },
+    {
+      "form": "vfsgnj.vf",
+      "control": "wrong-NaN-canonicalization",
+      "count": 890
+    },
+    {
+      "form": "vfsgnj.vf",
+      "control": "wrong-sign-injection",
+      "count": 2640
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 750
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "wrong-NaN-canonicalization",
+      "count": 750
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "wrong-sign-injection",
+      "count": 2500
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 890
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "wrong-NaN-canonicalization",
+      "count": 890
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "wrong-sign-injection",
+      "count": 2640
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 750
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "wrong-NaN-canonicalization",
+      "count": 750
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "wrong-sign-injection",
+      "count": 2500
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 890
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "wrong-NaN-canonicalization",
+      "count": 890
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "wrong-sign-injection",
+      "count": 2640
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 750
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "wrong-NaN-canonicalization",
+      "count": 750
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "wrong-sign-injection",
+      "count": 2500
+    }
+  ],
+  "allowed_by_form": [
+    {
+      "form": "vfsgnj.vf",
+      "control": "vector-tail",
+      "count": 250
+    },
+    {
+      "form": "vfsgnj.vv",
+      "control": "vector-tail",
+      "count": 250
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "control": "vector-tail",
+      "count": 250
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "control": "vector-tail",
+      "count": 250
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "control": "vector-tail",
+      "count": 250
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "control": "vector-tail",
+      "count": 250
+    }
+  ],
+  "checker_sha256": "e75a12143f19baec99424f385629fbe0a6e4ab2401c0a6a6416a2069ae288957"
+}

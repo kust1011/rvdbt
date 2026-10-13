@@ -1,0 +1,174 @@
+{
+  "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/FORM_VERIFICATION_EVIDENCE.csv",
+  "sha256": "6b0cb7f619f3734dd464f490391ef35c5a58f0f32c2f77505b76bfbdea86af43",
+  "forms": [
+    {
+      "form": "vfclass.v",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfmax.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfmax.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfmin.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfmin.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfsgnj.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfsgnj.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfsgnjn.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfsgnjn.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfsgnjx.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vfsgnjx.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfeq.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfeq.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfge.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfgt.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfle.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfle.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmflt.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmflt.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfne.vf",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    },
+    {
+      "form": "vmfne.vv",
+      "rv32_elen64_applicability": "REQUIRED",
+      "family": "floating_point",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+      "spec_basis": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L5058-L5110;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L963-L1015;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3221-L3268;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3738-L3825;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L3916-L4027;https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc#L4450-L4479"
+    }
+  ],
+  "excluded_already_tested": [
+    "vfadd",
+    "vfsub",
+    "vfmul",
+    "vfdiv",
+    "vfrsub",
+    "vfrdiv",
+    "vfmadd",
+    "vfnmadd",
+    "vfmsub",
+    "vfnmsub",
+    "vfmacc",
+    "vfnmacc",
+    "vfmsac",
+    "vfnmsac"
+  ],
+  "session3": [
+    "scalar FP moves",
+    "whole-register moves"
+  ],
+  "vv_greater_pseudos": "vmfgt.vv and vmfge.vv are swapped-source vmflt/vmfle aliases, absent from the595 form list; no extra form credit"
+}

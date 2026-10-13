@@ -1,0 +1,60 @@
+{
+  "parts": [
+    {
+      "original": "/home/vick/rvv-directed-task170/minmax-pilot/corpus",
+      "cases": 1256,
+      "units": 32,
+      "manifest_sha256": "da11fe16863c7b97d7bb5f520cf499b2cea0e7e81f818b45e1e37ba5c470d094",
+      "results_sha256": "927b8feb8f33357c93f054bcc334047af3dc3ce6b36a799af631af7014977d9b",
+      "build_commands_sha256": "0c050118b0204bf10c0bc324e826148f16b70dd0aea0591135547fb39de1dafe"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task170/minmax-remaining/corpus",
+      "cases": 16832,
+      "units": 400,
+      "manifest_sha256": "5d93c8e4bf3558993a5ed44a308bdb39bbf3d5a996ee673d205e676904802466",
+      "results_sha256": "f01e523c30656329f0eff0af13ba1f8d14c84e10b2d5bf9a8f8e90e7c5c1c349",
+      "build_commands_sha256": "b6665d3efd4b9114bb1f72f6e6052444c4298bc71953842a5cfab5fd0adc2ef1"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task170/sign-pilot/corpus",
+      "cases": 1884,
+      "units": 48,
+      "manifest_sha256": "51f1ba13ca57ac2db6350d9c9da8c0a361e1cde8169d6588fe588931246a3530",
+      "results_sha256": "d0cfead43d5775b9dc6fa684f7f80249503d19d581a1f5907ac86d371b5a6b3a",
+      "build_commands_sha256": "75de6f219dff098ff938185bb592d3a6fe2bc30a67b31254b68aa7cb2b7a1c64"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task170/sign-remaining/corpus",
+      "cases": 25248,
+      "units": 600,
+      "manifest_sha256": "4e673098e73dc460bad96f0dba581b6074cbc766085c98301636cb07f7b45adb",
+      "results_sha256": "c5b2f0f646f00d1b317c68d6be9a883993ce6d98bd59f3b4f5f2b8125176ef65",
+      "build_commands_sha256": "2e155910cb422362339c10d1b94a9e152c79a421cfb63d98e842c21c0ae1cc5b"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task170/compare-class-pilot-v2/corpus",
+      "cases": 3581,
+      "units": 88,
+      "manifest_sha256": "3db44df5e308f47fa62a70195284dd0172369edd7b98c07c9b8cd8247c07a82c",
+      "results_sha256": "6ebac4bebf26c6b881c02970e24f7fe4dceca87f7429d4f2d9a5afd5801afe1a",
+      "build_commands_sha256": "ea8e6dbf9c701404bc1ea734c2bc2ba4bbffc771ce520f5318c23c4de38df83e"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task170/compare-class-remaining-v2/corpus",
+      "cases": 47880,
+      "units": 1100,
+      "manifest_sha256": "9ef7a3715b1feab49c9bf18d6f82f638b5a887c6a212bddc3af4a3f21f33d676",
+      "results_sha256": "887b5585a6d10da2df719b8a566d96eeb9560c8fb78f0a648e1134857225e993",
+      "build_commands_sha256": "75c23b0fac3a3407250cf33471a6679f4589b92048f90e281bfee3425cc921f7"
+    }
+  ],
+  "cases": 96681,
+  "checks": 483405,
+  "units": 2268,
+  "guest_executions_added": 0,
+  "reference_executions_added": 0,
+  "disjoint_units": true,
+  "checker_sha256": "e75a12143f19baec99424f385629fbe0a6e4ab2401c0a6a6416a2069ae288957",
+  "generator_manifest_sha256": "7d9947ce203bc87bd60cd39d29abd12c222d24fb13fb2a013ce79c8f9462f790"
+}

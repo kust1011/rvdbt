@@ -1,0 +1,226 @@
+{
+  "status": "PASS",
+  "actual_mutations": 5940,
+  "effective_rejections": 3180,
+  "effective_allowed_variants": 2780,
+  "by_form_control": [
+    {
+      "form": "vfclass.v",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vfclass.v",
+      "control": "wrong-class-bit-or-upper-bits",
+      "count": 200
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 230
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 220
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 230
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 230
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 230
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 220
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 230
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 220
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 70
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 230
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "exact-NaN-NV-or-boxing",
+      "count": 60
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "wrong-ordered-or-unordered-bit",
+      "count": 220
+    }
+  ],
+  "allowed_by_form": [
+    {
+      "form": "vfclass.v",
+      "control": "vector-tail",
+      "count": 20
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "mask-tail",
+      "count": 270
+    },
+    {
+      "form": "vmfeq.vf",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "mask-tail",
+      "count": 260
+    },
+    {
+      "form": "vmfeq.vv",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "mask-tail",
+      "count": 270
+    },
+    {
+      "form": "vmfge.vf",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "mask-tail",
+      "count": 270
+    },
+    {
+      "form": "vmfgt.vf",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "mask-tail",
+      "count": 270
+    },
+    {
+      "form": "vmfle.vf",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "mask-tail",
+      "count": 260
+    },
+    {
+      "form": "vmfle.vv",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "mask-tail",
+      "count": 270
+    },
+    {
+      "form": "vmflt.vf",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "mask-tail",
+      "count": 260
+    },
+    {
+      "form": "vmflt.vv",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "mask-tail",
+      "count": 270
+    },
+    {
+      "form": "vmfne.vf",
+      "control": "masked-body",
+      "count": 10
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "mask-tail",
+      "count": 260
+    },
+    {
+      "form": "vmfne.vv",
+      "control": "masked-body",
+      "count": 10
+    }
+  ],
+  "checker_sha256": "e75a12143f19baec99424f385629fbe0a6e4ab2401c0a6a6416a2069ae288957"
+}

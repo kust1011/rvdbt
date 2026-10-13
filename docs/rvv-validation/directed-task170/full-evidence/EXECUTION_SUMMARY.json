@@ -1,0 +1,24 @@
+{
+  "cases": 96681,
+  "units": 2268,
+  "commands": 11340,
+  "checks": 483405,
+  "arms": {
+    "Reference": {
+      "PASS": 96681
+    },
+    "B": {
+      "PASS": 96681
+    },
+    "M1": {
+      "PASS": 96681
+    },
+    "M2": {
+      "PASS": 96681
+    },
+    "BOTH": {
+      "PASS": 96681
+    }
+  },
+  "lineage": "disjoint pilot/remaining matrices; no repeated units"
+}
