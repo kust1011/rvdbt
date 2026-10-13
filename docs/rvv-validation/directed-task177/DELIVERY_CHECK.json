@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "unique_cases": 2418,
+  "commands": 3300,
+  "outcome_checks": 12090,
+  "target_PC_arm_rows": 30456,
+  "per_form_accepted": 592,
+  "controls_passes_per_packet": 1,
+  "source_compile": "all six owned Python scripts compile",
+  "whitespace": "git diff --check PASS",
+  "guest_replays_for_packaging": 0
+}

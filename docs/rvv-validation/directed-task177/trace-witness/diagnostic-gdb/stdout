@@ -1,0 +1,31 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff61ff6c0 (LWP 684769)]
+
+Thread 1 "elfrun" received signal SIGSEGV, Segmentation fault.
+0x0000555564704030 in ?? ()
+rip            0x555564704030      0x555564704030
+r13            0x0                 0
+rsp            0x7fffffff9368      0x7fffffff9368
+GUEST_IP=   0x555564704010:	add    %al,(%rax)
+   0x555564704012:	add    %al,(%rax)
+   0x555564704014:	add    %al,(%rax)
+   0x555564704016:	add    %al,(%rax)
+   0x555564704018:	add    %al,(%rax)
+   0x55556470401a:	add    %al,(%rax)
+   0x55556470401c:	add    %al,(%rax)
+   0x55556470401e:	add    %al,(%rax)
+   0x555564704020:	add    %al,(%rax)
+   0x555564704022:	add    %al,(%rax)
+   0x555564704024:	add    %al,(%rax)
+   0x555564704026:	add    %al,(%rax)
+   0x555564704028:	add    %al,(%rax)
+   0x55556470402a:	add    %al,(%rax)
+   0x55556470402c:	add    %al,(%rax)
+   0x55556470402e:	add    %al,(%rax)
+=> 0x555564704030:	and    %dh,(%rax,%rsi,2)
+   0x555564704033:	fs push %rbp
+#0  0x0000555564704030 in ?? ()
+#1  0x0000000000000000 in ?? ()
+Kill the program being debugged? (y or n) [answered Y; input not from terminal]
+[Inferior 1 (process 684766) killed]

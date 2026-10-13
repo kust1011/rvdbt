@@ -1,0 +1,37 @@
+[
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl0-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  },
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl1-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  },
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl15-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  },
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl16-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  },
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl17-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  },
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl31-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  },
+  {
+    "case": "integer-w1024-e32-m1-liveout-zero-vl32-start0",
+    "status": "FAIL",
+    "error": "packet extent"
+  }
+]

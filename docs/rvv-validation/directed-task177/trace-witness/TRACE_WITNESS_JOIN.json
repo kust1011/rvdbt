@@ -1,0 +1,19 @@
+{
+  "guest_identities": {
+    "test.S": {
+      "original": "b31fc792908e46bda2f15d2d475288022f6efbcac3de9afc35bb976c39e4eca6",
+      "accepted": "b31fc792908e46bda2f15d2d475288022f6efbcac3de9afc35bb976c39e4eca6"
+    },
+    "test.elf": {
+      "original": "62171f19e65e6d2732bdff9547c0c81569940c5ddf7ebaa4d387cb1b45e37fc2",
+      "accepted": "62171f19e65e6d2732bdff9547c0c81569940c5ddf7ebaa4d387cb1b45e37fc2"
+    }
+  },
+  "original_attempt": "integer-attempt1/pilot",
+  "absolute_trace1": "diagnostic-absolute-trace1",
+  "default_trace0": "integer/pilot",
+  "trace1_status": "FAIL host fault, zero packets",
+  "trace0_status": "PASS full-state and original independent reference",
+  "root_cause": "NOT_PROVEN",
+  "production_fix": "NOT_DONE"
+}

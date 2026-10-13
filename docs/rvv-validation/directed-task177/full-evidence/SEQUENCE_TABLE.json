@@ -1,0 +1,843 @@
+[
+  {
+    "sequence": "integer/liveout",
+    "cases_per_arm": 177,
+    "geometries": 24,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1276,
+      "MULTI_MEMBER_NATIVE": 140
+    },
+    "reference_counts": {
+      "Spike/pk": 153,
+      "Sail initialized vstart": 24
+    },
+    "result": "PASS",
+    "architectural_checks": 885
+  },
+  {
+    "sequence": "integer/overwrite",
+    "cases_per_arm": 177,
+    "geometries": 24,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1916,
+      "MULTI_MEMBER_NATIVE": 208
+    },
+    "reference_counts": {
+      "Spike/pk": 153,
+      "Sail initialized vstart": 24
+    },
+    "result": "PASS",
+    "architectural_checks": 885
+  },
+  {
+    "sequence": "integer/alias",
+    "cases_per_arm": 177,
+    "geometries": 24,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ],
+      [
+        4096,
+        32,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1880,
+      "MULTI_MEMBER_NATIVE": 244
+    },
+    "reference_counts": {
+      "Spike/pk": 153,
+      "Sail initialized vstart": 24
+    },
+    "result": "PASS",
+    "architectural_checks": 885
+  },
+  {
+    "sequence": "integer/masked-update",
+    "cases_per_arm": 177,
+    "geometries": 24,
+    "observed_multi_geometries": [],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 2124
+    },
+    "reference_counts": {
+      "Spike/pk": 153,
+      "Sail initialized vstart": 24
+    },
+    "result": "PASS",
+    "architectural_checks": 885
+  },
+  {
+    "sequence": "integer/boundary",
+    "cases_per_arm": 177,
+    "geometries": 24,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 3260,
+      "MULTI_MEMBER_NATIVE": 280
+    },
+    "reference_counts": {
+      "Spike/pk": 153,
+      "Sail initialized vstart": 24
+    },
+    "result": "PASS",
+    "architectural_checks": 885
+  },
+  {
+    "sequence": "integer/chain",
+    "cases_per_arm": 177,
+    "geometries": 24,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 3190,
+      "MULTI_MEMBER_NATIVE": 350
+    },
+    "reference_counts": {
+      "Spike/pk": 153,
+      "Sail initialized vstart": 24
+    },
+    "result": "PASS",
+    "architectural_checks": 885
+  },
+  {
+    "sequence": "fp/liveout",
+    "cases_per_arm": 219,
+    "geometries": 30,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        128,
+        32,
+        "m2"
+      ],
+      [
+        128,
+        64,
+        "m1"
+      ],
+      [
+        128,
+        64,
+        "m2"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m2"
+      ],
+      [
+        256,
+        64,
+        "m1"
+      ],
+      [
+        256,
+        64,
+        "m2"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m2"
+      ],
+      [
+        512,
+        64,
+        "m1"
+      ],
+      [
+        512,
+        64,
+        "m2"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m2"
+      ],
+      [
+        1024,
+        64,
+        "m1"
+      ],
+      [
+        1024,
+        64,
+        "m2"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m2"
+      ],
+      [
+        2048,
+        64,
+        "m1"
+      ],
+      [
+        2048,
+        64,
+        "m2"
+      ],
+      [
+        4096,
+        32,
+        "m1"
+      ],
+      [
+        4096,
+        64,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; FP vm=1/vta=1 plus route geometry/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1104,
+      "ORDERED_RUN_FALLBACK": 176,
+      "MULTI_MEMBER_NATIVE": 472
+    },
+    "reference_counts": {
+      "Spike/pk": 189,
+      "Sail initialized vstart": 30
+    },
+    "result": "PASS",
+    "architectural_checks": 1095
+  },
+  {
+    "sequence": "fp/overwrite",
+    "cases_per_arm": 219,
+    "geometries": 30,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        128,
+        32,
+        "m2"
+      ],
+      [
+        128,
+        64,
+        "m1"
+      ],
+      [
+        128,
+        64,
+        "m2"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m2"
+      ],
+      [
+        256,
+        64,
+        "m1"
+      ],
+      [
+        256,
+        64,
+        "m2"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m2"
+      ],
+      [
+        512,
+        64,
+        "m1"
+      ],
+      [
+        512,
+        64,
+        "m2"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m2"
+      ],
+      [
+        1024,
+        64,
+        "m1"
+      ],
+      [
+        1024,
+        64,
+        "m2"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m2"
+      ],
+      [
+        2048,
+        64,
+        "m1"
+      ],
+      [
+        2048,
+        64,
+        "m2"
+      ],
+      [
+        4096,
+        32,
+        "m1"
+      ],
+      [
+        4096,
+        64,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; FP vm=1/vta=1 plus route geometry/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1664,
+      "ORDERED_RUN_FALLBACK": 264,
+      "MULTI_MEMBER_NATIVE": 700
+    },
+    "reference_counts": {
+      "Spike/pk": 189,
+      "Sail initialized vstart": 30
+    },
+    "result": "PASS",
+    "architectural_checks": 1095
+  },
+  {
+    "sequence": "fp/alias",
+    "cases_per_arm": 219,
+    "geometries": 30,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        128,
+        32,
+        "m2"
+      ],
+      [
+        128,
+        64,
+        "m1"
+      ],
+      [
+        128,
+        64,
+        "m2"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m2"
+      ],
+      [
+        256,
+        64,
+        "m1"
+      ],
+      [
+        256,
+        64,
+        "m2"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m2"
+      ],
+      [
+        512,
+        64,
+        "m1"
+      ],
+      [
+        512,
+        64,
+        "m2"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m2"
+      ],
+      [
+        1024,
+        64,
+        "m1"
+      ],
+      [
+        1024,
+        64,
+        "m2"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m2"
+      ],
+      [
+        2048,
+        64,
+        "m1"
+      ],
+      [
+        2048,
+        64,
+        "m2"
+      ],
+      [
+        4096,
+        32,
+        "m1"
+      ],
+      [
+        4096,
+        64,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; FP vm=1/vta=1 plus route geometry/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1664,
+      "ORDERED_RUN_FALLBACK": 264,
+      "MULTI_MEMBER_NATIVE": 700
+    },
+    "reference_counts": {
+      "Spike/pk": 189,
+      "Sail initialized vstart": 30
+    },
+    "result": "PASS",
+    "architectural_checks": 1095
+  },
+  {
+    "sequence": "fp/chain",
+    "cases_per_arm": 249,
+    "geometries": 30,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        128,
+        32,
+        "m2"
+      ],
+      [
+        128,
+        64,
+        "m1"
+      ],
+      [
+        128,
+        64,
+        "m2"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m2"
+      ],
+      [
+        256,
+        64,
+        "m1"
+      ],
+      [
+        256,
+        64,
+        "m2"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m2"
+      ],
+      [
+        512,
+        64,
+        "m1"
+      ],
+      [
+        512,
+        64,
+        "m2"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m2"
+      ],
+      [
+        1024,
+        64,
+        "m1"
+      ],
+      [
+        1024,
+        64,
+        "m2"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m2"
+      ],
+      [
+        2048,
+        64,
+        "m1"
+      ],
+      [
+        2048,
+        64,
+        "m2"
+      ],
+      [
+        4096,
+        32,
+        "m1"
+      ],
+      [
+        4096,
+        64,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; FP vm=1/vta=1 plus route geometry/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 3140,
+      "ORDERED_RUN_FALLBACK": 440,
+      "MULTI_MEMBER_NATIVE": 1400
+    },
+    "reference_counts": {
+      "Spike/pk": 219,
+      "Sail initialized vstart": 30
+    },
+    "result": "PASS",
+    "architectural_checks": 1245
+  },
+  {
+    "sequence": "fp/reject-tu",
+    "cases_per_arm": 219,
+    "geometries": 30,
+    "observed_multi_geometries": [],
+    "eligibility": "actual scanner/emitter; FP vm=1/vta=1 plus route geometry/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1752
+    },
+    "reference_counts": {
+      "Spike/pk": 189,
+      "Sail initialized vstart": 30
+    },
+    "result": "PASS",
+    "architectural_checks": 1095
+  },
+  {
+    "sequence": "fp/reject-mask",
+    "cases_per_arm": 219,
+    "geometries": 30,
+    "observed_multi_geometries": [],
+    "eligibility": "actual scanner/emitter; FP vm=1/vta=1 plus route geometry/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_NATIVE": 1752
+    },
+    "reference_counts": {
+      "Spike/pk": 189,
+      "Sail initialized vstart": 30
+    },
+    "result": "PASS",
+    "architectural_checks": 1095
+  },
+  {
+    "sequence": "cache/cache",
+    "cases_per_arm": 6,
+    "geometries": 6,
+    "observed_multi_geometries": [
+      [
+        128,
+        32,
+        "m1"
+      ],
+      [
+        256,
+        32,
+        "m1"
+      ],
+      [
+        512,
+        32,
+        "m1"
+      ],
+      [
+        1024,
+        32,
+        "m1"
+      ],
+      [
+        2048,
+        32,
+        "m1"
+      ]
+    ],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_HANDLER_OR_GUARD_FALLBACK": 28,
+      "MULTI_MEMBER_MIXED": 20
+    },
+    "reference_counts": {
+      "Spike/pk": 6
+    },
+    "result": "PASS",
+    "architectural_checks": 30
+  },
+  {
+    "sequence": "cache64/cache64",
+    "cases_per_arm": 6,
+    "geometries": 6,
+    "observed_multi_geometries": [],
+    "eligibility": "actual scanner/emitter; real typed-route and shared-shape/pressure gates",
+    "actual_path_counts": {
+      "SINGLETON_HANDLER_OR_GUARD_FALLBACK": 48
+    },
+    "reference_counts": {
+      "Spike/pk": 6
+    },
+    "result": "PASS",
+    "architectural_checks": 30
+  }
+]

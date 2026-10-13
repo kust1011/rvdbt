@@ -1,0 +1,13 @@
+{
+  "required": 595,
+  "accepted": 592,
+  "gaps": [
+    "vfrec7.v",
+    "vfrsqrt7.v",
+    "vfsqrt.v"
+  ],
+  "owner": "session3 Task176",
+  "task173_credit": "accepted final evidence only",
+  "sequence_validation_adds_per_form_credit": 0,
+  "final_common_build_validation": "NOT_RUN"
+}

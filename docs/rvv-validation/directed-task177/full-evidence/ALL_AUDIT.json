@@ -1,0 +1,52 @@
+{
+  "partitions": {
+    "full-audit": {
+      "status": "PASS",
+      "cases": 2412,
+      "checks": 12060,
+      "arms": {
+        "Reference": 2412,
+        "B": 2412,
+        "M1": 2412,
+        "M2": 2412,
+        "BOTH": 2412
+      },
+      "target_pc_arm_rows": 30408,
+      "multi_frames": 1824,
+      "native_multi_frames": 1472,
+      "fp_frames_with_component_completion_proof": 542,
+      "paths": {
+        "SINGLETON_NATIVE": 24722,
+        "MULTI_MEMBER_NATIVE": 4494,
+        "ORDERED_RUN_FALLBACK": 1144,
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK": 28,
+        "MULTI_MEMBER_MIXED": 20
+      },
+      "all_packet_outcomes_checked": true,
+      "prior_family_reruns": 0,
+      "controls": "separate one-pass over these actual packets"
+    },
+    "cache64-audit": {
+      "status": "PASS",
+      "cases": 6,
+      "checks": 30,
+      "arms": {
+        "Reference": 6,
+        "B": 6,
+        "M1": 6,
+        "M2": 6,
+        "BOTH": 6
+      },
+      "target_pc_arm_rows": 48,
+      "multi_frames": 0,
+      "native_multi_frames": 0,
+      "fp_frames_with_component_completion_proof": 0,
+      "paths": {
+        "SINGLETON_HANDLER_OR_GUARD_FALLBACK": 48
+      },
+      "all_packet_outcomes_checked": true,
+      "prior_family_reruns": 0,
+      "controls": "separate one-pass over these actual packets"
+    }
+  }
+}

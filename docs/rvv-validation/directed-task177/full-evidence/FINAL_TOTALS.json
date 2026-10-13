@@ -1,0 +1,26 @@
+{
+  "status": "PASS_FINITE_DEFAULT_TRACE_PROFILE_WITH_OPEN_DIAGNOSTIC_AND_RESOURCE_EXCEPTION",
+  "cases_per_arm": 2418,
+  "checks": 12090,
+  "DUT_checks": 9672,
+  "units": 660,
+  "commands": 3300,
+  "pilot_cases": 99,
+  "remaining_cases": 2319,
+  "reference_Spike_cases": 2094,
+  "reference_Sail_cases": 324,
+  "target_PC_arm_rows": 30456,
+  "multi_frames": 1824,
+  "native_multi_frames": 1472,
+  "both_component_completion_frames": 542,
+  "production_changes": 0,
+  "previous_family_reruns": 0,
+  "per_form_inventory_credit": 0,
+  "executable_sha256": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "unmet": [
+    "generic --trace=1 host fault root cause/fix remains open; all original failures unaccepted",
+    "own build4/guest8 resource compliance exception",
+    "full common-build previous-family validation NOT_RUN",
+    "no exhaustive opcode/SEW/LMUL/pressure/fault-return/retry proof; no persistent AOT cache proof"
+  ]
+}

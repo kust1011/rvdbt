@@ -1,0 +1,12 @@
+{
+  "status": "REPRODUCED_UNACCEPTED_HOST_FAULT",
+  "guest_ip": null,
+  "state_register_r13": "0x0",
+  "first_target_pc": "0x102c8",
+  "before_first_sequence_target": "NOT_PROVEN",
+  "accepted_packet_credit": 0,
+  "root_cause": "NOT_PROVEN",
+  "production_fix": "NOT_DONE",
+  "review_only": true,
+  "scope": "generic trace-cache mode; default trace=0 finite matrix is separate"
+}

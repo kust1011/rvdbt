@@ -1,0 +1,8 @@
+{
+  "returncode": -6,
+  "timeout": false,
+  "seconds": 1.1152008801000193,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "ec103b12cd721433c3fdfaf6127a4ff0bcbb6c2dcecad9bbd3266565f1b0128c",
+  "storage": "lossless-gzip-v1"
+}

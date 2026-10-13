@@ -1,0 +1,16 @@
+{
+  "raw_root": "xbd:/home/vick/rvv-directed-task177",
+  "execution": "frozen tools/sequences177.py plus disjoint tools/cache_entries177.py; original vadd/fp157/storage149 unchanged",
+  "review": "full matrix uses frozen review_sequences177.py; cache64 uses review_sequences177_v2.py with only cache64 CLI extension",
+  "export": "export_sequences177_v2.py adds execution receipts; prior v1 export retained remote, no guest/control replay",
+  "source_sha256": {
+    "sequences177.py": "98a39f036a3edf53290c4913115ff1bc3883cce43622200e81f0d6f0b45d7070",
+    "cache_entries177.py": "60d3a8f230fdbeea3f0168969a9ec1a50a99705c2443f7c271c6a58fb53065e6",
+    "review_sequences177.py": "dd131b428f7a8634c8123753c4e7807eebbde1f1693b9b97963c76152f941cb3",
+    "export_sequences177.py": "3c503126003646752ea25b7226923de44c257c4da15337141b73262d27e95903",
+    "diagnose_trace177.py": "291a87d954c81d2515fdd5fa4cd90ddd428b581e9c864c7f10d0d0718da61db8",
+    "inventory177.py": "565f597513693763132f0efc9d06e6f782f61cf5852c894bcf4c1cb855b90a36"
+  },
+  "prior_worker_commit": "5b205bd",
+  "production_changes": 0
+}

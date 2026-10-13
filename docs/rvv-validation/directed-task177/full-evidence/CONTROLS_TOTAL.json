@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "actual_packets": 12090,
+  "effective_rejections": 531960,
+  "changed_allowed": 2929,
+  "passes_per_actual_packet": 1,
+  "disjoint_partitions": [
+    "original sequence declaration",
+    "e64-first cache complement"
+  ],
+  "guest_calls": 0
+}

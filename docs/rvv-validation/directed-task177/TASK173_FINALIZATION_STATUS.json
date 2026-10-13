@@ -1,0 +1,83 @@
+{
+  "status": "PASS_VALIDATION_WITH_RESOURCE_EXCEPTION",
+  "cases_per_arm": 170910,
+  "units": 7440,
+  "observations": 854550,
+  "DUT_packets": 683640,
+  "reference_packets": 170910,
+  "arms": [
+    "B",
+    "M1",
+    "M2",
+    "BOTH"
+  ],
+  "forms": 18,
+  "geometries": 24,
+  "configurations": 2160,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "per_form_per_arm": {
+    "vfwadd.vv": 8520,
+    "vfwadd.vf": 8670,
+    "vfwadd.wv": 9240,
+    "vfwadd.wf": 9390,
+    "vfwsub.vv": 8520,
+    "vfwsub.vf": 8670,
+    "vfwsub.wv": 9240,
+    "vfwsub.wf": 9390,
+    "vfwmul.vv": 8520,
+    "vfwmul.vf": 8670,
+    "vfwmacc.vv": 10140,
+    "vfwmacc.vf": 10380,
+    "vfwnmacc.vv": 10140,
+    "vfwnmacc.vf": 10380,
+    "vfwmsac.vv": 10140,
+    "vfwmsac.vf": 10380,
+    "vfwnmsac.vv": 10140,
+    "vfwnmsac.vf": 10380
+  },
+  "effective_rejections": 1061760,
+  "allowed_variants": 2160,
+  "exact_receipt_joins": 854550,
+  "exact_commands": 37200,
+  "metadata_join_rejections": 22320,
+  "suppressed_NV_rejections": 2880,
+  "all_effective_packet_rejections": 1064640,
+  "sail_reference_crosscheck_cases": 4430,
+  "tools_verified": 22,
+  "resources": {
+    "samples": 3456,
+    "minimum_free_bytes": 39374782464,
+    "shared_peaks": {
+      "guest": 11,
+      "build": 6,
+      "offline": 6
+    },
+    "own_peaks": {
+      "guest": 6,
+      "build": 6,
+      "offline": 2
+    },
+    "own_nice_values": [
+      10
+    ],
+    "relative_pilot_worker_pids": [
+      3606114,
+      3606115
+    ],
+    "scope": "sampled process counts; controllers excluded; see RESOURCE_SCOPE.md",
+    "own_compiler_driver_peak": 3,
+    "shared_offline_worker_peak": 5,
+    "offline_exception_samples": 56,
+    "offline_exception_first": 1791919861.630987,
+    "offline_exception_last": 1791919972.884206,
+    "offline_exception_span_seconds": 111.25321912765503,
+    "resource_compliance": "NOT_FULLY_COMPLIANT: Task174 four-worker pool overlapped this task active control; five shared workers"
+  },
+  "scope": "finite FP32-to-FP64 arithmetic; no prior-family replay, conversions, ordinary FMA or per-target method-admission proof"
+}

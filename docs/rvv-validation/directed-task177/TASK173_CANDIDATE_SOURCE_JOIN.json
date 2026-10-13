@@ -1,0 +1,11 @@
+{
+  "parent": "73fc8e2",
+  "task171_manifest_sha256": "3e455b595d1da33a6f2db2ca3ca5e51d456fc8179245664d1dbf200e9c322478",
+  "engine_sha256": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+  "production_source_matches_171": {
+    "dbt/guest/rv32_interp.cpp": "ad5ffa454cb663510b29bbe4b92617c90d7ab4dc789ae45304655109094e9f5a",
+    "dbt/qmc/qcg/qemit.cpp": "bebdf15e356a7c71b8345dde050483ccfa3ac89ff29d36da6e400a46ae63f9ef",
+    "dbt/guest/rv32_vector_fma_invalid.h": "9f87fd90b96cb4bcb088899b4b5ff549a56df63d195f541a56ad555dfd5ce880"
+  },
+  "production_changes_this_task": 0
+}

@@ -1,0 +1,26 @@
+{
+  "samples": 76,
+  "sampled_shared_guest_peak": 4,
+  "sampled_own_guest_peak": 4,
+  "minimum_free_bytes": 35726176256,
+  "inferred_accepted_guest_overlap_peak": 10,
+  "inference": "execution.json mtime minus duration; approximate launch/finish intervals, not process telemetry",
+  "constraints": {
+    "own_guest": 8,
+    "own_build": 4,
+    "own_offline": 2,
+    "shared_offline": 4,
+    "shared_guest": 16,
+    "nice": 10,
+    "affinity": "none",
+    "reserve_bytes": 10737418240
+  },
+  "resource_compliance": "NOT_FULLY_COMPLIANT: own-owner integer/FP controllers overlapped; later phases serialized",
+  "own_build_overlap": "two --build-jobs4 controllers; exact driver peak not recorded",
+  "exceptions": {
+    "time": 1791922159.666233,
+    "exception": "Integer remainder and FP pilot build/run controllers overlapped within one owner. Own build4/guest8 serialization was violated; exact build peak not captured. Suspension attempt found FP controller already complete. Later phases serialized; shared occupancy is reported from samples, without assuming compliance.",
+    "paused_pid": 559814,
+    "suspension_succeeded": false
+  }
+}
