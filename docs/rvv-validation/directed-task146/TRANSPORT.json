@@ -1,0 +1,21 @@
+{
+  "bytes": 213445825,
+  "sha256": "1f54b3e75418088c1a7f786378f52c0a43366081f26d9c0ec268c148510bffb8",
+  "payload_files": 193371,
+  "payload_bytes": 12623415398,
+  "raw_manifest_sha256": "d24aea858f99ecef9361b587cf73c376237b909728bf18170503c3268f78ed54",
+  "remote_archive": "xbd:/home/vick/task146-directed-final-raw.tar.gz",
+  "local_archive": "/home/user/research/materials/task146-directed-final-raw.tar.gz",
+  "local_raw": "/home/user/research/materials/task146-directed-raw-20261013",
+  "verified_payload_files": 193371,
+  "missing": 0,
+  "extra": 0,
+  "hash_differences": 0,
+  "verified_manifest_sha256": "d24aea858f99ecef9361b587cf73c376237b909728bf18170503c3268f78ed54",
+  "executed_sources_match_workspace": true,
+  "manifest_hash_matches_declaration": true,
+  "compressed_delivery_metadata_matches_raw": true,
+  "original_engine_pins_unchanged": true,
+  "semantic_raw_audit": "complete remote reapplication, AUDIT.json; no redundant local semantic rerun",
+  "first_partial_extraction_failure": "/home/user/research/materials/task146-transport-first-failure.txt"
+}

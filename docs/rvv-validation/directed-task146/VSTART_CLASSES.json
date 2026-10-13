@@ -1,0 +1,89 @@
+{
+  "counts": {
+    "zero-start": 42184,
+    "ordinary-nonzero-start": 24352,
+    "reserved-start-profile": 4160
+  },
+  "per_form": {
+    "vadd.vv": {
+      "zero-start": 2455,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vadd.vx": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vadd.vi": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vsub.vv": {
+      "zero-start": 2455,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vsub.vx": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vrsub.vx": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vrsub.vi": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vand.vv": {
+      "zero-start": 2455,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vand.vx": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vand.vi": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vor.vv": {
+      "zero-start": 2455,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vor.vx": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vor.vi": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vxor.vv": {
+      "zero-start": 2455,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vxor.vx": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    },
+    "vxor.vi": {
+      "zero-start": 2719,
+      "ordinary-nonzero-start": 1522,
+      "reserved-start-profile": 260
+    }
+  }
+}

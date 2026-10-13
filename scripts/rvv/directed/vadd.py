@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # SPDX-License-Identifier: MIT
-"""Project directed vadd template; no upstream test or DUT-derived golden."""
+"""Shared directed integer forms; legacy vadd145 is the unchanged default."""
 import argparse, collections, concurrent.futures, hashlib, json, os, resource
 import shutil, signal, struct, subprocess, sys, time
 from pathlib import Path
@@ -38,11 +38,71 @@ def cases():
               add('start'+str(start),n,'alternating',True,True,start,vd=16)
     return result
 
+# Task146 is an additive manifest. cases() above remains byte-for-byte Task145.
+FORMS = {'vadd': ('vv','vx','vi'), 'vsub': ('vv','vx'),
+         'vrsub': ('vx','vi'), 'vand': ('vv','vx','vi'),
+         'vor': ('vv','vx','vi'), 'vxor': ('vv','vx','vi')}
+FUNCT6 = {'vadd':0, 'vsub':2, 'vrsub':3, 'vand':9, 'vor':10, 'vxor':11}
+
+def integer_cases():
+    legacy=cases(); result=[]
+    for mnemonic, forms in FORMS.items():
+      for old in legacy:
+        if old['form'] not in forms: continue
+        c=dict(old, mnemonic=mnemonic, seed=146)
+        c['id']=mnemonic+'-'+old['id']; c['unit']=mnemonic+'-'+old['unit']
+        result.append(c)
+      geometries={c['unit']:c for c in result if c['mnemonic']==mnemonic and c['tag']=='length0'}
+      for base in geometries.values():
+        n=base['vlmax']; w=base['vlen']; chunk=512//base['sew']
+        def add(tag,vl,start,mask='alternating',ta=True,ma=True):
+          # CSR has log2(VLEN) writable bits. Never silently wrap a requested start.
+          assert 0 < start < w and 0 <= vl <= n
+          c=dict(base,tag=tag,vl=vl,vstart=start,mask=mask,ta=ta,ma=ma,vd=16)
+          c['id']=base['id'].removesuffix('length0')+tag
+          c['unit']=base['unit'].removesuffix('zero')+'start'
+          result.append(c)
+        add('start-zero-vl',0,1)
+        add('start-zero-vl-maxcsr',0,w-1,'none')
+        partial=max(1,n//2)
+        add('start-equal-partial',partial,partial)
+        add('start-above-partial',partial,min(w-1,partial+1),'none')
+        add('start-above-vl1',1,2,'off',False,False)
+        if n < w: add('start-equal-full',n,n)
+        if partial>1:
+          add('start-partial-active',partial,1)
+          add('start-partial-active-tu',partial,1,'none',False,False)
+        # Initialized vstart x partial VL x chunk x overlap/policies.
+        vl=min(n-1,chunk+2)
+        for start in (chunk-1,chunk,chunk+1):
+          if 0 < start < vl: add('start-partial-chunk'+str(start),vl,start)
+    return result
+
+def manifest_cases(family):
+    if family=='vadd145': return cases()
+    if family=='integer146': return integer_cases()
+    raise ValueError('unknown finite family '+family)
+
+def arithmetic(c,a,z):
+    # Specification predicates; fixed Spike/Sail, never this function, supplies
+    # the independently executed reference packet.
+    op=c.get('mnemonic','vadd')
+    if op=='vadd': value=a+z
+    elif op=='vsub': value=a-z
+    elif op=='vrsub': value=z-a
+    elif op=='vand': value=a & z
+    elif op=='vor': value=a | z
+    elif op=='vxor': value=a ^ z
+    else: raise ValueError('unsupported target mnemonic')
+    return (value % (1<<c['sew'])).to_bytes(c['sew']//8,'little')
+
 def initial(c):
     b=c['vlen']//8; e=c['sew']//8; limit=(1<<c['sew'])-1
     raw=bytearray((r*37+i*13+0x53)&255 for r in range(32) for i in range(b))
     # Full source groups: wrap, signed edge, low32 carry and distinct high64.
     patterns=[limit,limit//2,0,1,0xffffffff,0x11223344ffffffff,0x8000000000000000,0x76543210abcdef01]
+    if c['seed']==146:
+      patterns += [0xaaaaaaaaaaaaaaaa,0x5555555555555555,1<<(c['sew']-1),(1<<(c['sew']-1))+1]
     for base,offset in [(16,0),(24,3)]:
       for i in range(c['group_registers']*b//e):
         v=patterns[(i+offset)%len(patterns)]&limit
@@ -69,7 +129,7 @@ def decode(c,raw):
     b=c['vlen']//8
     return pre,post,raw[96:96+32*b],raw[96+32*b:]
 
-def check(c,raw,rc=0,timeout=False,reference=None):
+def check_isa(c,raw,rc=0,timeout=False):
     if rc!=0 or timeout: raise ValueError('failed execution/timeout')
     pre,post,before,after=decode(c,raw)
     scalar=c['operand']&0xffffffff
@@ -87,13 +147,26 @@ def check(c,raw,rc=0,timeout=False,reference=None):
         if c['form']=='vv': z=int.from_bytes(before[c['vs1']*b+i*e:c['vs1']*b+(i+1)*e],'little')
         elif c['form']=='vi': z=c['operand']
         else: z=scalar-(1<<32) if scalar&(1<<31) else scalar
-        expected=((a+z)% (1<<c['sew'])).to_bytes(e,'little')
+        expected=arithmetic(c,a,z)
         if actual!=expected: raise ValueError(f'active element {i}: {actual.hex()} != {expected.hex()}')
-        if reference is not None:
-          ref_after=decode(c,reference)[3]
-          if actual!=ref_after[off:off+e]: raise ValueError('independent reference active mismatch')
       elif actual!=old and not (agnostic and actual==b'\xff'*e):
         raise ValueError(f'preserved/agnostic element {i}')
+    return True
+
+def check_reference(c,raw,reference):
+    # ISA validity (including permitted agnostic sets) is checked separately.
+    after=decode(c,raw)[3]; ref_after=decode(c,reference)[3]
+    b=c['vlen']//8; e=c['sew']//8; mask=mask_bytes(c)
+    for i in range(c['vstart'],c['vl']):
+      if c['mask']=='none' or mask[i//8]>>(i%8)&1:
+        off=c['vd']*b+i*e
+        if after[off:off+e]!=ref_after[off:off+e]:
+          raise ValueError('independent reference active mismatch')
+    return True
+
+def check(c,raw,rc=0,timeout=False,reference=None):
+    check_isa(c,raw,rc,timeout)
+    if reference is not None: check_reference(c,raw,reference)
     return True
 
 def assembly(cs):
@@ -110,7 +183,7 @@ def assembly(cs):
       for j,csr in enumerate(CSRS): lines += [f'csrr t0,{csr}',f'sw t0,{8+4*j}(a3)']
       lines += ['sw s0,48(a3)',f'.globl target_{tag}',f'target_{tag}:']
       op=f'v{c["vs1"]}' if c['form']=='vv' else 's0' if c['form']=='vx' else str(c['operand'])
-      lines += [f'vadd.{c["form"]} v{c["vd"]},v{c["vs2"]},{op}'+(',v0.t' if c['mask']!='none' else '')]
+      lines += [f'{c.get("mnemonic","vadd")}.{c["form"]} v{c["vd"]},v{c["vs2"]},{op}'+(',v0.t' if c['mask']!='none' else '')]
       for j,csr in enumerate(CSRS): lines += [f'csrr t0,{csr}',f'sw t0,{52+4*j}(a3)']
       lines += ['sw s0,92(a3)','csrwi vstart,0',f'li t0,{96+32*b}','add t1,a3,t0']
       for r in range(32): lines += [f'vs1r.v v{r},(t1)',f'addi t1,t1,{b}']
@@ -122,16 +195,20 @@ def assembly(cs):
     lines += ['end_signature:','.balign 64','.globl tohost,fromhost','tohost: .dword 0','fromhost: .dword 0']
     return '\n'.join(lines)+'\n'
 
-def build(out,compiler,link):
-    out.mkdir(parents=True,exist_ok=False);cs=cases()
+def build(out,compiler,link,family="vadd145",jobs=1,selected_units=None):
+    out.mkdir(parents=True,exist_ok=False);cs=manifest_cases(family)
     for i,c in enumerate(cs): c['ordinal']=i
+    if selected_units is not None:
+      if not set(selected_units) <= {c['unit'] for c in cs}: raise ValueError('unknown selected unit')
+      cs=[c for c in cs if c['unit'] in selected_units]
     units=collections.defaultdict(list)
     for c in cs: units[c['unit']].append(c)
-    save(out/'manifest.json',dict(project_tests=True,cases=cs,units=len(units),planned_case_executions=len(cs)*5,reference='fixed Spike/pk for vstart0; fixed Sail0.14.1 for nonzero vstart; independently source-reviewed ISA predicates for every packet'))
+    save(out/'manifest.json',dict(**({'family':family} if family!='vadd145' else {}),**({'pilot_units':sorted(selected_units)} if selected_units is not None else {}),project_tests=True,cases=cs,units=len(units),planned_case_executions=len(cs)*5,reference='fixed Spike/pk for vstart0; fixed Sail0.14.1 for nonzero vstart; independently source-reviewed ISA predicates for every packet'))
     shutil.copy2(link,out/'user.ld')
     (out/'sail.ld').write_text(Path(link).read_text().replace('0x10000','0x80000000'))
-    cmds=[]
-    for unit,rows in units.items():
+    if jobs not in range(1,5): raise ValueError("build jobs must be 1..4")
+    def build_unit(item):
+      unit,rows=item; cmds=[]
       d=out/unit;d.mkdir();(d/'test.S').write_text(assembly(rows))
       for machine in ([False,True] if rows[0]['vstart'] else [False]):
         elf=d/('sail.elf' if machine else 'test.elf')
@@ -139,6 +216,10 @@ def build(out,compiler,link):
         r=subprocess.run(cmd,capture_output=True);(d/('sail-build.stderr' if machine else 'build.stderr')).write_bytes(r.stderr)
         cmds.append(dict(command=cmd,returncode=r.returncode,elf_sha256=sha(elf) if r.returncode==0 else None))
         if r.returncode: raise RuntimeError(r.stderr.decode())
+      return cmds
+    cmds=[]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
+      for rows in pool.map(build_unit,units.items()): cmds.extend(rows)
     save(out/'build-commands.json',cmds)
     print(f'{len(cs)} cases / {len(units)} units built',flush=True)
 
@@ -193,7 +274,11 @@ def run(root,engine,spike,pk,sail,flags,jobs):
         d=out/unit/arm;env=dict(os.environ)
         if arm=='Reference':
           if cs[0]['vstart']:
-            config=root/unit/'sail-config.json';save(config,{'base':{'xlen':32},'extensions':{'V':{'vlen_exp':w.bit_length()-1,'elen_exp':6,'vstart':{'zero_required':{'arith':False}}},'D':{'supported':True}}})
+            config=root/unit/'sail-config.json'
+            vector_config={'vlen_exp':w.bit_length()-1,'elen_exp':6,'vstart':{'zero_required':{'arith':False}}}
+            if manifest.get('family')=='integer146':
+              vector_config['reserved_behavior']={'vstart_out_of_bounds':'Vstart_Ignore'}
+            save(config,{'base':{'xlen':32},'extensions':{'V':vector_config,'D':{'supported':True}}})
             cmd=[sail,'--rv32','--config-override',config,'--stop-at-pc',sail_stop(root/unit/'sail.elf'),'--inst-limit','10000000','--test-signature',d/'signature','--signature-granularity','4',root/unit/'sail.elf']
           else: cmd=[spike,f'--isa=rv32gcv_zvl{w}b',pk,root/unit/'test.elf']
         else:
@@ -208,13 +293,19 @@ def run(root,engine,spike,pk,sail,flags,jobs):
         else: raw=(d/'stdout').read_bytes()
         (d/'packets.bin').write_bytes(raw);size=packet_size(cs[0]);errors=[]
         for i,c in enumerate(cs):
-          status='PASS';error=None
+          status='PASS';error=None;isa_status='NOT_RUN';reference_status='ORACLE_PACKET' if arm=='Reference' else 'BLOCKED'
           try:
             if len(raw)!=size*len(cs): raise ValueError(f'output extent {len(raw)} != {size*len(cs)}')
             ref=reference[i*size:(i+1)*size] if reference is not None else None
-            check(c,raw[i*size:(i+1)*size],rec['returncode'],rec['timeout'],ref)
-          except ValueError as ex: status='FAIL';error=str(ex);errors.append(dict(case=c['id'],error=error))
-          results.append(dict(case=c['id'],arm=arm,status=status,error=error,raw=str(d/'packets.bin'),offset=i*size,size=size))
+            packet=raw[i*size:(i+1)*size]
+            check_isa(c,packet,rec['returncode'],rec['timeout']);isa_status='PASS'
+            if ref is not None:
+              reference_status='FAIL';check_reference(c,packet,ref);reference_status='PASS'
+          except ValueError as ex:
+            status='FAIL';error=str(ex)
+            if isa_status!='PASS':isa_status='FAIL'
+            errors.append(dict(case=c['id'],error=error,isa_status=isa_status,reference_status=reference_status))
+          results.append(dict(case=c['id'],arm=arm,status=status,error=error,isa_status=isa_status,reference_status=reference_status,raw=str(d/'packets.bin'),offset=i*size,size=size))
         if arm=='Reference' and not errors: reference=raw
         if arm!='Reference' and reference is None:
           for r in results[-len(cs):]:
@@ -232,11 +323,11 @@ def run(root,engine,spike,pk,sail,flags,jobs):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='action',required=True)
-    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-22');b.add_argument('--link',type=Path,required=True)
+    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146'],default='vadd145');b.add_argument('--link',type=Path,required=True)
     r=sub.add_parser('run');r.add_argument('--root',type=Path,required=True)
     for n in ['engine','spike','pk','sail','flags']: r.add_argument('--'+n,type=Path,required=True)
     r.add_argument('--jobs',type=int,default=2)
     a=p.parse_args()
-    if a.action=='build':build(a.output,a.compiler,a.link)
+    if a.action=='build':build(a.output,a.compiler,a.link,a.family,a.build_jobs,json.loads(a.units_file.read_text()) if a.units_file else None)
     else:run(a.root,a.engine,a.spike,a.pk,a.sail,a.flags,a.jobs)
 if __name__=='__main__':main()

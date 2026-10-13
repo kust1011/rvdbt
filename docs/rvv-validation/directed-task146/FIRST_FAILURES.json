@@ -1,0 +1,5 @@
+{
+  "formal_failures": [],
+  "formal_classification": "none",
+  "prelaunch": "intentional stopped serial build and failed scp destination, see PRELAUNCH.md; corruption controls separately retained"
+}

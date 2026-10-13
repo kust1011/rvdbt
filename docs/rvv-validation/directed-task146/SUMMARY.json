@@ -1,0 +1,27 @@
+{
+  "planned_cases": 70696,
+  "planned_executions": 353480,
+  "executed": 353480,
+  "counts": {
+    "PASS": 353480
+  },
+  "arms": {
+    "Reference": {
+      "PASS": 70696
+    },
+    "B": {
+      "PASS": 70696
+    },
+    "M1": {
+      "PASS": 70696
+    },
+    "M2": {
+      "PASS": 70696
+    },
+    "BOTH": {
+      "PASS": 70696
+    }
+  },
+  "seconds": 1040.5401682860102,
+  "jobs": 4
+}

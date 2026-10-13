@@ -1,0 +1,77 @@
+{
+  "build": [
+    "python3",
+    "scripts/rvv/directed/vadd.py",
+    "build",
+    "--family",
+    "integer146",
+    "--build-jobs",
+    "4",
+    "--compiler",
+    "clang-20",
+    "--output",
+    "/home/user/research/materials/task146-directed-build4-20261013/corpus",
+    "--link",
+    "scripts/rvv/fixtures/rvvts-20261089/link.ld"
+  ],
+  "pilot_build": [
+    "python3",
+    "scripts/rvv/directed/vadd.py",
+    "build",
+    "--family",
+    "integer146",
+    "--build-jobs",
+    "2",
+    "--units-file",
+    "/home/user/research/materials/task146-pilot-units.json",
+    "--compiler",
+    "clang-20",
+    "--output",
+    "/home/user/research/materials/task146-directed-pilot-20261013",
+    "--link",
+    "scripts/rvv/fixtures/rvvts-20261089/link.ld"
+  ],
+  "run": [
+    "taskset",
+    "-c",
+    "28-31",
+    "nice",
+    "-n",
+    "10",
+    "python3",
+    "vadd.py",
+    "run",
+    "--root",
+    "/home/vick/rvv-directed-task146/corpus",
+    "--engine",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun",
+    "--spike",
+    "/home/vick/rvv-directed-task145/deps/spike",
+    "--pk",
+    "/home/vick/rvv-directed-task145/deps/pk",
+    "--sail",
+    "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+    "--flags",
+    "/home/vick/rvv-directed-task146/external-flags.json",
+    "--jobs",
+    "4"
+  ],
+  "audit": [
+    "python3",
+    "audit.py",
+    "corpus",
+    "audit"
+  ],
+  "rejections": [
+    "python3",
+    "reject.py",
+    "corpus",
+    "rejections"
+  ],
+  "synthetic_controls": [
+    "python3",
+    "scripts/rvv/directed/test_vadd.py"
+  ],
+  "compiler": "Ubuntu clang version 20.1.8 (++20250708082409+6fb913d3e2ec-1~exp1~20250708202428.132)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-20/bin\n",
+  "compiler_sha256": "a7b31cd92536924097ddbd01c3a238f8afd00f7d60bb359ebcc0813f3ff8394f"
+}

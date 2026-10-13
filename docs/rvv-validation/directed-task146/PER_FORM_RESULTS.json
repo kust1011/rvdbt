@@ -1,0 +1,401 @@
+{
+  "per_form": [
+    {
+      "form": "vadd.vv",
+      "planned": 4237,
+      "arms": {
+        "Reference": {
+          "PASS": 4237
+        },
+        "B": {
+          "PASS": 4237
+        },
+        "M1": {
+          "PASS": 4237
+        },
+        "M2": {
+          "PASS": 4237
+        },
+        "BOTH": {
+          "PASS": 4237
+        }
+      },
+      "ordinary_isa_cases": 3977,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vadd.vx",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vadd.vi",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vsub.vv",
+      "planned": 4237,
+      "arms": {
+        "Reference": {
+          "PASS": 4237
+        },
+        "B": {
+          "PASS": 4237
+        },
+        "M1": {
+          "PASS": 4237
+        },
+        "M2": {
+          "PASS": 4237
+        },
+        "BOTH": {
+          "PASS": 4237
+        }
+      },
+      "ordinary_isa_cases": 3977,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vsub.vx",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vrsub.vx",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vrsub.vi",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vand.vv",
+      "planned": 4237,
+      "arms": {
+        "Reference": {
+          "PASS": 4237
+        },
+        "B": {
+          "PASS": 4237
+        },
+        "M1": {
+          "PASS": 4237
+        },
+        "M2": {
+          "PASS": 4237
+        },
+        "BOTH": {
+          "PASS": 4237
+        }
+      },
+      "ordinary_isa_cases": 3977,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vand.vx",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vand.vi",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vor.vv",
+      "planned": 4237,
+      "arms": {
+        "Reference": {
+          "PASS": 4237
+        },
+        "B": {
+          "PASS": 4237
+        },
+        "M1": {
+          "PASS": 4237
+        },
+        "M2": {
+          "PASS": 4237
+        },
+        "BOTH": {
+          "PASS": 4237
+        }
+      },
+      "ordinary_isa_cases": 3977,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vor.vx",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vor.vi",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vxor.vv",
+      "planned": 4237,
+      "arms": {
+        "Reference": {
+          "PASS": 4237
+        },
+        "B": {
+          "PASS": 4237
+        },
+        "M1": {
+          "PASS": 4237
+        },
+        "M2": {
+          "PASS": 4237
+        },
+        "BOTH": {
+          "PASS": 4237
+        }
+      },
+      "ordinary_isa_cases": 3977,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vxor.vx",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    },
+    {
+      "form": "vxor.vi",
+      "planned": 4501,
+      "arms": {
+        "Reference": {
+          "PASS": 4501
+        },
+        "B": {
+          "PASS": 4501
+        },
+        "M1": {
+          "PASS": 4501
+        },
+        "M2": {
+          "PASS": 4501
+        },
+        "BOTH": {
+          "PASS": 4501
+        }
+      },
+      "ordinary_isa_cases": 4241,
+      "reserved_start_profile_cases": 260,
+      "geometries": 132
+    }
+  ],
+  "planned_cases": 70696,
+  "planned_checks": 353480,
+  "executed_checks": 353480,
+  "new_forms": 13,
+  "regression_forms": 3,
+  "isa_statuses": {
+    "PASS": 353480
+  },
+  "reference_statuses": {
+    "ORACLE_PACKET": 70696,
+    "PASS": 282784
+  },
+  "failures": []
+}

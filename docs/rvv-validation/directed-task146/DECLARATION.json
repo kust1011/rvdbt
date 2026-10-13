@@ -1,0 +1,28 @@
+{
+  "declared_before_execution": true,
+  "family": "integer146",
+  "cases": 70696,
+  "checks": 353480,
+  "commands": 21120,
+  "manifest_sha256": "9d25ec8a18ae295f7ae2c30f639bb31e349ec249cea21b555380b92f30416001",
+  "per_form": {
+    "vadd.vv": 4237,
+    "vadd.vx": 4501,
+    "vadd.vi": 4501,
+    "vsub.vv": 4237,
+    "vsub.vx": 4501,
+    "vrsub.vx": 4501,
+    "vrsub.vi": 4501,
+    "vand.vv": 4237,
+    "vand.vx": 4501,
+    "vand.vi": 4501,
+    "vor.vv": 4237,
+    "vor.vx": 4501,
+    "vor.vi": 4501,
+    "vxor.vv": 4237,
+    "vxor.vx": 4501,
+    "vxor.vi": 4501
+  },
+  "vstart_range": "0..VLEN-1; full-VL equality unavailable only when VLMAX=VLEN, e8/m8; partial equality still tested",
+  "all_zero_vl_nonzero_start": 4224
+}

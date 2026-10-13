@@ -24,14 +24,19 @@ def elf_sections_symbols(path):
 def audit(root,out):
     out.mkdir(parents=True,exist_ok=False)
     manifest=json.loads((root/'manifest.json').read_text());cases=manifest['cases'];results=json.loads((root/'results.json').read_text())
-    regenerated=v.cases()
+    regenerated=v.manifest_cases(manifest.get("family","vadd145"))
     for i,c in enumerate(regenerated):c['ordinal']=i
+    if 'pilot_units' in manifest:
+        selected=set(manifest['pilot_units'])
+        if not selected <= {c['unit'] for c in regenerated}: raise ValueError('unknown pilot unit')
+        regenerated=[c for c in regenerated if c['unit'] in selected]
     if regenerated!=cases:raise ValueError('manifest differs from finite generator')
     ids={c['id']:c for c in cases};units=collections.defaultdict(list)
     for c in cases:units[c['unit']].append(c)
     if len(ids)!=len(cases):raise ValueError('duplicate case')
     expected={(c['id'],arm) for c in cases for arm in ['Reference','B','M1','M2','BOTH']}
     observed={(r['case'],r['arm']) for r in results}
+    receipts={(r['case'],r['arm']):r for r in results}
     if observed!=expected or len(results)!=len(expected):raise ValueError('missing/duplicate result')
     builds=json.loads((root/'build-commands.json').read_text());pins={}
     for r in builds:
@@ -48,7 +53,7 @@ def audit(root,out):
             pc=syms['target_'+str(c['ordinal'])];textaddr,code=user['.text'];insn=code[pc-textaddr:pc-textaddr+4]
             word=int.from_bytes(insn,'little');f3={'vv':0,'vx':4,'vi':3}[c['form']]
             operand=c['vs1'] if c['form']=='vv' else 8 if c['form']=='vx' else c['operand']&31
-            expected_word=(int(c['mask']=='none')<<25)|(c['vs2']<<20)|(operand<<15)|(f3<<12)|(c['vd']<<7)|0x57
+            expected_word=(v.FUNCT6[c.get('mnemonic','vadd')]<<26)|(int(c['mask']=='none')<<25)|(c['vs2']<<20)|(operand<<15)|(f3<<12)|(c['vd']<<7)|0x57
             if word!=expected_word:raise ValueError('target opcode mismatch')
             targets.append(dict(case=c['id'],user_pc=hex(pc),instruction_hex=insn.hex()))
         if cs[0]['vstart']:
@@ -69,6 +74,11 @@ def audit(root,out):
     rows=[];counts=collections.Counter();first_failures=[];runtime=0;command_count=0
     for unit,cs in units.items():
         size=v.packet_size(cs[0]);ref=root/'runs'/unit/'Reference'/'packets.bin';refraw=ref.read_bytes()
+        refrec=json.loads((ref.parent/'execution.json').read_text());reference_valid=True
+        try:
+            if len(refraw)!=len(cs)*size: raise ValueError('reference output extent')
+            for i,c in enumerate(cs):v.check_isa(c,refraw[i*size:(i+1)*size],refrec['returncode'],refrec['timeout'])
+        except ValueError:reference_valid=False
         for arm in ['Reference','B','M1','M2','BOTH']:
             d=root/'runs'/unit/arm;r=json.loads((d/'execution.json').read_text());runtime+=r['seconds'];command_count+=1
             if v.sha(d/'stdout')!=r['stdout_sha256'] or v.sha(d/'stderr')!=r['stderr_sha256']:raise ValueError('raw stream hash mismatch')
@@ -78,19 +88,27 @@ def audit(root,out):
             else:extracted=(d/'stdout').read_bytes()
             if raw!=extracted:raise ValueError('packet extraction mismatch')
             for i,c in enumerate(cs):
-                packet=raw[i*size:(i+1)*size];error=None
+                packet=raw[i*size:(i+1)*size];error=None;isa_status='NOT_RUN';reference_status='ORACLE_PACKET' if arm=='Reference' else 'BLOCKED'
                 try:
                     if len(raw)!=len(cs)*size:raise ValueError('output extent')
-                    v.check(c,packet,r['returncode'],r['timeout'],refraw[i*size:(i+1)*size] if arm!='Reference' else None)
-                except ValueError as e:error=str(e)
-                status='FAIL' if error else 'PASS';counts[(arm,status)]+=1
+                    v.check_isa(c,packet,r['returncode'],r['timeout']);isa_status='PASS'
+                    if arm!='Reference' and reference_valid:
+                        reference_status='FAIL';v.check_reference(c,packet,refraw[i*size:(i+1)*size]);reference_status='PASS'
+                except ValueError as e:
+                    error=str(e)
+                    if isa_status!='PASS':isa_status='FAIL'
+                status='FAIL' if error else 'ISA_ONLY_REFERENCE_BLOCKED' if arm!='Reference' and not reference_valid else 'PASS'
+                receipt=receipts[(c['id'],arm)]
+                if receipt['status']!=status:raise ValueError('runner/audit status mismatch')
+                if 'isa_status' in receipt and (receipt['isa_status']!=isa_status or receipt['reference_status']!=reference_status):raise ValueError('runner/audit oracle separation mismatch')
+                counts[(arm,status)]+=1
                 if error:first_failures.append(dict(case=c['id'],arm=arm,error=error))
                 observed=v.decode(c,packet) if len(packet)==size else None
-                rows.append(dict(case=c['id'],arm=arm,status=status,pre_csrs=json.dumps(observed[0]) if observed else '',post_csrs=json.dumps(observed[1]) if observed else '',pre_register_sha256=hashlib.sha256(observed[2]).hexdigest() if observed else '',post_register_sha256=hashlib.sha256(observed[3]).hexdigest() if observed else '',raw=str((d/'packets.bin').relative_to(root)),offset=i*size,bytes=size,oracle='Sail0.14.1+ISA' if c['vstart'] else 'Spike20feb9c2+ISA'))
+                rows.append(dict(case=c['id'],arm=arm,status=status,isa_status=isa_status,reference_status=reference_status,vstart_class='zero-start' if c['vstart']==0 else 'reserved-start-profile' if c['vstart']>=c['vlmax'] else 'ordinary-nonzero-start',pre_csrs=json.dumps(observed[0]) if observed else '',post_csrs=json.dumps(observed[1]) if observed else '',pre_register_sha256=hashlib.sha256(observed[2]).hexdigest() if observed else '',post_register_sha256=hashlib.sha256(observed[3]).hexdigest() if observed else '',raw=str((d/'packets.bin').relative_to(root)),offset=i*size,bytes=size,oracle='Sail0.14.1+ISA' if c['vstart'] else 'Spike20feb9c2+ISA'))
     with gzip.open(out/'observed-checks.csv.gz','wt') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     v.save(out/'adapter-verification.json',adapter);v.save(out/'guest-pins.json',pins)
-    v.save(out/'audit.json',dict(planned_cases=len(cases),executed_case_checks=len(rows),planned_commands=len(units)*5,executed_commands=command_count,aggregate_command_seconds=runtime,counts={a:{s:counts[(a,s)] for s in ['PASS','FAIL']} for a in ['Reference','B','M1','M2','BOTH']},failures=first_failures,adapter_verified_units=len(adapter),full_state='32 vector registers, 10 CSRs and scalar s0 pre/post',method_admission='NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission'))
+    v.save(out/'audit.json',dict(planned_cases=len(cases),executed_case_checks=len(rows),planned_commands=len(units)*5,executed_commands=command_count,aggregate_command_seconds=runtime,counts={a:{s:counts[(a,s)] for s in ['PASS','FAIL','ISA_ONLY_REFERENCE_BLOCKED']} for a in ['Reference','B','M1','M2','BOTH']},failures=first_failures,adapter_verified_units=len(adapter),full_state='32 vector registers, 10 CSRs and scalar s0 pre/post',method_admission='NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission'))
     print(dict(counts))
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('root',type=Path);p.add_argument('output',type=Path);a=p.parse_args();audit(a.root,a.output)
