@@ -1,0 +1,19 @@
+{
+  "remote": "/home/vick/rvv-directed-task179",
+  "candidate": "/home/vick/rvdbt-host512-task179-build",
+  "all_original177_retained": true,
+  "all178_sources_ELFs_oracles_results_untouched": true,
+  "new_packets_stream_compressed": true,
+  "ELF_rebuilds": 0,
+  "reference_executions": 0,
+  "shared_notice": "SESSION0_TASK179_COORDINATION.md",
+  "fixed_GDB_packet_sha256": "61c44944b2dfe9b897450f995889d613640a41c3c3945be565d7166dd295b807",
+  "fixed_GDB_same_packet_as_focused_trace1_B": true,
+  "setup_attempts": [
+    "initial missing own-cache directory; corrected before host-fault capture",
+    "invocation-attempt1: wrapper duplicated dump options; no DUT execution credit",
+    "audit setup attempts: v1 lacks cache64 CLI; missing sail link; cache64 patch must audit separate root",
+    "fixed-gdb-invocation-attempt1: GDB run redirection reset argv; retained invalid-argument result"
+  ],
+  "initial_nice_exception": true
+}

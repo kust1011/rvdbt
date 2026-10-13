@@ -1,0 +1,20 @@
+R1A.3b QCG vector-run codegen and correctness + R1A.3d three-arm ablation
+[1] flag off: pinned accepted code plus reviewed Task137 memory-safety/layout updates
+    ok  add;sub              vlen=512   416 bytes  64 lines 0x62b90003dc201bf6 nodisp=0x153f3531e3bee649
+    ok  add;sub              vlen=1024  488 bytes  72 lines 0x60027d710db29bce nodisp=0x33686871cb45963b
+    ok  mul;xor              vlen=512   424 bytes  62 lines 0x7ee2dd2479a8503b nodisp=0x6ac099aba900308b
+    ok  mul;xor              vlen=1024  496 bytes  70 lines 0x87f98422fdde0d75 nodisp=0x0a48996c32eeae52
+    ok  or;and               vlen=512   416 bytes  64 lines 0x6c9aa0ce7b8ae793 nodisp=0x077c1fa049c642ae
+    ok  or;and               vlen=1024  488 bytes  72 lines 0x7083ee2ec2c49608 nodisp=0x715c909c9cc9d50b
+    ok  six ops              vlen=512   928 bytes 132 lines 0x6c5f1e29e9a8ec8e nodisp=0x9387585ad690330d
+    ok  six ops              vlen=1024 1144 bytes 156 lines 0x3b39b811403a89a6 nodisp=0xb6cde7cac98e60cb
+    protocol and wrong-helper/range-limit rejection PASS vlen=512
+    ok  add;vle;add          vlen=512   584 bytes  91 lines 0x421ffaa907a2d062 nodisp=0x8a00b08c537cba18
+    protocol and wrong-helper/range-limit rejection PASS vlen=1024
+    ok  add;vle;add          vlen=1024  672 bytes 104 lines 0x1c31642dbf5a3ff2 nodisp=0x9f0e1ae25219581c
+    ok  no vsetvli add;sub   vlen=512   344 bytes  52 lines 0xf51c7f6875d54104 nodisp=0x2b130251b6bb8590
+    ok  no vsetvli add;sub   vlen=1024  416 bytes  60 lines 0x47f33526809ce7a0 nodisp=0xec2821dbe065928e
+    ok  overlap chain        vlen=512   416 bytes  64 lines 0x76c1a8369a8abed8 nodisp=0x153f3531e3bee649
+    ok  overlap chain        vlen=1024  488 bytes  72 lines 0x508157cf847d8952 nodisp=0x33686871cb45963b
+    ok  scalar only          vlen=512   112 bytes  22 lines 0x7adb91d6d25b35a8 nodisp=0x79649824b01d18f4
+    ok  scalar only          vlen=1024  112 bytes  22 lines 0x7adb91d6d25b35a8 nodisp=0x79649824b01d18f4

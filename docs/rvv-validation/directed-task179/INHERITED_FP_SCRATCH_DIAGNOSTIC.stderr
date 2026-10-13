@@ -1,0 +1,194 @@
+Panic: qir: rvv run member has no guest pc
+backtrace
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10fc0) [0x5e8e63aeffc0]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10f9f) [0x5e8e63aeff9f]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x4a2cd) [0x5e8e63b292cd]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x41eb4) [0x5e8e63b20eb4]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x286ec) [0x5e8e63b076ec]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7009d462a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7009d462a28b]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x14f15) [0x5e8e63af3f15]
+Panic: qir: rvv run members are not consecutive guest instructions
+backtrace
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10fc0) [0x5e8e63aeffc0]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10f9f) [0x5e8e63aeff9f]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x4a2dd) [0x5e8e63b292dd]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x41eb9) [0x5e8e63b20eb9]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x286ec) [0x5e8e63b076ec]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7009d462a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7009d462a28b]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x14f15) [0x5e8e63af3f15]
+Panic: qir: rvv run member count out of range
+backtrace
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10fc0) [0x5e8e63aeffc0]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10f9f) [0x5e8e63aeff9f]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x4a48c) [0x5e8e63b2948c]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x41ebe) [0x5e8e63b20ebe]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x286ec) [0x5e8e63b076ec]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7009d462a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7009d462a28b]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x14f15) [0x5e8e63af3f15]
+Panic: qir: rvv run member has no fallback stub
+backtrace
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10fc0) [0x5e8e63aeffc0]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x10f9f) [0x5e8e63aeff9f]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x4a4bd) [0x5e8e63b294bd]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x41ec3) [0x5e8e63b20ec3]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x286ec) [0x5e8e63b076ec]
+	at /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7009d462a1ca]
+	at /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7009d462a28b]
+	at /home/vick/rvdbt-host512-task179-build/build/bin/rvv_vector_run_codegen_test(+0x14f15) [0x5e8e63af3f15]
+STACK_DIAGNOSTIC g=13 fallback=218
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+  FAIL /home/vick/rvdbt-host512-task179-build/source/dbt/qmc/qcg/rvv_vector_run_codegen_test.cpp:4054: stack == 0u (24 vs 0)
+STACK_DIAGNOSTIC g=13 fallback=218
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+  FAIL /home/vick/rvdbt-host512-task179-build/source/dbt/qmc/qcg/rvv_vector_run_codegen_test.cpp:4054: stack == 0u (24 vs 0)
+STACK_DIAGNOSTIC g=13 fallback=365
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+  FAIL /home/vick/rvdbt-host512-task179-build/source/dbt/qmc/qcg/rvv_vector_run_codegen_test.cpp:4054: stack == 0u (48 vs 0)
+STACK_DIAGNOSTIC g=13 fallback=365
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+STACK_DIAGNOSTIC sub    rsp,0x10
+STACK_DIAGNOSTIC mov    QWORD PTR [rsp],0x0
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC mov    DWORD PTR [rsp],0x7f800000
+STACK_DIAGNOSTIC vpcmpeqd k2,zmm0,DWORD BCST [rsp]
+STACK_DIAGNOSTIC add    rsp,0x10
+  FAIL /home/vick/rvdbt-host512-task179-build/source/dbt/qmc/qcg/rvv_vector_run_codegen_test.cpp:4054: stack == 0u (48 vs 0)
+
+FAILED: 4 check(s)

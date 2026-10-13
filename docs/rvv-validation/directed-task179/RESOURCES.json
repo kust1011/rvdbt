@@ -1,0 +1,22 @@
+{
+  "samples": 112,
+  "sampled_own_guest_peak": 3,
+  "sampled_shared_guest_peak": 3,
+  "minimum_free_bytes": 32855916544,
+  "own_enforced_guest_workers": 4,
+  "own_enforced_offline_workers": 2,
+  "own_build_jobs": 4,
+  "owner_semaphore": "/home/vick/rvv-directed-task179.own-semaphore",
+  "policy": {
+    "own_guest": 8,
+    "own_build": 4,
+    "own_offline": 2,
+    "shared_guest": 16,
+    "shared_offline": 4,
+    "nice": 10,
+    "affinity": "none assigned",
+    "reserve_bytes": 10737418240
+  },
+  "limitations": "preflight samples, not continuous telemetry; contract binaries are offline workers not classified by inherited resources164; bounded pool2 accounts for them. Initial diagnostic nested nice10 yielded nice19; authoritative repeat and all regression/build/offline subprocesses use nice10.",
+  "resource_compliance": "INITIAL_NICE_EXCEPTION_RETAINED; subsequent own queue bounds enforced by a single cross-controller flock and bounded pools; sparse shared occupancy is not a continuous guarantee"
+}

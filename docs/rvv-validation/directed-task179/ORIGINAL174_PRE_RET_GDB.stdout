@@ -1,0 +1,289 @@
+Breakpoint 1 at 0x77540
+Breakpoint 2 at 0x77f90
+Breakpoint 3 at 0x77570
+Breakpoint 4 at 0x77581
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff61ff6c0 (LWP 1120386)]
+ENTRY state=0x555564704030 vmem=(nil) code=0x7fffed5fe000 rsp=0x7fffffff93a8
+0x7fffffff93a8:	0x00005555555b86f4	0x0000555564704030
+0x7fffffff93b8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93c8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93d8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93e8:	0x00007fffffff9420	0x0000000000000000
+ENTRY_GUEST_IP=0x10000
+   0x7fffed5fe000:	push   %rcx
+   0x7fffed5fe001:	mov    %r13,%rdi
+   0x7fffed5fe004:	mov    $0x805073,%rsi
+   0x7fffed5fe00b:	call   *0x5f(%rip)        # 0x7fffed5fe070
+   0x7fffed5fe011:	movabs $0x55555ba89028,%r12
+   0x7fffed5fe01b:	mov    $0x10004,%esi
+   0x7fffed5fe020:	lea    0x0(,%esi,4),%esi
+   0x7fffed5fe028:	and    $0x3fffff0,%esi
+   0x7fffed5fe02e:	cmpl   $0x10004,(%r12,%rsi,1)
+   0x7fffed5fe036:	jne    0x7fffed5fe046
+   0x7fffed5fe03c:	mov    0x8(%r12,%rsi,1),%r12
+   0x7fffed5fe041:	incq   0x20(%r12)
+   0x7fffed5fe046:	mov    $0x10004,%r14
+   0x7fffed5fe04d:	mov    $0x10000,%r15
+   0x7fffed5fe054:	call   *0x1e(%rip)        # 0x7fffed5fe078
+   0x7fffed5fe05a:	pop    %rcx
+   0x7fffed5fe05b:	pop    %rcx
+   0x7fffed5fe05c:	movabs $0x5555555cb5b0,%rax
+   0x7fffed5fe066:	call   *%rax
+   0x7fffed5fe068:	add    $0x0,%al
+   0x7fffed5fe06a:	add    %eax,(%rax)
+   0x7fffed5fe06c:	add    %al,(%rax)
+   0x7fffed5fe06e:	add    %al,(%rax)
+   0x7fffed5fe070:	xor    %ch,%al
+   0x7fffed5fe072:	(bad)
+   0x7fffed5fe077:	add    %dl,0x55555cbf(%rax)
+   0x7fffed5fe07d:	push   %rbp
+   0x7fffed5fe07e:	add    %al,(%rax)
+   0x7fffed5fe080:	add    %al,(%rax)
+   0x7fffed5fe082:	add    %al,(%rax)
+   0x7fffed5fe084:	add    %al,(%rax)
+   0x7fffed5fe086:	add    %al,(%rax)
+   0x7fffed5fe088:	add    %al,(%rax)
+   0x7fffed5fe08a:	add    %al,(%rax)
+   0x7fffed5fe08c:	add    %al,(%rax)
+TRACE state=0x555564704030 target=0x10004 entry=0x10000 rsp=0x7fffffff8f58 ret=0x7fffed5fe05a
+0x7fffffff8f58:	0x00007fffed5fe05a	0x0000000000040000
+0x7fffffff8f68:	0x00005555555cb565	0x005555555cb5b0b8
+0x7fffffff8f78:	0x0000010004d0ff00	0x151414004c4c554e
+0x7fffffff8f88:	0x4e15554e4a434859	0x424e15585e5f4e42
+0x7fffffff8f98:	0x53005914585e5f4e	0x0000000000000000
+0x7fffffff8fa8:	0x0000000000000000	0x0000000000000000
+   0x7fffed5fe05a:	pop    %rcx
+   0x7fffed5fe05b:	pop    %rcx
+   0x7fffed5fe05c:	movabs $0x5555555cb5b0,%rax
+   0x7fffed5fe066:	call   *%rax
+   0x7fffed5fe068:	add    $0x0,%al
+   0x7fffed5fe06a:	add    %eax,(%rax)
+   0x7fffed5fe06c:	add    %al,(%rax)
+   0x7fffed5fe06e:	add    %al,(%rax)
+ESCAPE state=0x555564704030 rsp=0x7fffffff8f70
+0x7fffffff8f70:	0x005555555cb5b0b8	0x0000010004d0ff00
+0x7fffffff8f80:	0x151414004c4c554e	0x4e15554e4a434859
+0x7fffffff8f90:	0x424e15585e5f4e42	0x53005914585e5f4e
+0x7fffffff8fa0:	0x0000000000000000	0x0000000000000000
+0x7fffffff8fb0:	0x0000000000000000	0x0000000000000000
+0x7fffffff8fc0:	0x00005555646dcda0	0x00005555646a8050
+PRE_RET target=0x555564704030 state=(nil) rsp=0x7fffffff93b0
+rip            0x5555555cb581      0x5555555cb581 <qcgstub_escape_link+17>
+r13            0x0                 0
+r14            0x555564704030      93825245659184
+r15            0x100000000         4294967296
+rbp            0x5555555b86f4      0x5555555b86f4 <dbt::Execute(dbt::CPUState*)+1460>
+rsp            0x7fffffff93b0      0x7fffffff93b0
+0x7fffffff93b0:	0x0000555564704030	0x0000000000000000
+0x7fffffff93c0:	0x0000000000000000	0x0000000000000000
+#0  0x00005555555cb581 in qcgstub_escape_link ()
+#1  0x0000555564704030 in ?? ()
+#2  0x0000000000000000 in ?? ()
+
+Thread 1 "elfrun" received signal SIGSEGV, Segmentation fault.
+0x0000555564704030 in ?? ()
+rax            0x7fffed5fe05c      140737175871580
+rbx            0x10000             65536
+rcx            0x55556464d080      93825244909696
+rdx            0x5555555cb570      93824992720240
+rsi            0xd                 13
+rdi            0x7fffed5fe068      140737175871592
+rbp            0x5555555b86f4      0x5555555b86f4 <dbt::Execute(dbt::CPUState*)+1460>
+rsp            0x7fffffff93b8      0x7fffffff93b8
+r8             0x5555646e26a0      93825245521568
+r9             0x50                80
+r10            0x1                 1
+r11            0x0                 0
+r12            0x1                 1
+r13            0x0                 0
+r14            0x555564704030      93825245659184
+r15            0x100000000         4294967296
+rip            0x555564704030      0x555564704030
+eflags         0x10202             [ IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x400040            4194368
+k1             0xf                 15
+k2             0x100ffff           16842751
+k3             0x0                 0
+k4             0x0                 0
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x7ffff7e55900      140737352390912
+gs_base        0x0                 0
+$1 = {si_signo = 11, si_errno = 0, si_code = 2, _sifields = {_pad = {1685078064, 21845, 0 <repeats 26 times>}, _kill = {si_pid = 1685078064, si_uid = 21845}, _timer = {si_tid = 1685078064, si_overrun = 21845, si_sigval = {sival_int = 0, sival_ptr = 0x0}}, _rt = {si_pid = 1685078064, si_uid = 21845, si_sigval = {sival_int = 0, sival_ptr = 0x0}}, _sigchld = {si_pid = 1685078064, si_uid = 21845, si_status = 0, si_utime = 0, si_stime = 0}, _sigfault = {si_addr = 0x555564704030, _addr_lsb = 0, _addr_bnd = {_lower = 0x0, _upper = 0x0}}, _sigpoll = {si_band = 93825245659184, si_fd = 0}, _sigsys = {_call_addr = 0x555564704030, _syscall = 0, _arch = 0}}}
+process 1120367
+Mapped address spaces:
+
+          Start Addr           End Addr       Size     Offset  Perms  objfile
+             0x10000            0x12000     0x2000     0x1000  r-xp   /home/vick/rvv-directed-task177/diagnostic-fs/t.elf
+             0x12000            0x28000    0x16000     0x3000  rw-p   /home/vick/rvv-directed-task177/diagnostic-fs/t.elf
+          0xfdfff000         0xfffff000  0x2000000        0x0  rw-p   
+          0xfffff000        0x100000000     0x1000        0x0  ---p   
+         0x100000000        0x102000000  0x2000000        0x0  rw-p   
+      0x555555554000     0x555555567000    0x13000        0x0  r--p   /home/vick/rvdbt-host512-task174-build/build/bin/elfrun
+      0x555555567000     0x555555753000   0x1ec000    0x13000  r-xp   /home/vick/rvdbt-host512-task174-build/build/bin/elfrun
+      0x555555753000     0x5555557cf000    0x7c000   0x1ff000  r--p   /home/vick/rvdbt-host512-task174-build/build/bin/elfrun
+      0x5555557cf000     0x5555557d5000     0x6000   0x27b000  r--p   /home/vick/rvdbt-host512-task174-build/build/bin/elfrun
+      0x5555557d5000     0x555555825000    0x50000   0x281000  rw-p   /home/vick/rvdbt-host512-task174-build/build/bin/elfrun
+      0x555555825000     0x555564693000  0xee6e000        0x0  rw-p   
+      0x555564693000     0x555564717000    0x84000        0x0  rw-p   [heap]
+      0x7fffe4000000     0x7fffe4021000    0x21000        0x0  rw-p   
+      0x7fffe4021000     0x7fffe8000000  0x3fdf000        0x0  ---p   
+      0x7fffe9400000     0x7fffed400000  0x4000000        0x0  rw-s   /home/vick/rvv-directed-task179/stackstep-gdb/cache/97b4a77c3dc1f618ec19d1ddb43de126.prof
+      0x7fffed5fe000     0x7ffff55fe000  0x8000000        0x0  rwxp   
+      0x7ffff55fe000     0x7ffff59ff000   0x401000        0x0  rw-p   
+      0x7ffff59ff000     0x7ffff5a00000     0x1000        0x0  ---p   
+      0x7ffff5a00000     0x7ffff6200000   0x800000        0x0  rw-p   
+      0x7ffff6200000     0x7ffff629d000    0x9d000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+      0x7ffff629d000     0x7ffff63e5000   0x148000    0x9d000  r-xp   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+      0x7ffff63e5000     0x7ffff646c000    0x87000   0x1e5000  r--p   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+      0x7ffff646c000     0x7ffff6477000     0xb000   0x26b000  r--p   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+      0x7ffff6477000     0x7ffff647a000     0x3000   0x276000  rw-p   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+      0x7ffff647a000     0x7ffff647e000     0x4000        0x0  rw-p   
+      0x7ffff6546000     0x7ffff654a000     0x4000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+      0x7ffff654a000     0x7ffff65f1000    0xa7000     0x4000  r-xp   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+      0x7ffff65f1000     0x7ffff65fe000     0xd000    0xab000  r--p   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+      0x7ffff65fe000     0x7ffff65ff000     0x1000    0xb7000  r--p   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+      0x7ffff65ff000     0x7ffff6600000     0x1000    0xb8000  rw-p   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+      0x7ffff6600000     0x7ffff6674000    0x74000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libz3.so.4
+      0x7ffff6674000     0x7ffff7354000   0xce0000    0x74000  r-xp   /usr/lib/x86_64-linux-gnu/libz3.so.4
+      0x7ffff7354000     0x7ffff7536000   0x1e2000   0xd54000  r--p   /usr/lib/x86_64-linux-gnu/libz3.so.4
+      0x7ffff7536000     0x7ffff755b000    0x25000   0xf36000  r--p   /usr/lib/x86_64-linux-gnu/libz3.so.4
+      0x7ffff755b000     0x7ffff755c000     0x1000   0xf5b000  rw-p   /usr/lib/x86_64-linux-gnu/libz3.so.4
+      0x7ffff755c000     0x7ffff755d000     0x1000        0x0  rw-p   
+      0x7ffff7600000     0x7ffff76b3000    0xb3000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+      0x7ffff76b3000     0x7ffff79e7000   0x334000    0xb3000  r-xp   /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+      0x7ffff79e7000     0x7ffff7ab2000    0xcb000   0x3e7000  r--p   /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+      0x7ffff7ab2000     0x7ffff7b0e000    0x5c000   0x4b1000  r--p   /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+      0x7ffff7b0e000     0x7ffff7b11000     0x3000   0x50d000  rw-p   /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+      0x7ffff7b11000     0x7ffff7b14000     0x3000        0x0  rw-p   
+      0x7ffff7b17000     0x7ffff7b27000    0x10000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libm.so.6
+      0x7ffff7b27000     0x7ffff7ba6000    0x7f000    0x10000  r-xp   /usr/lib/x86_64-linux-gnu/libm.so.6
+      0x7ffff7ba6000     0x7ffff7bfe000    0x58000    0x8f000  r--p   /usr/lib/x86_64-linux-gnu/libm.so.6
+      0x7ffff7bfe000     0x7ffff7bff000     0x1000    0xe7000  r--p   /usr/lib/x86_64-linux-gnu/libm.so.6
+      0x7ffff7bff000     0x7ffff7c00000     0x1000    0xe8000  rw-p   /usr/lib/x86_64-linux-gnu/libm.so.6
+      0x7ffff7c00000     0x7ffff7c28000    0x28000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libc.so.6
+      0x7ffff7c28000     0x7ffff7db1000   0x189000    0x28000  r-xp   /usr/lib/x86_64-linux-gnu/libc.so.6
+      0x7ffff7db1000     0x7ffff7e00000    0x4f000   0x1b1000  r--p   /usr/lib/x86_64-linux-gnu/libc.so.6
+      0x7ffff7e00000     0x7ffff7e04000     0x4000   0x1ff000  r--p   /usr/lib/x86_64-linux-gnu/libc.so.6
+      0x7ffff7e04000     0x7ffff7e06000     0x2000   0x203000  rw-p   /usr/lib/x86_64-linux-gnu/libc.so.6
+      0x7ffff7e06000     0x7ffff7e13000     0xd000        0x0  rw-p   
+      0x7ffff7e3a000     0x7ffff7e53000    0x19000        0x0  r--s   /home/vick/rvv-directed-task177/diagnostic-fs/t.elf
+      0x7ffff7e53000     0x7ffff7e5a000     0x7000        0x0  rw-p   
+      0x7ffff7e5a000     0x7ffff7e5e000     0x4000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+      0x7ffff7e5e000     0x7ffff7e82000    0x24000     0x4000  r-xp   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+      0x7ffff7e82000     0x7ffff7e86000     0x4000    0x28000  r--p   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+      0x7ffff7e86000     0x7ffff7e87000     0x1000    0x2b000  r--p   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+      0x7ffff7e87000     0x7ffff7e88000     0x1000    0x2c000  rw-p   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+      0x7ffff7e88000     0x7ffff7e8a000     0x2000        0x0  rw-p   
+      0x7ffff7e8a000     0x7ffff7e8c000     0x2000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+      0x7ffff7e8c000     0x7ffff7e9e000    0x12000     0x2000  r-xp   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+      0x7ffff7e9e000     0x7ffff7ea4000     0x6000    0x14000  r--p   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+      0x7ffff7ea4000     0x7ffff7ea5000     0x1000    0x1a000  r--p   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+      0x7ffff7ea5000     0x7ffff7ea6000     0x1000    0x1b000  rw-p   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+      0x7ffff7ea6000     0x7ffff7ea8000     0x2000        0x0  rw-p   
+      0x7ffff7ea8000     0x7ffff7ec6000    0x1e000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libssl.so.3
+      0x7ffff7ec6000     0x7ffff7f28000    0x62000    0x1e000  r-xp   /usr/lib/x86_64-linux-gnu/libssl.so.3
+      0x7ffff7f28000     0x7ffff7f44000    0x1c000    0x80000  r--p   /usr/lib/x86_64-linux-gnu/libssl.so.3
+      0x7ffff7f44000     0x7ffff7f4e000     0xa000    0x9c000  r--p   /usr/lib/x86_64-linux-gnu/libssl.so.3
+      0x7ffff7f4e000     0x7ffff7f52000     0x4000    0xa6000  rw-p   /usr/lib/x86_64-linux-gnu/libssl.so.3
+      0x7ffff7f52000     0x7ffff7f54000     0x2000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libmd.so.0.1.0
+      0x7ffff7f54000     0x7ffff7f5d000     0x9000     0x2000  r-xp   /usr/lib/x86_64-linux-gnu/libmd.so.0.1.0
+      0x7ffff7f5d000     0x7ffff7f5f000     0x2000     0xb000  r--p   /usr/lib/x86_64-linux-gnu/libmd.so.0.1.0
+      0x7ffff7f5f000     0x7ffff7f60000     0x1000     0xc000  r--p   /usr/lib/x86_64-linux-gnu/libmd.so.0.1.0
+      0x7ffff7f60000     0x7ffff7f61000     0x1000     0xd000  rw-p   /usr/lib/x86_64-linux-gnu/libmd.so.0.1.0
+      0x7ffff7f61000     0x7ffff7f70000     0xf000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
+      0x7ffff7f70000     0x7ffff7f94000    0x24000     0xf000  r-xp   /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
+      0x7ffff7f94000     0x7ffff7f9f000     0xb000    0x33000  r--p   /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
+      0x7ffff7f9f000     0x7ffff7fa2000     0x3000    0x3d000  r--p   /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
+      0x7ffff7fa2000     0x7ffff7fa3000     0x1000    0x40000  rw-p   /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
+      0x7ffff7fb5000     0x7ffff7fb7000     0x2000        0x0  r--p   /home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so
+      0x7ffff7fb7000     0x7ffff7fb8000     0x1000     0x2000  r-xp   /home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so
+      0x7ffff7fb8000     0x7ffff7fb9000     0x1000     0x3000  r--p   /home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so
+      0x7ffff7fb9000     0x7ffff7fba000     0x1000     0x3000  r--p   /home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so
+      0x7ffff7fba000     0x7ffff7fbb000     0x1000     0x4000  rw-p   /home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so
+      0x7ffff7fbb000     0x7ffff7fbd000     0x2000        0x0  rw-p   
+      0x7ffff7fbd000     0x7ffff7fc1000     0x4000        0x0  r--p   [vvar]
+      0x7ffff7fc1000     0x7ffff7fc3000     0x2000        0x0  r--p   [vvar_vclock]
+      0x7ffff7fc3000     0x7ffff7fc5000     0x2000        0x0  r-xp   [vdso]
+      0x7ffff7fc5000     0x7ffff7fc6000     0x1000        0x0  r--p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+      0x7ffff7fc6000     0x7ffff7ff1000    0x2b000     0x1000  r-xp   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+      0x7ffff7ff1000     0x7ffff7ffb000     0xa000    0x2c000  r--p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+      0x7ffff7ffb000     0x7ffff7ffd000     0x2000    0x36000  r--p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+      0x7ffff7ffd000     0x7ffff7fff000     0x2000    0x38000  rw-p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+      0x7ffffffde000     0x7ffffffff000    0x21000        0x0  rw-p   [stack]
+  0xffffffffff600000 0xffffffffff601000     0x1000        0x0  --xp   [vsyscall]
+   0x5555555cb570 <qcgstub_escape_link>:	add    $0x410,%rsp
+   0x5555555cb577 <qcgstub_escape_link+7>:	pop    %r15
+   0x5555555cb579 <qcgstub_escape_link+9>:	pop    %r14
+   0x5555555cb57b <qcgstub_escape_link+11>:	pop    %r13
+   0x5555555cb57d <qcgstub_escape_link+13>:	pop    %r12
+   0x5555555cb57f <qcgstub_escape_link+15>:	pop    %rbx
+   0x5555555cb580 <qcgstub_escape_link+16>:	pop    %rbp
+   0x5555555cb581 <qcgstub_escape_link+17>:	ret
+   0x5555555cb582:	data16 data16 data16 data16 cs nopw 0x0(%rax,%rax,1)
+   0x5555555cb590 <qcgstub_escape_brind>:	add    $0x410,%rsp
+   0x5555555cb597 <qcgstub_escape_brind+7>:	pop    %r15
+   0x5555555cb599 <qcgstub_escape_brind+9>:	pop    %r14
+   0x5555555cb59b <qcgstub_escape_brind+11>:	pop    %r13
+   0x5555555cb59d <qcgstub_escape_brind+13>:	pop    %r12
+   0x5555555cb59f <qcgstub_escape_brind+15>:	pop    %rbx
+   0x5555555cb5a0 <qcgstub_escape_brind+16>:	pop    %rbp
+0x7fffffff9378:	0x0000000000010000	0x0000000100000000
+0x7fffffff9388:	0x0000555564704030	0x0000000000000000
+0x7fffffff9398:	0x0000000000000001	0x0000000000010000
+0x7fffffff93a8:	0x00005555555b86f4	0x0000555564704030
+0x7fffffff93b8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93c8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93d8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93e8:	0x00007fffffff9420	0x0000000000000000
+0x7fffffff93f8:	0x0000100000010000	0x00005555646e25d0
+0x7fffffff9408:	0x00005555646e25d8	0x00005555646e25d8
+0x7fffffff9418:	0x0000000180000000	0x00005555557d0b38
+0x7fffffff9428:	0x0000555564704030	0x0000555564704000
+0x7fffffff9438:	0x00007fffffff9498	0x000055556470e568
+0x7fffffff9448:	0x000055555578a580	0x00007fffffff9460
+0x7fffffff9458:	0x00005555555bd2c9	0x0000000000000000
+0x7fffffff9468:	0x0000000000000000	0x0000000000000000
+   0x555564704008:	add    %al,(%rax)
+   0x55556470400a:	add    %al,(%rax)
+   0x55556470400c:	add    %al,(%rax)
+   0x55556470400e:	add    %al,(%rax)
+   0x555564704010:	add    %al,(%rax)
+   0x555564704012:	add    %al,(%rax)
+   0x555564704014:	add    %al,(%rax)
+   0x555564704016:	add    %al,(%rax)
+   0x555564704018:	add    %al,(%rax)
+   0x55556470401a:	add    %al,(%rax)
+   0x55556470401c:	add    %al,(%rax)
+   0x55556470401e:	add    %al,(%rax)
+   0x555564704020:	add    %al,(%rax)
+   0x555564704022:	add    %al,(%rax)
+   0x555564704024:	add    %al,(%rax)
+   0x555564704026:	add    %al,(%rax)
+   0x555564704028:	add    %al,(%rax)
+   0x55556470402a:	add    %al,(%rax)
+   0x55556470402c:	add    %al,(%rax)
+   0x55556470402e:	add    %al,(%rax)
+=> 0x555564704030:	and    %dh,(%rax,%rsi,2)
+   0x555564704033:	fs push %rbp
+   0x555564704035:	push   %rbp
+   0x555564704036:	add    %al,(%rax)
+   0x555564704038:	or     $0x0,%eax
+   0x55556470403d:	add    %al,(%rax)
+   0x55556470403f:	add    %dh,0x26(%rax)
+   0x555564704042:	outsb  %ds:(%rsi),(%dx)
+   0x555564704043:	fs push %rbp
+   0x555564704045:	push   %rbp
+#0  0x0000555564704030 in ?? ()
+#1  0x0000000000000000 in ?? ()
+Kill the program being debugged? (y or n) [answered Y; input not from terminal]
+[Inferior 1 (process 1120367) killed]

@@ -1,0 +1,16 @@
+{
+  "owned_files": {
+    "scripts/rvv/directed/baseline179.py": "025a4fe1a8b98755014140c123443285f3baa015a5cdd9ca6163db13f884e65c",
+    "scripts/rvv/directed/default_witness179.py": "614bf1eed2d877029dd4acb6a294e9967967c614f827108d00ba53415905fdb9",
+    "scripts/rvv/directed/diagnose179.py": "a9d9ea843006680bea8bff98ffb5d8c5a171ba25aa1b87786cab725a796c65ac",
+    "scripts/rvv/directed/export_trace179.py": "2af9f9a7ac0fb241e6a6a4b8bb5667eddb8dbd7541bc139513564199c0f42e20",
+    "scripts/rvv/directed/freeze179.py": "62886449443f026c5046050ef9ed118e50038c520406166d6cae98c09ce74a83",
+    "scripts/rvv/directed/goldens179.py": "ec1ba43e77481770209a800a639987ee50a4c43207ad5a7e0ef81f396a91f1c9",
+    "scripts/rvv/directed/inventory179.py": "031042337ac2293fcaec5222e5a67cf1fad1a8c105f0edd24e057fe62a04ea86",
+    "scripts/rvv/directed/trace179.py": "862a0e1f96e2c08db6088a04afd060d6424c305310732c62d874d700d28edeff"
+  },
+  "inherited_auditor": "xbd:/home/vick/rvv-directed-task177/tools/review_sequences177_v2.py",
+  "inherited_oracle": "sequences177.py + cache_entries177.py + retained vadd/fp157 predicates",
+  "final_driver_parameter_only_change": "RVV_TASK179_OUTPUT optional namespace; default execution path unchanged",
+  "no178_mutations": true
+}

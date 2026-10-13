@@ -1,0 +1,9 @@
+{
+  "required": 595,
+  "accepted": 595,
+  "gaps": [],
+  "scope": "finite historical accepted matrices; mixed build pins preserved",
+  "final_common_build_validation": "NOT_RUN",
+  "owner_final_common_build": "Session3 Task178",
+  "task179_sequence_additional_form_credit": 0
+}

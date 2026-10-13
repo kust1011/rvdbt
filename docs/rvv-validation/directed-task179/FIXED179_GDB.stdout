@@ -1,0 +1,72 @@
+Breakpoint 1 at 0x77540
+Breakpoint 2 at 0x77f90
+Breakpoint 3 at 0x77570
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff61ff6c0 (LWP 1051100)]
+ENTRY state=0x555564704030 vmem=(nil) code=0x7fffed5fe000 rsp=0x7fffffff93a8
+0x7fffffff93a8:	0x00005555555b86f4	0x0000555564704030
+0x7fffffff93b8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93c8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93d8:	0x0000000000000000	0x0000000000000000
+0x7fffffff93e8:	0x00007fffffff9420	0x0000000000000000
+ENTRY_GUEST_IP=0x10000
+   0x7fffed5fe000:	push   %rcx
+   0x7fffed5fe001:	mov    %r13,%rdi
+   0x7fffed5fe004:	mov    $0x805073,%rsi
+   0x7fffed5fe00b:	call   *0x5f(%rip)        # 0x7fffed5fe070
+   0x7fffed5fe011:	movabs $0x55555ba89028,%r12
+   0x7fffed5fe01b:	mov    $0x10004,%esi
+   0x7fffed5fe020:	lea    0x0(,%esi,4),%esi
+   0x7fffed5fe028:	and    $0x3fffff0,%esi
+   0x7fffed5fe02e:	cmpl   $0x10004,(%r12,%rsi,1)
+   0x7fffed5fe036:	jne    0x7fffed5fe046
+   0x7fffed5fe03c:	mov    0x8(%r12,%rsi,1),%r12
+   0x7fffed5fe041:	incq   0x20(%r12)
+   0x7fffed5fe046:	mov    $0x10004,%r14
+   0x7fffed5fe04d:	mov    $0x10000,%r15
+   0x7fffed5fe054:	call   *0x1e(%rip)        # 0x7fffed5fe078
+   0x7fffed5fe05a:	pop    %rcx
+   0x7fffed5fe05b:	movabs $0x5555555cb5b0,%rax
+   0x7fffed5fe065:	call   *%rax
+   0x7fffed5fe067:	add    $0x0,%al
+   0x7fffed5fe069:	add    %eax,(%rax)
+   0x7fffed5fe06b:	add    %al,(%rax)
+   0x7fffed5fe06d:	add    %al,(%rax)
+   0x7fffed5fe06f:	add    %dh,(%rax)
+   0x7fffed5fe071:	call   0x800042b535d8
+   0x7fffed5fe076:	add    %al,(%rax)
+   0x7fffed5fe078:	nop
+   0x7fffed5fe079:	mov    $0x5555555c,%edi
+   0x7fffed5fe07e:	add    %al,(%rax)
+   0x7fffed5fe080:	add    %al,(%rax)
+   0x7fffed5fe082:	add    %al,(%rax)
+   0x7fffed5fe084:	add    %al,(%rax)
+   0x7fffed5fe086:	add    %al,(%rax)
+   0x7fffed5fe088:	add    %al,(%rax)
+   0x7fffed5fe08a:	add    %al,(%rax)
+   0x7fffed5fe08c:	add    %al,(%rax)
+TRACE state=0x555564704030 target=0x10004 entry=0x10000 rsp=0x7fffffff8f58 ret=0x7fffed5fe05a
+0x7fffffff8f58:	0x00007fffed5fe05a	0x0000000000040000
+0x7fffffff8f68:	0x00005555555cb565	0x005555555cb5b0b8
+0x7fffffff8f78:	0x0000010004d0ff00	0x151414004c4c554e
+0x7fffffff8f88:	0x4e15554e4a434859	0x424e15585e5f4e42
+0x7fffffff8f98:	0x53005914585e5f4e	0x0000000000000000
+0x7fffffff8fa8:	0x0000000000000000	0x0000000000000000
+   0x7fffed5fe05a:	pop    %rcx
+   0x7fffed5fe05b:	movabs $0x5555555cb5b0,%rax
+   0x7fffed5fe065:	call   *%rax
+   0x7fffed5fe067:	add    $0x0,%al
+   0x7fffed5fe069:	add    %eax,(%rax)
+   0x7fffed5fe06b:	add    %al,(%rax)
+   0x7fffed5fe06d:	add    %al,(%rax)
+   0x7fffed5fe06f:	add    %dh,(%rax)
+ESCAPE state=0x555564704030 rsp=0x7fffffff8f68
+0x7fffffff8f68:	0x00005555555cb565	0x005555555cb5b0b8
+0x7fffffff8f78:	0x0000010004d0ff00	0x151414004c4c554e
+0x7fffffff8f88:	0x4e15554e4a434859	0x424e15585e5f4e42
+0x7fffffff8f98:	0x53005914585e5f4e	0x0000000000000000
+0x7fffffff8fa8:	0x0000000000000000	0x0000000000000000
+0x7fffffff8fb8:	0x0000000000000000	0x0000000000000000
+[Thread 0x7ffff61ff6c0 (LWP 1051100) exited]
+[Inferior 1 (process 1051028) exited normally]

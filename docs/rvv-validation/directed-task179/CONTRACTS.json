@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "test": "rvv_both_boundary_value_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 1.3657745600212365,
+      "stdout_sha256": "897a9ee8b550a8cdfde03cdd33f5ecfd3435237d65e72d7a47a2184818cb54cc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "test": "rvv_run_live_range_split_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.003621116979047656,
+      "stdout_sha256": "42a1a9e5a1c74041f2232aa352e4c3d8c0ef892a6e6e91b1a76584a6bd59e27d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "test": "rvv_rvv_contract_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.015624408959411085,
+      "stdout_sha256": "567598321bd59512d18461cdc5be9ac79d777237bbc865293f90e0c66f2160c8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "test": "rvv_ssa_edge_commit_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.0035158719401806593,
+      "stdout_sha256": "5895a9a82aa8971b073c3527e95553a7e1f7bfdea0c43194d67a18be337a1b1d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "test": "rvv_vector_run_admission_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.0038055010372772813,
+      "stdout_sha256": "0c185f87f07813aeaaf2056be0532f6f29eaf7f9d72a1e97f944a934abbb9d15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "test": "rvv_vector_run_codegen_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 4.769931999966502,
+      "stdout_sha256": "d96e6df5b4ad7b16573341d4fec53dcdf8f645b4061d36c24e991a9879444432",
+      "stderr_sha256": "e55bf1041ffb3c34f79d5ccab17c53c5daf7726ba545033ce1ccc1fa563a24b9",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "test": "rvv_vector_run_value_test",
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.0318140119779855,
+      "stdout_sha256": "ce45d06061688f81b33e933317c49c375a7295e8a016fe1ac93f028284a03ac5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "lossless-gzip-v1"
+    }
+  ],
+  "workers": 2,
+  "original_codegen_failure_retained": true,
+  "baseline174_codegen_failure_count": 4,
+  "codegen179_before_golden_update_failure_count": 46
+}

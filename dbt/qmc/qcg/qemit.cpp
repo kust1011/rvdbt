@@ -556,9 +556,9 @@ void QEmit::Emit_Cache(u32 target_ip, bool loop_tier_backedge, bool intra_region
 
 		if (is_leaf) {
 			j.pop(asmjit::x86::rcx);
-		} else {
-			FrameDestroy();
 		}
+		// Tracing returns to this region. Keep its non-leaf frame intact for
+		// local successors and the eventual exit's single FrameDestroy().
 	}
 }
 

@@ -1,0 +1,43 @@
+{
+  "status": "PROVEN_IMPLEMENTATION_DEFECT_FIXED",
+  "classification": "supported QCG trace observer frame-lifetime defect before first RVV instruction",
+  "original_candidate_sha256": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "fixed_candidate_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+  "witness_ELF_sha256": "62171f19e65e6d2732bdff9547c0c81569940c5ddf7ebaa4d387cb1b45e37fc2",
+  "guest_entry_pc": "0x10000",
+  "guest_entry_word": "0x00805073",
+  "guest_entry_instruction": "csrwi vstart,0",
+  "guest_entry_helper": "rv32_csrrwi; TRANSLATOR_Helper(csrrwi)",
+  "traced_edge": ["0x10000", "0x10004"],
+  "first_sequence_target_pc": "0x102c8",
+  "actual_fault": {
+    "causing_host_instruction": "ret at qcgstub_escape_link+17, 0x5555555cb581",
+    "bad_return_target_and_fault_rip": "0x555564704030 (CPUState)",
+    "signal": "SIGSEGV",
+    "si_code": "2 (SEGV_ACCERR)",
+    "mapping": "rw-p heap; NX instruction fetch",
+    "fault_backtrace": ["#0 0x555564704030 in ??", "#1 0x0 in ??"],
+    "pre_ret_backtrace": ["#0 qcgstub_escape_link", "#1 0x555564704030 in ??", "#2 0x0 in ??"]
+  },
+  "entry_state": {
+    "CPUState": "0x555564704030",
+    "trampoline_rsp": "0x7fffffff93a8",
+    "caller_return": "0x5555555b86f4 (Execute+1460)",
+    "vmem": "0x0 (valid zero_membase build)",
+    "guest_ip": "0x10000",
+    "code": "0x7fffed5fe000",
+    "trace_helper_entry_r13": "0x555564704030"
+  },
+  "stack_invariant": "FrameSetup's nonleaf push must survive returning calls and local successors; only region exit consumes it. Leaf call-local alignment push/pop remains paired.",
+  "old_emission": "push rcx; CSR helper; trace_cache call; pop rcx; pop rcx; branch slot",
+  "fixed_emission": "push rcx; CSR helper; trace_cache call; pop rcx; branch slot",
+  "escape_rsp_old": "0x7fffffff8f70",
+  "escape_rsp_fixed": "0x7fffffff8f68",
+  "why_r13_zero": "extra pop shifts escape restoration +8; pop r13 reads the saved r12 zero at 0x7fffffff9390, while pop rbp consumes the Execute return and ret reads caller-local CPUState at 0x7fffffff93b0",
+  "repair": "remove only nonleaf FrameDestroy after returning trace_cache call in Emit_Cache",
+  "invalid_invocation": false,
+  "trace0_is_repair": false,
+  "RVV_eligibility_change": false,
+  "source_or_arithmetic_workload_bypass": false,
+  "original_failure_retained": true
+}

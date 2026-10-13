@@ -1,0 +1,161 @@
+--- 174/row0
++++ 179/row0
+@@ -56,9 +56,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...
+--- 174/row1
++++ 179/row1
+@@ -64,9 +64,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...
+--- 174/row2
++++ 179/row2
+@@ -56,7 +56,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+--- 174/row3
++++ 179/row3
+@@ -64,7 +64,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+--- 174/row4
++++ 179/row4
+@@ -56,9 +56,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...
+--- 174/row5
++++ 179/row5
+@@ -64,9 +64,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...
+--- 174/row6
++++ 179/row6
+@@ -124,7 +124,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ sbb    al,0x0
+--- 174/row7
++++ 179/row7
+@@ -148,7 +148,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ sbb    al,0x0
+--- 174/row8
++++ 179/row8
+@@ -85,7 +85,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ adc    BYTE PTR [rax],al
+--- 174/row9
++++ 179/row9
+@@ -96,9 +96,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ adc    BYTE PTR [rax],al
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...
+--- 174/row10
++++ 179/row10
+@@ -45,7 +45,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     BYTE PTR [rax],al
+--- 174/row11
++++ 179/row11
+@@ -53,7 +53,6 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     BYTE PTR [rax],al
+--- 174/row12
++++ 179/row12
+@@ -56,9 +56,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...
+--- 174/row13
++++ 179/row13
+@@ -64,9 +64,9 @@
+ mov    r15,0x0
+ rex call 0xABS
+ pop    rcx
+-pop    rcx
+ movabs rax,0xABS
+ call   rax
+ or     al,0x0
+ add    BYTE PTR [rax],al
++add    BYTE PTR [rax],al
+ ...

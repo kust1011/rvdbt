@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "cases": 53,
+  "checks": 265,
+  "arms": {
+    "Reference": 53,
+    "B": 53,
+    "M1": 53,
+    "M2": 53,
+    "BOTH": 53
+  },
+  "target_pc_arm_rows": 672,
+  "multi_frames": 94,
+  "native_multi_frames": 90,
+  "fp_frames_with_component_completion_proof": 10,
+  "paths": {
+    "SINGLETON_NATIVE": 402,
+    "MULTI_MEMBER_NATIVE": 242,
+    "ORDERED_RUN_FALLBACK": 20,
+    "SINGLETON_HANDLER_OR_GUARD_FALLBACK": 4,
+    "MULTI_MEMBER_MIXED": 4
+  },
+  "all_packet_outcomes_checked": true,
+  "prior_family_reruns": 0,
+  "controls": "separate one-pass over these actual packets"
+}

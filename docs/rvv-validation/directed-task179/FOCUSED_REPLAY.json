@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "commands": 88,
+  "DUT_checks": 432,
+  "per_mode_cases": 54,
+  "roots": [
+    "/home/vick/rvv-directed-task179/trace0/integer",
+    "/home/vick/rvv-directed-task179/trace0/fp",
+    "/home/vick/rvv-directed-task179/trace0/cache",
+    "/home/vick/rvv-directed-task179/trace0/cache64",
+    "/home/vick/rvv-directed-task179/trace1/integer",
+    "/home/vick/rvv-directed-task179/trace1/fp",
+    "/home/vick/rvv-directed-task179/trace1/cache",
+    "/home/vick/rvv-directed-task179/trace1/cache64"
+  ],
+  "guest_workers": 4,
+  "reference_executions": 0,
+  "original_ELF_rebuilds": 0
+}
