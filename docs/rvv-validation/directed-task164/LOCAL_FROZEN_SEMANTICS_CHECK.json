@@ -1,0 +1,11 @@
+{
+  "files": {
+    "fma164.py": "1b42ae3fe4380deda65a6d4d02c9315243d827f9e03980d700e3468ac50a303b",
+    "fp157.py": "881a5f6a92049236b5160e113d57cde47af543d2c9d05a4536ca290e4898f688",
+    "vadd.py": "e85483f5db838d02dc2879ee53a407ce24784331a5e6ef1a7752a5f076a36f6c",
+    "audit.py": "0694993504462e525d62a8c3c3f0beb49dcbacfdf712b7f7c8aff2fb22fcaeff",
+    "qemu_fma164.json": "ea3d2924e9fb98f39a26bdcde298c3c107d1f8799d99af5a1282271de47bc6bd"
+  },
+  "status": "local semantics exactly match frozen full snapshot",
+  "guest_credit": 0
+}

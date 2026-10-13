@@ -1,0 +1,79 @@
+{
+  "cases": 237664,
+  "checks": 1188320,
+  "forms": 16,
+  "geometries": 54,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "counts": [
+    {
+      "arm": "B",
+      "status": "FAIL",
+      "checks": 7056
+    },
+    {
+      "arm": "B",
+      "status": "PASS",
+      "checks": 230608
+    },
+    {
+      "arm": "BOTH",
+      "status": "FAIL",
+      "checks": 7056
+    },
+    {
+      "arm": "BOTH",
+      "status": "PASS",
+      "checks": 230608
+    },
+    {
+      "arm": "M1",
+      "status": "FAIL",
+      "checks": 7056
+    },
+    {
+      "arm": "M1",
+      "status": "PASS",
+      "checks": 230608
+    },
+    {
+      "arm": "M2",
+      "status": "FAIL",
+      "checks": 7056
+    },
+    {
+      "arm": "M2",
+      "status": "PASS",
+      "checks": 230608
+    },
+    {
+      "arm": "Reference",
+      "status": "PASS",
+      "checks": 237664
+    }
+  ],
+  "original_failures": 28224,
+  "missing_NV": 28224,
+  "effective_rejected_controls": 303584,
+  "effective_allowed_controls": 864,
+  "earlier_tracked_files_preserved": 3438,
+  "tracked_harness_changes": [
+    "scripts/rvv/directed/audit.py",
+    "scripts/rvv/directed/fp157.py",
+    "scripts/rvv/directed/vadd.py"
+  ],
+  "Task161_guest_reruns": 0,
+  "production_changes": 0,
+  "semantic_pass": false,
+  "unresolved": [
+    "Pinned DUT missing NV for zero/infinity multiplicands with quiet-NaN addend across all 16 forms; no production fix or corrected-pin revalidation",
+    "Main review/acceptance of evidence and independent FMA checker review",
+    "96 reserved-encoding declarations NOT_RUN; no illegal-handler/retry credit",
+    "Finite testing is not full ISA proof; per-target M1/M2 admission not claimed"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "pilot": "ssh xbd 'cd /home/vick/rvv-directed-task164/pilot; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task164/pilot > launcher.log 2>&1 < /dev/null &'",
+  "full": "ssh xbd 'cd /home/vick/rvv-directed-task164/full; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task164/full > launcher.log 2>&1 < /dev/null &'",
+  "review": "ssh xbd 'nohup nice -n 10 bash /home/vick/rvv-directed-task164/review.sh /home/vick/rvv-directed-task164/full /home/vick/rvv-directed-task164/full-review > /home/vick/rvv-directed-task164/full-review.log 2>&1 < /dev/null &'",
+  "parallel_audit": "nice -n 10 python3 /home/vick/rvv-directed-task164/audit_parallel_retain.py /home/vick/rvv-directed-task164/full/corpus /home/vick/rvv-directed-task164/full-review/audit-parallel --audit-script /home/vick/rvv-directed-task164/full/scripts/audit.py --jobs 4 --retain-failures",
+  "full_controls": "nice -n 10 python3 /home/vick/rvv-directed-task164/full/scripts/controls_fma164.py /home/vick/rvv-directed-task164/full/corpus /home/vick/rvv-directed-task164/full-review/controls",
+  "frozen_guest_allocation": 8,
+  "frozen_build_allocation": 4,
+  "offline_workers": 4,
+  "control_workers": 1,
+  "nice": 10,
+  "affinity": "none",
+  "disk_reserve_bytes": 10737418240,
+  "Task161_guest_reruns": 0,
+  "production_changes": 0,
+  "completion": ["tmux wait-for -S rvv-directed-fpfma-20261013-164", "tmux wait-for -S rvv-review-parallel-20261013"]
+}

@@ -1,0 +1,632 @@
+{
+  "forms": [
+    "vfmacc.vv",
+    "vfmacc.vf",
+    "vfnmacc.vv",
+    "vfnmacc.vf",
+    "vfmsac.vv",
+    "vfmsac.vf",
+    "vfnmsac.vv",
+    "vfnmsac.vf",
+    "vfmadd.vv",
+    "vfmadd.vf",
+    "vfnmadd.vv",
+    "vfnmadd.vf",
+    "vfmsub.vv",
+    "vfmsub.vf",
+    "vfnmsub.vv",
+    "vfnmsub.vf"
+  ],
+  "cases": 237664,
+  "units": 10368,
+  "checks": 1188320,
+  "commands": 51840,
+  "ordinary": 237664,
+  "reserved_start": 0,
+  "geometries": 54,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "reserved_encodings": [
+    {
+      "form": "vfmacc.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmacc.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmacc.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsac.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsac.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmadd.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmadd.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfmsub.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vv",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vv",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vv",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vv",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vv",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vv",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vf",
+      "obligation": "unsupported-EEW8-or16",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vf",
+      "obligation": "frm5",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vf",
+      "obligation": "frm6",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vf",
+      "obligation": "frm7",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vf",
+      "obligation": "masked-destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vfnmsub.vf",
+      "obligation": "misaligned-group",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ],
+  "execution": "NOT_RUN",
+  "guest_credit": 0,
+  "per_form": {
+    "vfmacc.vv": 14683,
+    "vfmacc.vf": 15025,
+    "vfnmacc.vv": 14683,
+    "vfnmacc.vf": 15025,
+    "vfmsac.vv": 14683,
+    "vfmsac.vf": 15025,
+    "vfnmsac.vv": 14683,
+    "vfnmsac.vf": 15025,
+    "vfmadd.vv": 14683,
+    "vfmadd.vf": 15025,
+    "vfnmadd.vv": 14683,
+    "vfnmadd.vf": 15025,
+    "vfmsub.vv": 14683,
+    "vfmsub.vf": 15025,
+    "vfnmsub.vv": 14683,
+    "vfnmsub.vf": 15025
+  }
+}

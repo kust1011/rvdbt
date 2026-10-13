@@ -1,0 +1,16 @@
+{
+  "failed_checks_by_frm": {
+    "0": 544,
+    "1": 256,
+    "2": 256,
+    "3": 256
+  },
+  "failed_modes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "RMM": "isolated zero/infinity + qNaN pilot witnesses PASS",
+  "preliminary_statement_correction": "Initial semantic review overstated failing-mode scope as all five; corrected from retained original packets, without changing predicates or executions"
+}

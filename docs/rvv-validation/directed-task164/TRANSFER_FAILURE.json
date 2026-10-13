@@ -1,0 +1,36 @@
+{
+  "error": "initial compact evidence scp lost connection; remote originals/export intact",
+  "missing_or_partial": [
+    {
+      "file": "CONTROLS.json",
+      "expected_sha256": "c33120ec48a64adb3baf856efa920df3539fde8bd3350fe0a35620adc145871c",
+      "observed_sha256": null,
+      "observed_bytes": 0
+    },
+    {
+      "file": "EXECUTED_MANIFEST.json.gz",
+      "expected_sha256": "e536603da6a7632359b5dcb21889e76076dbb5d0b3c6d74ae913944dd8380aad",
+      "observed_sha256": null,
+      "observed_bytes": 0
+    },
+    {
+      "file": "ORIGINAL_FAILURES.json",
+      "expected_sha256": "f00c6462591ed25bfeb68731ecad929933ae7db9f9e1a7662c34ccc909506156",
+      "observed_sha256": "eeb49b6537d8f8cf26d79822dde8ae19992940e57396006cf82a5558e030ab14",
+      "observed_bytes": 15433728
+    },
+    {
+      "file": "PER_SCENARIO.csv",
+      "expected_sha256": "200f759f6693e9f5adfcdb6f9f635bc3df1a98d76807c0655c0dc7265fa9f482",
+      "observed_sha256": null,
+      "observed_bytes": 0
+    },
+    {
+      "file": "controls-allowed.json.gz",
+      "expected_sha256": "e9fb2377f49ed13b934660fa0685200fdabd4fd83ad3a174870296b78965eb36",
+      "observed_sha256": null,
+      "observed_bytes": 0
+    }
+  ],
+  "action": "copy only hash-identified missing/partial compact files; no packaging or guest rerun"
+}

@@ -1,0 +1,357 @@
+{
+  "base": "xbd:/home/vick/rvv-directed-task164",
+  "allocated_bytes": 8120303616,
+  "logical_bytes": 5476922786,
+  "counts": {
+    "files": 828559,
+    "elf_artifacts": 16320,
+    "tbmap_artifacts": 43520,
+    "stdout_artifacts": 54432,
+    "packet_artifacts": 54432,
+    "stderr_artifacts": 54432,
+    "signature_artifacts": 5440
+  },
+  "critical_artifacts": [
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-rounding-controls/summary.json",
+      "bytes": 1483,
+      "sha256": "65be6a90cb768f69f545d1cb2cf274f3092d35db0f415b79657ff2e5107e61d2"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/STAGE_STATUS.json",
+      "bytes": 60,
+      "sha256": "1a3fde3d84c669bcdff02798b62aa6cac142f37933ab683f7d03fb96b2c9567c"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/FREEZE.sha256",
+      "bytes": 5711,
+      "sha256": "55d741e2d51cc6818e8dc10c432bdf9eafa8866d8fd0a33c94f42e0c1e79d220"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/corpus/runner-identity.json",
+      "bytes": 304,
+      "sha256": "ae59f4187aa4203a02e2d5819098a6aad695184c533d1ff45c6f8406f4428c9f"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/corpus/summary.json",
+      "bytes": 477,
+      "sha256": "0f364f839a7183e7417c1710780b92342f39420e97e1912ba4bcab6570dfa817"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/corpus/results.json",
+      "bytes": 19472923,
+      "sha256": "96b963fdcee96132b17b50ad338856a2759d50b32cd19f9830d1e2e3277a0519"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/corpus/identities-before.json",
+      "bytes": 620,
+      "sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/corpus/identities-after.json",
+      "bytes": 620,
+      "sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot/corpus/manifest.json",
+      "bytes": 8266982,
+      "sha256": "b58c872c21c5ac25aef72582ca7ec2158d016133c2291a6888eb4b56e9c612ed"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/summary.json",
+      "bytes": 40134,
+      "sha256": "00652157838b7cb875d0f42b814661a1f1ff7e038e2e7300efc78c270fe3c737"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/STAGE_STATUS.json",
+      "bytes": 137,
+      "sha256": "8bbeaf2b43220894f758503d34bc471012fb37cfd523e53762ad0cf60450f23a"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/audit/audit.json",
+      "bytes": 4070813,
+      "sha256": "8d0c7dd97338020f27fd5029e8533d41332c67131b7642baaff835a5c231071b"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-01/audit/audit.json",
+      "bytes": 1272275,
+      "sha256": "afef57f680a40a48a7a7f961a1101f3331f5fcd47eb614cfcd15dda80848d0c3"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-01/corpus/results.json",
+      "bytes": 105067173,
+      "sha256": "af04feb738f34818eeddde335299798300984decb570518557cf58286fe76656"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-01/corpus/manifest.json",
+      "bytes": 44829871,
+      "sha256": "9c9a39d6b01b73e0728033b85bda6169cffa38c039931312a825b3f3436bb6b0"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-00/audit/audit.json",
+      "bytes": 1259051,
+      "sha256": "3ba401308d318a170b32f566a18d9936b7dbd9a852510b8c73585e2f9e8fd1a0"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-00/corpus/results.json",
+      "bytes": 105050493,
+      "sha256": "d3c0d50499c288a2c2e11a7758d0341498651ccb951cc798b172cedffd858795"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-00/corpus/manifest.json",
+      "bytes": 44822233,
+      "sha256": "696ee8aa6650621498d35205290cb8cef7060aa46b42b336e6b0d55e41f920e2"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-02/audit/audit.json",
+      "bytes": 1263410,
+      "sha256": "fa56fa4863184f998dfd8a568fb3525fa71971b95bdbe1afd8cd89be910ef37d"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-02/corpus/results.json",
+      "bytes": 105060773,
+      "sha256": "9186ed69e1e88c13bf46c839d09c4fe6d36600f89e06cb0dbe9a4525ac9bcc9e"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-02/corpus/manifest.json",
+      "bytes": 44828201,
+      "sha256": "b36139bc34ffa364158fddc3352dd8b2ad41f848b8fa62118ebc2fe760a06f42"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-03/audit/audit.json",
+      "bytes": 278871,
+      "sha256": "40f8cceb64f945844b87b9c6b99e1a94751ba57275d0b5c8bb8e696d07721fd7"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-03/corpus/results.json",
+      "bytes": 104904493,
+      "sha256": "6e351e3fd05eaf06bf095c918d5c72c212ab4839605daaa2658f3fd3992b889b"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-03/corpus/manifest.json",
+      "bytes": 44833245,
+      "sha256": "c5f68bb9080943db061224f385e2c1693979329fd01c55d3b9198e796b43ce2f"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/evidence/STAGE_STATUS.json",
+      "bytes": 137,
+      "sha256": "8bbeaf2b43220894f758503d34bc471012fb37cfd523e53762ad0cf60450f23a"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/evidence/FREEZE.sha256",
+      "bytes": 6100,
+      "sha256": "3d4632a2201fe8e9b650f312a6f21d585e70056f9740d1e09c91c19e5c8bcebc"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-review/controls/summary.json",
+      "bytes": 1524,
+      "sha256": "c33120ec48a64adb3baf856efa920df3539fde8bd3350fe0a35620adc145871c"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-NV-controls/summary.json",
+      "bytes": 171,
+      "sha256": "a793344ca3ab522a519bceaf734ed961c876133c2641f75027de93f9e77bf4b0"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/STAGE_STATUS.json",
+      "bytes": 60,
+      "sha256": "1a3fde3d84c669bcdff02798b62aa6cac142f37933ab683f7d03fb96b2c9567c"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/FREEZE.sha256",
+      "bytes": 6100,
+      "sha256": "3d4632a2201fe8e9b650f312a6f21d585e70056f9740d1e09c91c19e5c8bcebc"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/corpus/runner-identity.json",
+      "bytes": 304,
+      "sha256": "a5e5661a2e5014102aaede053079de888d4d200a405674ffb879a0c3953c935e"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/corpus/summary.json",
+      "bytes": 493,
+      "sha256": "06965c346048c3d18f6fa1f590eac6068c9b0b0ab12afe98dfcdf1fc86b7efae"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/corpus/results.json",
+      "bytes": 420082923,
+      "sha256": "4985925afedbe3329cc04097a730f914e5d3bf3072ee9954aba1f792e33a2046"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/corpus/identities-before.json",
+      "bytes": 620,
+      "sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/corpus/identities-after.json",
+      "bytes": 620,
+      "sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full/corpus/manifest.json",
+      "bytes": 178819030,
+      "sha256": "39ddaef0630739cea04e8d311f408c89b669c5a0a2d932c09c4eed1ce9f8b2a7"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-findings/summary.json",
+      "bytes": 18360,
+      "sha256": "74b9ac62c6afff13847d77e217ee59f9d184efff13f176a8fee117ba6b62f8e8"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/full-findings/summary.json",
+      "bytes": 18522,
+      "sha256": "70ba49d172b8a36c63b362ea7db119bda17c0a075bf0c4d507a849fbece607f7"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/STAGE_STATUS.json",
+      "bytes": 137,
+      "sha256": "8bbeaf2b43220894f758503d34bc471012fb37cfd523e53762ad0cf60450f23a"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/audit/audit.json",
+      "bytes": 190069,
+      "sha256": "2f9940e424b1e10f6c311a033e2acea319579fc729479a94fc372d42557356a3"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-01/audit/audit.json",
+      "bytes": 57451,
+      "sha256": "35a8e79e45dfaf052f76d1101796b0a7cd36e88e180ee3958a613bf4d4f0d9b9"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-01/corpus/results.json",
+      "bytes": 4867573,
+      "sha256": "65092175949aa9b0455d9b3a387e47ff087b32779699119cef84cda54cea6a61"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-01/corpus/manifest.json",
+      "bytes": 2063870,
+      "sha256": "26bae43edd49faffacda5842bf7ffed8f862b0e90408e684c26a80c032e0eb3e"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-00/audit/audit.json",
+      "bytes": 57379,
+      "sha256": "ac7a1dd204d732c588ac94b31dfa871927d4602ed5ae8c329cf489f127c61890"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-00/corpus/results.json",
+      "bytes": 4863853,
+      "sha256": "e52de904a1790da57c29f414b17acd028a15127ae3c03b6e5ccc7493173fa689"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-00/corpus/manifest.json",
+      "bytes": 2062446,
+      "sha256": "4b9e4c4544b131a362a9ad297d2b28c8dd45dca2a0aa226a9a83235230c4a3d5"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-02/audit/audit.json",
+      "bytes": 57410,
+      "sha256": "e6ea4901058527d60c6ddfb1293e212de7119107da570c65496f9ecc74cd309f"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-02/corpus/results.json",
+      "bytes": 4872093,
+      "sha256": "fd2e5f8e6565edcd5ae7d032c57d42c0cb9cf1f64165b1a03456e6b6242ce2d9"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-02/corpus/manifest.json",
+      "bytes": 2069390,
+      "sha256": "a6c6a04c156bad2ae22d71edcbb2380c9ee02e4890081656ff5da7e4b4c6a20b"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-03/audit/audit.json",
+      "bytes": 20555,
+      "sha256": "2d0398b9e0e0b20ef4e281916ec487331ae17dc95f5921f749375114b5fc2c0b"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-03/corpus/results.json",
+      "bytes": 4869413,
+      "sha256": "ad145b8e04ef24b6ec140c6882c3412a2a346a40a6d26bc943b89bb97a05a35d"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-03/corpus/manifest.json",
+      "bytes": 2072137,
+      "sha256": "b1b12d353852229420fb5e0aae24a48b7e81fbab19248e94af224589bfe6dcc1"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/evidence/STAGE_STATUS.json",
+      "bytes": 137,
+      "sha256": "8bbeaf2b43220894f758503d34bc471012fb37cfd523e53762ad0cf60450f23a"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/evidence/FREEZE.sha256",
+      "bytes": 5711,
+      "sha256": "55d741e2d51cc6818e8dc10c432bdf9eafa8866d8fd0a33c94f42e0c1e79d220"
+    },
+    {
+      "path": "/home/vick/rvv-directed-task164/pilot-review/controls/summary.json",
+      "bytes": 1463,
+      "sha256": "f006b15d7e1c31c0aa73ada4ef378b402326897f97568856df903cf9d18d2bc6"
+    }
+  ],
+  "free_bytes": 67980865536,
+  "reserve_bytes": 10737418240,
+  "max_observed_guests": 13,
+  "max_observed_offline_workers": 4,
+  "resource_samples": 631,
+  "workers": [
+    {
+      "view": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-00/corpus",
+      "output": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-00/audit",
+      "log": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-00/worker.log",
+      "returncode": 0,
+      "seconds": 6.764147654990666
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-01/corpus",
+      "output": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-01/audit",
+      "log": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-01/worker.log",
+      "returncode": 0,
+      "seconds": 6.855838536052033
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-02/corpus",
+      "output": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-02/audit",
+      "log": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-02/worker.log",
+      "returncode": 0,
+      "seconds": 6.769685307983309
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-03/corpus",
+      "output": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-03/audit",
+      "log": "/home/vick/rvv-directed-task164/pilot-review/audit-parallel/shard-03/worker.log",
+      "returncode": 0,
+      "seconds": 6.907597907003947
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-00/corpus",
+      "output": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-00/audit",
+      "log": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-00/worker.log",
+      "returncode": 0,
+      "seconds": 271.05433464003727
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-01/corpus",
+      "output": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-01/audit",
+      "log": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-01/worker.log",
+      "returncode": 0,
+      "seconds": 271.8066506140167
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-02/corpus",
+      "output": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-02/audit",
+      "log": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-02/worker.log",
+      "returncode": 0,
+      "seconds": 273.2510464390507
+    },
+    {
+      "view": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-03/corpus",
+      "output": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-03/audit",
+      "log": "/home/vick/rvv-directed-task164/full-review/audit-parallel/shard-03/worker.log",
+      "returncode": 0,
+      "seconds": 278.6051623390522
+    }
+  ],
+  "production_changes": 0,
+  "original_deletions": 0,
+  "retention": "Persistent original source/ELF/packets/stdout/stderr/tbmap/cache/reference; only compact evidence plus selected original failure packets exported"
+}

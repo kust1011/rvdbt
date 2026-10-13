@@ -1,0 +1,452 @@
+[
+  {
+    "bits": 32,
+    "frm": 0,
+    "witness": "exact",
+    "expected": [
+      1084227584,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 0,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 0,
+    "witness": "fused-exact",
+    "expected": [
+      2826960896,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 0,
+    "witness": "overflow-rescue",
+    "expected": [
+      2139095039,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 0,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      2143289344,
+      16
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 1,
+    "witness": "exact",
+    "expected": [
+      1084227584,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 1,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 1,
+    "witness": "fused-exact",
+    "expected": [
+      2826960896,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 1,
+    "witness": "overflow-rescue",
+    "expected": [
+      2139095039,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 1,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      2143289344,
+      16
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 2,
+    "witness": "exact",
+    "expected": [
+      1084227584,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 2,
+    "witness": "cancellation",
+    "expected": [
+      2147483648,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 2,
+    "witness": "fused-exact",
+    "expected": [
+      2826960896,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 2,
+    "witness": "overflow-rescue",
+    "expected": [
+      2139095039,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 2,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      2143289344,
+      16
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 3,
+    "witness": "exact",
+    "expected": [
+      1084227584,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 3,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 3,
+    "witness": "fused-exact",
+    "expected": [
+      2826960896,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 3,
+    "witness": "overflow-rescue",
+    "expected": [
+      2139095039,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 3,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      2143289344,
+      16
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 4,
+    "witness": "exact",
+    "expected": [
+      1084227584,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 4,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 4,
+    "witness": "fused-exact",
+    "expected": [
+      2826960896,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 4,
+    "witness": "overflow-rescue",
+    "expected": [
+      2139095039,
+      0
+    ]
+  },
+  {
+    "bits": 32,
+    "frm": 4,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      2143289344,
+      16
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 0,
+    "witness": "exact",
+    "expected": [
+      4617315517961601024,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 0,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 0,
+    "witness": "fused-exact",
+    "expected": [
+      13362180094408261632,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 0,
+    "witness": "overflow-rescue",
+    "expected": [
+      9218868437227405311,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 0,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      9221120237041090560,
+      16
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 1,
+    "witness": "exact",
+    "expected": [
+      4617315517961601024,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 1,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 1,
+    "witness": "fused-exact",
+    "expected": [
+      13362180094408261632,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 1,
+    "witness": "overflow-rescue",
+    "expected": [
+      9218868437227405311,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 1,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      9221120237041090560,
+      16
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 2,
+    "witness": "exact",
+    "expected": [
+      4617315517961601024,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 2,
+    "witness": "cancellation",
+    "expected": [
+      9223372036854775808,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 2,
+    "witness": "fused-exact",
+    "expected": [
+      13362180094408261632,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 2,
+    "witness": "overflow-rescue",
+    "expected": [
+      9218868437227405311,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 2,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      9221120237041090560,
+      16
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 3,
+    "witness": "exact",
+    "expected": [
+      4617315517961601024,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 3,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 3,
+    "witness": "fused-exact",
+    "expected": [
+      13362180094408261632,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 3,
+    "witness": "overflow-rescue",
+    "expected": [
+      9218868437227405311,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 3,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      9221120237041090560,
+      16
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 4,
+    "witness": "exact",
+    "expected": [
+      4617315517961601024,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 4,
+    "witness": "cancellation",
+    "expected": [
+      0,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 4,
+    "witness": "fused-exact",
+    "expected": [
+      13362180094408261632,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 4,
+    "witness": "overflow-rescue",
+    "expected": [
+      9218868437227405311,
+      0
+    ]
+  },
+  {
+    "bits": 64,
+    "frm": 4,
+    "witness": "invalid-qnan-addend",
+    "expected": [
+      9221120237041090560,
+      16
+    ]
+  }
+]

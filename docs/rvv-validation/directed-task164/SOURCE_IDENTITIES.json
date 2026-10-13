@@ -1,0 +1,217 @@
+[
+  {
+    "path": "source/CASE_REVIEW.json",
+    "bytes": 25747,
+    "sha256": "eba420969c3423081a8aa1e1789bec87ba2fb6446c309fdc778997ec915664a6"
+  },
+  {
+    "path": "source/D.adoc",
+    "bytes": 11538,
+    "sha256": "a2cb9d87bfff2fb99f1584cca13ed224639212083476fc374c0cc07cd2e8b639"
+  },
+  {
+    "path": "source/F.adoc",
+    "bytes": 23918,
+    "sha256": "695edb2aa38d7b1c8711b4b2565b081bbee208d64f56db2cd0007420c947957b"
+  },
+  {
+    "path": "source/RULE_SOURCES.json",
+    "bytes": 950,
+    "sha256": "db207766b8136f4d663f0076f19d0b43c4b0d3f8a0d1865988fd4c44e6df6be7"
+  },
+  {
+    "path": "source/RVV1.0.adoc",
+    "bytes": 207611,
+    "sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19"
+  },
+  {
+    "path": "source/SOURCE_READ.json",
+    "bytes": 9614,
+    "sha256": "508b5e7c67f709726827f60d4aaf60f8abba8dc1b3963e139d28c8695dc88c17"
+  },
+  {
+    "path": "source/WRAPPER_EXCERPTS.txt",
+    "bytes": 42767,
+    "sha256": "58041943412896b32ccce4d2a1bd4186c1ee28fabf826be7417581d1063b4bf7"
+  },
+  {
+    "path": "source/WRAPPER_REVIEW.json",
+    "bytes": 59785,
+    "sha256": "c01f07960e37853682b7f85213252c9c99364645451dd8eac837760c52047744"
+  },
+  {
+    "path": "source/s_mulAddF32.c",
+    "bytes": 8272,
+    "sha256": "fdfa3a9d52c8e8406d5121ed3c11838c0f643c37dadecb408ff1842a05a7dcd1"
+  },
+  {
+    "path": "source/s_mulAddF64.c",
+    "bytes": 18253,
+    "sha256": "1761bdb8cc07d782f17a59ae62f931bf7a238fdabf8f3dc7190d0f40237469f7"
+  },
+  {
+    "path": "source/sail-vext_fp_insts.sail",
+    "bytes": 59672,
+    "sha256": "feb3a2a1e162a6091d12acd264c9bc598dabede463a8d9eb30e479499a1b7d54"
+  },
+  {
+    "path": "source/spike-vfmacc_vf.h",
+    "bytes": 220,
+    "sha256": "48dfac2e4d38cfad5aee2b6639a6584c99e4dd5b0fd4f9c6bcf34076f2c543e4"
+  },
+  {
+    "path": "source/spike-vfmacc_vv.h",
+    "bytes": 220,
+    "sha256": "1a528343121facb8db6741f5489d18747b96c1ebd683cf633a22e12a5dba71df"
+  },
+  {
+    "path": "source/spike-vfmadd_vf.h",
+    "bytes": 195,
+    "sha256": "ed0d94815d3f15851d2ca47c6088b795557aa832361a4c9f9e443b1883c2fd45"
+  },
+  {
+    "path": "source/spike-vfmadd_vv.h",
+    "bytes": 195,
+    "sha256": "330c9456fe6deb02a3e90ec44b8c3dccb63656f6e200fe62241b0479a39b9dd1"
+  },
+  {
+    "path": "source/spike-vfmsac_vf.h",
+    "bytes": 331,
+    "sha256": "b3e1133ddb52e07c9ad933ffb23b64dd6d2b2f8afb94df1c53b371d0033d0c73"
+  },
+  {
+    "path": "source/spike-vfmsac_vv.h",
+    "bytes": 331,
+    "sha256": "fc879da704a1ef929b9c77a22d1b7c67f5743006111b2e25df44dda934661e0c"
+  },
+  {
+    "path": "source/spike-vfmsub_vf.h",
+    "bytes": 331,
+    "sha256": "2d46fa44feb024751aa4a76f5ca59c046f1826e1c7f2159c88b84979b14167e3"
+  },
+  {
+    "path": "source/spike-vfmsub_vv.h",
+    "bytes": 331,
+    "sha256": "d345d0a78914d078b2f312f94d28462574757ea701cdb1ec4d157e0afb5c184e"
+  },
+  {
+    "path": "source/spike-vfnmacc_vf.h",
+    "bytes": 409,
+    "sha256": "029b74fbd5f0cb2497b18f54c141d17d2f44e2ccabc549c2f25451ad85d2a544"
+  },
+  {
+    "path": "source/spike-vfnmacc_vv.h",
+    "bytes": 408,
+    "sha256": "48972bef37911311e59442e274f9ee99e6829129da2198ea8c1941e754fd5178"
+  },
+  {
+    "path": "source/spike-vfnmadd_vf.h",
+    "bytes": 408,
+    "sha256": "c40c766b0883f25f14e6f3e3a467195e9085225877cf7d405d1594bd0784d6dd"
+  },
+  {
+    "path": "source/spike-vfnmadd_vv.h",
+    "bytes": 408,
+    "sha256": "4fb45379db2826d6df1107001d19b108cc6fa62a78674e5376e53280e9d2f06f"
+  },
+  {
+    "path": "source/spike-vfnmsac_vf.h",
+    "bytes": 332,
+    "sha256": "e6156fa500c24b8f3cc8918adec4aeb195b4668b416bdc0a0cb939d9487504a6"
+  },
+  {
+    "path": "source/spike-vfnmsac_vv.h",
+    "bytes": 355,
+    "sha256": "23e87cf4dee87ea9b66590f4510f029b40ebc7cbd6037ec3a628bb8e8057c0a7"
+  },
+  {
+    "path": "source/spike-vfnmsub_vf.h",
+    "bytes": 332,
+    "sha256": "25b4185996b49f4e2c4766510406d97bbe9201f26bd2875a2dc03193bb7d90ef"
+  },
+  {
+    "path": "source/spike-vfnmsub_vv.h",
+    "bytes": 332,
+    "sha256": "29055e520a4ba65e780b5a2e05a827525fba2fa7d95bb81abd20d2a6f3c35222"
+  },
+  {
+    "path": "source/vfmacc_vf.c",
+    "bytes": 6651,
+    "sha256": "78e4f2c5cea7620e650cad9d478c902b570262dc44045b27122df6d260980860"
+  },
+  {
+    "path": "source/vfmacc_vv.c",
+    "bytes": 6624,
+    "sha256": "37cdf4daa37f4d8476223ad418677576ed3d94575a04bb94e57fd3400c6029c7"
+  },
+  {
+    "path": "source/vfmadd_vf.c",
+    "bytes": 6651,
+    "sha256": "66614ed5c74de3f1a0f09d08c54d1866e2f4bc33fb2ebd1796dde39134fcbf5f"
+  },
+  {
+    "path": "source/vfmadd_vv.c",
+    "bytes": 6624,
+    "sha256": "9d6fb92e14590d21ceca581852ea72a443ebfc836630f22437ecf738a1c7639f"
+  },
+  {
+    "path": "source/vfmsac_vf.c",
+    "bytes": 6651,
+    "sha256": "45fe220ef9e6540e4745601880a5dd972c854637ad4aa0fdc120fdb0e930e247"
+  },
+  {
+    "path": "source/vfmsac_vv.c",
+    "bytes": 6624,
+    "sha256": "62984777f920525044bf08ef41bdc790e14d885f7e6950cf60e56c7b858b75a7"
+  },
+  {
+    "path": "source/vfmsub_vf.c",
+    "bytes": 6650,
+    "sha256": "17358bfc0b03d00c29bfb6927f2d99eceace6707949d38c9277082c10579ed00"
+  },
+  {
+    "path": "source/vfmsub_vv.c",
+    "bytes": 6624,
+    "sha256": "c166d6027c28cabe6f710ee6be273ca7c1ceba1151c2f66b8e6e84e0dfbf74d6"
+  },
+  {
+    "path": "source/vfnmacc_vf.c",
+    "bytes": 6661,
+    "sha256": "790ee8258ba4ec1e236747b84d3b80f8f335bdb444b87de1f0270ffd271a0270"
+  },
+  {
+    "path": "source/vfnmacc_vv.c",
+    "bytes": 6634,
+    "sha256": "b80105432806051bc06b7c02d7442e23850e72bac4521e608a8197d493fb8848"
+  },
+  {
+    "path": "source/vfnmadd_vf.c",
+    "bytes": 6661,
+    "sha256": "29316e8a167a6e638f5e98390264e78ae340631445f29475b52e21c69a44c59d"
+  },
+  {
+    "path": "source/vfnmadd_vv.c",
+    "bytes": 6634,
+    "sha256": "534d12268a6299c64d64efcfcfe6b54f847cda2e5f997b1fde8cd052333fc85b"
+  },
+  {
+    "path": "source/vfnmsac_vf.c",
+    "bytes": 6661,
+    "sha256": "85aa083e45fb6d4e65d2cb35099a8eb1ad5a9570b2efd96260267d5ffd5b904b"
+  },
+  {
+    "path": "source/vfnmsac_vv.c",
+    "bytes": 6634,
+    "sha256": "d2ed6b6b692482a6f72fff5623c9013c512840abc322eeb7807d9ac445faefc6"
+  },
+  {
+    "path": "source/vfnmsub_vf.c",
+    "bytes": 6661,
+    "sha256": "7a528113f3bf07e341b6316494e6362082351b385e02f2c8b022f2d40a82d680"
+  },
+  {
+    "path": "source/vfnmsub_vv.c",
+    "bytes": 6634,
+    "sha256": "7049aaa61e885d17a5d99b157613c4d54fab06c65537cdcece1d6dde2860525f"
+  }
+]

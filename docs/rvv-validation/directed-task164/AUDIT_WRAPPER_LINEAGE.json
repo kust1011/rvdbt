@@ -1,0 +1,9 @@
+{
+  "original": "docs/rvv-validation/directed-task160/audit_parallel.py",
+  "original_sha256": "57f09622ff8ded1451674f33a4b3eb649b72ef2d39328ee58a7ffc3aa386009f",
+  "retaining_wrapper": "docs/rvv-validation/directed-task164/audit_parallel.py",
+  "retaining_sha256": "67c3a80c467d6bd5a74481f5b4296603a72715314710f3efcfa98bb459271c76",
+  "change": "Optional --retain-failures: same validation/partition/unchanged auditor/merge; retain complete failed traversal and return1 without COMPLETE or semantic PASS",
+  "predicates_weakened": false,
+  "workers": 4
+}

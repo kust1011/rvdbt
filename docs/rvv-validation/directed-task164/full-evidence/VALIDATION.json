@@ -1,0 +1,24 @@
+{
+  "cases": 237664,
+  "checks": 1188320,
+  "units": 10368,
+  "commands": 51840,
+  "ordinary_per_arm": 237664,
+  "reserved_start_per_arm": 0,
+  "forms": 16,
+  "geometries": 54,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "failures": 28224,
+  "execution_anomalies": 0,
+  "raw_location": "xbd:/home/vick/rvv-directed-task164/full",
+  "audit_location": "xbd:/home/vick/rvv-directed-task164/full-review",
+  "acceptance": "PENDING_MAIN_REVIEW",
+  "per_target_method_admission": "NOT_CLAIMED",
+  "semantics": "finite ordinary-width FMA evidence; no full semantics proof"
+}

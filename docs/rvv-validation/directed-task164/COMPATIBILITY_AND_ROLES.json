@@ -1,0 +1,1288 @@
+{
+  "closed_form_role_checks": 160,
+  "roles": [
+    {
+      "case": "vfmacc-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        1087373312,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfmacc-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "13/2",
+      "expected": [
+        4619004367821864960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        3234856960,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfnmacc-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-13/2",
+      "expected": [
+        13842376404676640768,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        1085276160,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfmsac-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "11/2",
+      "expected": [
+        4617878467915022336,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        3232759808,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsac-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-11/2",
+      "expected": [
+        13841250504769798144,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        1080033280,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfmadd-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "7/2",
+      "expected": [
+        4615063718147915776,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        3227516928,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfnmadd-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-7/2",
+      "expected": [
+        13838435755002691584,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        3204448256,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfmsub-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "-1/2",
+      "expected": [
+        13826050856027422720,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vv-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm0-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm1-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm2-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm3-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm4-w128-e32-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm0-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm1-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm2-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm3-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    },
+    {
+      "case": "vfnmsub-vf-rm4-w128-e64-m1-semantic-fp-destructive-role",
+      "closed_form": "1/2",
+      "expected": [
+        4602678819172646912,
+        0
+      ]
+    }
+  ],
+  "fp157_unchanged_declaration_cases": 126062,
+  "fp157_compatibility_samples": 200,
+  "guest_executions": 0
+}

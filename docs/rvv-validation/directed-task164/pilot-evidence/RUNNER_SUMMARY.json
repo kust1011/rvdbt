@@ -1,0 +1,32 @@
+{
+  "planned_cases": 11024,
+  "planned_executions": 55120,
+  "executed": 55120,
+  "counts": {
+    "PASS": 53808,
+    "FAIL": 1312
+  },
+  "arms": {
+    "Reference": {
+      "PASS": 11024
+    },
+    "B": {
+      "PASS": 10696,
+      "FAIL": 328
+    },
+    "M1": {
+      "PASS": 10696,
+      "FAIL": 328
+    },
+    "M2": {
+      "PASS": 10696,
+      "FAIL": 328
+    },
+    "BOTH": {
+      "PASS": 10696,
+      "FAIL": 328
+    }
+  },
+  "seconds": 116.81284447200596,
+  "jobs": 8
+}

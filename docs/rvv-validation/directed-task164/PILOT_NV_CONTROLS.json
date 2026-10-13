@@ -1,0 +1,7 @@
+{
+  "original_failed_packets": 1312,
+  "NV_only_effective_repairs": 1312,
+  "effective_NV_omission_rejections": 2624,
+  "guest_commands": 0,
+  "ordinary_PASS_credit": 0
+}

@@ -64,7 +64,7 @@ def audit(root,out):
                     valid=word>>25==0x40 and (word>>15)&31==c['rs1'] and (word>>20)&31==c['rs2']
                 if not valid:raise ValueError('configuration form/operand mismatch')
                 expected_word=word
-            elif c.get('family')=='fp157':
+            elif c.get('family') in ('fp157','fma164'):
                 import fp157
                 expected_word=fp157.instruction(c)
             elif c.get('family')=='extend156':
@@ -155,14 +155,14 @@ def audit(root,out):
         for row in rows:
             classification=ids[row['case']]['classification']
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'OBSERVED_RESERVED' if classification=='reserved-preserve' else 'PROFILE_PASS' if classification=='reserved-vstart-profile' else 'PROFILE_UNSUPPORTED_VTYPE' if classification=='unsupported-vtype' and manifest.get('family')=='configuration148' else 'PASS'
-    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu','wmac156','extend156','wmac156chunk','fp157'):
+    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu','wmac156','extend156','wmac156chunk','fp157','fma164'):
         for row in rows:
             c=ids[row['case']]
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'PROFILE_RESERVED_START' if c['vstart']>=c['vlmax'] else 'PASS'
     with gzip.open(out/'observed-checks.csv.gz','wt') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     v.save(out/'adapter-verification.json',adapter);v.save(out/'guest-pins.json',pins)
-    v.save(out/'audit.json',dict(planned_cases=len(cases),executed_case_checks=len(rows),planned_commands=len(units)*5,executed_commands=command_count,aggregate_command_seconds=runtime,counts={a:{s:counts[(a,s)] for s in ['PASS','FAIL','ISA_ONLY_REFERENCE_BLOCKED']} for a in ['Reference','B','M1','M2','BOTH']},failures=first_failures,adapter_verified_units=len(adapter),full_state='32 vector registers, 10 CSRs and actual rd pre/post' if manifest.get('family') in ('configuration147','configuration148') else '32 vector registers, 10 CSRs, scalar s0 and fs0 raw bits pre/post' if manifest.get('family')=='fp157' else '32 vector registers, 10 CSRs and scalar s0 pre/post',method_admission='NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission'))
+    v.save(out/'audit.json',dict(planned_cases=len(cases),executed_case_checks=len(rows),planned_commands=len(units)*5,executed_commands=command_count,aggregate_command_seconds=runtime,counts={a:{s:counts[(a,s)] for s in ['PASS','FAIL','ISA_ONLY_REFERENCE_BLOCKED']} for a in ['Reference','B','M1','M2','BOTH']},failures=first_failures,adapter_verified_units=len(adapter),full_state='32 vector registers, 10 CSRs and actual rd pre/post' if manifest.get('family') in ('configuration147','configuration148') else '32 vector registers, 10 CSRs, scalar s0 and fs0 raw bits pre/post' if manifest.get('family') in ('fp157','fma164') else '32 vector registers, 10 CSRs and scalar s0 pre/post',method_admission='NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission'))
     if manifest.get('family') in ('configuration147','configuration148'):
         import config
         deterministic=config.determinism(root);v.save(out/'determinism.json',deterministic)

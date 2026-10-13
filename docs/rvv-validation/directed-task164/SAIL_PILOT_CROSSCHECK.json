@@ -1,0 +1,938 @@
+{
+  "units": 32,
+  "case_checks": 1496,
+  "reference_commands": 32,
+  "DUT_commands": 0,
+  "family_case_credit": 0,
+  "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+  "receipts": [
+    {
+      "unit": "vfmacc-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "f8898c2be17c8fbe704bd5244e1dfcda909d69ac61e55363b6027bb0e247af8e",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.464444080949761,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "7114f5500f890b625a130060edca98f63f9095e4c2e913275c85551952d5dbef",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmacc-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "fbf8801654fbcd0f4cc4d492eb585d677f3f84df76e000860b359ba5da566cfa",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4643732600379735,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "bc52cb36cc7ee3171d3270e5d92348fa56613944cf1e367be0c3ab31fe84aa69",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmacc-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "bdde2fe0fc2d93ad1179d62a6571bba06923eb30abbb4e41c9ff0bc2d59c77a7",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642369960201904,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "6ab39bb7df66176dc94c4dfc5443e058ffb9bf44cb3de04371a07c0860f8514a",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmacc-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmacc-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "0b4418704c0cfc391c9bcd17aeba50605eea0541b76f3513e8bb94059107ce42",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.464303313056007,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "d05a05844b9a5d22fc4b98d70b7f8e431c227f8699af151bde40546e270d97dc",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmacc-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "08335ae6c81c7c68f68f85ca75715cda2601155b5aa63c17a11755fd394f5c79",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46423738601151854,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "2a84e524ede382a9f312e2994a1623a60a14307c5658e2bf8e73dc4046e9cc10",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmacc-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "84e926e71f96a36208d92145ac28890e4805cf3db3850cbc63d8f8d50fc46cdd",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46468873193953186,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "5b0d89355210e7b14c2cca353b2bc64d7c2845cb8e30772538434e76dab0c95c",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmacc-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "d769de7fa860c7ea9c8d89f8cc2e12bda5891f4a9c60f3d28099328d544b3dcf",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642605029512197,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "99cbcdc17e6983069f81b30f236b924e052b214272accb15c02e8fb35126d359",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmacc-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmacc-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "38a900eba54e5971ec5f21403bc4f0f01ee2e3d73bbed0527fc07857ee264fef",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642127010738477,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "9e3779511cb0dc63954e69c6d5b4047b370d105e0a7cd3fab8217e062db2a687",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsac-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "94086ec225cefb92a0506a296329156efe358bec7213bbafa71bf04f29a6be1b",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46422133198939264,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "98052f1f8063a323fa29f498ca6d7cadce5725e885a0fc4929c30cd5bebcf719",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsac-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "8f4ca1d9e833bb5eeca29301a42f74bee65ac74299f7912dec237609df576b77",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642604789696634,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "92fc521aa923673c102df32a6731c1a0755731f1278a81bb067ff7e564625ef9",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsac-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "b9744f7d81773026256540ff9c7792076a6c481b9dc2f658f7e4f1c6afbe5a91",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46422824799083173,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "aea981a7270bedb106d372abe2cc36ab98089086a63ee277af7c6a764059660e",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsac-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsac-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "33e30062d02067955ccb16d70144c9d5e0e9d469e312124ddf17d42658eb7ab1",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46427107392810285,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "486318be4e6cbd5f7865fb169ffab78acc2d64ab401de7ee558ce1447e6063d5",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsac-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "3f36f9de80495b7d946b737426c2a42074f2adfdfb18da621a658d9e61fbac10",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46437411406077445,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "025bfdc657025142d4e901444fc65be140cc144c3d2d36b97b6d4695444897dd",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsac-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "a8ac6e45285061c9849fa824511c228b15fca5bf0aac67882bfa12f0f6595dcd",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46425276598893106,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "f4e45678f6a31f5ea889b3f65f89bf13f350370f2d667b8c2757c16e538e2ff2",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsac-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "b6504f9a2e16a25343824c3c4cefaca6c743a5116ab550bcca2f3720da613692",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642279939725995,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "7a191d72b1fc8cef6f621c7e2b4fc8b27ba9799c8549950047e3e9d7554ac23d",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsac-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsac-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "492d2f1fd592f6395729fe4bb7081b1ed8d9f97ac114f6c512d6171a02277f3b",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46422597800847143,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "e074b8ad376badcced14f7d155fba045defb320cae72392d26b16df655e9394e",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmadd-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "879c3396e03517b371270149e1201ec742d9fc80dd21f84d0a878ba984c8d9b3",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642798029817641,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "edc0b397a7ebcfc36a77997847fe2e4ee38375dbc9ef06296ea5d3079ae7a0ba",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmadd-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "920803bf0f1a675e8662b89fb83d5159c8f4a4634fb41d5208042d34ce15232b",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4641894140513614,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "34b08d697bd19d677329537605b6e1d3c24f6e3de9555d113b6172765d74b25b",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmadd-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "f008168997c76408b8cfe1eef232a8f8aca13070cead9ba103d536c038688dee",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4644640249898657,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "533c3c9db5ecd0a0876f59ddc4b9c56fcdd5a07312672d754f31b34d3965bf94",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmadd-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmadd-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "07cd87e389719b437975c38de483e3ed7b7e0ac9aba2cdd29a0f358ae53d917b",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.464365866035223,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "e8a645b597f0e23d72428afeee2539adcc87212ab4db5eae329b8d51f8733b3b",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmadd-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "6e170f4d0c27ae9dd717f185c5fe688ead85255468987b65d8363191bb6e6008",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642269859323278,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "9359d8822875fc6a8d9e6950bb7b351fb1fd740df51040e2acd6b39d3ae272ef",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmadd-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "e5d4dc250fc7de3f5f73440037dbea9404f9de56f9bb18640328e334d8bd6aac",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642733810469508,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "4fa0fcc896d911a251013e1c9ba23564c186cd3dd61cb9b50764447c5eeb2b05",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmadd-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "960b8d3286c0104c8edb7aba50bc3de7a7b37bb947dd0e50c4a54cb5cb25bdb7",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4641897209221497,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "7381e7f7224447d569fd780960efd7de20a8836dd3c093754ce7a75b9e4da75c",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmadd-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmadd-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "d44f9deb8eb8f943dd9497f7afc3c4a86f93ce77f60445c95c36cd96cc0a285d",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46416682098060846,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "9f05e0534013b6983e102f2f5e02bd3847289723034093ce1f27a5506749e10d",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsub-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "cf6037e44991997a23a6f7d331cad7c52a90adcbb942f92932ad837ff74b95c5",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4643821839708835,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "42bee6a425bf1c6755baf8f23f16fa417c32669b24ea3a03e9a23db1bafa8919",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsub-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "e67e84fc236a5b129289e607446b27db5749c6155aa38a011fa83fd87f5eb64c",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46432453696615994,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "698cbad67b5e9f07b2d57e1794bb538bfa0aee4ea0aaed66ba942deaefb68dc0",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsub-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "d1fab9ebdfeea337f47ef78b01c07d36d11259d86c8613cdd18ad0dd7bfe34ca",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642510520061478,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "95fa9ad5a9a2d9aad59620c8dd05b1de7966b53b98cc08cfbb9f950e83d14ed6",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfmsub-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfmsub-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "f19481427510bf49ebf0850fbe7838d7d42fcaa8229f023c59d2c36c50ca7821",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46418125403579324,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "7b9b5e5222a6d5176429363fdf1da4865acaae2f8be5ac3069a5a4eff0e8601d",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsub-vv-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vv-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vv-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vv-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "ba0dfae352f9b8e8bc04e8f18f2156cdd62dadb595e429bbfae0593d8811aea1",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.464280424057506,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "dc1bcd7eba02c8b4a971edc43d3621eb4a614e69bcd5de1fd2eda68207b16ff7",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsub-vv-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vv-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vv-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vv-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "c0859fbd494c4b7368fb54753bf58d346de0f1bb7ba9aec74a13d1d3867b9b34",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.46413688093889505,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "5a64cf22145287973feebeb292bec3f2dc089e7c2ce399dddf60c632ddf9a83b",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsub-vf-rm0-w128-e32-mf2-semantic-zero",
+      "cases": 49,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vf-rm0-w128-e32-mf2-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vf-rm0-w128-e32-mf2-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vf-rm0-w128-e32-mf2-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "6be9171cea91625a5efaa934d2c3709a605d2e69154637b0be46434126d4262f",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4643154210643843,
+        "stdout_sha256": "ca4c3376c70c5ea5501536c7d0a96cc0a99afb2ee465644edfaef0241b136e2a",
+        "stderr_sha256": "104dddf88603d5d9549210de3af348b01900635304d923efa5613565370cd266",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    },
+    {
+      "unit": "vfnmsub-vf-rm0-w128-e64-m1-semantic-zero",
+      "cases": 46,
+      "build": [
+        "clang-22",
+        "--target=riscv32-unknown-elf",
+        "-march=rv32gcv",
+        "-mabi=ilp32d",
+        "-nostdlib",
+        "-static",
+        "-fuse-ld=lld",
+        "-Wl,--no-relax",
+        "-Wl,-T,/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vf-rm0-w128-e64-m1-semantic-zero/sail.ld",
+        "-DSAIL",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vf-rm0-w128-e64-m1-semantic-zero/test.S",
+        "-o",
+        "/home/vick/rvv-directed-task164/sail-pilot-crosscheck/vfnmsub-vf-rm0-w128-e64-m1-semantic-zero/sail.elf"
+      ],
+      "elf_sha256": "e1fe5d85dd8bb51fb82971f49a581157b9433165b4d42a309e09403be5b2a1aa",
+      "execution": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 0.4642339829588309,
+        "stdout_sha256": "457dd90bbc5de3255db7181b84edeea7350297a1565a4c63b57eec4c4ccc7e91",
+        "stderr_sha256": "302b6c14dda310f8f088687ea5cefa642f3f4144dd30f93272d670490c135a85",
+        "storage": "lossless-gzip-v1"
+      },
+      "comparison": "Sail active results/fflags/frm versus pinned Spike packet plus unchanged rational FMA predicates"
+    }
+  ]
+}

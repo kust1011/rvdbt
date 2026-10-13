@@ -1,0 +1,9 @@
+{
+  "max_Task164_guests": 7,
+  "max_shared_guests": 13,
+  "max_shared_offline_workers": 4,
+  "min_free_bytes": 67984674816,
+  "samples": 631,
+  "all_guest_niceness_10": true,
+  "supervisors_excluded_from_offline_worker_count": true
+}

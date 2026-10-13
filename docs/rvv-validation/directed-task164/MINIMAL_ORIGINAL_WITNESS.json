@@ -1,0 +1,41 @@
+{
+  "case": "vfmacc-vv-rm0-w128-e32-mf2-semantic-fp-zero-inf-qnan",
+  "arm": "B",
+  "tag": "fp-zero-inf-qnan",
+  "geometry": [
+    128,
+    32,
+    "mf2"
+  ],
+  "frm": 0,
+  "expected_flags": 16,
+  "dut_flags": 0,
+  "reference_flags": 16,
+  "dut_fcsr": 0,
+  "reference_fcsr": 16,
+  "active_lanes": [
+    0
+  ],
+  "result_mismatch_lanes": [],
+  "lanes": [
+    {
+      "lane": 0,
+      "effective_operands": [
+        "0x0",
+        "0x7f800000",
+        "0x7fc00007"
+      ],
+      "isa_result_flags": [
+        2143289344,
+        16
+      ],
+      "dut_result": "0x7fc00000",
+      "reference_result": "0x7fc00000"
+    }
+  ],
+  "raw": "/home/vick/rvv-directed-task164/pilot/corpus/runs/vfmacc-vv-rm0-w128-e32-mf2-semantic-zero/B/packets.bin",
+  "offset": 9088,
+  "bytes": 1136,
+  "packet_sha256": "ed37de20d4f0d915ed749e24e7f6f92c42a8c2d59b3aadc5b2a890732647d2de",
+  "reference_sha256": "fd403f24d7db2e5719363375fdd06905e5f31b815f9df12534e2b80fa66988af"
+}

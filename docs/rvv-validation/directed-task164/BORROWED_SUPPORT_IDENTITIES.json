@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/rvv-validation/directed-task157/qemu-source/rvv_insn.S",
+    "sha256": "4d61684e8bf1c78d60a908ba4f728cc7422b02f00cbb3f4aa55655d16f3a289e"
+  },
+  {
+    "path": "docs/rvv-validation/directed-task157/qemu-source/rvv_insn.h",
+    "sha256": "c1297d78f9d11438d626f099ccff320762db5905a1b5455adb14638143e5c4f6"
+  },
+  {
+    "path": "docs/rvv-validation/directed-task157/qemu-source/rvv_ch14.inc",
+    "sha256": "20a08a6df9ba538961d222bffe9aba54462629929ce72a6674142bc3be8d8fd7"
+  }
+]

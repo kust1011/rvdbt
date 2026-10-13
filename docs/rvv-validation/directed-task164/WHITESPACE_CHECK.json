@@ -1,0 +1,10 @@
+{
+  "CSV_format": "original Python CSV CRLF retained and hash-verified; cr-at-eol used only for diff whitespace inspection",
+  "source_findings": {
+    "docs/rvv-validation/directed-task164/source/RVV1.0.adoc": 4,
+    "docs/rvv-validation/directed-task164/source/s_mulAddF32.c": 1,
+    "docs/rvv-validation/directed-task164/source/s_mulAddF64.c": 1
+  },
+  "authored_code_check_pass": true,
+  "original_pinned_source_bytes_preserved": true
+}

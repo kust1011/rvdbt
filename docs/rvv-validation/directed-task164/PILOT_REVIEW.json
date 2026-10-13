@@ -1,0 +1,21 @@
+{
+  "audit_complete": true,
+  "semantic_pass": false,
+  "Reference_cases": 11024,
+  "DUT_pass_per_arm": 10696,
+  "DUT_fail_per_arm": 328,
+  "checks": 55120,
+  "commands": 2560,
+  "worker_count": 4,
+  "worker_returncodes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "controls_original_rejected": 21496,
+  "controls_original_allowed": 64,
+  "rounding_supplement_rejected": 16960,
+  "full_action": "execute unchanged failing manifest to characterize finite scope; preserve strict predicates and all failed receipts",
+  "production_changes": 0
+}

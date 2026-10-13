@@ -1,0 +1,24 @@
+{
+  "cases": 11024,
+  "checks": 55120,
+  "units": 512,
+  "commands": 2560,
+  "ordinary_per_arm": 11024,
+  "reserved_start_per_arm": 0,
+  "forms": 16,
+  "geometries": 4,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "failures": 1312,
+  "execution_anomalies": 0,
+  "raw_location": "xbd:/home/vick/rvv-directed-task164/pilot",
+  "audit_location": "xbd:/home/vick/rvv-directed-task164/pilot-review",
+  "acceptance": "PENDING_MAIN_REVIEW",
+  "per_target_method_admission": "NOT_CLAIMED",
+  "semantics": "finite ordinary-width FMA evidence; no full semantics proof"
+}

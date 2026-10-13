@@ -156,6 +156,9 @@ def scalar_operand(c):
     return scalar(c) & ((1 << c['sew'])-1)
 
 def initial(c):
+    if c.get('family') == 'fma164':
+        import fma164
+        return fma164.initial(c)
     import vadd as v
     raw = bytearray(v.initial(dict(c, family='fp157-baseline')))
     b, e = c['vlen']//8, c['sew']//8
@@ -174,16 +177,25 @@ def initial(c):
     return bytes(raw)
 
 def target(c):
+    if c.get('family') == 'fma164':
+        import fma164
+        return fma164.target(c)
     rhs = f'v{c["vs1"]}' if c['form'] == 'vv' else 'fs0'
     return f'{c["mnemonic"]}.{c["form"]} v{c["vd"]},v{c["vs2"]},{rhs}' + (',v0.t' if c['mask'] != 'none' else '')
 
 def instruction(c):
+    if c.get('family') == 'fma164':
+        import fma164
+        return fma164.instruction(c)
     return FUNCT6[c['mnemonic']] << 26 | int(c['mask']=='none') << 25 | c['vs2'] << 20 | (c['vs1'] if c['form']=='vv' else 8) << 15 | (1 if c['form']=='vv' else 5) << 12 | c['vd'] << 7 | 0x57
 
 def active(c, before, i):
     return c['vstart'] <= i < c['vl'] and (c['mask']=='none' or before[i//8] >> (i%8) & 1)
 
 def lane(c, before, i):
+    if c.get('family') == 'fma164':
+        import fma164
+        return fma164.lane(c, before, i)
     b, e = c['vlen']//8, c['sew']//8
     def word(reg):
         return int.from_bytes(before[reg*b+i*e:reg*b+(i+1)*e], 'little')
