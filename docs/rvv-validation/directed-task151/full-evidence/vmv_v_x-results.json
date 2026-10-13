@@ -1,0 +1,56 @@
+{
+  "form": "vmv.v.x",
+  "planned_per_arm": 4633,
+  "arms": {
+    "Reference": {
+      "executed": 4633,
+      "statuses": {
+        "PASS": 4633
+      },
+      "semantic_statuses": {
+        "PASS": 4373,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 4633,
+      "statuses": {
+        "PASS": 4633
+      },
+      "semantic_statuses": {
+        "PASS": 4373,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 4633,
+      "statuses": {
+        "PASS": 4633
+      },
+      "semantic_statuses": {
+        "PASS": 4373,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 4633,
+      "statuses": {
+        "PASS": 4633
+      },
+      "semantic_statuses": {
+        "PASS": 4373,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 4633,
+      "statuses": {
+        "PASS": 4633
+      },
+      "semantic_statuses": {
+        "PASS": 4373,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "source": "https://raw.githubusercontent.com/riscv/riscv-isa-manual/main/src/unpriv/vector-common.adoc",
+  "retrieved": "2026-10-13",
+  "sha256": "953eade975979f04181c1d34065696880cfa1b1ff7f0a6f185eaefe007d2316d",
+  "sections": [
+    "Vector Integer Comparison Instructions",
+    "Vector Operands",
+    "Vector Tail Agnostic and Vector Mask Agnostic"
+  ],
+  "predicates": [
+    "Signed and unsigned ordering differ at SEW sign boundary; equality includes equal-zero and equal-sign values.",
+    "Scalar RV32 sign extension and signed simm5 precede unsigned interpretation.",
+    "Mask destination EEW1 occupies one full register; destination v0 is legal, including masked AND behavior.",
+    "Compare tails always agnostic; old,one,or computed result within VLMAX permitted.",
+    "Overlap at lowest source register is legal narrowing; differing EEW overlap implies agnostic inactive state.",
+    "Prestart and no-body bits and non-destination registers must preserve.",
+    "Independent reference compares every enabled body bit from captured prestate."
+  ],
+  "framework_controls": "reuse; not repeated",
+  "guest_executions": 0
+}

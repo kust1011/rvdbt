@@ -1,0 +1,172 @@
+{
+  "forms": [
+    "vmseq.vv",
+    "vmseq.vx",
+    "vmseq.vi",
+    "vmsne.vv",
+    "vmsne.vx",
+    "vmsne.vi",
+    "vmsltu.vv",
+    "vmsltu.vx",
+    "vmslt.vv",
+    "vmslt.vx",
+    "vmsleu.vv",
+    "vmsleu.vx",
+    "vmsleu.vi",
+    "vmsle.vv",
+    "vmsle.vx",
+    "vmsle.vi",
+    "vmsgtu.vx",
+    "vmsgtu.vi",
+    "vmsgt.vx",
+    "vmsgt.vi"
+  ],
+  "cases": 126852,
+  "units": 5280,
+  "ordinary_cases": 121652,
+  "reserved_start_profiles": 5200,
+  "reserved_encodings": [
+    {
+      "form": "vmseq.vv",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmseq.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmseq.vi",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsne.vv",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsne.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsne.vi",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsltu.vv",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsltu.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmslt.vv",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmslt.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsleu.vv",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsleu.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsleu.vi",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsle.vv",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsle.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsle.vi",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsgtu.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsgtu.vi",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsgt.vx",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmsgt.vi",
+      "kind": "mask-destination-overlap-nonlowest-source",
+      "requires": "LMUL>=2",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ],
+  "execution": "NOT_RUN",
+  "guest_executions": 0
+}

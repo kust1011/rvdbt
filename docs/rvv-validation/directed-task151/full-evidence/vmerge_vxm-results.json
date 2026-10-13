@@ -1,0 +1,56 @@
+{
+  "form": "vmerge.vxm",
+  "planned_per_arm": 5729,
+  "arms": {
+    "Reference": {
+      "executed": 5729,
+      "statuses": {
+        "PASS": 5729
+      },
+      "semantic_statuses": {
+        "PASS": 5469,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 5729,
+      "statuses": {
+        "PASS": 5729
+      },
+      "semantic_statuses": {
+        "PASS": 5469,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 5729,
+      "statuses": {
+        "PASS": 5729
+      },
+      "semantic_statuses": {
+        "PASS": 5469,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 5729,
+      "statuses": {
+        "PASS": 5729
+      },
+      "semantic_statuses": {
+        "PASS": 5469,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 5729,
+      "statuses": {
+        "PASS": 5729
+      },
+      "semantic_statuses": {
+        "PASS": 5469,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

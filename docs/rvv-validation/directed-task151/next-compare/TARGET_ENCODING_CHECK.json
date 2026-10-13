@@ -1,0 +1,22 @@
+{
+  "command": [
+    "nice",
+    "-n",
+    "10",
+    "clang-20",
+    "--target=riscv32-unknown-elf",
+    "-march=rv32gcv",
+    "-mabi=ilp32d",
+    "-nostdlib",
+    "-static",
+    "-fuse-ld=lld",
+    "-Wl,--no-relax",
+    "docs/rvv-validation/directed-task151/next-compare/TARGET_ENCODING_CHECK.S",
+    "-o",
+    "/tmp/task151-compare-targets.elf"
+  ],
+  "declared_cases": 126852,
+  "distinct_targets": 344,
+  "verified": 344,
+  "guest_executions": 0
+}

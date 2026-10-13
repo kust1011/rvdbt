@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-directed-task151/pilot/scripts/reject_mergemove150_next.py", line 62, in <module>
+    p=argparse.ArgumentParser();p.add_argument('root',type=Path);p.add_argument('out',type=Path);a=p.parse_args();run(a.root,a.out)
+                                                                                                                  ^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task151/pilot/scripts/reject_mergemove150_next.py", line 43, in run
+    reject(c,'reversed-selection-polarity',lane,wrong)
+  File "/home/vick/rvv-directed-task151/pilot/scripts/reject_mergemove150_next.py", line 26, in reject
+    if bad==raw:raise ValueError('non-distinguishing control '+c['id']+' '+name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: non-distinguishing control vmerge-w128-e64-m4-vvm-mask-alternating reversed-selection-polarity

@@ -1,0 +1,13 @@
+{
+  "units": 120,
+  "cases": 2988,
+  "execution": "NOT_RUN",
+  "requirements": [
+    "shared runner/auditor routes",
+    "fixed Spike/Sail pilot",
+    "actual-packet controls",
+    "freeze before full"
+  ],
+  "workers": 12,
+  "build_jobs": 8
+}

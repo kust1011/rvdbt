@@ -1,0 +1,56 @@
+{
+  "form": "vmerge.vim",
+  "planned_per_arm": 9425,
+  "arms": {
+    "Reference": {
+      "executed": 9425,
+      "statuses": {
+        "PASS": 9425
+      },
+      "semantic_statuses": {
+        "PASS": 9165,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 9425,
+      "statuses": {
+        "PASS": 9425
+      },
+      "semantic_statuses": {
+        "PASS": 9165,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 9425,
+      "statuses": {
+        "PASS": 9425
+      },
+      "semantic_statuses": {
+        "PASS": 9165,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 9425,
+      "statuses": {
+        "PASS": 9425
+      },
+      "semantic_statuses": {
+        "PASS": 9165,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 9425,
+      "statuses": {
+        "PASS": 9425
+      },
+      "semantic_statuses": {
+        "PASS": 9165,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

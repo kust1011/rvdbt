@@ -1,0 +1,142 @@
+{
+  "pilot": {
+    "launch": [
+      "ssh",
+      "xbd",
+      "cd /home/vick/rvv-directed-task151/pilot; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task151/pilot > launcher.log 2>&1 < /dev/null &"
+    ],
+    "build": [
+      "python3",
+      "scripts/vadd.py",
+      "build",
+      "--family",
+      "mergemove151",
+      "--output",
+      "corpus",
+      "--compiler",
+      "clang-22",
+      "--build-jobs",
+      "8",
+      "--link",
+      "../user.ld",
+      "--units-file",
+      "UNITS.json"
+    ],
+    "run": [
+      "python3",
+      "scripts/vadd.py",
+      "run",
+      "--root",
+      "/home/vick/rvv-directed-task151/pilot/corpus",
+      "--engine",
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun",
+      "--spike",
+      "/home/vick/rvv-directed-task145/deps/spike",
+      "--pk",
+      "/home/vick/rvv-directed-task145/deps/pk",
+      "--sail",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+      "--flags",
+      "../FLAGS.json",
+      "--jobs",
+      "12"
+    ],
+    "audit": [
+      "python3",
+      "scripts/audit.py",
+      "corpus",
+      "audit"
+    ],
+    "controls": [
+      "python3",
+      "scripts/reject_mergemove150_next.py",
+      "corpus",
+      "controls"
+    ],
+    "summary": [
+      "python3",
+      "scripts/summarize148.py",
+      ".",
+      "evidence"
+    ],
+    "environment": {
+      "RVV_COMPRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "taskset": false,
+    "nice": 10
+  },
+  "full": {
+    "launch": [
+      "ssh",
+      "xbd",
+      "cd /home/vick/rvv-directed-task151/full; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task151/full > launcher.log 2>&1 < /dev/null &"
+    ],
+    "build": [
+      "python3",
+      "scripts/vadd.py",
+      "build",
+      "--family",
+      "mergemove151",
+      "--output",
+      "corpus",
+      "--compiler",
+      "clang-22",
+      "--build-jobs",
+      "8",
+      "--link",
+      "../user.ld"
+    ],
+    "run": [
+      "python3",
+      "scripts/vadd.py",
+      "run",
+      "--root",
+      "/home/vick/rvv-directed-task151/full/corpus",
+      "--engine",
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun",
+      "--spike",
+      "/home/vick/rvv-directed-task145/deps/spike",
+      "--pk",
+      "/home/vick/rvv-directed-task145/deps/pk",
+      "--sail",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+      "--flags",
+      "../FLAGS.json",
+      "--jobs",
+      "12"
+    ],
+    "audit": [
+      "python3",
+      "scripts/audit.py",
+      "corpus",
+      "audit"
+    ],
+    "controls": [
+      "python3",
+      "scripts/reject_mergemove150_next.py",
+      "corpus",
+      "controls"
+    ],
+    "summary": [
+      "python3",
+      "scripts/summarize148.py",
+      ".",
+      "evidence"
+    ],
+    "environment": {
+      "RVV_COMPRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "taskset": false,
+    "nice": 10
+  },
+  "pilot_correction": {
+    "commands": [
+      "PYTHONDONTWRITEBYTECODE=1 RVV_COMPRESS=1 nice -n 10 python3 controls-fix-scripts/reject_mergemove150_next.py corpus controls-corrected",
+      "PYTHONDONTWRITEBYTECODE=1 RVV_COMPRESS=1 nice -n 10 python3 controls-fix-scripts/reject_mergemove151_state.py corpus controls-state"
+    ],
+    "guest_reruns": 0,
+    "original_failure_preserved": true
+  }
+}

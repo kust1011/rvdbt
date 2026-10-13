@@ -1,0 +1,14 @@
+[
+  {
+    "path": "scripts/rvv/directed/compare151_next.py",
+    "sha256": "cf7bf9128abff50997f589ff4350c50f1ff7a466fd84719f26388b18e14b338e"
+  },
+  {
+    "path": "scripts/rvv/directed/test_compare151_next.py",
+    "sha256": "fd102b9fe182735b5703ecc616ed7c7b9777c5638d85edb3fe2feeebe4cc93e0"
+  },
+  {
+    "path": "scripts/rvv/directed/reject_compare151_next.py",
+    "sha256": "aca28dd6ef8a12d13adf4fc05a35c46e398bcc9f1a316813c8b7c3a13a6758ab"
+  }
+]

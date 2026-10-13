@@ -1,0 +1,8 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/rvv/directed -p test_compare151_next.py -v",
+  "tests": 8,
+  "pass": 8,
+  "seconds": 204.389,
+  "all_prestate_extents_checked": 126852,
+  "guest_executions": 0
+}

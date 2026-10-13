@@ -39,14 +39,14 @@ def run(root,out):
             # Polarity reversal is distinguishable on both selection branches.
             for lane in [0,1]:
                 other=int.from_bytes(before[c['vs1']*b+lane*e:c['vs1']*b+(lane+1)*e],'little') if k=='vv' else m.scalar(c) if k=='vx' else c['operand']
-                wrong=(other&((1<<64)-1)).to_bytes(e,'little') if lane==0 else before[c['vs2']*b+lane*e:c['vs2']*b+(lane+1)*e]
+                wrong=(other&((1<<64)-1)).to_bytes(e,'little') if not (before[lane//8]>>(lane%8)&1) else before[c['vs2']*b+lane*e:c['vs2']*b+(lane+1)*e]
                 reject(c,'reversed-selection-polarity',lane,wrong)
-            old=before[c['vd']*b:c['vd']*b+e]
-            reject(c,'selection-treated-as-execution-mask',0,old)
+            old=before[c['vd']*b+e:c['vd']*b+2*e]
+            reject(c,'selection-treated-as-execution-mask',1,old)
         else:
             # Nonzero output must not depend on selection v0 or dummy vs2.
-            old=before[c['vd']*b:c['vd']*b+e]
-            reject(c,'spurious-v0-execution-mask',0,old)
+            old=before[c['vd']*b+e:c['vd']*b+2*e]
+            reject(c,'spurious-v0-execution-mask',1,old)
             wrong=before[:e]
             reject(c,'reading-encoded-vs2-instead-of-source',0,wrong)
         if k=='vx':

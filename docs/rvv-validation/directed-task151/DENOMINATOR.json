@@ -1,0 +1,52 @@
+{
+  "forms": {
+    "vmerge.vvm": 5465,
+    "vmerge.vxm": 5729,
+    "vmerge.vim": 9425,
+    "vmv.v.v": 4633,
+    "vmv.v.x": 4633,
+    "vmv.v.i": 8329
+  },
+  "cases": 38214,
+  "units": 1584,
+  "ordinary_cases": 36654,
+  "reserved_start_profiles": 1560,
+  "reserved_encodings": [
+    {
+      "form": "vmerge.vvm",
+      "kind": "destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmerge.vxm",
+      "kind": "destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmerge.vim",
+      "kind": "destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmv.v.v",
+      "kind": "nonzero-vs2-encoding",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmv.v.x",
+      "kind": "nonzero-vs2-encoding",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmv.v.i",
+      "kind": "nonzero-vs2-encoding",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ]
+}

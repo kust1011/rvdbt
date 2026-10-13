@@ -64,6 +64,9 @@ def audit(root,out):
                     valid=word>>25==0x40 and (word>>15)&31==c['rs1'] and (word>>20)&31==c['rs2']
                 if not valid:raise ValueError('configuration form/operand mismatch')
                 expected_word=word
+            elif c.get('family')=='mergemove151':
+                import mergemove150_next
+                expected_word=mergemove150_next.instruction(c)
             elif c.get('family')=='carry150':
                 import carry149_next
                 expected_word=carry149_next.instruction(c)
@@ -134,7 +137,7 @@ def audit(root,out):
         for row in rows:
             classification=ids[row['case']]['classification']
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'OBSERVED_RESERVED' if classification=='reserved-preserve' else 'PROFILE_PASS' if classification=='reserved-vstart-profile' else 'PROFILE_UNSUPPORTED_VTYPE' if classification=='unsupported-vtype' and manifest.get('family')=='configuration148' else 'PASS'
-    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150'):
+    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150','mergemove151'):
         for row in rows:
             c=ids[row['case']]
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'PROFILE_RESERVED_START' if c['vstart']>=c['vlmax'] else 'PASS'

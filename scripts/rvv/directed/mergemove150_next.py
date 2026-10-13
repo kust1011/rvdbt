@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Prepared independent merge/move family; no guest admission or runner routing.
+"""Independent merge/move family routed through the shared runner.
 
 v0 is selection data for merge, never an execution mask. Move encodes vs2=0
 but does not read it; vm=1. Fixed Spike/Sail packets remain required at admission.
@@ -72,7 +72,7 @@ def cases():
         k={'v.v':'vv','v.x':'vx','v.i':'vi'}.get(form,form[:2]);current=[]
         for old in template:
             if old['form']!=k:continue
-            c=dict(old,mnemonic=op,form=form,family='mergemove-next150',seed=151,mask='none',selection_pattern=old['mask'],execution='NOT_RUN')
+            c=dict(old,mnemonic=op,form=form,family='mergemove151',seed=151,mask='none',selection_pattern=old['mask'],execution='NOT_RUN')
             c['id']=old['id'].replace('vadd-',op+'-',1).replace('-'+k+'-','-'+form+'-',1)
             c['unit']=old['unit'].replace('vadd-',op+'-',1).replace('-'+k+'-','-'+form+'-',1)
             if op=='vmv':
