@@ -1,0 +1,116 @@
+{
+  "cases": 98416,
+  "original_cases": 97360,
+  "additive_zero_over_zero_cases": 1056,
+  "geometry_form_groups": 2112,
+  "units": 4356,
+  "per_form": [
+    {
+      "form": "vmul.vv",
+      "manifest": 5953,
+      "ordinary": 5693,
+      "reserved": 260
+    },
+    {
+      "form": "vmul.vx",
+      "manifest": 6217,
+      "ordinary": 5957,
+      "reserved": 260
+    },
+    {
+      "form": "vmulh.vv",
+      "manifest": 5953,
+      "ordinary": 5693,
+      "reserved": 260
+    },
+    {
+      "form": "vmulh.vx",
+      "manifest": 6217,
+      "ordinary": 5957,
+      "reserved": 260
+    },
+    {
+      "form": "vmulhu.vv",
+      "manifest": 5953,
+      "ordinary": 5693,
+      "reserved": 260
+    },
+    {
+      "form": "vmulhu.vx",
+      "manifest": 6217,
+      "ordinary": 5957,
+      "reserved": 260
+    },
+    {
+      "form": "vmulhsu.vv",
+      "manifest": 5953,
+      "ordinary": 5693,
+      "reserved": 260
+    },
+    {
+      "form": "vmulhsu.vx",
+      "manifest": 6217,
+      "ordinary": 5957,
+      "reserved": 260
+    },
+    {
+      "form": "vdiv.vv",
+      "manifest": 6085,
+      "ordinary": 5825,
+      "reserved": 260
+    },
+    {
+      "form": "vdiv.vx",
+      "manifest": 6349,
+      "ordinary": 6089,
+      "reserved": 260
+    },
+    {
+      "form": "vdivu.vv",
+      "manifest": 6085,
+      "ordinary": 5825,
+      "reserved": 260
+    },
+    {
+      "form": "vdivu.vx",
+      "manifest": 6349,
+      "ordinary": 6089,
+      "reserved": 260
+    },
+    {
+      "form": "vrem.vv",
+      "manifest": 6085,
+      "ordinary": 5825,
+      "reserved": 260
+    },
+    {
+      "form": "vrem.vx",
+      "manifest": 6349,
+      "ordinary": 6089,
+      "reserved": 260
+    },
+    {
+      "form": "vremu.vv",
+      "manifest": 6085,
+      "ordinary": 5825,
+      "reserved": 260
+    },
+    {
+      "form": "vremu.vx",
+      "manifest": 6349,
+      "ordinary": 6089,
+      "reserved": 260
+    }
+  ],
+  "reference_classes_per_arm": {
+    "Spike-zero-start": 67792,
+    "Sail-ordinary-nonzero-start": 26464,
+    "Sail-reserved-start-profile": 4160
+  },
+  "arithmetic_witnesses_per_geometry": {
+    "multiply": 12,
+    "divide_remainder": 13
+  },
+  "geometries_per_form": 132,
+  "original_case_fields_and_ordinals_unchanged": true
+}

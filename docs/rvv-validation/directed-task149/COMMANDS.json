@@ -1,0 +1,11 @@
+{
+  "environment": {"RVV_COMPRESS":"1", "PYTHONDONTWRITEBYTECODE":"1"},
+  "pilot_build": "python3 scripts/vadd.py build --family muldiv149 --output corpus --compiler clang-22 --build-jobs 2 --link ../user.ld --units-file ../PILOT_UNITS.json",
+  "pilot_run": "taskset -c 28-31 nice -n 10 python3 scripts/vadd.py run --root /home/vick/rvv-directed-task149/pilot/corpus --engine /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --spike /home/vick/rvv-directed-task145/deps/spike --pk /home/vick/rvv-directed-task145/deps/pk --sail /home/vick/rvv-act4-tools/bin/sail_riscv_sim --flags /home/vick/rvv-directed-task149/FLAGS.json --jobs 4",
+  "pilot_audit": "python3 scripts/audit.py corpus audit",
+  "pilot_controls": "python3 scripts/reject149.py corpus controls",
+  "full": "nohup taskset -c 28-31 nice -n 10 bash launch-full.sh > launcher.log 2>&1 < /dev/null",
+  "full_cwd": "xbd:/home/vick/rvv-directed-task149/full",
+  "frozen_script_identity": "sha256sum scripts/*.py launch-full.sh > FREEZE.sha256; sha256sum -c FREEZE.sha256 before and after",
+  "completion": "Full launcher writes STAGE_STATUS.json and COMPLETE; no additional tmux signal sent here"
+}

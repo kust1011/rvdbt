@@ -6,7 +6,7 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('vadd',Path(__file__).with_name('vadd.py'))
 v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
 def elf_sections_symbols(path):
-    raw=path.read_bytes()
+    raw=v.storage.verify(path)
     if raw[:7]!=b'\x7fELF\x01\x01\x01': raise ValueError('not RV32 little endian ELF')
     if struct.unpack_from('<H',raw,18)[0]!=243: raise ValueError('not RISC-V')
     start=struct.unpack_from('<I',raw,32)[0];stride,n,strings=struct.unpack_from('<3H',raw,46)
@@ -22,6 +22,7 @@ def elf_sections_symbols(path):
     return sections,symbols
 
 def audit(root,out):
+    v.storage.reserve(out.parent,1024**3)
     out.mkdir(parents=True,exist_ok=False)
     manifest=json.loads((root/'manifest.json').read_text());cases=manifest['cases'];results=json.loads((root/'results.json').read_text())
     regenerated=v.manifest_cases(manifest.get("family","vadd145"))
@@ -46,7 +47,7 @@ def audit(root,out):
     adapter=[]
     for unit,cs in units.items():
         source=root/unit/'test.S'
-        if source.read_text()!=v.assembly(cs):raise ValueError('generated source mismatch')
+        if v.storage.text(source)!=v.assembly(cs):raise ValueError('generated source mismatch')
         user,syms=elf_sections_symbols(root/unit/'test.elf')
         targets=[]
         for c in cs:
@@ -63,13 +64,20 @@ def audit(root,out):
                     valid=word>>25==0x40 and (word>>15)&31==c['rs1'] and (word>>20)&31==c['rs2']
                 if not valid:raise ValueError('configuration form/operand mismatch')
                 expected_word=word
+            elif c.get('family')=='carry150':
+                import carry149_next
+                expected_word=carry149_next.instruction(c)
             else:
                 f3={'vv':0,'vx':4,'vi':3}[c['form']]
+                if c.get('family')=='muldiv149':f3={'vv':2,'vx':6}[c['form']]
                 operand=c['vs1'] if c['form']=='vv' else 8 if c['form']=='vx' else c['operand']&31
                 funct6=v.FUNCT6
                 if c.get('family')=='shiftminmax148':
                     import shift148
                     funct6=shift148.FUNCT6
+                if c.get('family')=='muldiv149':
+                    import muldiv149
+                    funct6=muldiv149.FUNCT6
                 expected_word=(funct6[c.get('mnemonic','vadd')]<<26)|(int(c['mask']=='none')<<25)|(c['vs2']<<20)|(operand<<15)|(f3<<12)|(c['vd']<<7)|0x57
             if word!=expected_word:raise ValueError('target opcode mismatch')
             targets.append(dict(case=c['id'],user_pc=hex(pc),instruction_hex=insn.hex()))
@@ -77,7 +85,7 @@ def audit(root,out):
             machine,msyms=elf_sections_symbols(root/unit/'sail.elf')
             if user['.data'][1]!=machine['.data'][1]:raise ValueError('adapter data changed')
             # Preprocessor guards occur only at initialization and terminal IO.
-            lines=source.read_text().splitlines();guards=[i for i,l in enumerate(lines) if l.startswith('#')]
+            lines=v.storage.text(source).splitlines();guards=[i for i,l in enumerate(lines) if l.startswith('#')]
             if len(guards)!=5:raise ValueError('unexpected conditional adaptation')
             body='\n'.join(lines[guards[1]+1:guards[2]])+'\n'
             if any(line.lstrip().startswith('#') for line in body.splitlines()):raise ValueError('adaptation inside shared capture/target body')
@@ -90,7 +98,7 @@ def audit(root,out):
     # Validate EVERY retained raw packet independently of the runner PASS labels.
     rows=[];counts=collections.Counter();first_failures=[];runtime=0;command_count=0
     for unit,cs in units.items():
-        size=v.packet_size(cs[0]);ref=root/'runs'/unit/'Reference'/'packets.bin';refraw=ref.read_bytes()
+        size=v.packet_size(cs[0]);ref=root/'runs'/unit/'Reference'/'packets.bin';refraw=v.storage.verify(ref)
         refrec=json.loads((ref.parent/'execution.json').read_text());reference_valid=True
         try:
             if len(refraw)!=len(cs)*size: raise ValueError('reference output extent')
@@ -99,10 +107,10 @@ def audit(root,out):
         for arm in ['Reference','B','M1','M2','BOTH']:
             d=root/'runs'/unit/arm;r=json.loads((d/'execution.json').read_text());runtime+=r['seconds'];command_count+=1
             if v.sha(d/'stdout')!=r['stdout_sha256'] or v.sha(d/'stderr')!=r['stderr_sha256']:raise ValueError('raw stream hash mismatch')
-            raw=(d/'packets.bin').read_bytes()
+            raw=v.storage.verify(d/'packets.bin')
             if arm=='Reference' and cs[0]['vstart']:
-                extracted=b''.join(int(line,16).to_bytes(4,'little') for line in (d/'signature').read_text().splitlines())
-            else:extracted=(d/'stdout').read_bytes()
+                extracted=b''.join(int(line,16).to_bytes(4,'little') for line in v.storage.text(d/'signature').splitlines())
+            else:extracted=v.storage.verify(d/'stdout')
             if raw!=extracted:raise ValueError('packet extraction mismatch')
             for i,c in enumerate(cs):
                 packet=raw[i*size:(i+1)*size];error=None;isa_status='NOT_RUN';reference_status='ORACLE_PACKET' if arm=='Reference' else 'BLOCKED'
@@ -126,7 +134,7 @@ def audit(root,out):
         for row in rows:
             classification=ids[row['case']]['classification']
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'OBSERVED_RESERVED' if classification=='reserved-preserve' else 'PROFILE_PASS' if classification=='reserved-vstart-profile' else 'PROFILE_UNSUPPORTED_VTYPE' if classification=='unsupported-vtype' and manifest.get('family')=='configuration148' else 'PASS'
-    if manifest.get('family')=='shiftminmax148':
+    if manifest.get('family') in ('shiftminmax148','muldiv149','carry150'):
         for row in rows:
             c=ids[row['case']]
             row['semantic_status']=row['status'] if row['status']!='PASS' else 'PROFILE_RESERVED_START' if c['vstart']>=c['vlmax'] else 'PASS'

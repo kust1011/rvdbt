@@ -1,0 +1,8 @@
+{
+  "pilot_allocated_unit_bytes": 73019392,
+  "max_unit_bytes": 630784,
+  "full_conservative_estimate_bytes": 4811915264,
+  "free_bytes": 31264423936,
+  "reserve_bytes": 10737418240,
+  "forecast_method": "maximum pilot unit allocated bytes * full 4224 units + 2GiB audit/metadata allowance"
+}

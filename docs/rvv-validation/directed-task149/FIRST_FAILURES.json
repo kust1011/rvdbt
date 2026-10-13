@@ -1,0 +1,27 @@
+{
+  "guest_or_reference_packet_failures_in_pilot": 0,
+  "utility_failures": [
+    {
+      "stage": "read-only pilot example extraction, initial inline draft",
+      "command": "ssh xbd python3 with stdin; cwd /home/vick/rvv-directed-task149/pilot",
+      "error": "SyntaxError: unexpected character after line continuation character",
+      "location": "nested quoted f-string in destination_lane0 formatting; parse aborted before any packet read or guest execution",
+      "resolution": "review149.py computes destination as a separate integer and formats it without nested escaped expressions; 34 actual examples then independently checked",
+      "classification": "evidence utility only, no DUT/reference/generator/checker failure"
+    },
+    {
+      "stage": "completion-event observer",
+      "error": "SSH session returned255; no stderr explanation captured",
+      "resolution": "Confirmed original audit passed all486800 checks and retention control process remained running; reattached event observer with an independent SSH connection and keepalive",
+      "classification": "observer transport only; no test restarted"
+    },
+    {
+      "stage": "extra mid-run freeze check",
+      "command": "ssh xbd sha256sum -c /home/vick/rvv-directed-task149/full/FREEZE.sha256 --ignore-missing",
+      "error": "no file was verified",
+      "resolution": "Relative freeze paths require cwd /home/vick/rvv-directed-task149/full; corrected check passed",
+      "classification": "utility cwd error; no script or result changed"
+    }
+  ],
+  "production_changes": 0
+}

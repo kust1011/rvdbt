@@ -5,10 +5,11 @@
 import argparse, collections, concurrent.futures, hashlib, json, os, resource
 import shutil, signal, struct, subprocess, sys, time
 from pathlib import Path
+import storage149 as storage
 CSRS = ['vl','vtype','vlenb','vstart','vxrm','vxsat','vcsr','fflags','frm','fcsr']
 LMUL = [('mf8',-3),('mf4',-2),('mf2',-1),('m1',0),('m2',1),('m4',2),('m8',3)]
 PIN = 'e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b'
-def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def sha(p): return hashlib.sha256(storage.verify(p)).hexdigest()
 def save(p,x): Path(p).write_text(json.dumps(x,indent=2)+'\n')
 def cases():
     result=[]
@@ -79,6 +80,9 @@ def integer_cases():
     return result
 
 def manifest_cases(family):
+    if family=='carry150':
+      import carry149_next
+      return carry149_next.cases()
     if family=='vadd145': return cases()
     if family=='integer146': return integer_cases()
     if family=='configuration147':
@@ -87,6 +91,9 @@ def manifest_cases(family):
     if family=='configuration148':
       import config148
       return config148.cases()
+    if family=='muldiv149':
+      import muldiv149
+      return muldiv149.cases()
     if family=='shiftminmax148':
       import shift148
       return shift148.cases()
@@ -95,6 +102,9 @@ def manifest_cases(family):
 def arithmetic(c,a,z):
     # Specification predicates; fixed Spike/Sail, never this function, supplies
     # the independently executed reference packet.
+    if c.get('family')=='muldiv149':
+      import muldiv149
+      return muldiv149.arithmetic(c,a,z)
     if c.get('family')=='shiftminmax148':
       import shift148
       return shift148.arithmetic(c,a,z)
@@ -109,6 +119,12 @@ def arithmetic(c,a,z):
     return (value % (1<<c['sew'])).to_bytes(c['sew']//8,'little')
 
 def initial(c):
+    if c.get('family')=='carry150':
+      import carry149_next
+      return carry149_next.initial(c)
+    if c.get('family')=='muldiv149':
+      import muldiv149
+      return muldiv149.initial(c)
     if c.get('family')=='shiftminmax148':
       import shift148
       return shift148.initial(c)
@@ -145,6 +161,9 @@ def decode(c,raw):
     return pre,post,raw[96:96+32*b],raw[96+32*b:]
 
 def check_isa(c,raw,rc=0,timeout=False):
+    if c.get('family')=='carry150':
+      import carry149_next
+      return carry149_next.check_isa(c,raw,rc,timeout)
     if c.get('family') in ('configuration147','configuration148'):
       import config
       return config.check_isa(c,raw,rc,timeout)
@@ -172,6 +191,9 @@ def check_isa(c,raw,rc=0,timeout=False):
     return True
 
 def check_reference(c,raw,reference):
+    if c.get('family')=='carry150':
+      import carry149_next
+      return carry149_next.check_reference(c,raw,reference)
     if c.get('family') in ('configuration147','configuration148'):
       import config
       return config.check_reference(c,raw,reference)
@@ -213,6 +235,9 @@ def assembly(cs):
       lines += [f'sw {scalar},48(a3)',f'.globl target_{tag}',f'target_{tag}:']
       if configuration:
         lines += [config.target(c)]
+      elif c.get('family')=='carry150':
+        import carry149_next
+        lines += [carry149_next.target(c)]
       else:
         op=f'v{c["vs1"]}' if c['form']=='vv' else 's0' if c['form']=='vx' else str(c['operand'])
         lines += [f'{c.get("mnemonic","vadd")}.{c["form"]} v{c["vd"]},v{c["vs2"]},{op}'+(',v0.t' if c['mask']!='none' else '')]
@@ -229,7 +254,7 @@ def assembly(cs):
     return '\n'.join(lines)+'\n'
 
 def build(out,compiler,link,family="vadd145",jobs=1,selected_units=None):
-    out.mkdir(parents=True,exist_ok=False);cs=manifest_cases(family)
+    storage.reserve(out.parent);out.mkdir(parents=True,exist_ok=False);cs=manifest_cases(family)
     for i,c in enumerate(cs): c['ordinal']=i
     if selected_units is not None:
       if not set(selected_units) <= {c['unit'] for c in cs}: raise ValueError('unknown selected unit')
@@ -239,9 +264,9 @@ def build(out,compiler,link,family="vadd145",jobs=1,selected_units=None):
     save(out/'manifest.json',dict(**({'family':family} if family!='vadd145' else {}),**({'pilot_units':sorted(selected_units)} if selected_units is not None else {}),project_tests=True,cases=cs,units=len(units),planned_case_executions=len(cs)*5,reference='fixed Spike/pk for vstart0; fixed Sail0.14.1 for nonzero vstart; independently source-reviewed ISA predicates for every packet'))
     shutil.copy2(link,out/'user.ld')
     (out/'sail.ld').write_text(Path(link).read_text().replace('0x10000','0x80000000'))
-    if jobs not in range(1,5): raise ValueError("build jobs must be 1..4")
+    if jobs < 1: raise ValueError("build jobs must be positive")
     def build_unit(item):
-      unit,rows=item; cmds=[]
+      unit,rows=item; cmds=[];storage.reserve(out)
       d=out/unit;d.mkdir();(d/'test.S').write_text(assembly(rows))
       for machine in ([False,True] if rows[0]['vstart'] else [False]):
         elf=d/('sail.elf' if machine else 'test.elf')
@@ -249,6 +274,7 @@ def build(out,compiler,link,family="vadd145",jobs=1,selected_units=None):
         r=subprocess.run(cmd,capture_output=True);(d/('sail-build.stderr' if machine else 'build.stderr')).write_bytes(r.stderr)
         cmds.append(dict(command=cmd,returncode=r.returncode,elf_sha256=sha(elf) if r.returncode==0 else None))
         if r.returncode: raise RuntimeError(r.stderr.decode())
+      for name in ["test.S","test.elf","sail.elf"]: storage.compress(d/name)
       return cmds
     cmds=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
@@ -257,7 +283,7 @@ def build(out,compiler,link,family="vadd145",jobs=1,selected_units=None):
     print(f'{len(cs)} cases / {len(units)} units built',flush=True)
 
 def sail_stop(elf):
-    raw=Path(elf).read_bytes()
+    raw=storage.verify(elf)
     shoff=struct.unpack_from('<I',raw,32)[0]
     entsize,count,names=struct.unpack_from('<3H',raw,46)
     headers=[struct.unpack_from('<10I',raw,shoff+i*entsize) for i in range(count)]
@@ -269,6 +295,7 @@ def sail_stop(elf):
     raise ValueError('ELF text missing')
 
 def execute(cmd,d,env,timeout=120):
+    if storage.enabled():return storage.execute(cmd,d,env,timeout)
     # Same bounded process-group capture protocol as run_rvv_external.call.
     d.mkdir(parents=True,exist_ok=False);save(d/'command.json',list(map(str,cmd)));start=time.monotonic()
     with (d/'stdout').open('wb') as o,(d/'stderr').open('wb') as e:
@@ -285,7 +312,7 @@ def execute(cmd,d,env,timeout=120):
 def run(root,engine,spike,pk,sail,flags,jobs):
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
     if sha(engine)!=PIN: raise ValueError('DUT executable pin mismatch')
-    if jobs not in range(1,5): raise ValueError('jobs must be 1..4')
+    if jobs < 1: raise ValueError('jobs must be positive')
     manifest=json.loads((root/'manifest.json').read_text());units=collections.defaultdict(list)
     for c in manifest['cases']: units[c['unit']].append(c)
     flags_path=Path(flags)
@@ -302,7 +329,8 @@ def run(root,engine,spike,pk,sail,flags,jobs):
       if row['returncode']!=0 or sha(guest)!=row['elf_sha256']: raise ValueError('guest build identity mismatch')
     save(root/'runner-identity.json',{'runner_sha256':sha(__file__),'configuration_module_sha256':sha(Path(__file__).with_name('config.py')) if manifest.get('family') in ('configuration147','configuration148') else None,'manifest_sha256':sha(root/'manifest.json'),'flags_sha256':sha(flags_path)})
     def worker(item):
-      unit,cs=item;w=cs[0]['vlen'];results=[];reference=None
+      unit,cs=item;w=cs[0]['vlen'];results=[];reference=None;storage.reserve(root)
+      temporary=[root/unit/name for name in ['test.elf','sail.elf'] if storage.physical(root/unit/name).exists() and storage.materialize(root/unit/name)]
       for arm in ['Reference','B','M1','M2','BOTH']:
         d=out/unit/arm;env=dict(os.environ)
         if arm=='Reference':
@@ -311,13 +339,13 @@ def run(root,engine,spike,pk,sail,flags,jobs):
             vector_config={'vlen_exp':w.bit_length()-1,'elen_exp':6,'vstart':{'zero_required':{'arith':False}}}
             if manifest.get('family') in ('configuration147','configuration148'):
               vector_config['vl_use_ceil']=True
-            if manifest.get('family') in ('integer146','shiftminmax148'):
+            if manifest.get('family') in ('integer146','shiftminmax148','muldiv149','carry150'):
               vector_config['reserved_behavior']={'vstart_out_of_bounds':'Vstart_Ignore'}
             save(config,{'base':{'xlen':32},'extensions':{'V':vector_config,'D':{'supported':True}}})
             cmd=[sail,'--rv32','--config-override',config,'--stop-at-pc',sail_stop(root/unit/'sail.elf'),'--inst-limit','10000000','--test-signature',d/'signature','--signature-granularity','4',root/unit/'sail.elf']
           else: cmd=[spike,f'--isa=rv32gcv_zvl{w}b',pk,root/unit/'test.elf']
         else:
-          fs=root/'work'/unit/arm/'fs';fs.mkdir(parents=True);cache=fs.parent/'cache';cache.mkdir();shutil.copy2(root/unit/'test.elf',fs/'t.elf')
+          fs=root/'work'/unit/arm/'fs';fs.mkdir(parents=True);cache=fs.parent/'cache';cache.mkdir();os.link(root/unit/'test.elf',fs/'t.elf') if storage.enabled() else shutil.copy2(root/unit/'test.elf',fs/'t.elf')
           env['LD_LIBRARY_PATH']=str(engine.parent.parent/'lib')+':/home/vick/boost_vendor/lib'
           fsflags=[f'--vlen={w}' if x.startswith('--vlen=') else x for x in flags[arm]]
           cmd=[engine,*fsflags,'--dump-tbmap='+str(d/'tbmap'),'--fsroot='+str(fs),'--cache='+str(cache),'--','/t.elf']
@@ -325,8 +353,8 @@ def run(root,engine,spike,pk,sail,flags,jobs):
         if arm=='Reference' and cs[0]['vstart']:
           try: raw=b''.join(int(line,16).to_bytes(4,'little') for line in (d/'signature').read_text().splitlines())
           except (OSError,ValueError): raw=b''
-        else: raw=(d/'stdout').read_bytes()
-        (d/'packets.bin').write_bytes(raw);size=packet_size(cs[0]);errors=[]
+        else: raw=storage.verify(d/'stdout')
+        storage.write(d/'packets.bin',raw,alias=d/'stdout');size=packet_size(cs[0]);errors=[]
         for i,c in enumerate(cs):
           status='PASS';error=None;isa_status='NOT_RUN';reference_status='ORACLE_PACKET' if arm=='Reference' else 'BLOCKED'
           try:
@@ -346,6 +374,13 @@ def run(root,engine,spike,pk,sail,flags,jobs):
           for r in results[-len(cs):]:
             if r['status']=='PASS': r['status']='ISA_ONLY_REFERENCE_BLOCKED'
         save(d/'checks.json',results[-len(cs):]);save(d/'errors.json',errors)
+        storage.compress(d/'signature');storage.compress(d/'tbmap')
+        if arm!='Reference' and storage.enabled():
+          (fs/'t.elf').unlink()
+          # Logical fs ELF is retained as the original recoverable compressed guest.
+          storage.link_compressed(root/unit/'test.elf',fs/'t.elf')
+          storage.retain_tree(cache)
+      for p in temporary:p.unlink()
       return results
     results=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
@@ -362,7 +397,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='action',required=True)
-    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148'],default='vadd145');b.add_argument('--link',type=Path,required=True)
+    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148','muldiv149','carry150'],default='vadd145');b.add_argument('--link',type=Path,required=True)
     r=sub.add_parser('run');r.add_argument('--root',type=Path,required=True)
     for n in ['engine','spike','pk','sail','flags']: r.add_argument('--'+n,type=Path,required=True)
     r.add_argument('--jobs',type=int,default=2)

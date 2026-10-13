@@ -1,0 +1,24 @@
+{
+  "cases": 116559,
+  "units": 3960,
+  "forms": {
+    "vadc.vvm": 6785,
+    "vadc.vxm": 7049,
+    "vadc.vim": 10745,
+    "vsbc.vvm": 6785,
+    "vsbc.vxm": 7049,
+    "vmadc.vvm": 6917,
+    "vmadc.vxm": 7181,
+    "vmadc.vim": 10877,
+    "vmadc.vv": 6917,
+    "vmadc.vx": 7181,
+    "vmadc.vi": 10877,
+    "vmsbc.vvm": 6917,
+    "vmsbc.vxm": 7181,
+    "vmsbc.vv": 6917,
+    "vmsbc.vx": 7181
+  },
+  "pilot_cases": 2796,
+  "pilot_units": 90,
+  "reserved_start": 3900
+}

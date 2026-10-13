@@ -1,0 +1,166 @@
+{
+  "controls": 16,
+  "rejected": 16,
+  "records": [
+    {
+      "case": "vdiv-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 0,
+      "corrupt": "vdiv-vv-isa.bin",
+      "logical_sha256": "c06aa776fedb13337baa4ea7e13fd881287b6742a2db83c782b7dc8206fbccfe"
+    },
+    {
+      "case": "vdiv-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 0,
+      "corrupt": "vdiv-vv-independent.bin",
+      "logical_sha256": "c06aa776fedb13337baa4ea7e13fd881287b6742a2db83c782b7dc8206fbccfe"
+    },
+    {
+      "case": "vdiv-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "vdiv-vx-isa.bin",
+      "logical_sha256": "76c1c700d9251e3a72fb60b20d52d08d6751aba8944837c774ddb14a1598e2b3"
+    },
+    {
+      "case": "vdiv-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 1120,
+      "corrupt": "vdiv-vx-independent.bin",
+      "logical_sha256": "76c1c700d9251e3a72fb60b20d52d08d6751aba8944837c774ddb14a1598e2b3"
+    },
+    {
+      "case": "vdivu-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "vdivu-vv-isa.bin",
+      "logical_sha256": "05d366fcab8b8301ab64f3416e0321bc7493905635f84ca99815662a73c0deca"
+    },
+    {
+      "case": "vdivu-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 2240,
+      "corrupt": "vdivu-vv-independent.bin",
+      "logical_sha256": "05d366fcab8b8301ab64f3416e0321bc7493905635f84ca99815662a73c0deca"
+    },
+    {
+      "case": "vdivu-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 3360,
+      "corrupt": "vdivu-vx-isa.bin",
+      "logical_sha256": "477be617074bc1bbd8f49133ccc8618a6bcf5e2ece14ac759ea8bccf050a1aad"
+    },
+    {
+      "case": "vdivu-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 3360,
+      "corrupt": "vdivu-vx-independent.bin",
+      "logical_sha256": "477be617074bc1bbd8f49133ccc8618a6bcf5e2ece14ac759ea8bccf050a1aad"
+    },
+    {
+      "case": "vrem-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0000000000000000",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "vrem-vv-isa.bin",
+      "logical_sha256": "44da3c3681f1d6ea42a0c5d12201400b0d91d6ca9aaa993ab55860c4b9238e8e"
+    },
+    {
+      "case": "vrem-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 4480,
+      "corrupt": "vrem-vv-independent.bin",
+      "logical_sha256": "44da3c3681f1d6ea42a0c5d12201400b0d91d6ca9aaa993ab55860c4b9238e8e"
+    },
+    {
+      "case": "vrem-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0000000000000000",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "vrem-vx-isa.bin",
+      "logical_sha256": "32d53d0b38b3753f7792c777cf0d4d90d2bf5110b9d797771046ace0b7d63ddf"
+    },
+    {
+      "case": "vrem-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 5600,
+      "corrupt": "vrem-vx-independent.bin",
+      "logical_sha256": "32d53d0b38b3753f7792c777cf0d4d90d2bf5110b9d797771046ace0b7d63ddf"
+    },
+    {
+      "case": "vremu-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0000000000000000",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "vremu-vv-isa.bin",
+      "logical_sha256": "90e37e7389444b02e7dcee27ab0112e39e42a9b979d21080be281173740226e7"
+    },
+    {
+      "case": "vremu-w128-e64-m4-vv-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 6720,
+      "corrupt": "vremu-vv-independent.bin",
+      "logical_sha256": "90e37e7389444b02e7dcee27ab0112e39e42a9b979d21080be281173740226e7"
+    },
+    {
+      "case": "vremu-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-isa",
+      "rejected": true,
+      "error": "active element 0: ffffffffffffffff != 0000000000000000",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "vremu-vx-isa.bin",
+      "logical_sha256": "aff78c03ca8cdc8224ee9703a3b9880ed5700ec71a67bca63052e3c05fca53cb"
+    },
+    {
+      "case": "vremu-w128-e64-m4-vx-witness-zero-over-zero",
+      "control": "wrong-zero-over-zero-independent",
+      "rejected": true,
+      "error": "independent reference active mismatch",
+      "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+      "offset": 7840,
+      "corrupt": "vremu-vx-independent.bin",
+      "logical_sha256": "aff78c03ca8cdc8224ee9703a3b9880ed5700ec71a67bca63052e3c05fca53cb"
+    }
+  ]
+}

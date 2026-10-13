@@ -1,0 +1,38 @@
+{
+  "planned_cases": 116559,
+  "executed_case_checks": 582795,
+  "planned_commands": 19800,
+  "executed_commands": 19800,
+  "aggregate_command_seconds": 5943.6690585813485,
+  "counts": {
+    "Reference": {
+      "PASS": 116559,
+      "FAIL": 0,
+      "ISA_ONLY_REFERENCE_BLOCKED": 0
+    },
+    "B": {
+      "PASS": 116559,
+      "FAIL": 0,
+      "ISA_ONLY_REFERENCE_BLOCKED": 0
+    },
+    "M1": {
+      "PASS": 116559,
+      "FAIL": 0,
+      "ISA_ONLY_REFERENCE_BLOCKED": 0
+    },
+    "M2": {
+      "PASS": 116559,
+      "FAIL": 0,
+      "ISA_ONLY_REFERENCE_BLOCKED": 0
+    },
+    "BOTH": {
+      "PASS": 116559,
+      "FAIL": 0,
+      "ISA_ONLY_REFERENCE_BLOCKED": 0
+    }
+  },
+  "failures": [],
+  "adapter_verified_units": 1980,
+  "full_state": "32 vector registers, 10 CSRs and scalar s0 pre/post",
+  "method_admission": "NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission"
+}

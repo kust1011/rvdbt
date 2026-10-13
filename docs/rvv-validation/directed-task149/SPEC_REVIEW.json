@@ -1,0 +1,32 @@
+{
+  "vector_spec": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html",
+  "division_spec": "https://docs.riscv.org/reference/isa/v20260120/unpriv/m-st-ext.html",
+  "sections": [
+    "V 10.1 scalar operands",
+    "V 11.10 multiply",
+    "V 11.11 divide",
+    "M 1.2 division",
+    "V 11.4 carry/borrow (next declaration only)"
+  ],
+  "predicates": {
+    "vmul": "product modulo 2**SEW",
+    "vmulh": "signed vs2 * signed other, high SEW bits",
+    "vmulhu": "unsigned vs2 * unsigned other, high SEW bits",
+    "vmulhsu": "signed vs2 * unsigned other, high SEW bits",
+    "vx": "RV32 low SEW bits when SEW<=32; sign-extension when SEW=64, including unsigned operations",
+    "vdiv": "abs(dividend)//abs(divisor), sign restored; no float; quotient modulo 2**SEW",
+    "vrem": "dividend - truncating quotient*divisor",
+    "zero_divisor": "all-one quotient; original dividend remainder",
+    "signed_overflow": "MIN/-1 yields MIN quotient, zero remainder"
+  },
+  "witness_coverage": "12 explicit arithmetic witnesses per multiply geometry/form; 13 per divide/remainder geometry/form, including additive 0/0. All inherited cases retained.",
+  "reference": "Fixed executed Spike/pk zero-start and Sail0.14.1 nonzero-start packets; predicates supplement independent packets and never supply golden packets.",
+  "reserved": "vstart>=VLMAX separately PROFILE_RESERVED_START under frozen accepting profile; no ordinary ISA PASS claim for that class",
+  "operand_limit": "vx cannot express arbitrary SEW64 divisors: RV32 register operand is signed-extended. vv separately covers full SEW extrema.",
+  "state": "All 32 vector registers, ten CSRs and scalar s0 pre/post. Legal agnostic values are checked as allowed sets.",
+  "scope": "Finite cases, host512, six guest VLENs, ELEN64 profile, B/M1/M2/BOTH; no per-target method admission claim. No production edit.",
+  "encoding_review": "https://raw.githubusercontent.com/riscv/riscv-opcodes/master/extensions/rv_v",
+  "encoding_note": "multiply/divide use OPMVV=2 and OPMVX=6; funct6 0x20 through0x27. Actual ELF opcodes checked in every audit.",
+  "static_property_review": "Original twelve witness tags occur in all132 geometries; added 0/0 tag likewise covers all132 divide geometries. Nonexceptional quotient/remainder reconstruction, magnitude and sign constraints checked.",
+  "zero_over_zero": "Explicit numerator==divisor==0 covers a premature zero-numerator shortcut: all-one quotient, zero remainder. New separate units only; original fields and ordinals unchanged."
+}

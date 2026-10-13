@@ -1,0 +1,23 @@
+Tue Oct 13 07:57:19 UTC 2026
+ 15:57:19 up 5 days, 19:35,  7 users,  load average: 2.86, 7.15, 6.56
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056  9322962944  7520870400    37838848 32992694272 39693402112
+Swap:     8589930496  4023353344  4566577152
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1886520074240 25090772992  99% /
+USER         PID    PPID  NI %CPU   RSS COMMAND
+vick      784902  477705  10 99.9 971168 python3
+root     3572115 3572091   0  0.9 12288 envoy
+kyle0     630920  630899   0  0.8 328288 claude
+root        1969       1   0  0.7 437944 dockerd
+kyle0      13441   13193   0  0.6 310944 claude
+kyle0     272816  265846   0  0.6 297100 claude
+10001    3571292 3571267   0  0.6 51432 service
+kyle0     648389  643557   0  0.6 272784 claude
+kyle0    2831991 2831668   0  0.5 374916 claude
+kyle0     619233  618534   0  0.5 241360 claude
+room502     3360    3294   0  0.5 287368 java
+room502     3351    3237   0  0.5 297704 java
+root        1859       1   0  0.5 61016 containerd
+room502     3293    3173   0  0.5 304064 java
+kyle0    3855038 3835785   0  0.5 283812 claude

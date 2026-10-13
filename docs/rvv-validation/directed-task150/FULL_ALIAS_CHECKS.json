@@ -1,0 +1,9 @@
+{
+  "batch": "full",
+  "aliases": 15840,
+  "dangling": 0,
+  "all_targets_match_recorded_guest_path": true,
+  "first_logical_alias_identity_verified": true,
+  "guest_executions": 0,
+  "repairs": 0
+}

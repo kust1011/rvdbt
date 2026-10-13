@@ -1,0 +1,196 @@
+{
+  "execution": "NOT_RUN",
+  "records": [
+    {
+      "form": "vadc.vvm",
+      "kind": "vd-v0",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "kind": "vm1-no-carry",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "kind": "vd-v0",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "kind": "vm1-no-carry",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "kind": "vd-v0",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "kind": "vm1-no-carry",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "kind": "vd-v0",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "kind": "vm1-no-carry",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "kind": "vd-v0",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "kind": "vm1-no-carry",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "kind": "v0-vector-source-and-carry-EEW-conflict",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "kind": "mask-destination-overlap-nonlowest-source-register",
+      "requires": "LMUL>=2",
+      "expected": "reserved encoding",
+      "execution": "NOT_RUN"
+    }
+  ],
+  "case_credit": 0
+}

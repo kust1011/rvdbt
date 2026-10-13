@@ -1,0 +1,21 @@
+{
+  "spec": "https://github.com/riscv/riscv-isa-manual/blob/main/src/unpriv/vector-common.adoc",
+  "review_date": "2026-10-13",
+  "sections": ["Vector Integer Merge Instructions", "Vector Integer Move Instructions", "Vector Masking", "Prestart, Active, Inactive, Body, and Tail Element Definitions", "Vector Operands"],
+  "source": "scripts/rvv/directed/mergemove150_next.py",
+  "status": "PREPARED_NOT_GUEST_ADMITTED",
+  "predicates": [
+    "Merge writes all body lanes; selection bit0 chooses vs2, bit1 chooses vs1/scalar/immediate. It never suppresses a body write.",
+    "Move writes all body lanes from vs1/scalar/immediate, ignores v0 selection, encodes vm1 and vs2=0.",
+    "RV32 scalar is truncated at smaller SEW and sign-extended at SEW64; five-bit immediates are signed.",
+    "Both instructions preserve prestart, no-body and undisturbed tail state. Tail-agnostic values use old/all-ones allowed sets, including fractional LMUL storage.",
+    "Merge destination-v0 and nonzero-vs2 move encodings are separate unexecuted reserved declarations.",
+    "Move source-v0 and destination-v0 are legal data paths and have separate cases.",
+    "Source/destination overlap consumes captured prestate, with group alignment and all non-destination registers preserved.",
+    "Independent comparison must compare both selected and unselected body lanes; fixed Spike/Sail packets are required before any execution credit.",
+    "All 32 signed immediate encodings are declared; zero/full/partial/chunk lengths, nonzero start interactions, policies, selection patterns and six VLENs reuse finite geometry obligations."
+  ],
+  "synthetic_controls": 10,
+  "framework_controls": "not repeated",
+  "guest_executions": 0
+}

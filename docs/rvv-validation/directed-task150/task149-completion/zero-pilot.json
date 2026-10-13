@@ -1,0 +1,360 @@
+{
+  "base": "/home/vick/rvv-directed-task149/zero-pilot",
+  "summary": {
+    "planned_cases": 32,
+    "planned_executions": 160,
+    "executed": 160,
+    "counts": {
+      "PASS": 160
+    },
+    "arms": {
+      "Reference": {
+        "PASS": 32
+      },
+      "B": {
+        "PASS": 32
+      },
+      "M1": {
+        "PASS": 32
+      },
+      "M2": {
+        "PASS": 32
+      },
+      "BOTH": {
+        "PASS": 32
+      }
+    },
+    "seconds": 2.0046325270086527,
+    "jobs": 4
+  },
+  "audit": {
+    "planned_cases": 32,
+    "executed_case_checks": 160,
+    "planned_commands": 20,
+    "executed_commands": 20,
+    "aggregate_command_seconds": 1.307366300956346,
+    "counts": {
+      "Reference": {
+        "PASS": 32,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "B": {
+        "PASS": 32,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "M1": {
+        "PASS": 32,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "M2": {
+        "PASS": 32,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      },
+      "BOTH": {
+        "PASS": 32,
+        "FAIL": 0,
+        "ISA_ONLY_REFERENCE_BLOCKED": 0
+      }
+    },
+    "failures": [],
+    "adapter_verified_units": 0,
+    "full_state": "32 vector registers, 10 CSRs and scalar s0 pre/post",
+    "method_admission": "NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission"
+  },
+  "controls": {
+    "controls": 16,
+    "rejected": 16,
+    "records": [
+      {
+        "case": "vdiv-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 0,
+        "corrupt": "vdiv-vv-isa.bin",
+        "logical_sha256": "c06aa776fedb13337baa4ea7e13fd881287b6742a2db83c782b7dc8206fbccfe"
+      },
+      {
+        "case": "vdiv-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 0,
+        "corrupt": "vdiv-vv-independent.bin",
+        "logical_sha256": "c06aa776fedb13337baa4ea7e13fd881287b6742a2db83c782b7dc8206fbccfe"
+      },
+      {
+        "case": "vdiv-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 1120,
+        "corrupt": "vdiv-vx-isa.bin",
+        "logical_sha256": "76c1c700d9251e3a72fb60b20d52d08d6751aba8944837c774ddb14a1598e2b3"
+      },
+      {
+        "case": "vdiv-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 1120,
+        "corrupt": "vdiv-vx-independent.bin",
+        "logical_sha256": "76c1c700d9251e3a72fb60b20d52d08d6751aba8944837c774ddb14a1598e2b3"
+      },
+      {
+        "case": "vdivu-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 2240,
+        "corrupt": "vdivu-vv-isa.bin",
+        "logical_sha256": "05d366fcab8b8301ab64f3416e0321bc7493905635f84ca99815662a73c0deca"
+      },
+      {
+        "case": "vdivu-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 2240,
+        "corrupt": "vdivu-vv-independent.bin",
+        "logical_sha256": "05d366fcab8b8301ab64f3416e0321bc7493905635f84ca99815662a73c0deca"
+      },
+      {
+        "case": "vdivu-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: 0000000000000000 != ffffffffffffffff",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 3360,
+        "corrupt": "vdivu-vx-isa.bin",
+        "logical_sha256": "477be617074bc1bbd8f49133ccc8618a6bcf5e2ece14ac759ea8bccf050a1aad"
+      },
+      {
+        "case": "vdivu-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 3360,
+        "corrupt": "vdivu-vx-independent.bin",
+        "logical_sha256": "477be617074bc1bbd8f49133ccc8618a6bcf5e2ece14ac759ea8bccf050a1aad"
+      },
+      {
+        "case": "vrem-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: ffffffffffffffff != 0000000000000000",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 4480,
+        "corrupt": "vrem-vv-isa.bin",
+        "logical_sha256": "44da3c3681f1d6ea42a0c5d12201400b0d91d6ca9aaa993ab55860c4b9238e8e"
+      },
+      {
+        "case": "vrem-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 4480,
+        "corrupt": "vrem-vv-independent.bin",
+        "logical_sha256": "44da3c3681f1d6ea42a0c5d12201400b0d91d6ca9aaa993ab55860c4b9238e8e"
+      },
+      {
+        "case": "vrem-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: ffffffffffffffff != 0000000000000000",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 5600,
+        "corrupt": "vrem-vx-isa.bin",
+        "logical_sha256": "32d53d0b38b3753f7792c777cf0d4d90d2bf5110b9d797771046ace0b7d63ddf"
+      },
+      {
+        "case": "vrem-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 5600,
+        "corrupt": "vrem-vx-independent.bin",
+        "logical_sha256": "32d53d0b38b3753f7792c777cf0d4d90d2bf5110b9d797771046ace0b7d63ddf"
+      },
+      {
+        "case": "vremu-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: ffffffffffffffff != 0000000000000000",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 6720,
+        "corrupt": "vremu-vv-isa.bin",
+        "logical_sha256": "90e37e7389444b02e7dcee27ab0112e39e42a9b979d21080be281173740226e7"
+      },
+      {
+        "case": "vremu-w128-e64-m4-vv-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 6720,
+        "corrupt": "vremu-vv-independent.bin",
+        "logical_sha256": "90e37e7389444b02e7dcee27ab0112e39e42a9b979d21080be281173740226e7"
+      },
+      {
+        "case": "vremu-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-isa",
+        "rejected": true,
+        "error": "active element 0: ffffffffffffffff != 0000000000000000",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 7840,
+        "corrupt": "vremu-vx-isa.bin",
+        "logical_sha256": "aff78c03ca8cdc8224ee9703a3b9880ed5700ec71a67bca63052e3c05fca53cb"
+      },
+      {
+        "case": "vremu-w128-e64-m4-vx-witness-zero-over-zero",
+        "control": "wrong-zero-over-zero-independent",
+        "rejected": true,
+        "error": "independent reference active mismatch",
+        "source": "corpus/runs/zerozero149-w128-e64-m4-zero/B/packets.bin",
+        "offset": 7840,
+        "corrupt": "vremu-vx-independent.bin",
+        "logical_sha256": "aff78c03ca8cdc8224ee9703a3b9880ed5700ec71a67bca63052e3c05fca53cb"
+      }
+    ]
+  },
+  "alias_repair": {
+    "command": [
+      "python3",
+      "/home/vick/rvv-directed-task149/retention-fix/repair_aliases149.py",
+      "/home/vick/rvv-directed-task149/zero-pilot"
+    ],
+    "utility_sha256": "8b67b364f729f47a1b373e8531c7610bc44544477dc3f0ce45ae4f1efa249e3a",
+    "aliases": 16,
+    "repaired_dangling": 16,
+    "arm_command_path_recovery_verified": true,
+    "guest_executions": 0,
+    "records": [
+      {
+        "alias": "corpus/work/zerozero149-w128-e8-mf8-zero/B/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e8-mf8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e8-mf8-zero/test.elf.gz",
+        "logical_elf_sha256": "1747f731e20983d02e1e9bc4d3188e2009c8195f81138b5b4ec35033dba1deb1"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e8-mf8-zero/M1/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e8-mf8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e8-mf8-zero/test.elf.gz",
+        "logical_elf_sha256": "1747f731e20983d02e1e9bc4d3188e2009c8195f81138b5b4ec35033dba1deb1"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e8-mf8-zero/M2/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e8-mf8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e8-mf8-zero/test.elf.gz",
+        "logical_elf_sha256": "1747f731e20983d02e1e9bc4d3188e2009c8195f81138b5b4ec35033dba1deb1"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e8-mf8-zero/BOTH/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e8-mf8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e8-mf8-zero/test.elf.gz",
+        "logical_elf_sha256": "1747f731e20983d02e1e9bc4d3188e2009c8195f81138b5b4ec35033dba1deb1"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e16-m1-zero/B/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e16-m1-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e16-m1-zero/test.elf.gz",
+        "logical_elf_sha256": "2162ee03e6c52622afc475eda00e641bc42bf36b98e2018effc3c58db5deb04a"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e16-m1-zero/M1/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e16-m1-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e16-m1-zero/test.elf.gz",
+        "logical_elf_sha256": "2162ee03e6c52622afc475eda00e641bc42bf36b98e2018effc3c58db5deb04a"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e16-m1-zero/M2/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e16-m1-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e16-m1-zero/test.elf.gz",
+        "logical_elf_sha256": "2162ee03e6c52622afc475eda00e641bc42bf36b98e2018effc3c58db5deb04a"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e16-m1-zero/BOTH/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e16-m1-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e16-m1-zero/test.elf.gz",
+        "logical_elf_sha256": "2162ee03e6c52622afc475eda00e641bc42bf36b98e2018effc3c58db5deb04a"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e64-m4-zero/B/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e64-m4-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e64-m4-zero/test.elf.gz",
+        "logical_elf_sha256": "1f8dae5bd34664d1679022986b19a6a7c6bd9546d2afa18ee8a6c168b8934e79"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e64-m4-zero/M1/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e64-m4-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e64-m4-zero/test.elf.gz",
+        "logical_elf_sha256": "1f8dae5bd34664d1679022986b19a6a7c6bd9546d2afa18ee8a6c168b8934e79"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e64-m4-zero/M2/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e64-m4-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e64-m4-zero/test.elf.gz",
+        "logical_elf_sha256": "1f8dae5bd34664d1679022986b19a6a7c6bd9546d2afa18ee8a6c168b8934e79"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w128-e64-m4-zero/BOTH/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w128-e64-m4-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w128-e64-m4-zero/test.elf.gz",
+        "logical_elf_sha256": "1f8dae5bd34664d1679022986b19a6a7c6bd9546d2afa18ee8a6c168b8934e79"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w4096-e64-m8-zero/B/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w4096-e64-m8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w4096-e64-m8-zero/test.elf.gz",
+        "logical_elf_sha256": "c8d117a07bc29f35e00715f4f54c7b2b7cd8fa2b42e3962116f72bd98155505f"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w4096-e64-m8-zero/M1/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w4096-e64-m8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w4096-e64-m8-zero/test.elf.gz",
+        "logical_elf_sha256": "c8d117a07bc29f35e00715f4f54c7b2b7cd8fa2b42e3962116f72bd98155505f"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w4096-e64-m8-zero/M2/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w4096-e64-m8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w4096-e64-m8-zero/test.elf.gz",
+        "logical_elf_sha256": "c8d117a07bc29f35e00715f4f54c7b2b7cd8fa2b42e3962116f72bd98155505f"
+      },
+      {
+        "alias": "corpus/work/zerozero149-w4096-e64-m8-zero/BOTH/fs/t.elf.gz",
+        "before": "../../../../zerozero149-w4096-e64-m8-zero/test.elf",
+        "was_dangling": true,
+        "after": "../../../../zerozero149-w4096-e64-m8-zero/test.elf.gz",
+        "logical_elf_sha256": "c8d117a07bc29f35e00715f4f54c7b2b7cd8fa2b42e3962116f72bd98155505f"
+      }
+    ]
+  }
+}

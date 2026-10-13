@@ -1,0 +1,11 @@
+{
+  "legacy_synthetic_checks": 12,
+  "storage_checks": 3,
+  "prepared_carry_checker_checks": 12,
+  "guest_or_reference_credit": 0,
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv/directed/test_vadd.py",
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv/directed/test_storage149.py",
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/rvv/directed/test_carry149_next.py"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "forms": 15,
+  "manifest": 116559,
+  "completed": 0,
+  "executed": 0,
+  "per_form": [
+    {
+      "form": "vadc.vvm",
+      "completed": 0,
+      "manifest": 6785
+    },
+    {
+      "form": "vadc.vxm",
+      "completed": 0,
+      "manifest": 7049
+    },
+    {
+      "form": "vadc.vim",
+      "completed": 0,
+      "manifest": 10745
+    },
+    {
+      "form": "vsbc.vvm",
+      "completed": 0,
+      "manifest": 6785
+    },
+    {
+      "form": "vsbc.vxm",
+      "completed": 0,
+      "manifest": 7049
+    },
+    {
+      "form": "vmadc.vvm",
+      "completed": 0,
+      "manifest": 6917
+    },
+    {
+      "form": "vmadc.vxm",
+      "completed": 0,
+      "manifest": 7181
+    },
+    {
+      "form": "vmadc.vim",
+      "completed": 0,
+      "manifest": 10877
+    },
+    {
+      "form": "vmadc.vv",
+      "completed": 0,
+      "manifest": 6917
+    },
+    {
+      "form": "vmadc.vx",
+      "completed": 0,
+      "manifest": 7181
+    },
+    {
+      "form": "vmadc.vi",
+      "completed": 0,
+      "manifest": 10877
+    },
+    {
+      "form": "vmsbc.vvm",
+      "completed": 0,
+      "manifest": 6917
+    },
+    {
+      "form": "vmsbc.vxm",
+      "completed": 0,
+      "manifest": 7181
+    },
+    {
+      "form": "vmsbc.vv",
+      "completed": 0,
+      "manifest": 6917
+    },
+    {
+      "form": "vmsbc.vx",
+      "completed": 0,
+      "manifest": 7181
+    }
+  ],
+  "reserved_declarations": 30
+}

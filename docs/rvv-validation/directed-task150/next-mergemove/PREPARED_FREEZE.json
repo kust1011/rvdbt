@@ -1,0 +1,18 @@
+{
+  "execution": "NOT_RUN",
+  "guest_credit": 0,
+  "files": [
+    {
+      "path": "scripts/rvv/directed/mergemove150_next.py",
+      "sha256": "4616587e8f9dadafd4ce734ced5576bdcdb23fc214d438dbafb9b02e37fc0ba5"
+    },
+    {
+      "path": "scripts/rvv/directed/test_mergemove150_next.py",
+      "sha256": "e37f990832c1bb4608daae878b24d169c0b97b7445ffec8e18ae69da8a18cf81"
+    },
+    {
+      "path": "scripts/rvv/directed/reject_mergemove150_next.py",
+      "sha256": "38dfd7f937e7cb97389529af102f2603e0519090cf32611389e280e31cd11755"
+    }
+  ]
+}

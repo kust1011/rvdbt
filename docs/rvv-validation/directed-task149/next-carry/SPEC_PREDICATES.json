@@ -1,0 +1,27 @@
+{
+  "source": "scripts/rvv/directed/carry149_next.py",
+  "sha256": "0dbde5678785a5d02888ea5ccda6916db2eb0abba92ce716f82d11257eca1469",
+  "spec": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html",
+  "sections": [
+    "11.4 carry/borrow",
+    "3.4.3 mask tail sets",
+    "5.2 EEW overlap"
+  ],
+  "execution": "NOT_RUN",
+  "synthetic_checker_controls": 12,
+  "notes": [
+    "carry/borrow input never suppresses body writes",
+    "sum result wraps at SEW; carry is sum>=2**SEW; borrow is unsigned difference<0",
+    "vv/vx/vi scalars follow XLEN/SEW rules; all 32 signed immediate encodings declared",
+    "mask destination occupies one register; lowest-source-register overlap and v0 input/output are separate cases",
+    "mask tails accept old or one or computed result through VLMAX, independent of vta; beyond VLMAX only old or one",
+    "prestart and no-body states preserve all destination bits",
+    "mask-bit and vector-element comparison adapters are prepared; capture/runner/audit routing remains pending separate pilot",
+    "reserved encodings are unexecuted declarations, separate from inherited reserved-start profile",
+    "Sparse carry inputs at bit0/7/8/31/32/63/64/511/512, plus active point x vstart x partial VL x overlap where legal"
+  ],
+  "boundary_layout": "mask result vd31 relocates vv vs1 from24 to8 when LMUL>1, avoiding nonlowest overlap",
+  "all_case_static_layout_operand_checks": 116559,
+  "initial_prestate_extent_checks_previous_declaration": 98139,
+  "encoding_review": "https://raw.githubusercontent.com/riscv/riscv-opcodes/master/extensions/rv_v"
+}

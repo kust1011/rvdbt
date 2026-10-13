@@ -1,0 +1,55 @@
+{
+  "forms": {
+    "vmerge.vvm": 5465,
+    "vmerge.vxm": 5729,
+    "vmerge.vim": 9425,
+    "vmv.v.v": 4633,
+    "vmv.v.x": 4633,
+    "vmv.v.i": 8329
+  },
+  "cases": 38214,
+  "units": 1584,
+  "reserved_start_profile": 1560,
+  "execution": "NOT_RUN",
+  "reserved_encodings": [
+    {
+      "form": "vmerge.vvm",
+      "kind": "destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmerge.vxm",
+      "kind": "destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmerge.vim",
+      "kind": "destination-v0",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmv.v.v",
+      "kind": "nonzero-vs2-encoding",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmv.v.x",
+      "kind": "nonzero-vs2-encoding",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    },
+    {
+      "form": "vmv.v.i",
+      "kind": "nonzero-vs2-encoding",
+      "execution": "NOT_RUN",
+      "expected": "reserved encoding"
+    }
+  ],
+  "source_sha256": "4616587e8f9dadafd4ce734ced5576bdcdb23fc214d438dbafb9b02e37fc0ba5",
+  "synthetic_tests": 10,
+  "static_layout_cases": 38214
+}

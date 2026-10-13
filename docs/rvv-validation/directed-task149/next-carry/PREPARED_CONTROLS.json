@@ -1,0 +1,697 @@
+{
+  "executed": 0,
+  "declared_controls": 115,
+  "status": "PENDING_REAL_PACKET_ADMISSION",
+  "controls": [
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-witness-toggle-carry-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vvm",
+      "case": "vadc-w128-e8-m1-vvm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-witness-toggle-carry-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vxm",
+      "case": "vadc-w128-e8-m1-vxm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-witness-toggle-carry-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vadc.vim",
+      "case": "vadc-w128-e8-m1-vim-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-witness-toggle-borrow-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-witness-toggle-borrow-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vvm",
+      "case": "vsbc-w128-e8-m1-vvm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-witness-toggle-borrow-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-witness-toggle-borrow-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vsbc.vxm",
+      "case": "vsbc-w128-e8-m1-vxm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-witness-toggle-carry-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vvm",
+      "case": "vmadc-w128-e8-m1-vvm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-witness-toggle-carry-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vxm",
+      "case": "vmadc-w128-e8-m1-vxm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-witness-toggle-carry-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vim",
+      "case": "vmadc-w128-e8-m1-vim-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-witness-toggle-carry-cin1",
+      "control": "wrongly-add-carry-in-on-vm1",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vv",
+      "case": "vmadc-w128-e8-m1-vv-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-witness-toggle-carry-cin1",
+      "control": "wrongly-add-carry-in-on-vm1",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vx",
+      "case": "vmadc-w128-e8-m1-vx-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-witness-toggle-carry-cin1",
+      "control": "wrongly-add-carry-in-on-vm1",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-witness-toggle-carry-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmadc.vi",
+      "case": "vmadc-w128-e8-m1-vi-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-witness-toggle-borrow-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-witness-toggle-borrow-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vvm",
+      "case": "vmsbc-w128-e8-m1-vvm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-witness-toggle-borrow-cin1",
+      "control": "ignore-carry-borrow-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-witness-toggle-borrow-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vxm",
+      "case": "vmsbc-w128-e8-m1-vxm-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-witness-toggle-borrow-cin1",
+      "control": "wrongly-add-carry-in-on-vm1",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-witness-toggle-borrow-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vv",
+      "case": "vmsbc-w128-e8-m1-vv-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-witness-toggle-borrow-cin1",
+      "control": "wrongly-add-carry-in-on-vm1",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-witness-toggle-borrow-cin0",
+      "control": "treat-carry0-as-masked-off",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-length1",
+      "control": "missing-output",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-length1",
+      "control": "post-csr-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-length1",
+      "control": "foreign-register-corruption",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-length1",
+      "control": "independent-active-divergence",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-dest-v0",
+      "control": "v0-destination-updates-use-pre-input",
+      "execution": "NOT_RUN"
+    },
+    {
+      "form": "vmsbc.vx",
+      "case": "vmsbc-w128-e8-m1-vx-start-zero-vl",
+      "control": "start-ge-vl-preserve-complete-destination",
+      "execution": "NOT_RUN"
+    }
+  ]
+}

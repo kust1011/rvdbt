@@ -1,0 +1,14 @@
+{
+  "guest_failures": [],
+  "environment_failures": [],
+  "development": [
+    {
+      "kind": "manual-patch-context-rejection",
+      "effect": "apply_patch rejected an incorrect one-line assembly context before changes; exact context read and corrected before pilot freeze. A later interim result patch likewise rejected stale context and was corrected before editing. Neither changed guest records."
+    },
+    {
+      "kind": "read-only-freeze-check-wrong-working-directory",
+      "effect": "Ad hoc sha256sum verification from the SSH home directory could not open relative paths. Repeated from the full snapshot directory: all files OK in freeze-midcheck.log. Snapshot files and guests unchanged."
+    }
+  ]
+}

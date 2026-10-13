@@ -1,0 +1,21 @@
+{
+  "units": 36,
+  "cases": 900,
+  "forms": [
+    "vmerge.vim",
+    "vmerge.vvm",
+    "vmerge.vxm",
+    "vmv.v.i",
+    "vmv.v.v",
+    "vmv.v.x"
+  ],
+  "execution": "NOT_RUN",
+  "prerequisites": [
+    "Add shared initial/target/checker/reference/finite-manifest and opcode-audit routes without changing legacy families.",
+    "Run this finite fixed-reference pilot with at most12 total guest workers after carry completes.",
+    "Run merge/move-specific corruptions from actual packets; unchanged framework controls remain reused.",
+    "Freeze admitted snapshot before full execution."
+  ],
+  "existing_DUT": "e2559c5c host512",
+  "fixed_reference": "Spike/pk zero-start and Sail0.14.1 nonzero-start; unchanged enforced executable/library pins"
+}
