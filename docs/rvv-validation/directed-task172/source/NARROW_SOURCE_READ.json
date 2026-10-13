@@ -1,0 +1,32 @@
+[
+  {
+    "path": "vfncvt_f_f_v.c",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_f_f_v.c",
+    "sha256": "34024ba110cff328eb8dc7e4daa2aaa230931ebb00e7d362ecd5c8d8dd889096",
+    "bytes": 4823
+  },
+  {
+    "path": "vfncvt_f_x_v.c",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_f_x_v.c",
+    "sha256": "707ff2b30b2cd1caee04e3d57211118b534b5309a04e51a74e6bc3e8b15487af",
+    "bytes": 4824
+  },
+  {
+    "path": "vfncvt_f_xu_v.c",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_f_xu_v.c",
+    "sha256": "82e01f1f949b7d233805cc21661ceda9fceb2b1a6f803e59d15143f71a31c135",
+    "bytes": 4832
+  },
+  {
+    "path": "vfncvt_x_f_v.c",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_x_f_v.c",
+    "sha256": "4dacbba5c0d3623a2c804a4a41447eb5fce235a6c4314c588c767cf01d173b8f",
+    "bytes": 5010
+  },
+  {
+    "path": "vfncvt_xu_f_v.c",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_xu_f_v.c",
+    "sha256": "5dfc6ac90feadd02060076dbb5ee947ed5f68cf289ab7d4e29b909cad6b6aa3b",
+    "bytes": 5017
+  }
+]

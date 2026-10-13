@@ -1,0 +1,12 @@
+{
+  "original": "/home/vick/rvv-directed-task172/narrow-pilot/corpus",
+  "new_replay": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/replay",
+  "reference_cases_reused": 8280,
+  "reference_commands_reused": 56,
+  "new_dut_checks": 33120,
+  "new_dut_commands": 224,
+  "original_dut_failures": 48,
+  "original_results_sha256": "f0af96b73362293bfd2839376ce351ef2b836291808dba86e65f8039fcfc2d98",
+  "checker": "unchanged frozen original conversion predicates",
+  "original_failures_retained": true
+}

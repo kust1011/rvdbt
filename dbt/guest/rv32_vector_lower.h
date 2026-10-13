@@ -29,6 +29,7 @@
 #include "dbt/guest/rv32_fpu.h"
 #include "dbt/guest/rv32_vector_fma_invalid.h"
 #include "dbt/guest/rv32_softfp.h"
+#include "dbt/guest/rv32_vector_fpconvert.h"
 #include "dbt/mmu.h"
 #include "dbt/guest/rv32_vector.h"
 
@@ -2428,7 +2429,7 @@ inline void vfcvt(VectorState &vs, FPUState &fs, u32 sub, u32 vd, u32 vs2, bool 
 			}
 			default:
 				vs.elem_put(vd, e, dsew, vlen,
-					    softfp::cvt_fmt(vf_bits(vs, vs2, e, ssew, vlen), SF, DF,
+					    rvv_fpconvert::cvt_fmt(vf_bits(vs, vs2, e, ssew, vlen), SF, DF,
 							    md.rm, fl));
 				break;
 			}

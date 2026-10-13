@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "clang-22",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gcv",
+      "-mabi=ilp32d",
+      "-nostdlib",
+      "-static",
+      "-fuse-ld=lld",
+      "-Wl,--no-relax",
+      "-Wl,-T,/home/vick/rvv-directed-task172/adjudication/user.ld",
+      "/home/vick/rvv-directed-task172/adjudication/original.S",
+      "-o",
+      "/home/vick/rvv-directed-task172/adjudication/original.elf"
+    ],
+    "elf_sha256": "346d3d78a313ce859402f518bfe06ddcaac369e5709800a9b8ed4286aa04786b",
+    "target_pc": "0x102c8",
+    "instruction": "0x4b0a1457"
+  },
+  {
+    "command": [
+      "clang-22",
+      "--target=riscv32-unknown-elf",
+      "-march=rv32gcv",
+      "-mabi=ilp32d",
+      "-nostdlib",
+      "-static",
+      "-fuse-ld=lld",
+      "-Wl,--no-relax",
+      "-Wl,-T,/home/vick/rvv-directed-task172/adjudication/sail.ld",
+      "-DSAIL",
+      "/home/vick/rvv-directed-task172/adjudication/sail-witness.S",
+      "-o",
+      "/home/vick/rvv-directed-task172/adjudication/sail-witness.elf"
+    ],
+    "elf_sha256": "e8090689f8c401d4890957a101fe6ab1fd07fd1f22cbfd3d489d7a2330b13a51",
+    "target_pc": "0x800002d4",
+    "instruction": "0x4b0a1457"
+  }
+]

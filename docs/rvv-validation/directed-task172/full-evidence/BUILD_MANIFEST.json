@@ -1,0 +1,45 @@
+{
+  "base": "immutable167",
+  "base_engine_sha256": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+  "artifacts": {
+    "/home/vick/rvdbt-host512-task172-build/build/bin/elfrun": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+    "/home/vick/rvdbt-host512-task172-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "/home/vick/rvdbt-host512-task172-build/build/bin/rv32_vector_fpconvert_test": "c5ecf6cf45a6544f802756bbc25af955be158f25724e95c44cc4b528e7490aaa"
+  },
+  "changed_sources": [
+    {
+      "path": "dbt/CMakeLists.txt",
+      "old_sha256": "b0a46c4ff94d15ac42d2888293203df69b83af18688026f2e7be1556c0cbb06c",
+      "new_sha256": "a070648bc1bdb8180e3777f2ae785ec66fa2bd9118de45d190a3c317fb367a6a"
+    },
+    {
+      "path": "dbt/guest/rv32_vector_lower.h",
+      "old_sha256": "c00dc5a68abd256b4c5fd2f2440e4a362e3b8376f0da6cc714a17473de990fd7",
+      "new_sha256": "2eb495e945cd2c5a012edd80d3c3c14e7ee9e19fc0fbf80b82454ab19c93baf4"
+    },
+    {
+      "path": "dbt/guest/rv32_vector_fpconvert.h",
+      "old_sha256": null,
+      "new_sha256": "6c4722125ce98edd292d60513c49da648ec3c867698c8653f15792ade50890a0"
+    },
+    {
+      "path": "dbt/guest/rv32_vector_fpconvert_test.cpp",
+      "old_sha256": null,
+      "new_sha256": "986714897a027ceb291876963aef1f6566054d26d7c5e97729ae19ba281be5e7"
+    }
+  ],
+  "unchanged_source_files": 528,
+  "shared_scalar_softfp_sha256": "7a709944e8695147cd41bd886fec7b106784c36f8137a60542087a2ee73f41bd",
+  "session171": "not integrated; separate source/build",
+  "regression_checks": 5016,
+  "regression_status": "PASS",
+  "configuration": {
+    "host_chunk_bits": 512,
+    "nice": 10,
+    "build_jobs": 4,
+    "census": true,
+    "fast_stats": true,
+    "fp_contract_off": true
+  },
+  "source_scope": "single source equality review against frozen167; no raw corpus file census"
+}

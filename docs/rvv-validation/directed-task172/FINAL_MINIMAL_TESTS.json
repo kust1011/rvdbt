@@ -1,0 +1,27 @@
+{
+  "analytical_assertions": 312,
+  "additional_minnormal_bit_source_checks": 10,
+  "focused_executable_checks": 5016,
+  "supplemental_focused_executable_checks": 5016,
+  "supplement": "inactive masked sNaN source words; same immutable production archive",
+  "compiler_verified_encodings": 188,
+  "syntax_modules": [
+    "fpconvert172.py",
+    "prepare_fpconvert172.py",
+    "source_fpconvert172.py",
+    "controls_fpconvert172.py",
+    "review_fpconvert172.py",
+    "export_fpconvert172.py",
+    "repair_fpconvert172.py",
+    "review_repaired_fpconvert172.py",
+    "isolate_fpconvert172.py",
+    "witness_fpconvert172.py",
+    "vadd.py",
+    "fp157.py",
+    "audit.py"
+  ],
+  "guest_credit": 0,
+  "status": "PASS",
+  "diff_check": "PASS_OWNED_CODE_AND_EVIDENCE; original QEMU C snapshots excluded to preserve upstream byte/hash provenance",
+  "csv_export_adaptation": "PER_FORM.csv CRLF normalized to LF locally; rows/counts unchanged"
+}

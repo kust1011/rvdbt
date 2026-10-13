@@ -145,6 +145,9 @@ def pairs(bits):
         ('inexact','one','three')]]
 
 def scalar(c):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.scalar(c)
     value = c.get('fp_b', constants(c['sew'])['three'])
     if c['sew'] == 32:
         value |= (0 if c.get('bad_box') else 0xffffffff) << 32
@@ -156,6 +159,9 @@ def scalar_operand(c):
     return scalar(c) & ((1 << c['sew'])-1)
 
 def initial(c):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.initial(c)
     if c.get('family') == 'fpcompare170':
         import fpcompare170
         return fpcompare170.initial(c)
@@ -180,6 +186,9 @@ def initial(c):
     return bytes(raw)
 
 def target(c):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.target(c)
     if c.get('family') == 'fpcompare170':
         import fpcompare170
         return fpcompare170.target(c)
@@ -190,6 +199,9 @@ def target(c):
     return f'{c["mnemonic"]}.{c["form"]} v{c["vd"]},v{c["vs2"]},{rhs}' + (',v0.t' if c['mask'] != 'none' else '')
 
 def instruction(c):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.instruction(c)
     if c.get('family') == 'fpcompare170':
         import fpcompare170
         return fpcompare170.instruction(c)
@@ -202,6 +214,9 @@ def active(c, before, i):
     return c['vstart'] <= i < c['vl'] and (c['mask']=='none' or before[i//8] >> (i%8) & 1)
 
 def lane(c, before, i):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.lane(c, before, i)
     if c.get('family') == 'fpcompare170':
         import fpcompare170
         return fpcompare170.lane(c, before, i)
@@ -230,6 +245,9 @@ def csr_expected(c, post=False, before=None):
     return rows
 
 def check_isa(c, raw, rc=0, timeout=False):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.check_isa(c, raw, rc, timeout)
     if c.get('family') == 'fpcompare170':
         import fpcompare170
         return fpcompare170.check_isa(c, raw, rc, timeout)
@@ -261,6 +279,9 @@ def check_isa(c, raw, rc=0, timeout=False):
     return True
 
 def check_reference(c, raw, reference):
+    if c.get('family') == 'fpconvert172':
+        import fpconvert172
+        return fpconvert172.check_reference(c, raw, reference)
     if c.get('family') == 'fpcompare170':
         import fpcompare170
         return fpcompare170.check_reference(c, raw, reference)

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "selected_cases": 9671,
+  "selected_actual_packets": 48355,
+  "effective_rejections": 446230,
+  "rejections": {
+    "flags-NV-sticky-suppression": 48355,
+    "flags-NX-sticky-suppression": 48355,
+    "flags-UF-sticky-suppression": 48355,
+    "flags-OF-sticky-suppression": 48355,
+    "flags-DZ-forbidden-sticky-suppression": 48355,
+    "unrelated-vector-preservation": 48355,
+    "scalar-FP-preservation": 48355,
+    "inactive-undisturbed": 44875,
+    "active-conversion-bits": 44255,
+    "unsigned-as-signed": 5250,
+    "dynamic-as-RTZ": 2520,
+    "prestart-preservation": 3075,
+    "signed-as-unsigned": 5250,
+    "RTZ-uses-frm": 2520
+  },
+  "semantic_rejections": {
+    "unsigned-as-signed": 5250,
+    "dynamic-as-RTZ": 2520,
+    "signed-as-unsigned": 5250,
+    "RTZ-uses-frm": 2520
+  },
+  "effective_changed_allowances": 1765,
+  "allowances": {
+    "tail-or-mask-agnostic-changed": 1765
+  },
+  "checker_sha256": "0025162844b034550bb96be38ba53e3f373d39fbd91ab529a4dc04e6dd6946f9"
+}

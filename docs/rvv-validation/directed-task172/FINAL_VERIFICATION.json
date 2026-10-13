@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "forms": 21,
+  "per_form_arm_rows": 105,
+  "accepted_checks": 1180695,
+  "audit_failures": 0,
+  "reference_blocked": 0,
+  "control_rejections": 2287975,
+  "changed_allowances": 8310,
+  "original_failures_retained": 48,
+  "production_sources_equal_frozen172": true,
+  "committed_regression_source_equal_supplemental_fixture": true,
+  "ordinary_math_checker": "unchanged original frozen predicate through repair",
+  "builds": {
+    "original167": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+    "fixed172": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff"
+  },
+  "scope": "mixed-build conversion closure; common-build final regression and171 integration separate",
+  "raw_completeness_audits": 1,
+  "extra_recursive_file_inventory": 0
+}

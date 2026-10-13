@@ -1,0 +1,9 @@
+{
+  "elf_identities": 2592,
+  "sail_adapters": 864,
+  "executed_commands": 8640,
+  "executed_case_checks": 1180695,
+  "identity_scope": "all guest build hashes, generated target words, shared Sail body/adapters, raw logical/compressed storage receipts, extraction, denominator and independently checked packet states in existing audit",
+  "large_raw_evidence_retained": "/home/vick/rvv-directed-task172",
+  "extra_file_inventory": "NONE"
+}

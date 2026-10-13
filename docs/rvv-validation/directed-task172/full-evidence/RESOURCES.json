@@ -1,0 +1,25 @@
+{
+  "sample_count": 261,
+  "own_guest_peak": 7,
+  "shared_guest_peak": 12,
+  "own_offline_peak": 4,
+  "shared_offline_peak": 4,
+  "min_free_bytes": 41594175488,
+  "nice_values": [
+    10
+  ],
+  "affinities": [
+    "Cpus_allowed_list:\t0-31"
+  ],
+  "policy": {
+    "own_guests": 8,
+    "own_build_jobs": 4,
+    "shared_guests": 16,
+    "shared_offline": 4,
+    "own_offline": 4,
+    "nice": 10,
+    "affinity": "none assigned",
+    "disk_reserve_bytes": 10737418240
+  },
+  "monitoring": "original and fixed guest/finalizer monitors; diagnostic/build repair interval is a monitoring gap; sampled occupancy only; build concurrency enforced by CLI"
+}

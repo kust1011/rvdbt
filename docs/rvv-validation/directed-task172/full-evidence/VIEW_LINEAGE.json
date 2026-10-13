@@ -1,0 +1,53 @@
+{
+  "parts": [
+    {
+      "original": "/home/vick/rvv-directed-task172/same-pilot/corpus",
+      "cases": 6686,
+      "units": 48,
+      "manifest_sha256": "e5c55884b59615abe9298ab1aa270370eeb697cdd27c492770b5061744a0ea93",
+      "results_sha256": "f44e0eb45bab23d896678ea55ecad8c1ac8e1aa28956ebe51ac1b1045a013387"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task172/same-remaining/corpus",
+      "cases": 84448,
+      "units": 600,
+      "manifest_sha256": "00a880df027c97144368121a83585c143276bf6572fc778cec4ab383641d38e6",
+      "results_sha256": "5738ca593e6a6f7214a54ec40a609ad737960bb73f59d649d7d1777b2366f6c9"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task172/widen-pilot/corpus",
+      "cases": 5393,
+      "units": 46,
+      "manifest_sha256": "f4d437b08fb7799a560dfe35ad83808479a7cfd4baf2ab6817aa09641cd09a62",
+      "results_sha256": "409e9fc729e2ee124f8b88d0a81c070d53a64aeaa1f3e4799f16b007cdd9de9d"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task172/widen-remaining/corpus",
+      "cases": 44688,
+      "units": 410,
+      "manifest_sha256": "6cfc296739dfa9814742a87921408efd96ea2a7c078406ad678a0cc1990104bb",
+      "results_sha256": "0503e83d1395b7e046dbe01c082a23a736a9bda0c103ef08f2f07681887307d4"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/corpus",
+      "cases": 8280,
+      "units": 56,
+      "manifest_sha256": "f9c84aa38689d2f847c4b90af11d31c0dfa61461378939001a494d6cf991e034",
+      "results_sha256": "5a00676afe0c256f559c4d9d704e472fc384447a79e2a24124dbb37d45225754"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task172/narrow-remaining-fixed/corpus",
+      "cases": 86644,
+      "units": 568,
+      "manifest_sha256": "9a90c352074461d4889ce588430de1eb0245bc1231488a08d95375a25a20893b",
+      "results_sha256": "4ab824b17f6a04eeec8ee6602dbe32adfd5047ff54bb3e66bd119fe7a9a3212c"
+    }
+  ],
+  "cases": 236139,
+  "checks": 1180695,
+  "units": 1728,
+  "guest_executions_added": 0,
+  "reference_executions_added": 0,
+  "disjoint_units": true,
+  "build_scope": "same/widen immutable167; narrow immutable172; no same-build family regression claim"
+}

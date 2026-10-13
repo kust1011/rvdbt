@@ -1,0 +1,26 @@
+{
+  "effective_rejections": 2287975,
+  "effective_changed_allowances": 8310,
+  "rejections": {
+    "flags-NV-sticky-suppression": 245700,
+    "flags-NX-sticky-suppression": 245700,
+    "flags-UF-sticky-suppression": 245700,
+    "flags-OF-sticky-suppression": 245700,
+    "flags-DZ-forbidden-sticky-suppression": 245700,
+    "unrelated-vector-preservation": 245700,
+    "scalar-FP-preservation": 245700,
+    "inactive-undisturbed": 230460,
+    "active-conversion-bits": 228255,
+    "unsigned-as-signed": 23810,
+    "dynamic-as-RTZ": 23340,
+    "prestart-preservation": 12960,
+    "signed-as-unsigned": 23810,
+    "RTZ-uses-frm": 15840,
+    "ROD-as-RNE": 6000,
+    "ROD-as-RTZ": 3600
+  },
+  "allowances": {
+    "tail-or-mask-agnostic-changed": 8310
+  },
+  "selected_actual_packets": 245700
+}

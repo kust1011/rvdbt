@@ -1,0 +1,623 @@
+{
+  "original_cases": [
+    {
+      "form": "vfcvt.f.x.v",
+      "original_name": "vfcvt_f_x_v",
+      "case_sha256": "80da4a9dbd3d90c393bc292a74fda75454c30f6d110bb1eff9e9cf7d0016ec9c",
+      "original_wrapper_count": 6,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          184776,
+          31088,
+          4294898760,
+          88788,
+          2147483647,
+          31088,
+          2147483648,
+          131072
+        ],
+        "64": [
+          9223372036854775807,
+          9223372036854775808,
+          5,
+          137438953472
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfcvt.f.xu.v",
+      "original_name": "vfcvt_f_xu_v",
+      "case_sha256": "086d77e57a4e7240cefdc0adfeb0f074c0ca4aebde24ea3b42076ea9e8e40fd1",
+      "original_wrapper_count": 6,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          184776,
+          31088,
+          4096,
+          88788,
+          4294967295,
+          31088,
+          0,
+          196608
+        ],
+        "64": [
+          18446744073709551615,
+          0,
+          5,
+          1056768
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfcvt.x.f.v",
+      "original_name": "vfcvt_x_f_v",
+      "case_sha256": "1cca4f9812fa530639d6f27836cca76aca410ef9fe508c3eebc7efe1669c48e4",
+      "original_wrapper_count": 6,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161
+        ],
+        "64": [
+          9218868437227405312,
+          18442240474082181120,
+          4617679445203955249,
+          13853481843689324155
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfcvt.xu.f.v",
+      "original_name": "vfcvt_xu_f_v",
+      "case_sha256": "2b6d752ac8789d04596fdd22adffe7516064d121f248e90cdfb06684a1ef4e34",
+      "original_wrapper_count": 6,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161
+        ],
+        "64": [
+          9218868437227405312,
+          18442240474082181120,
+          4617679445203955249,
+          13853481843689324155
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfncvt.f.f.w",
+      "original_name": "vfncvt_f_f_v",
+      "case_sha256": "34024ba110cff328eb8dc7e4daa2aaa230931ebb00e7d362ecd5c8d8dd889096",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "64": [
+          4685588863022792704,
+          4674274641412358144,
+          13902818236577087488,
+          4680837857173045248,
+          4685588863022792704,
+          4674274641412358144,
+          14407015207421345792,
+          4680837857173045248
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfncvt.f.x.w",
+      "original_name": "vfncvt_f_x_v",
+      "case_sha256": "707ff2b30b2cd1caee04e3d57211118b534b5309a04e51a74e6bc3e8b15487af",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "64": [
+          184776,
+          31088,
+          18446744073709483080,
+          88788,
+          9223372036854775807,
+          31088,
+          9223372036854775808,
+          56746
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfncvt.f.xu.w",
+      "original_name": "vfncvt_f_xu_v",
+      "case_sha256": "82e01f1f949b7d233805cc21661ceda9fceb2b1a6f803e59d15143f71a31c135",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "64": [
+          184776,
+          31088,
+          8704,
+          88788,
+          18446744073709551615,
+          31088,
+          290,
+          35651584
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfncvt.x.f.w",
+      "original_name": "vfncvt_x_f_v",
+      "case_sha256": "4dacbba5c0d3623a2c804a4a41447eb5fce235a6c4314c588c767cf01d173b8f",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 0,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          3359885858,
+          1211923391,
+          3342558375,
+          2139095039,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161,
+          3359885858,
+          1211923391,
+          3342558375,
+          1209987054
+        ],
+        "64": [
+          9218868437227405312,
+          18442240474082181120,
+          4623956772888748482,
+          13850574028678148354,
+          4617679445203955249,
+          13853481843689324155,
+          4623956772888748482,
+          13850574028678148354
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfncvt.xu.f.w",
+      "original_name": "vfncvt_xu_f_v",
+      "case_sha256": "5dfc6ac90feadd02060076dbb5ee947ed5f68cf289ab7d4e29b909cad6b6aa3b",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 0,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          3359885858,
+          1211923391,
+          3342558375,
+          2139095039,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161,
+          3359885858,
+          1211923391,
+          3342558375,
+          1209987054
+        ],
+        "64": [
+          9218868437227405312,
+          18442240474082181120,
+          4623956772888748482,
+          13850574028678148354,
+          4617679445203955249,
+          13853481843689324155,
+          4623956772888748482,
+          13850574028678148354
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfwcvt.f.f.v",
+      "original_name": "vfwcvt_f_f_v",
+      "case_sha256": "a13a24a9017f0efd1dde136cb8002145bb1e3ed5b04cd5f993c52b7ebab2d903",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfwcvt.f.x.v",
+      "original_name": "vfwcvt_f_x_v",
+      "case_sha256": "ae4c044b0f76ec8319300a49d7a23ece7711792bc48cb2d80a0401762c803d1f",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 0,
+      "inputs": {
+        "16": [
+          14,
+          2,
+          65531,
+          0,
+          13,
+          2,
+          65531,
+          6,
+          14,
+          32767,
+          65531,
+          32768,
+          13,
+          2,
+          65531,
+          256
+        ],
+        "32": [
+          184776,
+          31088,
+          4294898760,
+          88788,
+          2147483647,
+          31088,
+          2147483648,
+          131072
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfwcvt.f.xu.v",
+      "original_name": "vfwcvt_f_xu_v",
+      "case_sha256": "c01b7538dfcd6fcb90b1e3c5df47f1fe071a32bc4d97a837dcf440eb78e5861b",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 4,
+      "unsupported_wrappers": 0,
+      "inputs": {
+        "16": [
+          14,
+          2,
+          32,
+          7,
+          13,
+          2,
+          512,
+          6,
+          14,
+          65535,
+          16,
+          0,
+          13,
+          2,
+          768,
+          3584
+        ],
+        "32": [
+          184776,
+          31088,
+          4096,
+          88788,
+          4294967295,
+          31088,
+          0,
+          196608
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfwcvt.x.f.v",
+      "original_name": "vfwcvt_x_f_v",
+      "case_sha256": "e744ebe182c72778be6e1622f4673bdbeb81990578f81fcea6ff98b96d8d2495",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    },
+    {
+      "form": "vfwcvt.xu.f.v",
+      "original_name": "vfwcvt_xu_f_v",
+      "case_sha256": "bde9984194ed4d543c833e0feac40bec5398cdcae37715bfc888bd97d3530c3e",
+      "original_wrapper_count": 4,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "applicable_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "inputs": {
+        "32": [
+          1211396599,
+          1190322219,
+          3347438645,
+          1202547161,
+          2131755008,
+          1190322219,
+          4279238656,
+          1202547161
+        ]
+      },
+      "adaptations": [
+        "ratified1.0 target encoding; legacy narrowing .v renamed .w",
+        "source/destination EEW and EMUL checked independently",
+        "explicit tu/mu and ta/ma",
+        "discard expected/zero-tail arrays",
+        "FLEN64 unrelated scalar preservation",
+        "partial VL and complementary mask inspiration only"
+      ]
+    }
+  ],
+  "derived_input_reuse": [
+    {
+      "form": "vfcvt.rtz.xu.f.v",
+      "origin_form": "vfcvt.xu.f.v",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    },
+    {
+      "form": "vfcvt.rtz.x.f.v",
+      "origin_form": "vfcvt.x.f.v",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    },
+    {
+      "form": "vfwcvt.rtz.xu.f.v",
+      "origin_form": "vfwcvt.xu.f.v",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    },
+    {
+      "form": "vfwcvt.rtz.x.f.v",
+      "origin_form": "vfwcvt.x.f.v",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    },
+    {
+      "form": "vfncvt.rod.f.f.w",
+      "origin_form": "vfncvt.f.f.w",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    },
+    {
+      "form": "vfncvt.rtz.xu.f.w",
+      "origin_form": "vfncvt.xu.f.w",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    },
+    {
+      "form": "vfncvt.rtz.x.f.w",
+      "origin_form": "vfncvt.x.f.w",
+      "scope": "same original input arrays and scenarios; new ratified RTZ/ROD opcode and exact predicates; original case absent"
+    }
+  ],
+  "wrapper_path": "docs/rvv-validation/directed-task157/qemu-source/rvv_ch14.inc",
+  "wrapper_sha256": "20a08a6df9ba538961d222bffe9aba54462629929ce72a6674142bc3be8d8fd7"
+}

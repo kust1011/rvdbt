@@ -1,0 +1,112 @@
+{
+  "source_path": "/home/user/research/third_party/spike-audit-20261004/softfloat/s_roundPackToF32.c",
+  "source_sha256": "4cf6c727fd5fc56383a8bc21a3b5426619dea8ca76035462e3c1ec1f5790cbff",
+  "source_f64_to_f32": "/home/user/research/third_party/spike-audit-20261004/softfloat/f64_to_f32.c",
+  "checks": 10,
+  "rows": [
+    {
+      "sign": 0,
+      "frm": 0,
+      "input": "0x380fffffe0000000",
+      "result": "0x800000",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 64,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 0,
+      "frm": 1,
+      "input": "0x380fffffe0000000",
+      "result": "0x7fffff",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 0,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 0,
+      "frm": 2,
+      "input": "0x380fffffe0000000",
+      "result": "0x7fffff",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 0,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 0,
+      "frm": 3,
+      "input": "0x380fffffe0000000",
+      "result": "0x800000",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 127,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 0,
+      "frm": 4,
+      "input": "0x380fffffe0000000",
+      "result": "0x800000",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 64,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 1,
+      "frm": 0,
+      "input": "0xb80fffffe0000000",
+      "result": "0x80800000",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 64,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 1,
+      "frm": 1,
+      "input": "0xb80fffffe0000000",
+      "result": "0x807fffff",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 0,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 1,
+      "frm": 2,
+      "input": "0xb80fffffe0000000",
+      "result": "0x80800000",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 127,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 1,
+      "frm": 3,
+      "input": "0xb80fffffe0000000",
+      "result": "0x807fffff",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 0,
+      "softfloat_after_precision_rounding_tiny": true
+    },
+    {
+      "sign": 1,
+      "frm": 4,
+      "input": "0xb80fffffe0000000",
+      "result": "0x80800000",
+      "flags": 3,
+      "softfloat_pre_shift_sig": "0x7fffff80",
+      "softfloat_round_increment": 64,
+      "softfloat_after_precision_rounding_tiny": true
+    }
+  ],
+  "guest_credit": 0,
+  "status": "MATHEMATICAL_AND_SOURCE_REVIEW_PASS; original Spike and separate pinned Sail witness confirm flags3",
+  "source_revision": "609dbe0b9994154833039209fa37151e7c05e9d4",
+  "source_scope": "supplemental local SoftFloat source review; independent runtime reference identities are recorded separately"
+}

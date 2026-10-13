@@ -1,0 +1,175 @@
+{
+  "cases": 236139,
+  "units": 1728,
+  "forms": 21,
+  "form_config_pairs": 864,
+  "geometries": 162,
+  "commands": 8640,
+  "dut_commands": 6912,
+  "reference_commands": 1728,
+  "checks": 1180695,
+  "dut_checks": 944556,
+  "per_arm_checks": 236139,
+  "pilot_cases": 20359,
+  "pilot_units": 150,
+  "remaining_cases": 215780,
+  "remaining_units": 1578,
+  "parts": [
+    {
+      "part": "same-pilot",
+      "cases": 6686,
+      "units": 48,
+      "commands": 240,
+      "checks": 33430,
+      "arms": {
+        "Reference": {
+          "PASS": 6686
+        },
+        "B": {
+          "PASS": 6686
+        },
+        "M1": {
+          "PASS": 6686
+        },
+        "M2": {
+          "PASS": 6686
+        },
+        "BOTH": {
+          "PASS": 6686
+        }
+      }
+    },
+    {
+      "part": "same-remaining",
+      "cases": 84448,
+      "units": 600,
+      "commands": 3000,
+      "checks": 422240,
+      "arms": {
+        "Reference": {
+          "PASS": 84448
+        },
+        "B": {
+          "PASS": 84448
+        },
+        "M1": {
+          "PASS": 84448
+        },
+        "M2": {
+          "PASS": 84448
+        },
+        "BOTH": {
+          "PASS": 84448
+        }
+      }
+    },
+    {
+      "part": "widen-pilot",
+      "cases": 5393,
+      "units": 46,
+      "commands": 230,
+      "checks": 26965,
+      "arms": {
+        "Reference": {
+          "PASS": 5393
+        },
+        "B": {
+          "PASS": 5393
+        },
+        "M1": {
+          "PASS": 5393
+        },
+        "M2": {
+          "PASS": 5393
+        },
+        "BOTH": {
+          "PASS": 5393
+        }
+      }
+    },
+    {
+      "part": "widen-remaining",
+      "cases": 44688,
+      "units": 410,
+      "commands": 2050,
+      "checks": 223440,
+      "arms": {
+        "Reference": {
+          "PASS": 44688
+        },
+        "B": {
+          "PASS": 44688
+        },
+        "M1": {
+          "PASS": 44688
+        },
+        "M2": {
+          "PASS": 44688
+        },
+        "BOTH": {
+          "PASS": 44688
+        }
+      }
+    },
+    {
+      "part": "narrow-pilot-fixed",
+      "cases": 8280,
+      "units": 56,
+      "commands": 280,
+      "checks": 41400,
+      "arms": {
+        "Reference": {
+          "PASS": 8280
+        },
+        "B": {
+          "PASS": 8280
+        },
+        "M1": {
+          "PASS": 8280
+        },
+        "M2": {
+          "PASS": 8280
+        },
+        "BOTH": {
+          "PASS": 8280
+        }
+      }
+    },
+    {
+      "part": "narrow-remaining-fixed",
+      "cases": 86644,
+      "units": 568,
+      "commands": 2840,
+      "checks": 433220,
+      "arms": {
+        "Reference": {
+          "PASS": 86644
+        },
+        "B": {
+          "PASS": 86644
+        },
+        "M1": {
+          "PASS": 86644
+        },
+        "M2": {
+          "PASS": 86644
+        },
+        "BOTH": {
+          "PASS": 86644
+        }
+      }
+    }
+  ],
+  "reference_packets_reused": 8280,
+  "reference_reuse_scope": "corrected narrowing pilot reuses validated original references; each unique reference case executed once during Task172",
+  "accepted_build_scope": "same/widen immutable167; narrow immutable172; separate final same-build regression remains queued",
+  "retained_original_pilot_dut_checks": 33120,
+  "retained_original_pilot_dut_commands": 224,
+  "retained_original_dut_failures": 48,
+  "total_new_matrix_commands": 8864,
+  "total_new_matrix_receipts": 1213815,
+  "diagnostic_commands": 9,
+  "diagnostic_case_credit": 0,
+  "guest_replays_added_by_export": 0,
+  "raw_completeness": "single complete independently reviewed audit; no extra recursive retention packaging/checksum census"
+}

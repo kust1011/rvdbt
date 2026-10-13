@@ -1285,3 +1285,8 @@ llvm_map_components_to_libnames(admission_llvm_libs mcjit executionengine native
 target_link_libraries(rv32_llvm_memory_admission_test PRIVATE ${admission_llvm_libs})
 add_executable(rv32_host_copy_linkage_test rv32_host_copy_linkage_test.cpp)
 target_link_libraries(rv32_host_copy_linkage_test PRIVATE dbtstatic)
+
+# RVV conversion-only tininess regression; shared scalar soft-FP is unchanged.
+add_executable(rv32_vector_fpconvert_test guest/rv32_vector_fpconvert_test.cpp)
+target_include_directories(rv32_vector_fpconvert_test PUBLIC "${PROJECT_SOURCE_DIR}")
+target_link_libraries(rv32_vector_fpconvert_test PUBLIC dbtstatic)

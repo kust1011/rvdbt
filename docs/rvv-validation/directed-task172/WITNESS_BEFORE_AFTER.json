@@ -1,0 +1,95 @@
+{
+  "records": [
+    {
+      "build": "167",
+      "arm": "B",
+      "status": "ORIGINAL_FAIL_REPRODUCED",
+      "flags": 1,
+      "packet_sha256": "6e2f4bd8aa0d7474bf86fd6b9b7355b7ca695b41552bf6e6ad9702351dd3eb69",
+      "engine_sha256": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "167",
+      "arm": "M1",
+      "status": "ORIGINAL_FAIL_REPRODUCED",
+      "flags": 1,
+      "packet_sha256": "6e2f4bd8aa0d7474bf86fd6b9b7355b7ca695b41552bf6e6ad9702351dd3eb69",
+      "engine_sha256": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "167",
+      "arm": "M2",
+      "status": "ORIGINAL_FAIL_REPRODUCED",
+      "flags": 1,
+      "packet_sha256": "6e2f4bd8aa0d7474bf86fd6b9b7355b7ca695b41552bf6e6ad9702351dd3eb69",
+      "engine_sha256": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "167",
+      "arm": "BOTH",
+      "status": "ORIGINAL_FAIL_REPRODUCED",
+      "flags": 1,
+      "packet_sha256": "6e2f4bd8aa0d7474bf86fd6b9b7355b7ca695b41552bf6e6ad9702351dd3eb69",
+      "engine_sha256": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "172",
+      "arm": "B",
+      "status": "FIXED_PASS",
+      "flags": 3,
+      "packet_sha256": "8ed2da8036a8c163d9f5d6a1c81efeaf74195ce243b65ae2b3bd90f2cde2c37a",
+      "engine_sha256": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "172",
+      "arm": "M1",
+      "status": "FIXED_PASS",
+      "flags": 3,
+      "packet_sha256": "8ed2da8036a8c163d9f5d6a1c81efeaf74195ce243b65ae2b3bd90f2cde2c37a",
+      "engine_sha256": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "172",
+      "arm": "M2",
+      "status": "FIXED_PASS",
+      "flags": 3,
+      "packet_sha256": "8ed2da8036a8c163d9f5d6a1c81efeaf74195ce243b65ae2b3bd90f2cde2c37a",
+      "engine_sha256": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    },
+    {
+      "build": "172",
+      "arm": "BOTH",
+      "status": "FIXED_PASS",
+      "flags": 3,
+      "packet_sha256": "8ed2da8036a8c163d9f5d6a1c81efeaf74195ce243b65ae2b3bd90f2cde2c37a",
+      "engine_sha256": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+      "isolated_target": "single original target with original VL/vstart/rounding/state",
+      "original_case": "vfncvt-f-f-w-w128-e32-mf2-semantic-minnormal-edge-rm4",
+      "instruction": "0x4b0a1457"
+    }
+  ],
+  "diagnostic_commands": 8,
+  "ordinary_case_credit": 0,
+  "reference_reuse": "one validated exact original Spike packet; reference not re-executed"
+}

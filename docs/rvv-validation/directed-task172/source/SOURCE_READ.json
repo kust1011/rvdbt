@@ -1,0 +1,125 @@
+[
+  {
+    "form": "vfcvt.f.x.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfcvt_f_x_v.c",
+    "path": "vfcvt_f_x_v.c",
+    "sha256": "80da4a9dbd3d90c393bc292a74fda75454c30f6d110bb1eff9e9cf7d0016ec9c",
+    "bytes": 6071
+  },
+  {
+    "form": "vfcvt.f.xu.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfcvt_f_xu_v.c",
+    "path": "vfcvt_f_xu_v.c",
+    "sha256": "086d77e57a4e7240cefdc0adfeb0f074c0ca4aebde24ea3b42076ea9e8e40fd1",
+    "bytes": 6081
+  },
+  {
+    "form": "vfcvt.rtz.x.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfcvt_rtz_x_f_v.c",
+    "status": 404
+  },
+  {
+    "form": "vfcvt.rtz.xu.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfcvt_rtz_xu_f_v.c",
+    "status": 404
+  },
+  {
+    "form": "vfcvt.x.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfcvt_x_f_v.c",
+    "path": "vfcvt_x_f_v.c",
+    "sha256": "1cca4f9812fa530639d6f27836cca76aca410ef9fe508c3eebc7efe1669c48e4",
+    "bytes": 6079
+  },
+  {
+    "form": "vfcvt.xu.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfcvt_xu_f_v.c",
+    "path": "vfcvt_xu_f_v.c",
+    "sha256": "2b6d752ac8789d04596fdd22adffe7516064d121f248e90cdfb06684a1ef4e34",
+    "bytes": 6089
+  },
+  {
+    "form": "vfncvt.f.f.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_f_f_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.f.x.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_f_x_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.f.xu.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_f_xu_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.rod.f.f.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_rod_f_f_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.rtz.x.f.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_rtz_x_f_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.rtz.xu.f.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_rtz_xu_f_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.x.f.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_x_f_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfncvt.xu.f.w",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfncvt_xu_f_w.c",
+    "status": 404
+  },
+  {
+    "form": "vfwcvt.f.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_f_f_v.c",
+    "path": "vfwcvt_f_f_v.c",
+    "sha256": "a13a24a9017f0efd1dde136cb8002145bb1e3ed5b04cd5f993c52b7ebab2d903",
+    "bytes": 5238
+  },
+  {
+    "form": "vfwcvt.f.x.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_f_x_v.c",
+    "path": "vfwcvt_f_x_v.c",
+    "sha256": "ae4c044b0f76ec8319300a49d7a23ece7711792bc48cb2d80a0401762c803d1f",
+    "bytes": 5094
+  },
+  {
+    "form": "vfwcvt.f.xu.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_f_xu_v.c",
+    "path": "vfwcvt_f_xu_v.c",
+    "sha256": "c01b7538dfcd6fcb90b1e3c5df47f1fe071a32bc4d97a837dcf440eb78e5861b",
+    "bytes": 5101
+  },
+  {
+    "form": "vfwcvt.rtz.x.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_rtz_x_f_v.c",
+    "status": 404
+  },
+  {
+    "form": "vfwcvt.rtz.xu.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_rtz_xu_f_v.c",
+    "status": 404
+  },
+  {
+    "form": "vfwcvt.x.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_x_f_v.c",
+    "path": "vfwcvt_x_f_v.c",
+    "sha256": "e744ebe182c72778be6e1622f4673bdbeb81990578f81fcea6ff98b96d8d2495",
+    "bytes": 5246
+  },
+  {
+    "form": "vfwcvt.xu.f.v",
+    "url": "https://raw.githubusercontent.com/romanheros/qemu/7a35c902707087c8e1b77a3c82c54b73ffa17703/tests/riscv/vector/case/vfwcvt_xu_f_v.c",
+    "path": "vfwcvt_xu_f_v.c",
+    "sha256": "bde9984194ed4d543c833e0feac40bec5398cdcae37715bfc888bd97d3530c3e",
+    "bytes": 5251
+  }
+]
