@@ -1,0 +1,7 @@
+no server running on /tmp/tmux-1013/default
+Tue Oct 13 12:00:06 UTC 2026
+Tue Oct 13 12:38:02 UTC 2026
+Tue Oct 13 12:40:39 UTC 2026
+57f09622ff8ded1451674f33a4b3eb649b72ef2d39328ee58a7ffc3aa386009f  /home/vick/rvv-throughput-main-20261013/audit_parallel.py
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1824945086464 86665760768  96% /

@@ -1,0 +1,23 @@
+{
+  "selected_packets": 2160,
+  "geometries": 54,
+  "forms": 10,
+  "tags": {
+    "length1": 540,
+    "policy11": 540,
+    "start-equal-full": 540,
+    "edge-negative-inexact": 540
+  },
+  "rounding_modes": {
+    "0": 1730,
+    "4": 100,
+    "1": 110,
+    "2": 110,
+    "3": 110
+  },
+  "ordinary": 1620,
+  "reserved_start": 540,
+  "guest_commands": 0,
+  "checker": "frozen full-final scripts/fp157.py and vadd.py",
+  "preparation_correction": "Baseline tags use frm0 outside pilot geometries; initial selection assumption rejected locally before any raw control replay."
+}

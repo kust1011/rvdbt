@@ -1,0 +1,5 @@
+{
+  "deleted_profiles": 36720,
+  "freed_bytes": 2419749233,
+  "scope": "only .prof.gz and matching .prof.storage.json in closed successful per-run cache; failure caches preserved"
+}

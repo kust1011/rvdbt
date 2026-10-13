@@ -1,0 +1,23 @@
+{
+  "controls-frozen": {
+    "rejected": 12900,
+    "allowed": 20,
+    "rejected_by_class": {
+      "ordinary": 12900
+    },
+    "allowed_by_class": {
+      "ordinary": 20
+    }
+  },
+  "controls-geometry": {
+    "rejected": 62640,
+    "allowed": 540,
+    "rejected_by_class": {
+      "ordinary": 48060,
+      "reserved-start-profile": 14580
+    },
+    "allowed_by_class": {
+      "ordinary": 540
+    }
+  }
+}

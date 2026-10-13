@@ -1,0 +1,23 @@
+{
+  "actual_packets": 2160,
+  "rejected": 62640,
+  "allowed": 540,
+  "rejected_by_class": {
+    "ordinary": 48060,
+    "reserved-start-profile": 14580
+  },
+  "geometries": 54,
+  "rounding_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "selection": "length1/policy11/start-equal-full at frm0 plus edge-negative-inexact at frm=sorted-geometry-index modulo5, per form and geometry",
+  "guest_reruns": 0,
+  "predicates": {
+    "fp157.py": "29b5417adc90755b25765f8c9b60e21dc3cbd63e12cd3db18aaa8511fbf50aad",
+    "vadd.py": "139945763bdad01686d5e8ec961cd8599040fa2f605531adb76388f36f1f9f21"
+  }
+}

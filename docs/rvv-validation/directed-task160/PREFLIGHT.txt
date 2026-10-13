@@ -1,0 +1,16 @@
+e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b  /home/vick/rvdbt-host512-task142-build/build/bin/elfrun
+79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af  /home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so
+cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994  /home/vick/rvv-directed-task145/deps/spike
+30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad  /home/vick/rvv-directed-task145/deps/pk
+4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9  /home/vick/rvv-act4-tools/bin/sail_riscv_sim
+3452979 3401273  10 python3         python3 scripts/vadd.py run --root /dev/shm/rvv-task158-fixedpoint-full/narrowing/corpus --engine /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --spike /home/vick/rvv-directed-task145/deps/spike --pk /home/vick/rvv-directed-task145/deps/pk --sail /home/v
+3532804 3532801  10 python3         python3 /home/vick/rvv-task159-full/mask/scripts/mask158_audit.py /home/vick/rvv-task159-full/mask/corpus /home/vick/rvv-task159-full/mask/audit-final
+3559716 3452979  10 sail_riscv_sim  /home/vick/rvv-act4-tools/bin/sail_riscv_sim --rv32 --config-override /dev/shm/rvv-task158-fixedpoint-full/narrowing/corpus/vnclipu-w4096-e8-m4-wi-start/sail-config.json --stop-at-pc 0x8001240c --inst-limit 10000000 --test-signature /dev/shm/rvv-task158-fixedpoint
+3560041 3452979  10 sail_riscv_sim  /home/vick/rvv-act4-tools/bin/sail_riscv_sim --rv32 --config-override /dev/shm/rvv-task158-fixedpoint-full/narrowing/corpus/vnclipu-w4096-e16-mf4-wv-start/sail-config.json --stop-at-pc 0x8001145c --inst-limit 10000000 --test-signature /dev/shm/rvv-task158-fixedpoi
+3560753 3452979  10 elfrun          /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --vlen=4096 --aot=0 --aot-use-llvm=0 --tier0-threshold=0 --rvv-direct=1 --rvv-qcg-direct-setvl=1 --rvv-qcg-typed-chunk-mem-e64=1 --rvv-qcg-whole-reg=1 --rvv-qcg-typed-chunk=1 --rvv-qcg-typed-chunk-sub=1 --rvv
+3560757 3452979  10 elfrun          /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --vlen=4096 --aot=0 --aot-use-llvm=0 --tier0-threshold=0 --rvv-direct=1 --rvv-qcg-direct-setvl=1 --rvv-qcg-typed-chunk-mem-e64=1 --rvv-qcg-whole-reg=1 --rvv-qcg-typed-chunk=1 --rvv-qcg-typed-chunk-sub=1 --rvv
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1818187546624 93423300608  96% /
+MemTotal:       47867544 kB
+MemFree:         8188268 kB
+MemAvailable:   32637788 kB

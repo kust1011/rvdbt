@@ -1,0 +1,12 @@
+{
+  "cases": 126062,
+  "checks": 630310,
+  "commands": 45900,
+  "ordinary_per_arm": 124942,
+  "reserved_start_per_arm": 1120,
+  "raw_location": "xbd:/home/vick/rvv-directed-task157/fp-full-final",
+  "audit_location": "xbd:/home/vick/rvv-directed-task160",
+  "acceptance": "PENDING_MAIN_AUDIT_REVIEW_AND_FP_CHECKER_REVIEW",
+  "semantics": "finite ordinary checks and separately labeled reserved-start observations; no full semantics proof",
+  "per_target_method_admission": "NOT_CLAIMED"
+}
