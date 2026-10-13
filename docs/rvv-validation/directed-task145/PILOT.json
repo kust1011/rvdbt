@@ -1,0 +1,27 @@
+{
+  "planned_cases": 70,
+  "planned_executions": 350,
+  "executed": 350,
+  "counts": {
+    "PASS": 350
+  },
+  "arms": {
+    "Reference": {
+      "PASS": 70
+    },
+    "B": {
+      "PASS": 70
+    },
+    "M1": {
+      "PASS": 70
+    },
+    "M2": {
+      "PASS": 70
+    },
+    "BOTH": {
+      "PASS": 70
+    }
+  },
+  "seconds": 2.9031680980115198,
+  "jobs": 2
+}

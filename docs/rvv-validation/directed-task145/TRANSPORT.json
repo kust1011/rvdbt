@@ -1,0 +1,52 @@
+{
+  "remote_archive": "xbd:/home/vick/task145-directed-final-raw.tar.gz",
+  "local_archive": "/tmp/task145-directed-final-raw.tar.gz",
+  "local_raw": "/home/user/research/materials/task145-directed-raw-20261013",
+  "bytes": 31041221,
+  "sha256": "57a3a190efb3d308680e367abc1ae57dc431240711cfb8f82337a725112c1e14",
+  "remote_manifest_sha256": "33905ee41699983e9e7ff22a287595647a3e26ba497e63061e335494499d4dfe",
+  "verified_payload_files": 36247,
+  "missing": 0,
+  "extra": 0,
+  "hash_differences": 0,
+  "semantic_checker_and_generator_equal_to_executed": true,
+  "final_launcher_equal_to_hardened_pilot": true,
+  "local_full_reapplication": {
+    "planned_cases": 9393,
+    "executed_case_checks": 46965,
+    "planned_commands": 3960,
+    "executed_commands": 3960,
+    "aggregate_command_seconds": 384.22498071886366,
+    "counts": {
+      "Reference": {
+        "PASS": 9393,
+        "FAIL": 0
+      },
+      "B": {
+        "PASS": 9393,
+        "FAIL": 0
+      },
+      "M1": {
+        "PASS": 9393,
+        "FAIL": 0
+      },
+      "M2": {
+        "PASS": 9393,
+        "FAIL": 0
+      },
+      "BOTH": {
+        "PASS": 9393,
+        "FAIL": 0
+      }
+    },
+    "failures": [],
+    "adapter_verified_units": 396,
+    "full_state": "32 vector registers, 10 CSRs and scalar s0 pre/post",
+    "method_admission": "NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission"
+  },
+  "excluded": [
+    "work fs/cache copies",
+    "reference executables independently pinned in IDENTITIES.json"
+  ],
+  "remote_root": "xbd:/home/vick/rvv-directed-task145/"
+}

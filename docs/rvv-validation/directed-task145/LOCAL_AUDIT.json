@@ -1,0 +1,33 @@
+{
+  "planned_cases": 9393,
+  "executed_case_checks": 46965,
+  "planned_commands": 3960,
+  "executed_commands": 3960,
+  "aggregate_command_seconds": 384.22498071886366,
+  "counts": {
+    "Reference": {
+      "PASS": 9393,
+      "FAIL": 0
+    },
+    "B": {
+      "PASS": 9393,
+      "FAIL": 0
+    },
+    "M1": {
+      "PASS": 9393,
+      "FAIL": 0
+    },
+    "M2": {
+      "PASS": 9393,
+      "FAIL": 0
+    },
+    "BOTH": {
+      "PASS": 9393,
+      "FAIL": 0
+    }
+  },
+  "failures": [],
+  "adapter_verified_units": 396,
+  "full_state": "32 vector registers, 10 CSRs and scalar s0 pre/post",
+  "method_admission": "NOT claimed; flags and aggregate counters do not identify per-target M1/M2 admission"
+}

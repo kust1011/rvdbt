@@ -1,0 +1,24 @@
+{
+  "/home/user/research/third_party/riscv-vector-tests-20261007/configs/v/vadd.vv.toml": "cbec7c27aa4302b9aa2ed845784d1226c0973f5bbe5616a5e939bbeebe10f431",
+  "/home/user/research/third_party/riscv-vector-tests-20261007/configs/v/vadd.vx.toml": "442994f9312d51889384670f3294c137eea7b923a4e549ba6204bd7c0a0d47e3",
+  "/home/user/research/third_party/riscv-vector-tests-20261007/configs/v/vadd.vi.toml": "5ab73c031acba1de63189c30f621bac43a343ecf449a3715b76e8c463500a99b",
+  "/home/user/research/third_party/chips-spike-20261007/riscv/insns/vadd_vv.h": "b152a098e0774b29a965c7e66bdfb411563288d29a463ac26996bca6c3db9d9c",
+  "/home/user/research/third_party/chips-spike-20261007/riscv/insns/vadd_vx.h": "12c056b40283d12997eaa39861b862899138a7087e2d8a791e8a4dc159bc0fd1",
+  "/home/user/research/third_party/chips-spike-20261007/riscv/insns/vadd_vi.h": "38cca359541f52e1a032b34103d8a988d1097131fcd1ccad95e4b2e33565d1ba",
+  "/home/user/research/third_party/chips-spike-20261007/riscv/v_ext_macros.h": "c8663bcd609c60796bb130016b72ad1cf1adc3617184d13333f64020b5845329",
+  "/home/user/research/third_party/chips-spike-20261007/riscv/decode_macros.h": "cd35b24e4fd1e1c8cb2917a944ff2dc684784ce2d518a87ff564198c3a9e1a83",
+  "scripts/rvv/fixtures/rvvts-20261089/replay-ready-ported.S": "23ab1e84b5f1b53da3136af19037ad8315d9e2dd97471b2ea2da94b64975f017",
+  "scripts/rvv/fixtures/rvvts-20261089/link.ld": "671d4a06b5298dc776ad61cee92acf0f249e35262d87fa039ec4033950720c71",
+  "scripts/rvv/fixtures/external-flags.json": "b6a8e0ba8fce2f70668b14c8d7bfa1194908249f21415fc1e2289bbef9dd802c",
+  "source_git": {
+    "/home/user/research/third_party/riscv-vector-tests-20261007": "f76bff121dce91b6b23e1d37be77a5e44af914c3",
+    "/home/user/research/third_party/chips-spike-20261007": "20feb9c2bf2a7deab964d8190b0cbd4b4131bec3"
+  },
+  "compiler": "Ubuntu clang version 20.1.8 (++20250708082409+6fb913d3e2ec-1~exp1~20250708202428.132)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-20/bin\n",
+  "project_tests": "Authored project template. CHIPS operand edges inform patterns; no original source copied or upstream-test credit.",
+  "compiler_sha256": "a7b31cd92536924097ddbd01c3a238f8afd00f7d60bb359ebcc0813f3ff8394f",
+  "reference_source_tracked_dirty_files": 0,
+  "template_source_tracked_dirty_files": 0,
+  "spec_url": "https://github.com/riscv/riscv-v-spec/blob/v1.0/v-spec.adoc",
+  "sail_release_url": "https://github.com/riscv/sail-riscv/releases/tag/0.14.1"
+}
