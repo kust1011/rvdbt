@@ -1,0 +1,56 @@
+{
+  "form": "vmsleu.vv",
+  "planned_per_arm": 5049,
+  "arms": {
+    "Reference": {
+      "executed": 5049,
+      "statuses": {
+        "PASS": 5049
+      },
+      "semantic_statuses": {
+        "PASS": 4789,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 5049,
+      "statuses": {
+        "PASS": 5049
+      },
+      "semantic_statuses": {
+        "PASS": 4789,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 5049,
+      "statuses": {
+        "PASS": 5049
+      },
+      "semantic_statuses": {
+        "PASS": 4789,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 5049,
+      "statuses": {
+        "PASS": 5049
+      },
+      "semantic_statuses": {
+        "PASS": 4789,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 5049,
+      "statuses": {
+        "PASS": 5049
+      },
+      "semantic_statuses": {
+        "PASS": 4789,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

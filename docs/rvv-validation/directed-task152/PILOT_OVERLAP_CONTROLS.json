@@ -1,0 +1,207 @@
+{
+  "controls": 20,
+  "rejected": 20,
+  "records": [
+    {
+      "case": "vmseq-w1024-e8-m8-vv-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmseq-w1024-e8-m8-vv-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0000.bin",
+      "sha256": "78744b207f030f2b0b45821b9603805fac7c4beb2b309366f7ea0a116cc9db07"
+    },
+    {
+      "case": "vmseq-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmseq-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0001.bin",
+      "sha256": "5d4b9bd8356bf458cd6efc3667bdd5f5aa5f67943b2356e944bfee54cd167c9e"
+    },
+    {
+      "case": "vmseq-w1024-e8-m8-vi-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmseq-w1024-e8-m8-vi-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0002.bin",
+      "sha256": "321fe98f805930e32a8eb788a59c50598e37735d7efaa30179e50059c3cd4df4"
+    },
+    {
+      "case": "vmsne-w1024-e8-m8-vv-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsne-w1024-e8-m8-vv-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0003.bin",
+      "sha256": "7429164f70a342b1e6c6c0de8c7063d16635929c2150e0b0aa74481d09dfeb66"
+    },
+    {
+      "case": "vmsne-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsne-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0004.bin",
+      "sha256": "6254411e1aa7b94404d2a89ebcfa934e2cdcea3c1c47a214e512161a69197442"
+    },
+    {
+      "case": "vmsne-w1024-e8-m8-vi-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsne-w1024-e8-m8-vi-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0005.bin",
+      "sha256": "923911d3fb9d7219a6daea5487352c14f38d32552b8dff37b620c6d228d429ed"
+    },
+    {
+      "case": "vmsltu-w1024-e8-m8-vv-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsltu-w1024-e8-m8-vv-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0006.bin",
+      "sha256": "01008a8dfe8280ebd56bcdaa093dcff78df825e515df9beb8fd370593ac67198"
+    },
+    {
+      "case": "vmsltu-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsltu-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0007.bin",
+      "sha256": "64f7d82c8034ca9370d60dcc36f9d8b65539a016500ad980d0622dded9f0f326"
+    },
+    {
+      "case": "vmslt-w1024-e8-m8-vv-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmslt-w1024-e8-m8-vv-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0008.bin",
+      "sha256": "508988ab7e3d556cc77699088831592fb17d91fc10bbeea07a058329cf82649a"
+    },
+    {
+      "case": "vmslt-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmslt-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0009.bin",
+      "sha256": "3b1146e473cb82bd1049b74e5918cdd9ca432708253262034eac150684baa94a"
+    },
+    {
+      "case": "vmsleu-w1024-e8-m8-vv-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsleu-w1024-e8-m8-vv-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0010.bin",
+      "sha256": "affcbd7cc9c13ee26ab4b485c6ffad4a202a8185d8e3cda9d1f7a680f0dd60b3"
+    },
+    {
+      "case": "vmsleu-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsleu-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0011.bin",
+      "sha256": "6b3517b7c0705a7d8f2e542c2dc5e2540ab056acc4c994524d0ab67c919218b7"
+    },
+    {
+      "case": "vmsleu-w1024-e8-m8-vi-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsleu-w1024-e8-m8-vi-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0012.bin",
+      "sha256": "4237431ff52013f1565bb5576f8514ea52b44fa2985bcd21101a656621777c06"
+    },
+    {
+      "case": "vmsle-w1024-e8-m8-vv-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsle-w1024-e8-m8-vv-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0013.bin",
+      "sha256": "2f0f215d8e571e3ac816c73213727370a87e87389c91ada16a44080707bab9c8"
+    },
+    {
+      "case": "vmsle-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsle-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0014.bin",
+      "sha256": "e9e49e04959cf3491a189543c51f176a175206bb49379d7c57289a93f89b0984"
+    },
+    {
+      "case": "vmsle-w1024-e8-m8-vi-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsle-w1024-e8-m8-vi-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0015.bin",
+      "sha256": "5a855789bc794f62baf7e33d7b3b8477812d3824aee139f7f0781d6379318279"
+    },
+    {
+      "case": "vmsgtu-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsgtu-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0016.bin",
+      "sha256": "3698c904659c8e38b02c4b84ae690bda10836096a1820224ba780cd52fd63131"
+    },
+    {
+      "case": "vmsgtu-w1024-e8-m8-vi-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsgtu-w1024-e8-m8-vi-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0017.bin",
+      "sha256": "ef1e2a945eeecf7ba78440581242e34518e0240ddd7a39fd0d5814c609642937"
+    },
+    {
+      "case": "vmsgt-w1024-e8-m8-vx-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsgt-w1024-e8-m8-vx-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0018.bin",
+      "sha256": "651e4814bf1d09e1673a91514f1d21a5314e181a3843f7d1a8fe923baead628e"
+    },
+    {
+      "case": "vmsgt-w1024-e8-m8-vi-dest-source2",
+      "bit": 9,
+      "rejected": true,
+      "error": "comparison/preserved mask bit 9",
+      "source": "corpus/runs/vmsgt-w1024-e8-m8-vi-zero/B/packets.bin",
+      "offset": 132608,
+      "corrupt": "0019.bin",
+      "sha256": "4387e2d288c0e5f0abe3cf211dba584e2cde28bc773a31df9b0d5410032f1255"
+    }
+  ],
+  "guest_executions": 0
+}

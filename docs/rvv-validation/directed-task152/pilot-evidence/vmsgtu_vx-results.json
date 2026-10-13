@@ -1,0 +1,56 @@
+{
+  "form": "vmsgtu.vx",
+  "planned_per_arm": 126,
+  "arms": {
+    "Reference": {
+      "executed": 126,
+      "statuses": {
+        "PASS": 126
+      },
+      "semantic_statuses": {
+        "PASS": 124,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "B": {
+      "executed": 126,
+      "statuses": {
+        "PASS": 126
+      },
+      "semantic_statuses": {
+        "PASS": 124,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "M1": {
+      "executed": 126,
+      "statuses": {
+        "PASS": 126
+      },
+      "semantic_statuses": {
+        "PASS": 124,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "M2": {
+      "executed": 126,
+      "statuses": {
+        "PASS": 126
+      },
+      "semantic_statuses": {
+        "PASS": 124,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "BOTH": {
+      "executed": 126,
+      "statuses": {
+        "PASS": 126
+      },
+      "semantic_statuses": {
+        "PASS": 124,
+        "PROFILE_RESERVED_START": 2
+      }
+    }
+  }
+}

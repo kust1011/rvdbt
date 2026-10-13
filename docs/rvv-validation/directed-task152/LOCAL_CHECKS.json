@@ -1,0 +1,8 @@
+{
+  "targeted_comparison_tests": 7,
+  "status": "PASS",
+  "unchanged_layout_extent_check": "Interrupted to avoid repeating Task151 retained preparation; no guest impact",
+  "previous_extent_and_encoding_evidence": "../directed-task151/next-compare/LOCAL_CHECKS.json",
+  "framework_controls": "unchanged; not repeated",
+  "guest_reruns": 0
+}

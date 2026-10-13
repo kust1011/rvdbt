@@ -94,7 +94,7 @@ def cases():
         current=[]
         for old in template:
             if old['form']!=form:continue
-            c=dict(old,mnemonic=op,family='compare-next151',seed=152,destination_eew=1,destination_registers=1,execution='NOT_RUN')
+            c=dict(old,mnemonic=op,family='compare152',seed=152,destination_eew=1,destination_registers=1,execution='NOT_RUN')
             c['id']=old['id'].replace('vadd-',op+'-',1);c['unit']=old['unit'].replace('vadd-',op+'-',1)
             if c['tag']=='end-group':
                 c['vd']=31

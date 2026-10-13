@@ -1,0 +1,56 @@
+{
+  "form": "vmseq.vi",
+  "planned_per_arm": 210,
+  "arms": {
+    "Reference": {
+      "executed": 210,
+      "statuses": {
+        "PASS": 210
+      },
+      "semantic_statuses": {
+        "PASS": 208,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "B": {
+      "executed": 210,
+      "statuses": {
+        "PASS": 210
+      },
+      "semantic_statuses": {
+        "PASS": 208,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "M1": {
+      "executed": 210,
+      "statuses": {
+        "PASS": 210
+      },
+      "semantic_statuses": {
+        "PASS": 208,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "M2": {
+      "executed": 210,
+      "statuses": {
+        "PASS": 210
+      },
+      "semantic_statuses": {
+        "PASS": 208,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "BOTH": {
+      "executed": 210,
+      "statuses": {
+        "PASS": 210
+      },
+      "semantic_statuses": {
+        "PASS": 208,
+        "PROFILE_RESERVED_START": 2
+      }
+    }
+  }
+}

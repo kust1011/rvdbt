@@ -1,0 +1,56 @@
+{
+  "form": "vmsle.vv",
+  "planned_per_arm": 120,
+  "arms": {
+    "Reference": {
+      "executed": 120,
+      "statuses": {
+        "PASS": 120
+      },
+      "semantic_statuses": {
+        "PASS": 118,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "B": {
+      "executed": 120,
+      "statuses": {
+        "PASS": 120
+      },
+      "semantic_statuses": {
+        "PASS": 118,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "M1": {
+      "executed": 120,
+      "statuses": {
+        "PASS": 120
+      },
+      "semantic_statuses": {
+        "PASS": 118,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "M2": {
+      "executed": 120,
+      "statuses": {
+        "PASS": 120
+      },
+      "semantic_statuses": {
+        "PASS": 118,
+        "PROFILE_RESERVED_START": 2
+      }
+    },
+    "BOTH": {
+      "executed": 120,
+      "statuses": {
+        "PASS": 120
+      },
+      "semantic_statuses": {
+        "PASS": 118,
+        "PROFILE_RESERVED_START": 2
+      }
+    }
+  }
+}

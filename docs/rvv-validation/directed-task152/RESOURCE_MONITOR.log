@@ -1,0 +1,70 @@
+Tue Oct 13 08:57:54 UTC 2026
+ 16:57:54 up 5 days, 20:36,  8 users,  load average: 14.39, 12.11, 7.44
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 11514232832  5278568448    37847040 33064837120 37502132224
+Swap:     8589930496  4022620160  4567310336
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1889852956672 21757890560  99% /
+Tue Oct 13 09:01:38 UTC 2026
+ 17:01:38 up 5 days, 20:39,  8 users,  load average: 13.10, 12.57, 8.62
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 12133433344  5099098112    37842944 32603009024 36882931712
+Swap:     8589930496  4022620160  4567310336
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1890421837824 21189009408  99% /
+Tue Oct 13 09:05:05 UTC 2026
+ 17:05:05 up 5 days, 20:43,  8 users,  load average: 13.99, 13.27, 9.71
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 11789701120  4650913792    37851136 33407012864 37226663936
+Swap:     8589930496  4022562816  4567367680
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1891054272512 20556574720  99% /
+Tue Oct 13 09:08:50 UTC 2026
+ 17:08:50 up 5 days, 20:47,  8 users,  load average: 15.21, 14.06, 10.78
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 11893067776  3954896896    41287680 34020425728 37123297280
+Swap:     8589930496  4022448128  4567482368
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1891720634368 19890212864  99% /
+Tue Oct 13 09:12:31 UTC 2026
+ 17:12:31 up 5 days, 20:50,  8 users,  load average: 9.54, 12.62, 10.97
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 10897911808  8074936320    37871616 30863265792 38118453248
+Swap:     8589930496  4022374400  4567556096
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1892419493888 19191353344  99% /
+Tue Oct 13 09:16:28 UTC 2026
+ 17:16:28 up 5 days, 20:54,  8 users,  load average: 7.71, 9.93, 10.22
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 12728258560  5086642176    37871616 32020721664 36288106496
+Swap:     8589930496  4022374400  4567556096
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1892905611264 18705235968 100% /
+Tue Oct 13 09:20:35 UTC 2026
+ 17:20:35 up 5 days, 20:58,  8 users,  load average: 10.81, 10.99, 10.61
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 11090804736  7003303936    37879808 31741607936 37925560320
+Swap:     8589930496  4022239232  4567691264
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1893570269184 18040578048 100% /
+Tue Oct 13 09:30:33 UTC 2026
+ 17:30:33 up 5 days, 21:08,  7 users,  load average: 1.43, 3.81, 7.18
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056  9841127424  8573587456    37863424 31421263872 39175237632
+Swap:     8589930496  4022140928  4567789568
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1894138232832 17472614400 100% /
+Tue Oct 13 09:36:19 UTC 2026
+ 17:36:19 up 5 days, 21:14,  7 users,  load average: 1.27, 2.07, 5.34
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 10170552320  8235302912    37863424 31430127616 38845812736
+Swap:     8589930496  4022124544  4567805952
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1894142648320 17468198912 100% /
+Tue Oct 13 09:37:29 UTC 2026
+ 17:37:29 up 5 days, 21:15,  6 users,  load average: 1.21, 1.91, 5.04
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056  8640245760  9741701120    37851136 31454031872 40376119296
+Swap:     8589930496  4021927936  4568002560
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1894165770240 17445076992 100% /

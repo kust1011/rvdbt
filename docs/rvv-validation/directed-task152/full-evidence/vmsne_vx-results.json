@@ -1,0 +1,56 @@
+{
+  "form": "vmsne.vx",
+  "planned_per_arm": 5313,
+  "arms": {
+    "Reference": {
+      "executed": 5313,
+      "statuses": {
+        "PASS": 5313
+      },
+      "semantic_statuses": {
+        "PASS": 5053,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "B": {
+      "executed": 5313,
+      "statuses": {
+        "PASS": 5313
+      },
+      "semantic_statuses": {
+        "PASS": 5053,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M1": {
+      "executed": 5313,
+      "statuses": {
+        "PASS": 5313
+      },
+      "semantic_statuses": {
+        "PASS": 5053,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "M2": {
+      "executed": 5313,
+      "statuses": {
+        "PASS": 5313
+      },
+      "semantic_statuses": {
+        "PASS": 5053,
+        "PROFILE_RESERVED_START": 260
+      }
+    },
+    "BOTH": {
+      "executed": 5313,
+      "statuses": {
+        "PASS": 5313
+      },
+      "semantic_statuses": {
+        "PASS": 5053,
+        "PROFILE_RESERVED_START": 260
+      }
+    }
+  }
+}

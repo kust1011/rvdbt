@@ -1,0 +1,35 @@
+{
+  "dut": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+  "source_revision": "8111040faad84ded7f84fc5bd34d10461bfc50ca",
+  "source_equality_status": "PASS",
+  "build_hashes": {
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rv32_signal_frm_test": "793744920f25a26d7b346322b41369e33506136f66eb7524c0374d33674c7e57",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rvv_vector_run_admission_test": "90aa70b668225d49ba10b8fa9466a24861206efd371ceaef4188471f1a48bc5c",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rv32_whole_native_fault_test": "f4307bd4d049117d00e1b528784f6231bafed86a47ee4e131f9639c84111ec4f",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/mmu_mapping_metadata_test": "295397c71cfcd9bba248e65099bccb5a824255fe526ed03e6457d37def333618",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rv32_grouped_memory_fault_test": "ea9ca57467407647cdd8864468f6d973deacf3a3484f35634191808e31cd6d48",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rv32_scalar_native_fault_test": "5033f44406945598b00639e718b480cee861e85d781c2de36207a6f455f3227b",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rvv_vector_run_codegen_test": "2478ec5fb09e59b683bb96ac5686784ccef8a04ec52465693fd202737570cfff",
+    "/home/vick/rvdbt-host512-task142-build/build/bin/rv32_signal_interface_test": "82f277311ca7e37f9a71235797067a00dcfe94049069f35ca9c8e64f574e9c9a",
+    "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "cache_sha256": "c9168a0ddb73474587b3777cdf6b1e3d8220d0aa83844a6683ed26815cbf97de",
+  "host_chunk": [
+    "RVV_HOST_CHUNK_BITS:STRING=512"
+  ],
+  "configuration_match": "PASS",
+  "guest_xlen": 32,
+  "guest_elen": 64,
+  "guest_vlens": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "guest_profile_evidence": "build command rv32gcv/ilp32d; Sail base.xlen32 and elen_exp6; Spike rv32gcv_zvlNb; per-case vlenb/vtype predicates",
+  "method_flags": "/home/vick/rvv-directed-task152/FLAGS.json",
+  "method_admission": "not claimed"
+}

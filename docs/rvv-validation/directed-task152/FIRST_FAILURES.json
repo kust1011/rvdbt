@@ -1,0 +1,11 @@
+{
+  "pilot_guest_failures": [],
+  "pilot_audit_failures": [],
+  "pilot_control_failures": [],
+  "local_preflight_interruption": "unchanged Task151 full-layout repeat stopped; seven targeted checks passed",
+  "next_preparation_utility_failure": "next-mac/PREPARATION_FAILURES.json",
+  "full": "all stages zero; no DUT/reference failures",
+  "full_guest_failures": [],
+  "full_audit_failures": [],
+  "full_control_failures": []
+}

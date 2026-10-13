@@ -1,0 +1,28 @@
+ 16:45:29 up 5 days, 20:23,  6 users,  load average: 1.62, 0.74, 1.52
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056  8416837632  6817107968    37830656 34602545152 40599527424
+Swap:     8589930496  4022657024  4567273472
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1887779045376 23831801856  99% /
+Cpus_allowed:	ffffffff
+Cpus_allowed_list:	0-31
+USER         PID  NI %CPU %MEM COMMAND
+root     3572115   0  0.9  0.0 envoy
+kyle0     630920   0  0.8  0.6 claude
+root        1969   0  0.7  0.9 dockerd
+kyle0      13441   0  0.6  0.6 claude
+kyle0     272816   0  0.6  0.6 claude
+10001    3571292   0  0.6  0.1 service
+kyle0     648389   0  0.6  0.5 claude
+kyle0    2831991   0  0.5  0.7 claude
+kyle0     619233   0  0.5  0.5 claude
+room502     3360   0  0.5  0.6 java
+room502     3351   0  0.5  0.6 java
+root        1859   0  0.5  0.1 containerd
+room502     3293   0  0.5  0.6 java
+kyle0    3855038   0  0.5  0.5 claude
+room502     3327   0  0.5  0.5 java
+room502     3306   0  0.5  0.5 java
+ben      2500902   0  0.5  0.5 claude
+ben      2517274   0  0.5  0.4 claude
+ben       738115   0  0.3  0.4 claude

@@ -1,0 +1,142 @@
+{
+  "pilot": {
+    "launch": [
+      "ssh",
+      "xbd",
+      "cd /home/vick/rvv-directed-task152/pilot; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task152/pilot > launcher.log 2>&1 < /dev/null &"
+    ],
+    "build": [
+      "python3",
+      "scripts/vadd.py",
+      "build",
+      "--family",
+      "compare152",
+      "--output",
+      "corpus",
+      "--compiler",
+      "clang-22",
+      "--build-jobs",
+      "4",
+      "--link",
+      "../user.ld",
+      "--units-file",
+      "UNITS.json"
+    ],
+    "run": [
+      "python3",
+      "scripts/vadd.py",
+      "run",
+      "--root",
+      "/home/vick/rvv-directed-task152/pilot/corpus",
+      "--engine",
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun",
+      "--spike",
+      "/home/vick/rvv-directed-task145/deps/spike",
+      "--pk",
+      "/home/vick/rvv-directed-task145/deps/pk",
+      "--sail",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+      "--flags",
+      "../FLAGS.json",
+      "--jobs",
+      "8"
+    ],
+    "audit": [
+      "python3",
+      "scripts/audit.py",
+      "corpus",
+      "audit"
+    ],
+    "controls": [
+      "python3",
+      "scripts/reject_compare151_next.py",
+      "corpus",
+      "controls"
+    ],
+    "summary": [
+      "python3",
+      "scripts/summarize148.py",
+      ".",
+      "evidence"
+    ],
+    "environment": {
+      "RVV_COMPRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "taskset": false,
+    "nice": 10
+  },
+  "full": {
+    "launch": [
+      "ssh",
+      "xbd",
+      "cd /home/vick/rvv-directed-task152/full; nohup nice -n 10 bash launch.sh /home/vick/rvv-directed-task152/full > launcher.log 2>&1 < /dev/null &"
+    ],
+    "build": [
+      "python3",
+      "scripts/vadd.py",
+      "build",
+      "--family",
+      "compare152",
+      "--output",
+      "corpus",
+      "--compiler",
+      "clang-22",
+      "--build-jobs",
+      "4",
+      "--link",
+      "../user.ld"
+    ],
+    "run": [
+      "python3",
+      "scripts/vadd.py",
+      "run",
+      "--root",
+      "/home/vick/rvv-directed-task152/full/corpus",
+      "--engine",
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun",
+      "--spike",
+      "/home/vick/rvv-directed-task145/deps/spike",
+      "--pk",
+      "/home/vick/rvv-directed-task145/deps/pk",
+      "--sail",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+      "--flags",
+      "../FLAGS.json",
+      "--jobs",
+      "8"
+    ],
+    "audit": [
+      "python3",
+      "scripts/audit.py",
+      "corpus",
+      "audit"
+    ],
+    "controls": [
+      "python3",
+      "scripts/reject_compare151_next.py",
+      "corpus",
+      "controls"
+    ],
+    "summary": [
+      "python3",
+      "scripts/summarize148.py",
+      ".",
+      "evidence"
+    ],
+    "environment": {
+      "RVV_COMPRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "taskset": false,
+    "nice": 10
+  },
+  "pilot_supplemental": {
+    "commands": [
+      "PYTHONDONTWRITEBYTECODE=1 RVV_COMPRESS=1 nice -n 10 python3 state-control-scripts/reject_compare152_state.py corpus controls-state",
+      "PYTHONDONTWRITEBYTECODE=1 RVV_COMPRESS=1 nice -n 10 python3 state-control-scripts/allow_compare152.py corpus controls-allowed",
+      "PYTHONDONTWRITEBYTECODE=1 RVV_COMPRESS=1 nice -n 10 python3 state-control-scripts/reject_compare152_overlap.py corpus controls-overlap"
+    ],
+    "guest_reruns": 0
+  }
+}

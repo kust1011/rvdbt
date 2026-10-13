@@ -1,0 +1,15 @@
+{
+  "source": "https://raw.githubusercontent.com/riscv/riscv-isa-manual/main/src/unpriv/vector-common.adoc",
+  "source_sha256": "953eade975979f04181c1d34065696880cfa1b1ff7f0a6f185eaefe007d2316d",
+  "section": "Vector Single-Width Integer Multiply-Add Instructions",
+  "predicates": [
+    "vmacc: old_vd + vs1*vs2",
+    "vnmsac: old_vd - vs1*vs2",
+    "vmadd: vs2 + vs1*old_vd",
+    "vnmsub: vs2 - vs1*old_vd",
+    "low SEW bits; scalar sign extension from RV32 XLEN",
+    "same-width legal overlap uses captured old operands",
+    "prestart/no-body preservation; active/inactive and tail policies; CSR unchanged except vstart reset"
+  ],
+  "oracle": "fixed Spike/Sail required; NOT_RUN"
+}

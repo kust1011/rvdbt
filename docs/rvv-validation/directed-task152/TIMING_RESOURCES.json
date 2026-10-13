@@ -1,0 +1,19 @@
+{
+  "full_start_utc": "2026-10-13 08:48:11",
+  "full_complete_utc": "2026-10-13 09:37:21",
+  "full_stage_seconds": 2950,
+  "full_run_seconds": 1945.049291250005,
+  "pilot_run_seconds": 70.24857017601607,
+  "build_jobs": 4,
+  "run_jobs": 8,
+  "nice": 10,
+  "taskset": false,
+  "reserve_bytes": 10737418240,
+  "minimum_monitored_free_disk_bytes": 17445076992,
+  "final_free_disk_bytes": 17445076992,
+  "minimum_monitored_available_memory_bytes": 36288106496,
+  "final_available_memory_bytes": 40376119296,
+  "final_load": "1.21/1.91/5.04",
+  "remaining_guest_workers": 0,
+  "not_performance_or_method_admission_evidence": true
+}

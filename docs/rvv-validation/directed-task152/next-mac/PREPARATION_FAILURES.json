@@ -1,0 +1,10 @@
+[
+  {
+    "stage": "local encoding verification utility",
+    "error": "TypeError: tuple indices must be integers or slices, not str",
+    "reason": "shared ELF section reader returns (address, bytes), not a dict",
+    "correction": "use sections[.text][1]",
+    "guest_executions": 0,
+    "resolved": true
+  }
+]
