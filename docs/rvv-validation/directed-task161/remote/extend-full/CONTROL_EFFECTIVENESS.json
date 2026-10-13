@@ -1,0 +1,73 @@
+{
+  "negative_records_verified": 186,
+  "negative_records_without_stored_mutations": 0,
+  "allowed": [
+    {
+      "case": "vzext-w128-e64-m8-vf2-dest-high-source-mask",
+      "control": "overlap-mask-agnostic",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 744,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "29fc334fbc047b5ffc637fa8daf8584eaf582cb4e66457e6b8238bde9aa037a7",
+      "variant_sha256": "0eb50e2ed2e2bfe0382ed26c6ba023985e8ed9d9581c9acf8b1e6d0089e3f664"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf4-dest-high-source-mask",
+      "control": "overlap-mask-agnostic",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 744,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "13ce18fe7006ec77e885871e99011584795f76ba87b78da1805ba7ce75afdd0d",
+      "variant_sha256": "1ed603df3acf5222b28f652b55e6987ba116ac78aa3793f6a994c4a792ccd0f7"
+    },
+    {
+      "case": "vzext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "overlap-mask-agnostic",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 744,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "0bc0d6aa92029d22a68280cd45c925c4962a4ff3804921627f5b9b6e5b2522a9",
+      "variant_sha256": "0c3d7586a3938956a29bd817052fd139d04af56514a46f0dd9c6c92b313969ef"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf2-dest-high-source-mask",
+      "control": "overlap-mask-agnostic",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 744,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "134139a1d3d5ef863bbb1afca624e363221add999cec70c24b6aa3d89e918491",
+      "variant_sha256": "d70fb5818e194495fd6340a1e9bf46d80d6a18d3275615509efcb72822ebb5aa"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf4-dest-high-source-mask",
+      "control": "overlap-mask-agnostic",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 744,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "fddc52fc112b855dc616d15bd4697b44385bf9d8dbcd22e726fad4f48e6a76e2",
+      "variant_sha256": "de5cf2362cf5b2ee9546edd8e6ef72a8a15734954b8e093a785cce55d2cdfbb9"
+    },
+    {
+      "case": "vsext-w128-e64-m8-vf8-dest-high-source-mask",
+      "control": "overlap-mask-agnostic",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 744,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "820c6054cb95038333379b6f025bced781348e5225e2122ff11e93daf784d4dc",
+      "variant_sha256": "8bb684829ffde48ccaca4b5b68f7e91c3673297ea88848455b0838559d1cc701"
+    }
+  ],
+  "guest_executions": 0
+}

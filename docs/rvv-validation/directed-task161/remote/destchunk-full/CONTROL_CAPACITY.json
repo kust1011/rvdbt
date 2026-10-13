@@ -1,0 +1,21 @@
+{
+  "time": 1791899595.0799458,
+  "kind": "offline",
+  "other": [
+    [
+      849550,
+      "python3 tools/audit_parallel.py corpus audit-parallel-corrected --audit-script scripts/reduction163_audit.py --jobs 2 "
+    ],
+    [
+      849553,
+      "/usr/bin/python3 /home/vick/rvv-task163/pilot/scripts/reduction163_audit.py /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-00/corpus /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-00/audit "
+    ],
+    [
+      849554,
+      "/usr/bin/python3 /home/vick/rvv-task163/pilot/scripts/reduction163_audit.py /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-01/corpus /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-01/audit "
+    ]
+  ],
+  "our_workers": 1,
+  "nice": 10,
+  "affinity": "none"
+}

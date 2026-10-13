@@ -1,0 +1,164 @@
+{
+  "widen-full": {
+    "raw": "xbd:/home/vick/rvv-directed-task154/widen-full",
+    "audit": "xbd:/home/vick/rvv-directed-task161/widen-full",
+    "logical_artifacts": {
+      "other-retained": 89109,
+      "ELF-paths-including-work-copies": 21780,
+      "compiled-ELF": 5940,
+      "storage-metadata": 87120,
+      "assembly-source": 3960,
+      "tbmap": 15840,
+      "stdout": 19800,
+      "packets.bin": 19800,
+      "stderr": 19800,
+      "profiling-cache-or-metadata": 31680
+    },
+    "allocated_bytes": 2603032576,
+    "critical_hashes": {
+      "/home/vick/rvv-directed-task154/widen-full/corpus/manifest.json": "68205693c67ed6fa284202660a517a25c1a5b01e12a955ebaa2e5710a592c71e",
+      "/home/vick/rvv-directed-task154/widen-full/corpus/results.json": "06b32e4988b3b3df805f54a5bcd3a166d85c33564199087eff28fc7537d3444d",
+      "/home/vick/rvv-directed-task154/widen-full/corpus/build-commands.json": "40fbdf555b8dace5867c826307696b3b0dc2519df50b8843a869c7f60627d319",
+      "/home/vick/rvv-directed-task154/widen-full/FREEZE.sha256": "060f10407e510afe76c149c07b5375d8f9c217f8b8c7e10261ef5072858c63c3",
+      "/home/vick/rvv-directed-task154/widen-full/launch.sh": "4302fd5451a14f9883295091d36c92536aeb2eb93d643f754c27b0f09587ade1"
+    },
+    "deleted_paths": [],
+    "cleanup_performed": false,
+    "all_ordinary_and_reserved_inputs_preserved": true
+  },
+  "wmac-full2": {
+    "raw": "xbd:/home/vick/rvv-directed-task156/wmac-full2",
+    "audit": "xbd:/home/vick/rvv-directed-task161/wmac-full2",
+    "logical_artifacts": {
+      "other-retained": 28359,
+      "ELF-paths-including-work-copies": 6930,
+      "compiled-ELF": 1890,
+      "storage-metadata": 27720,
+      "assembly-source": 1260,
+      "tbmap": 5040,
+      "stdout": 6300,
+      "packets.bin": 6300,
+      "stderr": 6300,
+      "profiling-cache-or-metadata": 10080
+    },
+    "allocated_bytes": 841195520,
+    "critical_hashes": {
+      "/home/vick/rvv-directed-task156/wmac-full2/corpus/manifest.json": "bec73619e88256b7a3ff36b6833ff2c52a87b8f4b4e469e623315d68958d9da4",
+      "/home/vick/rvv-directed-task156/wmac-full2/corpus/results.json": "eb40fde6b772175d59c96acba76c569ee678b1f05331ff4843f18168d811508e",
+      "/home/vick/rvv-directed-task156/wmac-full2/corpus/build-commands.json": "7fb4d6fa9e35094654cc455d6d6e8bb8be4134ce10a5e54c8d7e3177869608e3",
+      "/home/vick/rvv-directed-task156/wmac-full2/FREEZE.sha256": "eda640cd6af90fa20a4d5a46df981eee4596aea948f7d707322c04ab87fb6df4",
+      "/home/vick/rvv-directed-task156/wmac-full2/launch.sh": "fcc92e314372ef25506c9c33afd22b1bb37cd0b556f346e736726e911bbc02da"
+    },
+    "deleted_paths": [],
+    "cleanup_performed": false,
+    "all_ordinary_and_reserved_inputs_preserved": true
+  },
+  "extend-full": {
+    "raw": "xbd:/home/vick/rvv-directed-task156/extend-full",
+    "audit": "xbd:/home/vick/rvv-directed-task161/extend-full",
+    "logical_artifacts": {
+      "other-retained": 15129,
+      "ELF-paths-including-work-copies": 3696,
+      "compiled-ELF": 1008,
+      "storage-metadata": 14784,
+      "assembly-source": 672,
+      "tbmap": 2688,
+      "stdout": 3360,
+      "packets.bin": 3360,
+      "stderr": 3360,
+      "profiling-cache-or-metadata": 5376
+    },
+    "allocated_bytes": 434958336,
+    "critical_hashes": {
+      "/home/vick/rvv-directed-task156/extend-full/corpus/manifest.json": "f37d64af46204517638855c7c8ef796a82b81de7609169f964e8e8fb849d2da4",
+      "/home/vick/rvv-directed-task156/extend-full/corpus/results.json": "56bfba471909e00331289b0f7996d99eda3a05340788f0ff2140eedb64602ba6",
+      "/home/vick/rvv-directed-task156/extend-full/corpus/build-commands.json": "3c3287971e2fa99b2252c03d23b5fa5979a01feb64da286065694b9ede1870b8",
+      "/home/vick/rvv-directed-task156/extend-full/FREEZE.sha256": "6f4a670197b9385eb833a2aba414c77fd8de04ef856a23876f559e3ab700709c",
+      "/home/vick/rvv-directed-task156/extend-full/launch.sh": "4f369e583cf4d0805b81eeddfae2a7fd75f82e1f78f30742f67c535ddc41ae80"
+    },
+    "deleted_paths": [],
+    "cleanup_performed": false,
+    "all_ordinary_and_reserved_inputs_preserved": true
+  },
+  "destchunk-full": {
+    "raw": "xbd:/home/vick/rvv-directed-task156/destchunk-full",
+    "audit": "xbd:/home/vick/rvv-directed-task161/destchunk-full",
+    "logical_artifacts": {
+      "other-retained": 22374,
+      "ELF-paths-including-work-copies": 5467,
+      "compiled-ELF": 1491,
+      "storage-metadata": 21868,
+      "assembly-source": 994,
+      "tbmap": 3976,
+      "stdout": 4970,
+      "packets.bin": 4970,
+      "stderr": 4970,
+      "profiling-cache-or-metadata": 7952
+    },
+    "allocated_bytes": 571125760,
+    "critical_hashes": {
+      "/home/vick/rvv-directed-task156/destchunk-full/corpus/manifest.json": "b44e7fa609030326a7b2a63422e7dee6185c766fe0444cbda3e920f7126f55a4",
+      "/home/vick/rvv-directed-task156/destchunk-full/corpus/results.json": "c07b826144dc62408e0e94a153e857b47b98a4c49a295592107a112c0c839602",
+      "/home/vick/rvv-directed-task156/destchunk-full/corpus/build-commands.json": "a1b0b3e4d8847a5d80bfa63394bf89f06ebdad9054e6e9e68678530e2fbf3686",
+      "/home/vick/rvv-directed-task156/destchunk-full/FREEZE.sha256": "ce7a04e6bceeb76c8a9b74c1c58c9b68a83782cbfab2a396c51cd2066893b4a4",
+      "/home/vick/rvv-directed-task156/destchunk-full/launch.sh": "ca9578877713a48f54ef9a4048fab43d3587ebdca1075f0016a7ec62f007bf3b"
+    },
+    "deleted_paths": [],
+    "cleanup_performed": false,
+    "all_ordinary_and_reserved_inputs_preserved": true
+  },
+  "extend-pilot": {
+    "raw": "xbd:/home/vick/rvv-directed-task156/extend-pilot",
+    "audit": "xbd:/home/vick/rvv-directed-task161/extend-pilot",
+    "logical_artifacts": {
+      "other-retained": 909,
+      "ELF-paths-including-work-copies": 220,
+      "compiled-ELF": 60,
+      "storage-metadata": 880,
+      "assembly-source": 40,
+      "tbmap": 160,
+      "stdout": 200,
+      "packets.bin": 200,
+      "stderr": 200,
+      "profiling-cache-or-metadata": 320
+    },
+    "allocated_bytes": 26406912,
+    "critical_hashes": {
+      "/home/vick/rvv-directed-task156/extend-pilot/corpus/manifest.json": "97b6c73534222f05ca4c709d7392fcf646bd8af9f55790b990e5b020ab2f766f",
+      "/home/vick/rvv-directed-task156/extend-pilot/corpus/results.json": "98acc8eda99bc161d552bfdafda60ccfdb7a05d2964dd5907cf8afb333a3e76f",
+      "/home/vick/rvv-directed-task156/extend-pilot/corpus/build-commands.json": "8e68c8a646883accd70987907238de9c747755414403fb775ae720d57fc34049",
+      "/home/vick/rvv-directed-task156/extend-pilot/FREEZE.sha256": "b3e6f5a46c61f4a26dff9ad331b84f838b4d8c6e8bddf0f433f26185c7023c7a",
+      "/home/vick/rvv-directed-task156/extend-pilot/launch.sh": "4f369e583cf4d0805b81eeddfae2a7fd75f82e1f78f30742f67c535ddc41ae80"
+    },
+    "deleted_paths": [],
+    "cleanup_performed": false,
+    "all_ordinary_and_reserved_inputs_preserved": true
+  },
+  "destchunk-pilot": {
+    "raw": "xbd:/home/vick/rvv-directed-task156/destchunk-pilot",
+    "audit": "xbd:/home/vick/rvv-directed-task161/destchunk-pilot",
+    "logical_artifacts": {
+      "other-retained": 639,
+      "ELF-paths-including-work-copies": 154,
+      "compiled-ELF": 42,
+      "storage-metadata": 616,
+      "assembly-source": 28,
+      "tbmap": 112,
+      "stdout": 140,
+      "packets.bin": 140,
+      "stderr": 140,
+      "profiling-cache-or-metadata": 224
+    },
+    "allocated_bytes": 16130048,
+    "critical_hashes": {
+      "/home/vick/rvv-directed-task156/destchunk-pilot/corpus/manifest.json": "e791c149e77b17b4113001275e347ee0bd2dba830efd5af2c879477d323f01bb",
+      "/home/vick/rvv-directed-task156/destchunk-pilot/corpus/results.json": "59c15fff01d17af7bfeff0a85155a8be6a1a9ac20bdc8daf7d5189f45132238d",
+      "/home/vick/rvv-directed-task156/destchunk-pilot/corpus/build-commands.json": "3d1667c339b225b480302b56a59b68a74474dfa4ee7ce45649acb702a8b2abff",
+      "/home/vick/rvv-directed-task156/destchunk-pilot/FREEZE.sha256": "b012a55f3eaaae679f8d4837da994c2feced48cade1f389f3514d808de630689",
+      "/home/vick/rvv-directed-task156/destchunk-pilot/launch.sh": "ca9578877713a48f54ef9a4048fab43d3587ebdca1075f0016a7ec62f007bf3b"
+    },
+    "deleted_paths": [],
+    "cleanup_performed": false,
+    "all_ordinary_and_reserved_inputs_preserved": true
+  }
+}

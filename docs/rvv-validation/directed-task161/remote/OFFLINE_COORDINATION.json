@@ -1,0 +1,286 @@
+[
+  {
+    "time": 1791897332.563765,
+    "other": [],
+    "own": [],
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791897770.3282495,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [
+      {
+        "pid": 400255,
+        "command": "bash /home/vick/rvv-task162/full/run162.sh /home/vick/rvv-task162/full full "
+      }
+    ],
+    "reserved_session3_workers": 4,
+    "blocked": true,
+    "stopped": [
+      181560
+    ]
+  },
+  {
+    "time": 1791898687.057593,
+    "other": [
+      {
+        "pid": 681333,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      },
+      {
+        "pid": 681334,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      },
+      {
+        "pid": 681336,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      },
+      {
+        "pid": 681337,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      }
+    ],
+    "own": [],
+    "reserved_session3_pipeline": [
+      {
+        "pid": 400255,
+        "command": "bash /home/vick/rvv-task162/full/run162.sh /home/vick/rvv-task162/full full "
+      }
+    ],
+    "reserved_session3_workers": 4,
+    "blocked": true,
+    "stopped": [
+      181560
+    ]
+  },
+  {
+    "time": 1791898756.2886531,
+    "other": [
+      {
+        "pid": 681333,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      },
+      {
+        "pid": 681334,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      },
+      {
+        "pid": 681337,
+        "state": "R",
+        "script": "permute162_audit.py",
+        "own": false
+      }
+    ],
+    "own": [],
+    "reserved_session3_pipeline": [
+      {
+        "pid": 400255,
+        "command": "bash /home/vick/rvv-task162/full/run162.sh /home/vick/rvv-task162/full full "
+      }
+    ],
+    "reserved_session3_workers": 4,
+    "blocked": true,
+    "stopped": [
+      181560
+    ]
+  },
+  {
+    "time": 1791898757.3085697,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [
+      {
+        "pid": 400255,
+        "command": "bash /home/vick/rvv-task162/full/run162.sh /home/vick/rvv-task162/full full "
+      }
+    ],
+    "reserved_session3_workers": 4,
+    "blocked": true,
+    "stopped": [
+      181560
+    ]
+  },
+  {
+    "time": 1791898762.393632,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791898763.4104197,
+    "other": [],
+    "own": [
+      {
+        "pid": 688495,
+        "state": "R",
+        "script": "audit.py",
+        "own": true
+      }
+    ],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899067.5325873,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899072.6221423,
+    "other": [
+      {
+        "pid": 719928,
+        "state": "R",
+        "script": "controls_geometry161.py",
+        "own": false
+      }
+    ],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899077.7200768,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899274.1118226,
+    "other": [],
+    "own": [
+      {
+        "pid": 768739,
+        "state": "R",
+        "script": "audit.py",
+        "own": true
+      }
+    ],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899314.793725,
+    "other": [
+      {
+        "pid": 772373,
+        "state": "R",
+        "script": "controls_geometry161.py",
+        "own": false
+      }
+    ],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899315.8128946,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899514.6001103,
+    "other": [
+      {
+        "pid": 837603,
+        "state": "R",
+        "script": "reduction163_audit.py",
+        "own": false
+      },
+      {
+        "pid": 837604,
+        "state": "R",
+        "script": "reduction163_audit.py",
+        "own": false
+      }
+    ],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899515.6184926,
+    "other": [],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899567.8302493,
+    "other": [],
+    "own": [
+      {
+        "pid": 846921,
+        "state": "R",
+        "script": "audit.py",
+        "own": true
+      }
+    ],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  },
+  {
+    "time": 1791899595.2916064,
+    "other": [
+      {
+        "pid": 849553,
+        "state": "R",
+        "script": "reduction163_audit.py",
+        "own": false
+      },
+      {
+        "pid": 849554,
+        "state": "R",
+        "script": "reduction163_audit.py",
+        "own": false
+      }
+    ],
+    "own": [],
+    "reserved_session3_pipeline": [],
+    "reserved_session3_workers": 0,
+    "blocked": false,
+    "stopped": []
+  }
+]

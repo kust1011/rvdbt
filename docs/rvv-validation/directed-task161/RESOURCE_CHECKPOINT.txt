@@ -1,0 +1,19 @@
+Tue Oct 13 13:31:51 UTC 2026
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1828654637056 82956210176  96% /
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 16147451904  3633713152  3876257792 34055589888 32868913152
+Swap:     8589930496  4293058560  4296871936
+    PID    PPID S  NI COMMAND
+ 181560       1 T  10 python3 /home/vick/rvv-directed-task161/execute161.py
+ 326059  181560 S  10 python3 scripts/vadd.py run --root /home/vick/rvv-directed-task154/widen-full/corpus --engine /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --spike /home/vick/rvv-directed-task145/deps/spike --pk /home/vick/rvv-directed-task145/deps/pk --sail /home/vick/rvv-act4-tools/bin/sail_riscv_sim --flags ../FLAGS.json --jobs 8
+ 506055       1 S  10 python3 /home/vick/rvv-directed-task161/capacity_watch161.py
+ 576812       1 S  10 python3 /home/vick/rvv-directed-task161/supplement161.py
+{
+  "samples": 165,
+  "max_active_guests": 10,
+  "max_active_offline": 0,
+  "max_compiler_processes": 5,
+  "guest_limit": 16,
+  "offline_limit": 4
+}

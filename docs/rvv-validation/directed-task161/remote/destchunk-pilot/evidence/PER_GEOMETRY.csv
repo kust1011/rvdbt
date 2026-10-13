@@ -1,0 +1,11 @@
+vlen,sew,lmul,arm,class,status,checks
+128,32,m4,B,ordinary,PASS,77
+128,32,m4,BOTH,ordinary,PASS,77
+128,32,m4,M1,ordinary,PASS,77
+128,32,m4,M2,ordinary,PASS,77
+128,32,m4,Reference,ordinary,PASS,77
+1024,8,m4,B,ordinary,PASS,84
+1024,8,m4,BOTH,ordinary,PASS,84
+1024,8,m4,M1,ordinary,PASS,84
+1024,8,m4,M2,ordinary,PASS,84
+1024,8,m4,Reference,ordinary,PASS,84

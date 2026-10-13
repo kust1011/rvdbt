@@ -1,0 +1,20 @@
+{
+  "cases": 25069,
+  "checks": 125345,
+  "units": 1260,
+  "ordinary_per_arm": 23767,
+  "reserved_start_per_arm": 1302,
+  "widths": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "raw": "xbd:/home/vick/rvv-directed-task156/wmac-full2",
+  "audit": "xbd:/home/vick/rvv-directed-task161/wmac-full2",
+  "reserved_encodings": [],
+  "execution_anomalies": [],
+  "main_review": "PENDING"
+}

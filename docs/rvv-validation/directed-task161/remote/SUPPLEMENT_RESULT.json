@@ -1,0 +1,9 @@
+{
+  "original_error_preserved": "/home/vick/rvv-directed-task161/SUPPLEMENT_ERROR.txt",
+  "cause": "Deduplicated destination geometry can lack a zero-start case; initial supplemental selection assertion rejected that assumption.",
+  "correction": "Select unmasked vstart<vl and mutate the actual vstart lane using unchanged frozen predicates.",
+  "corrected_controls": "/home/vick/rvv-directed-task161/destchunk-full/controls-geometry2",
+  "guest_reruns": 0,
+  "production_or_frozen_predicate_changes": 0,
+  "final_status": "PASS"
+}

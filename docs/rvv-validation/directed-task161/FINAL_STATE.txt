@@ -1,0 +1,28 @@
+Tue Oct 13 13:57:34 UTC 2026
+Filesystem         1B-blocks          Used   Available Use% Mounted on
+/dev/nvme0n1p2 2013991550976 1831772282880 79838564352  96% /
+               total        used        free      shared  buff/cache   available
+Mem:     49016365056 14348464128  6043119616  3278815232 32835633152 34667900928
+Swap:     8589930496  4574531584  4015398912
+{
+  "samples": 420,
+  "max_active_guests": 11,
+  "max_active_offline": 4,
+  "max_compiler_processes": 5,
+  "guest_limit": 16,
+  "offline_limit": 4
+}
+{
+  "errors": []
+}
+{
+  "original_error_preserved": "/home/vick/rvv-directed-task161/SUPPLEMENT_ERROR.txt",
+  "cause": "Deduplicated destination geometry can lack a zero-start case; initial supplemental selection assertion rejected that assumption.",
+  "correction": "Select unmasked vstart<vl and mutate the actual vstart lane using unchanged frozen predicates.",
+  "corrected_controls": "/home/vick/rvv-directed-task161/destchunk-full/controls-geometry2",
+  "guest_reruns": 0,
+  "production_or_frozen_predicate_changes": 0,
+  "final_status": "PASS"
+}
+ 887119  10 python3 scripts/reduction163_driver.py run /home/vick/rvv-task163/full/corpus --engine /home/vick/rvdbt-host512-task142-build/build/bin/elfrun --spike /home/vick/rvv-directed-task145/deps/spike --pk /home/vic
+ 910884   0 bash -c date -u; df -B1 /home/vick; free -b; cat /home/vick/rvv-directed-task161/RESOURCE_SUMMARY.json; cat /home/vick/rvv-directed-task161/RESULT.json; cat /home/vick/rvv-directed-task161/SUPPLEMENT_RESULT.j

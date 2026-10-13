@@ -1,0 +1,17 @@
+{
+  "geometries_forms": 497,
+  "selected_packets": 497,
+  "controls": 2982,
+  "rejected": 2982,
+  "effective": 2982,
+  "allowed": 0,
+  "guest_executions": 0,
+  "widths": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ]
+}

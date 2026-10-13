@@ -1,0 +1,15 @@
+{
+  "other": [
+    {
+      "pid": 849553,
+      "command": "/usr/bin/python3 /home/vick/rvv-task163/pilot/scripts/reduction163_audit.py /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-00/corpus /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-00/audit "
+    },
+    {
+      "pid": 849554,
+      "command": "/usr/bin/python3 /home/vick/rvv-task163/pilot/scripts/reduction163_audit.py /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-01/corpus /home/vick/rvv-task163/pilot/audit-parallel-corrected/shard-01/audit "
+    }
+  ],
+  "ours": 1,
+  "nice": 10,
+  "affinity": "none"
+}

@@ -1,0 +1,5966 @@
+[
+  {
+    "case": "vwmacc-w128-e8-m2-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "24ccc26f85e3f0d5ce00dcc00574020e2c56f5ee346b680f73e3f10dfdff5c56",
+    "reference_sha256": "24ccc26f85e3f0d5ce00dcc00574020e2c56f5ee346b680f73e3f10dfdff5c56"
+  },
+  {
+    "case": "vwmacc-w128-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "fe1fd36840768eeb514474672eb3bb0440aab2b714472bfbcba9f43dfbdb4e3c",
+    "reference_sha256": "fe1fd36840768eeb514474672eb3bb0440aab2b714472bfbcba9f43dfbdb4e3c"
+  },
+  {
+    "case": "vwmacc-w128-e16-m2-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "0fa9bf917808dc0252d6c782c75eb427a31210b6839c8d4fd865a18291a95ae6",
+    "reference_sha256": "0fa9bf917808dc0252d6c782c75eb427a31210b6839c8d4fd865a18291a95ae6"
+  },
+  {
+    "case": "vwmacc-w128-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "f34975806ff1a95488d1ffc5ea0f2d46ad6b04d3f5e1fdaacb72ea088b0e7ca7",
+    "reference_sha256": "f34975806ff1a95488d1ffc5ea0f2d46ad6b04d3f5e1fdaacb72ea088b0e7ca7"
+  },
+  {
+    "case": "vwmacc-w128-e32-m2-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "e6b09a134edf18eda8fd38b074da95697b8762ad360dda7f2cb90879bac42535",
+    "reference_sha256": "e6b09a134edf18eda8fd38b074da95697b8762ad360dda7f2cb90879bac42535"
+  },
+  {
+    "case": "vwmacc-w128-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "a0dfc6518db8b24b49cc15c298cb476336a4848173de13084101d6fa4dcc16c5",
+    "reference_sha256": "a0dfc6518db8b24b49cc15c298cb476336a4848173de13084101d6fa4dcc16c5"
+  },
+  {
+    "case": "vwmacc-w256-e8-m1-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "8ffb7dc44c0591b49fd42a2b1860bb243e5672a2c113ed616a61e3b8f2cbe734",
+    "reference_sha256": "8ffb7dc44c0591b49fd42a2b1860bb243e5672a2c113ed616a61e3b8f2cbe734"
+  },
+  {
+    "case": "vwmacc-w256-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "9ed5677b5fc5acc5a8717ea1539380b8187216a399c417b2d5a54a7eeff32dea",
+    "reference_sha256": "9ed5677b5fc5acc5a8717ea1539380b8187216a399c417b2d5a54a7eeff32dea"
+  },
+  {
+    "case": "vwmacc-w256-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "2e4e0278e2de598d94b54a4ce7d426d6efe0f59f3ae776f8a0c3da16a127f247",
+    "reference_sha256": "2e4e0278e2de598d94b54a4ce7d426d6efe0f59f3ae776f8a0c3da16a127f247"
+  },
+  {
+    "case": "vwmacc-w256-e16-m1-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "b9167bfc053183bdf06374787c368b5974c0f9e3d0982964e8672d5801c2317d",
+    "reference_sha256": "b9167bfc053183bdf06374787c368b5974c0f9e3d0982964e8672d5801c2317d"
+  },
+  {
+    "case": "vwmacc-w256-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "34356bffb79b01e4a31cd769e53fe23791a6b82ca7d15d5f0c35ffa6f9064d67",
+    "reference_sha256": "34356bffb79b01e4a31cd769e53fe23791a6b82ca7d15d5f0c35ffa6f9064d67"
+  },
+  {
+    "case": "vwmacc-w256-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "f58647878f9a7e2ace82ac495ecb08ae6f0f9dd1262e868103250495b5afab4e",
+    "reference_sha256": "f58647878f9a7e2ace82ac495ecb08ae6f0f9dd1262e868103250495b5afab4e"
+  },
+  {
+    "case": "vwmacc-w256-e32-m1-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "79e03c12d936b2548a87907f041f826f89c334df53b98acd13d027db137a9408",
+    "reference_sha256": "79e03c12d936b2548a87907f041f826f89c334df53b98acd13d027db137a9408"
+  },
+  {
+    "case": "vwmacc-w256-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "3fcd0b1bfb7460b4b322ed40fb45d03f5b10c18546cb50105892c7e32d978b6c",
+    "reference_sha256": "3fcd0b1bfb7460b4b322ed40fb45d03f5b10c18546cb50105892c7e32d978b6c"
+  },
+  {
+    "case": "vwmacc-w256-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "4a1611ed9d7107d998f7a314c0930b317daae9a994f61e56d8e01279d4a3b460",
+    "reference_sha256": "4a1611ed9d7107d998f7a314c0930b317daae9a994f61e56d8e01279d4a3b460"
+  },
+  {
+    "case": "vwmacc-w512-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "217840563a04225e878f58271b910aca47d256cdedd7320273b205e0553fadcf",
+    "reference_sha256": "217840563a04225e878f58271b910aca47d256cdedd7320273b205e0553fadcf"
+  },
+  {
+    "case": "vwmacc-w512-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "436b04aeb3426107bae289949e34cf047e7f1939f41e8ac91aa72642cc3889c0",
+    "reference_sha256": "436b04aeb3426107bae289949e34cf047e7f1939f41e8ac91aa72642cc3889c0"
+  },
+  {
+    "case": "vwmacc-w512-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "2d8919ed708c7b241eb988f568af3fed0e3963b0d7f3c1ff7e6829ab1f69dc84",
+    "reference_sha256": "2d8919ed708c7b241eb988f568af3fed0e3963b0d7f3c1ff7e6829ab1f69dc84"
+  },
+  {
+    "case": "vwmacc-w512-e8-mf2-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "4451cf5fc4905a05fec0a7770dbfa453c5e97004ce1ccc54961823dbd695c0f9",
+    "reference_sha256": "4451cf5fc4905a05fec0a7770dbfa453c5e97004ce1ccc54961823dbd695c0f9"
+  },
+  {
+    "case": "vwmacc-w512-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "911c9f7e2b607f9d760e89a506b61fb582adf67d99e2de1a9f1623798682dad3",
+    "reference_sha256": "911c9f7e2b607f9d760e89a506b61fb582adf67d99e2de1a9f1623798682dad3"
+  },
+  {
+    "case": "vwmacc-w512-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "a894c674237811d1ca66c5e1c45dd9daa0d6a6e48ae43dc71744949659fdbc0c",
+    "reference_sha256": "a894c674237811d1ca66c5e1c45dd9daa0d6a6e48ae43dc71744949659fdbc0c"
+  },
+  {
+    "case": "vwmacc-w512-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "775d5f55a940c8e08a0902342c5d8e52c27171a85c4a865793ae4d682f63a764",
+    "reference_sha256": "775d5f55a940c8e08a0902342c5d8e52c27171a85c4a865793ae4d682f63a764"
+  },
+  {
+    "case": "vwmacc-w512-e16-mf2-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "76c113a8b876940e7157bc7bd59c15d11facc8dbf8df0a0ce2c6cc4f8f9d66f5",
+    "reference_sha256": "76c113a8b876940e7157bc7bd59c15d11facc8dbf8df0a0ce2c6cc4f8f9d66f5"
+  },
+  {
+    "case": "vwmacc-w512-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "0f6750bc2c5ef03356328577648839a22c104e2cf6d9696a7a9ddd4cc59b5c58",
+    "reference_sha256": "0f6750bc2c5ef03356328577648839a22c104e2cf6d9696a7a9ddd4cc59b5c58"
+  },
+  {
+    "case": "vwmacc-w512-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "7ee4cc52e28ec5c72d9ba380ea6424046f76cc1e23f9627f53a4d1d45b526436",
+    "reference_sha256": "7ee4cc52e28ec5c72d9ba380ea6424046f76cc1e23f9627f53a4d1d45b526436"
+  },
+  {
+    "case": "vwmacc-w512-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "e7ffb38499842168e9ec78c1221fb6faba06a8b106b131859c525a8b7be19529",
+    "reference_sha256": "e7ffb38499842168e9ec78c1221fb6faba06a8b106b131859c525a8b7be19529"
+  },
+  {
+    "case": "vwmacc-w512-e32-mf2-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "3bd691bcc9d771d8d93c2eb16a00e798356f12520025590ee1ba2ca9a0efa0b2",
+    "reference_sha256": "3bd691bcc9d771d8d93c2eb16a00e798356f12520025590ee1ba2ca9a0efa0b2"
+  },
+  {
+    "case": "vwmacc-w1024-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "fa1f83d54b062711663999558bdc9b29080fb5ca06c07872e64066b715f32f81",
+    "reference_sha256": "fa1f83d54b062711663999558bdc9b29080fb5ca06c07872e64066b715f32f81"
+  },
+  {
+    "case": "vwmacc-w1024-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "2c44a02dffa6f5b48691161cbbde3742b5a609baea138a6450bda3756a3526c7",
+    "reference_sha256": "2c44a02dffa6f5b48691161cbbde3742b5a609baea138a6450bda3756a3526c7"
+  },
+  {
+    "case": "vwmacc-w1024-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "c281e9d5f0159dda473672dfd692fc653017482a40016a92e9f53163c4dbcd5f",
+    "reference_sha256": "c281e9d5f0159dda473672dfd692fc653017482a40016a92e9f53163c4dbcd5f"
+  },
+  {
+    "case": "vwmacc-w1024-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "acc0c0e1ff778c340d4ee03335f911e1334cde1936b83bb1de8b65f8f1daeed2",
+    "reference_sha256": "acc0c0e1ff778c340d4ee03335f911e1334cde1936b83bb1de8b65f8f1daeed2"
+  },
+  {
+    "case": "vwmacc-w1024-e8-mf4-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "24d41ce099b24a34952cf335894595779bb56843b2e90a781b46cb43273d2b1f",
+    "reference_sha256": "24d41ce099b24a34952cf335894595779bb56843b2e90a781b46cb43273d2b1f"
+  },
+  {
+    "case": "vwmacc-w1024-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "5275e97af81436b1fb9f64bca2729839d9cacb50d0b234fd77cc7edbc0fc993e",
+    "reference_sha256": "5275e97af81436b1fb9f64bca2729839d9cacb50d0b234fd77cc7edbc0fc993e"
+  },
+  {
+    "case": "vwmacc-w1024-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "69a9796c697e69ebaafc904515373137821d2054aae2037d1114a9ef9b6b658d",
+    "reference_sha256": "69a9796c697e69ebaafc904515373137821d2054aae2037d1114a9ef9b6b658d"
+  },
+  {
+    "case": "vwmacc-w1024-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "608f51731266cca2aaf34395d4be85387610dfea6a969fc60d0b16d5f8c4aa7d",
+    "reference_sha256": "608f51731266cca2aaf34395d4be85387610dfea6a969fc60d0b16d5f8c4aa7d"
+  },
+  {
+    "case": "vwmacc-w1024-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "89cb045384fc64bac80a442c9d6ba2ba36abf57329e9cf86afd9d714a2a5ed40",
+    "reference_sha256": "89cb045384fc64bac80a442c9d6ba2ba36abf57329e9cf86afd9d714a2a5ed40"
+  },
+  {
+    "case": "vwmacc-w1024-e16-mf4-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "28fc843e5d18a501a41db138d08463081923585a4c820d9e25136baf24ed3ce9",
+    "reference_sha256": "28fc843e5d18a501a41db138d08463081923585a4c820d9e25136baf24ed3ce9"
+  },
+  {
+    "case": "vwmacc-w1024-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "5bf21920b4d604f6999f1d42e23f2153476d13bb9c78628811519396183d705b",
+    "reference_sha256": "5bf21920b4d604f6999f1d42e23f2153476d13bb9c78628811519396183d705b"
+  },
+  {
+    "case": "vwmacc-w1024-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "5653f22e94bb019acfbf35153880d9c2a584ab97d30331b24472affb9eafb25d",
+    "reference_sha256": "5653f22e94bb019acfbf35153880d9c2a584ab97d30331b24472affb9eafb25d"
+  },
+  {
+    "case": "vwmacc-w1024-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "8f79ebf76e74455b77a3ef82c69fb1bfaafa0f285415a67a730eea7d15e59d1e",
+    "reference_sha256": "8f79ebf76e74455b77a3ef82c69fb1bfaafa0f285415a67a730eea7d15e59d1e"
+  },
+  {
+    "case": "vwmacc-w1024-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "bb3009ed5c83a4fccbedde8ea437157951778caf7998b2f6ea30251de73638e5",
+    "reference_sha256": "bb3009ed5c83a4fccbedde8ea437157951778caf7998b2f6ea30251de73638e5"
+  },
+  {
+    "case": "vwmacc-w2048-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "bc2c0dabe52aecc65f999ee6142832475238b93188a3f7432692bc66b35a9f3a",
+    "reference_sha256": "bc2c0dabe52aecc65f999ee6142832475238b93188a3f7432692bc66b35a9f3a"
+  },
+  {
+    "case": "vwmacc-w2048-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "dfb586decc03fed02f65a415cad4ebcf008fa999c3de64d89a68d304904d2ec6",
+    "reference_sha256": "dfb586decc03fed02f65a415cad4ebcf008fa999c3de64d89a68d304904d2ec6"
+  },
+  {
+    "case": "vwmacc-w2048-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "bb6d547a0bf529c807a792d1323f5f932244ed9b1213f42869515d637e910e62",
+    "reference_sha256": "bb6d547a0bf529c807a792d1323f5f932244ed9b1213f42869515d637e910e62"
+  },
+  {
+    "case": "vwmacc-w2048-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "94f80adbbfc291681541e996fd83991d11524ecdaad4cbae69109fdc33513d59",
+    "reference_sha256": "94f80adbbfc291681541e996fd83991d11524ecdaad4cbae69109fdc33513d59"
+  },
+  {
+    "case": "vwmacc-w2048-e8-mf4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "9120bdf40140b6ae9a64855c9ffc873cc8e41ed87a6d6ea644786de337f85bfb",
+    "reference_sha256": "9120bdf40140b6ae9a64855c9ffc873cc8e41ed87a6d6ea644786de337f85bfb"
+  },
+  {
+    "case": "vwmacc-w2048-e8-mf8-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "65956fa801588e99c40e825bb10645bf3ec401a71f90d147d93184e0df1eaffb",
+    "reference_sha256": "65956fa801588e99c40e825bb10645bf3ec401a71f90d147d93184e0df1eaffb"
+  },
+  {
+    "case": "vwmacc-w2048-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "f41abb9aab5fe5e0144de2e7bf71c5bb769754816f7dd220d13eafa5bc32446b",
+    "reference_sha256": "f41abb9aab5fe5e0144de2e7bf71c5bb769754816f7dd220d13eafa5bc32446b"
+  },
+  {
+    "case": "vwmacc-w2048-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "c2e585ca225c687f33c6f0fc84ca54dc2f2769614a029167062abec0777a0bd8",
+    "reference_sha256": "c2e585ca225c687f33c6f0fc84ca54dc2f2769614a029167062abec0777a0bd8"
+  },
+  {
+    "case": "vwmacc-w2048-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "67ab8c65f21d2cd925feeb9c2e780ec691759a321c659b6bd18c23b2efa6ccf9",
+    "reference_sha256": "67ab8c65f21d2cd925feeb9c2e780ec691759a321c659b6bd18c23b2efa6ccf9"
+  },
+  {
+    "case": "vwmacc-w2048-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "a93ecef2922d162f17e7e0862309c744cc4f0254f616df95df3d1a381b83d9eb",
+    "reference_sha256": "a93ecef2922d162f17e7e0862309c744cc4f0254f616df95df3d1a381b83d9eb"
+  },
+  {
+    "case": "vwmacc-w2048-e16-mf4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "fb8c192665e34308d70e56ef7775f7225622485bf6c03981c577525161dbbc2f",
+    "reference_sha256": "fb8c192665e34308d70e56ef7775f7225622485bf6c03981c577525161dbbc2f"
+  },
+  {
+    "case": "vwmacc-w2048-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "bac0e9b41a1cc2ae89c0839eb563678cf8d622c25a90a3a2aeaa4fc23a4364ac",
+    "reference_sha256": "bac0e9b41a1cc2ae89c0839eb563678cf8d622c25a90a3a2aeaa4fc23a4364ac"
+  },
+  {
+    "case": "vwmacc-w2048-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "00a87b9e97434cb972454e7c1bad5aef3964f0f47df3648467e607bfd7ca44c4",
+    "reference_sha256": "00a87b9e97434cb972454e7c1bad5aef3964f0f47df3648467e607bfd7ca44c4"
+  },
+  {
+    "case": "vwmacc-w2048-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "ca5c8798d60de369df9bbe54f382df4609fc56f7c148eede981c4f15828e8c99",
+    "reference_sha256": "ca5c8798d60de369df9bbe54f382df4609fc56f7c148eede981c4f15828e8c99"
+  },
+  {
+    "case": "vwmacc-w2048-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "fd3f5a82238241f8a0c2bd3265b0d7be33e72f8f7407826415b3bf652d44d23c",
+    "reference_sha256": "fd3f5a82238241f8a0c2bd3265b0d7be33e72f8f7407826415b3bf652d44d23c"
+  },
+  {
+    "case": "vwmacc-w4096-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "94f13475d2b865dd6a6d2d16038185a195fd7e16280a1c35f429b716b983f5c0",
+    "reference_sha256": "94f13475d2b865dd6a6d2d16038185a195fd7e16280a1c35f429b716b983f5c0"
+  },
+  {
+    "case": "vwmacc-w4096-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "789c10d0c98b6c343d55312e9c33004701a7d2c9e45856a1ac05c7cfeecd712e",
+    "reference_sha256": "789c10d0c98b6c343d55312e9c33004701a7d2c9e45856a1ac05c7cfeecd712e"
+  },
+  {
+    "case": "vwmacc-w4096-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "acbebd2bd58f5368772886bdab0613e640669126e5fc8c303d30218a2301088f",
+    "reference_sha256": "acbebd2bd58f5368772886bdab0613e640669126e5fc8c303d30218a2301088f"
+  },
+  {
+    "case": "vwmacc-w4096-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "44b4bf927c02125ef14751058ffdadadc83c71bce8e28c8a1e8f22eb4aaa1812",
+    "reference_sha256": "44b4bf927c02125ef14751058ffdadadc83c71bce8e28c8a1e8f22eb4aaa1812"
+  },
+  {
+    "case": "vwmacc-w4096-e8-mf4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "f0577724d045109a36e0a5872cbe70bc95c9bb2be0dd6e788ec70d8e63fabb79",
+    "reference_sha256": "f0577724d045109a36e0a5872cbe70bc95c9bb2be0dd6e788ec70d8e63fabb79"
+  },
+  {
+    "case": "vwmacc-w4096-e8-mf8-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "6ddf871c30961b86b5745022013185fa1f7894343762e2c19aacab54a2abff63",
+    "reference_sha256": "6ddf871c30961b86b5745022013185fa1f7894343762e2c19aacab54a2abff63"
+  },
+  {
+    "case": "vwmacc-w4096-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "5bbaf2be4d5ea15d7960e707f09849a533485cd29294fbcbd385fc37ea146165",
+    "reference_sha256": "5bbaf2be4d5ea15d7960e707f09849a533485cd29294fbcbd385fc37ea146165"
+  },
+  {
+    "case": "vwmacc-w4096-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "f73ae85a419157813f7573b52feb5285c8ff876d8a087191c09aef44eb89ed82",
+    "reference_sha256": "f73ae85a419157813f7573b52feb5285c8ff876d8a087191c09aef44eb89ed82"
+  },
+  {
+    "case": "vwmacc-w4096-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "6ffec9c75f36ccbb8dc1f64dd022dca0e1727eff4e2e7d000d38c21f3d87e036",
+    "reference_sha256": "6ffec9c75f36ccbb8dc1f64dd022dca0e1727eff4e2e7d000d38c21f3d87e036"
+  },
+  {
+    "case": "vwmacc-w4096-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "5b989e753a5c16d3e6c08983fb140f572ee7db90e15f0f61f46be4cff6c7c633",
+    "reference_sha256": "5b989e753a5c16d3e6c08983fb140f572ee7db90e15f0f61f46be4cff6c7c633"
+  },
+  {
+    "case": "vwmacc-w4096-e16-mf4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "64726bed63147adee45a2d363424a810242984fd03be60e12fefdb134ce43498",
+    "reference_sha256": "64726bed63147adee45a2d363424a810242984fd03be60e12fefdb134ce43498"
+  },
+  {
+    "case": "vwmacc-w4096-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "a4520820e5495e7c1feca4f38de4296d0b78e584ed62073e472af31a4ae40a6f",
+    "reference_sha256": "a4520820e5495e7c1feca4f38de4296d0b78e584ed62073e472af31a4ae40a6f"
+  },
+  {
+    "case": "vwmacc-w4096-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "50ca0d53a6e414b77b290d5d7b2b864c4ae6fede09d923d6a096fbf3de057abc",
+    "reference_sha256": "50ca0d53a6e414b77b290d5d7b2b864c4ae6fede09d923d6a096fbf3de057abc"
+  },
+  {
+    "case": "vwmacc-w4096-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "d4cb77299476f15218c5b4aab446f10308d2ce35b27f3414122e2851478d263b",
+    "reference_sha256": "d4cb77299476f15218c5b4aab446f10308d2ce35b27f3414122e2851478d263b"
+  },
+  {
+    "case": "vwmacc-w4096-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vv",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "7c95de0e1d3307d2428e634ea58c3896a06fbb6536e6927c521aca97eeeda7af",
+    "reference_sha256": "7c95de0e1d3307d2428e634ea58c3896a06fbb6536e6927c521aca97eeeda7af"
+  },
+  {
+    "case": "vwmacc-w128-e8-m2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "a67bc981017fe6ecf869ea5c70a9233a68b93a78686ea960f1bae2bb6abf0b0e",
+    "reference_sha256": "a67bc981017fe6ecf869ea5c70a9233a68b93a78686ea960f1bae2bb6abf0b0e"
+  },
+  {
+    "case": "vwmacc-w128-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "a3fea73306bf529f6dd475f731ce419d8b83910d9aa6961c70a7da05a97ea07e",
+    "reference_sha256": "a3fea73306bf529f6dd475f731ce419d8b83910d9aa6961c70a7da05a97ea07e"
+  },
+  {
+    "case": "vwmacc-w128-e16-m2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "4ce34576df139e9afd0541b4b3c5f52c9cc9e4f25c5ac03148bae0cee25f119f",
+    "reference_sha256": "4ce34576df139e9afd0541b4b3c5f52c9cc9e4f25c5ac03148bae0cee25f119f"
+  },
+  {
+    "case": "vwmacc-w128-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "b8ffe5db9e2f9e850f8750c274fe1aa060effddd5e1ec40c5c642b5db6066d47",
+    "reference_sha256": "b8ffe5db9e2f9e850f8750c274fe1aa060effddd5e1ec40c5c642b5db6066d47"
+  },
+  {
+    "case": "vwmacc-w128-e32-m2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "c7292b9b52a578042043f2f0b39f57c6eb19ed4332a324f4f1ae3e1be449502f",
+    "reference_sha256": "c7292b9b52a578042043f2f0b39f57c6eb19ed4332a324f4f1ae3e1be449502f"
+  },
+  {
+    "case": "vwmacc-w128-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "da49d3a7db9bbb36f6f5662e1bc5d7ced1d2bb6642cf183974ad7e5cdae3d302",
+    "reference_sha256": "da49d3a7db9bbb36f6f5662e1bc5d7ced1d2bb6642cf183974ad7e5cdae3d302"
+  },
+  {
+    "case": "vwmacc-w256-e8-m1-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "5fe3c2441c7d13cd618fd3456835b46a0c9e54cb4ab720c318ff6a510b50fe22",
+    "reference_sha256": "5fe3c2441c7d13cd618fd3456835b46a0c9e54cb4ab720c318ff6a510b50fe22"
+  },
+  {
+    "case": "vwmacc-w256-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "0a0ff6f17d7e6dd216e7583ce4fa4a8eb5c8c356abab1da322f644acd0b310e4",
+    "reference_sha256": "0a0ff6f17d7e6dd216e7583ce4fa4a8eb5c8c356abab1da322f644acd0b310e4"
+  },
+  {
+    "case": "vwmacc-w256-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "9cff7cb8d58b497c68abba92c8be21aa333277bf2c2b0364bdb228df2ff1105b",
+    "reference_sha256": "9cff7cb8d58b497c68abba92c8be21aa333277bf2c2b0364bdb228df2ff1105b"
+  },
+  {
+    "case": "vwmacc-w256-e16-m1-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "15aa6c123e5e39d00863545935cfe0c0d5eca9493fe270793ae36e8a736a3301",
+    "reference_sha256": "15aa6c123e5e39d00863545935cfe0c0d5eca9493fe270793ae36e8a736a3301"
+  },
+  {
+    "case": "vwmacc-w256-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "d316a65a4e928e2deb5e382fd5e7eb994ba476b04b8c10c8f3b4712c4fec9b85",
+    "reference_sha256": "d316a65a4e928e2deb5e382fd5e7eb994ba476b04b8c10c8f3b4712c4fec9b85"
+  },
+  {
+    "case": "vwmacc-w256-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "754677f2e60b4948a365e4fabb356a75702ec9b7f6db603af61b07c1492fdafa",
+    "reference_sha256": "754677f2e60b4948a365e4fabb356a75702ec9b7f6db603af61b07c1492fdafa"
+  },
+  {
+    "case": "vwmacc-w256-e32-m1-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "3924efc644e5183e6ea68c82cda668257b730acac3d342f61f1a7369b93b51d3",
+    "reference_sha256": "3924efc644e5183e6ea68c82cda668257b730acac3d342f61f1a7369b93b51d3"
+  },
+  {
+    "case": "vwmacc-w256-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "ce8ca7b14c2965bab2841e557b2bd0602cf289188067aa23cf72a0f6d089a27b",
+    "reference_sha256": "ce8ca7b14c2965bab2841e557b2bd0602cf289188067aa23cf72a0f6d089a27b"
+  },
+  {
+    "case": "vwmacc-w256-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "96900d4b028ffd247cdacd2ebda425d86f304c322ab15cfbba18bdda8802e4dd",
+    "reference_sha256": "96900d4b028ffd247cdacd2ebda425d86f304c322ab15cfbba18bdda8802e4dd"
+  },
+  {
+    "case": "vwmacc-w512-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "dd8156e9bf11f938e914956625d3e40e015e94e1930f765a9293dc6012d89e23",
+    "reference_sha256": "dd8156e9bf11f938e914956625d3e40e015e94e1930f765a9293dc6012d89e23"
+  },
+  {
+    "case": "vwmacc-w512-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "231e3ba1d413667bc4cad313d3a9c37305e09b9fecd5b66406d8365b416abb08",
+    "reference_sha256": "231e3ba1d413667bc4cad313d3a9c37305e09b9fecd5b66406d8365b416abb08"
+  },
+  {
+    "case": "vwmacc-w512-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "dd988a3ca56f903fbe3671bb91ed63648ea7b7ac04dd09a3863cc4d9daed0437",
+    "reference_sha256": "dd988a3ca56f903fbe3671bb91ed63648ea7b7ac04dd09a3863cc4d9daed0437"
+  },
+  {
+    "case": "vwmacc-w512-e8-mf2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "0f933936d8c1fc0fba63b9d8e0dcc13960ed82e1035adc5977f6a6afd524e560",
+    "reference_sha256": "0f933936d8c1fc0fba63b9d8e0dcc13960ed82e1035adc5977f6a6afd524e560"
+  },
+  {
+    "case": "vwmacc-w512-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "9fc5fc175b4f5c22e0045d4be979271f2f7b8f3af7cf35b5e46adc8620a27f2a",
+    "reference_sha256": "9fc5fc175b4f5c22e0045d4be979271f2f7b8f3af7cf35b5e46adc8620a27f2a"
+  },
+  {
+    "case": "vwmacc-w512-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "f385d7c4bf2e9d966c7b7e0ef73c1b30f7bcfa4ecb9302b660df46cbccc0cf8e",
+    "reference_sha256": "f385d7c4bf2e9d966c7b7e0ef73c1b30f7bcfa4ecb9302b660df46cbccc0cf8e"
+  },
+  {
+    "case": "vwmacc-w512-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "a8d4184c512e9026d444bee9ef416d16dc33bfc9cf6e7be8190a1146f2cd243e",
+    "reference_sha256": "a8d4184c512e9026d444bee9ef416d16dc33bfc9cf6e7be8190a1146f2cd243e"
+  },
+  {
+    "case": "vwmacc-w512-e16-mf2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "2214d76ef7a57c9fb23e1f580ea1a04e3ebb42e2ff36a4583898b354565dfd97",
+    "reference_sha256": "2214d76ef7a57c9fb23e1f580ea1a04e3ebb42e2ff36a4583898b354565dfd97"
+  },
+  {
+    "case": "vwmacc-w512-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "453cd326d21ace1aec20c0f627f1120588bc9ed4ad8ea824dd5fe05bbb92afd9",
+    "reference_sha256": "453cd326d21ace1aec20c0f627f1120588bc9ed4ad8ea824dd5fe05bbb92afd9"
+  },
+  {
+    "case": "vwmacc-w512-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "25c4f5734d9988590561bf59c3eef1b59d00a469cd933d5b0662cb0d4d30123f",
+    "reference_sha256": "25c4f5734d9988590561bf59c3eef1b59d00a469cd933d5b0662cb0d4d30123f"
+  },
+  {
+    "case": "vwmacc-w512-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "ab9096b1f61f0303c522faf006b945f53f41471f3aed4b6a92ab637250eccaa1",
+    "reference_sha256": "ab9096b1f61f0303c522faf006b945f53f41471f3aed4b6a92ab637250eccaa1"
+  },
+  {
+    "case": "vwmacc-w512-e32-mf2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "8dbc8d64d733c8e14f5b13c4c30693d57835991bb6d684d39d2334e400cac2f4",
+    "reference_sha256": "8dbc8d64d733c8e14f5b13c4c30693d57835991bb6d684d39d2334e400cac2f4"
+  },
+  {
+    "case": "vwmacc-w1024-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "a83f29a4eb7f42af32afafce538ac266b35373be9fcd8931387ef524b0e6dced",
+    "reference_sha256": "a83f29a4eb7f42af32afafce538ac266b35373be9fcd8931387ef524b0e6dced"
+  },
+  {
+    "case": "vwmacc-w1024-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "4c87653afd7c509cb75d6abcb5a5c89d9deb0112a450b2858ca892c4cbd72020",
+    "reference_sha256": "4c87653afd7c509cb75d6abcb5a5c89d9deb0112a450b2858ca892c4cbd72020"
+  },
+  {
+    "case": "vwmacc-w1024-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "19095a92ec066c546217872ed42cbf0d6103bd5ee85a2e2578bf2f2d0aba17af",
+    "reference_sha256": "19095a92ec066c546217872ed42cbf0d6103bd5ee85a2e2578bf2f2d0aba17af"
+  },
+  {
+    "case": "vwmacc-w1024-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "be2418e482dd3bf9a360a1fde34e98b3b7cb2a7e2e517db919d42a6356f76b36",
+    "reference_sha256": "be2418e482dd3bf9a360a1fde34e98b3b7cb2a7e2e517db919d42a6356f76b36"
+  },
+  {
+    "case": "vwmacc-w1024-e8-mf4-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "e5309ccdb95fa4ae389af02548631bc3d23729fa35fddc59862f8e01bd49301c",
+    "reference_sha256": "e5309ccdb95fa4ae389af02548631bc3d23729fa35fddc59862f8e01bd49301c"
+  },
+  {
+    "case": "vwmacc-w1024-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "7cade673c5874f0106fba18698a538beb499e01b96704125e897d3ba6ce55dc8",
+    "reference_sha256": "7cade673c5874f0106fba18698a538beb499e01b96704125e897d3ba6ce55dc8"
+  },
+  {
+    "case": "vwmacc-w1024-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "2dd7272e7692750b3c7bd17a6cfaca2b80206a1dba0c49e08f3b856597b29484",
+    "reference_sha256": "2dd7272e7692750b3c7bd17a6cfaca2b80206a1dba0c49e08f3b856597b29484"
+  },
+  {
+    "case": "vwmacc-w1024-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "3417df199d2ba83375efb56f8b9fc31d8c29d41f644ecbb8ec278d3cbb2ba7a6",
+    "reference_sha256": "3417df199d2ba83375efb56f8b9fc31d8c29d41f644ecbb8ec278d3cbb2ba7a6"
+  },
+  {
+    "case": "vwmacc-w1024-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "6f59ec062cd77863afffc9cefb613fe90e2f19782936510f55a011903dd2610c",
+    "reference_sha256": "6f59ec062cd77863afffc9cefb613fe90e2f19782936510f55a011903dd2610c"
+  },
+  {
+    "case": "vwmacc-w1024-e16-mf4-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "26aaf78161553cd7e02a0877b9d72a642c77bb84cd7468090475735d6c8eb827",
+    "reference_sha256": "26aaf78161553cd7e02a0877b9d72a642c77bb84cd7468090475735d6c8eb827"
+  },
+  {
+    "case": "vwmacc-w1024-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "f133575a3865c5ce91c23c6a7040ea94cad57d2f80ce9caf61dbec2d6319f68e",
+    "reference_sha256": "f133575a3865c5ce91c23c6a7040ea94cad57d2f80ce9caf61dbec2d6319f68e"
+  },
+  {
+    "case": "vwmacc-w1024-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "76f982fb0e1fba6568e703e6245da1b5619e6b58c934a50902f951cef81216b4",
+    "reference_sha256": "76f982fb0e1fba6568e703e6245da1b5619e6b58c934a50902f951cef81216b4"
+  },
+  {
+    "case": "vwmacc-w1024-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "16572b5d6414e87b9f874e8006afce68e8ea1d6a9c2e7c611f2b951ecb59f6a0",
+    "reference_sha256": "16572b5d6414e87b9f874e8006afce68e8ea1d6a9c2e7c611f2b951ecb59f6a0"
+  },
+  {
+    "case": "vwmacc-w1024-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "e69d790f56ad8bb23e2188ff6b4dcbd9ae024bdf7558b98a5cdf76fd8083b85c",
+    "reference_sha256": "e69d790f56ad8bb23e2188ff6b4dcbd9ae024bdf7558b98a5cdf76fd8083b85c"
+  },
+  {
+    "case": "vwmacc-w2048-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "dffedc4fdfdcb454bc0c6f53dc8d4e568420adb752ed7932f655d951c31d591f",
+    "reference_sha256": "dffedc4fdfdcb454bc0c6f53dc8d4e568420adb752ed7932f655d951c31d591f"
+  },
+  {
+    "case": "vwmacc-w2048-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "db3cab20329548f84d0d825b28e7d7c343afece177622dc4a5a48b09aec13798",
+    "reference_sha256": "db3cab20329548f84d0d825b28e7d7c343afece177622dc4a5a48b09aec13798"
+  },
+  {
+    "case": "vwmacc-w2048-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "d79a797137ec32cd69287b8bd533eeda0604c035e950c1d98ca0f25d1a7e1e4e",
+    "reference_sha256": "d79a797137ec32cd69287b8bd533eeda0604c035e950c1d98ca0f25d1a7e1e4e"
+  },
+  {
+    "case": "vwmacc-w2048-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "26ebf65833236bac4bc936d9929d817c21c3e0bf62f1c762b90298a78a4df1f1",
+    "reference_sha256": "26ebf65833236bac4bc936d9929d817c21c3e0bf62f1c762b90298a78a4df1f1"
+  },
+  {
+    "case": "vwmacc-w2048-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "db94f5e37cdebc71aaa6a1b412af394f53a623ea8388c28192a1e2f2414f56c6",
+    "reference_sha256": "db94f5e37cdebc71aaa6a1b412af394f53a623ea8388c28192a1e2f2414f56c6"
+  },
+  {
+    "case": "vwmacc-w2048-e8-mf8-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "fd1b07a2ec1716337e37819d6bcc7660e22f693f3d0fc223757393a91cd50e6e",
+    "reference_sha256": "fd1b07a2ec1716337e37819d6bcc7660e22f693f3d0fc223757393a91cd50e6e"
+  },
+  {
+    "case": "vwmacc-w2048-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "18c5946340fb098d1a51385a109e954291cb235d7e8d8381313b784f1b6e1c13",
+    "reference_sha256": "18c5946340fb098d1a51385a109e954291cb235d7e8d8381313b784f1b6e1c13"
+  },
+  {
+    "case": "vwmacc-w2048-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "125e939d5e5264715e051eae5c755e63a825887e980720e44dd466225439452d",
+    "reference_sha256": "125e939d5e5264715e051eae5c755e63a825887e980720e44dd466225439452d"
+  },
+  {
+    "case": "vwmacc-w2048-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "669f70c640c7dda26b6912dce25006119046a93d26f4e161195ba0aab730909d",
+    "reference_sha256": "669f70c640c7dda26b6912dce25006119046a93d26f4e161195ba0aab730909d"
+  },
+  {
+    "case": "vwmacc-w2048-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "d4e79de18c36e1fcd8b2f71fa43edfd96039e7e03828f6a1577c2561511a8e56",
+    "reference_sha256": "d4e79de18c36e1fcd8b2f71fa43edfd96039e7e03828f6a1577c2561511a8e56"
+  },
+  {
+    "case": "vwmacc-w2048-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "a48e285f5be65456ab80fa7d99a3cd5c1e05f5ffb22371c41a4e5c0d1c169e68",
+    "reference_sha256": "a48e285f5be65456ab80fa7d99a3cd5c1e05f5ffb22371c41a4e5c0d1c169e68"
+  },
+  {
+    "case": "vwmacc-w2048-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "56af1a561dc656615d8334598bdaf4193f5b507cb642d2930f79131c618d8a5b",
+    "reference_sha256": "56af1a561dc656615d8334598bdaf4193f5b507cb642d2930f79131c618d8a5b"
+  },
+  {
+    "case": "vwmacc-w2048-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "c3afc6212bfb5e324c1781e1ba2feebf416c624b069c5a123c8f836e82a4ad2c",
+    "reference_sha256": "c3afc6212bfb5e324c1781e1ba2feebf416c624b069c5a123c8f836e82a4ad2c"
+  },
+  {
+    "case": "vwmacc-w2048-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "33b8905c6a2617abc07e15a34604710ca659210bb430c8b6a6bc6e662d7b5e64",
+    "reference_sha256": "33b8905c6a2617abc07e15a34604710ca659210bb430c8b6a6bc6e662d7b5e64"
+  },
+  {
+    "case": "vwmacc-w2048-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "99e7fa020ba3d395de15cdf7fb0e77c2f681047e2b90facfcc8ac60e41f91546",
+    "reference_sha256": "99e7fa020ba3d395de15cdf7fb0e77c2f681047e2b90facfcc8ac60e41f91546"
+  },
+  {
+    "case": "vwmacc-w4096-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "35b79fa86dd8b886b828166ab0e859d4d58ebac9192083679d682ce1cf9f03cd",
+    "reference_sha256": "35b79fa86dd8b886b828166ab0e859d4d58ebac9192083679d682ce1cf9f03cd"
+  },
+  {
+    "case": "vwmacc-w4096-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "e941edc40890442f1760228f2d9cd24794f5334c4723078bdbb1462c84f122b1",
+    "reference_sha256": "e941edc40890442f1760228f2d9cd24794f5334c4723078bdbb1462c84f122b1"
+  },
+  {
+    "case": "vwmacc-w4096-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "8a6e3842c808236bc4beabbdbdbba0d7642329ff6c458f90961cfef967284da1",
+    "reference_sha256": "8a6e3842c808236bc4beabbdbdbba0d7642329ff6c458f90961cfef967284da1"
+  },
+  {
+    "case": "vwmacc-w4096-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "e33f86aa913effa775696b90f441ca043225152554dede596db9ccc893baf9ab",
+    "reference_sha256": "e33f86aa913effa775696b90f441ca043225152554dede596db9ccc893baf9ab"
+  },
+  {
+    "case": "vwmacc-w4096-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "c96536cad1111ff9e971b0ec1260623dba5d52101086ec3223940d278630790b",
+    "reference_sha256": "c96536cad1111ff9e971b0ec1260623dba5d52101086ec3223940d278630790b"
+  },
+  {
+    "case": "vwmacc-w4096-e8-mf8-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "df4bcd11a4875f070e9a13d9510ac2e79df2ea765cf11a2f547b81202afec6d1",
+    "reference_sha256": "df4bcd11a4875f070e9a13d9510ac2e79df2ea765cf11a2f547b81202afec6d1"
+  },
+  {
+    "case": "vwmacc-w4096-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "a22793c2b76cd79331725eaead2dbc1b8693cfb9acadd19c68fb53afc9bf96c3",
+    "reference_sha256": "a22793c2b76cd79331725eaead2dbc1b8693cfb9acadd19c68fb53afc9bf96c3"
+  },
+  {
+    "case": "vwmacc-w4096-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "11c79f324df9b05d39083624b5365888f68b3827a7c68d73597c53210ca84a4b",
+    "reference_sha256": "11c79f324df9b05d39083624b5365888f68b3827a7c68d73597c53210ca84a4b"
+  },
+  {
+    "case": "vwmacc-w4096-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "a22aaef553bdb5ab28690383b0b27bf4f98fa5b79c8a52979a9a404a1e633a2f",
+    "reference_sha256": "a22aaef553bdb5ab28690383b0b27bf4f98fa5b79c8a52979a9a404a1e633a2f"
+  },
+  {
+    "case": "vwmacc-w4096-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "71340260e6ba8ddb83bd04a56334065aedbf20d4df1d01612b3deb34ed672acc",
+    "reference_sha256": "71340260e6ba8ddb83bd04a56334065aedbf20d4df1d01612b3deb34ed672acc"
+  },
+  {
+    "case": "vwmacc-w4096-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "8cb820498886c6bb1d3ae6f8d4527c4b0f5d41622395ba4e5fcd79c7a49f7210",
+    "reference_sha256": "8cb820498886c6bb1d3ae6f8d4527c4b0f5d41622395ba4e5fcd79c7a49f7210"
+  },
+  {
+    "case": "vwmacc-w4096-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "688019f0fe63d6aecddfaed2c9ed22b3f9c614d0307ffd361fb3bd331662dc5a",
+    "reference_sha256": "688019f0fe63d6aecddfaed2c9ed22b3f9c614d0307ffd361fb3bd331662dc5a"
+  },
+  {
+    "case": "vwmacc-w4096-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "fc7a3036f14aa8d6403ae3565228e688b4761f2efeb8dc739416920620377321",
+    "reference_sha256": "fc7a3036f14aa8d6403ae3565228e688b4761f2efeb8dc739416920620377321"
+  },
+  {
+    "case": "vwmacc-w4096-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "47a45d47bd9e5b2f198af5c0a3135f2b24ca2ff5fa6631329fe9308fdaf7268c",
+    "reference_sha256": "47a45d47bd9e5b2f198af5c0a3135f2b24ca2ff5fa6631329fe9308fdaf7268c"
+  },
+  {
+    "case": "vwmacc-w4096-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmacc",
+      "vx",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "70eefb87d30a98661a334c7cd94236523469ed1baf2f1b300bef53c184233867",
+    "reference_sha256": "70eefb87d30a98661a334c7cd94236523469ed1baf2f1b300bef53c184233867"
+  },
+  {
+    "case": "vwmaccsu-w128-e8-m2-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "c155d52cc162a409525690bb2ff6b0bb2c21c65b891620402fb7c2837dedc641",
+    "reference_sha256": "c155d52cc162a409525690bb2ff6b0bb2c21c65b891620402fb7c2837dedc641"
+  },
+  {
+    "case": "vwmaccsu-w128-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "c7c112d34de2540e8d5382430a16409c8ac81776f4988bbb9bd0da788941e967",
+    "reference_sha256": "c7c112d34de2540e8d5382430a16409c8ac81776f4988bbb9bd0da788941e967"
+  },
+  {
+    "case": "vwmaccsu-w128-e16-m2-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "784bf16bb0051bcb0d29a95793efedcc9f0af080c93f87881104dd25b352e14c",
+    "reference_sha256": "784bf16bb0051bcb0d29a95793efedcc9f0af080c93f87881104dd25b352e14c"
+  },
+  {
+    "case": "vwmaccsu-w128-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "147a8968d472cbfb4e3f00b9c19665f9bd82363ef9c9ae612b5ac045e2048146",
+    "reference_sha256": "147a8968d472cbfb4e3f00b9c19665f9bd82363ef9c9ae612b5ac045e2048146"
+  },
+  {
+    "case": "vwmaccsu-w128-e32-m2-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "d3e0c8f39955316ebc0519632417665cf9482a6c990150460539d8e2c67ef98c",
+    "reference_sha256": "d3e0c8f39955316ebc0519632417665cf9482a6c990150460539d8e2c67ef98c"
+  },
+  {
+    "case": "vwmaccsu-w128-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "c8e9a6c597f6282be95656d901e60d6433103e9d857ac4c70dafbf553339ea3b",
+    "reference_sha256": "c8e9a6c597f6282be95656d901e60d6433103e9d857ac4c70dafbf553339ea3b"
+  },
+  {
+    "case": "vwmaccsu-w256-e8-m1-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "a9082b286a642c149250c78167f44fb85335403df3eb6180386fcd071f7c8b19",
+    "reference_sha256": "a9082b286a642c149250c78167f44fb85335403df3eb6180386fcd071f7c8b19"
+  },
+  {
+    "case": "vwmaccsu-w256-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "655b372b12ba053c6dfa9a6c088c2953142b91cb139bec6bc370ae81aadb0d31",
+    "reference_sha256": "655b372b12ba053c6dfa9a6c088c2953142b91cb139bec6bc370ae81aadb0d31"
+  },
+  {
+    "case": "vwmaccsu-w256-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "8593e8013a9589e04cb0ed738ad0e0742c8f60c7b531aafd33c43db0b2d87f97",
+    "reference_sha256": "8593e8013a9589e04cb0ed738ad0e0742c8f60c7b531aafd33c43db0b2d87f97"
+  },
+  {
+    "case": "vwmaccsu-w256-e16-m1-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "9bfac4e4b4e98b65337104b00e58fb9d2a033196da7eafa19686bcca9233acce",
+    "reference_sha256": "9bfac4e4b4e98b65337104b00e58fb9d2a033196da7eafa19686bcca9233acce"
+  },
+  {
+    "case": "vwmaccsu-w256-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "f81769ca5eb1a77fced2fc8a066f392163abcfa608ea15d326789fa82f3e9158",
+    "reference_sha256": "f81769ca5eb1a77fced2fc8a066f392163abcfa608ea15d326789fa82f3e9158"
+  },
+  {
+    "case": "vwmaccsu-w256-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "daa5260c5e118e7efd7d807dc08a341627879458528812f6f4291878e8d6d78d",
+    "reference_sha256": "daa5260c5e118e7efd7d807dc08a341627879458528812f6f4291878e8d6d78d"
+  },
+  {
+    "case": "vwmaccsu-w256-e32-m1-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "3b812f3d27d9cc8113a31f8bdf7c73b6b78135dda58da9357b26c6dc869409a0",
+    "reference_sha256": "3b812f3d27d9cc8113a31f8bdf7c73b6b78135dda58da9357b26c6dc869409a0"
+  },
+  {
+    "case": "vwmaccsu-w256-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "4014ac0ac89ae03b677f2e371f25afee7ad718880c5d02785976422c74ff4b4d",
+    "reference_sha256": "4014ac0ac89ae03b677f2e371f25afee7ad718880c5d02785976422c74ff4b4d"
+  },
+  {
+    "case": "vwmaccsu-w256-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "37951fedae495aea339d6cf373f7f45c9a77bd859130c981c5039467b16052e9",
+    "reference_sha256": "37951fedae495aea339d6cf373f7f45c9a77bd859130c981c5039467b16052e9"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "72783edc1cf348c515a99a871e7f0d72d7226ea4cf217911444b4c7a55166251",
+    "reference_sha256": "72783edc1cf348c515a99a871e7f0d72d7226ea4cf217911444b4c7a55166251"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "2d37cd4ec22bfd5555bd7b4f1324d7aac86ba2e18d390b6970a4e9086388db23",
+    "reference_sha256": "2d37cd4ec22bfd5555bd7b4f1324d7aac86ba2e18d390b6970a4e9086388db23"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "3c35179f107ae1fd835276e89d8291e6d45c31163ed96cff7b767f934eb1a319",
+    "reference_sha256": "3c35179f107ae1fd835276e89d8291e6d45c31163ed96cff7b767f934eb1a319"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-mf2-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "5af01023150ed54cb0fcc24da6388ccd74727d6f0cecb469ca55ed1565c12271",
+    "reference_sha256": "5af01023150ed54cb0fcc24da6388ccd74727d6f0cecb469ca55ed1565c12271"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "3e05d3d3b5751fa23a52cb1928b9b5392d56d9803de255c4637bf8135e084ae1",
+    "reference_sha256": "3e05d3d3b5751fa23a52cb1928b9b5392d56d9803de255c4637bf8135e084ae1"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "0d67d6214bcf36ae52ed40fa3caa210d58ee6a3e24cb0010e365c03e93886f9d",
+    "reference_sha256": "0d67d6214bcf36ae52ed40fa3caa210d58ee6a3e24cb0010e365c03e93886f9d"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "04be3fcd1dd7c67a358f8347ae4f5244019056691a95b9e89750a9280fd93570",
+    "reference_sha256": "04be3fcd1dd7c67a358f8347ae4f5244019056691a95b9e89750a9280fd93570"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-mf2-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "bd71e9f0949efd52664d031eefab05642fe0c5ccf15d7afc408feb0cd2e1d019",
+    "reference_sha256": "bd71e9f0949efd52664d031eefab05642fe0c5ccf15d7afc408feb0cd2e1d019"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "0dfec5ea0cde3dcbdcbcf68f3f2d6990fe4417103a35965b7ec128b337df2e2d",
+    "reference_sha256": "0dfec5ea0cde3dcbdcbcf68f3f2d6990fe4417103a35965b7ec128b337df2e2d"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "6f4b83d89c69dc1623e7baf4ff02599b3d395e6bcc5c81c605cf02cdd5467a38",
+    "reference_sha256": "6f4b83d89c69dc1623e7baf4ff02599b3d395e6bcc5c81c605cf02cdd5467a38"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "2789a54aa9f1c5eeef5a8846d2d153eb7053122cc8588581ec65b27a1240664f",
+    "reference_sha256": "2789a54aa9f1c5eeef5a8846d2d153eb7053122cc8588581ec65b27a1240664f"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-mf2-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "e670f158a7db695d40afe7d6ef126fa827a3e95feec4256463b517a66d0887dc",
+    "reference_sha256": "e670f158a7db695d40afe7d6ef126fa827a3e95feec4256463b517a66d0887dc"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "5f94e948d529c6c1f097eb19b3edacf355999087deeee84953cbef74db7c6ca1",
+    "reference_sha256": "5f94e948d529c6c1f097eb19b3edacf355999087deeee84953cbef74db7c6ca1"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "20e437290612ed315b178e2cb43b6d2873520941639bc8524f7b721c40261b47",
+    "reference_sha256": "20e437290612ed315b178e2cb43b6d2873520941639bc8524f7b721c40261b47"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "27fdf6ec4c3ebc8ed629b75abacda7d0c943477997c92f7abe25cd5ec2f592d1",
+    "reference_sha256": "27fdf6ec4c3ebc8ed629b75abacda7d0c943477997c92f7abe25cd5ec2f592d1"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "f3d9451a90c50785d1912f813bb40fe70fdb04d2fca9445b86b3b2768df31ae0",
+    "reference_sha256": "f3d9451a90c50785d1912f813bb40fe70fdb04d2fca9445b86b3b2768df31ae0"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-mf4-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "46b83dd73a9d608b79d4e4f9947d337628c8b30cf3e4eec78a903e129f9491df",
+    "reference_sha256": "46b83dd73a9d608b79d4e4f9947d337628c8b30cf3e4eec78a903e129f9491df"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "996e04b1e6d437d18d326e3d654eae0196d2a307d10c75d9985fa913191dcc20",
+    "reference_sha256": "996e04b1e6d437d18d326e3d654eae0196d2a307d10c75d9985fa913191dcc20"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "8e7becb78ffe5dde1d009c3a37107e3d0a74cc2f026e521047b420f7434ec423",
+    "reference_sha256": "8e7becb78ffe5dde1d009c3a37107e3d0a74cc2f026e521047b420f7434ec423"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "a42cc8258aa028019c1f0a0419afd7b2d089678d6da02d53505ec62b19778b96",
+    "reference_sha256": "a42cc8258aa028019c1f0a0419afd7b2d089678d6da02d53505ec62b19778b96"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "4926972c5a566c6f3ba93970fcf6248b52f53f78f9ebefdfd1428a7a1458361b",
+    "reference_sha256": "4926972c5a566c6f3ba93970fcf6248b52f53f78f9ebefdfd1428a7a1458361b"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-mf4-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "2efbf19eaf507de164c43ca2e666e9815007a6628eca6e93943b8c5f365a9c06",
+    "reference_sha256": "2efbf19eaf507de164c43ca2e666e9815007a6628eca6e93943b8c5f365a9c06"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "436d50c6b5b86c26577afddf62fb4e680b60fdbd86d0141c5c972159d481f82d",
+    "reference_sha256": "436d50c6b5b86c26577afddf62fb4e680b60fdbd86d0141c5c972159d481f82d"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "b0608384f3914b443b2fdc6765b6aac18f44450c56498546050a506cbf24f2a8",
+    "reference_sha256": "b0608384f3914b443b2fdc6765b6aac18f44450c56498546050a506cbf24f2a8"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "78b24534a909cc961173373289cd21015024003fac657749407cd995a3c90203",
+    "reference_sha256": "78b24534a909cc961173373289cd21015024003fac657749407cd995a3c90203"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "4c1b3bd15493a16290952855fe6c8fb510e5d30772144f3a44258b07b6f05cb1",
+    "reference_sha256": "4c1b3bd15493a16290952855fe6c8fb510e5d30772144f3a44258b07b6f05cb1"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "1b9033f0834fb317cc236486a1bcff7c0c54585c50b0ad254d703baff151496a",
+    "reference_sha256": "1b9033f0834fb317cc236486a1bcff7c0c54585c50b0ad254d703baff151496a"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "121dd534b3d43f3385f626139b1f36af4b795c38ead12319b5544a4602900db5",
+    "reference_sha256": "121dd534b3d43f3385f626139b1f36af4b795c38ead12319b5544a4602900db5"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "24206be330795f540682fbf4c63ab514ac39cea920292d7f15b723c69b5b2cb3",
+    "reference_sha256": "24206be330795f540682fbf4c63ab514ac39cea920292d7f15b723c69b5b2cb3"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "07c44d0af7b02b47715ccc008fd633bedc4b49221045fd0dacbf2296935a8c15",
+    "reference_sha256": "07c44d0af7b02b47715ccc008fd633bedc4b49221045fd0dacbf2296935a8c15"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-mf4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "b33a83618346f5acc65d387da7efb225783f7a5365335f4264532569742449a0",
+    "reference_sha256": "b33a83618346f5acc65d387da7efb225783f7a5365335f4264532569742449a0"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-mf8-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "b2e24739161f88d827209a4a74483361bd3dbc75a55efb5aa26f86c615b93c0c",
+    "reference_sha256": "b2e24739161f88d827209a4a74483361bd3dbc75a55efb5aa26f86c615b93c0c"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "c8bb4c164ee477fc1ad2ac045537530f22e790a163f5119fe6498180bec9f119",
+    "reference_sha256": "c8bb4c164ee477fc1ad2ac045537530f22e790a163f5119fe6498180bec9f119"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "195fdc98a3face4dac1d69353f31e8507022d53f7eb60335addf35fcd1948591",
+    "reference_sha256": "195fdc98a3face4dac1d69353f31e8507022d53f7eb60335addf35fcd1948591"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "4fb74d1f7dd4b7210b47ffea016365237d4519eedae410f7aee5b1ae8428eb8e",
+    "reference_sha256": "4fb74d1f7dd4b7210b47ffea016365237d4519eedae410f7aee5b1ae8428eb8e"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "3c96e2b8cdc9c5a00d9cba067a9a3d8330f1c6692bb1b9ffc50b1a810a8a49ad",
+    "reference_sha256": "3c96e2b8cdc9c5a00d9cba067a9a3d8330f1c6692bb1b9ffc50b1a810a8a49ad"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-mf4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "7581edd1e587270b78cbe037ddf6aa2e8b5d0bd3dcb56af21d06283bfd668f36",
+    "reference_sha256": "7581edd1e587270b78cbe037ddf6aa2e8b5d0bd3dcb56af21d06283bfd668f36"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "7b85fcf280e1257c2078d8c75cd668a0e7eae248122269c9bf3e409d3350a1f6",
+    "reference_sha256": "7b85fcf280e1257c2078d8c75cd668a0e7eae248122269c9bf3e409d3350a1f6"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "02ea031956dd6f4efde4e4425c2c24427a9476afae640ee1d41ed63f830e1d79",
+    "reference_sha256": "02ea031956dd6f4efde4e4425c2c24427a9476afae640ee1d41ed63f830e1d79"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "2b3c210a212385fc3a6f387229637b56694b7300b80e3dcf553f6eea89d4dd40",
+    "reference_sha256": "2b3c210a212385fc3a6f387229637b56694b7300b80e3dcf553f6eea89d4dd40"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "dca97789aaf17967e60d97ab5c197902fc48c124598450805a06652014fa57d8",
+    "reference_sha256": "dca97789aaf17967e60d97ab5c197902fc48c124598450805a06652014fa57d8"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "9483d335123d2bc823bcdb8e8a0113d970f2611a4b7c4c9c76d84feabbe1c852",
+    "reference_sha256": "9483d335123d2bc823bcdb8e8a0113d970f2611a4b7c4c9c76d84feabbe1c852"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "ae3eeaaf926b0773b6397d1a6da11c22f6627a334f719a001363b664dcaff63b",
+    "reference_sha256": "ae3eeaaf926b0773b6397d1a6da11c22f6627a334f719a001363b664dcaff63b"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "79f3c98de0056859b6b0aee52c85c7560317f5a7b7ad2840dd8f6453054a9140",
+    "reference_sha256": "79f3c98de0056859b6b0aee52c85c7560317f5a7b7ad2840dd8f6453054a9140"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "dcc87ebce4eec81a7ec7761ec430fbb12f26fd18773571ffbba79f5ae6cf60c3",
+    "reference_sha256": "dcc87ebce4eec81a7ec7761ec430fbb12f26fd18773571ffbba79f5ae6cf60c3"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-mf4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "4c94d7d46262a835f7ed4c36dc5ea744050df80ead70d6cbb32be1a63277672e",
+    "reference_sha256": "4c94d7d46262a835f7ed4c36dc5ea744050df80ead70d6cbb32be1a63277672e"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-mf8-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "6bc5dac47b1b0b12855fe6bb6ec53781c4f0c79e5da173eae3d88b0cea64eea9",
+    "reference_sha256": "6bc5dac47b1b0b12855fe6bb6ec53781c4f0c79e5da173eae3d88b0cea64eea9"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "70e66af35aa58084cb1cf167955327affccf0106200ac9f94dfaf3f75844f225",
+    "reference_sha256": "70e66af35aa58084cb1cf167955327affccf0106200ac9f94dfaf3f75844f225"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "cf009c4cb34fd6fcd36ce4a10646af0db0b9937e462adbd72b3abe6900b0d506",
+    "reference_sha256": "cf009c4cb34fd6fcd36ce4a10646af0db0b9937e462adbd72b3abe6900b0d506"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "9d502d0b98d3c73680a5f4b4693de7954733d91986010008fa60f23004a3addc",
+    "reference_sha256": "9d502d0b98d3c73680a5f4b4693de7954733d91986010008fa60f23004a3addc"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "1d767ec1505f2cf9538a0d6406111577c15f2b84410af275dc7a4e814e3e449f",
+    "reference_sha256": "1d767ec1505f2cf9538a0d6406111577c15f2b84410af275dc7a4e814e3e449f"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-mf4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "a9bc1d5267c2afbd1671595a06b1a3c3feeda80a008f7bbad0c4a5c219330305",
+    "reference_sha256": "a9bc1d5267c2afbd1671595a06b1a3c3feeda80a008f7bbad0c4a5c219330305"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "c3ce674c9d2dab3232be294de02d95697c93fe7be71cca6ac19f5f6f516b0575",
+    "reference_sha256": "c3ce674c9d2dab3232be294de02d95697c93fe7be71cca6ac19f5f6f516b0575"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "f64771d27fcdfa2a8644ec47c620f08317bf2e37c8b9488585ffb1d79079c97a",
+    "reference_sha256": "f64771d27fcdfa2a8644ec47c620f08317bf2e37c8b9488585ffb1d79079c97a"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "b7c655e5183dd9059a332739028d00b50e9e6db71e740af56a26785b2c5d83d5",
+    "reference_sha256": "b7c655e5183dd9059a332739028d00b50e9e6db71e740af56a26785b2c5d83d5"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vv",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "52214ce8440ebc64771c9fa536a7721db3056d50d82b70a559daee50f846a118",
+    "reference_sha256": "52214ce8440ebc64771c9fa536a7721db3056d50d82b70a559daee50f846a118"
+  },
+  {
+    "case": "vwmaccsu-w128-e8-m2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "1132d5c7684fdf260dd9b1fa9f422ff08a9d04998f1c8cf4bcca49ae9542f8d9",
+    "reference_sha256": "1132d5c7684fdf260dd9b1fa9f422ff08a9d04998f1c8cf4bcca49ae9542f8d9"
+  },
+  {
+    "case": "vwmaccsu-w128-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "9a82dcf38d390259cc89cc9a1fbf7c810397c456d5a79f786850f3d16b0fc6fc",
+    "reference_sha256": "9a82dcf38d390259cc89cc9a1fbf7c810397c456d5a79f786850f3d16b0fc6fc"
+  },
+  {
+    "case": "vwmaccsu-w128-e16-m2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "5a38eb53536c2896306281b7653376c425a7b72c9770c0f3917d0d418804ecaa",
+    "reference_sha256": "5a38eb53536c2896306281b7653376c425a7b72c9770c0f3917d0d418804ecaa"
+  },
+  {
+    "case": "vwmaccsu-w128-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "b42ef799acd78110aae062ae9b11f696cdc0facd0b5e226eb9a6cedcab863b97",
+    "reference_sha256": "b42ef799acd78110aae062ae9b11f696cdc0facd0b5e226eb9a6cedcab863b97"
+  },
+  {
+    "case": "vwmaccsu-w128-e32-m2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "a8ac2438a2b36b8a8393155d138e7459b7f512eca4c6c0ec286716ed2e6ca59e",
+    "reference_sha256": "a8ac2438a2b36b8a8393155d138e7459b7f512eca4c6c0ec286716ed2e6ca59e"
+  },
+  {
+    "case": "vwmaccsu-w128-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "23de3914962c024c80049fb2f60e1b91d1c06c9f40c5e7b6e2a499baa2678fe7",
+    "reference_sha256": "23de3914962c024c80049fb2f60e1b91d1c06c9f40c5e7b6e2a499baa2678fe7"
+  },
+  {
+    "case": "vwmaccsu-w256-e8-m1-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "d35a2c71528f230bfa05216d230d1c512dd03a117522eb17aefef2dea5bb21c1",
+    "reference_sha256": "d35a2c71528f230bfa05216d230d1c512dd03a117522eb17aefef2dea5bb21c1"
+  },
+  {
+    "case": "vwmaccsu-w256-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "70b17f0330fc2078d4ae9e30379138f14abd5f99c0a51c2b1f7df486bc0eaac3",
+    "reference_sha256": "70b17f0330fc2078d4ae9e30379138f14abd5f99c0a51c2b1f7df486bc0eaac3"
+  },
+  {
+    "case": "vwmaccsu-w256-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "060a0d1b88899fe65dba838a5fe8dd8cb9b66721707c51962b058f3e3561876a",
+    "reference_sha256": "060a0d1b88899fe65dba838a5fe8dd8cb9b66721707c51962b058f3e3561876a"
+  },
+  {
+    "case": "vwmaccsu-w256-e16-m1-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "6e9ecf828185ae0af4670f58965430d23dc1bc1c0febdf4e68b834e05673ea2d",
+    "reference_sha256": "6e9ecf828185ae0af4670f58965430d23dc1bc1c0febdf4e68b834e05673ea2d"
+  },
+  {
+    "case": "vwmaccsu-w256-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "c1ec44d377421d8dd8e721bcfed82bdcae0fa5256b5363b43d6b73b3a06b7a6f",
+    "reference_sha256": "c1ec44d377421d8dd8e721bcfed82bdcae0fa5256b5363b43d6b73b3a06b7a6f"
+  },
+  {
+    "case": "vwmaccsu-w256-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "a1d2d3900c56c42ab2876ecb23839e7a6a4d6267174676ae4d4b20bc7b9868ed",
+    "reference_sha256": "a1d2d3900c56c42ab2876ecb23839e7a6a4d6267174676ae4d4b20bc7b9868ed"
+  },
+  {
+    "case": "vwmaccsu-w256-e32-m1-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "ae241f8780c4f5beee58b32ebcd30fc3808bacb9e35d71fb2a367be87b80d578",
+    "reference_sha256": "ae241f8780c4f5beee58b32ebcd30fc3808bacb9e35d71fb2a367be87b80d578"
+  },
+  {
+    "case": "vwmaccsu-w256-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "c273936adf93e78a2c41987b75d9848128dc0b9217b9ed4f949f427a6a7d8c7c",
+    "reference_sha256": "c273936adf93e78a2c41987b75d9848128dc0b9217b9ed4f949f427a6a7d8c7c"
+  },
+  {
+    "case": "vwmaccsu-w256-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "588b8a3200aa1905fe5fa3436193f3394495ddb04a003ee0b46ec71671ef2613",
+    "reference_sha256": "588b8a3200aa1905fe5fa3436193f3394495ddb04a003ee0b46ec71671ef2613"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "2a86be0f42346f214ea2cfe79b4419c02a25e07f0fde2b4adc863ef87d24869c",
+    "reference_sha256": "2a86be0f42346f214ea2cfe79b4419c02a25e07f0fde2b4adc863ef87d24869c"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "0fb5cad46e55799ef167cb791569b3825bb9cff470b1553b1240ad986de19b5e",
+    "reference_sha256": "0fb5cad46e55799ef167cb791569b3825bb9cff470b1553b1240ad986de19b5e"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "f2cb00b970486b2f174b712687268abbecfb511e6d981c3bb7d3d84bfa229e4a",
+    "reference_sha256": "f2cb00b970486b2f174b712687268abbecfb511e6d981c3bb7d3d84bfa229e4a"
+  },
+  {
+    "case": "vwmaccsu-w512-e8-mf2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "556e3a3958b2ebdb2efc86a5219f767c2cd5a888445d8bf54bae85c77fe0b862",
+    "reference_sha256": "556e3a3958b2ebdb2efc86a5219f767c2cd5a888445d8bf54bae85c77fe0b862"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "470edb29d5d7f4d3cf7c5a7b833a346ee4d4d57c2131a2f982da54d990c12af2",
+    "reference_sha256": "470edb29d5d7f4d3cf7c5a7b833a346ee4d4d57c2131a2f982da54d990c12af2"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "36c8e309d1f847724f6abc2f9b6ff199ed608a7dc40be778bc6b0ff076e725ca",
+    "reference_sha256": "36c8e309d1f847724f6abc2f9b6ff199ed608a7dc40be778bc6b0ff076e725ca"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "ae290ce6c84a6e5be4910b15cd1972016a9e05829c02fe1e06aa1588039a157d",
+    "reference_sha256": "ae290ce6c84a6e5be4910b15cd1972016a9e05829c02fe1e06aa1588039a157d"
+  },
+  {
+    "case": "vwmaccsu-w512-e16-mf2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "c5612c8b61396f2d57ce90741ecb0bb9c2d7baba5abaf82c25cc86493b94e61f",
+    "reference_sha256": "c5612c8b61396f2d57ce90741ecb0bb9c2d7baba5abaf82c25cc86493b94e61f"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "ee060a7e4ad63132d405ced88a7babd81ab7e1da03f1f93cc20c9f3a706c8420",
+    "reference_sha256": "ee060a7e4ad63132d405ced88a7babd81ab7e1da03f1f93cc20c9f3a706c8420"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "983be42242ad0c0761e21f45bd55168aeb80e3e46c02cbd14c4b461b936688d5",
+    "reference_sha256": "983be42242ad0c0761e21f45bd55168aeb80e3e46c02cbd14c4b461b936688d5"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "6f754ebbfd51c31b50a85288f5b7079cf5b6043c7d1bc445d0b41467866edd59",
+    "reference_sha256": "6f754ebbfd51c31b50a85288f5b7079cf5b6043c7d1bc445d0b41467866edd59"
+  },
+  {
+    "case": "vwmaccsu-w512-e32-mf2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "0be2ed174f9f62b2333515402436fab2bb3acd8ea9d9843b72216a2f6caed2fa",
+    "reference_sha256": "0be2ed174f9f62b2333515402436fab2bb3acd8ea9d9843b72216a2f6caed2fa"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "04f56e0ec8a9a16d45f8321afe35f3dd8cafa81d909773aa7492f76ac43b9f8a",
+    "reference_sha256": "04f56e0ec8a9a16d45f8321afe35f3dd8cafa81d909773aa7492f76ac43b9f8a"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "2cf6175754584a862ce662a9ac8c06dcbf0023f17556a1b586ab76d4850c18dc",
+    "reference_sha256": "2cf6175754584a862ce662a9ac8c06dcbf0023f17556a1b586ab76d4850c18dc"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "405426d6ee0652699d553ad230a16cc1b2438df9c0bc1e7f79dd0f2ecc5b998a",
+    "reference_sha256": "405426d6ee0652699d553ad230a16cc1b2438df9c0bc1e7f79dd0f2ecc5b998a"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "8acafebc855a368bbd4ca360a9e410d95537c62824faccf69c872974d8920fdf",
+    "reference_sha256": "8acafebc855a368bbd4ca360a9e410d95537c62824faccf69c872974d8920fdf"
+  },
+  {
+    "case": "vwmaccsu-w1024-e8-mf4-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "466314f22cd546265ee8e314b81024732a9dd1ca392230b7f304f717b6101dba",
+    "reference_sha256": "466314f22cd546265ee8e314b81024732a9dd1ca392230b7f304f717b6101dba"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "ba554cd457ad62e1ce8e4426f90da3a84f932f633b55b436e578a0af2719f9e6",
+    "reference_sha256": "ba554cd457ad62e1ce8e4426f90da3a84f932f633b55b436e578a0af2719f9e6"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "e32f856263ef499cb9e5895775afacdb42e32ce6b04dba0adbb547c6989fbc38",
+    "reference_sha256": "e32f856263ef499cb9e5895775afacdb42e32ce6b04dba0adbb547c6989fbc38"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "941f14ddbaa10cae603f637c69dc1270f966719fac29dc173d070ce8c5067495",
+    "reference_sha256": "941f14ddbaa10cae603f637c69dc1270f966719fac29dc173d070ce8c5067495"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "15ffa65a9c4df52a55fdedcb73dbbdbb42fd5c61ba09171c249b0086dc58d7f4",
+    "reference_sha256": "15ffa65a9c4df52a55fdedcb73dbbdbb42fd5c61ba09171c249b0086dc58d7f4"
+  },
+  {
+    "case": "vwmaccsu-w1024-e16-mf4-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "0082c7afc3e5aa42a00589dd293628c7960bdf2423dd460ec6b8e14be6d22f7d",
+    "reference_sha256": "0082c7afc3e5aa42a00589dd293628c7960bdf2423dd460ec6b8e14be6d22f7d"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "18cd38315ef3d89814eb54e366a4c1c56a9db0dbba00c743d37852736c5ec7bd",
+    "reference_sha256": "18cd38315ef3d89814eb54e366a4c1c56a9db0dbba00c743d37852736c5ec7bd"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "9bdf339436edf56a3a4a980eb722f5a58866bfcc215924b7472849c0cd155328",
+    "reference_sha256": "9bdf339436edf56a3a4a980eb722f5a58866bfcc215924b7472849c0cd155328"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "1c011a21e231b53959bbd1e0281f0a5a39ff18335a277ea21a2dca25dba30638",
+    "reference_sha256": "1c011a21e231b53959bbd1e0281f0a5a39ff18335a277ea21a2dca25dba30638"
+  },
+  {
+    "case": "vwmaccsu-w1024-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "4ff6bdc385642a3b540ad3c51f97cd8a6c9fc8dcb2f4cc88a6d4fb7279db9a05",
+    "reference_sha256": "4ff6bdc385642a3b540ad3c51f97cd8a6c9fc8dcb2f4cc88a6d4fb7279db9a05"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "d5312a399e8c9c7d196655d812c636bd5b6b0f0a0f2d93a70067fea89eb68e28",
+    "reference_sha256": "d5312a399e8c9c7d196655d812c636bd5b6b0f0a0f2d93a70067fea89eb68e28"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "566b41869e36c5862a3c8cd845b0c92324d1eabb80f6b6bccc0a9ad14942b0ac",
+    "reference_sha256": "566b41869e36c5862a3c8cd845b0c92324d1eabb80f6b6bccc0a9ad14942b0ac"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "c48097b156a26c065dd0ebb973b518f701e841a4714a96895d6eb1ecbaebcd55",
+    "reference_sha256": "c48097b156a26c065dd0ebb973b518f701e841a4714a96895d6eb1ecbaebcd55"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "3740edee3d88d42835df0e95f272d5edab7083c1968ffcda1a5b76dec21adf13",
+    "reference_sha256": "3740edee3d88d42835df0e95f272d5edab7083c1968ffcda1a5b76dec21adf13"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "a4b5944f10cf60cf77180ea196f9f1abf1a4fb18b676f27ffb0987b4d461b994",
+    "reference_sha256": "a4b5944f10cf60cf77180ea196f9f1abf1a4fb18b676f27ffb0987b4d461b994"
+  },
+  {
+    "case": "vwmaccsu-w2048-e8-mf8-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "53202909e2a281711ee8014b2dc288cdbcd7ef143a89b29756f3b00d0cd89b1c",
+    "reference_sha256": "53202909e2a281711ee8014b2dc288cdbcd7ef143a89b29756f3b00d0cd89b1c"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "5cbd03709d10a66b2419e101b88c1583bf009efa598ae4fb3e08be58e48ad845",
+    "reference_sha256": "5cbd03709d10a66b2419e101b88c1583bf009efa598ae4fb3e08be58e48ad845"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "9e519c8f844b628f01c1b2aef70be0ef0e5c84cb3047702fc36ffc3027b04468",
+    "reference_sha256": "9e519c8f844b628f01c1b2aef70be0ef0e5c84cb3047702fc36ffc3027b04468"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "e2a94fa7d75891dac22d5987fd9e106de36ef8009ea112b5223a590ea0115eac",
+    "reference_sha256": "e2a94fa7d75891dac22d5987fd9e106de36ef8009ea112b5223a590ea0115eac"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "18f918d25ab39d66b79638695781b1f757039272925332996df5e08c34a4106f",
+    "reference_sha256": "18f918d25ab39d66b79638695781b1f757039272925332996df5e08c34a4106f"
+  },
+  {
+    "case": "vwmaccsu-w2048-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "94669eda5d31a6255348694baf9b6faba51568d754dcd4ee35b73a1af73b209b",
+    "reference_sha256": "94669eda5d31a6255348694baf9b6faba51568d754dcd4ee35b73a1af73b209b"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "de29560f413e83598a81ef8ca45f540b883f8af32a20a58d97cbc05895478179",
+    "reference_sha256": "de29560f413e83598a81ef8ca45f540b883f8af32a20a58d97cbc05895478179"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "70494ae890b482d3d85dcb3e13e28d3412e2db0c3ffa24fb58193af3174cbe40",
+    "reference_sha256": "70494ae890b482d3d85dcb3e13e28d3412e2db0c3ffa24fb58193af3174cbe40"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "02c68efbfba291e370ce4ea975e4bcaaa79223dc916d6b9198bc3e2b9dc84d6c",
+    "reference_sha256": "02c68efbfba291e370ce4ea975e4bcaaa79223dc916d6b9198bc3e2b9dc84d6c"
+  },
+  {
+    "case": "vwmaccsu-w2048-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "62bcf06495d1363b8f3526fb40b01f70dac0306072dda7054568961b25988f05",
+    "reference_sha256": "62bcf06495d1363b8f3526fb40b01f70dac0306072dda7054568961b25988f05"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "2e0eae3aa4d3fff77ef92f19f1bdefe6c8e4b53f55d55bf1462c4bed66a7e3bd",
+    "reference_sha256": "2e0eae3aa4d3fff77ef92f19f1bdefe6c8e4b53f55d55bf1462c4bed66a7e3bd"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "c69e37a0bfde5dc89b54ebcd8ea09dfd5e7a3ee765467fe1f8b9911e15ff8d0d",
+    "reference_sha256": "c69e37a0bfde5dc89b54ebcd8ea09dfd5e7a3ee765467fe1f8b9911e15ff8d0d"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "e88ca30b23c190f6f77b8165a9fe7dd68e3904d72609e0c5a232de5fa5534f16",
+    "reference_sha256": "e88ca30b23c190f6f77b8165a9fe7dd68e3904d72609e0c5a232de5fa5534f16"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "532c617054ca46a0e200895ddecc9d0edd3b5966eff2bed3a9bca8f492c0d5d9",
+    "reference_sha256": "532c617054ca46a0e200895ddecc9d0edd3b5966eff2bed3a9bca8f492c0d5d9"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "941c1c97bb801cb9f661724348bc459723bc93d5adc85975ff3013622f1a1ce3",
+    "reference_sha256": "941c1c97bb801cb9f661724348bc459723bc93d5adc85975ff3013622f1a1ce3"
+  },
+  {
+    "case": "vwmaccsu-w4096-e8-mf8-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "fafcc8b8f0621deefbb891556aad52a060eba6d9d6991949b157b94f3509ee01",
+    "reference_sha256": "fafcc8b8f0621deefbb891556aad52a060eba6d9d6991949b157b94f3509ee01"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "bb95213950d7fe602e09b686fdc9f194b9e745b3f275d2e40dca65f5c9fb437b",
+    "reference_sha256": "bb95213950d7fe602e09b686fdc9f194b9e745b3f275d2e40dca65f5c9fb437b"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "41635bfe23f63073203e2f9fc400c9b039c75793efbd94f1e447859fd624581a",
+    "reference_sha256": "41635bfe23f63073203e2f9fc400c9b039c75793efbd94f1e447859fd624581a"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "435f206814166a5e751da88f9e53c7b4396c79cfcfe013a2889cb5f5a90e8c33",
+    "reference_sha256": "435f206814166a5e751da88f9e53c7b4396c79cfcfe013a2889cb5f5a90e8c33"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "b42db14345b6a30c43c3d700d77b0f25e2b3d7759cdc7bd5387bd40f47cd119d",
+    "reference_sha256": "b42db14345b6a30c43c3d700d77b0f25e2b3d7759cdc7bd5387bd40f47cd119d"
+  },
+  {
+    "case": "vwmaccsu-w4096-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "f0cbcd333b7db5f37e4ffbf864123f93c7d7841649177965a2bbb8d1fdba397c",
+    "reference_sha256": "f0cbcd333b7db5f37e4ffbf864123f93c7d7841649177965a2bbb8d1fdba397c"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "6439fda4d1b1c4ae69a57031e24ba888ad30ccdd27d72d1e8c1e82572071284c",
+    "reference_sha256": "6439fda4d1b1c4ae69a57031e24ba888ad30ccdd27d72d1e8c1e82572071284c"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "724a629616578900efa82615bdfbf6fb1a3a53a70ae73998b8750768b910c062",
+    "reference_sha256": "724a629616578900efa82615bdfbf6fb1a3a53a70ae73998b8750768b910c062"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "bafc8427e4a3e7b7471a0903d9f38020948b05aefc989dd8154df1d153ffbf0b",
+    "reference_sha256": "bafc8427e4a3e7b7471a0903d9f38020948b05aefc989dd8154df1d153ffbf0b"
+  },
+  {
+    "case": "vwmaccsu-w4096-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccsu",
+      "vx",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "917c3a369defe46c83db0720c9fa35f3d3fdf32efb68658928f7acc4cead3097",
+    "reference_sha256": "917c3a369defe46c83db0720c9fa35f3d3fdf32efb68658928f7acc4cead3097"
+  },
+  {
+    "case": "vwmaccu-w128-e8-m2-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "be6cc4681b3e11599f60a43ce06aec4942a92a517d1e11a6eb718b745777b1bc",
+    "reference_sha256": "be6cc4681b3e11599f60a43ce06aec4942a92a517d1e11a6eb718b745777b1bc"
+  },
+  {
+    "case": "vwmaccu-w128-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "3b42ed379657a2b6d4d8db7ee3195af82139548ee56cfe754a54d4dbf304eb90",
+    "reference_sha256": "3b42ed379657a2b6d4d8db7ee3195af82139548ee56cfe754a54d4dbf304eb90"
+  },
+  {
+    "case": "vwmaccu-w128-e16-m2-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "98d49d1e237539a3b87ebd07a6a618b18b5691158f6306640c9477d2bcd0faf7",
+    "reference_sha256": "98d49d1e237539a3b87ebd07a6a618b18b5691158f6306640c9477d2bcd0faf7"
+  },
+  {
+    "case": "vwmaccu-w128-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "620b1fcc1249512b4574ec66bc4739449fc809a034c1856c5c3d441a96a3a619",
+    "reference_sha256": "620b1fcc1249512b4574ec66bc4739449fc809a034c1856c5c3d441a96a3a619"
+  },
+  {
+    "case": "vwmaccu-w128-e32-m2-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "a1483b5d40689e935aac3cf814f66db0821f5c85c59a6dfccf1d35283baaa282",
+    "reference_sha256": "a1483b5d40689e935aac3cf814f66db0821f5c85c59a6dfccf1d35283baaa282"
+  },
+  {
+    "case": "vwmaccu-w128-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "84144ba6055e964b9f0b99e3d7537f3fd4ce5525e8ef4778915f183a269f17c9",
+    "reference_sha256": "84144ba6055e964b9f0b99e3d7537f3fd4ce5525e8ef4778915f183a269f17c9"
+  },
+  {
+    "case": "vwmaccu-w256-e8-m1-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "6e9c6b4d71fcfb091e3e3d2f72e08ddca807f04fecb39f9ce82288790dbf91aa",
+    "reference_sha256": "6e9c6b4d71fcfb091e3e3d2f72e08ddca807f04fecb39f9ce82288790dbf91aa"
+  },
+  {
+    "case": "vwmaccu-w256-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "5d2ada71a502a246bb3d8ab7e8e8dcb27294c88b470f50b1e6eba6a390bdaae6",
+    "reference_sha256": "5d2ada71a502a246bb3d8ab7e8e8dcb27294c88b470f50b1e6eba6a390bdaae6"
+  },
+  {
+    "case": "vwmaccu-w256-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "ba7f4dcbf7cb191467a5fed3227c48db61df22e439bc300574a11e42cd1bd3e5",
+    "reference_sha256": "ba7f4dcbf7cb191467a5fed3227c48db61df22e439bc300574a11e42cd1bd3e5"
+  },
+  {
+    "case": "vwmaccu-w256-e16-m1-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "e398f7d4288e27d35df188c50780bc2106db8ed125ac865444b4b984c94562bb",
+    "reference_sha256": "e398f7d4288e27d35df188c50780bc2106db8ed125ac865444b4b984c94562bb"
+  },
+  {
+    "case": "vwmaccu-w256-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "557e6e478c143683abe484d0dad84d0d817bf430d097e937500f1be360e03184",
+    "reference_sha256": "557e6e478c143683abe484d0dad84d0d817bf430d097e937500f1be360e03184"
+  },
+  {
+    "case": "vwmaccu-w256-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "f4d5298eccdcac3ac04c49f2decb766607316f0ad89c10a1ba037a7a0757bed4",
+    "reference_sha256": "f4d5298eccdcac3ac04c49f2decb766607316f0ad89c10a1ba037a7a0757bed4"
+  },
+  {
+    "case": "vwmaccu-w256-e32-m1-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "f012b6c1d37629b6e6f260db73143284ed7358441076ff359cbaee9ecec28ea9",
+    "reference_sha256": "f012b6c1d37629b6e6f260db73143284ed7358441076ff359cbaee9ecec28ea9"
+  },
+  {
+    "case": "vwmaccu-w256-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "8fc34f1b99a8d8476fbd60783eccfdbad40859b554500226130481dd1b8f7c11",
+    "reference_sha256": "8fc34f1b99a8d8476fbd60783eccfdbad40859b554500226130481dd1b8f7c11"
+  },
+  {
+    "case": "vwmaccu-w256-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "a0b14e47cfbeb17c2b0226f13697f39c96940cc6f47f9a58b9b1932c809b2b3a",
+    "reference_sha256": "a0b14e47cfbeb17c2b0226f13697f39c96940cc6f47f9a58b9b1932c809b2b3a"
+  },
+  {
+    "case": "vwmaccu-w512-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "4b1dda25e8f02d3c3efa1c72f2077850be7057e9753a5d52f800e9715522c26f",
+    "reference_sha256": "4b1dda25e8f02d3c3efa1c72f2077850be7057e9753a5d52f800e9715522c26f"
+  },
+  {
+    "case": "vwmaccu-w512-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "ec25b912888cb40ae1ddf414e2a7618ac52a18a0507b480af05b64d6540d07e2",
+    "reference_sha256": "ec25b912888cb40ae1ddf414e2a7618ac52a18a0507b480af05b64d6540d07e2"
+  },
+  {
+    "case": "vwmaccu-w512-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "9e67d0039dd664dd3e2cf6da40cb28199a69e8aa4c3c3d490af951493d1027e5",
+    "reference_sha256": "9e67d0039dd664dd3e2cf6da40cb28199a69e8aa4c3c3d490af951493d1027e5"
+  },
+  {
+    "case": "vwmaccu-w512-e8-mf2-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "9bd75533e85ac732803963f5721d918d20b3189c04104ab3dc9203a67b4a0d2d",
+    "reference_sha256": "9bd75533e85ac732803963f5721d918d20b3189c04104ab3dc9203a67b4a0d2d"
+  },
+  {
+    "case": "vwmaccu-w512-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "f4120444aed2a83c4f2bc8e181bb3c81e7716e0ff127d024dffde4c7b050a281",
+    "reference_sha256": "f4120444aed2a83c4f2bc8e181bb3c81e7716e0ff127d024dffde4c7b050a281"
+  },
+  {
+    "case": "vwmaccu-w512-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "442e10291fe3aa1b7835e2bd18494445ab69d95ae112322eb8d2b0b59da3f6f3",
+    "reference_sha256": "442e10291fe3aa1b7835e2bd18494445ab69d95ae112322eb8d2b0b59da3f6f3"
+  },
+  {
+    "case": "vwmaccu-w512-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "76911ea25b23553c4a07efb967ff703e30927750e01e335c381e24cda27426a1",
+    "reference_sha256": "76911ea25b23553c4a07efb967ff703e30927750e01e335c381e24cda27426a1"
+  },
+  {
+    "case": "vwmaccu-w512-e16-mf2-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "0cc6c580df244f5df658f4c1303aededac5a7fe5212886dbeb91d7dd6a3a7d1a",
+    "reference_sha256": "0cc6c580df244f5df658f4c1303aededac5a7fe5212886dbeb91d7dd6a3a7d1a"
+  },
+  {
+    "case": "vwmaccu-w512-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "dcda5c8bc3d81bc53168687f4e3ac290e4e8d1b93650f1290688bfdfa4ab679d",
+    "reference_sha256": "dcda5c8bc3d81bc53168687f4e3ac290e4e8d1b93650f1290688bfdfa4ab679d"
+  },
+  {
+    "case": "vwmaccu-w512-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "df4f0e8e036fbd28425a3210d9536ac817e293c96e3d448fcffe167499d056de",
+    "reference_sha256": "df4f0e8e036fbd28425a3210d9536ac817e293c96e3d448fcffe167499d056de"
+  },
+  {
+    "case": "vwmaccu-w512-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "64bfa28d31a2dc3fc47109b38532946489632d27c704120ab20d2c27ae2d62dd",
+    "reference_sha256": "64bfa28d31a2dc3fc47109b38532946489632d27c704120ab20d2c27ae2d62dd"
+  },
+  {
+    "case": "vwmaccu-w512-e32-mf2-vv-destchunk-start7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "91722b706d986c948f03524afcad14c82db2b965892eddf31048c04341794a67",
+    "reference_sha256": "91722b706d986c948f03524afcad14c82db2b965892eddf31048c04341794a67"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "c0463fad8efe6693a936695cc5730c584d69043511600aa44687a94737349b34",
+    "reference_sha256": "c0463fad8efe6693a936695cc5730c584d69043511600aa44687a94737349b34"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "ba953bea954b8286ec93767a3131fc68f12cd48d3594d7b8818723f50860ed7a",
+    "reference_sha256": "ba953bea954b8286ec93767a3131fc68f12cd48d3594d7b8818723f50860ed7a"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "03ad76a86a099ac088392c8ffee59e2970829605a8f81a54ef8978686673cb7f",
+    "reference_sha256": "03ad76a86a099ac088392c8ffee59e2970829605a8f81a54ef8978686673cb7f"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "3cafb8d8fd135c996d5b70f593e96f65f6c1513be6ef138ed7aa78967770b1a3",
+    "reference_sha256": "3cafb8d8fd135c996d5b70f593e96f65f6c1513be6ef138ed7aa78967770b1a3"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-mf4-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "cd99f771cb3d00079af52458009030f8bc541a52e385bf26e721bdc267a46b0e",
+    "reference_sha256": "cd99f771cb3d00079af52458009030f8bc541a52e385bf26e721bdc267a46b0e"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "631ed5c3c5dc3e8616950ce48de2f0e7b9b07dc56ada64ff3a21a30e4379ecbc",
+    "reference_sha256": "631ed5c3c5dc3e8616950ce48de2f0e7b9b07dc56ada64ff3a21a30e4379ecbc"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "78697c08ef542d7dd960e385d7bf7673953e2696c18d54822742f62beb1a4f1b",
+    "reference_sha256": "78697c08ef542d7dd960e385d7bf7673953e2696c18d54822742f62beb1a4f1b"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "a7d1790d9cb7a66b351997b811f83558863c2f930a1d34b1cb756b7779efbb13",
+    "reference_sha256": "a7d1790d9cb7a66b351997b811f83558863c2f930a1d34b1cb756b7779efbb13"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "2504cd72045fc21c128617612917c094749940853ca8842de941c46204f752ac",
+    "reference_sha256": "2504cd72045fc21c128617612917c094749940853ca8842de941c46204f752ac"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-mf4-vv-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "369b407d1439fe358dd4b9f86dea20fc2b997bab861c7b397aeee9e879fb8dff",
+    "reference_sha256": "369b407d1439fe358dd4b9f86dea20fc2b997bab861c7b397aeee9e879fb8dff"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "0523c7c380279642dda5e8fd6d5722bb8d89ef1ac26845554cf05a1fe1898075",
+    "reference_sha256": "0523c7c380279642dda5e8fd6d5722bb8d89ef1ac26845554cf05a1fe1898075"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "0d166ae3008da092da458278d248f78c80821f695ad8f8285c86afb966c5f642",
+    "reference_sha256": "0d166ae3008da092da458278d248f78c80821f695ad8f8285c86afb966c5f642"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "988025d5522cad9137153d8ce16762ababf80a0067b9dc270c0dcb05e7a2422d",
+    "reference_sha256": "988025d5522cad9137153d8ce16762ababf80a0067b9dc270c0dcb05e7a2422d"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "5e2449683b35ee2fd48d13eae40ba30565ba7ce4ef7e2a614f1aae4fd1ea8c59",
+    "reference_sha256": "5e2449683b35ee2fd48d13eae40ba30565ba7ce4ef7e2a614f1aae4fd1ea8c59"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "d484df2a61b007ff79cb912d383c946bf106c15e883eb05e7f3e2d8f62df54c2",
+    "reference_sha256": "d484df2a61b007ff79cb912d383c946bf106c15e883eb05e7f3e2d8f62df54c2"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "3011d80dca55784136f6da4acef2f24eef37806e8a027d7d8dfdf50993cadb3d",
+    "reference_sha256": "3011d80dca55784136f6da4acef2f24eef37806e8a027d7d8dfdf50993cadb3d"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "06a12e51a5cb8df6413c02acadc1487c4f7cf4dc5396308b94106b4dd6ed3e67",
+    "reference_sha256": "06a12e51a5cb8df6413c02acadc1487c4f7cf4dc5396308b94106b4dd6ed3e67"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "094b60bd6151c2a86c392dc6ab435ce8194c91d4d8646ad890e5133e10bbb3a0",
+    "reference_sha256": "094b60bd6151c2a86c392dc6ab435ce8194c91d4d8646ad890e5133e10bbb3a0"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-mf4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "77ecebd4773db7ede85cdb2ff3dc7a984da851838afc6f500fc75a947d39b64c",
+    "reference_sha256": "77ecebd4773db7ede85cdb2ff3dc7a984da851838afc6f500fc75a947d39b64c"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-mf8-vv-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "26e689ac7312c8be0302bb42619729ebb9d91e8482a3a817d7e9d93075546cf6",
+    "reference_sha256": "26e689ac7312c8be0302bb42619729ebb9d91e8482a3a817d7e9d93075546cf6"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "66da2977fc2ea7d6cd2574a56268bf7529ecd1d7c9d5effd9b8e68b10a144a2c",
+    "reference_sha256": "66da2977fc2ea7d6cd2574a56268bf7529ecd1d7c9d5effd9b8e68b10a144a2c"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "59527b2e3e24bbb2520f37877e62292fa7afd0a57faba4a9d231ee8fa65d3ea1",
+    "reference_sha256": "59527b2e3e24bbb2520f37877e62292fa7afd0a57faba4a9d231ee8fa65d3ea1"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "e566c672c09acef6e5603f7767a6d69972ad4b78a51698cec4053cb7ed438488",
+    "reference_sha256": "e566c672c09acef6e5603f7767a6d69972ad4b78a51698cec4053cb7ed438488"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "0262df44fc5521a6e2147d3047c3ef06f065a00b4a64afec5e47e6c3b4db6043",
+    "reference_sha256": "0262df44fc5521a6e2147d3047c3ef06f065a00b4a64afec5e47e6c3b4db6043"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-mf4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "efc9a0193134c53cd71aebf985187c17ca658eb451fb0911de54c91befe8c96e",
+    "reference_sha256": "efc9a0193134c53cd71aebf985187c17ca658eb451fb0911de54c91befe8c96e"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "9bec874732ecd8c5a8e4a6397eed5a4d6ae758e7926e3ff15359b34c468e7afd",
+    "reference_sha256": "9bec874732ecd8c5a8e4a6397eed5a4d6ae758e7926e3ff15359b34c468e7afd"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "d3c830660198ddba647372c8ccdf252e2cbe4abd07452bd53d9e4baf04ff8a3b",
+    "reference_sha256": "d3c830660198ddba647372c8ccdf252e2cbe4abd07452bd53d9e4baf04ff8a3b"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "aea671b7b7ba39f8aeab4157a00ab34d2b89fac02787f9cb662ba7cd43a139d5",
+    "reference_sha256": "aea671b7b7ba39f8aeab4157a00ab34d2b89fac02787f9cb662ba7cd43a139d5"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "21ecb5d1f1a91298fab2d1f8c70bdd0ea5b2c89d43986066b4993d7fc83a9863",
+    "reference_sha256": "21ecb5d1f1a91298fab2d1f8c70bdd0ea5b2c89d43986066b4993d7fc83a9863"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-m1-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "3203d3c4a405be0b9f219dfb64638cca5c1a40db49f10774d62b9cc54eff0729",
+    "reference_sha256": "3203d3c4a405be0b9f219dfb64638cca5c1a40db49f10774d62b9cc54eff0729"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-m2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "6ad49fc8917415e29f644c60dd4f3bf9827c7dfd9c60f859a0d10fcb82194b58",
+    "reference_sha256": "6ad49fc8917415e29f644c60dd4f3bf9827c7dfd9c60f859a0d10fcb82194b58"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-m4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "118a977c79f46848b21bcd4f880763605beb56f6787c22f733899639315de790",
+    "reference_sha256": "118a977c79f46848b21bcd4f880763605beb56f6787c22f733899639315de790"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-mf2-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "5f4bbad52eb7ee3cc9d63d46f39e418283b6fcabd206620e0b9d4c6c6895b47a",
+    "reference_sha256": "5f4bbad52eb7ee3cc9d63d46f39e418283b6fcabd206620e0b9d4c6c6895b47a"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-mf4-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "d873f1b0199c0fa13ed4990570fff4ced9c5c86f52eb3023e5353f8e3355a78b",
+    "reference_sha256": "d873f1b0199c0fa13ed4990570fff4ced9c5c86f52eb3023e5353f8e3355a78b"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-mf8-vv-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "086b2812b23fcac4f7ba7d8afd39de344ca6440fa2582457d656f39496bbd3e4",
+    "reference_sha256": "086b2812b23fcac4f7ba7d8afd39de344ca6440fa2582457d656f39496bbd3e4"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-m1-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "e48b6174408b18a6e28784bb72b557d601ee7b3ae780bd44bc4fc75864435c9c",
+    "reference_sha256": "e48b6174408b18a6e28784bb72b557d601ee7b3ae780bd44bc4fc75864435c9c"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-m2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "ac9379ce14d681e80a30541532c98ca977247f8dace863cfb1406c7710f5dfa5",
+    "reference_sha256": "ac9379ce14d681e80a30541532c98ca977247f8dace863cfb1406c7710f5dfa5"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-m4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "c1b3cb3aa0be2ce211a3db16b3d910185cb7b5435696f9e3a86f19facb4c65a3",
+    "reference_sha256": "c1b3cb3aa0be2ce211a3db16b3d910185cb7b5435696f9e3a86f19facb4c65a3"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-mf2-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "e872dbb2d9153dda208ae3e3665970d9ba92a402b7d303a35b433d7f096fb522",
+    "reference_sha256": "e872dbb2d9153dda208ae3e3665970d9ba92a402b7d303a35b433d7f096fb522"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-mf4-vv-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "ea28ad58fab2524811bfe8118f954887430bf037c64c41b1f93e3ed2487b70b0",
+    "reference_sha256": "ea28ad58fab2524811bfe8118f954887430bf037c64c41b1f93e3ed2487b70b0"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-m1-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "818a4fb408186e7288cc06a03372a2e9b89da7f6e4897e3752f593ccb9adf00f",
+    "reference_sha256": "818a4fb408186e7288cc06a03372a2e9b89da7f6e4897e3752f593ccb9adf00f"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-m2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "5101e7e5c9c8d6ce097fc383d111c558f27cf098b20ac30c972f4ea90dba41d0",
+    "reference_sha256": "5101e7e5c9c8d6ce097fc383d111c558f27cf098b20ac30c972f4ea90dba41d0"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-m4-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "1a50129f6a3019417670b6a417814271c15b499eb2f231b0ecaee258d3786d4a",
+    "reference_sha256": "1a50129f6a3019417670b6a417814271c15b499eb2f231b0ecaee258d3786d4a"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-mf2-vv-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vv",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "e7394484cc0b85d82af308ea9118c6c76bb09b3fa905ec73e0b5e7a8db7d2833",
+    "reference_sha256": "e7394484cc0b85d82af308ea9118c6c76bb09b3fa905ec73e0b5e7a8db7d2833"
+  },
+  {
+    "case": "vwmaccu-w128-e8-m2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "023fd2d7d8a921fc2651f98818fa5122f6c01fc2db4630553efc691d643e1258",
+    "reference_sha256": "023fd2d7d8a921fc2651f98818fa5122f6c01fc2db4630553efc691d643e1258"
+  },
+  {
+    "case": "vwmaccu-w128-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "952efd787a528169ce726c9f326b8a6c605f8942ec3b7bc976f83c87ea7b8a65",
+    "reference_sha256": "952efd787a528169ce726c9f326b8a6c605f8942ec3b7bc976f83c87ea7b8a65"
+  },
+  {
+    "case": "vwmaccu-w128-e16-m2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "f98866d63e6daa1d46ad354a417fbd9cdacd2c85430488eda453393afca8a167",
+    "reference_sha256": "f98866d63e6daa1d46ad354a417fbd9cdacd2c85430488eda453393afca8a167"
+  },
+  {
+    "case": "vwmaccu-w128-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "ec84bee9cf585094e617c9694fada4e6f09b85930bcb97f92d6b6f4cfd80a8a8",
+    "reference_sha256": "ec84bee9cf585094e617c9694fada4e6f09b85930bcb97f92d6b6f4cfd80a8a8"
+  },
+  {
+    "case": "vwmaccu-w128-e32-m2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "d619f6360542a4f3cc0f16fdcdc5953b5d1cac28b274ee91d2f3d8ae89027b9e",
+    "reference_sha256": "d619f6360542a4f3cc0f16fdcdc5953b5d1cac28b274ee91d2f3d8ae89027b9e"
+  },
+  {
+    "case": "vwmaccu-w128-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "2643c1312e1084bff04df4d977ec82e8a72ac6ac44bb2b139c237fabc5749122",
+    "reference_sha256": "2643c1312e1084bff04df4d977ec82e8a72ac6ac44bb2b139c237fabc5749122"
+  },
+  {
+    "case": "vwmaccu-w256-e8-m1-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "e992d3a5439e4cdd7bbc9e95160bf83ff06e64bc68471bf20b353c9cc71f4417",
+    "reference_sha256": "e992d3a5439e4cdd7bbc9e95160bf83ff06e64bc68471bf20b353c9cc71f4417"
+  },
+  {
+    "case": "vwmaccu-w256-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "674aa18c84310ebef471e270cb45a65998782681e4d8ca9f6370c9f9ac359882",
+    "reference_sha256": "674aa18c84310ebef471e270cb45a65998782681e4d8ca9f6370c9f9ac359882"
+  },
+  {
+    "case": "vwmaccu-w256-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "90f1d56737bc94552bf6909d8723503c45734f2c5e82a4d95bd5dd0e01524ad8",
+    "reference_sha256": "90f1d56737bc94552bf6909d8723503c45734f2c5e82a4d95bd5dd0e01524ad8"
+  },
+  {
+    "case": "vwmaccu-w256-e16-m1-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "dc25283d1b6075a1c0a25182abab087c092960261e5486f9abb505f9f19fc7e2",
+    "reference_sha256": "dc25283d1b6075a1c0a25182abab087c092960261e5486f9abb505f9f19fc7e2"
+  },
+  {
+    "case": "vwmaccu-w256-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "7f39bf29e7cde8cd8c310d165363db5b60752521c6a336de5ca1769ace2fd87f",
+    "reference_sha256": "7f39bf29e7cde8cd8c310d165363db5b60752521c6a336de5ca1769ace2fd87f"
+  },
+  {
+    "case": "vwmaccu-w256-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "f9b905ce0244bd2288809b0bbbcd14722183ba41238953f5794a528ad1ce546a",
+    "reference_sha256": "f9b905ce0244bd2288809b0bbbcd14722183ba41238953f5794a528ad1ce546a"
+  },
+  {
+    "case": "vwmaccu-w256-e32-m1-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "c4b344d5976779b6dd8505835764e736c9930f03d46e67d0b2aabd9496d7a0d3",
+    "reference_sha256": "c4b344d5976779b6dd8505835764e736c9930f03d46e67d0b2aabd9496d7a0d3"
+  },
+  {
+    "case": "vwmaccu-w256-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "68bfd1f7362a3f6c804984526adc25ed907cc511b7b3e3d15b8a9a0326e2e7ea",
+    "reference_sha256": "68bfd1f7362a3f6c804984526adc25ed907cc511b7b3e3d15b8a9a0326e2e7ea"
+  },
+  {
+    "case": "vwmaccu-w256-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "33baf59f456dc82ca5d64aca77ab034048304a98b651377d63b7b2bb6cb658e7",
+    "reference_sha256": "33baf59f456dc82ca5d64aca77ab034048304a98b651377d63b7b2bb6cb658e7"
+  },
+  {
+    "case": "vwmaccu-w512-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "b5447081b84722416227a5f31b9ae0897955de447d07e11991b1147aa07e8c12",
+    "reference_sha256": "b5447081b84722416227a5f31b9ae0897955de447d07e11991b1147aa07e8c12"
+  },
+  {
+    "case": "vwmaccu-w512-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "0192d500a2600c938af9b1c39d4f32bb2409007f0da0c0c58c7d4a908b267e31",
+    "reference_sha256": "0192d500a2600c938af9b1c39d4f32bb2409007f0da0c0c58c7d4a908b267e31"
+  },
+  {
+    "case": "vwmaccu-w512-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "b15356e6ac35b88b9740d2486d6b51f41f499dd5bf1f54d2dc05bf9acaced634",
+    "reference_sha256": "b15356e6ac35b88b9740d2486d6b51f41f499dd5bf1f54d2dc05bf9acaced634"
+  },
+  {
+    "case": "vwmaccu-w512-e8-mf2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "644b18c1ccf75e6468dae7385e3addcb00cdfa3f70067efa8e09fc8dd2abf4b3",
+    "reference_sha256": "644b18c1ccf75e6468dae7385e3addcb00cdfa3f70067efa8e09fc8dd2abf4b3"
+  },
+  {
+    "case": "vwmaccu-w512-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "320817f9477a1325e107947a599d63c3241bfcf20032cb6f33c9d1f2264dd648",
+    "reference_sha256": "320817f9477a1325e107947a599d63c3241bfcf20032cb6f33c9d1f2264dd648"
+  },
+  {
+    "case": "vwmaccu-w512-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "94a990008c2aab17b5bfec0281c982651a97f5b0b9e616b2a320dd792b560ba4",
+    "reference_sha256": "94a990008c2aab17b5bfec0281c982651a97f5b0b9e616b2a320dd792b560ba4"
+  },
+  {
+    "case": "vwmaccu-w512-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "fc3b9ed56e937c382ae813d183a184cb0bc0a08e79457df57a7ae3cd677cca98",
+    "reference_sha256": "fc3b9ed56e937c382ae813d183a184cb0bc0a08e79457df57a7ae3cd677cca98"
+  },
+  {
+    "case": "vwmaccu-w512-e16-mf2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "9d6b8e4e397334ed03c819350ab49a984f4c418e963b8b98aee682a972e16fc2",
+    "reference_sha256": "9d6b8e4e397334ed03c819350ab49a984f4c418e963b8b98aee682a972e16fc2"
+  },
+  {
+    "case": "vwmaccu-w512-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "b237638aa9b37ad04e769f48cb91674dd414e79055cfccad2641d7f70c65bc69",
+    "reference_sha256": "b237638aa9b37ad04e769f48cb91674dd414e79055cfccad2641d7f70c65bc69"
+  },
+  {
+    "case": "vwmaccu-w512-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "19f17b14c7bcaa6387a555176e1966ff33b82d077c55034fd83832ba69b456b1",
+    "reference_sha256": "19f17b14c7bcaa6387a555176e1966ff33b82d077c55034fd83832ba69b456b1"
+  },
+  {
+    "case": "vwmaccu-w512-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "648884045f88d8d87dafb7a459ea3fdd0d9dafaaa6f1eb06e03a8832073ba06c",
+    "reference_sha256": "648884045f88d8d87dafb7a459ea3fdd0d9dafaaa6f1eb06e03a8832073ba06c"
+  },
+  {
+    "case": "vwmaccu-w512-e32-mf2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "928b2a30e844cafbec60674421ba4123687900263fff1e3ab05d054f70bdb737",
+    "reference_sha256": "928b2a30e844cafbec60674421ba4123687900263fff1e3ab05d054f70bdb737"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "36cf9853fa95cbc262307512971f4cad4ecde0d37f8f45bf857893150f573730",
+    "reference_sha256": "36cf9853fa95cbc262307512971f4cad4ecde0d37f8f45bf857893150f573730"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "2f87d9982732676554424290aee382b3ce5d571c381365f1ad4a057cc08bdcc3",
+    "reference_sha256": "2f87d9982732676554424290aee382b3ce5d571c381365f1ad4a057cc08bdcc3"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "d45cfe86af539d05e1ea16cc8ad02dcb3239c8d6b63c269531c2f818bb57e295",
+    "reference_sha256": "d45cfe86af539d05e1ea16cc8ad02dcb3239c8d6b63c269531c2f818bb57e295"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "73708622918f42e40f864342173d507c48716d6ebfe4a170cfeba99029676ef2",
+    "reference_sha256": "73708622918f42e40f864342173d507c48716d6ebfe4a170cfeba99029676ef2"
+  },
+  {
+    "case": "vwmaccu-w1024-e8-mf4-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "c3adb490dc25c23af0ff8f94984841167765fb6cac5c767619a171cd5a3a1b93",
+    "reference_sha256": "c3adb490dc25c23af0ff8f94984841167765fb6cac5c767619a171cd5a3a1b93"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "99755e48284ca16a1e6c726faacd7fec74a6908f768033c78572bbf0e2836d71",
+    "reference_sha256": "99755e48284ca16a1e6c726faacd7fec74a6908f768033c78572bbf0e2836d71"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "e3964a7f69f53a6f377a399b158421c322579850685012df31a1bed7e3b925df",
+    "reference_sha256": "e3964a7f69f53a6f377a399b158421c322579850685012df31a1bed7e3b925df"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "3dfc6c3a7fcbd3ab9b7fd31acc1b990361d5652a1eea132e8291ce7c7713b944",
+    "reference_sha256": "3dfc6c3a7fcbd3ab9b7fd31acc1b990361d5652a1eea132e8291ce7c7713b944"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "194bb2f326e1cbd544f3dc19ef5ee4c89f9acd80962fd63374cbe06c84245f1f",
+    "reference_sha256": "194bb2f326e1cbd544f3dc19ef5ee4c89f9acd80962fd63374cbe06c84245f1f"
+  },
+  {
+    "case": "vwmaccu-w1024-e16-mf4-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "191fead4933d28e28369e005b989ef78da8da5f5346e337afdcbe7fadefb9ca4",
+    "reference_sha256": "191fead4933d28e28369e005b989ef78da8da5f5346e337afdcbe7fadefb9ca4"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "15d53ce86a5ad086df321c6f4d9bec5e49a8b8f909abf690c3c3f6c49d9537d3",
+    "reference_sha256": "15d53ce86a5ad086df321c6f4d9bec5e49a8b8f909abf690c3c3f6c49d9537d3"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "9e580ba946d32cf89900d84a4972d821e5e289f7d23ce078c7358f8a34a818db",
+    "reference_sha256": "9e580ba946d32cf89900d84a4972d821e5e289f7d23ce078c7358f8a34a818db"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "8fd58b6a2d5e378e2307c58a139a27a08728963fa188d22a50457ced65cab948",
+    "reference_sha256": "8fd58b6a2d5e378e2307c58a139a27a08728963fa188d22a50457ced65cab948"
+  },
+  {
+    "case": "vwmaccu-w1024-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "04a119ebb8ff789f281b7ae09c75a7c9ae6c30b1cd68a64a2a887fc44fb862d4",
+    "reference_sha256": "04a119ebb8ff789f281b7ae09c75a7c9ae6c30b1cd68a64a2a887fc44fb862d4"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "c99d6207b7e3df4a123b2b22a7f2a5cedb5dc243847e33994df755b1170b39c3",
+    "reference_sha256": "c99d6207b7e3df4a123b2b22a7f2a5cedb5dc243847e33994df755b1170b39c3"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "566f9d6edf7a994a197b854bdc84fa9af7eec58db55e4c1c031e27b54161883b",
+    "reference_sha256": "566f9d6edf7a994a197b854bdc84fa9af7eec58db55e4c1c031e27b54161883b"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "d2e9c66c5f998e3fd1c2d673d4769bc836bc7c0303994d3d3ac9f39bc310c678",
+    "reference_sha256": "d2e9c66c5f998e3fd1c2d673d4769bc836bc7c0303994d3d3ac9f39bc310c678"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "027990968863dfa48f125f571e0ea7e923206c895c61fdc828cd4bc1fbc983db",
+    "reference_sha256": "027990968863dfa48f125f571e0ea7e923206c895c61fdc828cd4bc1fbc983db"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "31e80579c3d7260d2cc3f8c33ea3567128c74a0312afe14e29a0f3abe9fd48fc",
+    "reference_sha256": "31e80579c3d7260d2cc3f8c33ea3567128c74a0312afe14e29a0f3abe9fd48fc"
+  },
+  {
+    "case": "vwmaccu-w2048-e8-mf8-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "e34d5a21b9ba7012763e765ff763a766c7965ba312de2ab9e710d51d2a5016df",
+    "reference_sha256": "e34d5a21b9ba7012763e765ff763a766c7965ba312de2ab9e710d51d2a5016df"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "7e35d8020bb17baac46a2be181da463bd4b56f734abe78edfec4e5fbee4ff198",
+    "reference_sha256": "7e35d8020bb17baac46a2be181da463bd4b56f734abe78edfec4e5fbee4ff198"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "2d4ff7bbd54f686326a2b45d1f7fc5202cf3331ed0a8471fc7f53e45a0e179cc",
+    "reference_sha256": "2d4ff7bbd54f686326a2b45d1f7fc5202cf3331ed0a8471fc7f53e45a0e179cc"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "41e61d4935cf4f51557de292813befc04db8dcb1d132283c0440ff6f1313f22e",
+    "reference_sha256": "41e61d4935cf4f51557de292813befc04db8dcb1d132283c0440ff6f1313f22e"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "4f5a18919506650f77349b6374f8254c99d681c5d62a4e7014ce3c0bd33e6ef9",
+    "reference_sha256": "4f5a18919506650f77349b6374f8254c99d681c5d62a4e7014ce3c0bd33e6ef9"
+  },
+  {
+    "case": "vwmaccu-w2048-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "9acc766889a20d9e0bbec8d7028a23729c9843294ef3037b5358f26036b28729",
+    "reference_sha256": "9acc766889a20d9e0bbec8d7028a23729c9843294ef3037b5358f26036b28729"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "fc4a639373e9464589f62678116fad1a541426ab624c6dad263787da9f20e983",
+    "reference_sha256": "fc4a639373e9464589f62678116fad1a541426ab624c6dad263787da9f20e983"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "53d9222e353a7038095de5061107ac5c5b91462fdefad773edaf354d4a9385bd",
+    "reference_sha256": "53d9222e353a7038095de5061107ac5c5b91462fdefad773edaf354d4a9385bd"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "2f78a169d3bbc918c5ee1444c2baabe881eef7607c9ff9d4bcc53228de051aed",
+    "reference_sha256": "2f78a169d3bbc918c5ee1444c2baabe881eef7607c9ff9d4bcc53228de051aed"
+  },
+  {
+    "case": "vwmaccu-w2048-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "fd6de753953e3b3333e416e6b73777df4344469288021fb77df7a310b85685d2",
+    "reference_sha256": "fd6de753953e3b3333e416e6b73777df4344469288021fb77df7a310b85685d2"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "cc78bc10a060c39b4dc20206a31f448f305dd060ad362141797d2efcd0d8fd2b",
+    "reference_sha256": "cc78bc10a060c39b4dc20206a31f448f305dd060ad362141797d2efcd0d8fd2b"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "87cb22426c6d716435df56742fcdcbb7979e8485443d098371bb92d88d65f254",
+    "reference_sha256": "87cb22426c6d716435df56742fcdcbb7979e8485443d098371bb92d88d65f254"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "153ffb6971dbc06eb754bf0da00c8680ddbd03c5f70b8ed0f3a588667b1b5949",
+    "reference_sha256": "153ffb6971dbc06eb754bf0da00c8680ddbd03c5f70b8ed0f3a588667b1b5949"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "cd22034457bc1bb099e5a12220db379ee30dc68fc5c9e31f66928f55e867f250",
+    "reference_sha256": "cd22034457bc1bb099e5a12220db379ee30dc68fc5c9e31f66928f55e867f250"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "a2b1a54d9bbde0cde995c6f589a087f57a58c43e55b403374b1441bb4a96bb89",
+    "reference_sha256": "a2b1a54d9bbde0cde995c6f589a087f57a58c43e55b403374b1441bb4a96bb89"
+  },
+  {
+    "case": "vwmaccu-w4096-e8-mf8-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "241cd51e500f1051670e8970eff784b9ee48e35aa960b4ca86acb7d1b6e68bca",
+    "reference_sha256": "241cd51e500f1051670e8970eff784b9ee48e35aa960b4ca86acb7d1b6e68bca"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "7cd67a3b7d3da857adf7ffe18aaad39d03cac30d8fbd682261a180298a41d5ab",
+    "reference_sha256": "7cd67a3b7d3da857adf7ffe18aaad39d03cac30d8fbd682261a180298a41d5ab"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "17fc5cbcff08b103321707b368ce8bba8e32f32fbadc3b88f7f523ef4d2ccd1c",
+    "reference_sha256": "17fc5cbcff08b103321707b368ce8bba8e32f32fbadc3b88f7f523ef4d2ccd1c"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "e3fe7e41959c0fff9343849f82b728eb770f8da22d6870b77880ab92e57bcf7c",
+    "reference_sha256": "e3fe7e41959c0fff9343849f82b728eb770f8da22d6870b77880ab92e57bcf7c"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "086bbadfbf07d45985a6c894212b4e26a449841397d49f429431beb4da12278d",
+    "reference_sha256": "086bbadfbf07d45985a6c894212b4e26a449841397d49f429431beb4da12278d"
+  },
+  {
+    "case": "vwmaccu-w4096-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "bf73233b661dd1cd4b20e3806bd0b6a9a424125832abaac2197d9606fee43e2d",
+    "reference_sha256": "bf73233b661dd1cd4b20e3806bd0b6a9a424125832abaac2197d9606fee43e2d"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "12702ace766ad0e62ddaed723634944e873de6766e6a77da53c0b66e48a56a9b",
+    "reference_sha256": "12702ace766ad0e62ddaed723634944e873de6766e6a77da53c0b66e48a56a9b"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "aae0665f3c9ff9f116994db51f8775ea403770739ba8077eb56f263366b29060",
+    "reference_sha256": "aae0665f3c9ff9f116994db51f8775ea403770739ba8077eb56f263366b29060"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "a0aece8d252b347f69cdac91545627f8aed6a7def178c2d61770e9b3eb35701b",
+    "reference_sha256": "a0aece8d252b347f69cdac91545627f8aed6a7def178c2d61770e9b3eb35701b"
+  },
+  {
+    "case": "vwmaccu-w4096-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccu",
+      "vx",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "6db582e67a160aba28b49e69058fc291456c8d6cb846cd9e1062f62a7efaad12",
+    "reference_sha256": "6db582e67a160aba28b49e69058fc291456c8d6cb846cd9e1062f62a7efaad12"
+  },
+  {
+    "case": "vwmaccus-w128-e8-m2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      128,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "a8f07b224080a6b2628b87544d4d009abcc470b416870b4bc03a52e4926af675",
+    "reference_sha256": "a8f07b224080a6b2628b87544d4d009abcc470b416870b4bc03a52e4926af675"
+  },
+  {
+    "case": "vwmaccus-w128-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      128,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "51d70b2844065c753107e99edcb7f3413191be142df0a7d2d3597aa744984016",
+    "reference_sha256": "51d70b2844065c753107e99edcb7f3413191be142df0a7d2d3597aa744984016"
+  },
+  {
+    "case": "vwmaccus-w128-e16-m2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      128,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "2a60b3d63ae2d74dd33a4015a08a2652149911ecd87ad792b05a443c676cffc1",
+    "reference_sha256": "2a60b3d63ae2d74dd33a4015a08a2652149911ecd87ad792b05a443c676cffc1"
+  },
+  {
+    "case": "vwmaccus-w128-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      128,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "dcaa76986cf9f56aeb736aef358ef7b76a3c4b121909cf5e75e3be2fef2b4fe1",
+    "reference_sha256": "dcaa76986cf9f56aeb736aef358ef7b76a3c4b121909cf5e75e3be2fef2b4fe1"
+  },
+  {
+    "case": "vwmaccus-w128-e32-m2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      128,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "d3c3c5ecd2ceb713448d8ad085e49d499c7eae4ce2057526593dbe0b5a2dd5ae",
+    "reference_sha256": "d3c3c5ecd2ceb713448d8ad085e49d499c7eae4ce2057526593dbe0b5a2dd5ae"
+  },
+  {
+    "case": "vwmaccus-w128-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      128,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "82e24d83b808c035f926e6aa0acdd22d13d0f69ac8f85ca1584913dd5d61cd49",
+    "reference_sha256": "82e24d83b808c035f926e6aa0acdd22d13d0f69ac8f85ca1584913dd5d61cd49"
+  },
+  {
+    "case": "vwmaccus-w256-e8-m1-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "ddd9fc73511664a9515a4f7b524bd90a34e44fe41ba983f552c1e6ccb8cb1a8a",
+    "reference_sha256": "ddd9fc73511664a9515a4f7b524bd90a34e44fe41ba983f552c1e6ccb8cb1a8a"
+  },
+  {
+    "case": "vwmaccus-w256-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "8f36963c8076bc7f310658d3d6055064abbbd089c2cc639ebf5c6f1d746957cc",
+    "reference_sha256": "8f36963c8076bc7f310658d3d6055064abbbd089c2cc639ebf5c6f1d746957cc"
+  },
+  {
+    "case": "vwmaccus-w256-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "5f855b126557c42042759b59c3524e2f161a317a79a0fb64a50ad43177d2bcc4",
+    "reference_sha256": "5f855b126557c42042759b59c3524e2f161a317a79a0fb64a50ad43177d2bcc4"
+  },
+  {
+    "case": "vwmaccus-w256-e16-m1-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "63b46d868fd2fcb50c07315848e839fc7d64141b6900c82b12f531549c169844",
+    "reference_sha256": "63b46d868fd2fcb50c07315848e839fc7d64141b6900c82b12f531549c169844"
+  },
+  {
+    "case": "vwmaccus-w256-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "a036e281c0929be950ffd2b810d1be422796892174a7df512c12dd360f6e462c",
+    "reference_sha256": "a036e281c0929be950ffd2b810d1be422796892174a7df512c12dd360f6e462c"
+  },
+  {
+    "case": "vwmaccus-w256-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "b8f3f24b4dfdaa6841aea76eaf7bb2775c9b602cd5f8c3e9eaff996529876f2a",
+    "reference_sha256": "b8f3f24b4dfdaa6841aea76eaf7bb2775c9b602cd5f8c3e9eaff996529876f2a"
+  },
+  {
+    "case": "vwmaccus-w256-e32-m1-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "02036c62e45e4ba3795b3725c88253adc793724222165021b8d4a20728ea7277",
+    "reference_sha256": "02036c62e45e4ba3795b3725c88253adc793724222165021b8d4a20728ea7277"
+  },
+  {
+    "case": "vwmaccus-w256-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "576490ff4e9277dcdffaa2c4b846987b900d65789cff6fad1e7e25b573552f29",
+    "reference_sha256": "576490ff4e9277dcdffaa2c4b846987b900d65789cff6fad1e7e25b573552f29"
+  },
+  {
+    "case": "vwmaccus-w256-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      256,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "a17de9072ed2a3f78d38b3ad27b98e0089f98ddeeefd67b3e47931a2f465ce01",
+    "reference_sha256": "a17de9072ed2a3f78d38b3ad27b98e0089f98ddeeefd67b3e47931a2f465ce01"
+  },
+  {
+    "case": "vwmaccus-w512-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "bc9fe4d703058f0376f171e994efa0cdb2da11dee8f6a5372732ad478227803c",
+    "reference_sha256": "bc9fe4d703058f0376f171e994efa0cdb2da11dee8f6a5372732ad478227803c"
+  },
+  {
+    "case": "vwmaccus-w512-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "e6b07c102f6054aa7f1f163f451528c7fe7b7160d721b66b981b6256e73c35fb",
+    "reference_sha256": "e6b07c102f6054aa7f1f163f451528c7fe7b7160d721b66b981b6256e73c35fb"
+  },
+  {
+    "case": "vwmaccus-w512-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "7bd4e12e6350342151686135a90982652ad29f5bc834bec76e652984359840d5",
+    "reference_sha256": "7bd4e12e6350342151686135a90982652ad29f5bc834bec76e652984359840d5"
+  },
+  {
+    "case": "vwmaccus-w512-e8-mf2-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "f7d2d0dfa1ada2e9c85e5c82d28ae3c9cb98311d403532fa3455ed95d2da361f",
+    "reference_sha256": "f7d2d0dfa1ada2e9c85e5c82d28ae3c9cb98311d403532fa3455ed95d2da361f"
+  },
+  {
+    "case": "vwmaccus-w512-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "d78551374e9f8bf360f22eefbc764b5f56bb17caaa39be73c891eabe35ea3930",
+    "reference_sha256": "d78551374e9f8bf360f22eefbc764b5f56bb17caaa39be73c891eabe35ea3930"
+  },
+  {
+    "case": "vwmaccus-w512-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "7e7caeadd5ad7ad2c36957273818397798c4a2f54f3cead9bff7b8755e7ad860",
+    "reference_sha256": "7e7caeadd5ad7ad2c36957273818397798c4a2f54f3cead9bff7b8755e7ad860"
+  },
+  {
+    "case": "vwmaccus-w512-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "ed23a2e5a2d60ecc059a04eab678086b142cc4b2b285fd16e5d22358c7f468e0",
+    "reference_sha256": "ed23a2e5a2d60ecc059a04eab678086b142cc4b2b285fd16e5d22358c7f468e0"
+  },
+  {
+    "case": "vwmaccus-w512-e16-mf2-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "8715dc8c807de349c9115522359f60c403d26a46a871d3e3881626567502ed95",
+    "reference_sha256": "8715dc8c807de349c9115522359f60c403d26a46a871d3e3881626567502ed95"
+  },
+  {
+    "case": "vwmaccus-w512-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "e222fb5abb75af585419dcbfe6e757f4e58937e144e66a709bb06f24da843d1e",
+    "reference_sha256": "e222fb5abb75af585419dcbfe6e757f4e58937e144e66a709bb06f24da843d1e"
+  },
+  {
+    "case": "vwmaccus-w512-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "5d11fc10575872705f88aba67eb4888c183d58f1b523966c5a9aae0cbc29b931",
+    "reference_sha256": "5d11fc10575872705f88aba67eb4888c183d58f1b523966c5a9aae0cbc29b931"
+  },
+  {
+    "case": "vwmaccus-w512-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "694368ec7d39f9ce829675f5fe5e26826c4f7916d2433ad759a5d929d1bd61ee",
+    "reference_sha256": "694368ec7d39f9ce829675f5fe5e26826c4f7916d2433ad759a5d929d1bd61ee"
+  },
+  {
+    "case": "vwmaccus-w512-e32-mf2-vx-destchunk-start7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      512,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "0970fbb4515bed5a349c70f2bf4c8972309d30fe5cbf4f75f70bb237722b3423",
+    "reference_sha256": "0970fbb4515bed5a349c70f2bf4c8972309d30fe5cbf4f75f70bb237722b3423"
+  },
+  {
+    "case": "vwmaccus-w1024-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "3447a776cfc57d80df0902920be17f6b246402b3b7a0b8f794516fc3e39b7698",
+    "reference_sha256": "3447a776cfc57d80df0902920be17f6b246402b3b7a0b8f794516fc3e39b7698"
+  },
+  {
+    "case": "vwmaccus-w1024-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "5f728e23bc805f7c89667b45771272a6f9b037ee8a1b7d44688501732854f935",
+    "reference_sha256": "5f728e23bc805f7c89667b45771272a6f9b037ee8a1b7d44688501732854f935"
+  },
+  {
+    "case": "vwmaccus-w1024-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "eb41f6a26604dc25ce5ae3f4f20de7781d4e8acae4f88d5689d800324286a83f",
+    "reference_sha256": "eb41f6a26604dc25ce5ae3f4f20de7781d4e8acae4f88d5689d800324286a83f"
+  },
+  {
+    "case": "vwmaccus-w1024-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "e30e06989859ce89165447dfc86beacb20544b122d500e87258cdf676fd56d4a",
+    "reference_sha256": "e30e06989859ce89165447dfc86beacb20544b122d500e87258cdf676fd56d4a"
+  },
+  {
+    "case": "vwmaccus-w1024-e8-mf4-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "99df456d4bf255da211941034566f11d5bbf648593fa2a131b48be4534905485",
+    "reference_sha256": "99df456d4bf255da211941034566f11d5bbf648593fa2a131b48be4534905485"
+  },
+  {
+    "case": "vwmaccus-w1024-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "592d7c648ffe56b1280b33ea764ded87d922d88c165715265907c3552ff16a4b",
+    "reference_sha256": "592d7c648ffe56b1280b33ea764ded87d922d88c165715265907c3552ff16a4b"
+  },
+  {
+    "case": "vwmaccus-w1024-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "865458754be25ca12f1ec81ef3ef36f4ef9f7cdd88f878de13dae533719efbcf",
+    "reference_sha256": "865458754be25ca12f1ec81ef3ef36f4ef9f7cdd88f878de13dae533719efbcf"
+  },
+  {
+    "case": "vwmaccus-w1024-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "a8436ddab9546da6a61b6e3c03b3213151a0232660545644f91660fc46ff13f3",
+    "reference_sha256": "a8436ddab9546da6a61b6e3c03b3213151a0232660545644f91660fc46ff13f3"
+  },
+  {
+    "case": "vwmaccus-w1024-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "bab5eabfdf9093443d7124ade35b3bec9a1134bf6d23a606c99ecef884bcc15f",
+    "reference_sha256": "bab5eabfdf9093443d7124ade35b3bec9a1134bf6d23a606c99ecef884bcc15f"
+  },
+  {
+    "case": "vwmaccus-w1024-e16-mf4-vx-destchunk-start15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "b4fd2aa7b13bde2001fe29ce77418a55657c1424edf95412f0db02ac2f6ada4a",
+    "reference_sha256": "b4fd2aa7b13bde2001fe29ce77418a55657c1424edf95412f0db02ac2f6ada4a"
+  },
+  {
+    "case": "vwmaccus-w1024-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "8e1264421457d8bed80ea922c33ab2e51981f503a6c751d4e7c924dad8537682",
+    "reference_sha256": "8e1264421457d8bed80ea922c33ab2e51981f503a6c751d4e7c924dad8537682"
+  },
+  {
+    "case": "vwmaccus-w1024-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "5be7e5bf3276458877c596257b213224e097132b8800928f6513643662f6f47e",
+    "reference_sha256": "5be7e5bf3276458877c596257b213224e097132b8800928f6513643662f6f47e"
+  },
+  {
+    "case": "vwmaccus-w1024-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "d12bfc463a9dc799abed1d0fc0b286c17a1c17b933cc005cfad6efc8567ad340",
+    "reference_sha256": "d12bfc463a9dc799abed1d0fc0b286c17a1c17b933cc005cfad6efc8567ad340"
+  },
+  {
+    "case": "vwmaccus-w1024-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      1024,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "947c69b822d9fa3a20afa8309e210fa0fb39f295d8bbb4ddefb822965dfd1cb0",
+    "reference_sha256": "947c69b822d9fa3a20afa8309e210fa0fb39f295d8bbb4ddefb822965dfd1cb0"
+  },
+  {
+    "case": "vwmaccus-w2048-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "b08f78dd1f3fa62fb529ee65ef42c9902dc9edff235b5c9b212c15454bf3d83c",
+    "reference_sha256": "b08f78dd1f3fa62fb529ee65ef42c9902dc9edff235b5c9b212c15454bf3d83c"
+  },
+  {
+    "case": "vwmaccus-w2048-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "e96756d09bcd0c97241322f5e1ac630fdad6d9f2dd00aa495b2dd3a0567f5c1d",
+    "reference_sha256": "e96756d09bcd0c97241322f5e1ac630fdad6d9f2dd00aa495b2dd3a0567f5c1d"
+  },
+  {
+    "case": "vwmaccus-w2048-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "570b3398cba99925e000aa0b8dfd2d2bee73baa80dc10b7fc63be7b64bab8219",
+    "reference_sha256": "570b3398cba99925e000aa0b8dfd2d2bee73baa80dc10b7fc63be7b64bab8219"
+  },
+  {
+    "case": "vwmaccus-w2048-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "4fdfa3eb8b7384d4e5f5444d87d77200360908a36e3c225960e68af300f4acf8",
+    "reference_sha256": "4fdfa3eb8b7384d4e5f5444d87d77200360908a36e3c225960e68af300f4acf8"
+  },
+  {
+    "case": "vwmaccus-w2048-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "91513b717a9d17c335a557e91d32e0d840d00024d59a8e4395ac8b446da27cf6",
+    "reference_sha256": "91513b717a9d17c335a557e91d32e0d840d00024d59a8e4395ac8b446da27cf6"
+  },
+  {
+    "case": "vwmaccus-w2048-e8-mf8-vx-destchunk-start31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "43c6ceaa866c7dd238b553da1554bb570f782860ba33b5477076688df632c61f",
+    "reference_sha256": "43c6ceaa866c7dd238b553da1554bb570f782860ba33b5477076688df632c61f"
+  },
+  {
+    "case": "vwmaccus-w2048-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "997a9f4fdb0c830078e39050979f9bc2845a36b2c572b1d9fc49d9367d0f7df0",
+    "reference_sha256": "997a9f4fdb0c830078e39050979f9bc2845a36b2c572b1d9fc49d9367d0f7df0"
+  },
+  {
+    "case": "vwmaccus-w2048-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "7988e810e388c4d4959c59aae8b4a8dfddc64b30f8f59d1cca0d7472b39ec9cc",
+    "reference_sha256": "7988e810e388c4d4959c59aae8b4a8dfddc64b30f8f59d1cca0d7472b39ec9cc"
+  },
+  {
+    "case": "vwmaccus-w2048-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "4fe4534379c11d963998d54a1a877f7b6cda09e3619f9d1adb84adb3b221b328",
+    "reference_sha256": "4fe4534379c11d963998d54a1a877f7b6cda09e3619f9d1adb84adb3b221b328"
+  },
+  {
+    "case": "vwmaccus-w2048-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "faf8579e68c9c326cc02324c57d3cbe91a2081d9b6967f2697b63080c28a18b6",
+    "reference_sha256": "faf8579e68c9c326cc02324c57d3cbe91a2081d9b6967f2697b63080c28a18b6"
+  },
+  {
+    "case": "vwmaccus-w2048-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "7fd546bf61ebe28a8c6ddadaaa9cfdeffc47f2194477d0ae51824943710d4dc5",
+    "reference_sha256": "7fd546bf61ebe28a8c6ddadaaa9cfdeffc47f2194477d0ae51824943710d4dc5"
+  },
+  {
+    "case": "vwmaccus-w2048-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "ab78ad90d76623a3f7abcf32d9fc2cc079a9e5bc9b02783cc78f1190ed188153",
+    "reference_sha256": "ab78ad90d76623a3f7abcf32d9fc2cc079a9e5bc9b02783cc78f1190ed188153"
+  },
+  {
+    "case": "vwmaccus-w2048-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "2207940f6ae461142a204de791ca97b881a34db794edd9babd777ba8b88ba4f6",
+    "reference_sha256": "2207940f6ae461142a204de791ca97b881a34db794edd9babd777ba8b88ba4f6"
+  },
+  {
+    "case": "vwmaccus-w2048-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "7579672d551b373336dd7aa033693bec6d21d0b860024db035e2e518c17c40d7",
+    "reference_sha256": "7579672d551b373336dd7aa033693bec6d21d0b860024db035e2e518c17c40d7"
+  },
+  {
+    "case": "vwmaccus-w2048-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      2048,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "835ccde0793724e66a871927fd4f360301809c1b903a432acee7afbf22dd29f4",
+    "reference_sha256": "835ccde0793724e66a871927fd4f360301809c1b903a432acee7afbf22dd29f4"
+  },
+  {
+    "case": "vwmaccus-w4096-e8-m1-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      8,
+      "m1"
+    ],
+    "raw_sha256": "dfd4a23c737d11a0013e23e3a5c7e5f33c4027ee50bb946eafab7000c89d45e5",
+    "reference_sha256": "dfd4a23c737d11a0013e23e3a5c7e5f33c4027ee50bb946eafab7000c89d45e5"
+  },
+  {
+    "case": "vwmaccus-w4096-e8-m2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      8,
+      "m2"
+    ],
+    "raw_sha256": "bc2dae4482f6626ede0035ac46a4805b10c08a26ac484b74b7e9d895d18cb7d5",
+    "reference_sha256": "bc2dae4482f6626ede0035ac46a4805b10c08a26ac484b74b7e9d895d18cb7d5"
+  },
+  {
+    "case": "vwmaccus-w4096-e8-m4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      8,
+      "m4"
+    ],
+    "raw_sha256": "d8880ff9919934dca40e0ea8662e36272fcbb5c01bd509112b6230c39e7226f2",
+    "reference_sha256": "d8880ff9919934dca40e0ea8662e36272fcbb5c01bd509112b6230c39e7226f2"
+  },
+  {
+    "case": "vwmaccus-w4096-e8-mf2-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      8,
+      "mf2"
+    ],
+    "raw_sha256": "3a082c71483ac20bfb9ae0aa2af21b23f1c7420b383dab83590815cf1312e696",
+    "reference_sha256": "3a082c71483ac20bfb9ae0aa2af21b23f1c7420b383dab83590815cf1312e696"
+  },
+  {
+    "case": "vwmaccus-w4096-e8-mf4-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      8,
+      "mf4"
+    ],
+    "raw_sha256": "7fe4e2ec3630d12c3130da1e284fcdb9e117c70d7117061cd0c8645706812b81",
+    "reference_sha256": "7fe4e2ec3630d12c3130da1e284fcdb9e117c70d7117061cd0c8645706812b81"
+  },
+  {
+    "case": "vwmaccus-w4096-e8-mf8-vx-destchunk-length31-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      8,
+      "mf8"
+    ],
+    "raw_sha256": "874b5413ce69b3108cee8667da3af196599d6efeaa3477d394ae9ac7522dcc8f",
+    "reference_sha256": "874b5413ce69b3108cee8667da3af196599d6efeaa3477d394ae9ac7522dcc8f"
+  },
+  {
+    "case": "vwmaccus-w4096-e16-m1-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      16,
+      "m1"
+    ],
+    "raw_sha256": "1e1432381eb05f2a0ab5906e9445cf8157c808735396be9b593cc52593f36b7e",
+    "reference_sha256": "1e1432381eb05f2a0ab5906e9445cf8157c808735396be9b593cc52593f36b7e"
+  },
+  {
+    "case": "vwmaccus-w4096-e16-m2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      16,
+      "m2"
+    ],
+    "raw_sha256": "94ed0b8fffc88e0458ab2e8a913db6450c83de4c09779f32051c603ebbc5f570",
+    "reference_sha256": "94ed0b8fffc88e0458ab2e8a913db6450c83de4c09779f32051c603ebbc5f570"
+  },
+  {
+    "case": "vwmaccus-w4096-e16-m4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      16,
+      "m4"
+    ],
+    "raw_sha256": "4a13b6b54ed1f4ee0336ce6f21047f804b73e37147d192b66b2d51fd7e16d3ec",
+    "reference_sha256": "4a13b6b54ed1f4ee0336ce6f21047f804b73e37147d192b66b2d51fd7e16d3ec"
+  },
+  {
+    "case": "vwmaccus-w4096-e16-mf2-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      16,
+      "mf2"
+    ],
+    "raw_sha256": "475d8c3acba950f889ebeed9b0103481f1155a795881d840f3968bbdc2ed14aa",
+    "reference_sha256": "475d8c3acba950f889ebeed9b0103481f1155a795881d840f3968bbdc2ed14aa"
+  },
+  {
+    "case": "vwmaccus-w4096-e16-mf4-vx-destchunk-length15-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      16,
+      "mf4"
+    ],
+    "raw_sha256": "849ed5fb8d985973c7129bdfeb223107d4afdf3c23301399f050f06c6e0c2187",
+    "reference_sha256": "849ed5fb8d985973c7129bdfeb223107d4afdf3c23301399f050f06c6e0c2187"
+  },
+  {
+    "case": "vwmaccus-w4096-e32-m1-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      32,
+      "m1"
+    ],
+    "raw_sha256": "8cef7e61d93c6fe0aefa60cbdf7807a4db0eb5374b0a2aa471d63ff0b4c1de7d",
+    "reference_sha256": "8cef7e61d93c6fe0aefa60cbdf7807a4db0eb5374b0a2aa471d63ff0b4c1de7d"
+  },
+  {
+    "case": "vwmaccus-w4096-e32-m2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      32,
+      "m2"
+    ],
+    "raw_sha256": "7fa51ba400746aaf7be381bab6054f373e4837823f81c05c09456c249b475686",
+    "reference_sha256": "7fa51ba400746aaf7be381bab6054f373e4837823f81c05c09456c249b475686"
+  },
+  {
+    "case": "vwmaccus-w4096-e32-m4-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      32,
+      "m4"
+    ],
+    "raw_sha256": "1634d4d549057022290254ef1a8880eea83d5d72c5f4a69789b7eab192556eab",
+    "reference_sha256": "1634d4d549057022290254ef1a8880eea83d5d72c5f4a69789b7eab192556eab"
+  },
+  {
+    "case": "vwmaccus-w4096-e32-mf2-vx-destchunk-length7-none",
+    "geometry": [
+      "vwmaccus",
+      "vx",
+      4096,
+      32,
+      "mf2"
+    ],
+    "raw_sha256": "c5bc54a5bec6ffc1a979b196299a23da5693488d4f4edb9d1edf4d468a1d3659",
+    "reference_sha256": "c5bc54a5bec6ffc1a979b196299a23da5693488d4f4edb9d1edf4d468a1d3659"
+  }
+]

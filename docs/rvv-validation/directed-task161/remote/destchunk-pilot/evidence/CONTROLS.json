@@ -1,0 +1,344 @@
+{
+  "controls": 56,
+  "rejected": 56,
+  "allowed": 0,
+  "records": [
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmaccu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmacc-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vv-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmaccsu-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 0"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 7"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-length7-none",
+      "control": "post-vstart",
+      "rejected": true,
+      "error": "CSR/scalar"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "active",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "upper-byte",
+      "rejected": true,
+      "error": "widened active lane 7"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "tail",
+      "rejected": true,
+      "error": "preserved lane 10"
+    },
+    {
+      "case": "vwmaccus-w128-e32-m4-vx-destchunk-start7-none",
+      "control": "prestart",
+      "rejected": true,
+      "error": "preserved lane 0"
+    }
+  ],
+  "guest_executions": 0
+}

@@ -1,0 +1,15 @@
+{
+  "raw": "xbd:/home/vick/rvv-directed-task156/extend-full",
+  "audit": "xbd:/home/vick/rvv-directed-task161/extend-full",
+  "file_counts": {
+    ".json": 27895,
+    ".ld": 2,
+    ".stderr": 1008,
+    ".gz": 20160,
+    "execution.json": 3360
+  },
+  "allocated_bytes": 434958336,
+  "cleanup_performed": false,
+  "deleted_paths": [],
+  "source_manifest_packets_elf_oracle_retained": true
+}

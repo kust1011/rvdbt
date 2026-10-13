@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-directed-task161/controls_geometry161.py", line 31, in <module>
+    assert c is not None,key
+           ^^^^^^^^^^^^^
+AssertionError: ('vwmacc', 'vv', 128, 8, 'm2')

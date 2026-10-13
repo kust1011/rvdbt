@@ -1,0 +1,8 @@
+{
+  "samples": 420,
+  "max_active_guests": 11,
+  "max_active_offline": 4,
+  "max_compiler_processes": 5,
+  "guest_limit": 16,
+  "offline_limit": 4
+}

@@ -1,0 +1,150 @@
+{
+  "pinned_qemu_commit": "7a35c902707087c8e1b77a3c82c54b73ffa17703",
+  "checks": [
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwadd_vv.c",
+      "sha256": "0d1451e82c5e463c5fd3fe105fa45154bf534e150abd22422cbf44b8b74f8bf3"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwadd_vx.c",
+      "sha256": "ffbf45cfc0969c559eeb2b2e050c6b2aba14ab10a84d235656f2e8e0d0cbf6f8"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwadd_wv.c",
+      "sha256": "362f9eb4f557e38dce6b5ea9a898381ddf4dbb24edf65ce821050872a1a59740"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwadd_wx.c",
+      "sha256": "88150f6858255b3e4e50f86d88e5208456fc187ed1c87c0520f09380a206293a"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwaddu_vv.c",
+      "sha256": "996a69a1f6f0deadd5fe21269d4e6ee1543dd39721ee5206e58ae2d7c2844222"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwaddu_vx.c",
+      "sha256": "6b5489145b0b1953359fbae8714acbce22184d90c4816a52cce65a15a78d719f"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwaddu_wv.c",
+      "sha256": "0f7299d02727b9e8c332e7ae86475cd6d833b0dd66b4cc2f6303059f1df852c6"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwaddu_wx.c",
+      "sha256": "d8a42a375445b3007a6c9453336d36a774166b13161268b20c8e2b674d613f1b"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwmul_vv.c",
+      "sha256": "238c49f7fc44979cc9a59056d1620381ac5f2cfe4e9d4ae1ccee3c3f65122a01"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwmul_vx.c",
+      "sha256": "f1bbc343ccdf48ae90e8d7744b218eb6a21174601ab58042f962124bfb112ed8"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwmulsu_vv.c",
+      "sha256": "b294475bad5322f9624d439f28caf03674aa29c9807ecdc721f9f2995ca72b3c"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwmulsu_vx.c",
+      "sha256": "3c73d4ede24062909da0f40244ff1cf718ae577fcc7acdcf462c054e62a4924b"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwmulu_vv.c",
+      "sha256": "8efe3a0447327bb4354b953bf3a707ea8fa1ddabf72b921a3e096a80b9abe57b"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwmulu_vx.c",
+      "sha256": "f4e9b978eb3d23e4871bca39aa45a450f0a15adb862e2ff4c346c565a35f5d7f"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsub_vv.c",
+      "sha256": "0721d71bf14486266268508a1d0b8445b56205afebf1d67de750f4de9cbda911"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsub_vx.c",
+      "sha256": "0a21fc526a6d96a615e548696e2a2946bba05939d5a2667ef6c1a36d7854a6ed"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsub_wv.c",
+      "sha256": "47af091b10feb171e3dda4bee69a527ccf8a5a186c911cc8961f8843879dc0ea"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsub_wx.c",
+      "sha256": "1a4848c9941ab3a8ec04c42586b446d99ab89286787c119f8b58cf3683bc8a30"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsubu_vv.c",
+      "sha256": "4d8eda4c4e610256e09373681159130d40fdaee26434195a0c0edbbf7e7c3fe5"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsubu_vx.c",
+      "sha256": "47108427e31c8df84ed08698e23cad84f653540e2f4c5ef22d09f7a9b6098bc0"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsubu_wv.c",
+      "sha256": "e70b9a8738394d0110043df8a877c528b5623ee121e5c55d5c26be577e92a104"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/vwsubu_wx.c",
+      "sha256": "ad6d6ff60520a517a8fb8bf763aad538f9fdeddcf12e717bd3bffe592ada0493"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task154/next-widen/qemu-source/WRAPPER_EXCERPTS.txt",
+      "sha256": "3196c7c4a01eae777ebb9ec84e1273c1c5adbe525381ed46b87c3f5e91e69ebc",
+      "wrappers": 132
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmaccu_vv.c",
+      "sha256": "0729e3dcc86b464be2d9277fd9b6f842c59fac3207cc40b8f3ff752adc646241"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmaccu_vx.c",
+      "sha256": "59ea0981aad9237eccabad4ed045b77732d781ac36c4bc227b7466fa24ded87a"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmacc_vv.c",
+      "sha256": "6f02940c5605273ae29bd933078780d8e9dc88e4e018e35239bd2e126fed9704"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmacc_vx.c",
+      "sha256": "71dc82e119a4f29d8d8f566fa46aa0c03a8316e88fb7c171b548e78c2b5c6773"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmaccsu_vv.c",
+      "sha256": "6bb0747033773aa67627c064286806b3c69fc56d9bcd412de935483dbaaa76d3"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmaccsu_vx.c",
+      "sha256": "df4c4d2f3c5cf00f99b794bb564ff5b6a2b7987d5c751b7c41c60016926174dc"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/vwmaccus_vx.c",
+      "sha256": "11a21d329ca8a9183c827b0f0fb605bb2d29357096124ceb52afcc51d0bfc650"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/rvv_ch12.inc",
+      "sha256": "9d37b904660bd6e2043d069d02e5caca8b24658892bf26551e9e0219f3f2b49f"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/rvv_insn.S",
+      "sha256": "4d61684e8bf1c78d60a908ba4f728cc7422b02f00cbb3f4aa55655d16f3a289e"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/rvv_insn.h",
+      "sha256": "c1297d78f9d11438d626f099ccff320762db5905a1b5455adb14638143e5c4f6"
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/qemu-source/WRAPPER_EXCERPTS.txt",
+      "sha256": "9455a9c2b2964417417376e877227824c00919076572194fe3d2dc0a25691810",
+      "wrappers": 42
+    },
+    {
+      "path": "docs/rvv-validation/directed-task156/VECTOR_SPEC.adoc",
+      "sha256": "953eade975979f04181c1d34065696880cfa1b1ff7f0a6f185eaefe007d2316d"
+    }
+  ],
+  "new_survey": false,
+  "extension_qemu": "No matching source; retained applicability remains unchanged",
+  "production_changes": 0
+}

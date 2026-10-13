@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-directed-task161/supplement161.py", line 26, in <module>
+    if name.endswith('full') and not (out/'controls-geometry/summary.json').exists():call([R/'controls_geometry161.py',base/'corpus',base/'scripts',out/'controls-geometry'],out/'controls-geometry.log')
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task161/supplement161.py", line 18, in call
+    with out.open('wb') as f:subprocess.run(['python3',*map(str,args)],stdout=f,stderr=subprocess.STDOUT,check=True)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['python3', '/home/vick/rvv-directed-task161/controls_geometry161.py', '/home/vick/rvv-directed-task156/destchunk-full/corpus', '/home/vick/rvv-directed-task156/destchunk-full/scripts', '/home/vick/rvv-directed-task161/destchunk-full/controls-geometry']' returned non-zero exit status 1.

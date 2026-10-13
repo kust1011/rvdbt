@@ -1,0 +1,161 @@
+{
+  "negative_records_verified": 396,
+  "negative_records_without_stored_mutations": 0,
+  "allowed": [
+    {
+      "case": "vwaddu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "f65d53d1e2d14e75cda8522dbc9c37d836e5f50fbd7e2351a2d940febc408e0c",
+      "variant_sha256": "2b8934d9b225a29235f4cebb58289209c859929106e250debcaabd9340932632"
+    },
+    {
+      "case": "vwaddu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "ca6ce82cce5ed53f4a7cc26769bc72209d3ae0e0df8583d61f588954a8cbdc7f",
+      "variant_sha256": "9bc6740ae0c66d4429d92aab5c93c65a23987ed9f1e7444ff8ac421779cb8308"
+    },
+    {
+      "case": "vwadd-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "960b839672e7f1d779f336c12c9472b63abdb150084a16d42f7c955513c75a88",
+      "variant_sha256": "0f461d7d720f700207c1f2bce6aae76bdf9f0c00675270fdfb7922afca0725b0"
+    },
+    {
+      "case": "vwadd-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "72f5d3f6688cf47606203647a651ce48024ef9b067d8d788d3300f1cc9d5e6cf",
+      "variant_sha256": "d779c380a4fce42ff34573d4821efbda8a8a8bedf90a3ed8d12535d8fe41f577"
+    },
+    {
+      "case": "vwsubu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "3304723d86e68a4b3e5238d91f1157b9c04bd70432c2773ecee76ac716a8765a",
+      "variant_sha256": "faa4d5a3238c959d2754dba2fe08bd9f8e80f06e062538f9b6a627344702f09f"
+    },
+    {
+      "case": "vwsubu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "a0c6b01fc7c03af186e448b4103dcbec4dfd15d557c7e26b1f7d654527e0ad35",
+      "variant_sha256": "4f804a3a41214c5236565892b1e943d8cdda04914a663d2e77140d1ab6df7b5b"
+    },
+    {
+      "case": "vwsub-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "5a5a6c6f4ea67d6eebf44ba44bbd112c8365c53f3cd09aa6da6ccb15d72f0fb1",
+      "variant_sha256": "9f5a030d3cf9ef4d9347630d581a86e04af738d52c6ee7b557bc548efcc053ee"
+    },
+    {
+      "case": "vwsub-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "a03233126163242b5065c1b2fb663098f99cc41a19a5b50be9938c819f6d6a50",
+      "variant_sha256": "b8fd37ac9d95a17aad2b51b3077e4523b0ea96bf811a2ab2a972c3f7a6e6a77b"
+    },
+    {
+      "case": "vwmulu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "ae2e438ae6649169fbf75aa2654dc4556edcb7995454c51117c1b42453749dac",
+      "variant_sha256": "78a3cad3e34cf24c46a9155fd8520b0dd5356e09ddd61202ee2506d4108e3d3d"
+    },
+    {
+      "case": "vwmulu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "a6bc32f0505f12baf9297d70dd02c72aec27a1c4f9060a989d1bd391c259d982",
+      "variant_sha256": "54dbf01e2aa989fd7768dc2db678f337310c69b909433a70364cefd8e848d327"
+    },
+    {
+      "case": "vwmul-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "bfa995b63f9fc5004672ae07be2e9fd529b46bf96dcdc6f753893a1358b61c55",
+      "variant_sha256": "32e672675b27ff45502fa4f3607aa49c33bb5f2d8e5c762c2f0b623ac765d6af"
+    },
+    {
+      "case": "vwmul-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "a8178242613376d58ad3342c183bfff8c723a59927d494f1629fb0d1864a903e",
+      "variant_sha256": "cd7ddd693610f19b43b9229f043774d9de7038f5fdcdac3767366bf3b646ac09"
+    },
+    {
+      "case": "vwmulsu-w128-e8-m1-vv-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "58561ca187efc5d8b03f9a9ed57d8d7372aa065d9cf01b517bffa2c0ec891b94",
+      "variant_sha256": "80641a70305dfa8bfc5a66c8a6ea099e0ecbc776bd30b81f59c3f4bb3548bcff"
+    },
+    {
+      "case": "vwmulsu-w128-e8-m1-vx-dest-high-source2-mask",
+      "control": "overlap-inactive-ones",
+      "frozen_candidate_effective": true,
+      "replacement_selected": false,
+      "offset": 738,
+      "effective": true,
+      "accepted": true,
+      "raw_sha256": "0ec4136aea7c380e63fca6368af5233eb4127e02195136d6e6938a7e950c175c",
+      "variant_sha256": "d0466024b4fa512bf3147bf02797a2e5f80564d4f904b0c436a28191a7af11c6"
+    }
+  ],
+  "guest_executions": 0
+}

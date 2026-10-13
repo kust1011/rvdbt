@@ -1,0 +1,17 @@
+{
+  "destination_selector": {
+    "error": "AssertionError: no zero-start unmasked active witness for vwmacc.vv VLEN128 SEW8 m2",
+    "preserved_script": "controls_geometry161.py",
+    "failed_output": "remote/destchunk-full/controls-geometry",
+    "correction": "controls_geometry161_v2.py selects an existing unmasked active vstart lane",
+    "successful_output": "remote/destchunk-full/controls-geometry2"
+  },
+  "retention_inventory": {
+    "error": "AssertionError: ELF-path count21780 differs from expected compiled ELF count5940 in widening; work directories retain15840 ELF copies",
+    "preserved_script": "retention161.py",
+    "correction": "retention161_v2.py inventories ELF paths separately and verifies compiled ELF count excluding work directories",
+    "successful_output": "remote/RETENTION_DETAIL.json"
+  },
+  "guest_reexecutions": 0,
+  "production_edits": 0
+}
