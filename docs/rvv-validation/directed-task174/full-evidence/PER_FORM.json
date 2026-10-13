@@ -1,0 +1,104 @@
+[
+  {
+    "form": "vfredmax.vs",
+    "configurations": 54,
+    "per_arm": {
+      "Reference": 17080,
+      "B": 17080,
+      "M1": 17080,
+      "M2": 17080,
+      "BOTH": 17080
+    },
+    "main_cases_per_arm": 16810,
+    "supplemental_cases_per_arm": 270,
+    "build": "immutable174",
+    "status": "PASS",
+    "predicate": "order-invariant minimumNumber/maximumNumber",
+    "failure_count": 0
+  },
+  {
+    "form": "vfredmin.vs",
+    "configurations": 54,
+    "per_arm": {
+      "Reference": 17080,
+      "B": 17080,
+      "M1": 17080,
+      "M2": 17080,
+      "BOTH": 17080
+    },
+    "main_cases_per_arm": 16810,
+    "supplemental_cases_per_arm": 270,
+    "build": "immutable174",
+    "status": "PASS",
+    "predicate": "order-invariant minimumNumber/maximumNumber",
+    "failure_count": 0
+  },
+  {
+    "form": "vfredosum.vs",
+    "configurations": 54,
+    "per_arm": {
+      "Reference": 17080,
+      "B": 17080,
+      "M1": 17080,
+      "M2": 17080,
+      "BOTH": 17080
+    },
+    "main_cases_per_arm": 16810,
+    "supplemental_cases_per_arm": 270,
+    "build": "immutable174",
+    "status": "PASS",
+    "predicate": "ordered rational element fold",
+    "failure_count": 0
+  },
+  {
+    "form": "vfredusum.vs",
+    "configurations": 54,
+    "per_arm": {
+      "Reference": 15418,
+      "B": 15418,
+      "M1": 15418,
+      "M2": 15418,
+      "BOTH": 15418
+    },
+    "main_cases_per_arm": 15148,
+    "supplemental_cases_per_arm": 270,
+    "build": "immutable174",
+    "status": "PASS",
+    "predicate": "proven exact tree-invariant subsets + bounded specials; arbitrary inexact unordered NOT_COVERED",
+    "failure_count": 0
+  },
+  {
+    "form": "vfwredosum.vs",
+    "configurations": 30,
+    "per_arm": {
+      "Reference": 10162,
+      "B": 10162,
+      "M1": 10162,
+      "M2": 10162,
+      "BOTH": 10162
+    },
+    "main_cases_per_arm": 10042,
+    "supplemental_cases_per_arm": 120,
+    "build": "immutable174",
+    "status": "PASS",
+    "predicate": "ordered rational element fold",
+    "failure_count": 0
+  },
+  {
+    "form": "vfwredusum.vs",
+    "configurations": 30,
+    "per_arm": {
+      "Reference": 9292,
+      "B": 9292,
+      "M1": 9292,
+      "M2": 9292,
+      "BOTH": 9292
+    },
+    "main_cases_per_arm": 9172,
+    "supplemental_cases_per_arm": 120,
+    "build": "immutable174",
+    "status": "PASS",
+    "predicate": "proven exact tree-invariant subsets + bounded specials; arbitrary inexact unordered NOT_COVERED",
+    "failure_count": 0
+  }
+]

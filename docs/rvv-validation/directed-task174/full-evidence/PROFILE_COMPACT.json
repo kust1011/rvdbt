@@ -1,0 +1,2240 @@
+[
+  {
+    "form": "vfredmax.vs",
+    "configs": [
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 1024,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 8
+      }
+    ]
+  },
+  {
+    "form": "vfredmin.vs",
+    "configs": [
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 1024,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 8
+      }
+    ]
+  },
+  {
+    "form": "vfredosum.vs",
+    "configs": [
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 1024,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 8
+      }
+    ]
+  },
+  {
+    "form": "vfredusum.vs",
+    "configs": [
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 32,
+        "vlmax": 128,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 32,
+        "vlmax": 256,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 32,
+        "vlmax": 512,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 32,
+        "vlmax": 1024,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 32,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 64,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 8
+      }
+    ]
+  },
+  {
+    "form": "vfwredosum.vs",
+    "configs": [
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 1024,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      }
+    ]
+  },
+  {
+    "form": "vfwredusum.vs",
+    "configs": [
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 2
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 4
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 8
+      },
+      {
+        "vlen": 128,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 2,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 2
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 4
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 8
+      },
+      {
+        "vlen": 256,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 4,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 2
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 4
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 8
+      },
+      {
+        "vlen": 512,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 8,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 2
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 4
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 8
+      },
+      {
+        "vlen": 1024,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 16,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 2
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 4
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 8
+      },
+      {
+        "vlen": 2048,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 32,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m1",
+        "accumulator_bits": 64,
+        "vlmax": 128,
+        "source_regs": 1
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m2",
+        "accumulator_bits": 64,
+        "vlmax": 256,
+        "source_regs": 2
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m4",
+        "accumulator_bits": 64,
+        "vlmax": 512,
+        "source_regs": 4
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "m8",
+        "accumulator_bits": 64,
+        "vlmax": 1024,
+        "source_regs": 8
+      },
+      {
+        "vlen": 4096,
+        "sew": 32,
+        "lmul": "mf2",
+        "accumulator_bits": 64,
+        "vlmax": 64,
+        "source_regs": 1
+      }
+    ]
+  }
+]

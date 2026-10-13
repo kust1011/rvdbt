@@ -3722,7 +3722,9 @@ void QEmit::Emit_vscalarmove(qir::InstVScalarMove *ins)
 	if(ins->to_vector) {
 		auto done=j.newLabel();
 		j.mov(x86::eax,x86::dword_ptr(R_STATE,start));
-		j.cmp(x86::eax,x86::dword_ptr(R_STATE,vo+offsetof(rv32::VectorState,vl)));j.jae(done);
+		// Element 0 is prestart for every nonzero vstart, including vstart < vl.
+		j.test(x86::eax,x86::eax);j.jnz(done);
+		j.cmp(x86::dword_ptr(R_STATE,vo+offsetof(rv32::VectorState,vl)),0);j.je(done);
 		if(ins->floating) {
 			j.mov(x86::rax,x86::qword_ptr(R_STATE,scalar));
 			if(ins->sew==4) {

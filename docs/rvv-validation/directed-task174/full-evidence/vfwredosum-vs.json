@@ -1,0 +1,17 @@
+{
+  "form": "vfwredosum.vs",
+  "configurations": 30,
+  "per_arm": {
+    "Reference": 10162,
+    "B": 10162,
+    "M1": 10162,
+    "M2": 10162,
+    "BOTH": 10162
+  },
+  "main_cases_per_arm": 10042,
+  "supplemental_cases_per_arm": 120,
+  "build": "immutable174",
+  "status": "PASS",
+  "predicate": "ordered rational element fold",
+  "failure_count": 0
+}

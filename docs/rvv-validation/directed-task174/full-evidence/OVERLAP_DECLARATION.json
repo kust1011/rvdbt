@@ -1,0 +1,14 @@
+{
+  "cases": 1320,
+  "units": 276,
+  "forms": [
+    "vfredosum.vs",
+    "vfredusum.vs",
+    "vfredmin.vs",
+    "vfredmax.vs",
+    "vfwredosum.vs",
+    "vfwredusum.vs"
+  ],
+  "scope": "disjoint additional v0 source/seed and combined aliases, high-end source groups; no original case changed",
+  "source_sha256": "8f80b8c9caf92e4292cce2669cbd104720c56c367874d7c4c9bff34ba1a6dd7d"
+}

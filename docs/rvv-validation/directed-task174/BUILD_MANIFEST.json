@@ -1,0 +1,59 @@
+{
+  "base": "immutable172 (167 FMA +172 conversion)",
+  "insertion": "ONLY three production hunks from73fc8e2",
+  "production_changes": [
+    "dbt/guest/rv32_interp.cpp:vmvsx/vfmvsf",
+    "dbt/qmc/qcg/qemit.cpp:Emit_vscalarmove"
+  ],
+  "changed_sources": [
+    {
+      "path": "dbt/CMakeLists.txt",
+      "old_sha256": "a070648bc1bdb8180e3777f2ae785ec66fa2bd9118de45d190a3c317fb367a6a",
+      "new_sha256": "3cc2cdd5a8ae5311c9df6473e65001511143850f3cc03702006ecb32d4450c87"
+    },
+    {
+      "path": "dbt/guest/rv32_interp.cpp",
+      "old_sha256": "99176560fa60f321685f0e070de57e2c638d5f42b40044053cb97b921c1c7e63",
+      "new_sha256": "ad5ffa454cb663510b29bbe4b92617c90d7ab4dc789ae45304655109094e9f5a"
+    },
+    {
+      "path": "dbt/guest/rv32_vector_fma_invalid_test.cpp",
+      "old_sha256": "a234395ee6dc31e1eeead8ad26b479c194769dbb4e4c1a7fe6a7839cddeb321c",
+      "new_sha256": "6ba0fe864901ec81236fe725e0425ad9485f6257b133675d8048010cf0c4ddd6"
+    },
+    {
+      "path": "dbt/guest/rv32_vector_scalar_insert_test.cpp",
+      "old_sha256": null,
+      "new_sha256": "5959c6409503991dac71e861292fc9815d4e505f5576feef965450aafb36da17"
+    },
+    {
+      "path": "dbt/qmc/qcg/qemit.cpp",
+      "old_sha256": "7f558d9b3a65938beaaaa02e38b60c7508b5c228edd9a0326bbcbf605807572c",
+      "new_sha256": "bebdf15e356a7c71b8345dde050483ccfa3ac89ff29d36da6e400a46ae63f9ef"
+    }
+  ],
+  "unchanged_source_files": 738,
+  "artifacts": {
+    "build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+    "build/bin/rv32_vector_scalar_insert_test": "dd4def5b0b41cef9aceb80313c0eaa5f82ee919db28550800fbf3bed2348708c",
+    "build/bin/rv32_vector_fpconvert_test": "b4275e633133510e65286c30a3de96747c6f62099b4b1994c96129eaa2339f38",
+    "build/bin/rv32_vector_fma_invalid_test": "679e2a6f5e42ddbe6e184075d2e74c02146e10d79e51747fd8c639c4677f5257",
+    "build/bin/vfma_typedchunk_route_test": "e1549f59efbfbe9cfcb70bb0f1a7126a861de3d02ced7360962436a8ae112eb6",
+    "build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "build/lib/libdbtstatic.a": "d1678844e27bbee102ebf20ed0e7850c939834558f40aef54399f1cf7b4cee45"
+  },
+  "checks": {
+    "scalar": "PASS 6918 checks scalar insertion direct/helper\n",
+    "conversion": "PASS 5016 checks\n",
+    "fma": "RVV_FMA_INVALID_PASS checks=4758337 helper_run_kernels_and_QCG=executed full_vl_mask_fusion=0\n",
+    "fma_fusion": "RVV_FMA_INVALID_PASS checks=4758336 helper_run_kernels_and_QCG=executed full_vl_mask_fusion=1\n",
+    "route": "2@512 vfnmsub.vf vl=13        : 13/13 lanes byte-identical to the helper\n[9] the lane-mask prologue is instruction-identical to the falu route's\n    mov cmp mov cmova mov bzhi mov cmp jbe cmp jae bzhi xor jmp xor kmovw \n[N2c] control: the same cases admit in the ordinary build\n    24/24 admitted\nOK\n"
+  },
+  "configuration": {
+    "build_jobs": 4,
+    "nice": 10,
+    "affinity": "none",
+    "host_chunk_bits": 512
+  },
+  "scope": "focused integration only; full family same-build rerun NOT_RUN"
+}

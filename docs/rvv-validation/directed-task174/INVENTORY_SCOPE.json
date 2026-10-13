@@ -1,0 +1,42 @@
+{
+  "path": "/home/user/research/materials/thesis_rvv_20260921/artifacts/external_suite_coverage_20261007/FORM_VERIFICATION_EVIDENCE.csv",
+  "sha256": "6b0cb7f619f3734dd464f490391ef35c5a58f0f32c2f77505b76bfbdea86af43",
+  "total_rows": 627,
+  "required": 595,
+  "forms": [
+    {
+      "form": "vfredmax.vs",
+      "rv32_elen64_applicability": "REQUIRED",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a"
+    },
+    {
+      "form": "vfredmin.vs",
+      "rv32_elen64_applicability": "REQUIRED",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a"
+    },
+    {
+      "form": "vfredosum.vs",
+      "rv32_elen64_applicability": "REQUIRED",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a"
+    },
+    {
+      "form": "vfredusum.vs",
+      "rv32_elen64_applicability": "REQUIRED",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a"
+    },
+    {
+      "form": "vfwredosum.vs",
+      "rv32_elen64_applicability": "REQUIRED",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a"
+    },
+    {
+      "form": "vfwredusum.vs",
+      "rv32_elen64_applicability": "REQUIRED",
+      "spec_revision": "3570f998903f00352552b670f1f7b7334f0a144a"
+    }
+  ],
+  "prior_completed_finite_forms": 559,
+  "new_forms": 6,
+  "completed_if_accepted": 565,
+  "final_common_build_validation": "NOT_RUN"
+}

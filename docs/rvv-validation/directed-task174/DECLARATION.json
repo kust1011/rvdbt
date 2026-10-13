@@ -1,0 +1,48 @@
+{
+  "forms": [
+    "vfredosum.vs",
+    "vfredusum.vs",
+    "vfredmin.vs",
+    "vfredmax.vs",
+    "vfwredosum.vs",
+    "vfwredusum.vs"
+  ],
+  "cases": 84792,
+  "units": 276,
+  "checks": 423960,
+  "commands": 1380,
+  "per_form": {
+    "vfredosum.vs": 16810,
+    "vfredusum.vs": 15148,
+    "vfredmin.vs": 16810,
+    "vfredmax.vs": 16810,
+    "vfwredosum.vs": 10042,
+    "vfwredusum.vs": 9172
+  },
+  "configurations_per_form": {
+    "vfredosum.vs": 54,
+    "vfredusum.vs": 54,
+    "vfredmin.vs": 54,
+    "vfredmax.vs": 54,
+    "vfwredosum.vs": 30,
+    "vfwredusum.vs": 30
+  },
+  "pilot_cases": 6173,
+  "pilot_units": 22,
+  "vlen": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "sew": [
+    32,
+    64
+  ],
+  "widening": "32 to64; LMULmf2 through m8; scalar operands EMUL1",
+  "nonzero_vstart": "must trap; separate no successful packet credit",
+  "unordered_scope": "proven tree-invariant exact dyadic subsets, bounded specials and one-active QEMU values; general inexact unordered sums EXCLUDED",
+  "execution": "NOT_RUN"
+}

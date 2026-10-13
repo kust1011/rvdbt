@@ -1,0 +1,562 @@
+{
+  "status": "PASS",
+  "cases": 12,
+  "sail_commands": 12,
+  "dut_commands": 48,
+  "ordinary_credit": 0,
+  "records": [
+    {
+      "form": "vfredosum.vs",
+      "vl": 0,
+      "vstart": 1,
+      "target": "0xf0c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "78dc49d992ada3641667e363e901407cf0d1546aa0289f519e56d629a2464803",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "3010dd7786d7145355a48366fd1f10eb3d66ced0872c5430d1a6ce3ff904c5f7",
+      "Sail_signature": [
+        1526701,
+        2,
+        252449879,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "23f3e1a1139bb7e36db9a5097477160c2647db988c93c78f675b6a40a584524f"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "b57fc909cc2f45f309c68d7aa347afb35005741021ef59e864f64990670e79c2"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "6fab4e2cd664fbce750f1e1d05c869cdd673b82be012c63353bf293b050423ab"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "3412b5fbc1ab172b0a8c0fabc0875a42d7252f15e85022cceff9dab628d295a4"
+        }
+      }
+    },
+    {
+      "form": "vfredosum.vs",
+      "vl": 1,
+      "vstart": 1,
+      "target": "0xf0c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "43de0f0290b5b7e3a486a465535fb411cd4afc3e8655e5608c9e2428c3c60ff9",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "2f2a3d8454129486a6bad730d36407af6dd2f3e227013bd3dc1544ad575624bc",
+      "Sail_signature": [
+        1526701,
+        2,
+        252449879,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "2ee31c3cd156c845d4b8dd6f45ab974bec1780cc1e68b9978f197aec7e19e210"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "00cad5718d5f80fae28ce56a6b4fce75528f306d2e389f102f47f294490ed224"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "bfe0e31a2de5daefeefe5077c3404786226bf32a705b8379017c4c19bfb86d21"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=0f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "5d97417517259a2ec4543c1738db19e8bceacad7624facd02f1cb21428eb5904"
+        }
+      }
+    },
+    {
+      "form": "vfredusum.vs",
+      "vl": 0,
+      "vstart": 1,
+      "target": "0x70c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "c153ee807e038782b87edc2d76d491f0211bd44362b784351b74022dfd458ed4",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "afb17c37af26eedabae3d7dfb265d6486f7b1844971dabd89ce92b93dfbedf8d",
+      "Sail_signature": [
+        1526701,
+        2,
+        118232151,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "e7e82c418c785e71e57e0bfa0bc3ad1e8c191d9a8b899708c10a6f06f3f8f592"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "07700201ae0b22c8c1509f57ab712b72399f9046ad38e73af1e7e26bef6c88bd"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "99ba0fa29a9532f74dc2fd537e027bb663bff63ca8546ff11a076e4ceedb3e3e"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "511086462ce086be78c3a35b126ac971087e5c8ea9c1a5b59b75c2720f5d5960"
+        }
+      }
+    },
+    {
+      "form": "vfredusum.vs",
+      "vl": 1,
+      "vstart": 1,
+      "target": "0x70c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "d5467c5938ec2e3f29fffa1b9c7cc54820acf72c28c7783b2f0abc7196537cd9",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "8e2c5dcef8f1c9407bb3a89dce4578f0033740c331dff39035db1cc60762c55e",
+      "Sail_signature": [
+        1526701,
+        2,
+        118232151,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "f9a25900b974ebdb041ef20be63901bae463b4113fd975cefe54dd9fcb9cac7c"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "4d91ea767e6ff1c9fc3e8c8b9254006e8c6e8052c56a44840d86440cfcaf6514"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "5d7381173bb2e074903b96fa0eac345a7eb6b64f36e19eaa8a15b6b640131f2b"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=070c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "6e539429d5387a26cac668545fb1fb4ba6e43da8b95723b972e5697a209a3c0d"
+        }
+      }
+    },
+    {
+      "form": "vfredmin.vs",
+      "vl": 0,
+      "vstart": 1,
+      "target": "0x170c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "c4ac0c879c992f89ac0c7e3f789f0604e875ec673f1c8dc9f5816179345aa1ec",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "2e5ad1e215343c5358f4c091b6cd6e2a85dae24fee0dcde27afc74d7010c7cfb",
+      "Sail_signature": [
+        1526701,
+        2,
+        386667607,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "30bf52c704370effec7f29133b79f9d1f15074a2fe08aee9e3b0cab724fad168"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "c5de3af70e558e2bd62ef6a2f8c37e6d74a46173b844cb1edec0c1044f69bbf9"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "6a28df8354f5566309d73260de408a9f5972229e64f9c14bb58caf8869c4c0b1"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "2b3881f02317f087b09bd19a8dce56622ae503cc0e83232735aed54cfee7a671"
+        }
+      }
+    },
+    {
+      "form": "vfredmin.vs",
+      "vl": 1,
+      "vstart": 1,
+      "target": "0x170c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "633128b2522403403cf02fe18c0d84ea50f01088582f474267c0048b1ea68b33",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "49e39b05418e454d38a7a23a826811265077cbb98d3dc9951d4a1e87fe90a8d7",
+      "Sail_signature": [
+        1526701,
+        2,
+        386667607,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "2117d0ba31b4654e902eef2bf9ddabe165c5720952f2a6a008e4dd543ff50e46"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "5838951a4f61f432e3c758e30fedc34de47c3e415c48ccf8fbc41eeb04aa0f8b"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "6cd26efaf8eb5c5b5fbbeba482dad9340493a4a8c34e3d0ba1f9b49e3e049c98"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=170c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "23743ebcceb37b88662b65d2f38cb25d8047428996257e4a88c13c9f69300979"
+        }
+      }
+    },
+    {
+      "form": "vfredmax.vs",
+      "vl": 0,
+      "vstart": 1,
+      "target": "0x1f0c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "a4f4ed776619914f37f2a8c366facc4012c76eb262e3b149efa402c434d16d09",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "3a01e1867c67220e2a960abe79a848b63ece89ae08aebb3cd80d2884bca1c3de",
+      "Sail_signature": [
+        1526701,
+        2,
+        520885335,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "6428a2b21ab26c4dfd13be679f4262b3f6c60283ab8bdbfa990800c737d33074"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "1c819520334d460b0f8924bccc41e9f624107279380aa8231d1dfc31b30933d8"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "75f8287b0128b9c53283c2e90e3fc34b56893c8cb661d484000523f7121b62e6"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "5049bfa61587ef1fea10ab2a504c424ee281c6a5311617870a338f7dcf267680"
+        }
+      }
+    },
+    {
+      "form": "vfredmax.vs",
+      "vl": 1,
+      "vstart": 1,
+      "target": "0x1f0c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "304a1519d9744959d096498bc72e61cf7a6d765ca914c5e65078d127e8273b86",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "5108b87e743f0ac9f6e5e6a349f2b68bdae8a81e4f3dd660ca44fc6e2a5583de",
+      "Sail_signature": [
+        1526701,
+        2,
+        520885335,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "6eed80e24c47941032addc73988bad7ef2538e609cd70971511fa36701e69da6"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "baa03cfaeb2aad166803be1c96860a69bb21cb7c4f448d612e287e91bf1fba53"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "308261086472475672238c93db7702e96fe0000a21ee098506ad0442f75d61a7"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=1f0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "f8bbe9ca45c505d43c8f2a2d6120018f49106f01998b0811334383d60f665030"
+        }
+      }
+    },
+    {
+      "form": "vfwredosum.vs",
+      "vl": 0,
+      "vstart": 1,
+      "target": "0xcf0c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "8ad8acf200c42930a87c498657681d9b1502bba86379f9bd515a8603838d57be",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "7c1f59fca65801487e6c79f29673baa8f0251af4392f1212c4ce568ae692eb44",
+      "Sail_signature": [
+        1526701,
+        2,
+        3473675351,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "364086958376c373f5c9e60a7c3f919c5daed369440185e5a258b744a7efc038"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "e184fa54e9270907cc0c18993fcf62b88c35c4e4b8280c7cd0e52b69a3e9b2ae"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "66ae88a99529e1ee69493a2fa3eb3f4c8ecbdd3932bac6a962e3d08cfcae8050"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "70453d7f617c042d064cfe03308f088159e6e1bbb61839648aa635c20ddf8e3c"
+        }
+      }
+    },
+    {
+      "form": "vfwredosum.vs",
+      "vl": 1,
+      "vstart": 1,
+      "target": "0xcf0c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "2630a3abbab3c9720adc0ea357363dddb10e46c4bbaf159dde94e5805af35633",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "88ceb5dac7c6dc637cbff5aa12a8a854bbce2bd9e86ec773a9b72a587cec207f",
+      "Sail_signature": [
+        1526701,
+        2,
+        3473675351,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "360bbc7e0230aee0ace04dedd3966300bb4d9257c861351a7c8097e0b99b5024"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "10d81479cb297d8241538c4b2b41f57cf64625a8547d7469160774b0f44c52c8"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "04991861d36c8239b57000e7afd0e9a44bdd1fc26e3bff6980e7864e090236d3"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=cf0c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "e40988744240bc7a92247d3ddb51cb5eaa159325b7ed6601c5282e9715041149"
+        }
+      }
+    },
+    {
+      "form": "vfwredusum.vs",
+      "vl": 0,
+      "vstart": 1,
+      "target": "0xc70c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "bd306db0388efc6b4b569aa2f140e134d60e2b00b2e677d1452fe3e2674306b0",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "286d81a7e8b43a9658f1d5101296942c54314ddb20f6bd411582e07e55aa0e4b",
+      "Sail_signature": [
+        1526701,
+        2,
+        3339457623,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "3b0923124f60419b12d6c3597692a7cf73271abf7f91283a9e6f39e714179d38"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "a1727749d9d0ec411262d2878992e702a493dc2fc9f9e66fe8cbdffef39689b9"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "5372150b72b7d4220dfd117ea014f3d14b24dab81e98d794ff8f068224a078f4"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "3a01f7d213ac3ef3a3ebbacf000b3b1ca48f45cada58569e4f1c5391c6901e0b"
+        }
+      }
+    },
+    {
+      "form": "vfwredusum.vs",
+      "vl": 1,
+      "vstart": 1,
+      "target": "0xc70c1457",
+      "user_pc": "0x1000c",
+      "user_elf_sha256": "52af118a1493da34e94dc7132bf725cfff329950c945865588cab2806b20395f",
+      "sail_pc": "0x80000024",
+      "sail_elf_sha256": "0a5ae4f4bdbf15285bc8ab2f8c2f4fb0c820cab8a940aae6f9b13bfba5aa247e",
+      "Sail_signature": [
+        1526701,
+        2,
+        3339457623,
+        2147483684,
+        1,
+        0,
+        0,
+        0
+      ],
+      "DUT": {
+        "B": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "8a1f172da09167c5c08ddc4617e7dbf948a37e3d7a905fbbe465425ae6a64a4e"
+        },
+        "M1": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "934e359fc14ba7a96c805e4cdeaf2954b70cb15cf05ea9b076b0a99fbe1590bf"
+        },
+        "M2": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "b57e8524f90cc6624b47c7b0d0c362c3b0ae2b76e5508605e4b0aa674ff7f0ab"
+        },
+        "BOTH": {
+          "returncode": 1,
+          "specific_diagnostic": "ILLEGAL_INSN ip=0001000c raw=c70c1457",
+          "stdout_bytes": 0,
+          "execution_sha256": "165ba7e17875047f7d9e60e0b1d1dd5bef0f3a70d1312fec7d62b3c60e4e68e7"
+        }
+      }
+    }
+  ],
+  "configuration": "default Sail; zero_required was never disabled; target PC/raw checked against actual ELF"
+}

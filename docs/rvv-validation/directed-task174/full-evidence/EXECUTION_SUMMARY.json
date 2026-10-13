@@ -1,0 +1,23 @@
+{
+  "cases": 84792,
+  "units": 276,
+  "commands": 1380,
+  "checks": 423960,
+  "arms": {
+    "Reference": {
+      "PASS": 84792
+    },
+    "B": {
+      "PASS": 84792
+    },
+    "M1": {
+      "PASS": 84792
+    },
+    "M2": {
+      "PASS": 84792
+    },
+    "BOTH": {
+      "PASS": 84792
+    }
+  }
+}

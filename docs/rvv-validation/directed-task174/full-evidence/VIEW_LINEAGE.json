@@ -1,0 +1,24 @@
+{
+  "parts": [
+    {
+      "original": "/home/vick/rvv-directed-task174/pilot/corpus",
+      "cases": 6173,
+      "units": 22,
+      "manifest_sha256": "5f6e0d862d8c57d7e0c33a4403e0f93f6a94ef8e9e184896948cd260b936bd43",
+      "results_sha256": "8103bbdab3dab763260c28311414e02ee3d19bccc84c045bd6e0eb5dde5447c8"
+    },
+    {
+      "original": "/home/vick/rvv-directed-task174/remaining/corpus",
+      "cases": 78619,
+      "units": 254,
+      "manifest_sha256": "0ef137357ae36f5998eb49ec3b59c189f3eb849802c0582b8eaac3e6f32ea2c9",
+      "results_sha256": "ef59945f8202c6485740f21b8021d126a5c398e97a935b4a57eeb33d920f8826"
+    }
+  ],
+  "cases": 84792,
+  "checks": 423960,
+  "units": 276,
+  "guest_executions_added": 0,
+  "reference_executions_added": 0,
+  "disjoint_units": true
+}

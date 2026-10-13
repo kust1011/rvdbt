@@ -1,0 +1,17 @@
+{
+  "form": "vfwredusum.vs",
+  "configurations": 30,
+  "per_arm": {
+    "Reference": 9292,
+    "B": 9292,
+    "M1": 9292,
+    "M2": 9292,
+    "BOTH": 9292
+  },
+  "main_cases_per_arm": 9172,
+  "supplemental_cases_per_arm": 120,
+  "build": "immutable174",
+  "status": "PASS",
+  "predicate": "proven exact tree-invariant subsets + bounded specials; arbitrary inexact unordered NOT_COVERED",
+  "failure_count": 0
+}

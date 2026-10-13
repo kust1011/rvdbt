@@ -80,6 +80,9 @@ def integer_cases():
     return result
 
 def manifest_cases(family):
+    if family=='fpreduce174':
+      import fpreduce174
+      return fpreduce174.cases()
     if family=='fpconvert172':
       import fpconvert172
       return fpconvert172.cases()
@@ -155,7 +158,7 @@ def arithmetic(c,a,z):
     return (value % (1<<c['sew'])).to_bytes(c['sew']//8,'little')
 
 def initial(c):
-    if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+    if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
       import fp157
       return fp157.initial(c)
     if c.get('family')=='extend156':
@@ -207,7 +210,7 @@ def csr_expected(c,post=False):
     vt=(c['lmul_exp']&7)+([8,16,32,64].index(c['sew'])<<3)+(int(c['ta'])<<6)+(int(c['ma'])<<7)
     return [c['vl'],vt,c['vlen']//8,0 if post else c['vstart'],2,1,5,21,3,117]
 
-def packet_size(c): return 8+88+64*(c['vlen']//8)+(16 if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172') else 0)
+def packet_size(c): return 8+88+64*(c['vlen']//8)+(16 if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174') else 0)
 
 def decode(c,raw):
     if len(raw)!=packet_size(c): raise ValueError('missing/extra packet bytes')
@@ -218,7 +221,7 @@ def decode(c,raw):
     return pre,post,raw[96:96+32*b],raw[96+32*b:96+64*b]
 
 def check_isa(c,raw,rc=0,timeout=False):
-    if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+    if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
       import fp157
       return fp157.check_isa(c,raw,rc,timeout)
     if c.get('family')=='extend156':
@@ -269,7 +272,7 @@ def check_isa(c,raw,rc=0,timeout=False):
     return True
 
 def check_reference(c,raw,reference):
-    if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+    if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
       import fp157
       return fp157.check_reference(c,raw,reference)
     if c.get('family')=='extend156':
@@ -329,7 +332,7 @@ def assembly(cs):
         lines += config.setup(c)
       else:
         lines += ['csrwi vcsr,5','li t0,117','csrw fcsr,t0',f'li t0,{c["vl"]}',f'vsetvli t2,t0,e{c["sew"]},{c["lmul"]},{"ta" if c["ta"] else "tu"},{"ma" if c["ma"] else "mu"}',f'li s0,{c["operand"]&0xffffffff}',f'li t0,{c["vstart"]}','csrw vstart,t0']
-      if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+      if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
         import fp157
         lines += [f'li t0,{(c["frm"]<<5)|c["fflags_initial"]}', 'csrw fcsr,t0', f'la t0,fp_scalar_{tag}', 'fld fs0,0(t0)', f'li t1,{96+64*b}', 'add t1,a3,t1', 'fsd fs0,0(t1)']
       for j,csr in enumerate(CSRS): lines += [f'csrr t0,{csr}',f'sw t0,{8+4*j}(a3)']
@@ -337,7 +340,7 @@ def assembly(cs):
       lines += [f'sw {scalar},48(a3)',f'.globl target_{tag}',f'target_{tag}:']
       if configuration:
         lines += [config.target(c)]
-      elif c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+      elif c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
         lines += [fp157.target(c)]
       elif c.get('family')=='extend156':
         import extend156_next
@@ -364,7 +367,7 @@ def assembly(cs):
         op=f'v{c["vs1"]}' if c['form']=='vv' else 's0' if c['form']=='vx' else str(c['operand'])
         lines += [f'{c.get("mnemonic","vadd")}.{c["form"]} v{c["vd"]},v{c["vs2"]},{op}'+(',v0.t' if c['mask']!='none' else '')]
       for j,csr in enumerate(CSRS): lines += [f'csrr t0,{csr}',f'sw t0,{52+4*j}(a3)']
-      if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+      if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
         lines += [f'li t1,{104+64*b}', 'add t1,a3,t1', 'fsd fs0,0(t1)']
       lines += [f'sw {scalar},92(a3)','csrwi vstart,0',f'li t0,{96+32*b}','add t1,a3,t0']
       if configuration: lines += ['vsetvli t2,zero,e8,m1,tu,mu'] # after captured target CSRs; legal dump even after vill
@@ -372,7 +375,7 @@ def assembly(cs):
     lines += ['#ifdef SAIL','la t0,tohost','li t1,1','sw t1,0(t0)','1: j 1b','#else', 'li a0,1','la a1,begin_signature',f'li a2,{size*len(cs)}','li a7,64','ecall',f'li t0,{size*len(cs)}','bne a0,t0,write_failed','li a0,0','li a7,93','ecall','write_failed:','li a0,99','li a7,93','ecall','#endif','.data','.balign 16']
     for c in cs:
       lines += [f'initial_{c["ordinal"]}:','.byte '+','.join(map(str,initial(c)))]
-      if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172'):
+      if c.get('family') in ('fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
         import fp157
         lines += ['.balign 8',f'fp_scalar_{c["ordinal"]}:',f'.dword {fp157.scalar(c)}']
     lines += ['.balign 16','.globl begin_signature,end_signature','begin_signature:']
@@ -436,9 +439,14 @@ def execute(cmd,d,env,timeout=120):
     rec=dict(returncode=rc,timeout=expired,seconds=time.monotonic()-start,stdout_sha256=sha(d/'stdout'),stderr_sha256=sha(d/'stderr'))
     save(d/'execution.json',rec);return rec
 
+FPREDUCE174_PIN = '18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4'
+
 def run(root,engine,spike,pk,sail,flags,jobs):
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
-    if sha(engine)!=(('da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96') if json.loads((root/'manifest.json').read_text()).get('family') in ('fpcompare170','fpconvert172') else PIN): raise ValueError('DUT executable pin mismatch')
+    manifest_family = json.loads((root/'manifest.json').read_text()).get('family')
+    if manifest_family=='fpreduce174':
+      if sha(engine)!=FPREDUCE174_PIN: raise ValueError('Task174 DUT pin mismatch')
+    elif sha(engine)!=(('da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96') if json.loads((root/'manifest.json').read_text()).get('family') in ('fpcompare170','fpconvert172','fpreduce174') else PIN): raise ValueError('DUT executable pin mismatch')
     if jobs < 1: raise ValueError('jobs must be positive')
     manifest=json.loads((root/'manifest.json').read_text());units=collections.defaultdict(list)
     for c in manifest['cases']: units[c['unit']].append(c)
@@ -466,7 +474,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
             vector_config={'vlen_exp':w.bit_length()-1,'elen_exp':6,'vstart':{'zero_required':{'arith':False}}}
             if manifest.get('family') in ('configuration147','configuration148'):
               vector_config['vl_use_ceil']=True
-            if manifest.get('family') in ('integer146','shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu','wmac156','extend156','wmac156chunk','fp157','fma164','fpcompare170','fpconvert172'):
+            if manifest.get('family') in ('integer146','shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu','wmac156','extend156','wmac156chunk','fp157','fma164','fpcompare170','fpconvert172','fpreduce174'):
               vector_config['reserved_behavior']={'vstart_out_of_bounds':'Vstart_Ignore'}
             save(config,{'base':{'xlen':32},'extensions':{'V':vector_config,'D':{'supported':True}}})
             cmd=[sail,'--rv32','--config-override',config,'--stop-at-pc',sail_stop(root/unit/'sail.elf'),'--inst-limit','10000000','--test-signature',d/'signature','--signature-granularity','4',root/unit/'sail.elf']
@@ -524,7 +532,7 @@ def run(root,engine,spike,pk,sail,flags,jobs):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='action',required=True)
-    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu','wmac156','extend156','wmac156chunk','fp157','fma164','fpcompare170','fpconvert172'],default='vadd145');b.add_argument('--link',type=Path,required=True)
+    b=sub.add_parser('build');b.add_argument('--output',type=Path,required=True);b.add_argument('--compiler',default='clang-20');b.add_argument('--build-jobs',type=int,default=1);b.add_argument('--units-file',type=Path);b.add_argument('--family',choices=['vadd145','integer146','configuration147','configuration148','shiftminmax148','muldiv149','carry150','mergemove151','compare152','mac154','widen154','mac154qemu','wmac156','extend156','wmac156chunk','fp157','fma164','fpcompare170','fpconvert172','fpreduce174'],default='vadd145');b.add_argument('--link',type=Path,required=True)
     r=sub.add_parser('run');r.add_argument('--root',type=Path,required=True)
     for n in ['engine','spike','pk','sail','flags']: r.add_argument('--'+n,type=Path,required=True)
     r.add_argument('--jobs',type=int,default=2)

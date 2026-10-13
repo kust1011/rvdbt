@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "path": "spike-vfredosum_vs.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfredosum_vs.h",
+      "sha256": "b0889e0b868e4664a41ef82489b7fe1f369220ef503c958eb5b6b5a11b8a3672"
+    },
+    {
+      "path": "spike-vfredusum_vs.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfredusum_vs.h",
+      "sha256": "ff186d648ed46a240c11019264d5dd4bed0c8f80190a0f2e8f72dae72a9d0204"
+    },
+    {
+      "path": "spike-vfredmin_vs.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfredmin_vs.h",
+      "sha256": "89f679ac0cc0f3e246deb8403346494f8bca8f59115db199a5d847ce2d5f52b1"
+    },
+    {
+      "path": "spike-vfredmax_vs.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfredmax_vs.h",
+      "sha256": "c6135f6c45f5c1306832b954a4e073d6c687258bc9afb9a1a81d52b154b53305"
+    },
+    {
+      "path": "spike-vfwredosum_vs.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfwredosum_vs.h",
+      "sha256": "13167894a7d89d5dbe1d504d5dac4939bce82fa9585ae6a9aba294b017a490ad"
+    },
+    {
+      "path": "spike-vfwredusum_vs.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/insns/vfwredusum_vs.h",
+      "sha256": "8c982c7a8c3d770a33a187bb5e5a2957738e634edcf99bb329247340dee55167"
+    },
+    {
+      "path": "spike-v_ext_macros.h",
+      "url": "https://raw.githubusercontent.com/riscv-software-src/riscv-isa-sim/20feb9c2bf2a7deab964d8190b0cbd4b4131bec3/riscv/v_ext_macros.h",
+      "sha256": "c8663bcd609c60796bb130016b72ad1cf1adc3617184d13333f64020b5845329"
+    },
+    {
+      "path": "sail-vext_fp_red_insts.sail",
+      "url": "https://raw.githubusercontent.com/riscv/sail-riscv/0.14.1/model/extensions/V/vext_fp_red_insts.sail",
+      "sha256": "cff4a0e03b3781a5e45b04aa76c745a03f91c3cbcd54dbfaac71556c82aef5d8"
+    }
+  ],
+  "findings": [
+    "Sail mandatory vstart legality is checked before VL0 early return; Illegal_Instruction occurs before set_vstart, explaining retained input vstart1 in trap signature",
+    "Sail sum is sequential for both ordered/unordered; still checker admits exact tree invariant subsets independently",
+    "widening seed/result are scalar at double EEW; promotion occurs before addition"
+  ],
+  "additional_fetch_attempt": {
+    "path": "model/extensions/V/vext_reductions.sail",
+    "http": 404
+  }
+}

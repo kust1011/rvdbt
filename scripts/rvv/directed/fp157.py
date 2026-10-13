@@ -145,6 +145,9 @@ def pairs(bits):
         ('inexact','one','three')]]
 
 def scalar(c):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.scalar(c)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.scalar(c)
@@ -159,6 +162,9 @@ def scalar_operand(c):
     return scalar(c) & ((1 << c['sew'])-1)
 
 def initial(c):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.initial(c)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.initial(c)
@@ -186,6 +192,9 @@ def initial(c):
     return bytes(raw)
 
 def target(c):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.target(c)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.target(c)
@@ -199,6 +208,9 @@ def target(c):
     return f'{c["mnemonic"]}.{c["form"]} v{c["vd"]},v{c["vs2"]},{rhs}' + (',v0.t' if c['mask'] != 'none' else '')
 
 def instruction(c):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.instruction(c)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.instruction(c)
@@ -214,6 +226,9 @@ def active(c, before, i):
     return c['vstart'] <= i < c['vl'] and (c['mask']=='none' or before[i//8] >> (i%8) & 1)
 
 def lane(c, before, i):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.lane(c, before, i)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.lane(c, before, i)
@@ -245,6 +260,9 @@ def csr_expected(c, post=False, before=None):
     return rows
 
 def check_isa(c, raw, rc=0, timeout=False):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.check_isa(c, raw, rc, timeout)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.check_isa(c, raw, rc, timeout)
@@ -279,6 +297,9 @@ def check_isa(c, raw, rc=0, timeout=False):
     return True
 
 def check_reference(c, raw, reference):
+    if c.get('family') == 'fpreduce174':
+        import fpreduce174
+        return fpreduce174.check_reference(c, raw, reference)
     if c.get('family') == 'fpconvert172':
         import fpconvert172
         return fpconvert172.check_reference(c, raw, reference)

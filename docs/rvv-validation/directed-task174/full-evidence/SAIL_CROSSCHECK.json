@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "unit": "vfredmax-vs-w128-e32-mf2-zero",
+      "cases": 236,
+      "elf_sha256": "c4e16d537bd4904cc71556d121c416a8dabdc99425831c36740c94b7f7584dba",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 2.3172649999614805,
+        "stdout_sha256": "a2529d6997604cab9119043f1df8832f5352e1fe5231203060e0a5d595c6b443",
+        "stderr_sha256": "13a421c1fc03cdde3ecd7de7e628b69be0c8fdaa5dfc83e2b4122a5a1fed13db",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfredmin-vs-w128-e32-mf2-zero",
+      "cases": 236,
+      "elf_sha256": "be84eacdc2fb66715a837f08726442d483203352d4eeed85068d6f711808ef51",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 2.2663737890543416,
+        "stdout_sha256": "a2529d6997604cab9119043f1df8832f5352e1fe5231203060e0a5d595c6b443",
+        "stderr_sha256": "4b4f2e5c4ab27df07fada159220e85ea984bb14037dd21c1f93f99ef1cd8a45c",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfredosum-vs-w128-e32-mf2-zero",
+      "cases": 236,
+      "elf_sha256": "4a6863d586fd95b41eaa48876ad65e50b3cdba1a9121dc221d2cf743b4f3c8ca",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 2.267211433965713,
+        "stdout_sha256": "a2529d6997604cab9119043f1df8832f5352e1fe5231203060e0a5d595c6b443",
+        "stderr_sha256": "50d4dff21118b2e2101c783e13c26f5a0c6f9e4e75d696b09133913d472660b6",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfredusum-vs-w128-e32-mf2-zero",
+      "cases": 207,
+      "elf_sha256": "2e739291c829206162d51c0fe38a48dad8a68b08df2659cb29b685ae5e31d7bf",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 2.0167322490597144,
+        "stdout_sha256": "459c56b8427eaedd1499631e51debfbd9f3dfd89a49f759576e0f85daaa7a450",
+        "stderr_sha256": "87f1b8e69c9921b1f7edd5a9558e611499191cce9f01305895d773b3d2488592",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfwredosum-vs-w128-e32-mf2-zero",
+      "cases": 234,
+      "elf_sha256": "a7750bdb84227fb693932ba3aaf596020f11f22b0d6933e4d75eaa6e0729cabf",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 2.267173061030917,
+        "stdout_sha256": "f3841911a31d4a8849ad9a69d116ca002d9076ebe73adffa9ca2b6e05f905d08",
+        "stderr_sha256": "95c1cb2048866a744f441b0de5b02962eed28c9f6a68488746fcd067a03e910c",
+        "storage": "lossless-gzip-v1"
+      }
+    },
+    {
+      "unit": "vfwredusum-vs-w128-e32-mf2-zero",
+      "cases": 205,
+      "elf_sha256": "38e90880fd79157b8b46f0e688d6665de26a09f6fa0e8ce1bf6b566aa885272e",
+      "record": {
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 1.9668973459629342,
+        "stdout_sha256": "328f8fd23e9f043404b9ad8062f519a5bb0184217b5b00275acaf6d575294eb8",
+        "stderr_sha256": "e74a0c2e62cd2a9054a866759074552aa607b146f089f8607bc56b637bf1fc69",
+        "storage": "lossless-gzip-v1"
+      }
+    }
+  ],
+  "case_checks": 1354,
+  "commands": 6,
+  "ordinary_credit": 0,
+  "config": "pinned Sail defaults; no vstart-success override",
+  "packet_rule": "independent allowed-result predicate; no arbitrary Spike bit equality"
+}

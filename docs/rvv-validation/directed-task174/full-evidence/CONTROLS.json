@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "selected_actual_packets": 49020,
+  "effective_rejections": 231165,
+  "rejections": {
+    "wrong-result-or-VL0-write": 49020,
+    "exact-or-sticky-flags": 49020,
+    "other-register": 49020,
+    "scalar-FP-preservation": 49020,
+    "tail-or-VL0-preservation": 33060,
+    "coherent-wrong-order": 2025
+  },
+  "effective_changed_allowances": 15440,
+  "allowances": {
+    "changed-legal-tail": 15440
+  },
+  "checker_sha256": "5f972e91ec21639fce2abf356144c3d9a6c597bd9bdd86c9af98502e424cc392",
+  "guest_replays": 0
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "production_source_exactly_matches_reviewed171_files": {
+    "dbt/guest/rv32_interp.cpp": "ad5ffa454cb663510b29bbe4b92617c90d7ab4dc789ae45304655109094e9f5a",
+    "dbt/qmc/qcg/qemit.cpp": "bebdf15e356a7c71b8345dde050483ccfa3ac89ff29d36da6e400a46ae63f9ef"
+  },
+  "base": "47028a8 +ONLY171 production correction",
+  "immutable_engine_sha256": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "old167_engine_sha256": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+  "old172_engine_sha256": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+  "old_engine_hashes_rechecked": true,
+  "original_scalar_fixture_exact_sha256": "5959c6409503991dac71e861292fc9815d4e505f5576feef965450aafb36da17",
+  "ordinary_cases_per_arm": 86112,
+  "ordinary_checks": 430560,
+  "ordinary_failures": 0,
+  "completed_finite_inventory": "565/595",
+  "final_common_build_family_validation": "NOT_RUN",
+  "source_and_build_readonly": true,
+  "raw_main_freeze_final": "all entries OK",
+  "supplement_executed_source_sha256": "59b76c68f9c964eb76e5b4345ab4473a648329f333d6c1475278919236b3976b",
+  "overlap_source_sha256": "8f80b8c9caf92e4292cce2669cbd104720c56c367874d7c4c9bff34ba1a6dd7d",
+  "original_failure_preservation": "no old builds/receipts relabelled or deleted; zero new reduction failures",
+  "predicate_and_guest_reruns_added_by_export": 0,
+  "source_delta_after_execution": "supplement reusable admission/ILLEGAL_INSN wording strengthened, raw executed source retained; join docstring corrected; export adds explicit aggregate per-form/main/overlap counts",
+  "preexisting_worktree_changes": "untracked scripts/__pycache__/ and scripts/rvv/directed/__pycache__/ preserved",
+  "scope_exclusions": [
+    "Task173 duplication",
+    "general inexact unordered trees",
+    "full-family common-build rerun",
+    "Linux/LLVM expansion",
+    "performance",
+    "push",
+    "email"
+  ],
+  "requested_signals": [
+    "rvv-directed-fpreduce-20261014-174",
+    "rvv-review-parallel-20261013"
+  ],
+  "signals_timing": "after local commit"
+}

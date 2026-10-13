@@ -1,0 +1,17 @@
+{
+  "form": "vfredosum.vs",
+  "configurations": 54,
+  "per_arm": {
+    "Reference": 17080,
+    "B": 17080,
+    "M1": 17080,
+    "M2": 17080,
+    "BOTH": 17080
+  },
+  "main_cases_per_arm": 16810,
+  "supplemental_cases_per_arm": 270,
+  "build": "immutable174",
+  "status": "PASS",
+  "predicate": "ordered rational element fold",
+  "failure_count": 0
+}

@@ -1,0 +1,25 @@
+{
+  "samples": 72,
+  "own_guest_peak": 6,
+  "shared_guest_peak": 6,
+  "own_offline_peak": 4,
+  "shared_offline_peak": 4,
+  "minimum_free_bytes": 39399395328,
+  "nice_values": [
+    10
+  ],
+  "affinity_values": [
+    "Cpus_allowed_list:\t0-31"
+  ],
+  "policy": {
+    "own_guest": 8,
+    "shared_guest": 16,
+    "own_build": 4,
+    "shared_offline": 4,
+    "own_offline": 4,
+    "nice": 10,
+    "affinity": "none",
+    "reserve": 10737418240
+  },
+  "limits": "sampled occupancy only; builds constrained by CLI; integration build/focused fixtures occurred before monitor start"
+}

@@ -1,0 +1,108 @@
+{
+  "repository": "romanheros/qemu",
+  "revision": "7a35c902707087c8e1b77a3c82c54b73ffa17703",
+  "cases": [
+    {
+      "case": "vfredmax_vs.c",
+      "sha256": "2bb794c279aa341632dd2998df8f96f9360850d8b7d7a6bd71046c7d83672db4",
+      "wrappers": 6,
+      "supported_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ]
+    },
+    {
+      "case": "vfredmin_vs.c",
+      "sha256": "78f8b8d9d6322df8558ae18d2a9978cece6236d58972712a5d21c2fdba157425",
+      "wrappers": 6,
+      "supported_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ]
+    },
+    {
+      "case": "vfredosum_vs.c",
+      "sha256": "80c08be02eee90cc12a3676a2d9937c3c7034956283c04fb9e2b1a28fd99e5e6",
+      "wrappers": 6,
+      "supported_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ]
+    },
+    {
+      "case": "vfredsum_vs.c",
+      "sha256": "bf94ba3138b564e60f393659c6d83c7dab15079dafcbd6a5f8e83263f8f55437",
+      "wrappers": 6,
+      "supported_wrappers": 4,
+      "unsupported_wrappers": 2,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32,
+        64,
+        64
+      ]
+    },
+    {
+      "case": "vfwredosum_vs.c",
+      "sha256": "f5370731d3de659fb46499967e321d774fbdb5f3f91376e17323f72fc35253de",
+      "wrappers": 4,
+      "supported_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ]
+    },
+    {
+      "case": "vfwredsum_vs.c",
+      "sha256": "8ff11071fb4eda2a378569ec51bc82640dba31f52550987cca55ab18c3526090",
+      "wrappers": 4,
+      "supported_wrappers": 2,
+      "unsupported_wrappers": 2,
+      "wrapper_sews": [
+        16,
+        16,
+        32,
+        32
+      ]
+    }
+  ],
+  "wrapper_path": "docs/rvv-validation/directed-task157/qemu-source/rvv_insn.S",
+  "wrapper_sha256": "4d61684e8bf1c78d60a908ba4f728cc7422b02f00cbb3f4aa55655d16f3a289e",
+  "rules_path": "v-spec.adoc",
+  "rules_sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19",
+  "scope": "actual original src0/src1 operands; discard all expected arrays; legacy sum names adapted to usum; FP16 and FP64->128 excluded; unordered original operands limited to exactly one active data value plus zero seed, or no-active seed copy; ordered/minmax partial VL and complementary masks",
+  "source_fetch_attempts": [
+    {
+      "path": "tests/riscv/vector/insn/rvv_ch15.inc",
+      "http": 404
+    },
+    {
+      "path": "tests/riscv/vector/case/rvv_ch16_17.inc",
+      "http": 200,
+      "relevance": "not reduction wrappers; actual wrappers found in previously retained rvv_insn.S"
+    }
+  ]
+}

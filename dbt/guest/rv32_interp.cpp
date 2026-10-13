@@ -1370,11 +1370,11 @@ HANDLER(vred)
 	s->vec.vstart = 0;
 }
 
-// vmv.s.x vd, rs1 -- write element 0 only. Per RVV 1.0 this is a no-op when vl == 0.
+// vmv.s.x writes element 0 only when it is active: vstart == 0 and vl > 0.
 HANDLER(vmvsx)
 {
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
-	if (s->vec.vstart < s->vec.vl)
+	if (s->vec.vstart == 0 && s->vec.vl != 0)
 		s->vec.elem_put(i.rd(), 0, vt.sew() / 8, vlen, (u64)(i64)(i32)s->gpr[i.rs1()]);
 	s->vec.vstart = 0;
 }
@@ -2063,13 +2063,13 @@ HANDLER(vfmvfs)
 	s->vec.vstart = 0;
 }
 
-// vfmv.s.f: an F register into element 0 of vd. No-op when vl == 0.
+// vfmv.s.f writes element 0 only when it is active: vstart == 0 and vl > 0.
 HANDLER(vfmvsf)
 {
 	RVV_REQUIRE_RESTARTABLE_VTYPE(vt, vlen);
 	u32 const sew = vt.sew() / 8;
 	RVV_REQUIRE_FP_SEW(sew);
-	if (s->vec.vstart < s->vec.vl) {
+	if (s->vec.vstart == 0 && s->vec.vl != 0) {
 		u64 const b = sew == 4 ? (u64)f32_unbox(s->fpu.f[i.rs1()]) : s->fpu.f[i.rs1()];
 		s->vec.elem_put(i.rd(), 0, sew, vlen, b);
 	}

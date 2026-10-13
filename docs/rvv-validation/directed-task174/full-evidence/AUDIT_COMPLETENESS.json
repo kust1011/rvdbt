@@ -1,0 +1,8 @@
+{
+  "elf_identities": 276,
+  "executed_commands": 1380,
+  "executed_case_checks": 423960,
+  "scope": "all guest build hashes, target encodings, raw stream/storage identities, command records, extraction and independently checked full-state packets; original zero-start matrix has no built Sail adapters; separate six-unit Sail crosscheck compiles identical observer/target body",
+  "raw_evidence": "/home/vick/rvv-directed-task174",
+  "extra_raw_file_inventory": "NONE"
+}
