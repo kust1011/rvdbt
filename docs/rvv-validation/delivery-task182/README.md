@@ -1,5 +1,19 @@
 # Review and replay the finite RVV matrices
 
+## Specification baseline
+
+Current legality review uses the published 20240411 Unprivileged ISA Manual,
+Chapter 31 (V version 1.0). The earlier `3570f998` vector-spec source is a frozen
+public-review text; historical references to that revision remain unchanged.
+The published manual additionally reserves reading one vector register with
+different source EEWs within an instruction, counting a mask source as EEW 1.
+[Task193](../../../SESSION3_RESULT_193.md) checks this difference against actual
+source predicates and retained final181 selections: 86 reserved declarations
+are already excluded, with 86 legal neighbours included. It does not change
+the accepted form totals. Reserved decoding is not a universal requirement to
+raise an illegal-instruction exception. The independent classifier has 12
+passing tests; this source/selection audit is not a new ISA execution campaign.
+
 ## Latest exception-related update
 
 The integrated code now includes the optional-gather backing-admission fix and
