@@ -1,0 +1,44 @@
+{
+  "workloads": [
+    {
+      "workload": "small",
+      "unit": "integer-w1024-e32-m1-alias-zero",
+      "elf_sha256": "6076821c16f30254c9da693b2ba88ab752cf2fc8ebfef2c5b4dd9ba2b8529add",
+      "reference_sha256": "8d683d819de859563ae3ff689bd657f8dae845d06a1a4117997fec7063b5559a",
+      "checks": 7
+    },
+    {
+      "workload": "large",
+      "unit": "long192-int-w4096-e8-m8",
+      "elf_sha256": "00b806369eb4a77c25bb9d1a12e6b08016f15feafbe41aee093454ab1b9c0467",
+      "reference_sha256": "b5b1080dc5f8ff4b40fe3ee7b426a1a18811bd0d2f54f7045038c2827f8353d6",
+      "checks": 4
+    }
+  ],
+  "cells": 4,
+  "paired_repetitions": 5,
+  "guest_calls": 40,
+  "packet_checks": 220,
+  "cpu": 2,
+  "siblings": [
+    2,
+    18
+  ],
+  "admission_utilization": {
+    "2": 0.0,
+    "18": 0.0
+  },
+  "cpu_model": "model name\t: AMD Ryzen 9 9950X3D 16-Core Processor",
+  "before_load": [
+    0.087890625,
+    0.20947265625,
+    0.55859375
+  ],
+  "after_load": [
+    1.02294921875,
+    0.40576171875,
+    0.61376953125
+  ],
+  "before_free_bytes": 18717048832,
+  "after_free_bytes": 18702585856
+}

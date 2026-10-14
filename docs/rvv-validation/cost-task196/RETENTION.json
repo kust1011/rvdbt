@@ -1,0 +1,8 @@
+{
+  "local_archive": "/home/user/research/materials/task196-cost-raw-20261014/raw-receipts.tar.gz",
+  "remote_archive": "/home/vick/rvv-cost-task196-raw.tar.gz",
+  "bytes": 3207529,
+  "sha256": "82a75dc05034798e779efad16dfd506a79053e61469e4da49fc11a4bbe17d7f0",
+  "verified_files": 266,
+  "script_sha256": "27304947b7690dff479dfde46cb21d9606107efba1a6cbb4be7e08245e4bb91c"
+}

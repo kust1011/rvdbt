@@ -1,0 +1,22 @@
+{
+  "identities": {
+    "/home/vick/rvdbt-exception-task186/build/bin/elfrun": "37a25624345214d97e3691cfd9f951166abfe92419ce2bbeca9c786b68227c14",
+    "/home/vick/rvdbt-exception-task186/build/lib/libdbtstatic.a": "242afe91e6c537abd1c2e742a8a3269429d65b4b5d79ddd7731f03b1755df76c",
+    "/home/vick/rvdbt-exception-task186/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "/home/vick/rvdbt-exception-task186/build/lib/libasmjit.a": "c6e4e1c5b783988b4c49d2c24d97b7e7a44ee89ed55ea090ab469ace298d45a0",
+    "/home/vick/rvv-long-task192/build/bin/elfrun": "908df235e36fe49f8a64793a8e4a401987f9b2c56da10179470b7bc7bd5ffbc4",
+    "/home/vick/rvv-long-task192/build/lib/libdbtstatic.a": "3a4db55cd30a2bb9cb8225d13d41be127b38b5ba6ab0efd72a7b5a5a524c1ab3",
+    "/home/vick/rvv-long-task192/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "/home/vick/rvv-long-task192/build/lib/libasmjit.a": "c6e4e1c5b783988b4c49d2c24d97b7e7a44ee89ed55ea090ab469ace298d45a0"
+  },
+  "source_files": 298,
+  "source_differences": [
+    "dbt/qmc/qcg/qra.cpp",
+    "dbt/qmc/qcg/qra_vpr_test.cpp",
+    "dbt/qmc/qcg/rvv_fp_shared_mask_test.cpp",
+    "dbt/qmc/qcg/vchunk_dataflow_test.cpp"
+  ],
+  "compile_commands_equal_after_relocation": true,
+  "compile_command_count": 279,
+  "ldd_equal_after_relocation_and_ASLR": true
+}
