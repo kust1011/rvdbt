@@ -1,0 +1,6 @@
+{"label": "0", "nice": 10, "available_bytes": 38774132736, "disk_free_bytes": 22230007808, "own_executing_guests": 0, "own_executing_source_probes": 1, "affinity": "none assigned"}
+{"label": "0-after", "nice": 10, "available_bytes": 38681763840, "disk_free_bytes": 22229979136, "own_executing_guests": 0, "own_executing_source_probes": 1, "affinity": "none assigned"}
+{"label": "1", "nice": 10, "available_bytes": 38681763840, "disk_free_bytes": 22229979136, "own_executing_guests": 0, "own_executing_source_probes": 1, "affinity": "none assigned"}
+{"label": "1-after", "nice": 10, "available_bytes": 38681763840, "disk_free_bytes": 22229975040, "own_executing_guests": 0, "own_executing_source_probes": 1, "affinity": "none assigned"}
+{"label": "2", "nice": 10, "available_bytes": 38681763840, "disk_free_bytes": 22229975040, "own_executing_guests": 0, "own_executing_source_probes": 1, "affinity": "none assigned"}
+{"label": "2-after", "nice": 10, "available_bytes": 38595919872, "disk_free_bytes": 22229958656, "own_executing_guests": 0, "own_executing_source_probes": 1, "affinity": "none assigned"}

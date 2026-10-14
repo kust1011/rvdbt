@@ -1,0 +1,19 @@
+masked-unit-store-v0	reserved-source-EEW	admit
+masked-unit-store-neighbor	ordinary	admit
+masked-segment-store-v0	reserved-source-EEW	admit
+masked-segment-store-neighbor	ordinary	admit
+masked-index-load-index-v0	reserved-source-EEW	admit
+masked-index-load-neighbor	ordinary	admit
+masked-index-segment-index-v0	reserved-source-EEW	admit
+masked-index-segment-neighbor	ordinary	admit
+mixed-source-index-store	reserved-source-EEW	admit
+mixed-source-index-store-neighbor	ordinary	admit
+mixed-source-second-segment-field	reserved-source-EEW	admit
+mixed-source-second-segment-field-neighbor	ordinary	admit
+equal-width-index-store-alias	ordinary	admit
+load-low-overlap	ordinary	admit
+load-high-overlap	ordinary	admit
+fractional-equal-width-last-register	ordinary	admit
+fractional-masked-store-v0	reserved-source-EEW	admit
+fractional-masked-store-neighbor	ordinary	admit
+RESULT rows=18 legal_refusals=0 reserved_admissions=7

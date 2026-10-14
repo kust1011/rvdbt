@@ -1,0 +1,14 @@
+{
+  "scripts/rvv/directed/memory165.py": "daa79cfe6766a771a05d2204b13ff83bfc2724fc3326293413d7d386b19f3d1f",
+  "scripts/rvv/directed/permute162.py": "0c536c02cf2bea7a6e4b6870bae4ad0224e2fcce7aba9cd507d5151b761e36b4",
+  "scripts/rvv/directed/indexed166.py": "e363ebb4cc0e7f4aa95e6700ea7d51e62d9a9868c830a2b44b611aebf605c994",
+  "scripts/rvv/directed/config.py": "345cd856dd870872a368a7b57c85be55b2cf8cf18613307f54607edcde6178f1",
+  "scripts/rvv/directed/config148.py": "83bb5a51474fab1fe524f557761449b3665271bf6d47d2c50a21c5e002c5a3b3",
+  "dbt/guest/rv32_decode.h": "0595a4d394d2cfb861250e2980f206862a31bc6382be8f3c3a6f867863451cc5",
+  "dbt/guest/rv32_interp.cpp": "ad5ffa454cb663510b29bbe4b92617c90d7ab4dc789ae45304655109094e9f5a",
+  "dbt/guest/rv32_vector.h": "6fb9fa01794ca5d9c39c4aa42ae8be830179179468eeeb7367d762fe5f8ef3e4",
+  "dbt/guest/rv32_vector_lower.h": "2eb495e945cd2c5a012edd80d3c3c14e7ee9e19fc0fbf80b82454ab19c93baf4",
+  "dbt/guest/rv32_qir.cpp": "7ccee999bf3f6b16d29b83d7b4adf0ce8be9df90ed196bed53e1dae8d7846e07",
+  "dbt/qmc/qcg/qemit.cpp": "f0f15512374111dd4ac01842457670387e5132ce33207d4a58554451adf086c7",
+  "docs/rvv-validation/directed-task181/DIRECTED_PLAN.json.gz": "1babad06672ef4e9661bf740c7eaad1933812176ee80db74e418d42f709315b8"
+}

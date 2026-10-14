@@ -1,0 +1,2674 @@
+{
+  "rows": [
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-mf8-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-mf8-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-mf4-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-mf4-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-mf2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-mf2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m1-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m1-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m4-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m4-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m8-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 8,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e8-m8-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-mf4-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 16,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-mf4-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-mf2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 16,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-mf2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m1-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 16,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m1-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 16,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m4-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 16,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m4-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m8-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 16,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e16-m8-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-mf2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 32,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-mf2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m1-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 32,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m1-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 32,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m4-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 32,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m4-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m8-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 32,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e32-m8-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m1-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 64,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m1-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m2-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 64,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m2-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m4-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 64,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m4-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m8-source-mask-alias",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 16,
+          "first_eew": 64,
+          "second_eew": 1
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b162-023",
+      "case": "vcompress-vm-w128-e64-m8-mask-source-v0",
+      "form": "vcompress",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vse64.v-w128-e64-m1-v0-masked",
+      "form": "vse64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vse64.v-w128-e64-m1-mask-even",
+      "form": "vse64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vsseg3e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg3e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vsseg3e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg3e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vsseg7e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg7e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vsseg7e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg7e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vsse32.v-w128-e32-m1-v0-masked",
+      "form": "vsse32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vsse32.v-w128-e32-m1-mask-even",
+      "form": "vsse32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vssseg5e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg5e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vssseg5e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg5e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vssseg8e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg8e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-025",
+      "case": "vssseg8e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg8e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vse8.v-w128-e8-m1-v0-masked",
+      "form": "vse8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vse8.v-w128-e8-m1-mask-even",
+      "form": "vse8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vse16.v-w128-e16-m1-v0-masked",
+      "form": "vse16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vse16.v-w128-e16-m1-mask-even",
+      "form": "vse16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vse32.v-w128-e32-m1-v0-masked",
+      "form": "vse32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vse32.v-w128-e32-m1-mask-even",
+      "form": "vse32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg2e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg2e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg2e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg2e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg2e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg2e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg2e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg2e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg2e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg3e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg3e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg3e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg3e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg3e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg3e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg3e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg3e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg3e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg3e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg3e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg3e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg4e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg4e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg4e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg4e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg4e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg4e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg4e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg4e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg4e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg5e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg5e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg5e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg5e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg5e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg5e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg5e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg5e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg5e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg6e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg6e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg6e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg6e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg6e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg6e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg6e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg6e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg6e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg7e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg7e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg7e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg7e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg7e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg7e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg7e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg7e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg7e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg7e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg7e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg7e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e8.v-w128-e8-m1-v0-masked",
+      "form": "vsseg8e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e8.v-w128-e8-m1-mask-even",
+      "form": "vsseg8e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e16.v-w128-e16-m1-v0-masked",
+      "form": "vsseg8e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e16.v-w128-e16-m1-mask-even",
+      "form": "vsseg8e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e32.v-w128-e32-m1-v0-masked",
+      "form": "vsseg8e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e32.v-w128-e32-m1-mask-even",
+      "form": "vsseg8e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e64.v-w128-e64-m1-v0-masked",
+      "form": "vsseg8e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsseg8e64.v-w128-e64-m1-mask-even",
+      "form": "vsseg8e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsse8.v-w128-e8-m1-v0-masked",
+      "form": "vsse8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsse8.v-w128-e8-m1-mask-even",
+      "form": "vsse8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsse16.v-w128-e16-m1-v0-masked",
+      "form": "vsse16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsse16.v-w128-e16-m1-mask-even",
+      "form": "vsse16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsse64.v-w128-e64-m1-v0-masked",
+      "form": "vsse64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vsse64.v-w128-e64-m1-mask-even",
+      "form": "vsse64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg2e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg2e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg2e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg2e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg2e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg2e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg2e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg2e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg2e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg3e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg3e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg3e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg3e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg3e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg3e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg3e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg3e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg3e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg4e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg4e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg4e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg4e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg4e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg4e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg4e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg4e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg4e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg5e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg5e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg5e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg5e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg5e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg5e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg5e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg5e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg5e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg5e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg5e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg5e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg6e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg6e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg6e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg6e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg6e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg6e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg6e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg6e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg6e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg7e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg7e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg7e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg7e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg7e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg7e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e64.v-w128-e64-m1-v0-masked",
+      "form": "vssseg7e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 64
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg7e64.v-w128-e64-m1-mask-even",
+      "form": "vssseg7e64",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg8e8.v-w128-e8-m1-v0-masked",
+      "form": "vssseg8e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 8
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg8e8.v-w128-e8-m1-mask-even",
+      "form": "vssseg8e8",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg8e16.v-w128-e16-m1-v0-masked",
+      "form": "vssseg8e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 16
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg8e16.v-w128-e16-m1-mask-even",
+      "form": "vssseg8e16",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg8e32.v-w128-e32-m1-v0-masked",
+      "form": "vssseg8e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "reserved-source-EEW",
+      "final181_accepted": false,
+      "conflicts": [
+        {
+          "reg": 0,
+          "first_eew": 1,
+          "second_eew": 32
+        }
+      ],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    },
+    {
+      "entry": "b165-026",
+      "case": "vssseg8e32.v-w128-e32-m1-mask-even",
+      "form": "vssseg8e32",
+      "old_validate": "accepted",
+      "public_review": "no-added-source-EEW-constraint",
+      "published_v1_0": "ordinary",
+      "final181_accepted": true,
+      "conflicts": [],
+      "required_trap": false,
+      "new_ordinary_credit": false
+    }
+  ],
+  "counts": {
+    "vcompress": 44,
+    "vse64": 2,
+    "vsseg3e8": 2,
+    "vsseg7e32": 2,
+    "vsse32": 2,
+    "vssseg5e16": 2,
+    "vssseg8e64": 2,
+    "vse8": 2,
+    "vse16": 2,
+    "vse32": 2,
+    "vsseg2e8": 2,
+    "vsseg2e16": 2,
+    "vsseg2e32": 2,
+    "vsseg2e64": 2,
+    "vsseg3e16": 2,
+    "vsseg3e32": 2,
+    "vsseg3e64": 2,
+    "vsseg4e8": 2,
+    "vsseg4e16": 2,
+    "vsseg4e32": 2,
+    "vsseg4e64": 2,
+    "vsseg5e8": 2,
+    "vsseg5e16": 2,
+    "vsseg5e32": 2,
+    "vsseg5e64": 2,
+    "vsseg6e8": 2,
+    "vsseg6e16": 2,
+    "vsseg6e32": 2,
+    "vsseg6e64": 2,
+    "vsseg7e8": 2,
+    "vsseg7e16": 2,
+    "vsseg7e64": 2,
+    "vsseg8e8": 2,
+    "vsseg8e16": 2,
+    "vsseg8e32": 2,
+    "vsseg8e64": 2,
+    "vsse8": 2,
+    "vsse16": 2,
+    "vsse64": 2,
+    "vssseg2e8": 2,
+    "vssseg2e16": 2,
+    "vssseg2e32": 2,
+    "vssseg2e64": 2,
+    "vssseg3e8": 2,
+    "vssseg3e16": 2,
+    "vssseg3e32": 2,
+    "vssseg3e64": 2,
+    "vssseg4e8": 2,
+    "vssseg4e16": 2,
+    "vssseg4e32": 2,
+    "vssseg4e64": 2,
+    "vssseg5e8": 2,
+    "vssseg5e32": 2,
+    "vssseg5e64": 2,
+    "vssseg6e8": 2,
+    "vssseg6e16": 2,
+    "vssseg6e32": 2,
+    "vssseg6e64": 2,
+    "vssseg7e8": 2,
+    "vssseg7e16": 2,
+    "vssseg7e32": 2,
+    "vssseg7e64": 2,
+    "vssseg8e8": 2,
+    "vssseg8e16": 2,
+    "vssseg8e32": 2
+  },
+  "total": 172,
+  "reserved_excluded": 86,
+  "legal_included": 86,
+  "new_guest_calls": 0,
+  "new_ISA_pass_credit": 0,
+  "historical_receipts_changed": 0,
+  "inputs": [
+    {
+      "entry": "b162-023",
+      "path": "/home/vick/rvv-task162/full/corpus/manifest.json",
+      "manifest_sha256": "3598cd40b8f08d1b06b319e9dc7b17a8af2642a398ef66219d979288df408a88"
+    },
+    {
+      "entry": "b165-025",
+      "path": "/home/vick/rvv-task165/pilot/corpus/manifest.json",
+      "manifest_sha256": "888f97a97a64dd6f8bec7e9caa78a448c3d90c242f1c7401366b2d7eacf5fa74"
+    },
+    {
+      "entry": "b165-026",
+      "path": "/home/vick/rvv-task165/w128/corpus/manifest.json",
+      "manifest_sha256": "fa60b347758b730f5942502530d3599e7580867921f4b4ca8513ffb77920371b"
+    }
+  ]
+}

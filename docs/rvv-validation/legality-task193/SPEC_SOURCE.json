@@ -1,0 +1,14 @@
+{
+  "url": "https://raw.githubusercontent.com/riscv/riscv-isa-manual/20240411/src/v-st-ext.adoc",
+  "sha256": "f114464f32de3825863df04ff903137685a94a89973a8b38df3c4e804adf116f",
+  "historical_pin": "3570f998903f00352552b670f1f7b7334f0a144a",
+  "historical_sha256": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19",
+  "official_manual": "https://docs.riscv.org/reference/isa/v20240411/_attachments/riscv-unprivileged.pdf",
+  "official_manual_sections": [
+    "2.2: reserved encoding behavior is UNSPECIFIED",
+    "31.5.2: different source EEWs reserve encoding",
+    "31.18.3: V application profile"
+  ],
+  "manual_revision": "6ee57d8997021aaa8025e208164763fe12e03c19",
+  "immutable_url": "https://raw.githubusercontent.com/riscv/riscv-isa-manual/6ee57d8997021aaa8025e208164763fe12e03c19/src/v-st-ext.adoc"
+}

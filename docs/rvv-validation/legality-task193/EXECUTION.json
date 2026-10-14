@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "/usr/bin/clang++-22",
+      "-std=gnu++20",
+      "-O2",
+      "-DNDEBUG",
+      "-DRVV_HOST_CHUNK_BITS=512",
+      "-mavx512f",
+      "-mavx512bw",
+      "-ffp-contract=off",
+      "-DRVDBT_FROUND_IMPL=2",
+      "-I/home/vick/rvdbt-exception-task186/source",
+      "-isystem",
+      "/home/vick/rvdbt-exception-task186/source/dbt/third_party/asmjit/src",
+      "/home/vick/rvv-legality-task193/legality193_predicates.cpp",
+      "-o",
+      "/home/vick/rvv-legality-task193/probe"
+    ],
+    "rc": 0,
+    "seconds": 0.6643395849969238,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "/home/vick/rvv-legality-task193/probe"
+    ],
+    "rc": 0,
+    "seconds": 0.0012889219215139747,
+    "stdout_sha256": "d8bab3ef3e52503739b07f3e7e4374011f292ad3e28c125e1b94f1b827708ebe",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "python3",
+      "/home/vick/rvv-legality-task193/capture_legality193.py",
+      "/home/vick/rvv-legality-task193/DIRECTED_PLAN.json.gz",
+      "/home/vick/rvv-legality-task193/DECLARATIONS.json"
+    ],
+    "rc": 0,
+    "seconds": 0.4643761720508337,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

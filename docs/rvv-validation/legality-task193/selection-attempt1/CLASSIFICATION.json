@@ -1,0 +1,25 @@
+{
+  "rows": [],
+  "counts": {},
+  "total": 0,
+  "new_guest_calls": 0,
+  "new_ISA_pass_credit": 0,
+  "historical_receipts_changed": 0,
+  "inputs": [
+    {
+      "entry": "b162-023",
+      "path": "/home/vick/rvv-task162/full/corpus/manifest.json",
+      "manifest_sha256": "3598cd40b8f08d1b06b319e9dc7b17a8af2642a398ef66219d979288df408a88"
+    },
+    {
+      "entry": "b165-025",
+      "path": "/home/vick/rvv-task165/pilot/corpus/manifest.json",
+      "manifest_sha256": "888f97a97a64dd6f8bec7e9caa78a448c3d90c242f1c7401366b2d7eacf5fa74"
+    },
+    {
+      "entry": "b165-026",
+      "path": "/home/vick/rvv-task165/w128/corpus/manifest.json",
+      "manifest_sha256": "fa60b347758b730f5942502530d3599e7580867921f4b4ca8513ffb77920371b"
+    }
+  ]
+}

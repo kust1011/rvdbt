@@ -1,0 +1,5 @@
+The first read-only capture selected accepted reserved-source-EEW rows and correctly found zero. Its auditor did not require a nonempty selection. Both zero-row artifacts and the executed capture are retained in selection-attempt1. This supplied no classification credit.
+
+An attempted correction used manifest positions rather than global ordinals but still filtered on accepted_indices and asserted an expected86. It raised AssertionError before writing new declarations; it was a controller expectation error, with no guest or source-probe execution. Its traceback remains in the session/launcher log.
+
+The final capture deliberately selects both excluded aliases and matched legal neighbours. It finds172 declarations, and the audit independently requires86 exclusions/86 inclusions. The source probe was compiled/executed once only. CAPTURE_FIXED.json binds the final capture source and declarations; EXECUTION.json retains the initial commands, including the empty selection. No original matrix data or receipts were changed.

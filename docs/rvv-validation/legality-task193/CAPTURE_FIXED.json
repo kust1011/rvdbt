@@ -1,0 +1,9 @@
+{
+  "available_bytes": 38228815872,
+  "disk_free_bytes": 22168125440,
+  "nice": 10,
+  "affinity": "none assigned",
+  "source_sha256": "aad469ce804c4d3e59a84ef67c91f3d5fa415d05b3595ae33d7b09eb975748ec",
+  "reason": "audit excluded declarations and legal neighbours; accepted selection correctly yielded zero reserved rows",
+  "declarations_sha256": "71e562ba76761cda511e62f5ffac1e131284c863651cdcb4fbad2e05824937c4"
+}

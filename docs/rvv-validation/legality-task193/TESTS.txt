@@ -1,0 +1,17 @@
+test_actual_final181_bounded_selection (test_legality193.SourceLegality) ... ok
+test_audit_rejects_geometry_corruption (test_legality193.SourceLegality) ... ok
+test_bad_extent_and_baseline_fail_closed (test_legality193.SourceLegality) ... ok
+test_compress_mask_data_source_alias (test_legality193.SourceLegality) ... ok
+test_equal_width_alias_and_mask_logic_are_legal (test_legality193.SourceLegality) ... ok
+test_existing_masked_store_changes_credit_not_required_trap (test_legality193.SourceLegality) ... ok
+test_fractional_operand_still_shares_register (test_legality193.SourceLegality) ... ok
+test_high_part_alias_is_reserved_for_two_sources (test_legality193.SourceLegality) ... ok
+test_mandatory_fractional_profile (test_legality193.SourceLegality) ... ok
+test_mask_is_a_source_with_eew_one (test_legality193.SourceLegality) ... ok
+test_mask_store_special_form_has_no_execution_mask_source (test_legality193.SourceLegality) ... ok
+test_segment_field_not_only_first_base (test_legality193.SourceLegality) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.027s
+
+OK
