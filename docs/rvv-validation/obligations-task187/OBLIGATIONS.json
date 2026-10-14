@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "audited_source": "d1ec81f",
+  "no_production_edits": true,
+  "no_new_isa_runs": true,
+  "recovery_execution": "P4-04 and equivalent remain service-blocked; no retry",
+  "rows": [
+    {
+      "id": "187-01",
+      "priority": "P0",
+      "status": "MISSING_EVIDENCE_SERVICE_BLOCKED",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "17",
+          "17.1",
+          "18.3"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Precise fault state and eventual forward progress on resumption.",
+      "code_positions": [
+        "dbt/ukernel.cpp:223-260",
+        "dbt/guest/rv32_interp.cpp:51-67",
+        "dbt/rv32_signal.inc:200-241"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/grouped-memory-task136/FOCUSED_RESULTS.json",
+        "docs/rvv-validation/native-memory-task131/",
+        "docs/rvv-validation/directed-task181/FOCUSED_FINAL.json",
+        "dbt/rv32_grouped_memory_fault_test.cpp:80-119"
+      ],
+      "concrete_missing_test_or_fix": "The retained P4-04 / handler return, mapping repair, same-PC retry obligation remains NOT_RUN and service-blocked. Do not execute, rename or substitute an equivalent recovery run. Future authorized evidence must join captured PC/vstart/prefix to correct resumed suffix, including no newer commits and older FP flags. Source and seeded starts support components, not this composition. No confirmed default-path bug is established by this audit.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-02",
+      "priority": "P0",
+      "status": "MANDATORY_CONTRACT_WITH_FINITE_COMPONENT_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "3.7",
+          "5.4",
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Accept restart positions the same instruction/vtype can itself produce; preserve prestart and clear vstart on completion.",
+      "code_positions": [
+        "dbt/guest/rv32_vector_lower.h:637-677",
+        "dbt/guest/rv32_interp.cpp:730-765",
+        "dbt/rvv_native_fault.cpp:103-140",
+        "dbt/guest/rv32_interp.cpp:418-441"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/delivery-task182/forms.json.gz",
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv"
+      ],
+      "concrete_missing_test_or_fix": "No blanket nonzero-vstart gap: 572 forms have successful nonzero cases. The other 23 forms are reductions, prefix masks, iota, compress, population count and first-set, with specified nonzero-start traps. The stale RUNNABLE macro comment at interp.cpp:413-416 must not justify refusing memory-produced starts. Review changed186 fault positions against existing helper entry coverage; recovery execution remains blocked under187-01.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-03",
+      "priority": "P1",
+      "status": "CONFIRMED_CHECKER_WEAKNESS",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.7",
+          "17",
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Trap evidence must identify the targeted fault and observable architectural state.",
+      "code_positions": [
+        "scripts/rvv/regression181/focused.py:34-55"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/FOCUSED_FINAL.json"
+      ],
+      "concrete_missing_test_or_fix": "Negative branch accepts any nonzero non-timeout result containing fault/segmentation/trap, with no target PC/raw/cause/vstart or empty-normal-output predicate. An unrelated failure containing trap satisfies it. Fix future adjudication to match exact ELF target and fault reason; use retained snapshots for precise-state assertions where available. The592 denials remain finite failure controls, not precise-trap proofs. Re-read only the affected retained denial receipts if strengthening; no guest rerun or whole-packet re-audit required.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-04",
+      "priority": "P1_IF_ENABLED",
+      "status": "CONFIRMED_PRODUCTION_BUG_BY_SOURCE_ENABLED_ONLY",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.2",
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "A native indexed load fault needs recoverable precise state.",
+      "code_positions": [
+        "dbt/guest/rv32_interp.cpp:869-876",
+        "dbt/guest/rv32_vector_gather.cpp:42-93",
+        "dbt/config.h:4135",
+        "dbt/ukernel.cpp:420-455"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/host512-task142/SOURCE_EQUALITY.json"
+      ],
+      "concrete_missing_test_or_fix": "Default-off rvv_gather admits readable file mappings using range_readable alone; AVX2 gather and scalar remainder have no registered native/copy fault owner. A readable mapping beyond file EOF can SIGBUS while vstart remains0 after earlier chunks committed. For legal same-EEW vd==vs2, the first completed8-lane chunk overwrites its own index operands, so replay from vstart0 cannot generally recover original addresses. Permission admission does not supply recovery. Exclude fault-capable backing before access/use checked fallback or implement real ownership. Targeted terminal backing-fault/admission evidence is missing; do not retry blocked recovery. No newly executed witness; not established enabled in final181 arms.",
+      "scope": "Optional --rvv-gather=1, not default accepted scope"
+    },
+    {
+      "id": "187-05",
+      "priority": "P2",
+      "status": "CONFIRMED_DIAGNOSTIC_BUG_BY_SOURCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "17"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Fault provenance in the evidence must reflect the actual execution route.",
+      "code_positions": [
+        "dbt/ukernel.cpp:263-278",
+        "dbt/rvv_native_fault.cpp:128-138"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/grouped-memory-task136/FOCUSED_RESULTS.json",
+        "dbt/rv32_grouped_memory_fault_test.cpp:105-112"
+      ],
+      "concrete_missing_test_or_fix": "WriteMemoryFaultSnapshot serializes every non-HostCopy origin as PredictedHelper, including NativeUnit. Add an explicit NativeUnit branch and bounded formatter assertion; do not infer helper admission from current JSON origin. Live event tests inspect the enum separately and are not invalidated. This is an evidence/diagnostic defect, not a demonstrated ISA result defect.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-06",
+      "priority": "NONE",
+      "status": "LEGAL_PROFILE_EXCLUSION",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.2",
+          "18.3"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "RV32 standard V excludes the requirement for EEW64 index values.",
+      "code_positions": [
+        "dbt/guest/rv32_vector.h:239-251",
+        "dbt/guest/rv32_vector_lower.h:1090-1110",
+        "dbt/guest/rv32_vector.h:53-80"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/all-form-records/navigation.json.gz",
+        "docs/rvv-validation/delivery-task182/forms.json.gz",
+        "docs/rvv-validation/obligations-task187/EVIDENCE_REVIEW.json"
+      ],
+      "concrete_missing_test_or_fix": "None. Exact627/595 join: 32 excluded forms are4 ordered/unordered load/store families x8 NF values, all ei64. Do not exclude data EEW64 or FP64. ELEN64 alone is not the exclusion basis; section18.3 XLEN32 index exception is.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-07",
+      "priority": "NONE",
+      "status": "FINITE_ACCEPTED_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "10",
+          "13",
+          "13.1",
+          "18.3"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "V requires F/D and FP32/FP64 vector operations, conversions and reductions.",
+      "code_positions": [
+        "dbt/guest/rv32_cpu.h:140",
+        "dbt/guest/rv32_interp.cpp:1406-1420",
+        "dbt/guest/rv32_vector_fpconvert.h",
+        "dbt/guest/rv32_vector_fma_invalid.h"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv",
+        "docs/rvv-validation/directed-task167/",
+        "docs/rvv-validation/directed-task172/",
+        "docs/rvv-validation/directed-task173/",
+        "docs/rvv-validation/directed-task174/",
+        "docs/rvv-validation/directed-task176/"
+      ],
+      "concrete_missing_test_or_fix": "No absent mandatory FP mnemonic family identified. Accepted matrices cover all5 valid frm values, sticky/suppressed fflags, NaN boxing, specials and FP32/64. FP16/FP128 are not mandatory base V. Invalid frm is reserved by section10, so a chosen trap is legal rather than a universally required trap. Generic scalar G/D conformance is outside this bounded vector audit.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-08",
+      "priority": "P1",
+      "status": "MISSING_SEMANTIC_CATEGORY_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "14.3.2",
+          "14.4"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Unordered sums must use a permitted deterministic tree and correct flags.",
+      "code_positions": [
+        "scripts/rvv/directed/fpreduce174.py:78-105",
+        "dbt/guest/rv32_vector_lower.h:2264-2390",
+        "dbt/guest/rv32_vector_lower.h:3214"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task174/SEMANTIC_REVIEW.md",
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv"
+      ],
+      "concrete_missing_test_or_fix": "General inexact multi-active unordered sums are intentionally rejected by the accepted oracle. Add a bounded independently reviewed predicate for the documented sequential tree (legal ordered algorithm), covering cancellation/rounding, overflow, underflow, masks, sticky flags and FP32->64 widening. Alternatively use a rigorously permitted set. Verify same vtype/vl deterministic behavior. No arbitrary-tree bit equality with Spike, no need to enumerate every input, and no confirmed DUT bug inferred from the missing category.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-09",
+      "priority": "NONE",
+      "status": "FINITE_ACCEPTED_EVIDENCE_AND_LEGAL_CHOICES",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.7",
+          "7.8.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "FOF element0 traps without trimming; later synchronous failures trim; mask suppresses access.",
+      "code_positions": [
+        "dbt/guest/rv32_interp.cpp:799-838",
+        "dbt/guest/rv32_vector_lower.h:791-836",
+        "scripts/rvv/directed/memory168.py:70-105"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/FOCUSED_FINAL.json",
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv",
+        "dbt/rv32_permitted_bulk_fault_test.cpp:101"
+      ],
+      "concrete_missing_test_or_fix": "None for a new blanket FOF obligation. Absolute0 differs from first active/resumed element; positive vstart faults must trim. Permitted early reduction/spurious originally-active writes are legal, not evidence of a bug. The oracle checks loaded lanes below returned VL, prestart/inactive/preservation and limits arbitrary lanes to originally-active trimmed suffix. Interrupt/debug handling is distinct from synchronous FOF, not tested by these fault receipts.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-10",
+      "priority": "NONE",
+      "status": "LEGAL_PARTIAL_SEGMENT_WITH_FINITE_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.8",
+          "7.8.3",
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Segment restart counts segments and respects group/index overlap rules.",
+      "code_positions": [
+        "dbt/guest/rv32_vector_lower.h:637-654",
+        "dbt/guest/rv32_vector_lower.h:1087-1118",
+        "dbt/rvv_native_fault.cpp:136-138"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv",
+        "dbt/rv32_family_memory_fault_test.cpp:80-82"
+      ],
+      "concrete_missing_test_or_fix": "No all-or-nothing field requirement: a subset of the faulting segment may commit. Resumption must still produce correct final state. Existing field/prefix fixtures are finite and historically build-specific; they do not close187-01. Ordered indexed segments order elements, not fields within a segment.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-11",
+      "priority": "NONE",
+      "status": "FINITE_ACCEPTED_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.4",
+          "7.9",
+          "16.6"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Whole memory uses encoded-EEW EVL; mask memory uses byte EVL; whole transfers bypass vtype/vl.",
+      "code_positions": [
+        "dbt/guest/rv32_interp.cpp:2080-2124",
+        "dbt/guest/rv32_vector_lower.h:2691-2702",
+        "dbt/guest/rv32_vector_lower.h:3115-3131",
+        "scripts/rvv/directed/memory168.py:15-52"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/FOCUSED_FINAL.json",
+        "scripts/rvv/directed/vill_memory168.py",
+        "docs/rvv-validation/delivery-task182/forms.json.gz"
+      ],
+      "concrete_missing_test_or_fix": "None for blanket missing EVL/vill/start tests. 960 focused vill checks and whole/mask start/no-access records already exist. Whole memory EEW and whole move current SEW define different start-byte units; ordinary VL is not their no-write bound. Alignment support is a legal choice under7.9/8.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-12",
+      "priority": "P1_IF_PLATFORM_CLAIMED",
+      "status": "MISSING_ACCESS_HISTORY_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "7.2",
+          "7.5",
+          "8",
+          "9",
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Ordered indexed access and observable per-element accesses obey memory rules.",
+      "code_positions": [
+        "dbt/guest/rv32_vector_lower.h:637-654",
+        "scripts/rvv/directed/indexed166.py:94-103",
+        "scripts/rvv/directed/memory165.py:94-147",
+        "dbt/rvv_host_copy.cpp:90-126"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv"
+      ],
+      "concrete_missing_test_or_fix": "Final buffer/winner checks establish finite values/footprints, not a device access trace or cross-hart RVWMO history. If non-idempotent/device memory is advertised, add a bounded access observer for ordered indices, rs2=x0 versus nonzero-register zero stride, and faulting stores. No speculative MMIO suite now. Ordinary RAM sequential access is legal; device platform support is a separate declared execution-environment scope, not a Linux signal requirement.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-13",
+      "priority": "NONE",
+      "status": "FINITE_ACCEPTED_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "3.4-3.10",
+          "6",
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "Configuration and vector CSR semantics are obligations beyond a mnemonic count.",
+      "code_positions": [
+        "dbt/guest/rv32_interp.cpp:313-402",
+        "dbt/guest/rv32_interp.cpp:2671-2710",
+        "scripts/rvv/directed/config.py",
+        "scripts/rvv/directed/config148.py"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.csv",
+        "docs/rvv-validation/delivery-task182/forms.json.gz"
+      ],
+      "concrete_missing_test_or_fix": "No uncovered configuration/CSR family identified. Do not derive CSR coverage merely from595: configuration147/148 and packet-specific CSR checks supply evidence. vstart writable mask is VLEN-1; reserved high/out-of-range values are not extra successful-execution obligations. Privileged mstatus/vsstatus FS/VS belongs to a system-mode implementation; the two ACT privileged-reference blockers remain excluded user-platform cases.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    },
+    {
+      "id": "187-14",
+      "priority": "NONE",
+      "status": "LEGAL_FAULT_BOUNDARY_AND_FINITE_METHOD_EVIDENCE",
+      "specification": {
+        "name": "RISC-V V Vector Extension",
+        "version": "1.0",
+        "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+        "sections": [
+          "17.1"
+        ],
+        "url": "https://github.com/riscvarchive/riscv-v-spec/blob/3570f998903f00352552b670f1f7b7334f0a144a/v-spec.adoc"
+      },
+      "obligation": "No newer instruction commits across a vector fault.",
+      "code_positions": [
+        "dbt/guest/rv32_vrun.cpp:1128-1137",
+        "dbt/qmc/qcg/qemit.cpp:1997-2009",
+        "dbt/qmc/qcg/qemit.cpp:2375-2402"
+      ],
+      "existing_accepted_evidence": [
+        "docs/rvv-validation/grouped-memory-task136/FOCUSED_RESULTS.json",
+        "docs/rvv-validation/directed-task180/FINAL_TOTALS.json",
+        "dbt/rv32_grouped_memory_fault_test.cpp:57-59"
+      ],
+      "concrete_missing_test_or_fix": "No grouped-memory bug: production cuts at memory and multi-member memory frames unconditionally fall back. Singleton native ownership differs from permission preflight. Task180 verifies finite trace0 method sequences on179; requested flags do not prove every target native. Full trace1/all host-width matrices are coverage limits, not new architectural requirements to prove every input.",
+      "scope": "RV32GCV QCG B/M1/M2/BOTH"
+    }
+  ]
+}
