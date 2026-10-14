@@ -81,6 +81,13 @@ When writing about this result, distinguish four evidence classes:
 
 The relevant checks are deliberately separate:
 
+- [Required illegal-instruction checks](rvv-validation/trap-task199/README.md)
+  exercise all 23 forms that forbid a nonzero initial `vstart`. On fixed192,
+  360 terminal observations check the target PC/raw, exception cause, GPR/FPR,
+  active vector bytes and vector/FP CSR state; 180 zero-start controls check
+  successful results. A read-only debugger observes the existing terminal
+  boundary. No returning handler is involved. These tests add a semantic
+  dimension to existing forms, not 23 new supported forms.
 - `dbt/rv32_grouped_memory_fault_test.cpp:cell` executes generated code and
   checks the terminal fault PC, element index, all saved/live GPRs, vector state,
   committed store prefix and absence of later instruction updates. Its child

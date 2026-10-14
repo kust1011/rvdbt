@@ -1,5 +1,20 @@
 # Review and replay the finite RVV matrices
 
+## Required rejection behavior and external-test applicability
+
+[Nonzero-vstart traps](../trap-task199/README.md) now check all 23 forms that
+require a zero start: 360 terminal state observations and 180 zero-start controls
+on unchanged fixed192. The observer checks the target, exception cause and
+preserved architectural state, rather than accepting an exit code alone. This
+adds a semantic dimension, not instruction forms or a full-matrix replay.
+
+[External adjudication](../../../SESSION3_RESULT_198.md) resolves the two ACT
+privileged-state setup blockers and Ara's RV64-specific scalar assertions.
+Their original failures and restricted acceptance remain recorded; no assertion
+was replaced to turn an original test into a pass. The new complete fixed192
+replay is still in progress; the frozen full-matrix index below retains its
+original build until that replay is independently accepted.
+
 ## Current allocator integration
 
 A legal VLEN-4096, SEW-32, LMUL-4 sequence exposed the fixed 2,048-entry
