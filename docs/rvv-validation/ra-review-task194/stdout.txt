@@ -1,0 +1,36 @@
+QCG VPR register-class mechanism tests
+  GPR pool=11  VPR pool=30  frame=1024 bytes
+T1 GPR/VPR tracking isolation
+T2 vector spill/fill and frame slots
+  spills=6 (pressure 5) fills=6 (consumption 6) distinct slots=6
+T3 spill-frame exhaustion fails closed
+T4 no VPR live across a call
+  spilled before call=4 reloaded after=4 stale reads=0
+T5 emitted encoding is the unaligned EVEX form
+  code=479 bytes copies=64 spills=4 fills=5
+T6 block-local value dead before a call is not spilled
+  dead-before-call frame spills=0; live-across-call frame spills=1 fills=1
+T7 cross-block value is not retired at its last use in the defining block
+  spilled at the call=1 refilled in the second block=1
+T8a 90 short-lived vector groups with a call boundary terminate
+  T8a: tracks=274 returned, globals synced at the call=3
+T8a 700 short-lived vector groups with a call boundary terminate
+  T8a: tracks=2104 returned, globals synced at the call=3
+T8a 5500 short-lived vector groups with a call boundary terminate
+  T8a: tracks=16504 returned, globals synced at the call=3
+T8b a global above index 255 is still synced at a call boundary
+  T8b: tracks=260 g259 in r3 (call-saved) synced=1
+T9 V128 spill slots are 16 bytes
+  V128: 14 slot accesses, 7 distinct slots, min stride 16, all inside 1024 bytes
+T9 V256 spill slots are 32 bytes
+  V256: 14 slot accesses, 7 distinct slots, min stride 32, all inside 1024 bytes
+T9 V512 spill slots are 64 bytes
+  V512: 14 slot accesses, 7 distinct slots, min stride 64, all inside 1024 bytes
+T10 three-operand V512: destination vs a source dying at the same instruction
+  T10a live-in=30 (=pool) dst=zmm2 src=(zmm30,zmm31) slot fills=3 spills=1
+  T10b live-in=29 dst=zmm31 src=(zmm29,zmm30) slot fills=1 spills=0 distinct zmm used=30
+  T10b values live across the instruction hold 26 distinct zmm, the two dying sources 2 more, and the destination is none of those 28
+  T10c second definition dst2=zmm30 (first insn's dying sources were zmm30,zmm31) slot spills after it=1
+T11 dead vector values return their frame slots
+    6 groups x 8 values: frame high-water 512 B (bound 512 B, frame 1024 B)
+OK

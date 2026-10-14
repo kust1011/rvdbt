@@ -1,0 +1,3 @@
+RA-supported count=65535 last-index=65534
+RA-rejected count=65536 returned-index=65535 (RegNBad)
+RA-rejected count=65537 returned-index=0 (aliases global 0)

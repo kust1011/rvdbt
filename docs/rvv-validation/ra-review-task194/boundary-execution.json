@@ -1,0 +1,31 @@
+{
+  "base": "c67cb9e",
+  "compiler": "Ubuntu clang version 20.1.8 (++20250708082409+6fb913d3e2ec-1~exp1~20250708202428.132)",
+  "compile_command": [
+    "clang++",
+    "-std=c++20",
+    "-O1",
+    "-I.",
+    "docs/rvv-validation/ra-review-task194/qir_index_boundary.cpp",
+    "dbt/arena.cpp",
+    "-o",
+    "/tmp/qir-index-boundary194"
+  ],
+  "compile_exit": 0,
+  "run_command": [
+    "/tmp/qir-index-boundary194"
+  ],
+  "run_exit": 0,
+  "source_sha256": {
+    "dbt/qmc/qir.h": "6aca72bc0f1026a325718c335f817a8c7dfd5a7bcd96517a106a0c65b2bc2506",
+    "dbt/arena.cpp": "3744759f6bf779e5a25fc0d48e05ecd136657e80f7678d02819a0e5fdc009bee",
+    "dbt/arena.h": "e89f4c958280317ce6f5a7cb74ad3c87e8edc771baea4640e429b1e6e935bbb2",
+    "dbt/arena_objects.h": "c30384065f4545259ecf8be951ab6f566e71e7b5833383662a5311b252db5da2",
+    "docs/rvv-validation/ra-review-task194/qir_index_boundary.cpp": "5439e396d109c4536729c7fc0bc196c4d110a22b93caf304933db1d93dba790c"
+  },
+  "stdout_sha256": "0aee1d29616a0d2e6e8d7d99c664a414aac95f137793056a61e2c918e3d9928a",
+  "binary_sha256": "462f69f1d4296d61361a9dc83eeeb29eacf6f321fb58c81e8abd732c34a9b9e2",
+  "guest_executions": 0,
+  "reference_executions": 0,
+  "production_edits": 0
+}

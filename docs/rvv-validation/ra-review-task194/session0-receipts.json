@@ -1,0 +1,56 @@
+{
+  "task192/qra-regression/command.json": {
+    "sha256": "aa8a2a07a97a9cf6b4c618a5ba1e33a947008b44f063abc80e255612b581b3a1",
+    "content": [
+      "/home/vick/rvv-long-task192/build/bin/qra_vpr_test"
+    ]
+  },
+  "task192/qra-regression/execution.json": {
+    "sha256": "398960ec16bf09cce60b5d12865f5ab0415fc3732fae29e3df2394122203db3f",
+    "content": {
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 1.0668307869927958,
+      "stdout_sha256": "d095b53d4fea325dedf1b2e4622af8ec04c91a99b1f72232514398a6add6922f",
+      "stderr_sha256": "6e4d6cc0266dc940ed76b35c07db3453899dc8a2dc3cae3962341a924b1b23a8",
+      "storage": "lossless-gzip-v1"
+    }
+  },
+  "task192/qra-regression/stdout.gz": {
+    "sha256": "b9d47989be2c44c22368f1b13ad2af5378ead443f83b8f66aefe0ae10101c9c4"
+  },
+  "task192/qra-regression/stderr.gz": {
+    "sha256": "aac4bf34a6bd26801101f9b68087341e9724d4a12e808f2dc38dc07a4099f265"
+  },
+  "task192/administrative/qra.cpp": {
+    "sha256": "ad67b51eefe5dabfb1a161233d384f2caff61bf1cd38c0680a9a6c5a0fad7049",
+    "matches_current192": true
+  },
+  "task192/administrative/qra_vpr_test.cpp": {
+    "sha256": "95083059972c2752b741331322b8f82d304f1b18d7c4acd12fd563808421c98b",
+    "matches_current192": true
+  },
+  "task192/build.json": {
+    "sha256": "d53165daa1f2bbe4e14bd068e67c7de520db19e84bb23ae0fc3b8b3d5831a94c",
+    "content": {
+      "command": [
+        "cmake",
+        "--build",
+        "/home/vick/rvv-long-task192/build",
+        "-j2",
+        "--target",
+        "elfrun",
+        "qra_vpr_test"
+      ],
+      "rc": 0,
+      "before": {
+        "free_bytes": 22217814016,
+        "nice": 10
+      },
+      "after": {
+        "free_bytes": 22189387776,
+        "nice": 10
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+Panic: QRegAlloc: spill frame exhausted (frame=1024 B, need 1088 B for a 64 B slot; 16 slot(s) still owned by a live value, 0 recyclable)
+backtrace
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x10f60) [0x6242b3519f60]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x10f3f) [0x6242b3519f3f]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x4b760) [0x6242b3554760]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x4a6cf) [0x6242b35536cf]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x4b927) [0x6242b3554927]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x4a687) [0x6242b3553687]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x4d9c3) [0x6242b35569c3]
+	at /home/vick/rvv-long-task192/build/bin/qra_vpr_test(+0x4e0d5) [0x6242b35570d5]
