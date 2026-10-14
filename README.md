@@ -14,12 +14,34 @@ experimental AOT/tiering paths; their presence does not make them evaluated
 thesis results. Benchmark guest binaries and restricted input datasets are not
 redistributed here.
 
-For finite per-form verification, compact selected-unit exports, and an executable
-clean-checkout vadd build/reference/DUT demonstration, use the
-[reviewer verification entry](docs/rvv-validation/delivery-task182/README.md).
-Its595-row index joins actual frozen179 results to accepted cases and keeps
-historical mixed builds and the original performance executable separate. New
-builds do not inherit frozen receipts. The delivery changes remain local until published.
+## Current implementation and validation
+
+The current correctness replay covers **595 applicable instruction forms** in
+the RV32/ELEN64 profile, using one executable with the semantic and QIR allocator
+fixes included. B, M1, M2 and Both are each tested. The 627-form catalogue also
+identifies the 32 indexed-memory forms excluded from this execution profile.
+
+| Validation | Completed checks or calls |
+| --- | ---: |
+| Per-form directed matrix, four configurations combined | 12,069,048 positive comparisons |
+| Focused checks | 2,256 positive checks; 592 denial controls |
+| CHIPS, Architectural Tests and Ara | 21,316 calls, including expected-failure controls and explicitly scoped cases |
+| Multi-instruction sequences | 9,888 DUT checks |
+
+Start with the [latest results and executable identity](docs/rvv-validation/final-task197/README.md)
+and [595-row per-form results](docs/rvv-validation/final-task197/PER_FORM_RESULTS.csv).
+For test sources, checked states, independent references and replay instructions,
+read the [author and reviewer guide](docs/rvv-author-guide.md) and
+[case index and clean-checkout demonstration](docs/rvv-validation/delivery-task182/README.md).
+The latter retains historical case metadata; the latest execution results are
+in the former result table.
+
+These are finite test matrices, not exhaustive input coverage. Original external
+exclusions remain recorded; complete guest-handler return and faulting-instruction
+restart remains unverified. Performance data retains its original executable.
+The compact results are committed here; the latest full raw archives remain in
+local research storage, as documented in the result guide. Earlier public archives
+below are historical results, not substitutes for the latest replay.
 
 See [the RVV QCG design and code map](docs/rvv-qcg.md) for the translation
 path, M1/M2 legality, and focused checks.
