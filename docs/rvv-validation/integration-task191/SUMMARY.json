@@ -1,0 +1,255 @@
+{
+  "status": "PASS_BOUNDED_PRODUCTION_INTEGRATION",
+  "accepted_invocations": 50,
+  "counts": {
+    "fixtures": 8,
+    "external": 24,
+    "sequences": 16,
+    "anonymous": 2
+  },
+  "sequence_checks": 68,
+  "source_files": 298,
+  "build": {
+    "bin/elfrun": "37a25624345214d97e3691cfd9f951166abfe92419ce2bbeca9c786b68227c14",
+    "lib/libdbtstatic.a": "242afe91e6c537abd1c2e742a8a3269429d65b4b5d79ddd7731f03b1755df76c",
+    "lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "bin/mmu_mapping_metadata_test": "9c1a04d65a9052ca2e594c345fb46dc4c5ef055464b7dcd4ab71021272785764",
+    "bin/rvv_rvv_contract_test": "da0d530839adea718236f133407755d76d9cb776eb56a2a392414db04ff0f66b",
+    "bin/rvv_vector_run_codegen_test": "3127fb4ea06aec8f16cf2eb51c63d4f67a40d901acfb25720bed5f46cec9cc59",
+    "bin/rv32_optional_gather_fault_test": "72c4353b8de096aaf03e54b513558b773cfe4c8499e2f2cb878a3b4a75eb5af3",
+    "bin/rv32_native_memory_fault_test": "9da69dc7dd193255c49ae9f2ab6feb659bf41102fd62e1b475b1e364e4817903",
+    "bin/rv32_scalar_native_fault_test": "b5bb13c2bb64bdde5fe6df7be2a9fa117318d2817623b4fafb08274af26ba0e9",
+    "bin/rv32_grouped_memory_fault_test": "091a5d88a6f3acf4bd0e3344c586c86af90eda7c18f2bd71bb7438f21322d979"
+  },
+  "gather": [
+    {
+      "path": "external/act/Vls32-vloxei32.v/M1/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/M1/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/M2/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/M2/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/B/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/B/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/BOTH/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vloxei32.v/BOTH/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/M1/1/counters.json",
+      "counters": {
+        "attempts": 164,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 163
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/M1/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/M2/1/counters.json",
+      "counters": {
+        "attempts": 164,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 163
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/M2/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/B/1/counters.json",
+      "counters": {
+        "attempts": 164,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 163
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/B/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/BOTH/1/counters.json",
+      "counters": {
+        "attempts": 164,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 163
+      }
+    },
+    {
+      "path": "external/act/Vls32-vluxei32.v/BOTH/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vluxei32_v-0/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vluxei32_v-0/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vloxei32_v-0/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vloxei32_v-0/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vluxei32_v-1/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vluxei32_v-1/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vloxei32_v-1/1/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "path": "external/chips/vloxei32_v-1/0/counters.json",
+      "counters": {
+        "attempts": 0,
+        "calls": 0,
+        "elems": 0,
+        "unmapped": 0
+      }
+    }
+  ],
+  "minimum_endpoint_free_bytes": 22277525504,
+  "nice": 10,
+  "own_compile_limit": 2,
+  "own_test_peak": 1,
+  "affinity": "none",
+  "frozen179_unchanged": {
+    "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "prior595_replayed": 0,
+  "recovery_calls": 0,
+  "production_edits": 0,
+  "terminal_child_count_claim": "fixture-local counts; not sum of dynamic assertions"
+}

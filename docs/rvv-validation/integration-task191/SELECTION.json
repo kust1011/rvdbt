@@ -1,0 +1,2257 @@
+{
+  "act": [
+    {
+      "case": "Vls32-vluxei32.v",
+      "arm": "B",
+      "elf": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf",
+      "elf_sha256": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+      "source_sha256": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+      "expected_sha256": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--dump-tbcode=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-B/tbcode.txt",
+        "--dump-tbmap=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-B/tbmap.txt",
+        "--fsroot=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/B/fs",
+        "--cache=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/B/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-B",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vluxei32.v",
+      "arm": "M1",
+      "elf": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf",
+      "elf_sha256": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+      "source_sha256": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+      "expected_sha256": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--dump-tbcode=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-M1/tbcode.txt",
+        "--dump-tbmap=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-M1/tbmap.txt",
+        "--fsroot=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/M1/fs",
+        "--cache=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/M1/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-M1",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vluxei32.v",
+      "arm": "M2",
+      "elf": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf",
+      "elf_sha256": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+      "source_sha256": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+      "expected_sha256": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--dump-tbcode=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-M2/tbcode.txt",
+        "--dump-tbmap=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-M2/tbmap.txt",
+        "--fsroot=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/M2/fs",
+        "--cache=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/M2/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-M2",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vluxei32.v",
+      "arm": "BOTH",
+      "elf": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf",
+      "elf_sha256": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+      "source_sha256": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+      "expected_sha256": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--dump-tbcode=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-BOTH/tbcode.txt",
+        "--dump-tbmap=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-BOTH/tbmap.txt",
+        "--fsroot=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/BOTH/fs",
+        "--cache=/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/work/BOTH/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/DUT-BOTH",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vloxei32.v",
+      "arm": "B",
+      "elf": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.elf",
+      "elf_sha256": "3e0e0bd71767daeaf7b822dd550a66a633dd3cc82b5984bf3c0af458f5958733",
+      "source_sha256": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+      "expected_sha256": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--dump-tbmap=/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-B/tbmap.txt",
+        "--fsroot=/tmp/act53_cn_9kpys/fs",
+        "--cache=/tmp/act53_cn_9kpys/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-B",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vloxei32.v",
+      "arm": "M1",
+      "elf": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.elf",
+      "elf_sha256": "3e0e0bd71767daeaf7b822dd550a66a633dd3cc82b5984bf3c0af458f5958733",
+      "source_sha256": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+      "expected_sha256": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--dump-tbmap=/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-M1/tbmap.txt",
+        "--fsroot=/tmp/act53_ahennsez/fs",
+        "--cache=/tmp/act53_ahennsez/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-M1",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=0",
+        "--rvv-qcg-active-vl-int-bound=0",
+        "--rvv-qcg-active-vl-widen-bound=0",
+        "--rvv-qcg-active-vl-narrow-bound=0",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vloxei32.v",
+      "arm": "M2",
+      "elf": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.elf",
+      "elf_sha256": "3e0e0bd71767daeaf7b822dd550a66a633dd3cc82b5984bf3c0af458f5958733",
+      "source_sha256": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+      "expected_sha256": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--dump-tbmap=/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-M2/tbmap.txt",
+        "--fsroot=/tmp/act53_gxa65gug/fs",
+        "--cache=/tmp/act53_gxa65gug/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-M2",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=0",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    },
+    {
+      "case": "Vls32-vloxei32.v",
+      "arm": "BOTH",
+      "elf": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.elf",
+      "elf_sha256": "3e0e0bd71767daeaf7b822dd550a66a633dd3cc82b5984bf3c0af458f5958733",
+      "source_sha256": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+      "expected_sha256": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+      "original_command": [
+        "/home/vick/ara-clean961-stage/elfrun",
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--dump-tbmap=/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-BOTH/tbmap.txt",
+        "--fsroot=/tmp/act53_ok7wbbzg/fs",
+        "--cache=/tmp/act53_ok7wbbzg/cache",
+        "--",
+        "/t.elf"
+      ],
+      "original_raw": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/raw/DUT-BOTH",
+      "normalized_flags": [
+        "--vlen=1024",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-stats=1",
+        "--rvv-route-census=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "timeout": 300
+    }
+  ],
+  "chips": [
+    {
+      "id": "0348f75818843bb20b840a173ac392320e4c8f84b059216254871c92e7b6551c",
+      "elf_sha256": "c9c76b4fc07880c3c125155494360aff171cfaa539957531fa47d6103816c026",
+      "vlen": 128,
+      "flags": [
+        "--vlen=128",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-route-census=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "control": false,
+      "expected_returncode": 0,
+      "expected_stdout": "CHIPS_PASS\n",
+      "aliases": [
+        {
+          "batch": "indexload128",
+          "test": "vluxei32_v-0",
+          "arm": "BOTH",
+          "form": "vluxei32.v",
+          "source_elf": "artifacts/chips_validation_20261007/indexload128/user-bin/vluxei32_v-0.elf",
+          "original_record": "artifacts/chips_validation_20261007/indexload128/rvdbt/vluxei32_v-0_BOTH",
+          "original_command": [
+            "/home/vick/rvv_bounded_batch_20260927/active-work-v16-no-thp-stage/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=1",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--rvv-run-bounded-batches=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=1",
+            "--rvv-qcg-active-vl-int-bound=1",
+            "--rvv-qcg-active-vl-widen-bound=1",
+            "--rvv-qcg-active-vl-narrow-bound=1",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-run-frame-census=1",
+            "--fsroot=/tmp/chips_9etqxf63/fs",
+            "--cache=/tmp/chips_9etqxf63/cache",
+            "--",
+            "/t.elf"
+          ],
+          "original_returncode": 0,
+          "original_matched_expected": true
+        }
+      ],
+      "phase": "remaining"
+    },
+    {
+      "id": "cb86193d29c4cf605f96839870a8745ad931b23fbf85262fd1830f46d65f83fb",
+      "elf_sha256": "3a4548d0186741290ced19f40a74bf1f46b40697f0696196af58303725067b81",
+      "vlen": 128,
+      "flags": [
+        "--vlen=128",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-route-census=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "control": false,
+      "expected_returncode": 0,
+      "expected_stdout": "CHIPS_PASS\n",
+      "aliases": [
+        {
+          "batch": "indexload128",
+          "test": "vloxei32_v-1",
+          "arm": "BOTH",
+          "form": "vloxei32.v",
+          "source_elf": "artifacts/chips_validation_20261007/indexload128/user-bin/vloxei32_v-1.elf",
+          "original_record": "artifacts/chips_validation_20261007/indexload128/rvdbt/vloxei32_v-1_BOTH",
+          "original_command": [
+            "/home/vick/rvv_bounded_batch_20260927/active-work-v16-no-thp-stage/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=1",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--rvv-run-bounded-batches=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=1",
+            "--rvv-qcg-active-vl-int-bound=1",
+            "--rvv-qcg-active-vl-widen-bound=1",
+            "--rvv-qcg-active-vl-narrow-bound=1",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-run-frame-census=1",
+            "--fsroot=/tmp/chips_mai_o0pa/fs",
+            "--cache=/tmp/chips_mai_o0pa/cache",
+            "--",
+            "/t.elf"
+          ],
+          "original_returncode": 0,
+          "original_matched_expected": true
+        }
+      ],
+      "phase": "remaining"
+    },
+    {
+      "id": "dc8d6a711d3d012d09759ec4b38c56ca77fabe9f94ed3a980837baf1f6a87049",
+      "elf_sha256": "aaf9552e667ffbe665254e34cb9eb0a18a6d7fef254a11d88c0e90412165e050",
+      "vlen": 128,
+      "flags": [
+        "--vlen=128",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-route-census=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "control": false,
+      "expected_returncode": 0,
+      "expected_stdout": "CHIPS_PASS\n",
+      "aliases": [
+        {
+          "batch": "indexload128",
+          "test": "vloxei32_v-0",
+          "arm": "BOTH",
+          "form": "vloxei32.v",
+          "source_elf": "artifacts/chips_validation_20261007/indexload128/user-bin/vloxei32_v-0.elf",
+          "original_record": "artifacts/chips_validation_20261007/indexload128/rvdbt/vloxei32_v-0_BOTH",
+          "original_command": [
+            "/home/vick/rvv_bounded_batch_20260927/active-work-v16-no-thp-stage/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=1",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--rvv-run-bounded-batches=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=1",
+            "--rvv-qcg-active-vl-int-bound=1",
+            "--rvv-qcg-active-vl-widen-bound=1",
+            "--rvv-qcg-active-vl-narrow-bound=1",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-run-frame-census=1",
+            "--fsroot=/tmp/chips_8jphz2j1/fs",
+            "--cache=/tmp/chips_8jphz2j1/cache",
+            "--",
+            "/t.elf"
+          ],
+          "original_returncode": 0,
+          "original_matched_expected": true
+        }
+      ],
+      "phase": "remaining"
+    },
+    {
+      "id": "e98c761f5b1ea535eeff1ffaa1abca95e0772de1a91910c7be23bbd5bbe93ffb",
+      "elf_sha256": "3a61b330bd490047c0e8203defc6bd443c6397fd08f7ee27ee9f7f48f08860b6",
+      "vlen": 128,
+      "flags": [
+        "--vlen=128",
+        "--aot=0",
+        "--aot-use-llvm=0",
+        "--tier0-threshold=0",
+        "--rvv-direct=1",
+        "--rvv-qcg-direct-setvl=1",
+        "--rvv-qcg-typed-chunk-mem-e64=1",
+        "--rvv-qcg-whole-reg=1",
+        "--rvv-qcg-typed-chunk=1",
+        "--rvv-qcg-typed-chunk-sub=1",
+        "--rvv-qcg-typed-chunk-mul=1",
+        "--rvv-qcg-typed-chunk-and=1",
+        "--rvv-qcg-typed-chunk-or=1",
+        "--rvv-qcg-typed-chunk-xor=1",
+        "--rvv-qcg-typed-chunk-shift=1",
+        "--rvv-qcg-typed-chunk-vle=1",
+        "--rvv-qcg-typed-chunk-vse=1",
+        "--rvv-qcg-typed-chunk-vmv=1",
+        "--rvv-qcg-partial-vl=1",
+        "--rvv-qcg-vx-mulacc=1",
+        "--rvv-qcg-typed-chunk-falu=1",
+        "--rvv-qcg-typed-chunk-fma=1",
+        "--rvv-qcg-narrow-chunk-width=1",
+        "--rvv-vector-run=1",
+        "--rvv-run-body=ssa",
+        "--rvv-run-order=member",
+        "--rvv-run-live-range-split=0",
+        "--rvv-qcg-typed-chunk-vadd-scalar=1",
+        "--rvv-qcg-fp-shared-mask=1",
+        "--rvv-run-bounded-batches=1",
+        "--qcg-code-huge-pages=0",
+        "--rvv-qcg-active-vl-mask-fusion=1",
+        "--rvv-qcg-active-mask-memory=1",
+        "--rvv-qcg-active-vl-bound=1",
+        "--rvv-qcg-active-vl-int-bound=1",
+        "--rvv-qcg-active-vl-widen-bound=1",
+        "--rvv-qcg-active-vl-narrow-bound=1",
+        "--rvv-qcg-hit-counter=1",
+        "--rvv-route-census=1",
+        "--rvv-run-frame-census=1",
+        "--fsroot={WORK}/fs",
+        "--cache={WORK}/cache",
+        "--",
+        "/t.elf"
+      ],
+      "control": false,
+      "expected_returncode": 0,
+      "expected_stdout": "CHIPS_PASS\n",
+      "aliases": [
+        {
+          "batch": "indexload128",
+          "test": "vluxei32_v-1",
+          "arm": "BOTH",
+          "form": "vluxei32.v",
+          "source_elf": "artifacts/chips_validation_20261007/indexload128/user-bin/vluxei32_v-1.elf",
+          "original_record": "artifacts/chips_validation_20261007/indexload128/rvdbt/vluxei32_v-1_BOTH",
+          "original_command": [
+            "/home/vick/rvv_bounded_batch_20260927/active-work-v16-no-thp-stage/elfrun",
+            "--vlen=128",
+            "--aot=0",
+            "--aot-use-llvm=0",
+            "--tier0-threshold=0",
+            "--rvv-direct=1",
+            "--rvv-qcg-direct-setvl=1",
+            "--rvv-qcg-typed-chunk-mem-e64=1",
+            "--rvv-qcg-whole-reg=1",
+            "--rvv-qcg-typed-chunk=1",
+            "--rvv-qcg-typed-chunk-sub=1",
+            "--rvv-qcg-typed-chunk-mul=1",
+            "--rvv-qcg-typed-chunk-and=1",
+            "--rvv-qcg-typed-chunk-or=1",
+            "--rvv-qcg-typed-chunk-xor=1",
+            "--rvv-qcg-typed-chunk-shift=1",
+            "--rvv-qcg-typed-chunk-vle=1",
+            "--rvv-qcg-typed-chunk-vse=1",
+            "--rvv-qcg-typed-chunk-vmv=1",
+            "--rvv-qcg-partial-vl=1",
+            "--rvv-qcg-vx-mulacc=1",
+            "--rvv-qcg-typed-chunk-falu=1",
+            "--rvv-qcg-typed-chunk-fma=1",
+            "--rvv-qcg-narrow-chunk-width=1",
+            "--rvv-vector-run=1",
+            "--rvv-run-body=ssa",
+            "--rvv-run-order=member",
+            "--rvv-run-live-range-split=0",
+            "--rvv-qcg-typed-chunk-vadd-scalar=1",
+            "--rvv-qcg-fp-shared-mask=1",
+            "--rvv-run-bounded-batches=1",
+            "--qcg-code-huge-pages=0",
+            "--rvv-qcg-active-vl-mask-fusion=1",
+            "--rvv-qcg-active-mask-memory=1",
+            "--rvv-qcg-active-vl-bound=1",
+            "--rvv-qcg-active-vl-int-bound=1",
+            "--rvv-qcg-active-vl-widen-bound=1",
+            "--rvv-qcg-active-vl-narrow-bound=1",
+            "--rvv-qcg-hit-counter=1",
+            "--rvv-route-census=1",
+            "--rvv-run-frame-census=1",
+            "--fsroot=/tmp/chips_69wxd5qp/fs",
+            "--cache=/tmp/chips_69wxd5qp/cache",
+            "--",
+            "/t.elf"
+          ],
+          "original_returncode": 0,
+          "original_matched_expected": true
+        }
+      ],
+      "phase": "remaining"
+    }
+  ],
+  "act_entries": [
+    {
+      "case": "Vls32-vluxei32.v",
+      "form": "vluxei32.v",
+      "sew": 32,
+      "geometry": {
+        "XLEN": 32,
+        "ELEN": 64,
+        "VLEN": 1024,
+        "MAXINDEXEEW": 32
+      },
+      "original_disposition": "TASK104_ACCEPTED",
+      "original_status": "PASS",
+      "prior_task": 104,
+      "original_base": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v",
+      "source": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.S",
+      "source_sha256": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+      "elf": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf",
+      "elf_sha256": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+      "checker": "/home/vick/rvv-task104/common-final2/user_env/signature.h",
+      "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+      "expected": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.results",
+      "expected_sha256": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+      "capture": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.sig",
+      "capture_sha256": "1ca8afd139b8b4ef67b4b33281ccd0ed9079d1715b2a0131f2bb33080023fba2",
+      "oracle": {
+        "raw_sig_sha256": "1ca8afd139b8b4ef67b4b33281ccd0ed9079d1715b2a0131f2bb33080023fba2",
+        "processed_results_sha256": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+        "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+        "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb"
+      },
+      "preservation": {
+        "input_objects": 449,
+        "target_words": 0,
+        "embedded_signature_bytes": 70992,
+        "source_sha256": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+        "elf_sha256": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+        "checker_unchanged": true
+      },
+      "reference_receipts": [
+        {
+          "returncode": 0,
+          "timeout": false,
+          "engine": "sail-signature",
+          "command": [
+            "/home/vick/rvv-act4-tools/bin/sail_riscv_sim",
+            "--config",
+            "/home/vick/rvv-task104/common-final2/reference_config/sail.json",
+            "--test-signature",
+            "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.sig",
+            "--signature-granularity",
+            "4",
+            "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.sig.elf"
+          ],
+          "raw": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/sail-signature",
+          "stdout_sha256": "29fe37add9b28f0b44a487b5447d5ebc9383c5c7b49370a05c73a070d4929f04",
+          "stderr_sha256": "d225ece4d973521df6f383610a2e4788c8f06223b920ab6d871b04594fd39608",
+          "original_check_pass": true,
+          "run_summary": [],
+          "frame_rows": 0
+        },
+        {
+          "returncode": 0,
+          "timeout": false,
+          "engine": "qemu-selfcheck",
+          "command": [
+            "/home/vick/rvv_qemu_compare_20260930/bin/qemu-riscv32",
+            "-cpu",
+            "rv32,v=true,vlen=1024,elen=64",
+            "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf"
+          ],
+          "raw": "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/raw/qemu-selfcheck",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "60b0aebc2a0dc1872e348f728dc6190a51b3d1cbf7b51973e07ab82f4f3bd4ce",
+          "original_check_pass": true,
+          "run_summary": [],
+          "frame_rows": 0
+        }
+      ],
+      "comparison": "comparison.json.gz#Vls32-vluxei32.v",
+      "task191_alias_audit": {
+        "target_instructions": 215,
+        "equal_vd_vs2": [
+          {
+            "line": 1950,
+            "instruction": "vluxei32.v v5, (x25), v5"
+          },
+          {
+            "line": 1979,
+            "instruction": "vluxei32.v v0, (x19), v0"
+          },
+          {
+            "line": 2008,
+            "instruction": "vluxei32.v v1, (x6), v1"
+          },
+          {
+            "line": 2037,
+            "instruction": "vluxei32.v v2, (x15), v2"
+          },
+          {
+            "line": 2066,
+            "instruction": "vluxei32.v v3, (x30), v3"
+          },
+          {
+            "line": 2095,
+            "instruction": "vluxei32.v v4, (x13), v4"
+          },
+          {
+            "line": 2124,
+            "instruction": "vluxei32.v v5, (x2), v5"
+          },
+          {
+            "line": 2153,
+            "instruction": "vluxei32.v v6, (x18), v6"
+          },
+          {
+            "line": 2182,
+            "instruction": "vluxei32.v v7, (x30), v7"
+          },
+          {
+            "line": 2211,
+            "instruction": "vluxei32.v v8, (x24), v8"
+          },
+          {
+            "line": 2240,
+            "instruction": "vluxei32.v v9, (x19), v9"
+          },
+          {
+            "line": 2269,
+            "instruction": "vluxei32.v v10, (x19), v10"
+          },
+          {
+            "line": 2298,
+            "instruction": "vluxei32.v v11, (x31), v11"
+          },
+          {
+            "line": 2327,
+            "instruction": "vluxei32.v v12, (x12), v12"
+          },
+          {
+            "line": 2356,
+            "instruction": "vluxei32.v v13, (x9), v13"
+          },
+          {
+            "line": 2385,
+            "instruction": "vluxei32.v v14, (x9), v14"
+          },
+          {
+            "line": 2414,
+            "instruction": "vluxei32.v v15, (x9), v15"
+          },
+          {
+            "line": 2443,
+            "instruction": "vluxei32.v v16, (x15), v16"
+          },
+          {
+            "line": 2472,
+            "instruction": "vluxei32.v v17, (x23), v17"
+          },
+          {
+            "line": 2501,
+            "instruction": "vluxei32.v v18, (x16), v18"
+          },
+          {
+            "line": 2530,
+            "instruction": "vluxei32.v v19, (x14), v19"
+          },
+          {
+            "line": 2559,
+            "instruction": "vluxei32.v v20, (x1), v20"
+          },
+          {
+            "line": 2588,
+            "instruction": "vluxei32.v v21, (x9), v21"
+          },
+          {
+            "line": 2617,
+            "instruction": "vluxei32.v v22, (x14), v22"
+          },
+          {
+            "line": 2646,
+            "instruction": "vluxei32.v v23, (x10), v23"
+          },
+          {
+            "line": 2675,
+            "instruction": "vluxei32.v v24, (x18), v24"
+          },
+          {
+            "line": 2704,
+            "instruction": "vluxei32.v v25, (x9), v25"
+          },
+          {
+            "line": 2733,
+            "instruction": "vluxei32.v v26, (x25), v26"
+          },
+          {
+            "line": 2762,
+            "instruction": "vluxei32.v v27, (x14), v27"
+          },
+          {
+            "line": 2791,
+            "instruction": "vluxei32.v v28, (x1), v28"
+          },
+          {
+            "line": 2821,
+            "instruction": "vluxei32.v v29, (x5), v29"
+          },
+          {
+            "line": 2850,
+            "instruction": "vluxei32.v v30, (x20), v30"
+          },
+          {
+            "line": 2880,
+            "instruction": "vluxei32.v v31, (x21), v31"
+          },
+          {
+            "line": 4388,
+            "instruction": "vluxei32.v v16, (x10), v16, v0.t"
+          },
+          {
+            "line": 4610,
+            "instruction": "vluxei32.v v0, (x31), v0"
+          },
+          {
+            "line": 4639,
+            "instruction": "vluxei32.v v1, (x7), v1"
+          },
+          {
+            "line": 4669,
+            "instruction": "vluxei32.v v2, (x22), v2"
+          },
+          {
+            "line": 4698,
+            "instruction": "vluxei32.v v3, (x2), v3"
+          },
+          {
+            "line": 4727,
+            "instruction": "vluxei32.v v4, (x17), v4"
+          },
+          {
+            "line": 4756,
+            "instruction": "vluxei32.v v5, (x26), v5"
+          },
+          {
+            "line": 4785,
+            "instruction": "vluxei32.v v6, (x3), v6"
+          },
+          {
+            "line": 4814,
+            "instruction": "vluxei32.v v7, (x20), v7"
+          },
+          {
+            "line": 4844,
+            "instruction": "vluxei32.v v8, (x17), v8"
+          },
+          {
+            "line": 4873,
+            "instruction": "vluxei32.v v9, (x22), v9"
+          },
+          {
+            "line": 4902,
+            "instruction": "vluxei32.v v10, (x26), v10"
+          },
+          {
+            "line": 4932,
+            "instruction": "vluxei32.v v11, (x4), v11"
+          },
+          {
+            "line": 4962,
+            "instruction": "vluxei32.v v12, (x16), v12"
+          },
+          {
+            "line": 4991,
+            "instruction": "vluxei32.v v13, (x9), v13"
+          },
+          {
+            "line": 5020,
+            "instruction": "vluxei32.v v14, (x28), v14"
+          },
+          {
+            "line": 5049,
+            "instruction": "vluxei32.v v15, (x28), v15"
+          },
+          {
+            "line": 5078,
+            "instruction": "vluxei32.v v16, (x10), v16"
+          },
+          {
+            "line": 5107,
+            "instruction": "vluxei32.v v17, (x1), v17"
+          },
+          {
+            "line": 5137,
+            "instruction": "vluxei32.v v18, (x5), v18"
+          },
+          {
+            "line": 5166,
+            "instruction": "vluxei32.v v19, (x12), v19"
+          },
+          {
+            "line": 5195,
+            "instruction": "vluxei32.v v20, (x8), v20"
+          },
+          {
+            "line": 5224,
+            "instruction": "vluxei32.v v21, (x30), v21"
+          },
+          {
+            "line": 5253,
+            "instruction": "vluxei32.v v22, (x22), v22"
+          },
+          {
+            "line": 5282,
+            "instruction": "vluxei32.v v23, (x6), v23"
+          },
+          {
+            "line": 5311,
+            "instruction": "vluxei32.v v24, (x11), v24"
+          },
+          {
+            "line": 5340,
+            "instruction": "vluxei32.v v25, (x22), v25"
+          },
+          {
+            "line": 5369,
+            "instruction": "vluxei32.v v26, (x12), v26"
+          },
+          {
+            "line": 5398,
+            "instruction": "vluxei32.v v27, (x28), v27"
+          },
+          {
+            "line": 5427,
+            "instruction": "vluxei32.v v28, (x7), v28"
+          },
+          {
+            "line": 5456,
+            "instruction": "vluxei32.v v29, (x6), v29"
+          },
+          {
+            "line": 5485,
+            "instruction": "vluxei32.v v30, (x25), v30"
+          },
+          {
+            "line": 5514,
+            "instruction": "vluxei32.v v31, (x19), v31"
+          },
+          {
+            "line": 5543,
+            "instruction": "vluxei32.v v0, (x18), v0"
+          },
+          {
+            "line": 5572,
+            "instruction": "vluxei32.v v2, (x2), v2"
+          },
+          {
+            "line": 5601,
+            "instruction": "vluxei32.v v4, (x25), v4"
+          },
+          {
+            "line": 5630,
+            "instruction": "vluxei32.v v6, (x6), v6"
+          },
+          {
+            "line": 5659,
+            "instruction": "vluxei32.v v8, (x26), v8"
+          },
+          {
+            "line": 5688,
+            "instruction": "vluxei32.v v10, (x11), v10"
+          },
+          {
+            "line": 5717,
+            "instruction": "vluxei32.v v12, (x15), v12"
+          },
+          {
+            "line": 5746,
+            "instruction": "vluxei32.v v14, (x8), v14"
+          },
+          {
+            "line": 5775,
+            "instruction": "vluxei32.v v16, (x4), v16"
+          },
+          {
+            "line": 5804,
+            "instruction": "vluxei32.v v18, (x13), v18"
+          },
+          {
+            "line": 5833,
+            "instruction": "vluxei32.v v20, (x24), v20"
+          },
+          {
+            "line": 5862,
+            "instruction": "vluxei32.v v22, (x13), v22"
+          },
+          {
+            "line": 5891,
+            "instruction": "vluxei32.v v24, (x13), v24"
+          },
+          {
+            "line": 5920,
+            "instruction": "vluxei32.v v26, (x18), v26"
+          },
+          {
+            "line": 5949,
+            "instruction": "vluxei32.v v28, (x25), v28"
+          },
+          {
+            "line": 5978,
+            "instruction": "vluxei32.v v30, (x28), v30"
+          },
+          {
+            "line": 6008,
+            "instruction": "vluxei32.v v0, (x18), v0"
+          },
+          {
+            "line": 6037,
+            "instruction": "vluxei32.v v4, (x6), v4"
+          },
+          {
+            "line": 6066,
+            "instruction": "vluxei32.v v8, (x12), v8"
+          },
+          {
+            "line": 6095,
+            "instruction": "vluxei32.v v12, (x30), v12"
+          },
+          {
+            "line": 6124,
+            "instruction": "vluxei32.v v16, (x12), v16"
+          },
+          {
+            "line": 6153,
+            "instruction": "vluxei32.v v20, (x16), v20"
+          },
+          {
+            "line": 6183,
+            "instruction": "vluxei32.v v24, (x26), v24"
+          },
+          {
+            "line": 6212,
+            "instruction": "vluxei32.v v28, (x10), v28"
+          },
+          {
+            "line": 6241,
+            "instruction": "vluxei32.v v0, (x28), v0"
+          },
+          {
+            "line": 6271,
+            "instruction": "vluxei32.v v8, (x30), v8"
+          },
+          {
+            "line": 6300,
+            "instruction": "vluxei32.v v16, (x3), v16"
+          },
+          {
+            "line": 6329,
+            "instruction": "vluxei32.v v24, (x10), v24"
+          }
+        ]
+      }
+    },
+    {
+      "case": "Vls32-vloxei32.v",
+      "form": "vloxei32.v",
+      "sew": 32,
+      "geometry": {
+        "XLEN": 32,
+        "ELEN": 64,
+        "VLEN": 1024,
+        "MAXINDEXEEW": 32
+      },
+      "original_disposition": "EXECUTE_DIFFERENT_OUTPUT",
+      "original_status": "PASS",
+      "prior_task": 109,
+      "original_base": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v",
+      "source": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.S",
+      "source_sha256": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+      "elf": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.elf",
+      "elf_sha256": "3e0e0bd71767daeaf7b822dd550a66a633dd3cc82b5984bf3c0af458f5958733",
+      "checker": "/home/vick/rvv-task109/common/user_env/signature.h",
+      "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+      "expected": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.results",
+      "expected_sha256": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+      "capture": "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.sig",
+      "capture_sha256": "0403ffe0ca33fe8fade021f64149efdd5c91db1a2a027300a616deb7108a15b0",
+      "oracle": {
+        "source_sha256": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+        "capture_elf_sha256": "516924ed767a0b044852de61ecf7c3c60b66d5c1327395e88419350ec6ff5582",
+        "raw_sig_sha256": "0403ffe0ca33fe8fade021f64149efdd5c91db1a2a027300a616deb7108a15b0",
+        "processed_results_sha256": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+        "Sail_sha256": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9",
+        "processor_sha256": "1051fc5c9044acbce52ecd1bb889f3658e0c2a3069fe2196fd868b64b01da6d5",
+        "config_sha256": "5c495089a1e3fd9d3426eab258a92ff8b1d6ddf5c7f12d99ac10b3002f6b3748"
+      },
+      "preservation": {
+        "input_objects": 452,
+        "target_words": 216,
+        "embedded_signature_bytes": 71392,
+        "source_unchanged": true,
+        "checker_unchanged": true,
+        "geometry": {
+          "VLEN": 1024,
+          "ELEN": 64,
+          "XLEN": 32,
+          "TEST_FLEN": 32
+        }
+      },
+      "reference_receipts": [
+        {
+          "engine": "Sail",
+          "returncode": 0,
+          "status": "PASS",
+          "raw": "raw/sail-signature"
+        },
+        {
+          "engine": "QEMU",
+          "returncode": 0,
+          "status": "PASS",
+          "raw": "raw/qemu-selfcheck"
+        }
+      ],
+      "comparison": "comparison.json.gz#Vls32-vloxei32.v",
+      "task191_alias_audit": {
+        "target_instructions": 216,
+        "equal_vd_vs2": [
+          {
+            "line": 267,
+            "instruction": "vloxei32.v v7, (x3), v7"
+          },
+          {
+            "line": 1139,
+            "instruction": "vloxei32.v v5, (x3), v5"
+          },
+          {
+            "line": 1461,
+            "instruction": "vloxei32.v v16, (x30), v16"
+          },
+          {
+            "line": 1665,
+            "instruction": "vloxei32.v v23, (x22), v23"
+          },
+          {
+            "line": 1985,
+            "instruction": "vloxei32.v v0, (x25), v0"
+          },
+          {
+            "line": 2014,
+            "instruction": "vloxei32.v v1, (x2), v1"
+          },
+          {
+            "line": 2043,
+            "instruction": "vloxei32.v v2, (x11), v2"
+          },
+          {
+            "line": 2072,
+            "instruction": "vloxei32.v v3, (x15), v3"
+          },
+          {
+            "line": 2101,
+            "instruction": "vloxei32.v v4, (x5), v4"
+          },
+          {
+            "line": 2130,
+            "instruction": "vloxei32.v v5, (x9), v5"
+          },
+          {
+            "line": 2159,
+            "instruction": "vloxei32.v v6, (x3), v6"
+          },
+          {
+            "line": 2188,
+            "instruction": "vloxei32.v v7, (x8), v7"
+          },
+          {
+            "line": 2217,
+            "instruction": "vloxei32.v v8, (x17), v8"
+          },
+          {
+            "line": 2246,
+            "instruction": "vloxei32.v v9, (x30), v9"
+          },
+          {
+            "line": 2275,
+            "instruction": "vloxei32.v v10, (x26), v10"
+          },
+          {
+            "line": 2304,
+            "instruction": "vloxei32.v v11, (x11), v11"
+          },
+          {
+            "line": 2333,
+            "instruction": "vloxei32.v v12, (x25), v12"
+          },
+          {
+            "line": 2362,
+            "instruction": "vloxei32.v v13, (x26), v13"
+          },
+          {
+            "line": 2391,
+            "instruction": "vloxei32.v v14, (x26), v14"
+          },
+          {
+            "line": 2420,
+            "instruction": "vloxei32.v v15, (x27), v15"
+          },
+          {
+            "line": 2449,
+            "instruction": "vloxei32.v v16, (x10), v16"
+          },
+          {
+            "line": 2478,
+            "instruction": "vloxei32.v v17, (x5), v17"
+          },
+          {
+            "line": 2507,
+            "instruction": "vloxei32.v v18, (x23), v18"
+          },
+          {
+            "line": 2536,
+            "instruction": "vloxei32.v v19, (x3), v19"
+          },
+          {
+            "line": 2565,
+            "instruction": "vloxei32.v v20, (x13), v20"
+          },
+          {
+            "line": 2594,
+            "instruction": "vloxei32.v v21, (x30), v21"
+          },
+          {
+            "line": 2623,
+            "instruction": "vloxei32.v v22, (x16), v22"
+          },
+          {
+            "line": 2653,
+            "instruction": "vloxei32.v v23, (x29), v23"
+          },
+          {
+            "line": 2682,
+            "instruction": "vloxei32.v v24, (x20), v24"
+          },
+          {
+            "line": 2711,
+            "instruction": "vloxei32.v v25, (x28), v25"
+          },
+          {
+            "line": 2740,
+            "instruction": "vloxei32.v v26, (x27), v26"
+          },
+          {
+            "line": 2769,
+            "instruction": "vloxei32.v v27, (x21), v27"
+          },
+          {
+            "line": 2798,
+            "instruction": "vloxei32.v v28, (x4), v28"
+          },
+          {
+            "line": 2827,
+            "instruction": "vloxei32.v v29, (x29), v29"
+          },
+          {
+            "line": 2856,
+            "instruction": "vloxei32.v v30, (x25), v30"
+          },
+          {
+            "line": 2885,
+            "instruction": "vloxei32.v v31, (x14), v31"
+          },
+          {
+            "line": 3030,
+            "instruction": "vloxei32.v v26, (x5), v26"
+          },
+          {
+            "line": 3931,
+            "instruction": "vloxei32.v v20, (x23), v20, v0.t"
+          },
+          {
+            "line": 4045,
+            "instruction": "vloxei32.v v16, (x11), v16"
+          },
+          {
+            "line": 4272,
+            "instruction": "vloxei32.v v8, (x22), v8, v0.t"
+          },
+          {
+            "line": 4389,
+            "instruction": "vloxei32.v v24, (x23), v24, v0.t"
+          },
+          {
+            "line": 4494,
+            "instruction": "vloxei32.v v16, (x14), v16, v0.t"
+          },
+          {
+            "line": 4619,
+            "instruction": "vloxei32.v v0, (x22), v0"
+          },
+          {
+            "line": 4649,
+            "instruction": "vloxei32.v v1, (x12), v1"
+          },
+          {
+            "line": 4678,
+            "instruction": "vloxei32.v v2, (x27), v2"
+          },
+          {
+            "line": 4707,
+            "instruction": "vloxei32.v v3, (x3), v3"
+          },
+          {
+            "line": 4736,
+            "instruction": "vloxei32.v v4, (x12), v4"
+          },
+          {
+            "line": 4765,
+            "instruction": "vloxei32.v v5, (x7), v5"
+          },
+          {
+            "line": 4794,
+            "instruction": "vloxei32.v v6, (x20), v6"
+          },
+          {
+            "line": 4823,
+            "instruction": "vloxei32.v v7, (x18), v7"
+          },
+          {
+            "line": 4853,
+            "instruction": "vloxei32.v v8, (x19), v8"
+          },
+          {
+            "line": 4882,
+            "instruction": "vloxei32.v v9, (x7), v9"
+          },
+          {
+            "line": 4911,
+            "instruction": "vloxei32.v v10, (x14), v10"
+          },
+          {
+            "line": 4940,
+            "instruction": "vloxei32.v v11, (x27), v11"
+          },
+          {
+            "line": 4970,
+            "instruction": "vloxei32.v v12, (x29), v12"
+          },
+          {
+            "line": 4999,
+            "instruction": "vloxei32.v v13, (x19), v13"
+          },
+          {
+            "line": 5028,
+            "instruction": "vloxei32.v v14, (x17), v14"
+          },
+          {
+            "line": 5057,
+            "instruction": "vloxei32.v v15, (x10), v15"
+          },
+          {
+            "line": 5086,
+            "instruction": "vloxei32.v v16, (x26), v16"
+          },
+          {
+            "line": 5115,
+            "instruction": "vloxei32.v v17, (x6), v17"
+          },
+          {
+            "line": 5144,
+            "instruction": "vloxei32.v v18, (x21), v18"
+          },
+          {
+            "line": 5173,
+            "instruction": "vloxei32.v v19, (x3), v19"
+          },
+          {
+            "line": 5202,
+            "instruction": "vloxei32.v v20, (x19), v20"
+          },
+          {
+            "line": 5231,
+            "instruction": "vloxei32.v v21, (x6), v21"
+          },
+          {
+            "line": 5260,
+            "instruction": "vloxei32.v v22, (x9), v22"
+          },
+          {
+            "line": 5289,
+            "instruction": "vloxei32.v v23, (x20), v23"
+          },
+          {
+            "line": 5319,
+            "instruction": "vloxei32.v v24, (x23), v24"
+          },
+          {
+            "line": 5348,
+            "instruction": "vloxei32.v v25, (x25), v25"
+          },
+          {
+            "line": 5377,
+            "instruction": "vloxei32.v v26, (x10), v26"
+          },
+          {
+            "line": 5406,
+            "instruction": "vloxei32.v v27, (x3), v27"
+          },
+          {
+            "line": 5435,
+            "instruction": "vloxei32.v v28, (x14), v28"
+          },
+          {
+            "line": 5464,
+            "instruction": "vloxei32.v v29, (x30), v29"
+          },
+          {
+            "line": 5493,
+            "instruction": "vloxei32.v v30, (x28), v30"
+          },
+          {
+            "line": 5522,
+            "instruction": "vloxei32.v v31, (x31), v31"
+          },
+          {
+            "line": 5551,
+            "instruction": "vloxei32.v v0, (x6), v0"
+          },
+          {
+            "line": 5580,
+            "instruction": "vloxei32.v v2, (x3), v2"
+          },
+          {
+            "line": 5609,
+            "instruction": "vloxei32.v v4, (x15), v4"
+          },
+          {
+            "line": 5638,
+            "instruction": "vloxei32.v v6, (x12), v6"
+          },
+          {
+            "line": 5667,
+            "instruction": "vloxei32.v v8, (x21), v8"
+          },
+          {
+            "line": 5696,
+            "instruction": "vloxei32.v v10, (x3), v10"
+          },
+          {
+            "line": 5726,
+            "instruction": "vloxei32.v v12, (x21), v12"
+          },
+          {
+            "line": 5755,
+            "instruction": "vloxei32.v v14, (x3), v14"
+          },
+          {
+            "line": 5784,
+            "instruction": "vloxei32.v v16, (x2), v16"
+          },
+          {
+            "line": 5814,
+            "instruction": "vloxei32.v v18, (x18), v18"
+          },
+          {
+            "line": 5843,
+            "instruction": "vloxei32.v v20, (x5), v20"
+          },
+          {
+            "line": 5872,
+            "instruction": "vloxei32.v v22, (x9), v22"
+          },
+          {
+            "line": 5901,
+            "instruction": "vloxei32.v v24, (x19), v24"
+          },
+          {
+            "line": 5930,
+            "instruction": "vloxei32.v v26, (x12), v26"
+          },
+          {
+            "line": 5959,
+            "instruction": "vloxei32.v v28, (x13), v28"
+          },
+          {
+            "line": 5988,
+            "instruction": "vloxei32.v v30, (x5), v30"
+          },
+          {
+            "line": 6017,
+            "instruction": "vloxei32.v v0, (x2), v0"
+          },
+          {
+            "line": 6046,
+            "instruction": "vloxei32.v v4, (x5), v4"
+          },
+          {
+            "line": 6075,
+            "instruction": "vloxei32.v v8, (x21), v8"
+          },
+          {
+            "line": 6104,
+            "instruction": "vloxei32.v v12, (x12), v12"
+          },
+          {
+            "line": 6133,
+            "instruction": "vloxei32.v v16, (x4), v16"
+          },
+          {
+            "line": 6162,
+            "instruction": "vloxei32.v v20, (x4), v20"
+          },
+          {
+            "line": 6191,
+            "instruction": "vloxei32.v v24, (x27), v24"
+          },
+          {
+            "line": 6220,
+            "instruction": "vloxei32.v v28, (x31), v28"
+          },
+          {
+            "line": 6249,
+            "instruction": "vloxei32.v v0, (x31), v0"
+          },
+          {
+            "line": 6278,
+            "instruction": "vloxei32.v v8, (x23), v8"
+          },
+          {
+            "line": 6307,
+            "instruction": "vloxei32.v v16, (x10), v16"
+          },
+          {
+            "line": 6336,
+            "instruction": "vloxei32.v v24, (x18), v24"
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "Two original ACT e32 indexed loads in four original arms; four original CHIPS e32 indexed loads in BOTH; each gather off/on; counters diagnostic only",
+  "original_flags_delta": [
+    "--rvv-gather=0/1",
+    "--rvv-stats=1"
+  ],
+  "inputs": {
+    "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.S": "431d723281c38733111cd920e925298b0a14fb5b87eb710572b8ede6ee454674",
+    "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.elf": "01ac6a34926ce1f76767c3d95441b2865c600014c7a401937d213f6bbdb8e6c2",
+    "/home/vick/rvv-task104/common-final2/user_env/signature.h": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.results": "8da81f746724eb6df3571e068c96549f7506a848c6e44d60c66b078e2169c4df",
+    "/home/vick/rvv-task104/pilot/Vls32-vluxei32.v/Vls32-vluxei32.v.sig": "1ca8afd139b8b4ef67b4b33281ccd0ed9079d1715b2a0131f2bb33080023fba2",
+    "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.S": "ffa9ea1d4cefd26149e12a7d910948e728df1894f23854e6d309cad4adefb02e",
+    "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.elf": "3e0e0bd71767daeaf7b822dd550a66a633dd3cc82b5984bf3c0af458f5958733",
+    "/home/vick/rvv-task109/common/user_env/signature.h": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.results": "666111b4b334920c627a4db55aaebfde922ebdc04e045e59e38eeecc1f86099a",
+    "/home/vick/rvv-task109/cases/Vls32-vloxei32.v/Vls32-vloxei32.v.sig": "0403ffe0ca33fe8fade021f64149efdd5c91db1a2a027300a616deb7108a15b0"
+  },
+  "tools": {
+    "/home/vick/act-current121/run121.py": "c19c6de5d52cee8328d94b31d026ddf7e9cf55c8aa79f4ea2241147ea4e8b410",
+    "/home/vick/chips-current120/runner.py": "21f8f068b964c230fe965b1e08e12276f9f109238d3b089d7e22b17a3203c41c"
+  }
+}

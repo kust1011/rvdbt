@@ -79,6 +79,10 @@ static void cell(CPUState *s,bool whole,bool store,bool second,unsigned mode,boo
  auto code=compile(rt,arena,w,baseline,id);if(baseline)return;
  clear(s);s->vec.Reset(1024);s->vec.vtype=16;s->vec.vl=32;
  s->gpr[5]=data+4096-64;s->gpr[7]=data+512;s->gpr[6]=0;
+ for(unsigned r:{11u,12u,28u,31u})s->gpr[r]=0x19100000u+r;
+ std::array<u32,32> expected_gpr;
+ for(unsigned r=0;r<32;++r)expected_gpr[r]=s->gpr[r];
+ expected_gpr[6]=0x123; // The sole scalar write in stream(), before the fault.
  for(unsigned r=0;r<32;++r)for(unsigned b=0;b<512;++b)s->vec.vreg[r][b]=(u8)(r*19+b*7);
  auto before=s->vec;auto *memory=(u8*)mmu::g2h(data);
  for(unsigned b=0;b<8192;++b)memory[b]=(u8)(b*5+3);
@@ -104,6 +108,9 @@ static void cell(CPUState *s,bool whole,bool store,bool second,unsigned mode,boo
   if(!store)memcpy(want.vreg[8].data(),input.data()+4032,64);
   check(caught==1 && snap.vreg==want.vreg && s->vec.vreg==want.vreg,"prior members complete, failed load prefix visible, later overlap uncommitted");
   check(s->gpr[6]==0x123 && s->vec.vstart==(whole && store?64u:16u) && s->vec.vl==32 && s->vec.vtype==16 && s->ip==faultpc,"precise PC/CSR/dirty scalar boundary");
+  check(snap.gpr==expected_gpr,"saved scalar state and unrelated scalar registers preserved");
+  for(unsigned r=0;r<32;++r)check(s->gpr[r]==expected_gpr[r],"live unrelated scalar registers preserved");
+  check(ev.access==(store?MemoryFaultEvent::Access::Store:MemoryFaultEvent::Access::Load) && ev.reason==MemoryFaultEvent::Reason::HostFault,"explicit internal access fault cause");
   check(ev.pc==faultpc && ev.raw==w[mi] && ev.address==data+4096 && ev.element==(whole && store?64u:16u) && ev.eew_bytes==(whole && store?1u:4u) && ev.nf==1 && !ev.field && ev.host_signal==SIGSEGV && ev.origin==MemoryFaultEvent::Origin::NativeUnit,"exact owned SIMD event");
   auto wantmem=input;if(store)memcpy(wantmem.data()+4032,prior.vreg[8].data(),64);
   check(!memcmp(memory,wantmem.data(),4096),"completed store prefix and earlier memory preserved");
