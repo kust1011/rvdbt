@@ -47,8 +47,9 @@ translation time**. Every trial is in [TRIALS.csv](docs/rvv-validation/cost-task
 
 Existing timing is verified in both retained source trees, byte-identical in
 `dbt/execute.cpp:375`, `dbt/qmc/qcg/qcg.cpp:34` and `dbt/elfrun.cpp:1977`.
-`CLOCK_MONOTONIC` brackets each `CompilerDoJob` on a JIT miss, before installation
-and guest execution; emitted TRANSLATE_NS is the sum, not whole-process wall.
+`CLOCK_MONOTONIC` brackets each `CompilerDoJob` on a JIT miss, including its
+`AnnounceRegion` call and arena cleanup, before guest execution. Emitted
+TRANSLATE_NS is the sum, not whole-process wall.
 QSEL brackets QSelPass; QRA starts after QSel's sample and includes the intervening
 QIR printer call plus QRegAllocPass; EMIT includes the next printer call and
 emission/encoding, ending before DumpCode. Logging sinks are disabled by existing
@@ -67,7 +68,7 @@ for every packet: 220/220 checks, exit0, no reference executions. Full raw
 commands, stdout/stderr, timing totals, packet hashes and results are retained.
 
 Build comparability: both Release Clang22, O3/NDEBUG, host chunk512,
-FROUND_IMPL2 and AVX512F/BW. All290 compile commands match after isolated-root
+FROUND_IMPL2 and AVX512F/BW. All279 compile commands match after isolated-root
 relocation; allocator compiler flags and elfrun link commands match. ldd resolves
 the same system libraries after ASLR/root normalization, with each build's
 explicit LD_LIBRARY_PATH. Shared `libdbtjitshared.so` and `libasmjit.a` hashes

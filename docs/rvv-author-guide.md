@@ -105,6 +105,38 @@ handler. It is useful for that FOF rule, not a source of complete retry evidence
 Earlier QEMU RVV0.7.1 case structure is a test-design reference; current answers
 and legality must follow the published V1.0 specification.
 
+## Long-vector allocator capacity and cost
+
+The allocator tracks every virtual value in a translated region, not just values
+that are simultaneously live. A legal VLEN4096/SEW32/LMUL4 sequence exceeded the
+former 2,048-entry tracking arrays and aborted translation in all four method
+configurations. This is different from exhausting physical vector registers.
+
+`dbt/qmc/qcg/qra.cpp` now sizes the three tracking arrays once from the completed
+QIR value count after instruction selection. Their addresses remain stable while
+physical-register mappings point into them. The physical register pool, spill
+frame budget and retirement rules are unchanged. The existing virtual-index
+representation still imposes a checked upper bound; this is not unbounded storage.
+
+The allocation happens during translation, not on each execution of generated
+vector code. Three heap allocations replace fixed arrays; smaller regions also
+initialize fewer entries. These opposing costs prevent inferring a timing penalty
+from allocation count alone. Task195 checks correctness and integration, not
+performance. [The paired cost measurement](../SESSION0_RESULT_196.md) uses
+two existing guest bundles in B/Both, five pairs each. All forty runs pass the
+original checks. Allocator-stage medians decrease in all four cells; total
+translation medians decrease about 6.7--6.9% for the smaller bundle and increase
+about 0.6--0.9% for the larger one. Whole-process timing is variable. This bounded
+sample finds no substantial new cost, not a general speedup or zero-cost result.
+
+Existing `--measure-translation` timing in `dbt/execute.cpp` surrounds
+`CompilerDoJob`, after job construction and including `AnnounceRegion` and arena
+cleanup. `QRA_NS` in `dbt/qmc/qcg/qcg.cpp` measures
+the register-allocation stage, including the preceding optional QIR printer call;
+verbose QIR logging must be disabled for the comparison. Neither counter is the
+entire process time. Peak process RSS is likewise not the allocator's own peak
+storage. Keep these measurement boundaries separate when interpreting results.
+
 ## Explaining the support claim
 
 - **What was implemented?** RVV decoding, vector architectural state, direct
