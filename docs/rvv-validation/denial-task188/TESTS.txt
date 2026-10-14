@@ -1,0 +1,18 @@
+test_command_identity_rejection (test_audit.DenialAudit) ... ok
+test_crash_cannot_borrow_good_snapshot (test_audit.DenialAudit) ... ok
+test_csr_gpr_vector_corruptions (test_audit.DenialAudit) ... ok
+test_duplicate_snapshot (test_audit.DenialAudit) ... ok
+test_elf_target_corruption (test_audit.DenialAudit) ... ok
+test_generic_keyword_without_snapshot (test_audit.DenialAudit) ... ok
+test_missing_fields_are_unverified (test_audit.DenialAudit) ... ok
+test_original_all_592_exact (test_audit.DenialAudit) ... ok
+test_raw_origin_does_not_establish_native (test_audit.DenialAudit) ... ok
+test_semantic_corruptions (test_audit.DenialAudit) ... ok
+test_terminal_cause_corruption (test_audit.DenialAudit) ... ok
+test_truncated_capture (test_audit.DenialAudit) ... ok
+test_wrong_target_process_crash_with_keyword (test_audit.DenialAudit) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.810s
+
+OK

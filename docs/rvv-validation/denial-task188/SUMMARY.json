@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "controls": 592,
+  "counts": {
+    "EXACT_EXPECTED_FAULT": 592,
+    "GENERIC_FAILURE": 0,
+    "INSUFFICIENT_OBSERVATION": 0,
+    "UNEXPECTED_SUCCESS": 0
+  },
+  "by_suite": {
+    "guard165": {
+      "EXACT_EXPECTED_FAULT": 48
+    },
+    "guard166": {
+      "EXACT_EXPECTED_FAULT": 64
+    },
+    "faults": {
+      "EXACT_EXPECTED_FAULT": 480
+    }
+  },
+  "architectural_fault_state_pass": 0,
+  "store_memory_unobserved": 56,
+  "positive_headline": {
+    "forms": 595,
+    "checks": 12071304,
+    "correction_delta": 0,
+    "reaudited": false
+  },
+  "new_execution_calls": 0
+}
