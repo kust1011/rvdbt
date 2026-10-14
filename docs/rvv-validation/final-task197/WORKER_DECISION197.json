@@ -1,0 +1,1 @@
+{"time": 1791964244.940656, "cpus": 32, "load1": 4.46, "available_memory_bytes": 34966593536, "workers": 8, "nice": 10, "affinity": "none assigned", "reason": "All other correctness families complete; user authorizes up to8 workers on idle host", "predicates_changed": false}

@@ -1,0 +1,14 @@
+{
+  "free": 18686681088,
+  "entries": 102,
+  "directed_commands": 380968,
+  "cases_per_arm": 3017262,
+  "uptime": "15:02:00 up 6 days, 18:40,  9 users,  load average: 0.27, 0.24, 0.32",
+  "local_free": 1279995469824,
+  "reserve_bytes": 10737418240,
+  "historical_directed_archive_bytes": 1268670066,
+  "conservative_new_retained_bytes": 6442450944,
+  "scratch_allowance_bytes": 536870912,
+  "method": "gzip stream capture; hardlink stdout/packets; verified per-entry tar.gz offload; successful scratch only removed",
+  "originals_and_failures": "read-only retained; no historical DUT credit"
+}

@@ -1,0 +1,10 @@
+{
+  "original_plan": "/home/vick/rvv-task181/DIRECTED_PLAN.json",
+  "original_plan_sha256": "6a57de0fb7c149ea865a62a27055db1a438610336fa6bb34b9c185e91e6ad929",
+  "new_plan_sha256": "29ff0410524c6d45fc1064f01640729536d471368f2c6ba2aea6078511e07778",
+  "changed_fields": [
+    "build"
+  ],
+  "selectors_flags_sources_units_and_references_unchanged": true,
+  "old_DUT_credit": 0
+}

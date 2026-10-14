@@ -1,0 +1,14 @@
+{
+  "focused_initial_attempt": {
+    "classification": "launcher build-path binding; before any focused guest",
+    "observed_returncode": 1,
+    "observed_exception": "AssertionError at focused.py line10: sha(ENGINE)==fixed192 pin",
+    "cause": "H-relative Task179 path was missed by the initial absolute-path substitution",
+    "correction": "Retarget H-relative executable to rvv-long-task192/build/bin/elfrun; predicates unchanged",
+    "DUT_calls": 0,
+    "successful_units_repeated": 0,
+    "provenance": "transcribed from original tool response; original guard165-replay.log was overwritten by the accepted focused_finish launcher on resume",
+    "original_stop_receipt": "xbd:/home/vick/rvv-task197/FOCUSED_STOPPED.json",
+    "controller_capture": "focused-controller.log"
+  }
+}

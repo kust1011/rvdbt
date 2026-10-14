@@ -1,0 +1,1337 @@
+{
+  "status": "PASS",
+  "entries": 102,
+  "stream_archives": 102,
+  "metadata_archives": 102,
+  "stream_archive_bytes": 1268481031,
+  "metadata_archive_bytes": 1822408989,
+  "verification": "Every retained successful archive size/SHA256 rechecked after replay; gzip CRC, member hashes and stream storage joins verified before each move",
+  "entries_detail": [
+    {
+      "entry": "b145-000",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b145-000.tar.gz",
+        "bytes": 5765634,
+        "sha256": "2486ec2f9c43c95f7fdd724c40bf008181adc76b437efec110303e70f3df91f3"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b145-000.metadata.tar.gz",
+        "bytes": 7476063,
+        "sha256": "75a50b797d5808bad53cf2a3c39a54bed49752cac42dddee7b30a1455322bdf5"
+      }
+    },
+    {
+      "entry": "b146-001",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b146-001.tar.gz",
+        "bytes": 28313318,
+        "sha256": "878f911e81110127e58750d1483e15ae4c78bd106bf0ce1857e193f6dcfc2a08"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b146-001.metadata.tar.gz",
+        "bytes": 39604763,
+        "sha256": "4a0f6e90d1584b94af60fa500f46a86e9f75866c6ef29ff2099377538e031250"
+      }
+    },
+    {
+      "entry": "b147-002",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b147-002.tar.gz",
+        "bytes": 6143101,
+        "sha256": "f6d026fb23bdd25b3dd5b60688b0590f1afa08e24daeac97158e942030fed5e3"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b147-002.metadata.tar.gz",
+        "bytes": 14172701,
+        "sha256": "8ec29835b70aa61417b46042cb46d0708068e580648802d3fc2f9987ed73022c"
+      }
+    },
+    {
+      "entry": "b148-003",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b148-003.tar.gz",
+        "bytes": 5600034,
+        "sha256": "3500a56219f51f8741a2cfe93c03a17d814067cbe36f071de629653de9d91374"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b148-003.metadata.tar.gz",
+        "bytes": 10477490,
+        "sha256": "b1eb873144f9cc26d15391c5981a81fc5489fa242d7bad626e497e54591c0068"
+      }
+    },
+    {
+      "entry": "b148-004",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b148-004.tar.gz",
+        "bytes": 1560113,
+        "sha256": "37c8bfb59137f447086cc89d287d2684060b0f7843ba0f152006f638a0ccb9ac"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b148-004.metadata.tar.gz",
+        "bytes": 3706676,
+        "sha256": "642199a61018d719db6d855f7c62607c2c893041cadbc73ab572786d129523b2"
+      }
+    },
+    {
+      "entry": "b148-005",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b148-005.tar.gz",
+        "bytes": 41740967,
+        "sha256": "3f3d2cb0537745110cd770c246e61040a086f07435ca741c85196c8a74361018"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b148-005.metadata.tar.gz",
+        "bytes": 65581762,
+        "sha256": "3ad43559e3e59fbef517a6f97d3d8675003bcb3c04281aa088149f81411d9878"
+      }
+    },
+    {
+      "entry": "b149-006",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b149-006.tar.gz",
+        "bytes": 39396216,
+        "sha256": "5b61867936ae28abc47020ad10f5d64f0b21cde103a1410749376e71cb588638"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b149-006.metadata.tar.gz",
+        "bytes": 63427011,
+        "sha256": "ea9f8b3c2d087d2d4e10d126ca5bce1d591ae5cbfb1759367d4b28909754a3c7"
+      }
+    },
+    {
+      "entry": "b149-007",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b149-007.tar.gz",
+        "bytes": 832378,
+        "sha256": "37f68b3d22efbd55fb4bf4c7a5813de15b0b2f9a5420b78610219f9675ad6385"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b149-007.metadata.tar.gz",
+        "bytes": 1059617,
+        "sha256": "3fcab5be3be03fbe35729e01dd60f764e9f5ac692662925fa487e522992b39de"
+      }
+    },
+    {
+      "entry": "b150-008",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b150-008.tar.gz",
+        "bytes": 40064691,
+        "sha256": "4eb2cba511280592b1b4e83d4d55774d5cc6ed85a66f203f9f9e92d16896631a"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b150-008.metadata.tar.gz",
+        "bytes": 71149870,
+        "sha256": "f1199a5ad9dd6f94ffc1e7e5917a0d6c171b4a6e3c83b133eda08ddb1b4e2331"
+      }
+    },
+    {
+      "entry": "b151-009",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b151-009.tar.gz",
+        "bytes": 14525955,
+        "sha256": "6a889c72621a7be3d935735f0ad04fcb6077cb9c285f2a8e1a15364ac46b04c4"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b151-009.metadata.tar.gz",
+        "bytes": 24080519,
+        "sha256": "dd896b5f156312118ba16573ded2c7e6d68079adf31d7cc95b30892bb22b84c9"
+      }
+    },
+    {
+      "entry": "b152-010",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b152-010.tar.gz",
+        "bytes": 48220011,
+        "sha256": "58d2c750f04c5873eccb5c73a661642a136749815868be2e59a84de9a729bf4d"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b152-010.metadata.tar.gz",
+        "bytes": 80088830,
+        "sha256": "e2ceed97bc1105f6bc9fd6ff888cfc5e117225a2f7213fec5e52c27f0a94ae51"
+      }
+    },
+    {
+      "entry": "b153-011",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b153-011.tar.gz",
+        "bytes": 35052174,
+        "sha256": "dd8b0cbf275020f5a6e0b9cb6999091748ba552a5bf1088ca5f5dfeb98d69b3d"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b153-011.metadata.tar.gz",
+        "bytes": 62246666,
+        "sha256": "5a45883d8c72e4f9b4091361d097b3b8efb14772f7bbce96f76d219cbd7ff240"
+      }
+    },
+    {
+      "entry": "b153-012",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b153-012.tar.gz",
+        "bytes": 2741881,
+        "sha256": "ce98be6c6697e2b0471b2c9b083562c89f1142193ea7a3a406e4373727bc7990"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b153-012.metadata.tar.gz",
+        "bytes": 3743741,
+        "sha256": "152f04981fd4b7c749ec80d24d083a257fff01a0e970de242c3a17358dcbc003"
+      }
+    },
+    {
+      "entry": "b154-013",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b154-013.tar.gz",
+        "bytes": 18154437,
+        "sha256": "e813ac9bac4f26661088e82ec1aefdd55bd80f88b7e9aca59434853aa13fc0fc"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b154-013.metadata.tar.gz",
+        "bytes": 27254158,
+        "sha256": "f6c1a1ce2a343ed4057ba0761e3eb974a5b094a430111ad10cd5f642f764e862"
+      }
+    },
+    {
+      "entry": "b155-014",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b155-014.tar.gz",
+        "bytes": 79606985,
+        "sha256": "ee435e5fb4c56de74d3d379d2d3eafde6936eadc9a810a53ec2b49e88e158b63"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b155-014.metadata.tar.gz",
+        "bytes": 125191948,
+        "sha256": "e1efd52a66fbbac5fdc5a91ef6c6319d1aa63c7e16e8bbd827bebab6f10d3301"
+      }
+    },
+    {
+      "entry": "b159-015",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b159-015.tar.gz",
+        "bytes": 20921579,
+        "sha256": "e71b1a77ba578797e18de04fdc3210df2b289e4b04f3648fd7bd6c50ab92c437"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b159-015.metadata.tar.gz",
+        "bytes": 34100525,
+        "sha256": "c6d2830f138a22e1be89ece80959384f7c43805961b14b74e440aaf3ff178cf8"
+      }
+    },
+    {
+      "entry": "b159-016",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b159-016.tar.gz",
+        "bytes": 66776643,
+        "sha256": "71021e4246a3d790d6b4c47b6995005da75ba416e377801aeb6457c0ca72a447"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b159-016.metadata.tar.gz",
+        "bytes": 119442196,
+        "sha256": "a7ddc6d584b78cfe455b51513a083a0dc2a8a3e0280ce9922c1777aeef22412f"
+      }
+    },
+    {
+      "entry": "b159-017",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b159-017.tar.gz",
+        "bytes": 46903731,
+        "sha256": "dcd68777c4910a2a3e1fb981f286e7def4d84d1ccf928120055e8011ee539e78"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b159-017.metadata.tar.gz",
+        "bytes": 84425130,
+        "sha256": "f362b34d697cc71611cf0fad94cc20ed3493a4c4a959bd8d29df15effa88740d"
+      }
+    },
+    {
+      "entry": "b160-018",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b160-018.tar.gz",
+        "bytes": 70440434,
+        "sha256": "68d73f820d984a20393f331ea62e1a8099f2f1946b3b746ec4c5a3f326e16935"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b160-018.metadata.tar.gz",
+        "bytes": 100223776,
+        "sha256": "122c588a80825d9e474b1f557310747385a147ff8d1352e1b467b83e1d4286d7"
+      }
+    },
+    {
+      "entry": "b161-019",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-019.tar.gz",
+        "bytes": 11332276,
+        "sha256": "5bf459f39355c192584c6320b9b59482ef64e91be275f7b18e8d26322a6c9b14"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-019.metadata.tar.gz",
+        "bytes": 16883349,
+        "sha256": "6bab26ad36f288bc2f52b4706a350520c3a6ee9414d01712297dbdd6f319cefe"
+      }
+    },
+    {
+      "entry": "b161-020",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-020.tar.gz",
+        "bytes": 6049256,
+        "sha256": "0903b59926e3229a6b55c385686ed422c0cc0a623c2987df088b0df278356f47"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-020.metadata.tar.gz",
+        "bytes": 6492976,
+        "sha256": "46f9c9dfcc84bf9900fc68b6e34a79b082ebca3913d013ea8bb5f4d6a161d61e"
+      }
+    },
+    {
+      "entry": "b161-021",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-021.tar.gz",
+        "bytes": 5628994,
+        "sha256": "b828b2b89e1377b697b4f0ea08d0382c10be4a7845af0fb4c6bf54a7b15b7673"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-021.metadata.tar.gz",
+        "bytes": 7382717,
+        "sha256": "fa88e170ffb16117e61ea1d2608239a9c6d4865ba499f0d97b042ab5457707c9"
+      }
+    },
+    {
+      "entry": "b161-022",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-022.tar.gz",
+        "bytes": 34865083,
+        "sha256": "e793df20f832887c1bcad6142e131bd88ade2a07b0fd1023728db1de325ae191"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b161-022.metadata.tar.gz",
+        "bytes": 47954864,
+        "sha256": "0a3a4d555efd18ecfd1575cd7f03f94c03287fad02d438d21af3a79cef024f1d"
+      }
+    },
+    {
+      "entry": "b162-023",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b162-023.tar.gz",
+        "bytes": 31116857,
+        "sha256": "6d8e9eca88da3c460481c744a0fd41fab9fac0ccbbc50fbc440bc3485d01618c"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b162-023.metadata.tar.gz",
+        "bytes": 40673060,
+        "sha256": "f8157d485e0c4fa7e8599a7c19be7cdd14f35d1d881362b450e640b0806503b7"
+      }
+    },
+    {
+      "entry": "b163-024",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b163-024.tar.gz",
+        "bytes": 24566789,
+        "sha256": "d069b90ebd041ec664bc98447b0987251fe169f3d3b52f69ec69519740cc29cd"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b163-024.metadata.tar.gz",
+        "bytes": 49439644,
+        "sha256": "582968b1adbff7146c0640fc7a5a556a83e672eb27d113bfdd77e56cf20b43db"
+      }
+    },
+    {
+      "entry": "b165-025",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-025.tar.gz",
+        "bytes": 3718479,
+        "sha256": "1df13049751e8a984ab194005007c8fedff4cdb58f294abe5cf874b0e1386549"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-025.metadata.tar.gz",
+        "bytes": 2211238,
+        "sha256": "e1c51c96a7057f86680ddbaa0bc347f0204fa47080937918227ed76becbd425f"
+      }
+    },
+    {
+      "entry": "b165-026",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-026.tar.gz",
+        "bytes": 4259873,
+        "sha256": "f855cbd4a00c217ef6facc7ae7f3ef67151b024643a4fe43df3f64b6a05818f5"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-026.metadata.tar.gz",
+        "bytes": 6525836,
+        "sha256": "82f4123d96ea3824da6dc4b218450b5c6eadc86497f3bfe5a9b0f80eb8a42f1b"
+      }
+    },
+    {
+      "entry": "b165-027",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-027.tar.gz",
+        "bytes": 4876859,
+        "sha256": "e38abc4adeea59c78d2748380f4a054b1eeebdfd52ac1554c51db07e504b147e"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-027.metadata.tar.gz",
+        "bytes": 7109745,
+        "sha256": "a33c9e0fc0f2cbde9bbcd491d062692648dcde459248fe1a771f7cb74ead6a3d"
+      }
+    },
+    {
+      "entry": "b165-028",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-028.tar.gz",
+        "bytes": 5773656,
+        "sha256": "929a79d6271ce2acee91e2e6d83e2fe2374c022a74e896b5eaa17f2aa664ba9a"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-028.metadata.tar.gz",
+        "bytes": 7176969,
+        "sha256": "15dba76737e85541e69f582c92e3b6d18c5bfe55ad2a12c0059e5d5c0883bfde"
+      }
+    },
+    {
+      "entry": "b165-029",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-029.tar.gz",
+        "bytes": 9108193,
+        "sha256": "ba1dbc4f7ae5b3a1aa4068df3eb32275123f3d0b6b2e761ea6f167638ceea7c6"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-029.metadata.tar.gz",
+        "bytes": 7464156,
+        "sha256": "57dfa9de6f2002419ce088b5d9cc7b36e0b84e7123ab51414c84994255f2a018"
+      }
+    },
+    {
+      "entry": "b165-030",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-030.tar.gz",
+        "bytes": 14760196,
+        "sha256": "19cdc4dbf963fb1270a94b3bf8dcce95faefbce320b72e36e0666e6e2cd61ecf"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-030.metadata.tar.gz",
+        "bytes": 7539950,
+        "sha256": "0bec7c19bf7fe2e8c30f7588559b474b6c05a272a61e3844dbcaa62c6195f23f"
+      }
+    },
+    {
+      "entry": "b165-031",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-031.tar.gz",
+        "bytes": 46331821,
+        "sha256": "c6753af0d2478a695655afe175208c09d2abc21d62f9b22cbd7e0d3358da83c5"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b165-031.metadata.tar.gz",
+        "bytes": 7544099,
+        "sha256": "6bd9bb3ccb45b86f968a291b6ddbd92dcd94baf82ef7724691a5bef55acb7826"
+      }
+    },
+    {
+      "entry": "b166-032",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-032.tar.gz",
+        "bytes": 2993175,
+        "sha256": "9e5b19263595bfe8dc292e4df01570d3d1e9ece8b17b6a2970adc5f8e9f824b7"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-032.metadata.tar.gz",
+        "bytes": 4488105,
+        "sha256": "75b2fb6b28d59f252d3989d2ae26a73ff6c4e81209faee2004d29fc5c74ca65a"
+      }
+    },
+    {
+      "entry": "b166-033",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-033.tar.gz",
+        "bytes": 995125,
+        "sha256": "eaf10765f0ff898d93a540dee72ed855122cc4957dd76f67cc582f04fc5e6e5c"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-033.metadata.tar.gz",
+        "bytes": 1266390,
+        "sha256": "40dca4d0dd4a7da78743961865bad28f98f68d4a3c8b55c1abe9759831c9afbb"
+      }
+    },
+    {
+      "entry": "b166-034",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-034.tar.gz",
+        "bytes": 4166304,
+        "sha256": "b6c2325bd180b5221bb32c40d3915d2eeec7feb01a979daa807ea9f566f01a57"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-034.metadata.tar.gz",
+        "bytes": 5807286,
+        "sha256": "ea1c2900ca874e79f833c307e4124feb7092c628b07a8f0c1fd182886bedf36d"
+      }
+    },
+    {
+      "entry": "b166-035",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-035.tar.gz",
+        "bytes": 5676094,
+        "sha256": "eb6468a9a745700d14c1ef40a60bfc657b447adb4540852526bd53e8ce78655f"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-035.metadata.tar.gz",
+        "bytes": 5882808,
+        "sha256": "110081116c8a1d08e592872c2a9fe88716859b9fa1571fd31bc9ab2996e37a7b"
+      }
+    },
+    {
+      "entry": "b166-036",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-036.tar.gz",
+        "bytes": 9969163,
+        "sha256": "3d71c45ea64f9e8c349848283083ac0862f85a77ed1468c16c8909556dadc4ba"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-036.metadata.tar.gz",
+        "bytes": 6151380,
+        "sha256": "97126c23f037208a8e5bbbfee6cbacc5c3eab40648b97a91ff9f4033a2e5ef05"
+      }
+    },
+    {
+      "entry": "b166-037",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-037.tar.gz",
+        "bytes": 15578383,
+        "sha256": "01fe5aa4b50a85534562212d52923a229e87ded57a73545aa84cea74d5662392"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-037.metadata.tar.gz",
+        "bytes": 6211476,
+        "sha256": "91606844ab4cb1c178f821fde169fce1ee46f632f3444831f2da4344fe89951c"
+      }
+    },
+    {
+      "entry": "b166-038",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-038.tar.gz",
+        "bytes": 50116847,
+        "sha256": "0a44eb20e27c066df93a88cab1bac2348de5dc56d37b8fe1660816e30ca5f9fb"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b166-038.metadata.tar.gz",
+        "bytes": 6217307,
+        "sha256": "0f411e44a422cbaf18507257631de33d98ccc1fe12f8fc47499442d2b4fda849"
+      }
+    },
+    {
+      "entry": "b168-039",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-039.tar.gz",
+        "bytes": 1922828,
+        "sha256": "db55f317937e93bf771b05cfbe6c505cba47a758f13a9a80b15198e2eece8529"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-039.metadata.tar.gz",
+        "bytes": 1204310,
+        "sha256": "18b4677322f78e56a9991b4a0c5c9a70540e117dd8bce4d40e62e7f50adc5762"
+      }
+    },
+    {
+      "entry": "b168-040",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-040.tar.gz",
+        "bytes": 1888264,
+        "sha256": "564a2f4c20858b9cb353c1f9e4ab2d191ef53905d7eb0c2e46a4509819154050"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-040.metadata.tar.gz",
+        "bytes": 3066772,
+        "sha256": "c75bfdb331fbc72aef6224e9018674216e2804c1edea43d6b36aa34f709bab52"
+      }
+    },
+    {
+      "entry": "b168-041",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-041.tar.gz",
+        "bytes": 2374898,
+        "sha256": "bf1c1d253b624483d9ece761aa94d6c86d0f7918e2aae37d34215fbe176d4360"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-041.metadata.tar.gz",
+        "bytes": 3685131,
+        "sha256": "738fd5a09dc21ff1e06f24caf878f801b70e55aa87a011e61a12cf90287cd392"
+      }
+    },
+    {
+      "entry": "b168-042",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-042.tar.gz",
+        "bytes": 2718321,
+        "sha256": "d01acac22a2792f72aa10dc13ddc12e41c0e8c3a77e8843a1efd67bf4537d382"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-042.metadata.tar.gz",
+        "bytes": 3692886,
+        "sha256": "8ec8e872afcfbba0f5f40196b972e6338360d5a74891600869645889bfe96480"
+      }
+    },
+    {
+      "entry": "b168-043",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-043.tar.gz",
+        "bytes": 3515892,
+        "sha256": "11796c3e7a3b6cd8dea512361c82f8b4ae5df75896e6ced50d97abf42090aa8e"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-043.metadata.tar.gz",
+        "bytes": 3828312,
+        "sha256": "c05fd4161be71e64c6c1479c56a2fa80bd0abd7980f822b2554467c386b006d3"
+      }
+    },
+    {
+      "entry": "b168-044",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-044.tar.gz",
+        "bytes": 4969031,
+        "sha256": "fe0091463769c18acfa8c4c38003cba6417f38614c851b45b199610dd1a7c9a7"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-044.metadata.tar.gz",
+        "bytes": 3864634,
+        "sha256": "53a83a7da679f16b5f2026d7802d284d8aea4fb80ad4d35e9304645e8ff770e4"
+      }
+    },
+    {
+      "entry": "b168-045",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-045.tar.gz",
+        "bytes": 13268386,
+        "sha256": "5659986ad3cdbcfbbbcd91c1b217bd77df081246d40d9d9600a96a93e00c18a4"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-045.metadata.tar.gz",
+        "bytes": 3291564,
+        "sha256": "7bbe027ef2b145e673cdd4625f74feb9f4d16874647e67d281cdf8413ffa812b"
+      }
+    },
+    {
+      "entry": "b168-046",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-046.tar.gz",
+        "bytes": 1385192,
+        "sha256": "f39efed38650ef067026be88e737db365bc7630aea6e24b0ab3bd6279c087c78"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b168-046.metadata.tar.gz",
+        "bytes": 1020519,
+        "sha256": "6b41e2337bbfda27a9c2b7f13f67835519ddb03feed3a90709c166bb9ccd58b1"
+      }
+    },
+    {
+      "entry": "b169-047",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-047.tar.gz",
+        "bytes": 964909,
+        "sha256": "1b6ca88bc1402eeeda7eec9a19671fdce285e5dd21c8b99b5af722ff119fc7d6"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-047.metadata.tar.gz",
+        "bytes": 1081841,
+        "sha256": "2a7e262f433a1b1ee0e9088440e6b805b3c00c0ca8d1aa77db705b882f460af5"
+      }
+    },
+    {
+      "entry": "b169-048",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-048.tar.gz",
+        "bytes": 1249020,
+        "sha256": "bbf4d6826267bffbf910b0a7832a5f8d6d558b3fc80964c62afcaefc1cd5ce69"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-048.metadata.tar.gz",
+        "bytes": 2723153,
+        "sha256": "51cb7c026c13c99e2583b973bea8d8d91258f3648752bf0ec45d560bc906008d"
+      }
+    },
+    {
+      "entry": "b169-049",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-049.tar.gz",
+        "bytes": 1556129,
+        "sha256": "ffb02bd3c7a883c74da7c92e7dbc1afba3eac9ace0934068c8cb87a1d4a9ce46"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-049.metadata.tar.gz",
+        "bytes": 3374135,
+        "sha256": "8e4a142a2ba2068a7d3c8cffd1727bbdb1c9c8cba99b191417548959d3691882"
+      }
+    },
+    {
+      "entry": "b169-050",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-050.tar.gz",
+        "bytes": 1654354,
+        "sha256": "58b3b1df9ab84f62e0bdcae25f43dbc8d911d495ebbe37d6617ab79421232c29"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-050.metadata.tar.gz",
+        "bytes": 3608579,
+        "sha256": "537097519507fdc2abb15d4c0138590d21413139385b7b00886c1c6b576bf747"
+      }
+    },
+    {
+      "entry": "b169-051",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-051.tar.gz",
+        "bytes": 1959757,
+        "sha256": "c3a9a84b8e582ad897edf64a11b4b98ed77708849b37cc24419171547513ab76"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-051.metadata.tar.gz",
+        "bytes": 4011353,
+        "sha256": "328c035159ef7bac2b57d712b961c26566958e08b5cc9e4b792e96c9c322b418"
+      }
+    },
+    {
+      "entry": "b169-052",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-052.tar.gz",
+        "bytes": 3192441,
+        "sha256": "62ed88be7229c2886e03502b6f755f6a6c2e5c5f083cf879e681934fef68c0ca"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-052.metadata.tar.gz",
+        "bytes": 4304649,
+        "sha256": "d1da4a1e6b64bec34a73ac7efcfb4141903827216644da6e0fec751c9d5c3a83"
+      }
+    },
+    {
+      "entry": "b169-053",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-053.tar.gz",
+        "bytes": 6251859,
+        "sha256": "82ce871fc1454e38349d11ad3aab7dd806f0e9bb8e43d97406e1c2fb90f67594"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-053.metadata.tar.gz",
+        "bytes": 4026896,
+        "sha256": "defae006354c09824a33cbaf03b4999864b99ac92e1417457e742bb568ef1422"
+      }
+    },
+    {
+      "entry": "b169-054",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-054.tar.gz",
+        "bytes": 400768,
+        "sha256": "2edc54d0092411cc765d573b16bc437d20f8c36f3620b7ce7cc703293f4f3ac6"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-054.metadata.tar.gz",
+        "bytes": 513317,
+        "sha256": "b08416d276cb5cff8a9bd3a93ee49fc6f39321748b447773d0178adc4857c2be"
+      }
+    },
+    {
+      "entry": "b169-055",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-055.tar.gz",
+        "bytes": 1099451,
+        "sha256": "951e2c23f1dbfbecef04464aeba30514b88579553d91b1e4a27d7c3e8233de5f"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-055.metadata.tar.gz",
+        "bytes": 1464773,
+        "sha256": "e9a2ebbdabd4f959c2720df2cf235b521af23fde02440dc0cb9fb0b85979461a"
+      }
+    },
+    {
+      "entry": "b169-056",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-056.tar.gz",
+        "bytes": 1297117,
+        "sha256": "969b4785bb2dc495c4c211bf1eceef0b6f9cc67f676974928f78efed04d770bb"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-056.metadata.tar.gz",
+        "bytes": 1754956,
+        "sha256": "7c846f67a9bdac50f6c3e2f17b599d3f663c97022230498b4b3a1a55ab7b2f24"
+      }
+    },
+    {
+      "entry": "b169-057",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-057.tar.gz",
+        "bytes": 1299404,
+        "sha256": "c5e7628dcc3d736dca6a910910030ff518ae5543839c24ebd6b680c7891d2164"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-057.metadata.tar.gz",
+        "bytes": 1694301,
+        "sha256": "6e84cfad7c8db0262a12766b7281854230628199fce7dea4f74a394b2bfd476e"
+      }
+    },
+    {
+      "entry": "b169-058",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-058.tar.gz",
+        "bytes": 1365547,
+        "sha256": "ef2df54c1055c8e18a2059597af4304917766ff28668fdc9e364f3f32554b250"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-058.metadata.tar.gz",
+        "bytes": 1810440,
+        "sha256": "66e97f54f63710ba9894c679683483a439bba5deeb7d59d5f4979725eda6234c"
+      }
+    },
+    {
+      "entry": "b169-059",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-059.tar.gz",
+        "bytes": 1387510,
+        "sha256": "c081438a298685e646eea64104959078bf63a80d8292ed33318f3e1537d8bc0c"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-059.metadata.tar.gz",
+        "bytes": 1791746,
+        "sha256": "3013a82620e9d8132b58e6b87207692cf4933eb70acc287fb1294533858ad351"
+      }
+    },
+    {
+      "entry": "b169-060",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-060.tar.gz",
+        "bytes": 1391399,
+        "sha256": "6c5d4862946531df89e8ea4a77f284f7e86874b8fb05aaa8c3dc3be347d398f0"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b169-060.metadata.tar.gz",
+        "bytes": 1578960,
+        "sha256": "2a5ad0fbbff6b93fe90fd95f76cc76c7cab90b8057a03f1e4cbf14953697647e"
+      }
+    },
+    {
+      "entry": "b167-061",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b167-061.tar.gz",
+        "bytes": 97392910,
+        "sha256": "753557f8cef6662dd35c8e3fd29e062a2188774b6c462e09b29f72b741c28b14"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b167-061.metadata.tar.gz",
+        "bytes": 161900708,
+        "sha256": "ef7f22adea563ca6faa405b31705015a4d8daf93d2b3d990391e440846cb4afb"
+      }
+    },
+    {
+      "entry": "b170-062",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-062.tar.gz",
+        "bytes": 426881,
+        "sha256": "4b53d3fc3c96457545bcb701532c9d334fd4dd3eb14018afb7266e22750d24cc"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-062.metadata.tar.gz",
+        "bytes": 782786,
+        "sha256": "637940747c2c091d11a8c865b1cc33aae6511acff484b32558e20f67ea648de8"
+      }
+    },
+    {
+      "entry": "b170-063",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-063.tar.gz",
+        "bytes": 5688393,
+        "sha256": "55b7399672e647396db4aedeb4badf385166e587e2ad5a492c09d23152b4d084"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-063.metadata.tar.gz",
+        "bytes": 9856035,
+        "sha256": "5a826822c481ac309240bddbac3409742cd4d48770954311ccc898f801611ce9"
+      }
+    },
+    {
+      "entry": "b170-064",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-064.tar.gz",
+        "bytes": 632063,
+        "sha256": "b4bd091676ea1ecf9ea575352b79f822b894d5fdb1df1add3bd2ee23deddc5c9"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-064.metadata.tar.gz",
+        "bytes": 1152529,
+        "sha256": "84ca1d07983a5959bb96cf99d1e59f319e1f251c97608436de4a9eaaab145ffa"
+      }
+    },
+    {
+      "entry": "b170-065",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-065.tar.gz",
+        "bytes": 8499727,
+        "sha256": "23356b6729f37aa6023c39126f46003a5e5e9932c0b6cea939e3cfd087bdcb80"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-065.metadata.tar.gz",
+        "bytes": 14774198,
+        "sha256": "67f657b8cec1acc07d77ad513fb9debd4ad64d2ea71b7430fc39a7f16a993e35"
+      }
+    },
+    {
+      "entry": "b170-066",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-066.tar.gz",
+        "bytes": 1080609,
+        "sha256": "7471e841038b094d1378a73d0bebca1400a2728820d7f5cf94d1b32137654a83"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-066.metadata.tar.gz",
+        "bytes": 2155134,
+        "sha256": "0c38575f0208d474c877fd09e0edcb963dad5a360ed2b21d8613835c55d5f464"
+      }
+    },
+    {
+      "entry": "b170-067",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-067.tar.gz",
+        "bytes": 15202450,
+        "sha256": "93a218090edb5dbc73f8ac1fb0c5a1161b45742ea1c966aeed5984b9335dc1ad"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b170-067.metadata.tar.gz",
+        "bytes": 28124429,
+        "sha256": "59bafaa0204b81f7e633c83c24005446732122500a1a4d6f3658fbc7266a90cc"
+      }
+    },
+    {
+      "entry": "b171-068",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-068.tar.gz",
+        "bytes": 58687,
+        "sha256": "5e85d9f5d817618e933930fb044c120aa5f6559bebaf7547c5ed6a8a0ce534f1"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-068.metadata.tar.gz",
+        "bytes": 99413,
+        "sha256": "661772e492c12875aea540b6192144534166c30eba2ca6ccd88c02fe965e9a37"
+      }
+    },
+    {
+      "entry": "b171-069",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-069.tar.gz",
+        "bytes": 1054435,
+        "sha256": "e836c40c9825390ad385e7662574b7b7026d0c8a6d43f492253d9eebd80b54fb"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-069.metadata.tar.gz",
+        "bytes": 1033941,
+        "sha256": "efe32b61db958db549d97c57292b5aa83a5ded2676efdae810561b68cb4a7487"
+      }
+    },
+    {
+      "entry": "b171-070",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-070.tar.gz",
+        "bytes": 359733,
+        "sha256": "f00f3f70e6d9d6739bc4558e6338e1a864391102085db41e124c40f83bae55ab"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-070.metadata.tar.gz",
+        "bytes": 527226,
+        "sha256": "b65c324a63cd321ebb44338e0c6afdd40dd50d5f437a7048639282833c216519"
+      }
+    },
+    {
+      "entry": "b171-071",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-071.tar.gz",
+        "bytes": 791331,
+        "sha256": "03f848b2aeaab04b77322f4e6b69da468dbd36932cf667019873c74c9c0598ed"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-071.metadata.tar.gz",
+        "bytes": 1202734,
+        "sha256": "96f580b06db9d82c117a411874abf892c752cde0b9c09ce4caedc900af4a2ec6"
+      }
+    },
+    {
+      "entry": "b171-072",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-072.tar.gz",
+        "bytes": 960797,
+        "sha256": "f2f806cc7c2c409dcfea66de260457f40cbcd2e2bf96ba49b119edd554093a8f"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-072.metadata.tar.gz",
+        "bytes": 1464137,
+        "sha256": "530e44d2b7285a6b8386e80fe0382f5e38da3a0908c8a66cf7385d0cccf5622d"
+      }
+    },
+    {
+      "entry": "b171-073",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-073.tar.gz",
+        "bytes": 975333,
+        "sha256": "910f5cfc2bc1b62cffc8b0bbf4a95dab9e466ce6e6b15e60888e6bed4ecafc3c"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-073.metadata.tar.gz",
+        "bytes": 1473109,
+        "sha256": "9d95089db2d0d57d40877cfc2d60ced68e8dae0a08f54e7b709c657dff4a203c"
+      }
+    },
+    {
+      "entry": "b171-074",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-074.tar.gz",
+        "bytes": 997072,
+        "sha256": "666382694b58ea686f8ddc0e0389c487c9aabadf38771bd91c72965e098c0a55"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-074.metadata.tar.gz",
+        "bytes": 1474910,
+        "sha256": "9f0900c07d8c71269f6dd538a9a4daf6bdd45d3f65969410c93028c8653f3bb9"
+      }
+    },
+    {
+      "entry": "b171-075",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-075.tar.gz",
+        "bytes": 1029491,
+        "sha256": "e5b951ad068386cf70dd0fd13442f51500dbccd12225e0e9dec3de296d0627c6"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-075.metadata.tar.gz",
+        "bytes": 1456367,
+        "sha256": "7259a646292b5690f0a0c67ec91c0e1ee301e6d19e21851de2df1c0d9890864c"
+      }
+    },
+    {
+      "entry": "b171-076",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-076.tar.gz",
+        "bytes": 950173,
+        "sha256": "8f733cc515d5d3d35da0c8fd7b424897345ad888549925ae6f459da900d83019"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b171-076.metadata.tar.gz",
+        "bytes": 1242261,
+        "sha256": "b71b731ddcc8263ae46566a74795d4ebf68a08ad794672f918b276db760dc34d"
+      }
+    },
+    {
+      "entry": "b172-077",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-077.tar.gz",
+        "bytes": 1698435,
+        "sha256": "0248ee671e34cfd34661f0a1f4a6ec53fa3ddc97d4071131127908d44b192337"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-077.metadata.tar.gz",
+        "bytes": 3383651,
+        "sha256": "605bfcf9d959057634f0fc4dedbf4f74454e330bc60880ff411b99e6b7979d83"
+      }
+    },
+    {
+      "entry": "b172-078",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-078.tar.gz",
+        "bytes": 21790332,
+        "sha256": "b29731b7705355c4830f6832bd298cfdda0ee1a4d785fa9c5532a728b21a4e1b"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-078.metadata.tar.gz",
+        "bytes": 42207360,
+        "sha256": "761eabcb5949cebaacef4c1179ba80bad6aa961b8fdbbe308acc8381a903d9f4"
+      }
+    },
+    {
+      "entry": "b172-079",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-079.tar.gz",
+        "bytes": 1547478,
+        "sha256": "66a4aa41b675cee1a28c111ebe3106ccd4aa0f2082586dfad9b050d3ef250ca2"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-079.metadata.tar.gz",
+        "bytes": 2774243,
+        "sha256": "4ff1345dad814ec5b6df9581ec635ab7021f35bbce0ea275e209cbb931a3dd38"
+      }
+    },
+    {
+      "entry": "b172-080",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-080.tar.gz",
+        "bytes": 11871376,
+        "sha256": "db88ddacbf1c6e2fd754d359d439e8905ea0102e753c33ac556fb9e10a0c0ed7"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-080.metadata.tar.gz",
+        "bytes": 22761700,
+        "sha256": "959ef9c91826a5456e23b4d1d627fc0ee589d3572af4a879c57c194aab98289f"
+      }
+    },
+    {
+      "entry": "b172-081",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-081.tar.gz",
+        "bytes": 2226495,
+        "sha256": "17c550f8bf2b34f1aa218c0e55f50cd47282c3de35834bd2c2b10a26ff5acd16"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-081.metadata.tar.gz",
+        "bytes": 4170055,
+        "sha256": "ae7bfa217d35eac5fcc419ece51fe27f4f670ff9cf7383bec30c180ced56340b"
+      }
+    },
+    {
+      "entry": "b172-082",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-082.tar.gz",
+        "bytes": 22114111,
+        "sha256": "0c1f776d977f6d372607531db1c692a3cb9c88c84f58547606b5a417d67b42d5"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b172-082.metadata.tar.gz",
+        "bytes": 43192453,
+        "sha256": "ecc482b4c34cee6721e3d3aaaa9dc707ee1c241fb8ce21f624574a7489ef4788"
+      }
+    },
+    {
+      "entry": "b173-083",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-083.tar.gz",
+        "bytes": 2040233,
+        "sha256": "4037d93916deca35d7c7677f097689e26dd2fc8622357520ea2de2581fd759d7"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-083.metadata.tar.gz",
+        "bytes": 3782639,
+        "sha256": "0162504296c6a8fea817d8946a2c40ad5c4d3ffe2161cbb2c4a0168efbf45b70"
+      }
+    },
+    {
+      "entry": "b173-084",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-084.tar.gz",
+        "bytes": 20151678,
+        "sha256": "fdfbcbaf34c510583f27a333b1a10b2ce333b11b797bc01943e14d39701fe5cf"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-084.metadata.tar.gz",
+        "bytes": 34709053,
+        "sha256": "7fb62f972fd6bf7901ca5337038a30ee9f268ea2fb8a0fe637aa06c2e41753b8"
+      }
+    },
+    {
+      "entry": "b173-085",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-085.tar.gz",
+        "bytes": 4911464,
+        "sha256": "ab71f2403ca0ee78ab2a4248c161c5c443ba67a0f308316ae053e41889011d4f"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-085.metadata.tar.gz",
+        "bytes": 8364961,
+        "sha256": "0601c0668a91901eb9c0a2636c9b7292a1e12a12efa0bad54de8e09ec15c7d9d"
+      }
+    },
+    {
+      "entry": "b173-086",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-086.tar.gz",
+        "bytes": 21240763,
+        "sha256": "ca231e8b3fca5a043ec3dbe46687f69a060f67e512754cc019cdb31c4f8ec839"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-086.metadata.tar.gz",
+        "bytes": 37783454,
+        "sha256": "0f88f455f15a1ce9773ce657dbc10a5edae83dfc3e8fd11a7035922a70ca08be"
+      }
+    },
+    {
+      "entry": "b173-087",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-087.tar.gz",
+        "bytes": 21077112,
+        "sha256": "430f35898f80fee49481de33b74db41504e4e36e9236850548c997599aa4ccde"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b173-087.metadata.tar.gz",
+        "bytes": 25888571,
+        "sha256": "d3e836e76bf59a5d15cff075a9f5b22df90638778335948f39a52a62e237157f"
+      }
+    },
+    {
+      "entry": "b174-088",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b174-088.tar.gz",
+        "bytes": 1487463,
+        "sha256": "df788aa92bc6d14717ace49d19036233aa66c8c993dae6d365540fcfa6608363"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b174-088.metadata.tar.gz",
+        "bytes": 2929708,
+        "sha256": "e5d57edd3ce07aaa977bcad2e0e89a5466071de8768c71cb4fa5663773eccb44"
+      }
+    },
+    {
+      "entry": "b174-089",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b174-089.tar.gz",
+        "bytes": 17980255,
+        "sha256": "a565bdc486f0f51d0725cc25fe3a3a6e8559efae4033cbddf80d9b7694b6c3fc"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b174-089.metadata.tar.gz",
+        "bytes": 36488548,
+        "sha256": "6199c241dfd6552032827e3c46fd883b4c7da59b87a8717f8a15bd4421f0ea3d"
+      }
+    },
+    {
+      "entry": "b174-090",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b174-090.tar.gz",
+        "bytes": 1621541,
+        "sha256": "8edb51463c80ad24ebe0df4a1f596bee3f04c863faf2ab1d0b8e63967c2b7608"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b174-090.metadata.tar.gz",
+        "bytes": 1831670,
+        "sha256": "89241fbea6ce77569365154ca706071b3ee866697c6c3a683cc7e882d5e995f9"
+      }
+    },
+    {
+      "entry": "b175-091",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-091.tar.gz",
+        "bytes": 109194,
+        "sha256": "868572bafecb50eb4dc9118f5d65324b0ea4daf63c6c86b662e5b178c572eacc"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-091.metadata.tar.gz",
+        "bytes": 184790,
+        "sha256": "6d66175bd1dd3c9baf69d61807203b55283845602b56a330fab5dab7d9280b7f"
+      }
+    },
+    {
+      "entry": "b175-092",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-092.tar.gz",
+        "bytes": 1168859,
+        "sha256": "8499eaf439d9fc6ac70b4b5f5755564e9fbe229b5a7c5cfeb044ff42da0fbe7a"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-092.metadata.tar.gz",
+        "bytes": 1860038,
+        "sha256": "2595a029a9ee096a3f865311e4c32cfb268d7f1b7b4dd364ef48ba5ed9c9507b"
+      }
+    },
+    {
+      "entry": "b175-093",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-093.tar.gz",
+        "bytes": 183946,
+        "sha256": "337bdc7fe9e0558e01682830fb49e0d2813f2640c6177d24c496548f529248e8"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-093.metadata.tar.gz",
+        "bytes": 314960,
+        "sha256": "31530ee047c849b89a71a897887d85822c6c263f0647d4b40de008b91a38808d"
+      }
+    },
+    {
+      "entry": "b175-094",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-094.tar.gz",
+        "bytes": 2167000,
+        "sha256": "958bd8b1baf78c38fa3687804798137c42cc60cca4baf158f2c01901a08c2f4f"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-094.metadata.tar.gz",
+        "bytes": 3565568,
+        "sha256": "f5356e9b38ea4ba0583e36630e8a0f29116ae5d890ae814311fe314b8dbd3ba2"
+      }
+    },
+    {
+      "entry": "b175-095",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-095.tar.gz",
+        "bytes": 608191,
+        "sha256": "255c889c940831c563e7ade65db9db4993a41dbb99c9b7cbb266bd412ec49939"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-095.metadata.tar.gz",
+        "bytes": 655647,
+        "sha256": "082f62ff72edf03c88e52e7caab8868e5a05ace205ffe5f98865013962bfb150"
+      }
+    },
+    {
+      "entry": "b175-096",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-096.tar.gz",
+        "bytes": 12341523,
+        "sha256": "b5b458c715f775023c9f80d21539c59099dde838f56215aea7b24c8c5d64799e"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-096.metadata.tar.gz",
+        "bytes": 14041724,
+        "sha256": "8d1547d716ddf13ad2a8cb2b1e53c48db69814c040563f7eb0bdfb2de64f1533"
+      }
+    },
+    {
+      "entry": "b175-097",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-097.tar.gz",
+        "bytes": 5411803,
+        "sha256": "099a50633c70e1374c75c77cf06e529d018e359fbbf0450d6fbf83ff807301e9"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b175-097.metadata.tar.gz",
+        "bytes": 4717025,
+        "sha256": "3ab8919fde014e6cf930b38c0ad89443f58df5c7dc8cad39e3e4d74c16cb87b6"
+      }
+    },
+    {
+      "entry": "b176-098",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-098.tar.gz",
+        "bytes": 3615285,
+        "sha256": "d29373ac6ef892fa2ff15da6e371ed651d1e546a0f506a2a30daf6faacd3b5bf"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-098.metadata.tar.gz",
+        "bytes": 8342484,
+        "sha256": "74c759acfe89bbea7c357e4d93ee809292fb1177696fcaa715aae6db741dabdf"
+      }
+    },
+    {
+      "entry": "b176-099",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-099.tar.gz",
+        "bytes": 7331835,
+        "sha256": "36ab62fd4777d3cb63bc10ae9acda5fa41deebf2a7520a2a7fdc0853041bf8ba"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-099.metadata.tar.gz",
+        "bytes": 10221445,
+        "sha256": "6916f2b359018a395f6bb0d481cb8a7f82ad32a22879f45b51c1735191c20ba7"
+      }
+    },
+    {
+      "entry": "b176-100",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-100.tar.gz",
+        "bytes": 15878543,
+        "sha256": "405c261f388bc3fcef0d74b947c75ff96443838e4bc33f2f2cd3fdaeda2e4a2b"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-100.metadata.tar.gz",
+        "bytes": 20827985,
+        "sha256": "fe5e80acce9c59bce382dfd65521ed9ddf27df436d93b00a2d626f3d2d67f22f"
+      }
+    },
+    {
+      "entry": "b176-101",
+      "transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-101.tar.gz",
+        "bytes": 10049849,
+        "sha256": "58def0e3174d351fb56e160cad228d989d2805561150992c67a2143e92b8c7b6"
+      },
+      "metadata_transfer": {
+        "archive": "/home/user/research/materials/task197-fixed192-raw/b176-101.metadata.tar.gz",
+        "bytes": 13419316,
+        "sha256": "d0cc68144dc3a3b2516864210695e42b97c3a5bcb2d09877d2fd33f96b771f67"
+      }
+    }
+  ]
+}
