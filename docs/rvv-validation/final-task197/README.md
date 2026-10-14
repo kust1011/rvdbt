@@ -35,7 +35,7 @@ offload reduces the live footprint; guest admission requires at least 11 GiB
 free and stream capture enforces the 10 GiB reserve. All jobs inherit nice10
 and affinity; no CPU pin is assigned. Shared admission caps own guests at eight.
 Initially online/offline predicates shared two slots. After the external,
-focused and sequence queues completed, a 32-core host at load4.46 with 34.97 GB
+focused and sequence queues completed, a host with 32 logical CPUs at load4.46 with 34.97 GB
 available memory justified eight directed checking workers under the user's
 eight-worker authorization. Later directed stages use eight predicate slots
 and at most eight worker processes, with unchanged predicates. Resource

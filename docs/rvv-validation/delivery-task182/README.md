@@ -1,5 +1,17 @@
 # Review and replay the finite RVV matrices
 
+## Current complete replay
+
+The [fixed192 replay](../final-task197/README.md) is complete and independently
+reviewed: 595 forms, 102 directed entries, 12,069,048 ordinary comparisons,
+2,256 focused positive checks and 592 denial controls. It also includes
+21,316 CHIPS/ACT/Ara calls and 9,888 sequence checks on that executable.
+The [per-form results](../final-task197/PER_FORM_RESULTS.csv) and
+[entry receipts](../final-task197/ENTRY_RECEIPTS.json.gz) give the current
+build's results. The historical index below remains useful for the unchanged
+case definitions and replay commands; its old execution receipts are not
+relabeled. No new DUT failures or pending units remain in this replay.
+
 ## Required rejection behavior and external-test applicability
 
 [Nonzero-vstart traps](../trap-task199/README.md) now check all 23 forms that
@@ -11,9 +23,8 @@ adds a semantic dimension, not instruction forms or a full-matrix replay.
 [External adjudication](../../../SESSION3_RESULT_198.md) resolves the two ACT
 privileged-state setup blockers and Ara's RV64-specific scalar assertions.
 Their original failures and restricted acceptance remain recorded; no assertion
-was replaced to turn an original test into a pass. The new complete fixed192
-replay is still in progress; the frozen full-matrix index below retains its
-original build until that replay is independently accepted.
+was replaced to turn an original test into a pass. The complete fixed192
+replay preserves these dispositions.
 
 ## Current allocator integration
 
@@ -26,8 +37,8 @@ and 216 checks on the fixed executable, plus ten integration fixtures and forty
 unchanged ACT/CHIPS test executions. Two stale fixtures were repaired without
 changing production code; their three failed attempts remain in the records.
 
-These are changed-build regressions, not a rerun of the complete form matrix.
-The historical matrices below retain their original executable identities.
+Those targeted regressions are now followed by the complete replay linked
+above. The historical matrices below retain their original executable identities.
 Fault-handler return and same-PC resumption remain unverified; component tests
 do not establish that complete recovery sequence.
 

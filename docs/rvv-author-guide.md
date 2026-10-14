@@ -5,6 +5,14 @@ and 32 ei64 indexed forms excluded by that profile. The fixed correctness build
 uses QCG host512; VLEN128–4096 is a capability, not a tested Cartesian product.
 Direct chunk routes and shared semantic helpers both implement guest behavior.
 
+The [current complete replay](rvv-validation/final-task197/README.md) uses the
+allocator-corrected fixed192 executable. All 595 applicable forms have new
+directed results, with 12,069,048 ordinary comparisons, external CHIPS/ACT/Ara
+replay and actual-path sequence audits. Start with its
+[per-form CSV](rvv-validation/final-task197/PER_FORM_RESULTS.csv), then use the
+case index below for test dimensions, independent references and replay commands.
+Earlier campaigns keep their original build identities.
+
 Source presence, compiled source, static emission, program execution,
 target/result checking and coupled endpoints are separate stages. Checked sets
 are CHIPS595, ACT590, RVV-ATG434, Ara422 and SiFive RIF200; their union is595.
