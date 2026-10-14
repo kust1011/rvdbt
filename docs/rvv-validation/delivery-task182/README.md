@@ -1,5 +1,21 @@
 # Review and replay the finite RVV matrices
 
+## Current allocator integration
+
+A legal VLEN-4096, SEW-32, LMUL-4 sequence exposed the fixed 2,048-entry
+virtual-register tracking limit. The allocator now sizes stable tracking storage
+from the completed QIR region. Independent source review accepted this change
+for ordinary QCG translation; physical-register and spill-frame budgets remain
+unchanged. [Task195](../../../SESSION0_RESULT_195.md) records 54 long-vector cases
+and 216 checks on the fixed executable, plus ten integration fixtures and forty
+unchanged ACT/CHIPS test executions. Two stale fixtures were repaired without
+changing production code; their three failed attempts remain in the records.
+
+These are changed-build regressions, not a rerun of the complete form matrix.
+The historical matrices below retain their original executable identities.
+Fault-handler return and same-PC resumption remain unverified; component tests
+do not establish that complete recovery sequence.
+
 ## Specification baseline
 
 Current legality review uses the published 20240411 Unprivileged ISA Manual,
