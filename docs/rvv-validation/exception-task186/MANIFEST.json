@@ -1,0 +1,44 @@
+{
+  "source_head": "d1ec81f1a80a4dc33f29c12124e6dc02689d3934",
+  "profile": {
+    "host_chunk_bits": 512,
+    "guest_xlen": 32,
+    "guest_elen": 64,
+    "guest_vlen_bits_exercised": [
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "xlen_source": "dbt/guest/rv32_cpu.h CPUStateImpl::gpr_t=u32",
+    "elen_source": "dbt/guest/rv32_vector.h ELEN_BITS=64",
+    "runtime_host_gate": "native/whole/scalar/grouped fixtures assert actual avx512f and bmi2; no forced emission"
+  },
+  "production_functional_changes": [],
+  "configure_rc": 0,
+  "build_rc": 0,
+  "final_build_rc": 0,
+  "source_verified": 303,
+  "dependencies_files": 442,
+  "dependency_manifest_sha256": "227cd1d12ddef344953891ec9062b05bb483493178cc12612be8973bb71bea25",
+  "dependency_origin": "Copied from retained frozen179 source into new isolated186 source; originals read only",
+  "compiler": "Ubuntu clang version 22.1.6 (++20260516103140+fc4aad7b5db3-1~exp1~20260516103204.74)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-22/bin\n",
+  "host_cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  32\nOn-line CPU(s) list:                     0-31\nVendor ID:                               AuthenticAMD\nModel name:                              AMD Ryzen 9 9950X3D 16-Core Processor\nCPU family:                              26\nModel:                                   68\nThread(s) per core:                      2\nCore(s) per socket:                      16\nSocket(s):                               1\nStepping:                                0\nFrequency boost:                         enabled\nCPU(s) scaling MHz:                      40%\nCPU max MHz:                             5756.4521\nCPU min MHz:                             624.1940\nBogoMIPS:                                8578.09\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpuid_fault cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze\nVirtualization:                          AMD-V\nL1d cache:                               768 KiB (16 instances)\nL1i cache:                               512 KiB (16 instances)\nL2 cache:                                16 MiB (16 instances)\nL3 cache:                                128 MiB (2 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-31\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Mitigation; IBPB on VMEXIT only\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB on VMEXIT\n",
+  "flags": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 3.28\n\n# compile ASM with /usr/bin/clang-22\n# compile CXX with /usr/bin/clang++-22\nASM_DEFINES = -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DDBT_SR_BUILDER_SH=\\\"/home/vick/rvdbt-exception-task186/source/experiments/2026-06-28-0840-spare-core-gate-pass/scripts/sr_builder.sh\\\" -D_GLIBCXX_USE_CXX11_ABI=1 -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS\n\nASM_INCLUDES = -I/home/vick/rvdbt-exception-task186/source -isystem /usr/include -isystem /home/vick/rvdbt-exception-task186/source/dbt/third_party/asmjit/src -isystem /home/vick/rvdbt-exception-task186/source/dbt/third_party/elfio\n\nASM_FLAGS = -O3 -DNDEBUG -DASMJIT_STATIC -DASMJIT_NO_AARCH64 -DASMJIT_NO_FOREIGN -DASMJIT_NO_COMPILER\n\nCXX_DEFINES = -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DDBT_SR_BUILDER_SH=\\\"/home/vick/rvdbt-exception-task186/source/experiments/2026-06-28-0840-spare-core-gate-pass/scripts/sr_builder.sh\\\" -D_GLIBCXX_USE_CXX11_ABI=1 -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS\n\nCXX_INCLUDES = -I/home/vick/rvdbt-exception-task186/source -isystem /home/vick/rvdbt-exception-task186/source/dbt/third_party/asmjit/src -isystem /home/vick/rvdbt-exception-task186/source/dbt/third_party/elfio\n\nCXX_FLAGS =  -Wall -std=gnu++20 -Wno-c99-designator -Wno-invalid-offsetof -DRVV_HOST_CHUNK_BITS=512 -mavx512f -mavx512bw -ffp-contract=off -DRVDBT_FROUND_IMPL=2 -idirafter /usr/lib/llvm-22/include -O3 -DNDEBUG -std=gnu++20 -DASMJIT_STATIC -DASMJIT_NO_AARCH64 -DASMJIT_NO_FOREIGN -DASMJIT_NO_COMPILER\n\n# Custom options: dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run16fma.cpp.o_OPTIONS = -mavx;-mfma\n\n# Custom options: dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run32.cpp.o_OPTIONS = -mavx2;-mfma\n\n# Custom options: dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_gather.cpp.o_OPTIONS = -mavx2\n\n# Custom options: dbt/CMakeFiles/dbtstatic.dir/guest/rv32_vector_run64.cpp.o_OPTIONS = -mavx512f;-mavx512bw;-mavx512dq;-mavx512vl;-mfma\n\n# Custom options: dbt/CMakeFiles/dbtstatic.dir/guest/rv32_qir.cpp.o_OPTIONS = -Werror=switch\n\n",
+  "binaries": {
+    "rv32_family_memory_fault_test": "83cfd14047e57ca3b2f4a1cf96676446547997234f8dffcc5650848fe8f20985",
+    "rv32_grouped_memory_fault_test": "0911486b415f5d712b1b352792129e4337611ea4e7c0c40ea45ca53212c8e287",
+    "rv32_native_memory_fault_test": "b960d86df1edc0d3799d6c55eb4afcee60c3edc20ab9ad0c2209457229b12dff",
+    "rv32_permitted_bulk_fault_test": "fc85a733b657bcd86645a50886a984c65729e698363512a3171e047b64b65fcc",
+    "rv32_scalar_native_fault_test": "75637b7e5b514a0889d2692b33fa42da7b4a63445e1fce2ae740adac94f9dd51",
+    "rv32_special_memory_fault_test": "b8c7f54b175970b93f6e8dd6d7634bd9ab0f0410ceb16a925c973fd3a2eb11a9",
+    "rv32_unit_memory_fault_test": "9ca58efc8af25122d454b1a967e714e4a1bf22aef24f309b2291d9b6a3379486",
+    "rv32_whole_native_fault_test": "abe518e94e8e2cba10daea68c5e4025cec8a37446de909c8e2f5615b1590f8c3"
+  },
+  "raw_archive_sha256": "86251d13761b2c92f8a6666c49ac68392f7c92e6be3d3e4ee9ea81dba8cbc380",
+  "accepted_raw_archive_sha256": "788dfc3411420eceeb0422be25403858d128cd7aebd36070dfce4225a16fb43a",
+  "accepted_runner_sha256": "2bf5a8b5c1759bce6746b4e1fc5dfd5a3203b6ae5fd9f00680a9b4f94b88ee36",
+  "source_profile_note": "XLEN/ELEN are source constants, not selectable CMake flags; actual compile flags retained verbatim."
+}

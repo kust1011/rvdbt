@@ -263,6 +263,49 @@ static void fof_and_store_delivery(CPUState *s)
        rv32_signal::get32(frame+rv32_signal::VS)==2,"store frame PC and vstart");
 }
 
+// RVV 1.0 sections 3.7, 7.7 and 7.8.1. Each invocation starts from fresh
+// architectural state; a terminal snapshot is never executed again.
+static void fof_clause_cases(CPUState *s)
+{
+ for(u32 vlen:{128u,1024u}) for(u32 eew:{1u,2u,4u,8u})
+ for(u32 nf:{1u,2u,3u}) for(u32 scenario:{0u,1u,2u,3u,4u}) {
+  check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE)!=MAP_FAILED,"FOF clause fresh mapping");
+  auto *memory=(u8*)mmu::g2h(data);memset(memory,0x39,8192);
+  config::vlen_bits=vlen;clear(s);s->vec.Reset(vlen);
+  // M2 permits VL=4 even for EEW64/VLEN128; three fields occupy six registers.
+  s->vec.vtype=(eew==1?0:eew==2?8:eew==4?16:24)|1u;
+  s->vec.vl=4;s->vec.vstart=scenario==1?1:scenario==3?4:0;
+  s->gpr[5]=data+4096-((nf-1)+(scenario==4?2*nf:0))*eew;
+  for(u32 r=0;r<32;++r)s->vec.vreg[r].fill(0x67);
+  s->vec.vreg[0].fill(0xff);if(scenario==2)s->vec.mask_set(0,0,false);
+  auto before=s->vec;
+  check(mmu::mprotect(data+4096,4096,PROT_NONE)==0,"FOF clause denied final field");
+  u32 raw=word(eew,false,scenario!=2)|(16u<<20)|((nf-1)<<29);
+  if(sigsetjmp(trap_unwind_env,0)==0)qcgstub_rv32_vleff(s,raw);
+  if(scenario==0) {
+   auto snap=ukernel::CaptureHelperMemoryFault(s);
+   check(snap.pc==pc && snap.event.raw==raw && snap.event.address==data+4096 &&
+         !snap.event.element && snap.event.field==nf-1 && snap.event.nf==nf &&
+         snap.event.eew_bytes==eew && snap.csrs[7]==4 && !snap.csrs[3],
+         "FOF absolute zero traps with original VL and exact field");
+  } else {
+   check(s->trapno==rv32::TrapCode::NONE && !s->GetUThread()->memory_fault_pending &&
+         s->ip==pc+4 && !s->vec.vstart && s->vec.vl==(scenario==3?4u:scenario==4?2u:1u),
+         "FOF nonzero first access trims; masked zero suppressed; empty suffix clears start");
+  }
+  // A faulting segment may have a subset loaded, and active elements following
+  // a trap/trim may be overwritten. Check the mandatory undisturbed set only.
+  auto constrained=s->vec,expected=before;
+  if(scenario==4)for(u32 e=0;e<2;++e)for(u32 f=0;f<nf;++f)
+   memset(expected.elem_ptr(8+2*f,e,eew,vlen),0x39,eew);
+  if(scenario!=3)for(u32 e=scenario==0?0:scenario==4?2:1;e<4;++e)
+   for(u32 f=0;f<nf;++f)
+    memcpy(constrained.elem_ptr(8+2*f,e,eew,vlen),before.elem_ptr(8+2*f,e,eew,vlen),eew);
+  check(constrained.vreg==expected.vreg,"FOF completed prefix and undisturbed prestart/inactive/tail/unrelated registers");
+  ++cells;
+ }
+}
+
 int main()
 {
  mmu::Init();ukernel::process.main_thread=std::make_unique<uthread>();auto *s=CPUState::Current();
@@ -272,5 +315,6 @@ int main()
  config::rvv_qcg_hit_counter=true; native(s);
  formatted_faults(s);
  fof_and_store_delivery(s);
+ fof_clause_cases(s);
  printf("LOCAL_UNIT_MEMORY_PASS checks=%u cells=%u ABI=%016llx (no guest retry)\n",checks,cells,(unsigned long long)rv32::CPUStateAbiSignature());
 }

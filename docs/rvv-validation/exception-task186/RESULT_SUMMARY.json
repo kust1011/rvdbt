@@ -1,0 +1,152 @@
+{
+  "accepted_runs": [
+    {
+      "name": "unit",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_unit_memory_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.017926454544067383,
+      "sha256": "9ca58efc8af25122d454b1a967e714e4a1bf22aef24f309b2291d9b6a3379486",
+      "summary": "LOCAL_UNIT_MEMORY_PASS checks=10042 cells=1368 ABI=a89957277993e0d9 (no guest retry)",
+      "checks_reported": 10042
+    },
+    {
+      "name": "family",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_family_memory_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.32292962074279785,
+      "sha256": "83cfd14047e57ca3b2f4a1cf96676446547997234f8dffcc5650848fe8f20985",
+      "summary": "LOCAL_FAMILY_MEMORY_PASS checks=323407 cells=59424 ABI=a89957277993e0d9 (no guest retry)",
+      "checks_reported": 323407
+    },
+    {
+      "name": "special",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_special_memory_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.14578843116760254,
+      "sha256": "b8c7f54b175970b93f6e8dd6d7634bd9ab0f0410ceb16a925c973fd3a2eb11a9",
+      "summary": "LOCAL_SPECIAL_MEMORY_PASS checks=254648 cells=26290 ABI=a89957277993e0d9 impl=42720 state=42720 fpu=42296 (no guest retry)",
+      "checks_reported": 254648
+    },
+    {
+      "name": "native",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_native_memory_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.08268260955810547,
+      "sha256": "b960d86df1edc0d3799d6c55eb4afcee60c3edc20ab9ad0c2209457229b12dff",
+      "summary": "LOCAL_NATIVE_DISPATCH_PASS checks=6142 cells=40 ABI=a89957277993e0d9 (terminal inspection only, restart NOT verified)",
+      "checks_reported": 6142
+    },
+    {
+      "name": "whole",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_whole_native_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.05423116683959961,
+      "sha256": "abe518e94e8e2cba10daea68c5e4025cec8a37446de909c8e2f5615b1590f8c3",
+      "summary": "WHOLE_NATIVE_PASS checks=6185 terminal_cells=24 restart_NOT_verified",
+      "checks_reported": 6185
+    },
+    {
+      "name": "whole-normal",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_whole_native_fault_test",
+        "--normal-only"
+      ],
+      "rc": 0,
+      "seconds": 0.046363115310668945,
+      "sha256": "abe518e94e8e2cba10daea68c5e4025cec8a37446de909c8e2f5615b1590f8c3",
+      "summary": "WHOLE_NATIVE_PASS checks=13330 terminal_cells=0 restart_NOT_verified",
+      "checks_reported": 13330
+    },
+    {
+      "name": "scalar",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_scalar_native_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.06247663497924805,
+      "sha256": "75637b7e5b514a0889d2692b33fa42da7b4a63445e1fce2ae740adac94f9dd51",
+      "summary": "SCALAR_NATIVE_PASS checks=2029 terminal_cells=44 ABI=a89957277993e0d9 restart_NOT_verified",
+      "checks_reported": 2029
+    },
+    {
+      "name": "grouped-terminal",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_grouped_memory_fault_test",
+        "--terminal"
+      ],
+      "rc": 0,
+      "seconds": 0.048719167709350586,
+      "sha256": "0911486b415f5d712b1b352792129e4337611ea4e7c0c40ea45ca53212c8e287",
+      "summary": "GROUPED_MEMORY_PASS checks=103 terminal_cells=10 trace_only=0 restart_NOT_verified",
+      "checks_reported": 103
+    },
+    {
+      "name": "grouped-normal",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_grouped_memory_fault_test",
+        "--normal-only"
+      ],
+      "rc": 0,
+      "seconds": 0.04621315002441406,
+      "sha256": "0911486b415f5d712b1b352792129e4337611ea4e7c0c40ea45ca53212c8e287",
+      "summary": "GROUPED_MEMORY_PASS checks=585 terminal_cells=0 trace_only=0 restart_NOT_verified",
+      "checks_reported": 585
+    },
+    {
+      "name": "bulk",
+      "command": [
+        "/home/vick/rvdbt-exception-task186/build/bin/rv32_permitted_bulk_fault_test"
+      ],
+      "rc": 0,
+      "seconds": 0.04525113105773926,
+      "sha256": "fc85a733b657bcd86645a50886a984c65729e698363512a3171e047b64b65fcc",
+      "summary": "PERMITTED_BULK_PASS checks=2944 cells=268 no_guest_delivery_or_retry",
+      "checks_reported": 2944
+    }
+  ],
+  "reported_checks_sum": 619415,
+  "counts_note": "Reported fixture counters, not total dynamic assertions (fork child counter increments do not return to parent); cells/terminal_cells have fixture-specific meanings. No restart credit.",
+  "new_FOF_cells": {
+    "total": 120,
+    "terminal_zero_traps": 24,
+    "nontrapping_trims": 72,
+    "empty_suffixes": 24
+  },
+  "source_changes": [
+    "dbt/rv32_unit_memory_fault_test.cpp: added fof_clause_cases and invocation; no existing assertion changed"
+  ],
+  "production_changes": [],
+  "failing_production_witness": null,
+  "own_limits": {
+    "guest_executing_at_once": 1,
+    "build_jobs": 2,
+    "offline_jobs": 1,
+    "nice": 10,
+    "affinity": "none"
+  },
+  "resources_note": "Sequential runner and explicit -j2 enforce own limits; no claim of continuous machine-wide sampling. Endpoint snapshots include process listings and loads.",
+  "min_endpoint_free_bytes": 22353858560,
+  "first_pass": {
+    "rc": 0,
+    "status": "retained separately; redundant nice applied nice19; excluded from acceptance totals",
+    "results": "RESULTS.json.gz",
+    "raw": "raw.tar.gz"
+  },
+  "blocked_not_executed": [
+    "guest handler return",
+    "mapping repair then execution",
+    "same-PC retry or equivalent host-harness execution",
+    "eventual progress of the resumed faulting instruction"
+  ],
+  "raw_archive_sha256": "788dfc3411420eceeb0422be25403858d128cd7aebd36070dfce4225a16fb43a"
+}

@@ -1,0 +1,32 @@
+[  4%] Built target dbtjitshared
+[ 56%] Built target asmjit
+[100%] Built target dbtstatic
+[100%] Built target rv32_unit_memory_fault_test
+[  4%] Built target dbtjitshared
+[ 56%] Built target asmjit
+[100%] Built target dbtstatic
+[100%] Built target rv32_family_memory_fault_test
+[  3%] Built target dbtjitshared
+[ 53%] Built target asmjit
+[ 96%] Built target dbtstatic
+[100%] Built target rv32_special_memory_fault_test
+[  4%] Built target dbtjitshared
+[ 56%] Built target asmjit
+[100%] Built target dbtstatic
+[100%] Built target rv32_native_memory_fault_test
+[  3%] Built target dbtjitshared
+[ 53%] Built target asmjit
+[ 96%] Built target dbtstatic
+[100%] Built target rv32_whole_native_fault_test
+[  4%] Built target dbtjitshared
+[ 56%] Built target asmjit
+[100%] Built target dbtstatic
+[100%] Built target rv32_scalar_native_fault_test
+[  3%] Built target dbtjitshared
+[ 53%] Built target asmjit
+[ 96%] Built target dbtstatic
+[100%] Built target rv32_grouped_memory_fault_test
+[  3%] Built target dbtjitshared
+[ 53%] Built target asmjit
+[ 96%] Built target dbtstatic
+[100%] Built target rv32_permitted_bulk_fault_test
