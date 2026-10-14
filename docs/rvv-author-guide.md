@@ -77,6 +77,34 @@ When writing about this result, distinguish four evidence classes:
 - Guest handler return/restart remains **NOT VERIFIED**. Host signal-copy checks
   do not establish mapping repair, same-PC retry or complete fault-state recovery.
 
+## What the exception tests actually establish
+
+The relevant checks are deliberately separate:
+
+- `dbt/rv32_grouped_memory_fault_test.cpp:cell` executes generated code and
+  checks the terminal fault PC, element index, all saved/live GPRs, vector state,
+  committed store prefix and absence of later instruction updates. Its child
+  terminates after observation; it does not resume the faulting instruction.
+- `dbt/rv32_signal_interface_test.cpp` exercises frame construction and restore
+  directly. It checks rejected frames without partial state publication and
+  vector-byte restoration at supported widths. These are local interface calls,
+  not a RISC-V signal handler executing and returning to the interrupted code.
+- The directed nonzero-vstart cases initialize a start position and check
+  prestart preservation and completion. They do not obtain that position from
+  a preceding fault in the same run.
+
+The unverified composition is an actual fault followed by state restoration and
+successful resumed completion. Its acceptance must join the interrupted PC and
+vstart, committed prefix, independently expected final registers/memory, and
+cleared vstart after completion. Separate passing checks cannot replace that
+result. The previously interrupted P4-04 run supplies no DUT acceptance.
+
+The retained QEMU `test-vle32ff.S` is a narrower regression: an element-zero
+fault must report a load access fault and preserve vl. It exits from the trap
+handler. It is useful for that FOF rule, not a source of complete retry evidence.
+Earlier QEMU RVV0.7.1 case structure is a test-design reference; current answers
+and legality must follow the published V1.0 specification.
+
 ## Explaining the support claim
 
 - **What was implemented?** RVV decoding, vector architectural state, direct
