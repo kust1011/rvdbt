@@ -97,11 +97,16 @@ When writing about this result, distinguish four evidence classes:
   fallback; generated-code or runtime admission evidence is needed to say
   that the optimized body itself was exercised.
 - **What remains incomplete?** Precise interruption/retry is not established.
-  This is more than a Linux signal interface gap: vector memory paths do not
-  uniformly save completed elements and restart state on a fault. Normal
-  result checks, including manually supplied nonzero `vstart`, do not test
-  an actual fault followed by repair and retry. Additional configuration and
-  intermediate-state coverage is described below, not assumed from595 forms.
+  Current source review and terminal tests establish progress and committed
+  state for the checked memory paths; they did not identify a new default-path
+  fault-state defect. The optional gather's file-backing fault hole was fixed
+  by restricting its admission to readable anonymous backing and using the
+  existing checked fallback otherwise. Normal result checks, terminal fault
+  snapshots and separately initialized nonzero `vstart` cases still do not
+  establish their composition into resumed execution and forward progress.
+  That execution remains service-blocked, not silently counted as PASS.
+  See [bounded production integration](rvv-validation/integration-task191/README.md)
+  and [independent obligations](../SESSION3_RESULT_187.md).
 
 ## Trace a direct body: `vadd.vv v10,v8,v9`
 

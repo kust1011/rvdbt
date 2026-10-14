@@ -1,5 +1,10 @@
 # Current compact RVV scope
 
+Latest directed results and exception corrections are indexed in the
+[delivery entry](rvv-validation/delivery-task182/README.md). The tables below
+retain their original external-suite membership and historical route labels;
+they are not a new all-form validation of the later exception-fix executable.
+
 Generated saved index: **627 forms / 595 applicable / 32 excluded; checked union 595**.
 
 Task90 reviewed Ara89 overlay on immutable Task87 / recorded October 7 routes; static implementation classes copied from the recorded October 7 route matrix.

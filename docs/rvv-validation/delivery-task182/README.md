@@ -1,5 +1,28 @@
 # Review and replay the finite RVV matrices
 
+## Latest exception-related update
+
+The integrated code now includes the optional-gather backing-admission fix and
+correct NativeUnit fault-origin formatting. [Production integration](../integration-task191/README.md)
+records executable `37a25624345214d97e3691cfd9f951166abfe92419ce2bbeca9c786b68227c14`
+and 50 bounded accepted invocations, including 24 original external calls and
+16 sequence calls checking 68 packets. Anonymous SIMD admission remains active;
+file-backed optional gather uses the existing checked memory path. The default
+gather-off path has no added executed admission work; enabled-path timing has
+not been measured. This is not a fresh full-form matrix on that executable.
+
+[Exact denial adjudication](../denial-task188/README.md) checks all 592 retained
+179 controls against target/setup and captured fault state, rather than keywords.
+[Inexact reductions](../../../SESSION3_RESULT_190.md) add 360 cases and 1,440 DUT
+checks on immutable179, using independent rational rounding and legal-tree
+witnesses. Both remain separately identified from the original full matrix.
+The complete fault-to-resumed-execution composition remains unverified because
+the previously service-blocked restart experiment cannot be retried or renamed.
+These results do not establish complete RVV 1.0 conformance. Existing thesis/PDF
+delivery185 predates these additions; do not describe that PDF as updated here.
+
+## Frozen full-matrix entry
+
 Use `python3 scripts/rvv_verify.py` from a checkout. This entry navigates the
 existing directed manifests and delegates bounded execution/checking to
 `vadd.execute`, `check_isa` and `check_reference`, with each family's existing
