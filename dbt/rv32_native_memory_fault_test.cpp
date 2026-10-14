@@ -54,6 +54,12 @@ static void recovered_cell(CPUState *s, bool store, u32 eew, bool partial, bool 
         event.raw==word(eew,store) && event.element==prefix/eew && event.address==data+4096 &&
         event.eew_bytes==eew && event.nf==1 && !event.field && event.host_signal==SIGSEGV &&
         event.host_code==SEGV_ACCERR,"native event coordinates");
+  char *formatted=nullptr;size_t formatted_size=0;
+  FILE *formatted_out=open_memstream(&formatted,&formatted_size);check(formatted_out,"origin stream");
+  ukernel::WriteMemoryFaultSnapshot(formatted_out,snapshot);check(fclose(formatted_out)==0,"origin close");
+  std::string formatted_record(formatted,formatted_size);free(formatted);
+  check(formatted_record.find(inside?"\"origin\":\"HostCopy\"":"\"origin\":\"NativeUnit\"")!=std::string::npos,
+        "actual terminal snapshot exact origin formatting");
   check(!s->fpu.fround_run_open && _mm_getcsr()==s->fpu.fround_run_saved_mxcsr,"cold FP cleanup");
   for(unsigned i=0;i<128;++i)check(s->vec.vreg[8][i]==(!store && i<prefix?input[i]:0x67),"dispatcher full destination");
   for(unsigned i=0;i<prefix;++i)check(memory[i]==(store?0x67:input[i]),"earlier memory publication");

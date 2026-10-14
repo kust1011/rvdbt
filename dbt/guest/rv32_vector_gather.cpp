@@ -11,13 +11,17 @@
 //   * UNORDERED only. RVV distinguishes vluxei (unordered, mop=01) from vloxei (ordered, mop=11).
 //     Only the unordered form lets an implementation perform the element accesses in arbitrary
 //     order, which is exactly what a host gather does. The ordered form keeps the reference.
-//   * GUEST PERMISSION ADMISSION. A host gather that faults part-way cannot report a
-//     precise vstart, so we refuse guest permission denials: the index
-//     vector is pre-scanned for its min and max byte offset and the whole touched range is checked
-//     against guest read permissions. If any page in it denies reading, the fast path refuses and the
-//     checked fallback runs. The pre-scan reads the same indices the gather
-//     will use, so it cannot disagree with them. File truncation/SIGBUS or a host
-//     mapping change after admission still can fault; native recovery is unimplemented.
+//   * READABLE ANONYMOUS BACKING ADMISSION. Min/max only bounds the touched
+//     range; it is not proof against faults. The shared MMU predicate requires
+//     guest read permission AND anonymous backing on every covered page. File
+//     and unknown backing use OrdinaryMemory's checked element copies, which
+//     own SIGBUS/SIGSEGV and publish precise vstart before each element.
+//     This relies on the existing single-threaded MMU mapping model. There is
+//     no gather fault ownership, concurrent mapping guarantee or retry claim.
+//   * Equal-EEW vd==vs2 is safe here: each chunk reads all its own indices
+//     before writing those elements; it never overwrites future indices. On
+//     refusal NO destination has been changed, so checked fallback starts with
+//     the original indices and preserves faulting/later indices on a fault.
 //   * unmasked (vm=1), vstart == 0, and data EEW == index EEW == 4. Other widths, masks and a
 //     non-zero vstart all fall through to the reference.
 #include "dbt/guest/rv32_vector.h"
@@ -56,10 +60,10 @@ extern "C" bool rvv_gather_e32_avx2(void *vs_void, unsigned vd, unsigned vs2, un
 	}
 	if (hi < lo)
 		return false;
-	// Permission preflight only. 4 bytes per element, so the last touched byte is hi+3.
+	// 4 bytes per element, so the last touched byte is hi+3.
 	// AVX2 i32 gather sign-extends offsets; only the positive half is safe
-	// relative to vmem. Reject overflow and guest read denial before any access.
-	if (hi > 0x7ffffffcu || !mmu::range_readable(lo, (hi - lo) + 4)) {
+	// relative to vmem. Reject overflow, denial and unsafe backing before any access.
+	if (hi > 0x7ffffffcu || !mmu::RangeReadableAnonymous(lo, (hi - lo) + 4)) {
 		g_gather_unmapped++;
 		return false;
 	}

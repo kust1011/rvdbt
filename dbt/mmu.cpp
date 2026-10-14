@@ -293,6 +293,20 @@ bool mmu::QueryPage(u32 gaddr, PageInfo &out)
 	return true;
 }
 
+bool mmu::RangeReadableAnonymous(u32 address, u32 length)
+{
+	// Unlike range_readable, an unowned host span must never cross 2^32.
+	if ((u64)address + length > ASPACE_SIZE) return false;
+	for (u32 left = length; left;) {
+		u32 const page = address >> PAGE_BITS;
+		if (!readable_pages[page] || !native_copy_ram_pages[page]) return false;
+		u32 const step = std::min(left, (u32)PAGE_SIZE - (address & (u32)(PAGE_SIZE - 1)));
+		left -= step;
+		address += step;
+	}
+	return true;
+}
+
 bool mmu::CheckedRange(u32 address, u32 length, int permission)
 {
 	if (!address || !length || (u64)address + length > ASPACE_SIZE)

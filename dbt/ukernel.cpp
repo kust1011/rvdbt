@@ -269,7 +269,8 @@ void ukernel::WriteMemoryFaultSnapshot(FILE *out, MemoryFaultSnapshot const &s)
 		"\"reason\":\"%s\",\"pc\":%u,\"raw\":%u,\"address\":%u,"
 		"\"element\":%u,\"field\":%u,\"eew_bytes\":%u,\"nf\":%u,"
 		"\"fp_run_closed\":true,\"vlenb\":%u,\"gpr\":[",
-		e.origin == MemoryFaultEvent::Origin::HostCopy ? "HostCopy" : "PredictedHelper",
+		e.origin == MemoryFaultEvent::Origin::HostCopy ? "HostCopy" :
+		 e.origin == MemoryFaultEvent::Origin::NativeUnit ? "NativeUnit" : "PredictedHelper",
 		e.host_signal, e.host_code,
 		e.access == MemoryFaultEvent::Access::Store ? "store" : "load",
 		e.reason == MemoryFaultEvent::Reason::HostFault ? "host_fault" :

@@ -43,6 +43,11 @@ struct mmu {
 	// Native singleton page-fault ownership excludes truncatable file backing.
 	static bool page_native_copy_ram(u32 address) { return native_copy_ram_pages[address >> PAGE_BITS]; }
 	static bool page_ordinary_ram(u32 address) { return ordinary_ram_pages[address >> PAGE_BITS]; }
+	// Admission for unowned host loads: readable anonymous RAM only. Regular
+	// files can SIGBUS despite permission; ordinary_ram includes those files.
+	// Requires the existing single-threaded mapping model (no mapping mutation
+	// between admission and access), not a fault recovery/ownership claim.
+	static bool RangeReadableAnonymous(u32 address, u32 length);
 	static u64 MappingEpoch();
 	// Signal marshalling never wraps an RV32 pointer and never treats guest NULL as base.
 	static bool CheckedRange(u32 address, u32 length, int permission);
@@ -91,8 +96,8 @@ struct mmu {
 	}
 
 	// The readability counterpart of range_mapped, and the predicate a fault-only-first load
-	// wants: it answers "would the guest be allowed to read these bytes", which is what decides
-	// whether the access faults.
+	// wants: it answers "would the guest be allowed to read these bytes". It does NOT
+	// rule out host backing faults (for example file-backed SIGBUS).
 	// STEPPED BY REMAINING BYTES, so the guest address wraps the way RV32 does. A range that
 	// runs past 0xffffffff continues at 0 -- that is an ordinary XLEN-bit address computation,
 	// not an error -- so there is no "first > last means refuse" case here: the loop advances to
