@@ -1,0 +1,17 @@
+{
+  "remote_root": "/home/vick/rvv-trap-task199",
+  "raw_archive_remote": "/home/vick/rvv-trap-task199-final-raw.tar.gz",
+  "raw_archive_local": "/home/user/research/materials/task199-trap-raw-20261014/rvv-trap-task199-final-raw.tar.gz",
+  "raw_archive_sha256": "82888aa8e01bcb762848b38e833a5429fb46d45f0ea8c093133c802c3df61aa7",
+  "archive_members": 7441,
+  "archive_snapshot_members": 360,
+  "local_remote_archive_sha256_match": true,
+  "raw_archive_format": "gzip tar with sparse cache profiles",
+  "compact_evidence_sha256": "7e6699cab52de6c628c595712afd19ec73c4aeff04baf064183948312caf146d",
+  "original_failed_observer_retained": "observer-attempt1/B",
+  "original_preparation_failure_retained": "trap199-prepare.log; prepare-attempt1-empty",
+  "earlier_complete_nonsparse_archive_retained_remote": "/home/vick/rvv-trap-task199-raw.tar.gz",
+  "earlier_archive_sha256": "f3c4e66e9b05e1dfbcba15881460302b2a951dcabe6e9a341589361e38d5d0cf",
+  "accepted_guest_replays_after_final_audit": 0,
+  "publication": "local commit only; no push"
+}

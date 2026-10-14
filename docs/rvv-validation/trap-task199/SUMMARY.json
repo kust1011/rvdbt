@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "forms": 23,
+  "trap_cases": 90,
+  "trap_observations": 360,
+  "control_cases": 45,
+  "control_checks": 180,
+  "unique_case_arm_checks": 540,
+  "compiler_calls": 136,
+  "workers": 1,
+  "pin": [
+    "908df235e36fe49f8a64793a8e4a401987f9b2c56da10179470b7bc7bd5ffbc4",
+    "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  ],
+  "retained_failed_observer_attempts": 1,
+  "total_DUT_launches": 541,
+  "per_form": {
+    "vcompress.vm": {
+      "control_checks": 4,
+      "trap_checks": 8
+    },
+    "vcpop.m": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfirst.m": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfredmax.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfredmin.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfredosum.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfredusum.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfwredosum.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vfwredusum.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "viota.m": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vmsbf.m": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vmsif.m": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vmsof.m": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredand.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredmax.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredmaxu.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredmin.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredminu.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredor.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredsum.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vredxor.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vwredsum.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    },
+    "vwredsumu.vs": {
+      "control_checks": 8,
+      "trap_checks": 16
+    }
+  },
+  "checker_corruptions_rejected": 11,
+  "min_free_bytes": 16060489728,
+  "min_available_ram_bytes": 35154624512,
+  "evidence_sha256": "7e6699cab52de6c628c595712afd19ec73c4aeff04baf064183948312caf146d",
+  "limitations": [
+    "finite VLEN128 e8/e32 m1 configurations",
+    "terminal GDB inspection then kill; no guest recovery or normal exit claim",
+    "fixed192-only symbol offset and sidecar layout; rebuild requires readjudication",
+    "all active vector bytes; no nonarchitectural storage padding or full guest-memory audit",
+    "arm switches do not establish native per-target route admission",
+    "resource endpoints are sampled, not a continuous system-wide guarantee"
+  ]
+}
