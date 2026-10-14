@@ -1,0 +1,14 @@
+{
+  "remote_raw": "xbd:/home/vick/rvv-inexact-task190",
+  "remote_archive": "xbd:/home/vick/rvv-inexact-task190-retained.tar.gz",
+  "local_archive": "/home/user/research/materials/task190-inexact-raw-20261014/rvv-inexact-task190-retained.tar.gz",
+  "archive_bytes": 2044820,
+  "archive_sha256": "775aab08a3223b8515b974a10896c991dfd068060dab9e2e3bedebb97025a836",
+  "verified": [
+    "remote/local archive SHA256 equal",
+    "gzip CRC test PASS",
+    "all selected execution streams verified by original receipt/storage identities in offline audit"
+  ],
+  "originals": "all historical174/179/181 evidence untouched; new compressed sources/ELFs/streams retained; only new ELF materializations unlinked",
+  "scope": "single small new namespace archive; no historical member scan/hashing"
+}

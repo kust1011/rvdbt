@@ -1,0 +1,86 @@
+{
+  "worktree_base": "7be3009",
+  "spec": {
+    "revision": "3570f998903f00352552b670f1f7b7334f0a144a",
+    "tag": "v1.0",
+    "sections": [
+      "14.3",
+      "14.4"
+    ],
+    "local_lines": "3930-4027; zero-length scalar reduction rule in section14 intro",
+    "verified_official_download_equal": true
+  },
+  "source_identity_match": "immutable179 vector_lower.h/config.h/fpu.h exactly match local preserved sources (selected file hashes only)",
+  "review_positions": {
+    "dbt/guest/rv32_vector_lower.h": [
+      "2264-2390 (vfred)",
+      "3214-3249 (vfwred)"
+    ],
+    "dbt/guest/rv32_fpu.h": [
+      "171-183 (frm/backend)",
+      "353-420 (host flags)"
+    ],
+    "dbt/config.h": [
+      "4211 (specialize default0)"
+    ],
+    "fp157.py": [
+      "45-91 (rational rounding)",
+      "94-113 (addition)"
+    ],
+    "fpreduce174.py": [
+      "35-73 (operands/promotion)",
+      "106-128 (packet/state)"
+    ],
+    "spike-v_ext_macros.h": [
+      "1518-1526",
+      "1659-1688",
+      "1709-1717"
+    ]
+  },
+  "selected_files": {
+    "scripts/rvv/directed/inexact190.py": "38a7ceb4364d461edb32f9b7e635acc374ceba86924ff98814039f9bbe20fa02",
+    "scripts/rvv/directed/audit_inexact190.py": "8229bbc6f92c86a701e26652e40a4cd1169172e092dfbbb2e0bfbbbb046f1862",
+    "scripts/rvv/directed/test_inexact190.py": "c23e6d4b9304414d850612cf199e0b1a073d7db9120b4b9c287eceb24e0bc8af",
+    "scripts/rvv/directed/fpreduce174.py": "5f972e91ec21639fce2abf356144c3d9a6c597bd9bdd86c9af98502e424cc392",
+    "scripts/rvv/directed/fp157.py": "ad2d81bb2bd48bdac5d480c885cbc052d4aac279c727561a7d437633e14abbeb",
+    "scripts/rvv/directed/fpcompare170.py": "e75a12143f19baec99424f385629fbe0a6e4ab2401c0a6a6416a2069ae288957",
+    "scripts/rvv/directed/vadd.py": "14c36d39bdcbeb024bd73684130e8fd43133d0614243425b16502fe3c420cc56",
+    "scripts/rvv/directed/storage149.py": "57ab6ecbd6e1246ed621abab4c649fda1ee0c248a370288ac513251660fa39c6",
+    "scripts/rvv/directed/audit.py": "0811252ec7e54773ed88491fc3edd4092c2bddaa3df6034297135b43251f5e3e",
+    "dbt/guest/rv32_vector_lower.h": "2eb495e945cd2c5a012edd80d3c3c14e7ee9e19fc0fbf80b82454ab19c93baf4",
+    "dbt/guest/rv32_fpu.h": "4c239aa194e681eb644cd5060593ba68375c6a937e5238c85bac09b91c57601c",
+    "dbt/config.h": "b084ee39bc64c49ec347510702ef8aaa4efb522c433f1ae252a41e6dc889353e",
+    "docs/rvv-validation/directed-task174/v-spec.adoc": "bfe42bd33dc6abeef5362f475605dda3d229e722257a613b0691cee760f04a19",
+    "docs/rvv-validation/directed-task174/spike-vfredusum_vs.h": "ff186d648ed46a240c11019264d5dd4bed0c8f80190a0f2e8f72dae72a9d0204",
+    "docs/rvv-validation/directed-task174/spike-vfwredusum_vs.h": "8c982c7a8c3d770a33a187bb5e5a2957738e634edcf99bb329247340dee55167",
+    "docs/rvv-validation/directed-task174/spike-v_ext_macros.h": "c8663bcd609c60796bb130016b72ad1cf1adc3617184d13333f64020b5845329"
+  },
+  "executed_runner_sha256": "e13c10d2f34cc7d22807ad0c5016d736a54282aa7b219071cc7938a7be24829c",
+  "post_execution_change": "One reference nonmembership status now UNVERIFIED rather than FAIL; same acceptance predicate and all observed PASS unaffected. Original executed source retained. Offline auditor separately verifies all receipts.",
+  "reference_source": "retained Task174 source review at Spike20feb9c2bf2a7deab964d8190b0cbd4b4131bec3; execution binds actual executable/pk hashes, not an unverified new binary/source reconstruction",
+  "reference_source_review": "docs/rvv-validation/directed-task174/REFERENCE_SOURCE_REVIEW.json",
+  "new_flags_per_case": {
+    "1": 236,
+    "5": 44,
+    "0": 80
+  },
+  "new_flags_by_form": {
+    "vfredusum.vs/e32": {
+      "1": 70,
+      "5": 20,
+      "0": 30
+    },
+    "vfredusum.vs/e64": {
+      "1": 70,
+      "5": 20,
+      "0": 30
+    },
+    "vfwredusum.vs/e32": {
+      "1": 96,
+      "0": 20,
+      "5": 4
+    }
+  },
+  "step_counts": "840 active adds:508 exact,288 NX,44 OF|NX; no newly raised UF",
+  "new_NX_multi_active_cases_without_initial_NX": 250
+}

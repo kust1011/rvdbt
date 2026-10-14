@@ -1,0 +1,27 @@
+{
+  "cases": 360,
+  "DUT_checks": 1440,
+  "reference_checks": 360,
+  "counts": {
+    "PASS": 1800
+  },
+  "arms": {
+    "Reference": {
+      "PASS": 360
+    },
+    "B": {
+      "PASS": 360
+    },
+    "M1": {
+      "PASS": 360
+    },
+    "M2": {
+      "PASS": 360
+    },
+    "BOTH": {
+      "PASS": 360
+    }
+  },
+  "reference_disagreement": 0,
+  "native_admission": "not inferred from switches or packet PASS"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checked_packets": 1800,
+  "counts": {
+    "Reference": 360,
+    "B": 360,
+    "BOTH": 360,
+    "M1": 360,
+    "M2": 360
+  },
+  "ELF_targets": 360,
+  "ELF_input_data": 360,
+  "retained_corruptions_rejected": 1080,
+  "reference_disagreement": 0,
+  "cases_with_certified_alternatives": 104,
+  "resource_samples": 31,
+  "min_available_GiB": 34.7089958190918,
+  "min_disk_free_GiB": 20.738189697265625,
+  "resource_limit": "own guest sequential1, build executor2, inherited nice10, no affinity set; sampled reserve gates, not continuous shared occupancy proof"
+}

@@ -1,0 +1,22 @@
+test_all_synthetic_states (test_inexact190.Checks) ... ok
+test_analytical_steps (test_inexact190.Checks) ... ok
+test_bad_destination (test_inexact190.Checks) ... ok
+test_exit_timeout (test_inexact190.Checks) ... ok
+test_expected_overflow (test_inexact190.Checks) ... ok
+test_legal_alternative_is_not_selected (test_inexact190.Checks) ... ok
+test_marker_truncation_extra (test_inexact190.Checks) ... ok
+test_masked_poison_suppression (test_inexact190.Checks) ... ok
+test_no_new_underflow (test_inexact190.Checks) ... ok
+test_non_destination_register (test_inexact190.Checks) ... ok
+test_prestate_corruption (test_inexact190.Checks) ... ok
+test_scalar_fp (test_inexact190.Checks) ... ok
+test_sticky_loss (test_inexact190.Checks) ... ok
+test_tail_corruption (test_inexact190.Checks) ... ok
+test_wrong_flags_coherent_fcsr (test_inexact190.Checks) ... ok
+test_wrong_frm_coherent_fcsr (test_inexact190.Checks) ... ok
+test_zero_length_preservation (test_inexact190.Checks) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.555s
+
+OK
