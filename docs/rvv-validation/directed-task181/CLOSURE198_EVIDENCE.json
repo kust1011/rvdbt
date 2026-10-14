@@ -1,0 +1,906 @@
+{
+  "base": "4ad13da7a0a973623e8e51c683b2328bfba47f1b",
+  "new_compiler_calls": 0,
+  "new_guest_calls": 0,
+  "new_reference_calls": 0,
+  "original_predicates_changed": false,
+  "ara_diagnostic_header_sha256": "5ee7e0343e45417db236508d853459e02b61695525a56c5203eee7dd6921088f",
+  "ara_diagnostic": "%x receives uint64_t arguments; the failure branch compares uint64_t, but printed fields are not full values",
+  "ara": [
+    {
+      "form": "vmacc.vx",
+      "source": "sources/apps/riscv-tests/isa/rv64uv/vmacc.c",
+      "source_sha256": "3e7465278e8659b4d09dcf301e5a25e2d1933662956bd972bf6b05d02d1324f9",
+      "adapter_sha256": "2216aa11d376a20430de034b30d4e3a50e37586216ab033d666925e814d10047",
+      "cases": [
+        {
+          "function": "TEST_CASE3",
+          "target": "vmacc.vx v1, %[A], v2",
+          "source_line": 156,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 16,
+          "first_lane": 0,
+          "first_literal": "093861b79ac45352",
+          "first_rv32_spec_value": "2da6692c9ac45352",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        },
+        {
+          "function": "TEST_CASE4",
+          "target": "vmacc.vx v1, %[A], v2, v0.t",
+          "source_line": 217,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 8,
+          "first_lane": 1,
+          "first_literal": "fd3c909decf66b5b",
+          "first_rv32_spec_value": "210df7dbecf66b5b",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        }
+      ],
+      "receipts": [
+        {
+          "arm": "B",
+          "path": "records/ara-remainder52/remote-raw/batch_vmacc/B/stdout",
+          "sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        },
+        {
+          "arm": "M1",
+          "path": "records/ara-remainder52/remote-raw/batch_vmacc/M1/stdout",
+          "sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        },
+        {
+          "arm": "M2",
+          "path": "records/ara-remainder52/remote-raw/batch_vmacc/M2/stdout",
+          "sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        },
+        {
+          "arm": "BOTH",
+          "path": "records/ara-remainder52/remote-raw/batch_vmacc/BOTH/stdout",
+          "sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        }
+      ],
+      "whole_file_pass": false,
+      "accepted_scope": "TEST_CASE1_2_ONLY",
+      "actual_full64_result_observed": false
+    },
+    {
+      "form": "vmadd.vx",
+      "source": "sources/apps/riscv-tests/isa/rv64uv/vmadd.c",
+      "source_sha256": "d3be201da0b33ea074bf106eb6c54f7bfbad1de4595463e13dd6d07b9e794074",
+      "adapter_sha256": "76cd7ede0d548fc4b6b55fda332a22a8c52d86d02631b15fc01d09728f865ae2",
+      "cases": [
+        {
+          "function": "TEST_CASE3",
+          "target": "vmadd.vx v1, %[A], v2",
+          "source_line": 156,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 16,
+          "first_lane": 0,
+          "first_literal": "093861b79ac45352",
+          "first_rv32_spec_value": "2da6692c9ac45352",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        },
+        {
+          "function": "TEST_CASE4",
+          "target": "vmadd.vx v1, %[A], v2, v0.t",
+          "source_line": 217,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 8,
+          "first_lane": 1,
+          "first_literal": "fd3c909decf66b5b",
+          "first_rv32_spec_value": "210df7dbecf66b5b",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        }
+      ],
+      "receipts": [
+        {
+          "arm": "B",
+          "path": "records/ara-remainder52/remote-raw/batch_vmadd/B/stdout",
+          "sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        },
+        {
+          "arm": "M1",
+          "path": "records/ara-remainder52/remote-raw/batch_vmadd/M1/stdout",
+          "sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        },
+        {
+          "arm": "M2",
+          "path": "records/ara-remainder52/remote-raw/batch_vmadd/M2/stdout",
+          "sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        },
+        {
+          "arm": "BOTH",
+          "path": "records/ara-remainder52/remote-raw/batch_vmadd/BOTH/stdout",
+          "sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+          "failed_predicates": [
+            "Index 0 FAILED. Got 9ac45352, expected 2da6692c.",
+            "Index 1 FAILED. Got ecf66b5b, expected 210df7db."
+          ]
+        }
+      ],
+      "whole_file_pass": false,
+      "accepted_scope": "TEST_CASE1_2_ONLY",
+      "actual_full64_result_observed": false
+    },
+    {
+      "form": "vnmsac.vx",
+      "source": "sources/apps/riscv-tests/isa/rv64uv/vnmsac.c",
+      "source_sha256": "d573ecfabe02f9e2278f39bef91d2dc031be6e265a0ec7bdbc9377ffe3adeb8d",
+      "adapter_sha256": "94a15ab195523151eae53367862872a263e9a8872dee7ce2b74feb126517d41f",
+      "cases": [
+        {
+          "function": "TEST_CASE3",
+          "target": "vnmsac.vx v1, %[A], v3",
+          "source_line": 156,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 16,
+          "first_lane": 0,
+          "first_literal": "60dd7609c833e03a",
+          "first_rv32_spec_value": "e47a12a7c833e03a",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        },
+        {
+          "function": "TEST_CASE4",
+          "target": "vnmsac.vx v1, %[A], v3, v0.t",
+          "source_line": 217,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 8,
+          "first_lane": 1,
+          "first_literal": "79abe3a30a816ca0",
+          "first_rv32_spec_value": "af715fe90a816ca0",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        }
+      ],
+      "receipts": [
+        {
+          "arm": "B",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsac/B/stdout",
+          "sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        },
+        {
+          "arm": "M1",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsac/M1/stdout",
+          "sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        },
+        {
+          "arm": "M2",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsac/M2/stdout",
+          "sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        },
+        {
+          "arm": "BOTH",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsac/BOTH/stdout",
+          "sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        }
+      ],
+      "whole_file_pass": false,
+      "accepted_scope": "TEST_CASE1_2_ONLY",
+      "actual_full64_result_observed": false
+    },
+    {
+      "form": "vnmsub.vx",
+      "source": "sources/apps/riscv-tests/isa/rv64uv/vnmsub.c",
+      "source_sha256": "8b86e65acce88cb341ff9d87605604621a416ec9b7660cc2d892ca79a3ca0b6a",
+      "adapter_sha256": "a69e17e8775cf8f89871cc2128d4edf5833602cfb22e79d63383f5379c0d87d0",
+      "cases": [
+        {
+          "function": "TEST_CASE3",
+          "target": "vnmsub.vx v1, %[A], v3",
+          "source_line": 156,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 16,
+          "first_lane": 0,
+          "first_literal": "60dd7609c833e03a",
+          "first_rv32_spec_value": "e47a12a7c833e03a",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        },
+        {
+          "function": "TEST_CASE4",
+          "target": "vnmsub.vx v1, %[A], v3, v0.t",
+          "source_line": 217,
+          "original_scalar": -598189234597999223,
+          "rv32_scalar": 2069024137,
+          "rv64_all_literals_match": true,
+          "rv32_active_literal_mismatches": 8,
+          "first_lane": 1,
+          "first_literal": "79abe3a30a816ca0",
+          "first_rv32_spec_value": "af715fe90a816ca0",
+          "classification": "PROFILE_INAPPLICABLE_RV64_SCALAR_ASSERTION"
+        }
+      ],
+      "receipts": [
+        {
+          "arm": "B",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsub/B/stdout",
+          "sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        },
+        {
+          "arm": "M1",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsub/M1/stdout",
+          "sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        },
+        {
+          "arm": "M2",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsub/M2/stdout",
+          "sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        },
+        {
+          "arm": "BOTH",
+          "path": "records/ara-remainder52/remote-raw/batch_vnmsub/BOTH/stdout",
+          "sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+          "failed_predicates": [
+            "Index 0 FAILED. Got c833e03a, expected e47a12a7.",
+            "Index 1 FAILED. Got a816ca0, expected af715fe9."
+          ]
+        }
+      ],
+      "whole_file_pass": false,
+      "accepted_scope": "TEST_CASE1_2_ONLY",
+      "actual_full64_result_observed": false
+    }
+  ],
+  "act_original_diagnosis": [
+    {
+      "case": "Vf32-vfmv.f.s",
+      "classification": "ORIGINAL_PRIVILEGED_SOURCE_PLATFORM_BLOCK",
+      "original_source": "/home/vick/rvv-task109/generated/rv32i/Vf32/Vf32-vfmv.f.s.S",
+      "source_line": 2141,
+      "coverpoint": "cp_custom_vfp_state",
+      "failing_pc": "0x80005d20",
+      "word": "30033073",
+      "instruction": "csrrc                   zero,mstatus,t1",
+      "Sail_capture": "PASS",
+      "QEMU_selfcheck": "SIGILL -4",
+      "DUT_calls": 0,
+      "original_behavior": "clear FS bits with mask0x6000, set FS=Clean (10) via0x4000, execute vfmv.f.s and retain original scalar FP value/fcsr checker",
+      "diagnostic_reference_call": 1,
+      "next_step": "preserve full original case; execute with an authorized reference/DUT environment that supports source mstatus state changes; do not no-op privileged operations or delete coverpoint",
+      "DUT_defect": false
+    },
+    {
+      "case": "Vf64-vfmv.f.s",
+      "classification": "ORIGINAL_PRIVILEGED_SOURCE_PLATFORM_BLOCK",
+      "original_source": "/home/vick/rvv-task109/generated/rv32i/Vf64/Vf64-vfmv.f.s.S",
+      "source_line": 2243,
+      "coverpoint": "cp_custom_vfp_state",
+      "failing_pc": "0x8000738c",
+      "word": "30033073",
+      "instruction": "csrrc                   zero,mstatus,t1",
+      "Sail_capture": "PASS",
+      "QEMU_selfcheck": "SIGILL -4",
+      "DUT_calls": 0,
+      "original_behavior": "clear FS bits with mask0x6000, set FS=Clean (10) via0x4000, execute vfmv.f.s and retain original scalar FP value/fcsr checker",
+      "diagnostic_reference_call": 1,
+      "next_step": "preserve full original case; execute with an authorized reference/DUT environment that supports source mstatus state changes; do not no-op privileged operations or delete coverpoint",
+      "DUT_defect": false
+    }
+  ],
+  "act_original_reference_diagnostics": {
+    "reference_calls": 2,
+    "DUT_calls": 0,
+    "records": [
+      {
+        "case": "Vf32-vfmv.f.s",
+        "returncode": -4,
+        "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+        "executable_sha256": "fc69c3332977459ee844d5e25f3386f7bff1061e4ff4adf0343f864571d13fa9",
+        "configuration": "same original CPU; logging-only diagnostic repeat, not new coverage",
+        "engine": "QEMU",
+        "purpose": "original reference SIGILL PC; no DUT/oracle mutation",
+        "source_expected_unchanged": true
+      },
+      {
+        "case": "Vf64-vfmv.f.s",
+        "returncode": -4,
+        "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+        "executable_sha256": "fc69c3332977459ee844d5e25f3386f7bff1061e4ff4adf0343f864571d13fa9",
+        "configuration": "same original CPU; logging-only diagnostic repeat, not new coverage",
+        "engine": "QEMU",
+        "purpose": "original reference SIGILL PC; no DUT/oracle mutation",
+        "source_expected_unchanged": true
+      }
+    ]
+  },
+  "act": [
+    {
+      "case": "Vf32-vfmv.f.s",
+      "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+      "source_line": 2128,
+      "original_window": "# Testcase cp_custom_vfp_state (FS=Clean pre-instruction)\nvsetvli x4, x0, e32, m1, tu, mu                   # Set vl = VLMAX, where x4 = VLMAX\nvmv.v.i v28, 13                                   # Initialize v28 to 0xD for deterministic undisturbed/tail elements in base suite\nli x4, 1                                          # Load desired vl value\nvsetvli x0, x4, e32, m1, tu, mu\nLA(x20, scratch)\nLI(x29, 0xd8e34afe)                               # load x29 with value 0xd8e34afe\nsw x29, 0(x20)                                    # store 0xd8e34afe in memory\nflw f12, 0(x20)                                   # load 0xd8e34afe from memory into f12\nla x7, vs_corner_f_pos1_emul1                     # Load address of desired value\nvle32.v v28, (x7)                                 # Load desired value from memory into v28\nVf32_vfmv_f_s_cg_cp_custom_vfp_state:\nli x6, 0x6000\ncsrrc x0, mstatus, x6\nli x6, 0x4000\ncsrrs x0, mstatus, x6\nvfmv.f.s f12, v28\ncsrr x13, fcsr                                    # save fcsr into x13 for signature\ntest_105:\nRVTEST_SIGUPD_F(x23, x14, x13, f13, f12, test_105, test_105_str)# store f12 and x13 (fcsr) in signature\n\n\n",
+      "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+      "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+      "original_result": {
+        "case": "Vf32-vfmv.f.s",
+        "input_id": "Vf32__vfmv.f.s",
+        "form": "vfmv.f.s",
+        "sew": 32,
+        "source_path": "generated/rv32i/Vf32/Vf32-vfmv.f.s.S",
+        "source_sha256": "1e1959449c6d0e5daf003c85f7b725d4480348c42a8b5b3097bf414e9e364540",
+        "status": "REFERENCE_ERROR",
+        "DUT": [],
+        "reference": [
+          {
+            "engine": "Sail",
+            "returncode": 0,
+            "status": "PASS",
+            "raw": "raw/sail-signature"
+          },
+          {
+            "engine": "QEMU",
+            "returncode": -4,
+            "status": "REFERENCE_ERROR",
+            "raw": "raw/qemu-selfcheck"
+          }
+        ],
+        "prior_joins": [],
+        "elf_sha256": "5dd293030b3ea736902abd8c69c499e6dfc4cc373b0699ddeec94f6d8932b026",
+        "oracle_sha256": "209d3022747bb9d9ab907b267b9e870a44605951fc5fb4ecf0e5328e7393b8e7",
+        "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+        "targets": 142,
+        "scope": {
+          "BASE": 0,
+          "LEN": 0,
+          "FFLAGS": 0,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_F": 143
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        },
+        "memory_status": "ALLOW_WITH_READ_LIMITATIONS",
+        "blocker": "original selfchecker rejects independent same-ELF QEMU"
+      },
+      "classification": "REFERENCE_TOOL_PLATFORM_PROBLEM",
+      "profile_disposition": "FS-state privileged setup inapplicable to declared user execution environment; vfmv.f.s FP32/64 remains applicable",
+      "whole_file_pass": false,
+      "withheld_DUT_arm_slots": 4
+    },
+    {
+      "case": "Vf64-vfmv.f.s",
+      "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+      "source_line": 2228,
+      "original_window": "# Testcase cp_custom_vfp_state (FS=Clean pre-instruction)\nvsetvli x19, x0, e64, m1, tu, mu                  # Set vl = VLMAX, where x19 = VLMAX\nvmv.v.i v28, 13                                   # Initialize v28 to 0xD for deterministic undisturbed/tail elements in base suite\nli x19, 1                                         # Load desired vl value\nvsetvli x0, x19, e64, m1, tu, mu\nLA(x4, scratch)\nLI(x24, 0x73337fad)                               # load x24 with 32 MSBs 0x47258af473337fad\nsw x24, 0(x4)                                     # store x24 (0x73337fad) in memory\nLI(x24, 0x47258af4)                               # load x24 with 32 LSBs of 0x47258af473337fad\nsw x24, 4(x4)                                     # store x24 (0x47258af4) in memory 4 bytes after x4\nfld f12, 0(x4)                                    # load 0x47258af473337fad from memory into f12\nla x2, vs_corner_f_pos1_emul1                     # Load address of desired value\nvle64.v v28, (x2)                                 # Load desired value from memory into v28\nVf64_vfmv_f_s_cg_cp_custom_vfp_state:\nli x6, 0x6000\ncsrrc x0, mstatus, x6\nli x6, 0x4000\ncsrrs x0, mstatus, x6\nvfmv.f.s f12, v28\ncsrr x13, fcsr                                    # save fcsr into x13 for signature\ntest_102:\nRVTEST_SIGUPD_F(x10, x14, x13, f13, f12, test_102, test_102_str)# store f12 and x13 (fcsr) in signature\n\n\n",
+      "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+      "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+      "original_result": {
+        "case": "Vf64-vfmv.f.s",
+        "input_id": "Vf64__vfmv.f.s",
+        "form": "vfmv.f.s",
+        "sew": 64,
+        "source_path": "generated/rv32i/Vf64/Vf64-vfmv.f.s.S",
+        "source_sha256": "95679be705c196cecb451614400510cb02cd4b9380844d682924208e118f4812",
+        "status": "REFERENCE_ERROR",
+        "DUT": [],
+        "reference": [
+          {
+            "engine": "Sail",
+            "returncode": 0,
+            "status": "PASS",
+            "raw": "raw/sail-signature"
+          },
+          {
+            "engine": "QEMU",
+            "returncode": -4,
+            "status": "REFERENCE_ERROR",
+            "raw": "raw/qemu-selfcheck"
+          }
+        ],
+        "prior_joins": [],
+        "elf_sha256": "f72f618156705c982462356c5599fee5bd8debdcd91a9dba1f604379d785b224",
+        "oracle_sha256": "b7f93139bc9c7c0efd2c0899a703d56d148fd2791b697b1cb75d8194023592de",
+        "checker_sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+        "targets": 138,
+        "scope": {
+          "BASE": 0,
+          "LEN": 0,
+          "FFLAGS": 0,
+          "VXSAT": 0,
+          "other_original_checkers": {
+            "RVTEST_SIGUPD_F": 139
+          },
+          "note": "BASE observes original selected element/bit or scalar, LEN original active/masked/tail comparisons; invalid/agnostic allowances unchanged in original signature.h; static checker counts are not dynamic execution counts"
+        },
+        "memory_status": "ALLOW_WITH_READ_LIMITATIONS",
+        "blocker": "original selfchecker rejects independent same-ELF QEMU"
+      },
+      "classification": "REFERENCE_TOOL_PLATFORM_PROBLEM",
+      "profile_disposition": "FS-state privileged setup inapplicable to declared user execution environment; vfmv.f.s FP32/64 remains applicable",
+      "whole_file_pass": false,
+      "withheld_DUT_arm_slots": 4
+    }
+  ],
+  "act_assertion_header": {
+    "sha256": "d4e7f032695ccd4bfb7dcf92687909aa20d4140e7f4ec7d999b829382f0ccacb",
+    "scalar_FP_value": "RVTEST_SIGUPD_F stores FP value and compares both RV32 words when FLEN>XLEN",
+    "flags": "RVTEST_SIGUPD_FFLAGS reads fflags and compares original signature",
+    "FS_state_observed": false
+  },
+  "act_original_trace_ends": [
+    {
+      "width": 32,
+      "sha256": "a151dd4be12262cab868d791121b37dbe41041eb2b9306d4eecda4c332ebe32f",
+      "last_lines": [
+        "0x80005ce0:  00005a17          auipc                   s4,5                    # 0x8000ace0",
+        "0x80005ce4:  320a0a13          addi                    s4,s4,800",
+        "0x80005ce8:  00000013          nop                     ",
+        "0x80005cec:  00000013          nop                     ",
+        "0x80005cf0:  00000013          nop                     ",
+        "0x80005cf4:  00000013          nop                     ",
+        "0x80005cf8:  00000013          nop                     ",
+        "0x80005cfc:  00000013          nop                     ",
+        "0x80005d00:  d8e35eb7          lui                     t4,-160203",
+        "0x80005d04:  afee8e93          addi                    t4,t4,-1282",
+        "0x80005d08:  01da2023          sw                      t4,0(s4)",
+        "0x80005d0c:  000a2607          flw                     fa2,0(s4)",
+        "0x80005d10:  00007397          auipc                   t2,7                    # 0x8000cd10",
+        "0x80005d14:  be838393          addi                    t2,t2,-1048",
+        "0x80005d18:  0203ee07          vle32.v                 v28,(t2)",
+        "0x80005d1c:  00006337          lui                     t1,6",
+        "0x80005d20:  30033073          csrrc                   zero,mstatus,t1",
+        ""
+      ]
+    },
+    {
+      "width": 64,
+      "sha256": "81983b57bc593fd284e2f317bca1977a0f6016b92c863e64dc35ef1100bbe81d",
+      "last_lines": [
+        "0x8000734c:  00000013          nop                     ",
+        "0x80007350:  00000013          nop                     ",
+        "0x80007354:  00000013          nop                     ",
+        "0x80007358:  00000013          nop                     ",
+        "0x8000735c:  00000013          nop                     ",
+        "0x80007360:  73338c37          lui                     s8,471864",
+        "0x80007364:  fadc0c13          addi                    s8,s8,-83",
+        "0x80007368:  01822023          sw                      s8,0(tp)",
+        "0x8000736c:  47259c37          lui                     s8,291417",
+        "0x80007370:  af4c0c13          addi                    s8,s8,-1292",
+        "0x80007374:  01822223          sw                      s8,4(tp)",
+        "0x80007378:  00023607          fld                     fa2,0(tp)",
+        "0x8000737c:  00007117          auipc                   sp,7                    # 0x8000e37c",
+        "0x80007380:  64410113          addi                    sp,sp,1604",
+        "0x80007384:  02017e07          vle64.v                 v28,(sp)",
+        "0x80007388:  00006337          lui                     t1,6",
+        "0x8000738c:  30033073          csrrc                   zero,mstatus,t1",
+        ""
+      ]
+    }
+  ],
+  "old_semantic_question_joins": [
+    {
+      "entry": "b159-016",
+      "kind": "tie",
+      "original_root": "/home/vick/rvv-task159-full/scaling/corpus",
+      "manifest_sha256": "55514b9feb3c8bc18036a54588359d1c7a2bbe0da49b881adaa8e46b46c30b99",
+      "declarations": 251744,
+      "selected": [
+        {
+          "index": 233863,
+          "case": {
+            "id": "vsmul-w128-e8-mf8-vx-pair1,64-rm0",
+            "unit": "vsmul-w128-e8-mf8-vx-zero",
+            "vlen": 128,
+            "sew": 8,
+            "lmul": "mf8",
+            "lmul_exp": -3,
+            "emul": "mf8",
+            "vlmax": 2,
+            "vl": 1,
+            "mask": "none",
+            "ta": false,
+            "ma": false,
+            "vstart": 0,
+            "vd": 8,
+            "vs2": 16,
+            "vs1": 24,
+            "operand": 64,
+            "form": "vx",
+            "tag": "pair1,64",
+            "group_registers": 1,
+            "seed": 155,
+            "mnemonic": "vsmul",
+            "family": "scaling155-next",
+            "vxrm_initial": 0,
+            "vxsat_initial": 0,
+            "execution": "NOT_RUN",
+            "pair_override": [
+              1,
+              64
+            ],
+            "ordinal": 233863
+          },
+          "accepted181": true
+        },
+        {
+          "index": 233880,
+          "case": {
+            "id": "vsmul-w128-e8-mf8-vx-pair1,64-rm1",
+            "unit": "vsmul-w128-e8-mf8-vx-zero",
+            "vlen": 128,
+            "sew": 8,
+            "lmul": "mf8",
+            "lmul_exp": -3,
+            "emul": "mf8",
+            "vlmax": 2,
+            "vl": 1,
+            "mask": "none",
+            "ta": false,
+            "ma": false,
+            "vstart": 0,
+            "vd": 8,
+            "vs2": 16,
+            "vs1": 24,
+            "operand": 64,
+            "form": "vx",
+            "tag": "pair1,64",
+            "group_registers": 1,
+            "seed": 155,
+            "mnemonic": "vsmul",
+            "family": "scaling155-next",
+            "vxrm_initial": 1,
+            "vxsat_initial": 0,
+            "execution": "NOT_RUN",
+            "pair_override": [
+              1,
+              64
+            ],
+            "ordinal": 233880
+          },
+          "accepted181": true
+        }
+      ]
+    },
+    {
+      "entry": "b169-055",
+      "kind": "whole",
+      "original_root": "/home/vick/rvv-task169/moves-reviewed/w128/corpus",
+      "manifest_sha256": "cc3455d09bc5fa2b1ec1565e6e20f5bf41547e4dde38747ce471de083cc95ae4",
+      "declarations": 3393,
+      "selected": [
+        {
+          "index": 65,
+          "case": {
+            "id": "vmv1r-v-w128-e8-mf8-start1",
+            "unit": "vmv1r-v-w128-e8-mf8-start",
+            "family": "moves169",
+            "mnemonic": "vmv1r",
+            "form": "v",
+            "kind": "whole",
+            "nreg": 1,
+            "vlen": 128,
+            "sew": 8,
+            "lmul": "mf8",
+            "lmul_exp": -3,
+            "emul": "m1",
+            "group_registers": 1,
+            "vlmax": 2,
+            "evl": 16,
+            "vl": 0,
+            "vstart": 1,
+            "vd": 8,
+            "vs2": 16,
+            "vs1": 24,
+            "rs1": 8,
+            "rd": 9,
+            "frs1": 8,
+            "frd": 9,
+            "mask": "none",
+            "ta": false,
+            "ma": false,
+            "operand": 2166572391,
+            "element0": 194,
+            "fp_scalar": 9305357566033085217,
+            "seed": 169,
+            "tag": "start1",
+            "vxrm_initial": 2,
+            "vxsat_initial": 1,
+            "execution": "NOT_RUN",
+            "ordinal": 68
+          },
+          "accepted181": true
+        },
+        {
+          "index": 69,
+          "case": {
+            "id": "vmv1r-v-w128-e8-mf8-start-self",
+            "unit": "vmv1r-v-w128-e8-mf8-start",
+            "family": "moves169",
+            "mnemonic": "vmv1r",
+            "form": "v",
+            "kind": "whole",
+            "nreg": 1,
+            "vlen": 128,
+            "sew": 8,
+            "lmul": "mf8",
+            "lmul_exp": -3,
+            "emul": "m1",
+            "group_registers": 1,
+            "vlmax": 2,
+            "evl": 16,
+            "vl": 0,
+            "vstart": 1,
+            "vd": 16,
+            "vs2": 16,
+            "vs1": 24,
+            "rs1": 8,
+            "rd": 9,
+            "frs1": 8,
+            "frd": 9,
+            "mask": "none",
+            "ta": false,
+            "ma": false,
+            "operand": 2166572391,
+            "element0": 194,
+            "fp_scalar": 9305357566033085217,
+            "seed": 169,
+            "tag": "start-self",
+            "vxrm_initial": 2,
+            "vxsat_initial": 1,
+            "execution": "NOT_RUN",
+            "ordinal": 72
+          },
+          "accepted181": true
+        }
+      ]
+    },
+    {
+      "entry": "b168-039",
+      "kind": "mask",
+      "original_root": "/home/vick/rvv-task168/pilot/corpus",
+      "manifest_sha256": "c2530e7dd10826b76fefb1e40e789bc1f0432f155dda1f7171d52e2508c58b9f",
+      "declarations": 2290,
+      "selected": [
+        {
+          "index": 1289,
+          "case": {
+            "id": "vsm.v-w128-e8-m1-boundary9",
+            "family": "memory168",
+            "mnemonic": "vsm",
+            "form": "v",
+            "vlen": 128,
+            "sew": 8,
+            "lmul": "m1",
+            "lmul_exp": 0,
+            "emul_exp": 0,
+            "emul": 1,
+            "group_registers": 1,
+            "destination_registers": 1,
+            "vlmax": 16,
+            "vl": 9,
+            "vstart": 0,
+            "vd": 8,
+            "vs2": 16,
+            "vs1": 24,
+            "rs1": 18,
+            "rs2": 8,
+            "mask": "none",
+            "ta": false,
+            "ma": false,
+            "operand": 360,
+            "stride": 1,
+            "strided": false,
+            "seed": 168,
+            "tag": "boundary9",
+            "vxrm_initial": 2,
+            "vxsat_initial": 1,
+            "suppress": false,
+            "kind": "mask",
+            "store": true,
+            "nf": 1,
+            "eew": 8,
+            "unit": "vsm.v-w128-zero",
+            "ordinal": 20485
+          },
+          "accepted181": true
+        }
+      ]
+    },
+    {
+      "entry": "b159-015",
+      "kind": "logic",
+      "original_root": "/home/vick/rvv-task159-full/mask/corpus",
+      "manifest_sha256": "c5f75a9c11b053474444912c2d9cedb1dae38d2fd551a17d31776ae14c7ccdb3",
+      "declarations": 54384,
+      "selected": [
+        {
+          "index": 906,
+          "case": {
+            "id": "vmand-w128-e8-m1-length9",
+            "unit": "vmand-w128-e8-m1-zero",
+            "family": "mask158",
+            "mnemonic": "vmand",
+            "form": "mm",
+            "vlen": 128,
+            "sew": 8,
+            "lmul": "m1",
+            "lmul_exp": 0,
+            "emul": "m1",
+            "group_registers": 1,
+            "vlmax": 16,
+            "vl": 9,
+            "vstart": 0,
+            "vd": 7,
+            "vs2": 17,
+            "vs1": 25,
+            "rd": 9,
+            "mask": "none",
+            "ta": false,
+            "ma": false,
+            "operand": 2166572391,
+            "seed": 158,
+            "tag": "length9",
+            "source_pattern": "truth",
+            "vxrm_initial": 2,
+            "vxsat_initial": 1,
+            "execution": "NOT_RUN",
+            "ordinal": 906
+          },
+          "accepted181": true
+        }
+      ]
+    }
+  ],
+  "mandatory_nonzero_start_trap_gap": {
+    "source": "docs/rvv-validation/obligations-task187/EVIDENCE_REVIEW.json",
+    "forms": [
+      "vcompress.vm",
+      "vcpop.m",
+      "vfirst.m",
+      "vfredmax.vs",
+      "vfredmin.vs",
+      "vfredosum.vs",
+      "vfredusum.vs",
+      "vfwredosum.vs",
+      "vfwredusum.vs",
+      "viota.m",
+      "vmsbf.m",
+      "vmsif.m",
+      "vmsof.m",
+      "vredand.vs",
+      "vredmax.vs",
+      "vredmaxu.vs",
+      "vredmin.vs",
+      "vredminu.vs",
+      "vredor.vs",
+      "vredsum.vs",
+      "vredxor.vs",
+      "vwredsum.vs",
+      "vwredsumu.vs"
+    ],
+    "required_forms": 23,
+    "accepted181_architectural_trap_cases": 0,
+    "declaration_status": "NOT_RUN in mask158, prefix169, reduction163, permute162; fpreduce174 requires vstart=0",
+    "smallest_handoff": {
+      "form": "vcompress.vm",
+      "raw": "5f08a457",
+      "setup": "VLEN128, e8/m1, VL0, vstart1, vd8, vs2=16, selector17; disjoint legal operands",
+      "required": "ILLEGAL_INSN at original PC/raw; no vector/CSR/GPR writes; vstart preserved by section3.7 illegal-instruction rule",
+      "execution": "NOT_AUTHORED_NOT_EXECUTED",
+      "recovery": false
+    }
+  },
+  "reviewer_resource_gate": {
+    "nice": 10,
+    "available_RAM_bytes": 34667409408,
+    "free_disk_bytes": 17292996608,
+    "affinity_assigned": false,
+    "compiler_concurrency": 0,
+    "guest_concurrency": 0,
+    "read_only_remote_workers": 1
+  },
+  "denominators": {
+    "accepted_forms": 595,
+    "inventory_forms": 627,
+    "rv32_ei64_exclusions": 32,
+    "ordinary_cases_per_arm": 3017262,
+    "focused_positive_cases_per_arm": 564,
+    "positive_DUT_checks": 12071304,
+    "original_external_calls": 21316,
+    "ACT_accepted_calls": 7668,
+    "ACT_blocked_files": 2,
+    "ACT_withheld_arm_slots": 8,
+    "ARA_whole_file_calls": 1888,
+    "ARA_scoped_calls": 16,
+    "ARA_failed_e64_function_arm_observations": 32
+  },
+  "spec": {
+    "revision": "6ee57d8997021aaa8025e208164763fe12e03c19",
+    "path": "src/v-st-ext.adoc",
+    "sha256": "f114464f32de3825863df04ff903137685a94a89973a8b38df3c4e804adf116f",
+    "clauses": [
+      "11.1 XLEN<SEW sign extension",
+      "10 FS context status",
+      "18.3 RV32 index EEW64 exclusion"
+    ]
+  },
+  "ara_upstream_identity_check": [
+    {
+      "url": "https://raw.githubusercontent.com/pulp-platform/ara/34bd3bc152421b4601a7bf3d6e8e91ffb545c99e/apps/riscv-tests/isa/rv64uv/vmacc.c",
+      "sha256": "3e7465278e8659b4d09dcf301e5a25e2d1933662956bd972bf6b05d02d1324f9",
+      "package_source_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pulp-platform/ara/34bd3bc152421b4601a7bf3d6e8e91ffb545c99e/apps/riscv-tests/isa/rv64uv/vmadd.c",
+      "sha256": "d3be201da0b33ea074bf106eb6c54f7bfbad1de4595463e13dd6d07b9e794074",
+      "package_source_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pulp-platform/ara/34bd3bc152421b4601a7bf3d6e8e91ffb545c99e/apps/riscv-tests/isa/rv64uv/vnmsac.c",
+      "sha256": "d573ecfabe02f9e2278f39bef91d2dc031be6e265a0ec7bdbc9377ffe3adeb8d",
+      "package_source_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pulp-platform/ara/34bd3bc152421b4601a7bf3d6e8e91ffb545c99e/apps/riscv-tests/isa/rv64uv/vnmsub.c",
+      "sha256": "8b86e65acce88cb341ff9d87605604621a416ec9b7660cc2d892ca79a3ca0b6a",
+      "package_source_identical": true
+    }
+  ]
+}
