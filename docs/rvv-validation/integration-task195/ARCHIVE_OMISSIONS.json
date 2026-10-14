@@ -1,0 +1,12 @@
+[
+  {
+    "path": "baseline-int/sail.ld",
+    "target": "/home/vick/rvv-long-task192/baseline-int/sail.ld",
+    "reason": "unused broken reuse symlink; no bytes exist"
+  },
+  {
+    "path": "baseline-int/user.ld",
+    "target": "/home/vick/rvv-long-task192/baseline-int/user.ld",
+    "reason": "unused broken reuse symlink; no bytes exist"
+  }
+]

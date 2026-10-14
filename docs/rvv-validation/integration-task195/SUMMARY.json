@@ -1,0 +1,671 @@
+{
+  "status": "PASS_BOUNDED_INTEGRATION",
+  "accepted_fixture_commands": 10,
+  "failed_fixture_attempts": [
+    {
+      "name": "fixtures/vchunk_dataflow_test",
+      "command": [
+        "/home/vick/rvv-long-task192/build/bin/vchunk_dataflow_test"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "pass_check": false,
+      "seconds": 0.0033745765686035156,
+      "stdout_sha256": "83782e2609f0d51e6d5aa326f85d527ef2ea729acfe761d25c4405ccd0f75f02",
+      "stderr_sha256": "91c0332a514cd707b9df76d02b8594d6a6658272499d3b781e4683230c2cd06a",
+      "before": {
+        "free_bytes": 21494784000,
+        "nice": 10,
+        "affinity": "inherited; no assignment",
+        "load": [
+          1.46142578125,
+          1.20166015625,
+          0.94580078125
+        ]
+      },
+      "after": {
+        "free_bytes": 21494775808,
+        "nice": 10,
+        "affinity": "inherited; no assignment",
+        "load": [
+          1.46142578125,
+          1.20166015625,
+          0.94580078125
+        ]
+      },
+      "detail": {
+        "binary_sha256": "be4fdffff18dfdf8f6075f03a29fd158b4151ab35a39b6f97ca0a23778df0ee9",
+        "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+      }
+    },
+    {
+      "name": "fixtures/rvv_fp_shared_mask_test",
+      "command": [
+        "/home/vick/rvv-long-task192/build/bin/rvv_fp_shared_mask_test"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "pass_check": false,
+      "seconds": 6.42438006401062,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4e9245498a34ef3a3332a624cb4c75d0f174e2fbac923bd49c59de06270c75a2",
+      "before": {
+        "free_bytes": 21496131584,
+        "nice": 10,
+        "affinity": "inherited; no assignment",
+        "load": [
+          1.35888671875,
+          1.21826171875,
+          0.982421875
+        ]
+      },
+      "after": {
+        "free_bytes": 21496111104,
+        "nice": 10,
+        "affinity": "inherited; no assignment",
+        "load": [
+          1.330078125,
+          1.21435546875,
+          0.98291015625
+        ]
+      },
+      "detail": {
+        "binary_sha256": "f55c2ca86819fddf783f1632221b625d550032fb424ed6e14141bf4465c26525",
+        "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+      }
+    },
+    {
+      "name": "fixtures/rvv_fp_shared_mask_test-corrected",
+      "command": [
+        "/home/vick/rvv-long-task192/build/bin/rvv_fp_shared_mask_test"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "pass_check": false,
+      "seconds": 6.474688291549683,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1af3315f60bb5c9fd1a0f1468ca1e8042a47b4aac44f03e99135b41edd5e035d",
+      "before": {
+        "free_bytes": 21490982912,
+        "nice": 10,
+        "affinity": "inherited; no assignment",
+        "load": [
+          1.1064453125,
+          1.3125,
+          1.1298828125
+        ]
+      },
+      "after": {
+        "free_bytes": 21490888704,
+        "nice": 10,
+        "affinity": "inherited; no assignment",
+        "load": [
+          1.09765625,
+          1.30712890625,
+          1.12890625
+        ]
+      },
+      "detail": {
+        "binary_sha256": "fc95c3a9a4fb8efea4f66e0771631be13dde5c513be774a37a667570046c86fa",
+        "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+      }
+    }
+  ],
+  "external_commands": 40,
+  "external_unique_suite_cases": 10,
+  "baseline_new_DUT_commands": 4,
+  "baseline_new_packet_checks": 16,
+  "accepted_execution_commands": 54,
+  "all_execution_attempts": 57,
+  "build_commands": 4,
+  "new_guest_builds": 0,
+  "new_reference_commands": 0,
+  "long192_same_build_cases": 54,
+  "long192_same_build_DUT_checks": 216,
+  "reused_fixed192_DUT_checks": 200,
+  "original191_failed_DUT_checks_preserved": 16,
+  "previous191_accepted_baseline_checks": 16,
+  "paths_by_arm": {
+    "B": {
+      "SINGLETON_NATIVE": 3510
+    },
+    "M1": {
+      "SINGLETON_NATIVE": 2990,
+      "ORDERED_RUN_FALLBACK": 130,
+      "MULTI_MEMBER_NATIVE": 390
+    },
+    "M2": {
+      "SINGLETON_NATIVE": 3510
+    },
+    "BOTH": {
+      "SINGLETON_NATIVE": 2990,
+      "ORDERED_RUN_FALLBACK": 130,
+      "MULTI_MEMBER_NATIVE": 390
+    }
+  },
+  "external_routes": [
+    {
+      "suite": "act",
+      "case": "Vls32-vle32.v",
+      "arm": "B",
+      "inline_hits": 627,
+      "guard_fallbacks": 217,
+      "handler_calls_by_family": {
+        "vle": 217
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vle32.v",
+      "arm": "M1",
+      "inline_hits": 598,
+      "guard_fallbacks": 217,
+      "handler_calls_by_family": {
+        "vle": 217
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 3
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vle32.v",
+      "arm": "M2",
+      "inline_hits": 627,
+      "guard_fallbacks": 217,
+      "handler_calls_by_family": {
+        "vle": 217
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vle32.v",
+      "arm": "BOTH",
+      "inline_hits": 598,
+      "guard_fallbacks": 217,
+      "handler_calls_by_family": {
+        "vle": 217
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 3
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vse32.v",
+      "arm": "B",
+      "inline_hits": 703,
+      "guard_fallbacks": 296,
+      "handler_calls_by_family": {
+        "vle": 228,
+        "vse": 70
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vse32.v",
+      "arm": "M1",
+      "inline_hits": 674,
+      "guard_fallbacks": 296,
+      "handler_calls_by_family": {
+        "vle": 228,
+        "vse": 70
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 3
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vse32.v",
+      "arm": "M2",
+      "inline_hits": 703,
+      "guard_fallbacks": 296,
+      "handler_calls_by_family": {
+        "vle": 228,
+        "vse": 70
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vls32-vse32.v",
+      "arm": "BOTH",
+      "inline_hits": 674,
+      "guard_fallbacks": 296,
+      "handler_calls_by_family": {
+        "vle": 228,
+        "vse": 70
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 3
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vwadd.vv-00",
+      "arm": "B",
+      "inline_hits": 2907,
+      "guard_fallbacks": 986,
+      "handler_calls_by_family": {
+        "vle": 986
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vwadd.vv-00",
+      "arm": "M1",
+      "inline_hits": 2563,
+      "guard_fallbacks": 986,
+      "handler_calls_by_family": {
+        "vle": 986
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 318
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vwadd.vv-00",
+      "arm": "M2",
+      "inline_hits": 2907,
+      "guard_fallbacks": 986,
+      "handler_calls_by_family": {
+        "vle": 986
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vwadd.vv-00",
+      "arm": "BOTH",
+      "inline_hits": 2563,
+      "guard_fallbacks": 986,
+      "handler_calls_by_family": {
+        "vle": 986
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 318
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vnsrl.wv-00",
+      "arm": "B",
+      "inline_hits": 2490,
+      "guard_fallbacks": 892,
+      "handler_calls_by_family": {
+        "vle": 892
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vnsrl.wv-00",
+      "arm": "M1",
+      "inline_hits": 2179,
+      "guard_fallbacks": 892,
+      "handler_calls_by_family": {
+        "vle": 892
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 285
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vnsrl.wv-00",
+      "arm": "M2",
+      "inline_hits": 2490,
+      "guard_fallbacks": 892,
+      "handler_calls_by_family": {
+        "vle": 892
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vnsrl.wv-00",
+      "arm": "BOTH",
+      "inline_hits": 2179,
+      "guard_fallbacks": 892,
+      "handler_calls_by_family": {
+        "vle": 892
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 285
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vmand.mm-00",
+      "arm": "B",
+      "inline_hits": 1688,
+      "guard_fallbacks": 1640,
+      "handler_calls_by_family": {
+        "vle": 1640
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vmand.mm-00",
+      "arm": "M1",
+      "inline_hits": 1659,
+      "guard_fallbacks": 1640,
+      "handler_calls_by_family": {
+        "vle": 1640
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 3
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vmand.mm-00",
+      "arm": "M2",
+      "inline_hits": 1688,
+      "guard_fallbacks": 1640,
+      "handler_calls_by_family": {
+        "vle": 1640
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "act",
+      "case": "Vx32-vmand.mm-00",
+      "arm": "BOTH",
+      "inline_hits": 1659,
+      "guard_fallbacks": 1640,
+      "handler_calls_by_family": {
+        "vle": 1640
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 3
+    },
+    {
+      "suite": "chips",
+      "case": "vnsrl_wv-0",
+      "arm": "M2",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 276,
+        "vse": 36
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vnsrl_wv-0",
+      "arm": "B",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 276,
+        "vse": 36
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vnsrl_wv-0",
+      "arm": "M1",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 276,
+        "vse": 36
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vnsrl_wv-0",
+      "arm": "BOTH",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 276,
+        "vse": 36
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vmand_mm-0",
+      "arm": "M2",
+      "inline_hits": 652,
+      "guard_fallbacks": 27,
+      "handler_calls_by_family": {
+        "vle": 18,
+        "vse": 9
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vmand_mm-0",
+      "arm": "B",
+      "inline_hits": 652,
+      "guard_fallbacks": 27,
+      "handler_calls_by_family": {
+        "vle": 18,
+        "vse": 9
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vmand_mm-0",
+      "arm": "M1",
+      "inline_hits": 652,
+      "guard_fallbacks": 27,
+      "handler_calls_by_family": {
+        "vle": 18,
+        "vse": 9
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vmand_mm-0",
+      "arm": "BOTH",
+      "inline_hits": 652,
+      "guard_fallbacks": 27,
+      "handler_calls_by_family": {
+        "vle": 18,
+        "vse": 9
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vwadd_vv-0",
+      "arm": "M1",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 258,
+        "vse": 54
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vle32_v-0",
+      "arm": "M1",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 98,
+        "vse": 18
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vwadd_vv-0",
+      "arm": "B",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 258,
+        "vse": 54
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vse32_v-0",
+      "arm": "M2",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 108,
+        "vse": 8
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vse32_v-0",
+      "arm": "B",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 108,
+        "vse": 8
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vwadd_vv-0",
+      "arm": "BOTH",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 258,
+        "vse": 54
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vle32_v-0",
+      "arm": "BOTH",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 98,
+        "vse": 18
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vse32_v-0",
+      "arm": "BOTH",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 108,
+        "vse": 8
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vwadd_vv-0",
+      "arm": "M2",
+      "inline_hits": 808,
+      "guard_fallbacks": 312,
+      "handler_calls_by_family": {
+        "vle": 258,
+        "vse": 54
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vle32_v-0",
+      "arm": "M2",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 98,
+        "vse": 18
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vle32_v-0",
+      "arm": "B",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 98,
+        "vse": 18
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    },
+    {
+      "suite": "chips",
+      "case": "vse32_v-0",
+      "arm": "M1",
+      "inline_hits": 176,
+      "guard_fallbacks": 116,
+      "handler_calls_by_family": {
+        "vle": 108,
+        "vse": 8
+      },
+      "scope": "inline_hits are whole-guest execution counts; no target-form/per-PC native credit inferred",
+      "frame_entries": 0
+    }
+  ],
+  "changed_tests": [
+    "dbt/qmc/qcg/rvv_fp_shared_mask_test.cpp",
+    "dbt/qmc/qcg/vchunk_dataflow_test.cpp"
+  ],
+  "production_edits": 0,
+  "binaries": {
+    "/home/vick/rvv-long-task192/build/bin/elfrun": "908df235e36fe49f8a64793a8e4a401987f9b2c56da10179470b7bc7bd5ffbc4",
+    "/home/vick/rvv-long-task192/build/lib/libdbtstatic.a": "3a4db55cd30a2bb9cb8225d13d41be127b38b5ba6ab0efd72a7b5a5a524c1ab3",
+    "/home/vick/rvv-long-task192/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "/home/vick/rvv-long-task192/build/bin/qra_vpr_test": "e18319feb5cca1934aa20e40405d63e734a8ca5b94277d108301506ce3bb5817"
+  },
+  "min_recorded_free_bytes": 20944674816,
+  "limitations": [
+    "bounded ordinary QCG only",
+    "codegen/static assertions give no native credit",
+    "external guest checkers retain original observability",
+    "blocked P4-04 untouched"
+  ],
+  "prior_summary_sha256": "2dc49af4bf5754d5fa82d97ccdd268d2400a7703971d78dc8f8c8a63d33ae819"
+}

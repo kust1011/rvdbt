@@ -1,0 +1,18 @@
+{
+  "review_path": "/home/user/research/materials/rvdbt-compliance193/REVIEW194_FINDINGS.md",
+  "review_commit": "49d9d3e",
+  "sha256": "baee8796ad78bb349f5e5063cc0617b18d7da2690ac60c6e09a0d46af541b504",
+  "scope": "Accept ordinary QCG; no allocator redesign/type expansion; no LLVM/general job credit",
+  "review_report_read": true,
+  "original_panic_and_allocator_raw_read": true,
+  "task192_raw": {
+    "bytes": 83287433,
+    "sha256": "a21c4ab8ba25036251c0125cd8a59c6a00cfa441f18bb5a5f17ab88b720065d8",
+    "free_after": 21962133504,
+    "local_archive": "/home/user/research/materials/task192-long-raw-20261014/raw-receipts.tar.gz",
+    "local_sha256_verified": true,
+    "archive_members_read_to_end": true,
+    "compact_failure_members": 64,
+    "compact_failure_sha256": "7f2d89903521794e0f6a0b54b6e9b1271d7620e795453858889f8a44736caa84"
+  }
+}

@@ -1,0 +1,4236 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "cmake",
+      "--build",
+      "/home/vick/rvv-long-task192/build",
+      "-j2",
+      "--target",
+      "rvv_rvv_contract_test",
+      "rvv_vector_run_codegen_test",
+      "vchunk_dataflow_test",
+      "vstatechunkload_test",
+      "rvv_ssa_edge_commit_test",
+      "rvv_active_vl_widen_bound_test",
+      "rvv_active_vl_narrow_bound_test",
+      "rvv_fp_shared_mask_test",
+      "rvv_active_mask_memory_test",
+      "rvv_run_live_range_split_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 18.798112630844116,
+    "stdout_sha256": "f66a1aafd5e02b60a38f4d4d0ce361d29cbd69cd00c35fb47bc206bd11a5d9ad",
+    "stderr_sha256": "f2be61a5b1efefea1759bd0a73d590971a788f005fd904f56849ab4308d7f5ed",
+    "before": {
+      "free_bytes": 21532180480,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.19140625,
+        1.130859375,
+        0.91650390625
+      ]
+    },
+    "after": {
+      "free_bytes": 21494800384,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.501953125,
+        1.205078125,
+        0.9453125
+      ]
+    },
+    "detail": {
+      "missing_only": [
+        "rvv_rvv_contract_test",
+        "rvv_vector_run_codegen_test",
+        "vchunk_dataflow_test",
+        "vstatechunkload_test",
+        "rvv_ssa_edge_commit_test",
+        "rvv_active_vl_widen_bound_test",
+        "rvv_active_vl_narrow_bound_test",
+        "rvv_fp_shared_mask_test",
+        "rvv_active_mask_memory_test",
+        "rvv_run_live_range_split_test"
+      ]
+    }
+  },
+  {
+    "name": "fixtures/rvv_rvv_contract_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_rvv_contract_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.015541315078735352,
+    "stdout_sha256": "567598321bd59512d18461cdc5be9ac79d777237bbc865293f90e0c66f2160c8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21494779904,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.501953125,
+        1.205078125,
+        0.9453125
+      ]
+    },
+    "after": {
+      "free_bytes": 21494775808,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.501953125,
+        1.205078125,
+        0.9453125
+      ]
+    },
+    "detail": {
+      "binary_sha256": "79efdcf53eb17d95d2fba799ca956f585adf23c1fe701a7292fecd51a204e472",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_vector_run_codegen_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_vector_run_codegen_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 4.671230316162109,
+    "stdout_sha256": "d96e6df5b4ad7b16573341d4fec53dcdf8f645b4061d36c24e991a9879444432",
+    "stderr_sha256": "9d548752e9077ac4342c667d4f3b88996f9c491d8eeca0a3d46a8f6a1bff8c3e",
+    "before": {
+      "free_bytes": 21494767616,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.501953125,
+        1.205078125,
+        0.9453125
+      ]
+    },
+    "after": {
+      "free_bytes": 21494792192,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.46142578125,
+        1.20166015625,
+        0.94580078125
+      ]
+    },
+    "detail": {
+      "binary_sha256": "7a75f188656e7c6c6e256717ad0364320003e95b69e8cc6a90dcbf06551e731c",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/vchunk_dataflow_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/vchunk_dataflow_test"
+    ],
+    "returncode": 1,
+    "timeout": false,
+    "pass_check": false,
+    "seconds": 0.0033745765686035156,
+    "stdout_sha256": "83782e2609f0d51e6d5aa326f85d527ef2ea729acfe761d25c4405ccd0f75f02",
+    "stderr_sha256": "91c0332a514cd707b9df76d02b8594d6a6658272499d3b781e4683230c2cd06a",
+    "before": {
+      "free_bytes": 21494784000,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.46142578125,
+        1.20166015625,
+        0.94580078125
+      ]
+    },
+    "after": {
+      "free_bytes": 21494775808,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.46142578125,
+        1.20166015625,
+        0.94580078125
+      ]
+    },
+    "detail": {
+      "binary_sha256": "be4fdffff18dfdf8f6075f03a29fd158b4151ab35a39b6f97ca0a23778df0ee9",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "build-test-fix",
+    "command": [
+      "cmake",
+      "--build",
+      "/home/vick/rvv-long-task192/build",
+      "-j2",
+      "--target",
+      "vchunk_dataflow_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 1.5164015293121338,
+    "stdout_sha256": "bbaf95838b041ef67b96c34649decd235b9e6a9a53b7501b9b8fb9c654c4538e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21496332288,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "after": {
+      "free_bytes": 21496242176,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "detail": {
+      "missing_only": [
+        "vchunk_dataflow_test"
+      ]
+    }
+  },
+  {
+    "name": "fixtures/vchunk_dataflow_test-corrected",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/vchunk_dataflow_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.003396749496459961,
+    "stdout_sha256": "644918b30ea1da4d98fbe6d22b0f44856021bdd970e5c412569e3475c7df4192",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21496229888,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "after": {
+      "free_bytes": 21496225792,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "detail": {
+      "binary_sha256": "555debbc2e522effbe423027235988e91a6222acd839c1527e50fe241ef6e4ea",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/vstatechunkload_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/vstatechunkload_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.003282308578491211,
+    "stdout_sha256": "6812b6d1cc7137ca1664c895ec69ca472a88802de2a137fb2f025f33f3aad9da",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21496217600,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "after": {
+      "free_bytes": 21496213504,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "detail": {
+      "binary_sha256": "1554f931c80c8deb01b32cd6db27318a7543f901bc3ed2b980b75b66f3dc02a0",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_ssa_edge_commit_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_ssa_edge_commit_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.0032722949981689453,
+    "stdout_sha256": "5895a9a82aa8971b073c3527e95553a7e1f7bfdea0c43194d67a18be337a1b1d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21496205312,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "after": {
+      "free_bytes": 21496197120,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "detail": {
+      "binary_sha256": "4e5bc3eff54ac865278dc6d164908e008cee960ad01895d83d9be905a326049a",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_active_vl_widen_bound_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_active_vl_widen_bound_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 4.32066011428833,
+    "stdout_sha256": "3c8559032e3b1ae3e7579a5a33c2c67a88bc544ab06ecba01055677316391575",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21496184832,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.302734375,
+        1.20458984375,
+        0.9765625
+      ]
+    },
+    "after": {
+      "free_bytes": 21496152064,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.35888671875,
+        1.21826171875,
+        0.982421875
+      ]
+    },
+    "detail": {
+      "binary_sha256": "08b8eb90f986a333495414bf5d7dacd227790605ba86fdd96b4dc47b15721f60",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_active_vl_narrow_bound_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_active_vl_narrow_bound_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.007424831390380859,
+    "stdout_sha256": "dcbbb857f7006bf6c8baab955b3456d52d390cd72e538387811c3a7a29736cc7",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21496143872,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.35888671875,
+        1.21826171875,
+        0.982421875
+      ]
+    },
+    "after": {
+      "free_bytes": 21496139776,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.35888671875,
+        1.21826171875,
+        0.982421875
+      ]
+    },
+    "detail": {
+      "binary_sha256": "4cbe64008a01d75442f73bf46be3325d41d8702caa6dccef9eed060d12a2d1bb",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_fp_shared_mask_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_fp_shared_mask_test"
+    ],
+    "returncode": 1,
+    "timeout": false,
+    "pass_check": false,
+    "seconds": 6.42438006401062,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "4e9245498a34ef3a3332a624cb4c75d0f174e2fbac923bd49c59de06270c75a2",
+    "before": {
+      "free_bytes": 21496131584,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.35888671875,
+        1.21826171875,
+        0.982421875
+      ]
+    },
+    "after": {
+      "free_bytes": 21496111104,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.330078125,
+        1.21435546875,
+        0.98291015625
+      ]
+    },
+    "detail": {
+      "binary_sha256": "f55c2ca86819fddf783f1632221b625d550032fb424ed6e14141bf4465c26525",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "build-mask-test-fix",
+    "command": [
+      "cmake",
+      "--build",
+      "/home/vick/rvv-long-task192/build",
+      "-j2",
+      "--target",
+      "rvv_fp_shared_mask_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 1.3660345077514648,
+    "stdout_sha256": "054a55e3b1c299ffb630b2290c258a436e63a936fb495a9bb5455de524627d3e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21491089408,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.11572265625,
+        1.31787109375,
+        1.130859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21490995200,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.1064453125,
+        1.3125,
+        1.1298828125
+      ]
+    },
+    "detail": {
+      "missing_only": [
+        "rvv_fp_shared_mask_test"
+      ]
+    }
+  },
+  {
+    "name": "fixtures/rvv_fp_shared_mask_test-corrected",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_fp_shared_mask_test"
+    ],
+    "returncode": 1,
+    "timeout": false,
+    "pass_check": false,
+    "seconds": 6.474688291549683,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "1af3315f60bb5c9fd1a0f1468ca1e8042a47b4aac44f03e99135b41edd5e035d",
+    "before": {
+      "free_bytes": 21490982912,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.1064453125,
+        1.3125,
+        1.1298828125
+      ]
+    },
+    "after": {
+      "free_bytes": 21490888704,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.09765625,
+        1.30712890625,
+        1.12890625
+      ]
+    },
+    "detail": {
+      "binary_sha256": "fc95c3a9a4fb8efea4f66e0771631be13dde5c513be774a37a667570046c86fa",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "build-mask-checker-fix",
+    "command": [
+      "cmake",
+      "--build",
+      "/home/vick/rvv-long-task192/build",
+      "-j2",
+      "--target",
+      "rvv_fp_shared_mask_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 1.4163455963134766,
+    "stdout_sha256": "054a55e3b1c299ffb630b2290c258a436e63a936fb495a9bb5455de524627d3e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21486194688,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.14599609375,
+        1.1953125,
+        1.11865234375
+      ]
+    },
+    "after": {
+      "free_bytes": 21486186496,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.21484375,
+        1.208984375,
+        1.12353515625
+      ]
+    },
+    "detail": {
+      "missing_only": [
+        "rvv_fp_shared_mask_test"
+      ]
+    }
+  },
+  {
+    "name": "fixtures/rvv_fp_shared_mask_test-corrected2",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_fp_shared_mask_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 6.423935651779175,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "905388b57cfcbf4b4a64a4398dfc82ec36cd8856047be083e3245bac422e5400",
+    "before": {
+      "free_bytes": 21486174208,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.21484375,
+        1.208984375,
+        1.12353515625
+      ]
+    },
+    "after": {
+      "free_bytes": 21486108672,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "binary_sha256": "52dbe38aa4b46e7e20f807139a2d557dfd27d77014b8c99a1a7035f342e480e7",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_active_mask_memory_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_active_mask_memory_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.8150842189788818,
+    "stdout_sha256": "dfd4b22703e7c5d213507d39130873c7af18fe8074a90e0abac95638c0b6ae4a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21486096384,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21486026752,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "binary_sha256": "d598d8c1535a6d8c2040a917f0ae9c8a62ecfa92eccfba041575c32da1571fde",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "fixtures/rvv_run_live_range_split_test",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/rvv_run_live_range_split_test"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.0033750534057617188,
+    "stdout_sha256": "42a1a9e5a1c74041f2232aa352e4c3d8c0ef892a6e6e91b1a76584a6bd59e27d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before": {
+      "free_bytes": 21486018560,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21486014464,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "binary_sha256": "62985c37328f941cce942b91c58d7bbb2a18cbfef95244327b2cd2c6b8336268",
+      "native_credit": "read output/source individually; process execution alone is not native emitted-code evidence"
+    }
+  },
+  {
+    "name": "external/act/Vls32-vle32.v/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06367349624633789,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "8f4ac5a225a5446959694307e0f2254aab95490e82f4471444deec5b19dc8222",
+    "before": {
+      "free_bytes": 21485785088,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21484613632,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "1d1090f6d4fd1a150b05b36b98f58ba2c65ecd4dc826d8ef8bcd511c2f19371f",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/B/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vle32.v/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06375908851623535,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "32409bee4dfd4592503bf20659ef46677bd1491657f5395ebc83bbc58a68a0aa",
+    "before": {
+      "free_bytes": 21484380160,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21483212800,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "1d1090f6d4fd1a150b05b36b98f58ba2c65ecd4dc826d8ef8bcd511c2f19371f",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M1/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vle32.v/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06376528739929199,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "8f4ac5a225a5446959694307e0f2254aab95490e82f4471444deec5b19dc8222",
+    "before": {
+      "free_bytes": 21482979328,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21481889792,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "1d1090f6d4fd1a150b05b36b98f58ba2c65ecd4dc826d8ef8bcd511c2f19371f",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/M2/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vle32.v/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06370234489440918,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "32409bee4dfd4592503bf20659ef46677bd1491657f5395ebc83bbc58a68a0aa",
+    "before": {
+      "free_bytes": 21481660416,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21480574976,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "1d1090f6d4fd1a150b05b36b98f58ba2c65ecd4dc826d8ef8bcd511c2f19371f",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vle32.v/BOTH/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vse32.v/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06358122825622559,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "c937c98feff69789fcf5102867753c7de1492e6dcc7c1798ccbfc99171cde0d9",
+    "before": {
+      "free_bytes": 21480329216,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21478912000,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "550846b8d8e428c796f2fb353f3d94c693b100c98aff7dc1ac4a8cffe44c9002",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/B/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vse32.v/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.11371731758117676,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "824ba83fff2523712af65baa3c248039442371c1c41aa288c97695e46ce4660e",
+    "before": {
+      "free_bytes": 21478670336,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21477257216,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "550846b8d8e428c796f2fb353f3d94c693b100c98aff7dc1ac4a8cffe44c9002",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M1/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vse32.v/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06373357772827148,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "c937c98feff69789fcf5102867753c7de1492e6dcc7c1798ccbfc99171cde0d9",
+    "before": {
+      "free_bytes": 21477015552,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21475717120,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "550846b8d8e428c796f2fb353f3d94c693b100c98aff7dc1ac4a8cffe44c9002",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/M2/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vls32-vse32.v/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.0637197494506836,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "824ba83fff2523712af65baa3c248039442371c1c41aa288c97695e46ce4660e",
+    "before": {
+      "free_bytes": 21475475456,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21474181120,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "550846b8d8e428c796f2fb353f3d94c693b100c98aff7dc1ac4a8cffe44c9002",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vls32-vse32.v/BOTH/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vwadd.vv-00/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.11379885673522949,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "44e1f1c5878691ae725338ac8db71272cfb97ec0abd0915c472528812b694bf5",
+    "before": {
+      "free_bytes": 21473628160,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21468450816,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "986b3fae825967c1eebbfeb49bba341064ca14bbcfab53492e55af640a611ed6",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/B/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vwadd.vv-00/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.1640932559967041,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "afdf0b5a9443a772c63a8f107ce659fbdfea24c1882d0baba322db602d1975d1",
+    "before": {
+      "free_bytes": 21467897856,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21462679552,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "986b3fae825967c1eebbfeb49bba341064ca14bbcfab53492e55af640a611ed6",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M1/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vwadd.vv-00/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.16445493698120117,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "44e1f1c5878691ae725338ac8db71272cfb97ec0abd0915c472528812b694bf5",
+    "before": {
+      "free_bytes": 21462085632,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21457379328,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "986b3fae825967c1eebbfeb49bba341064ca14bbcfab53492e55af640a611ed6",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/M2/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vwadd.vv-00/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.16431331634521484,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "afdf0b5a9443a772c63a8f107ce659fbdfea24c1882d0baba322db602d1975d1",
+    "before": {
+      "free_bytes": 21456826368,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21452083200,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "986b3fae825967c1eebbfeb49bba341064ca14bbcfab53492e55af640a611ed6",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vwadd.vv-00/BOTH/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vnsrl.wv-00/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.11394071578979492,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "1c2559512f846b73309913c3406b78c5da7e1b52f109d2aadfcccf0917a886c1",
+    "before": {
+      "free_bytes": 21451612160,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21447270400,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "ff936324af2e06ef3dde0c7a8c658683aab3d91773135d4695e800eb0f240921",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/B/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vnsrl.wv-00/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.11392998695373535,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "bd04344e421766cc132e6faaa70f99e7da6b7508719e81c708e0dfcffe41ab1a",
+    "before": {
+      "free_bytes": 21446848512,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21442502656,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "ff936324af2e06ef3dde0c7a8c658683aab3d91773135d4695e800eb0f240921",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M1/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vnsrl.wv-00/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.11394166946411133,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "1c2559512f846b73309913c3406b78c5da7e1b52f109d2aadfcccf0917a886c1",
+    "before": {
+      "free_bytes": 21442039808,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21437980672,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "ff936324af2e06ef3dde0c7a8c658683aab3d91773135d4695e800eb0f240921",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/M2/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vnsrl.wv-00/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.114013671875,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "bd04344e421766cc132e6faaa70f99e7da6b7508719e81c708e0dfcffe41ab1a",
+    "before": {
+      "free_bytes": 21437554688,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21433487360,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "ff936324af2e06ef3dde0c7a8c658683aab3d91773135d4695e800eb0f240921",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vnsrl.wv-00/BOTH/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vmand.mm-00/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.16407322883605957,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e6acfebcfe5d21529739f4b9f9896e51edf90bd8794962854932ca7a14e8a6fa",
+    "before": {
+      "free_bytes": 21432901632,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21427748864,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "329dbe70547bbb05fd586e43d50b6eae88e06960cc01ee7059b35dcdcc91a0c3",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/B/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vmand.mm-00/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.16402339935302734,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "28a25f1c6f685fbfc66a1fb4405e1f7fd03affd6e4e7a54f569e37e02689b725",
+    "before": {
+      "free_bytes": 21427204096,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21422039040,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "329dbe70547bbb05fd586e43d50b6eae88e06960cc01ee7059b35dcdcc91a0c3",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M1/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vmand.mm-00/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.16405582427978516,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e6acfebcfe5d21529739f4b9f9896e51edf90bd8794962854932ca7a14e8a6fa",
+    "before": {
+      "free_bytes": 21421498368,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21416230912,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "329dbe70547bbb05fd586e43d50b6eae88e06960cc01ee7059b35dcdcc91a0c3",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/M2/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/act/Vx32-vmand.mm-00/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-stats=1",
+      "--rvv-route-census=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/capture/pc-census.csv",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.16408014297485352,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "28a25f1c6f685fbfc66a1fb4405e1f7fd03affd6e4e7a54f569e37e02689b725",
+    "before": {
+      "free_bytes": 21415686144,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21410422784,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "329dbe70547bbb05fd586e43d50b6eae88e06960cc01ee7059b35dcdcc91a0c3",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/act/Vx32-vmand.mm-00/BOTH/capture/pc-census.csv"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vnsrl_wv-0/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=128",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.11385655403137207,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "fa368893db87d4ec98d001007d64b8eb3f6bd2c053125e26e7da50dfd99dfbbf",
+    "before": {
+      "free_bytes": 21410152448,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.197265625,
+        1.205078125,
+        1.12255859375
+      ]
+    },
+    "after": {
+      "free_bytes": 21408595968,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "0bcd469f00b013b9e8eaddd9f27ac410c760fc77393aa271ba1d75bf210b59be",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M2/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vnsrl_wv-0/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=128",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06365704536437988,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "fa368893db87d4ec98d001007d64b8eb3f6bd2c053125e26e7da50dfd99dfbbf",
+    "before": {
+      "free_bytes": 21408325632,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21406760960,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "0bcd469f00b013b9e8eaddd9f27ac410c760fc77393aa271ba1d75bf210b59be",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/B/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vnsrl_wv-0/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=128",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.06369924545288086,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "0d14b3128e4e89c44a96e30878ec00d0f6de9c063ead8596977068cbc2cf0969",
+    "before": {
+      "free_bytes": 21406494720,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21404930048,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "0bcd469f00b013b9e8eaddd9f27ac410c760fc77393aa271ba1d75bf210b59be",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/M1/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vnsrl_wv-0/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=128",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.1138153076171875,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "0d14b3128e4e89c44a96e30878ec00d0f6de9c063ead8596977068cbc2cf0969",
+    "before": {
+      "free_bytes": 21404659712,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21403103232,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "0bcd469f00b013b9e8eaddd9f27ac410c760fc77393aa271ba1d75bf210b59be",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vnsrl_wv-0/BOTH/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vmand_mm-0/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.21403861045837402,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "c1fc691d093a223fd40e328e2f7f9858e18eb5e2f8d982f424359ee8fa7d681b",
+    "before": {
+      "free_bytes": 21400301568,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21390053376,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M2/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vmand_mm-0/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.21396374702453613,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "c1fc691d093a223fd40e328e2f7f9858e18eb5e2f8d982f424359ee8fa7d681b",
+    "before": {
+      "free_bytes": 21387235328,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21376987136,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/B/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vmand_mm-0/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.21415090560913086,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "d7328ffecdad0c4aced832b08166aefa55ef84859e74b9dfa88117e6f6dae606",
+    "before": {
+      "free_bytes": 21374189568,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21363941376,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/M1/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vmand_mm-0/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=1024",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.21407055854797363,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "d7328ffecdad0c4aced832b08166aefa55ef84859e74b9dfa88117e6f6dae606",
+    "before": {
+      "free_bytes": 21361139712,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21350891520,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vmand_mm-0/BOTH/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vwadd_vv-0/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.5147578716278076,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "601812c6503ef7b771ef6290572037761d384ee2e503e5707cdbf07a40a71ac6",
+    "before": {
+      "free_bytes": 21342199808,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21311979520,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "628bf74ed5b2ca19dfa3e1863b1a3cdf5109a921c7b47c10a37efea47e6c9fc4",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M1/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vle32_v-0/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.41457414627075195,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "d4c7435ed5ee46e00674c10d0977e711b5755c4cfb400bf7d2bd7ac83f7e3706",
+    "before": {
+      "free_bytes": 21305110528,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21280538624,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "30606a6912ba927b437aac275c14574d71c2e7af3a3468fd3e10af6243135d7d",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M1/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vwadd_vv-0/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.514639139175415,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "a19a33e6516a34734a764190925f96c96bde582fdbf1b1971429d1226fd4a275",
+    "before": {
+      "free_bytes": 21271851008,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21241638912,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "628bf74ed5b2ca19dfa3e1863b1a3cdf5109a921c7b47c10a37efea47e6c9fc4",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/B/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vse32_v-0/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.4142310619354248,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "b72e03e6fa8b11be64870ba81bfead1d93afb13add0c10f84039dd2b1ee6e76b",
+    "before": {
+      "free_bytes": 21234909184,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21210382336,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f9fc1256fab57a9f21ba83017986fc9a3d5738de46762bd66243b23ba302f28",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M2/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vse32_v-0/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.41480278968811035,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "b72e03e6fa8b11be64870ba81bfead1d93afb13add0c10f84039dd2b1ee6e76b",
+    "before": {
+      "free_bytes": 21203660800,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21179076608,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f9fc1256fab57a9f21ba83017986fc9a3d5738de46762bd66243b23ba302f28",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/B/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vwadd_vv-0/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.5147924423217773,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "601812c6503ef7b771ef6290572037761d384ee2e503e5707cdbf07a40a71ac6",
+    "before": {
+      "free_bytes": 21170384896,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21140262912,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "628bf74ed5b2ca19dfa3e1863b1a3cdf5109a921c7b47c10a37efea47e6c9fc4",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/BOTH/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vle32_v-0/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.4647531509399414,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "d4c7435ed5ee46e00674c10d0977e711b5755c4cfb400bf7d2bd7ac83f7e3706",
+    "before": {
+      "free_bytes": 21133402112,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21108887552,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "30606a6912ba927b437aac275c14574d71c2e7af3a3468fd3e10af6243135d7d",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/BOTH/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vse32_v-0/BOTH/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.4146556854248047,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "1dee6fb1fddfeb74cdd927c6b661d6ac37a7f6a00f80b3fe862f99bd4f4fe8ab",
+    "before": {
+      "free_bytes": 21102161920,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "after": {
+      "free_bytes": 21077635072,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.18115234375,
+        1.20166015625,
+        1.12158203125
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f9fc1256fab57a9f21ba83017986fc9a3d5738de46762bd66243b23ba302f28",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/BOTH/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vwadd_vv-0/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.5143263339996338,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "a19a33e6516a34734a764190925f96c96bde582fdbf1b1971429d1226fd4a275",
+    "before": {
+      "free_bytes": 21068947456,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "after": {
+      "free_bytes": 21038817280,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "628bf74ed5b2ca19dfa3e1863b1a3cdf5109a921c7b47c10a37efea47e6c9fc4",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vwadd_vv-0/M2/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vle32_v-0/M2/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=1",
+      "--rvv-qcg-active-vl-int-bound=1",
+      "--rvv-qcg-active-vl-widen-bound=1",
+      "--rvv-qcg-active-vl-narrow-bound=1",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.4144728183746338,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "8e5ac2dbd7b9c59fe048ed6b01f53d14a31968ded863cecadf7c288814419a23",
+    "before": {
+      "free_bytes": 21031952384,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "after": {
+      "free_bytes": 21007437824,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "30606a6912ba927b437aac275c14574d71c2e7af3a3468fd3e10af6243135d7d",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/M2/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vle32_v-0/B/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=0",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.4146299362182617,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "8e5ac2dbd7b9c59fe048ed6b01f53d14a31968ded863cecadf7c288814419a23",
+    "before": {
+      "free_bytes": 21000577024,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "after": {
+      "free_bytes": 20976005120,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "30606a6912ba927b437aac275c14574d71c2e7af3a3468fd3e10af6243135d7d",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vle32_v-0/B/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  },
+  {
+    "name": "external/chips/vse32_v-0/M1/capture",
+    "command": [
+      "/home/vick/rvv-long-task192/build/bin/elfrun",
+      "--vlen=4096",
+      "--aot=0",
+      "--aot-use-llvm=0",
+      "--tier0-threshold=0",
+      "--rvv-direct=1",
+      "--rvv-qcg-direct-setvl=1",
+      "--rvv-qcg-typed-chunk-mem-e64=1",
+      "--rvv-qcg-whole-reg=1",
+      "--rvv-qcg-typed-chunk=1",
+      "--rvv-qcg-typed-chunk-sub=1",
+      "--rvv-qcg-typed-chunk-mul=1",
+      "--rvv-qcg-typed-chunk-and=1",
+      "--rvv-qcg-typed-chunk-or=1",
+      "--rvv-qcg-typed-chunk-xor=1",
+      "--rvv-qcg-typed-chunk-shift=1",
+      "--rvv-qcg-typed-chunk-vle=1",
+      "--rvv-qcg-typed-chunk-vse=1",
+      "--rvv-qcg-typed-chunk-vmv=1",
+      "--rvv-qcg-partial-vl=1",
+      "--rvv-qcg-vx-mulacc=1",
+      "--rvv-qcg-typed-chunk-falu=1",
+      "--rvv-qcg-typed-chunk-fma=1",
+      "--rvv-qcg-narrow-chunk-width=1",
+      "--rvv-vector-run=1",
+      "--rvv-run-body=ssa",
+      "--rvv-run-order=member",
+      "--rvv-run-live-range-split=0",
+      "--rvv-qcg-typed-chunk-vadd-scalar=1",
+      "--rvv-qcg-fp-shared-mask=1",
+      "--rvv-run-bounded-batches=1",
+      "--qcg-code-huge-pages=0",
+      "--rvv-qcg-active-vl-mask-fusion=1",
+      "--rvv-qcg-active-mask-memory=1",
+      "--rvv-qcg-active-vl-bound=0",
+      "--rvv-qcg-active-vl-int-bound=0",
+      "--rvv-qcg-active-vl-widen-bound=0",
+      "--rvv-qcg-active-vl-narrow-bound=0",
+      "--rvv-qcg-hit-counter=1",
+      "--rvv-route-census=1",
+      "--rvv-run-frame-census=1",
+      "--fsroot=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/work/fs",
+      "--cache=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/work/cache",
+      "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/capture/tbmap",
+      "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/capture/tbcode",
+      "--rvv-pc-census=1",
+      "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/capture/pc-census.csv",
+      "--rvv-stats=1",
+      "--",
+      "/t.elf"
+    ],
+    "returncode": 0,
+    "timeout": false,
+    "pass_check": true,
+    "seconds": 0.41466808319091797,
+    "stdout_sha256": "1c6b5f24886abd11995ed63d268d951eff3bd7ad3d89efa16f815296e3e050cc",
+    "stderr_sha256": "1dee6fb1fddfeb74cdd927c6b661d6ac37a7f6a00f80b3fe862f99bd4f4fe8ab",
+    "before": {
+      "free_bytes": 20969279488,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "after": {
+      "free_bytes": 20944674816,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "detail": {
+      "elf_sha256": "5f9fc1256fab57a9f21ba83017986fc9a3d5738de46762bd66243b23ba302f28",
+      "diagnostic_additions": [
+        "--dump-tbmap=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/capture/tbmap",
+        "--dump-tbcode=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/capture/tbcode",
+        "--rvv-pc-census=1",
+        "--rvv-pc-census-out=/home/vick/rvv-integration-task195/external/chips/vse32_v-0/M1/capture/pc-census.csv",
+        "--rvv-stats=1"
+      ]
+    }
+  }
+]

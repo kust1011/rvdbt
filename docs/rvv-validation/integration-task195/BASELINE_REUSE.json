@@ -1,0 +1,182 @@
+{
+  "reuse": {
+    "original": "/home/vick/rvv-long-task192/baseline-int",
+    "unit": "long192-int-w4096-e8-m8",
+    "elf_sha256": "00b806369eb4a77c25bb9d1a12e6b08016f15feafbe41aee093454ab1b9c0467",
+    "reference_sha256": "b5b1080dc5f8ff4b40fe3ee7b426a1a18811bd0d2f54f7045038c2827f8353d6",
+    "reference_executions": 0,
+    "guest_rebuilds": 0
+  },
+  "audit": {
+    "status": "PASS",
+    "cases": 4,
+    "checks": 20,
+    "arms": {
+      "Reference": 4,
+      "B": 4,
+      "M1": 4,
+      "M2": 4,
+      "BOTH": 4
+    },
+    "target_pc_arm_rows": 1040,
+    "multi_frames": 0,
+    "native_multi_frames": 0,
+    "fp_frames_with_component_completion_proof": 0,
+    "paths": {
+      "SINGLETON_NATIVE": 1040
+    },
+    "all_packet_outcomes_checked": true,
+    "prior_family_reruns": 0,
+    "controls": "separate one-pass over these actual packets"
+  },
+  "identities_before": {
+    "/home/vick/rvv-long-task192/build/bin/elfrun": "908df235e36fe49f8a64793a8e4a401987f9b2c56da10179470b7bc7bd5ffbc4",
+    "/home/vick/rvv-long-task192/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "identities_after": {
+    "/home/vick/rvv-long-task192/build/bin/elfrun": "908df235e36fe49f8a64793a8e4a401987f9b2c56da10179470b7bc7bd5ffbc4",
+    "/home/vick/rvv-long-task192/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "resources": {
+    "before": {
+      "free_bytes": 20944650240,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.2470703125,
+        1.21533203125,
+        1.12646484375
+      ]
+    },
+    "after": {
+      "free_bytes": 20919943168,
+      "nice": 10,
+      "affinity": "inherited; no assignment",
+      "load": [
+        1.3076171875,
+        1.228515625,
+        1.13134765625
+      ]
+    }
+  },
+  "checks": {
+    "B": [
+      {
+        "case": "long192-int-w4096-e8-m8-vl0",
+        "arm": "B",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl65",
+        "arm": "B",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl513",
+        "arm": "B",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl4095",
+        "arm": "B",
+        "status": "PASS"
+      }
+    ],
+    "M1": [
+      {
+        "case": "long192-int-w4096-e8-m8-vl0",
+        "arm": "M1",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl65",
+        "arm": "M1",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl513",
+        "arm": "M1",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl4095",
+        "arm": "M1",
+        "status": "PASS"
+      }
+    ],
+    "M2": [
+      {
+        "case": "long192-int-w4096-e8-m8-vl0",
+        "arm": "M2",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl65",
+        "arm": "M2",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl513",
+        "arm": "M2",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl4095",
+        "arm": "M2",
+        "status": "PASS"
+      }
+    ],
+    "BOTH": [
+      {
+        "case": "long192-int-w4096-e8-m8-vl0",
+        "arm": "BOTH",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl65",
+        "arm": "BOTH",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl513",
+        "arm": "BOTH",
+        "status": "PASS"
+      },
+      {
+        "case": "long192-int-w4096-e8-m8-vl4095",
+        "arm": "BOTH",
+        "status": "PASS"
+      }
+    ]
+  },
+  "execution": {
+    "B": {
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.16397990996483713,
+      "stdout_sha256": "b5b1080dc5f8ff4b40fe3ee7b426a1a18811bd0d2f54f7045038c2827f8353d6",
+      "stderr_sha256": "bb383c5df569867441aa88aaace1969f789db7e7736236aec7850ab4d6c0464f"
+    },
+    "M1": {
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.16392601502593607,
+      "stdout_sha256": "b5b1080dc5f8ff4b40fe3ee7b426a1a18811bd0d2f54f7045038c2827f8353d6",
+      "stderr_sha256": "b06c8a1cea38a909a4bb490fdf747058eada5fa08f8f9905703519ffff9d4972"
+    },
+    "M2": {
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.16390144196338952,
+      "stdout_sha256": "b5b1080dc5f8ff4b40fe3ee7b426a1a18811bd0d2f54f7045038c2827f8353d6",
+      "stderr_sha256": "08632e32cf60ed451f00e9ced1e43a7e37f19d97fc6ef41f7389cc9e9b606a0c"
+    },
+    "BOTH": {
+      "returncode": 0,
+      "timeout": false,
+      "seconds": 0.16388740809634328,
+      "stdout_sha256": "b5b1080dc5f8ff4b40fe3ee7b426a1a18811bd0d2f54f7045038c2827f8353d6",
+      "stderr_sha256": "bb05e5fde3cc7aa77457fae0026baf9152f4d7c67e5e2f7e74d93515257cf520"
+    }
+  }
+}

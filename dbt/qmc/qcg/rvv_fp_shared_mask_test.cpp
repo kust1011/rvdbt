@@ -248,6 +248,7 @@ unsigned ScratchUses(std::vector<std::string> const &lines, unsigned n)
 		if (l.find(reg) == std::string::npos) continue;
 		if (l.find(prod) != std::string::npos) continue;
 		if (l.find("knotw  k7," + reg) != std::string::npos) continue; // the tail READS it
+		if (l.find("kmovw  eax," + reg) != std::string::npos) continue; // FMA invalid-product mask READ
 		std::string t = l;
 		for (size_t p; (p = t.find(use)) != std::string::npos;) t.erase(p, use.size());
 		cnt += t.find(reg) != std::string::npos;
@@ -367,7 +368,9 @@ void Section1_SingleFrames()
 				// Both masks clamp VL and remove prestart lanes with BZHI.
 				CHECK_EQ(CountContaining(dis, VlLoad()), 2u * k);
 				CHECK_EQ(CountMnem(dis, "bzhi"), 4u * k);
-				CHECK_EQ(CountMnem(dis, "kmovw"), 2u * k);
+				// FMA's zero/inf product classification reads four scratch masks and the
+				// active mask; these five moves do not recompute or overwrite shared masks.
+				CHECK_EQ(CountMnem(dis, "kmovw"), (2u + (s.fma ? 5u : 0u)) * k);
 				CHECK_EQ(CountMnem(dis, "knotw"), s.fma ? 0u : k);
 				if (on) {
 					CHECK(MasksetConstantsMatch(dis, k, lanes));
@@ -452,7 +455,7 @@ void Section3_RunFrame()
 			CHECK(!dis.empty());
 			CHECK_EQ(CountContaining(dis, VlLoad()), on ? k : members * k);
 			CHECK_EQ(CountMnem(dis, "bzhi"), 2u * (on ? k : members * k));
-			CHECK_EQ(CountMnem(dis, "kmovw"), on ? k : members * k);
+			CHECK_EQ(CountMnem(dis, "kmovw"), (on ? k : members * k) + 5u * k);
 			CHECK_EQ(CountMnem(dis, "vaddps"), 3 * k);
 			CHECK_EQ(CountMnem(dis, "vfmadd213ps"), k);
 			if (on) {
@@ -559,6 +562,8 @@ int main()
 	CHECK_EQ(ScratchUses({"  1a: vcmpunordps k2{k1},zmm4,zmm4"}, 2), 1u);
 	CHECK_EQ(ScratchUses({"  1a: vaddps zmm4{k2},zmm2,zmm3"}, 2), 0u);
 	CHECK_EQ(ScratchUses({"  1a: knotw  k2,k1"}, 2), 1u);
+	CHECK_EQ(ScratchUses({"  1a: kmovw  eax,k2"}, 2), 0u);
+	CHECK_EQ(ScratchUses({"  1a: kmovw  k2,eax"}, 2), 0u); // permitted mask producer
 	Section1_SingleFrames();
 	Section2_RuntimeSewFrameIsNotShared();
 	Section3_RunFrame();

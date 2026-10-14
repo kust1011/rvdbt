@@ -1,0 +1,30 @@
+{
+  "original_manifest_sha256": "ba3cd729f2683d8d9084df4c3e8750081570b1833ee1780de2d7aa47687b6573",
+  "task120_manifest_sha256": "d24b743bfb29abd49219ee7839bf9885cd25b56c93dd726f878b8e60a2761ed8",
+  "task121_queue_sha256": "080e18c7bfbc983cd60f91d098f62a0121e2dda54dc363a1811361e6764e365d",
+  "inputs": {
+    "0bcd469f00b013b9e8eaddd9f27ac410c760fc77393aa271ba1d75bf210b59be": [
+      "artifacts/chips_validation_20261007/narrowfixed128/user-bin/vnsrl_wv-0.elf"
+    ],
+    "5f75b658969410a730f01195e4b56f4fb71156d76c5f1fbd30049d957736144c": [
+      "artifacts/chips_validation_20261007/mask1024/user-bin/vmand_mm-0.elf"
+    ],
+    "628bf74ed5b2ca19dfa3e1863b1a3cdf5109a921c7b47c10a37efea47e6c9fc4": [
+      "artifacts/chips_validation_20261007/geometry4096/user-bin/vwadd_vv-0.elf"
+    ],
+    "30606a6912ba927b437aac275c14574d71c2e7af3a3468fd3e10af6243135d7d": [
+      "artifacts/chips_validation_20261007/long4096/user-bin/vle32_v-0.elf"
+    ],
+    "5f9fc1256fab57a9f21ba83017986fc9a3d5738de46762bd66243b23ba302f28": [
+      "artifacts/chips_validation_20261007/long4096/user-bin/vse32_v-0.elf"
+    ]
+  },
+  "expected_predicate": "original chips120.classify: original returncode and exact stdout",
+  "source_metadata": {
+    "sources/CANDIDATE_IDENTITY.json": "e6fecd0e31757f54d0500bde1a2103d3234839d2737980acc6b4a02bb4ffabe1",
+    "sources/CHIPS_README.md": "2acc789721fceec41c8339f00b53b4d1d8ed95254769d4fc8e669f5f3c112a25",
+    "sources/SUMMARY_46.json": "65197b0cd250fcdbc9e788617bac61f9355da0d827ec18b358c30d855377f231",
+    "sources/int16_fp32_convert128_AUDIT.json": "2ff6e24a47c547320e7729aae2bcd5a4c18b3e4e8cc4b9f1186a4ff37c030233",
+    "sources/int16_fp32_convert128_README.md": "0fb41ededf1187a473e5367959a243a81b2e5f3d9dd5cbb73b1c980e5026d698"
+  }
+}

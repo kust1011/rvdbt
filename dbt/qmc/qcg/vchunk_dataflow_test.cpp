@@ -491,6 +491,9 @@ void D1_dataflow()
 // So the second input is defined in the MIDDLE of the filler run, which puts it into the revolving
 // register too.  The assertion is still not a count of spills: it is that each input the add
 // consumes arrived through a frame slot, which SimulateV512 tracks per value.
+// Keep every filler live through the add: unused loads retire at their definition and cannot
+// create register pressure. Store them back afterwards so both static and native tests exercise
+// real live pressure without changing the filler memory.
 void D2_pressure()
 {
 	printf("D2 typed values evicted to the frame and reloaded under pressure\n");
@@ -499,16 +502,24 @@ void D2_pressure()
 	TestRegion t;
 	auto a = t.NewV();
 	t.qb.Create_vchunkload(a, Addr(GA_A));
+	std::vector<VOperand> fillers;
+	auto filler = [&](unsigned i) {
+		auto value = t.NewV();
+		fillers.push_back(value);
+		t.qb.Create_vchunkload(value, Addr(GA_FILLER + i * 64));
+	};
 	// enough to fill the pool and then evict `a` out of the revolving register
 	for (unsigned i = 0; i < n_pool; ++i) {
-		t.qb.Create_vchunkload(t.NewV(), Addr(GA_FILLER + i * 64));
+		filler(i);
 	}
 	auto b = t.NewV();
 	t.qb.Create_vchunkload(b, Addr(GA_B)); // lands in the revolving register
-	t.qb.Create_vchunkload(t.NewV(), Addr(GA_FILLER + n_pool * 64)); // ... and evicts it
+	filler(n_pool); // ... and evicts it
 	auto sum = t.NewV();
 	t.qb.Create_vchunkadd(sum, a, b, 4);
 	t.qb.Create_vchunkstore(Addr(GA_OUT), sum);
+	for (unsigned i = 0; i < fillers.size(); ++i)
+		t.qb.Create_vchunkstore(Addr(GA_FILLER + i * 64), fillers[i]);
 
 	auto intent = CaptureIntent(t.region);
 	MachineRegionInfo info;
@@ -1114,6 +1125,7 @@ void E2_native_under_pressure()
 	TestRegion t;
 	auto va = t.NewV();
 	t.qb.Create_vchunkload(va, Addr(GA_A));
+	std::vector<VOperand> fillers;
 	auto filler = [&](unsigned i) {
 		u32 ga = GA_FILLER + i * 64;
 		u32 *blk = env.Block(ga);
@@ -1122,7 +1134,9 @@ void E2_native_under_pressure()
 		for (int k = 0; k < 16; ++k) {
 			blk[k] = ((i + 1) << 24) | (u32)k;
 		}
-		t.qb.Create_vchunkload(t.NewV(), Addr(ga));
+		auto value = t.NewV();
+		fillers.push_back(value);
+		t.qb.Create_vchunkload(value, Addr(ga));
 	};
 	for (unsigned i = 0; i < n_pool; ++i) {
 		filler(i);
@@ -1133,6 +1147,8 @@ void E2_native_under_pressure()
 	auto sum = t.NewV();
 	t.qb.Create_vchunkadd(sum, va, vb, 4);
 	t.qb.Create_vchunkstore(Addr(GA_OUT), sum);
+	for (unsigned i = 0; i < fillers.size(); ++i)
+		t.qb.Create_vchunkstore(Addr(GA_FILLER + i * 64), fillers[i]);
 
 	auto intent = CaptureIntent(t.region);
 	ArchTraits::init();
@@ -1151,6 +1167,9 @@ void E2_native_under_pressure()
 	CheckSlots(res, &n_slots);
 
 	CheckLanes("E2", a, b, out);
+	for (unsigned i = 0; i < fillers.size(); ++i)
+		for (unsigned k = 0; k < 16; ++k)
+			CHECK_EQ(env.Block(GA_FILLER + i * 64)[k], ((i + 1) << 24) | k);
 	printf("  spills=%u fills=%u slots=%zu add inputs via frame=%u/2; result correct after the "
 	       "round trip\n",
 	       res.n_spill, res.n_fill, n_slots, res.n_add_input_via_slot);

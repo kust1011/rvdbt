@@ -1,0 +1,13 @@
+{
+  "bytes": 57902033,
+  "sha256": "14c3a9a9cda1f632bbd7aca06ad3c07a14521bd11983d56f75a08460af3938cb",
+  "remote": "/home/vick/rvv-integration-task195/raw-receipts.tar.gz",
+  "free_bytes_after": 20691120128,
+  "local": "/home/user/research/materials/task195-integration-raw-20261014/raw-receipts.tar.gz",
+  "verified_sha256": true,
+  "complete_member_traversal": true,
+  "members": 814,
+  "uncompressed_regular_bytes": 3591809909,
+  "indexed_files": 541,
+  "indexed_hashes_checked": true
+}
