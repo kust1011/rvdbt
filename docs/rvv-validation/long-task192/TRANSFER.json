@@ -1,0 +1,10 @@
+{
+  "attempt1": "scp lost connection",
+  "partial_bytes": 73859072,
+  "partial_sha256": "8cb3b696cc985109ae62d01ec55ba4adc5110bff7de41f62aba1570e7d9ada16",
+  "partial_path": "/home/user/research/materials/task192-long-raw-20261014/transfer-attempt1.partial",
+  "recovery": "rsync --append-verify; no guest/reference/build repeats",
+  "recovery_status": "PASS",
+  "recovered_bytes": 83287433,
+  "recovered_sha256": "a21c4ab8ba25036251c0125cd8a59c6a00cfa441f18bb5a5f17ab88b720065d8"
+}

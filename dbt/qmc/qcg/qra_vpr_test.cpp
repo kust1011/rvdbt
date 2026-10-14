@@ -967,14 +967,13 @@ void RunChildWithWatchdog(char const *tag, unsigned timeout_s, F &&fn)
 // boundary. n_vregs is a whole-region count fixed before allocation starts, so what matters is the
 // TOTAL number of virtual registers, not the peak pressure -- which is why this can exceed 256
 // tracks without going anywhere near the 16-slot vector spill frame that T3 covers.
-void T8a_large_region_terminates()
+void T8a_large_region_terminates(unsigned n_groups)
 {
-	printf("T8a a 256+ vreg region with a call boundary terminates\n");
+	printf("T8a %u short-lived vector groups with a call boundary terminate\n", n_groups);
 
-	// 3 V512 locals per group, matching the per-chunk load/load/compute shape; 90 groups is 270
-	// vector locals + 1 scalar local + 3 globals = 274 tracks, comfortably over 256 and well
-	// under MAX_VREGS (512).
-	unsigned const n_groups = 90;
+	// 3 V512 locals per group, matching the per-chunk load/load/compute shape.
+	// Include regions beyond the former 2048-track cap and beyond 16384 tracks:
+	// long-VLEN groups multiply total SSA values without increasing live pressure.
 
 	RunChildWithWatchdog("T8a", 30, [&] {
 		TestRegion t;
@@ -1004,7 +1003,7 @@ void T8a_large_region_terminates()
 		// drops this region under 256 tracks the test says so instead of quietly passing.
 		auto const n_all = t.region->GetVRegsInfo()->NumAll();
 		CHECK(n_all >= 256);
-		CHECK(n_all < 512); // MAX_VREGS: past this the allocator legitimately Panics
+		CHECK_EQ(n_all, n_groups * 3 + 4);
 
 		RunRA(t.region); // the old u8 loop never returns from here
 
@@ -1557,7 +1556,8 @@ int main()
 	T5_encoding();
 	T6_retire_before_call();
 	T7_cross_block_not_retired();
-	T8a_large_region_terminates();
+	for (unsigned n_groups : {90u, 700u, 5500u})
+		T8a_large_region_terminates(n_groups);
 	T8b_high_index_global_is_synced();
 	T9_narrow_vector_frame_slots(VType::V128, 16, "V128");
 	T9_narrow_vector_frame_slots(VType::V256, 32, "V256");

@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "unique_cases": 54,
+  "independent_reference_packets": 54,
+  "accepted_DUT_packets": 216,
+  "current191_DUT_packets": 16,
+  "fixed192_DUT_packets": 200,
+  "original_failed_DUT_packets": 16,
+  "original_failed_commands": [
+    {
+      "arm": "B",
+      "returncode": -6,
+      "timeout": false,
+      "seconds": 1.2266055580694228,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "082ef86d22171bb96d35e66ac18d05757b1cad36f4ec9e77b59ce0bd875e6b68",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "arm": "M1",
+      "returncode": -6,
+      "timeout": false,
+      "seconds": 1.2507845939835533,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e9ab2f467c285ddc41b6c6463753cf166d5e3be893d11abef40f92d1638552d0",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "arm": "M2",
+      "returncode": -6,
+      "timeout": false,
+      "seconds": 1.1767335870536044,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "47a6813247175f744ae237d9c5ff4cb8d2e2733f0347413f9a5ba9613000f27f",
+      "storage": "lossless-gzip-v1"
+    },
+    {
+      "arm": "BOTH",
+      "returncode": -6,
+      "timeout": false,
+      "seconds": 1.2258648520801216,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "46f59d02eba183bb6eccb207a842b8000527a60ea07b11fb3632ba21e5bfb29f",
+      "storage": "lossless-gzip-v1"
+    }
+  ],
+  "paths_by_arm": {
+    "B": {
+      "SINGLETON_NATIVE": 3510
+    },
+    "M1": {
+      "SINGLETON_NATIVE": 2990,
+      "ORDERED_RUN_FALLBACK": 130,
+      "MULTI_MEMBER_NATIVE": 390
+    },
+    "M2": {
+      "SINGLETON_NATIVE": 3510
+    },
+    "BOTH": {
+      "SINGLETON_NATIVE": 2990,
+      "ORDERED_RUN_FALLBACK": 130,
+      "MULTI_MEMBER_NATIVE": 390
+    }
+  },
+  "singleton_PCs_with_active_bounds": {
+    "B": 1430,
+    "M1": 1430,
+    "M2": 1950,
+    "BOTH": 1950
+  },
+  "multi_frames": 32,
+  "native_multi_frames": 24,
+  "fixed_pin": "908df235e36fe49f8a64793a8e4a401987f9b2c56da10179470b7bc7bd5ffbc4",
+  "production_changes": [
+    "dbt/qmc/qcg/qra.cpp"
+  ],
+  "checked_source_changes": [
+    "dbt/qmc/qcg/qra.cpp",
+    "dbt/qmc/qcg/qra_vpr_test.cpp"
+  ],
+  "guest_rebuilds_for_affected": 0,
+  "reference_reruns_for_affected": 0,
+  "blocked_recovery_calls": 0
+}

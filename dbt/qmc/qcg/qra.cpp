@@ -4,6 +4,9 @@
 #include "dbt/config.h"
 
 #include <cstdio>
+#include <limits>
+#include <memory>
+#include <vector>
 
 namespace dbt::qcg
 {
@@ -16,7 +19,6 @@ struct QRegAlloc {
 	// the two: a `p` is only meaningful together with its RTrack's `cls`.
 	static constexpr auto N_VPREGS = ArchTraits::VPR_NUM;
 	static constexpr auto VPREGS_POOL = ArchTraits::VPR_POOL;
-	static constexpr auto MAX_VREGS = 2048; // Long RVV blocks can exceed 512 tracks before temp reuse.
 
 	struct RTrack {
 		RTrack() {}
@@ -121,13 +123,16 @@ struct QRegAlloc {
 
 	u16 n_vregs{0};
 	u16 n_globals{0};
-	std::array<RTrack, MAX_VREGS> vregs{};
+	// Total SSA values, unlike simultaneous register pressure, scale with every
+	// chunk of every instruction in the region. Size once from the completed QIR;
+	// never grow this array, since physical maps retain pointers into it.
+	std::unique_ptr<RTrack[]> vregs;
 	std::array<RTrack *, N_PREGS> p2v{nullptr};
 	std::array<RTrack *, N_VPREGS> p2v_vpr{nullptr};
 
 	// Block-local last-use retirement state (AnalyzeVPRRetirement / RetireAt).  Sized like `vregs`
-	// and kept in the same fixed arrays: a vreg is queued at most once, so `retire_seq` can never
-	// need more entries than there are tracks, and the allocator still allocates no memory.
+	// and allocated once to that same region count: a vreg is queued at most once,
+	// so `retire_seq` can never need more entries than there are tracks.
 	struct VRetire {
 		qir::Block const *blk{nullptr};	    // the one block referencing this vreg, if any
 		qir::Inst const *last_use{nullptr}; // last instruction of `blk` that READS it
@@ -139,8 +144,8 @@ struct QRegAlloc {
 		qir::Inst const *ins{nullptr};
 		qir::RegN vreg{};
 	};
-	std::array<VRetire, MAX_VREGS> vretire{};
-	std::array<VRetirePoint, MAX_VREGS> retire_seq{};
+	std::unique_ptr<VRetire[]> vretire;
+	std::unique_ptr<VRetirePoint[]> retire_seq;
 	u16 n_retire{0};
 	u16 retire_pos{0};
 
@@ -165,6 +170,11 @@ QRegAlloc::QRegAlloc(qir::Region *region_) : region(region_), vregs_info(region-
 {
 	n_globals = vregs_info->NumGlobals();
 	auto n_all = vregs_info->NumAll();
+	if (n_all > std::numeric_limits<qir::RegN>::max())
+		Panic("QRegAlloc: virtual-register index range exceeded");
+	vregs = std::make_unique<RTrack[]>(n_all);
+	vretire = std::make_unique<VRetire[]>(n_all);
+	retire_seq = std::make_unique<VRetirePoint[]>(n_all);
 
 	for (u16 i = 0; i < n_globals; ++i) {
 		auto *gr = vregs_info->GetGlobalInfo(i);
@@ -468,7 +478,7 @@ void QRegAlloc::Fill(RTrack *v, RegMask desire, RegMask avoid)
 
 QRegAlloc::RTrack *QRegAlloc::AddTrack()
 {
-	if (n_vregs == vregs.size()) {
+	if (n_vregs == vregs_info->NumAll()) {
 		Panic("QRegAlloc: virtual-register track capacity exceeded");
 	}
 	auto *v = &vregs[n_vregs++];
@@ -649,8 +659,8 @@ void QRegAlloc::PinSelect()
 	u32 nblk = 0;
 	bool backedge = false, has_call = false;
 	RegMask forced{0}; // host regs some op in this region hard-requires (single-reg constraint) -> never pin to them
-	std::array<u32, MAX_VREGS> use{};
-	std::array<bool, MAX_VREGS> unsafe{}; // a global whose value can be written into the reserved pinned preg on EVERY def
+	std::vector<u32> use(n_globals);
+	std::vector<bool> unsafe(n_globals); // a global whose value can be written into the reserved pinned preg on EVERY def
 	for (auto &bb : region->GetBlocks()) {
 		nblk++;
 		for (auto *s : bb.GetSuccs())
@@ -1006,7 +1016,7 @@ void QRegAlloc::CallOp(bool use_globals)
 
 	// M2B. The induction variable is `qir::RegN`, the type `n_vregs` itself has, and NOT `u8` --
 	// which is what it was, and which made this loop non-terminating rather than merely wrong.
-	// `MAX_VREGS` exceeds 255, so `n_vregs` legitimately reaches values a `u8` counter cannot hold: at
+	// The region count exceeds 255, so `n_vregs` legitimately reaches values a `u8` counter cannot hold: at
 	// 256 or more, `i` wraps 255 -> 0 and `i < n_vregs` is never false, so translation spun here
 	// forever instead of reaching the call. The two other full-vreg scans in this file,
 	// BlockBoundary and RegionBoundary, already used `qir::RegN` for exactly this reason.

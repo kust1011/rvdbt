@@ -1,0 +1,33 @@
+{
+  "cases": 46,
+  "units": [
+    "long192-int-w2048-e8-mf8",
+    "long192-int-w2048-e16-m4",
+    "long192-int-w2048-e8-m8",
+    "long192-fp-w2048-e32-mf2",
+    "long192-fp-w2048-e32-m4",
+    "long192-fp-w2048-e64-m8",
+    "long192-int-w4096-e8-mf8",
+    "long192-int-w4096-e16-m4",
+    "long192-int-w4096-e8-m8",
+    "long192-fp-w4096-e32-mf2",
+    "long192-fp-w4096-e32-m4",
+    "long192-fp-w4096-e64-m8"
+  ],
+  "pilot": [
+    "long192-int-w4096-e8-m8",
+    "long192-fp-w4096-e32-m4"
+  ],
+  "remaining": [
+    "long192-int-w2048-e8-mf8",
+    "long192-int-w2048-e16-m4",
+    "long192-int-w2048-e8-m8",
+    "long192-fp-w2048-e32-mf2",
+    "long192-fp-w2048-e32-m4",
+    "long192-fp-w2048-e64-m8",
+    "long192-int-w4096-e8-mf8",
+    "long192-int-w4096-e16-m4",
+    "long192-fp-w4096-e32-mf2",
+    "long192-fp-w4096-e64-m8"
+  ]
+}

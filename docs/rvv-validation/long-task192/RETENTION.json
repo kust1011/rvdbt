@@ -1,0 +1,10 @@
+{
+  "bytes": 83287433,
+  "sha256": "a21c4ab8ba25036251c0125cd8a59c6a00cfa441f18bb5a5f17ab88b720065d8",
+  "free_after": 21962133504,
+  "local_archive": "/home/user/research/materials/task192-long-raw-20261014/raw-receipts.tar.gz",
+  "local_sha256_verified": true,
+  "archive_members_read_to_end": true,
+  "compact_failure_members": 64,
+  "compact_failure_sha256": "7f2d89903521794e0f6a0b54b6e9b1271d7620e795453858889f8a44736caa84"
+}
