@@ -1,0 +1,8 @@
+{
+  "new_pid": 3939390,
+  "error": "SSH255 sending large plain JSON receipt for b149-006",
+  "archive_verified": true,
+  "original_raw_retained_at_failure": true,
+  "repair": "send gzip metadata with compressed SHA; idempotent commit helper; resume verified pending archive, no guest/reference/build rerun",
+  "time": 1791931731.639866
+}

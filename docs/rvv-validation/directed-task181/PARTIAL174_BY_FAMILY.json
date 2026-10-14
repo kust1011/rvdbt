@@ -1,0 +1,335 @@
+{
+  "status": "SUPERSEDED_PARTIAL174_DEFAULT_EVIDENCE",
+  "original_build": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "families": [
+    {
+      "batch": 145,
+      "forms": 3,
+      "planned": 37572,
+      "actual_checked": 37572,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 0,
+      "independently_reaudited": 37572
+    },
+    {
+      "batch": 146,
+      "forms": 13,
+      "planned": 216308,
+      "actual_checked": 216308,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 0,
+      "independently_reaudited": 216308
+    },
+    {
+      "batch": 147,
+      "forms": 1,
+      "planned": 112952,
+      "actual_checked": 112952,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 0,
+      "independently_reaudited": 112952
+    },
+    {
+      "batch": 148,
+      "forms": 19,
+      "planned": 492788,
+      "actual_checked": 492788,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 0,
+      "independently_reaudited": 492788
+    },
+    {
+      "batch": 149,
+      "forms": 16,
+      "planned": 377024,
+      "actual_checked": 372800,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 4224,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 150,
+      "forms": 15,
+      "planned": 450636,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 450636,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 151,
+      "forms": 6,
+      "planned": 146616,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 146616,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 152,
+      "forms": 20,
+      "planned": 486608,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 486608,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 153,
+      "forms": 10,
+      "planned": 445600,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 445600,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 154,
+      "forms": 8,
+      "planned": 152608,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 152608,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 155,
+      "forms": 8,
+      "planned": 745600,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 745600,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 159,
+      "forms": 24,
+      "planned": 1886048,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 1886048,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 160,
+      "forms": 10,
+      "planned": 499768,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 499768,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 161,
+      "forms": 35,
+      "planned": 415056,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 415056,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 162,
+      "forms": 11,
+      "planned": 245072,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 245072,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 163,
+      "forms": 10,
+      "planned": 372808,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 372808,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 165,
+      "forms": 128,
+      "planned": 342784,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 342784,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 166,
+      "forms": 96,
+      "planned": 273328,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 273328,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 167,
+      "forms": 16,
+      "planned": 950656,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 950656,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 168,
+      "forms": 54,
+      "planned": 177400,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 177400,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 169,
+      "forms": 9,
+      "planned": 218480,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 218480,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 170,
+      "forms": 21,
+      "planned": 386724,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 386724,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 171,
+      "forms": 5,
+      "planned": 50608,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 50608,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 172,
+      "forms": 21,
+      "planned": 944556,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 944556,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 173,
+      "forms": 18,
+      "planned": 683640,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 683640,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 174,
+      "forms": 6,
+      "planned": 344448,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 344448,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 175,
+      "forms": 9,
+      "planned": 133560,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 133560,
+      "independently_reaudited": 0
+    },
+    {
+      "batch": 176,
+      "forms": 3,
+      "planned": 479800,
+      "actual_checked": 0,
+      "failed_isa": 0,
+      "blocked": 0,
+      "not_run_superseded": 479800,
+      "independently_reaudited": 0
+    }
+  ],
+  "actual_checked": 1232420,
+  "independently_reaudited": 859620,
+  "host_fault_scope": "Supported trace1 frame defect retained in original177/179 evidence before RVV; new179 repairs it. These partial178 directed receipts use their original default flags.",
+  "external": {
+    "suites": {
+      "chips": {
+        "planned": 11744,
+        "completed": 11744,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 11744
+        },
+        "controls": 212
+      },
+      "act": {
+        "planned": 7668,
+        "completed": 7668,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 7668
+        },
+        "controls": 0
+      },
+      "ara": {
+        "planned": 1904,
+        "completed": 1904,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 1888,
+          "SCOPED_PASS": 16
+        },
+        "controls": 0
+      }
+    },
+    "build": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+    },
+    "original_blockers": [
+      "Vf32-vfmv.f.s",
+      "Vf64-vfmv.f.s"
+    ],
+    "new_reference_calls": 0,
+    "exact_joins": 21316
+  },
+  "note": "Unaudited second-pass b149 remainder still has actual original predicate/reference checks; not_run_superseded is not failedISA or a reference blocker. No174 output receives179 credit."
+}

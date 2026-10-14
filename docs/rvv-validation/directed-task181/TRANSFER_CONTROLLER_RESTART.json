@@ -1,0 +1,8 @@
+{
+  "initial_launch": "background nohup controller did not persist; detected before transfer threshold",
+  "new_pid": 3938469,
+  "reason": "detached session plus explicit nice10 remote tar/compression and metadata Python before first transfer",
+  "raw_deleted": 0,
+  "archives_before_restart": 0,
+  "time": 1791929384.301979
+}

@@ -1,0 +1,836 @@
+{
+  "status": "SUPERSEDED_PARTIAL174_EVIDENCE_NOT_ISA_FAILURE",
+  "original_build": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "controllers": [
+    {
+      "pid": 967939,
+      "command": "python3 tools/run.py ",
+      "cwd": "/home/vick/rvv-task178",
+      "stat": "967939 (python3) T 1 967936 967936 0 -1 4194304 58624 927041621 0 21515 9 4 185542 108761 30 10 1 0 54878840 157016064 35050 18446744073709551615 4325376 7352253 140727180510048 0 0 0 0 16781319 0 1 0 0 17 6 0 0 0 0 0 10653128 12216448 222285824 140727180516742 140727180516763 140727180516763 140727180517351 19\n",
+      "action": "stop suspended own controller after active replay COMPLETE; no guest signaled"
+    },
+    {
+      "pid": 973813,
+      "command": "python3 tools/post.py ",
+      "cwd": "/home/vick/rvv-task178",
+      "stat": "973813 (python3) T 1 973812 973812 0 -1 4194304 1872 0 0 0 3 0 0 0 30 10 1 0 54884999 23207936 3055 18446744073709551615 4325376 7352253 140726878449856 0 0 0 0 16781319 0 1 0 0 17 15 0 0 0 0 0 10653128 12216448 196726784 140726878457221 140726878457243 140726878457243 140726878457831 19\n",
+      "action": "stop suspended own controller after active replay COMPLETE; no guest signaled"
+    }
+  ],
+  "active_drained": "b149-006 remaining",
+  "entries": [
+    {
+      "entry": "b145-000",
+      "batch": 145,
+      "planned_cases_per_arm": 9393,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 21,
+            "units": 2,
+            "completed": 2,
+            "checks": 84,
+            "counts": {
+              "PASS": 84
+            },
+            "failed": 0,
+            "forms": {
+              "vadd.vi": {
+                "PASS": 84
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "bbbcfbefffd6cb63ccfbad2bbaed75b3be9c1216c8a60dd508440ebdf6b3656a",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 9372,
+            "units": 790,
+            "completed": 790,
+            "checks": 37488,
+            "counts": {
+              "PASS": 37488
+            },
+            "failed": 0,
+            "forms": {
+              "vadd.vv": {
+                "PASS": 11820
+              },
+              "vadd.vx": {
+                "PASS": 12876
+              },
+              "vadd.vi": {
+                "PASS": 12792
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 3160
+          },
+          "summary_sha256": "ba4c327ead15614f021b47cf67cd60b590abc1086596185c34db92df5f42840f",
+          "complete": true
+        },
+        "audit": {
+          "summary": {
+            "accepted_cases": 9393,
+            "units": 792,
+            "completed": 792,
+            "checks": 37572,
+            "counts": {
+              "PASS": 37572
+            },
+            "failed": 0,
+            "forms": {
+              "vadd.vv": {
+                "PASS": 11820
+              },
+              "vadd.vx": {
+                "PASS": 12876
+              },
+              "vadd.vi": {
+                "PASS": 12876
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 0
+          },
+          "summary_sha256": "d3b8fc28ee956d233ffbcc49db6beff2ebe3be6612137c30218bf614a947e62d",
+          "complete": true
+        }
+      }
+    },
+    {
+      "entry": "b146-001",
+      "batch": 146,
+      "planned_cases_per_arm": 54077,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 27,
+            "units": 2,
+            "completed": 2,
+            "checks": 108,
+            "counts": {
+              "PASS": 108
+            },
+            "failed": 0,
+            "forms": {
+              "vand.vi": {
+                "PASS": 108
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "fe85774c93aeb02889fba9f0f429153c75f6847fd91c531d6025ce03ae034676",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 54050,
+            "units": 3430,
+            "completed": 3430,
+            "checks": 216200,
+            "counts": {
+              "PASS": 216200
+            },
+            "failed": 0,
+            "forms": {
+              "vsub.vv": {
+                "PASS": 15908
+              },
+              "vsub.vx": {
+                "PASS": 16964
+              },
+              "vrsub.vx": {
+                "PASS": 16964
+              },
+              "vrsub.vi": {
+                "PASS": 16964
+              },
+              "vand.vv": {
+                "PASS": 15908
+              },
+              "vand.vx": {
+                "PASS": 16964
+              },
+              "vand.vi": {
+                "PASS": 16856
+              },
+              "vor.vv": {
+                "PASS": 15908
+              },
+              "vor.vx": {
+                "PASS": 16964
+              },
+              "vor.vi": {
+                "PASS": 16964
+              },
+              "vxor.vv": {
+                "PASS": 15908
+              },
+              "vxor.vx": {
+                "PASS": 16964
+              },
+              "vxor.vi": {
+                "PASS": 16964
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 13720
+          },
+          "summary_sha256": "cb6b14a0cf8235add9abd97287bc8e3d1857c68c4184f243ea2189bb42a82b5d",
+          "complete": true
+        },
+        "audit": {
+          "summary": {
+            "accepted_cases": 54077,
+            "units": 3432,
+            "completed": 3432,
+            "checks": 216308,
+            "counts": {
+              "PASS": 216308
+            },
+            "failed": 0,
+            "forms": {
+              "vsub.vv": {
+                "PASS": 15908
+              },
+              "vsub.vx": {
+                "PASS": 16964
+              },
+              "vrsub.vx": {
+                "PASS": 16964
+              },
+              "vrsub.vi": {
+                "PASS": 16964
+              },
+              "vand.vv": {
+                "PASS": 15908
+              },
+              "vand.vx": {
+                "PASS": 16964
+              },
+              "vand.vi": {
+                "PASS": 16964
+              },
+              "vor.vv": {
+                "PASS": 15908
+              },
+              "vor.vx": {
+                "PASS": 16964
+              },
+              "vor.vi": {
+                "PASS": 16964
+              },
+              "vxor.vv": {
+                "PASS": 15908
+              },
+              "vxor.vx": {
+                "PASS": 16964
+              },
+              "vxor.vi": {
+                "PASS": 16964
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 0
+          },
+          "summary_sha256": "f4d65a9c8ac101a9137e766275aa204f09126cff04fde593f8e99651c91fc26c",
+          "complete": true
+        }
+      }
+    },
+    {
+      "entry": "b147-002",
+      "batch": 147,
+      "planned_cases_per_arm": 28238,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 216,
+            "units": 2,
+            "completed": 2,
+            "checks": 864,
+            "counts": {
+              "PASS": 864
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvl": {
+                "PASS": 864
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "24f41199987d28202afa45e57b132e108a0bf05be244f6f554fbf1cf2fc9508b",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 28022,
+            "units": 262,
+            "completed": 262,
+            "checks": 112088,
+            "counts": {
+              "PASS": 112088
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvl": {
+                "PASS": 112088
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 1048
+          },
+          "summary_sha256": "e1a4241501dc8435bc9c0944a2708b820f61720453b88144509e6b6f46a3d002",
+          "complete": true
+        },
+        "audit": {
+          "summary": {
+            "accepted_cases": 28238,
+            "units": 264,
+            "completed": 264,
+            "checks": 112952,
+            "counts": {
+              "PASS": 112952
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvl": {
+                "PASS": 112952
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 0
+          },
+          "summary_sha256": "dbea478764b7400f6fd559895614a7b866e6eb8c86776383faad752c9a50e14c",
+          "complete": true
+        }
+      }
+    },
+    {
+      "entry": "b148-003",
+      "batch": 148,
+      "planned_cases_per_arm": 17824,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 60,
+            "units": 2,
+            "completed": 2,
+            "checks": 240,
+            "counts": {
+              "PASS": 240
+            },
+            "failed": 0,
+            "forms": {
+              "vsetivli": {
+                "PASS": 240
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "797406904c0e29ede9b73ccd654af06077b7c00cbc5325cbddca22cefbd1138c",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 17764,
+            "units": 526,
+            "completed": 526,
+            "checks": 71056,
+            "counts": {
+              "PASS": 71056
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvli": {
+                "PASS": 47456
+              },
+              "vsetivli": {
+                "PASS": 23600
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 2104
+          },
+          "summary_sha256": "58b8b4a71e0c6d590cb239b5a7495759c8a8786a60dc343bfa39fc3e65e7449e",
+          "complete": true
+        },
+        "audit": {
+          "summary": {
+            "accepted_cases": 17824,
+            "units": 528,
+            "completed": 528,
+            "checks": 71296,
+            "counts": {
+              "PASS": 71296
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvli": {
+                "PASS": 47456
+              },
+              "vsetivli": {
+                "PASS": 23840
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 0
+          },
+          "summary_sha256": "89a5ab5fd7e72cff8cfab350bfedbb4723b4076f584b91684468c41be6b58a37",
+          "complete": true
+        }
+      }
+    },
+    {
+      "entry": "b148-004",
+      "batch": 148,
+      "planned_cases_per_arm": 7008,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 126,
+            "units": 2,
+            "completed": 2,
+            "checks": 504,
+            "counts": {
+              "PASS": 504
+            },
+            "failed": 0,
+            "forms": {
+              "vsetivli": {
+                "PASS": 504
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "93a93b5ad417110429df641062142e13f264f0bd75d417c1bddee34ae4a40003",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 6882,
+            "units": 94,
+            "completed": 94,
+            "checks": 27528,
+            "counts": {
+              "PASS": 27528
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvli": {
+                "PASS": 15936
+              },
+              "vsetivli": {
+                "PASS": 11592
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 376
+          },
+          "summary_sha256": "ed052d00920203d09cf7d90ff474140bc4b79d211bab32efb1cdfb1cbaa692d5",
+          "complete": true
+        },
+        "audit": {
+          "summary": {
+            "accepted_cases": 7008,
+            "units": 96,
+            "completed": 96,
+            "checks": 28032,
+            "counts": {
+              "PASS": 28032
+            },
+            "failed": 0,
+            "forms": {
+              "vsetvli": {
+                "PASS": 15936
+              },
+              "vsetivli": {
+                "PASS": 12096
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 0
+          },
+          "summary_sha256": "a14a7b32db006be03381b744c38b929ee5b1971790c9deee76d7c90758e0a903",
+          "complete": true
+        }
+      }
+    },
+    {
+      "entry": "b148-005",
+      "batch": 148,
+      "planned_cases_per_arm": 98365,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 27,
+            "units": 2,
+            "completed": 2,
+            "checks": 108,
+            "counts": {
+              "PASS": 108
+            },
+            "failed": 0,
+            "forms": {
+              "vmax.vv": {
+                "PASS": 108
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "4252e1e9ff4e0cd8b8ff5e53cb53f318ce7068dde44e73b186415b78067a43b1",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 98338,
+            "units": 4486,
+            "completed": 4486,
+            "checks": 393352,
+            "counts": {
+              "PASS": 393352
+            },
+            "failed": 0,
+            "forms": {
+              "vsll.vv": {
+                "PASS": 16964
+              },
+              "vsll.vx": {
+                "PASS": 25412
+              },
+              "vsll.vi": {
+                "PASS": 32276
+              },
+              "vsrl.vv": {
+                "PASS": 16964
+              },
+              "vsrl.vx": {
+                "PASS": 25412
+              },
+              "vsrl.vi": {
+                "PASS": 32276
+              },
+              "vsra.vv": {
+                "PASS": 16964
+              },
+              "vsra.vx": {
+                "PASS": 25412
+              },
+              "vsra.vi": {
+                "PASS": 32276
+              },
+              "vmin.vv": {
+                "PASS": 16964
+              },
+              "vmin.vx": {
+                "PASS": 25412
+              },
+              "vminu.vv": {
+                "PASS": 16964
+              },
+              "vminu.vx": {
+                "PASS": 25412
+              },
+              "vmax.vv": {
+                "PASS": 16856
+              },
+              "vmax.vx": {
+                "PASS": 25412
+              },
+              "vmaxu.vv": {
+                "PASS": 16964
+              },
+              "vmaxu.vx": {
+                "PASS": 25412
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 17944
+          },
+          "summary_sha256": "0a8a9aa457829dccc5db6f39e0d777c8eeca8484eccf8155b29338f1369feb73",
+          "complete": true
+        },
+        "audit": {
+          "summary": {
+            "accepted_cases": 98365,
+            "units": 4488,
+            "completed": 4488,
+            "checks": 393460,
+            "counts": {
+              "PASS": 393460
+            },
+            "failed": 0,
+            "forms": {
+              "vsll.vv": {
+                "PASS": 16964
+              },
+              "vsll.vx": {
+                "PASS": 25412
+              },
+              "vsll.vi": {
+                "PASS": 32276
+              },
+              "vsrl.vv": {
+                "PASS": 16964
+              },
+              "vsrl.vx": {
+                "PASS": 25412
+              },
+              "vsrl.vi": {
+                "PASS": 32276
+              },
+              "vsra.vv": {
+                "PASS": 16964
+              },
+              "vsra.vx": {
+                "PASS": 25412
+              },
+              "vsra.vi": {
+                "PASS": 32276
+              },
+              "vmin.vv": {
+                "PASS": 16964
+              },
+              "vmin.vx": {
+                "PASS": 25412
+              },
+              "vminu.vv": {
+                "PASS": 16964
+              },
+              "vminu.vx": {
+                "PASS": 25412
+              },
+              "vmax.vv": {
+                "PASS": 16964
+              },
+              "vmax.vx": {
+                "PASS": 25412
+              },
+              "vmaxu.vv": {
+                "PASS": 16964
+              },
+              "vmaxu.vx": {
+                "PASS": 25412
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 0
+          },
+          "summary_sha256": "b3f76c02fb828855d65dd58a8d988b7331f22dabf0e2ab12ae614f5ac378ab1f",
+          "complete": true
+        }
+      }
+    },
+    {
+      "entry": "b149-006",
+      "batch": 149,
+      "planned_cases_per_arm": 93200,
+      "stages": {
+        "pilot": {
+          "summary": {
+            "accepted_cases": 38,
+            "units": 2,
+            "completed": 2,
+            "checks": 152,
+            "counts": {
+              "PASS": 152
+            },
+            "failed": 0,
+            "forms": {
+              "vdiv.vv": {
+                "PASS": 152
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 8
+          },
+          "summary_sha256": "c85a6cf304363e87b8505546e6f4851a49b124943bd4a8f5edae6ab8fb11f011",
+          "complete": true
+        },
+        "remaining": {
+          "summary": {
+            "accepted_cases": 93162,
+            "units": 4222,
+            "completed": 4222,
+            "checks": 372648,
+            "counts": {
+              "PASS": 372648
+            },
+            "failed": 0,
+            "forms": {
+              "vmul.vv": {
+                "PASS": 22772
+              },
+              "vmul.vx": {
+                "PASS": 23828
+              },
+              "vmulh.vv": {
+                "PASS": 22772
+              },
+              "vmulh.vx": {
+                "PASS": 23828
+              },
+              "vmulhu.vv": {
+                "PASS": 22772
+              },
+              "vmulhu.vx": {
+                "PASS": 23828
+              },
+              "vmulhsu.vv": {
+                "PASS": 22772
+              },
+              "vmulhsu.vx": {
+                "PASS": 23828
+              },
+              "vdiv.vv": {
+                "PASS": 22620
+              },
+              "vdiv.vx": {
+                "PASS": 23828
+              },
+              "vdivu.vv": {
+                "PASS": 22772
+              },
+              "vdivu.vx": {
+                "PASS": 23828
+              },
+              "vrem.vv": {
+                "PASS": 22772
+              },
+              "vrem.vx": {
+                "PASS": 23828
+              },
+              "vremu.vv": {
+                "PASS": 22772
+              },
+              "vremu.vx": {
+                "PASS": 23828
+              }
+            },
+            "build": {
+              "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+              "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+            },
+            "new_dut_calls": 16888
+          },
+          "summary_sha256": "fccc6e45d57290d43e1ad42c0adc59761343ebc837e1dcad70838da131730c64",
+          "complete": true
+        }
+      }
+    }
+  ],
+  "external_audit": {
+    "suites": {
+      "chips": {
+        "planned": 11744,
+        "completed": 11744,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 11744
+        },
+        "controls": 212
+      },
+      "act": {
+        "planned": 7668,
+        "completed": 7668,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 7668
+        },
+        "controls": 0
+      },
+      "ara": {
+        "planned": 1904,
+        "completed": 1904,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 1888,
+          "SCOPED_PASS": 16
+        },
+        "controls": 0
+      }
+    },
+    "build": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+    },
+    "original_blockers": [
+      "Vf32-vfmv.f.s",
+      "Vf64-vfmv.f.s"
+    ],
+    "new_reference_calls": 0,
+    "exact_joins": 21316
+  },
+  "raw_retention": "/home/vick/rvv-task178",
+  "original_logs_preserved": true
+}

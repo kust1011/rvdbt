@@ -1,0 +1,19 @@
+{
+  "source_commit": "8c851d5953bc26eb14279522e10a8d6a3f795a81",
+  "owned_imported_files": 109,
+  "all_imported_bytes_match": true,
+  "production_changes": 0,
+  "production_qemit_matches_frozen179": true,
+  "production_interp_matches_frozen174": true,
+  "restored180_codegen_assertions_byte_identical": true,
+  "scalar_insertion_fixture_import": "73fc8e2; exact frozen174/179 accepted fixture",
+  "scalar_insertion_fixture_sha256": "5959c6409503991dac71e861292fc9815d4e505f5576feef965450aafb36da17",
+  "CMake_change": "register that existing accepted test target only; no production build option change",
+  "conversion_fixture": "existing committed supplemental172 inactive-sNaN fixture preserved; differs from earlier frozen fixture as documented in172 SUPPLEMENTAL_REGRESSION.json",
+  "preserved_delivery_shared_modules": [
+    "scripts/rvv/directed/vadd.py",
+    "scripts/rvv/directed/audit.py"
+  ],
+  "preserved155": "all nine original dirty155 pins match PRESERVED155_PINS.json",
+  "rebuilt_receipt_credit": false
+}

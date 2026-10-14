@@ -1,0 +1,13 @@
+{
+  "scope": "initial174 command drain overlapped first181 pilot/remainder startup",
+  "old_controller": 967939,
+  "old_replay": 1141509,
+  "new_controller": 1240806,
+  "new_replay": 1241839,
+  "old_predicate_gate": "private multiprocessing semaphore2 inherited174",
+  "new_predicate_gate": "cross-controller flock slots2",
+  "guest_gate": "181 census includes174; inherited174 census only counts174 as own; common shared-launch lock used by both",
+  "limitation": "Combined cross-version predicate occupancy and continuous guest occupancy during drain are not proven. No audit queue was active for174 during this overlap. After174 drained/stopped, all181 controllers share the two-slot predicate gate and combined guest census. This is a resource-accounting limitation; retained ISA checks are not relabeled or discarded.",
+  "sampled_own_guest_peak_at_review": 3,
+  "sampled_shared_guest_peak_at_review": 7
+}

@@ -1,0 +1,1334 @@
+{
+  "recovered": [
+    {
+      "id": "ara-campaign48__ara_vset_current_20261009__vsetvl__vsetvl__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vset_current_20261009__vsetvl__vsetvl__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vset_current_20261009__vsetvli__vsetvli__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vxsat_20261008__vsadd__vsadd__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vxsat_20261008__vsadd__vsadd__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vxsat_20261008__vsadd__vsadd__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_vxsat_20261008__vsadd__vsadd__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vl1r__vl1r__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vl1r__vl1r__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vl1r__vl1r__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vl1r__vl1r__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vs1r__vs1r__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vs1r__vs1r__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vs1r__vs1r__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_ls_20261008__vs1r__vs1r__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vle1__vle1__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vle1__vle1__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vle1__vle1__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vle1__vle1__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vmvnrr__vmvnrr__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vmvnrr__vmvnrr__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vmvnrr__vmvnrr__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vmvnrr__vmvnrr__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vse1__vse1__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vse1__vse1__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vse1__vse1__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-campaign48__ara_whole_mask_20261008__vse1__vse1__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch01_vand__batch01_vand__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch01_vand__batch01_vand__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch01_vand__batch01_vand__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch01_vand__batch01_vand__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvfs__batch_vfmvfs__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvfs__batch_vfmvfs__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvfs__batch_vfmvfs__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvfs__batch_vfmvfs__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvsf__batch_vfmvsf__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvsf__batch_vfmvsf__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvsf__batch_vfmvsf__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfmvsf__batch_vfmvsf__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfncvt__batch_vfncvt__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfncvt__batch_vfncvt__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfncvt__batch_vfncvt__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vfncvt__batch_vfncvt__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle16__batch_vle16__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle16__batch_vle16__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle16__batch_vle16__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle16__batch_vle16__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle64__batch_vle64__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle64__batch_vle64__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle64__batch_vle64__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle64__batch_vle64__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle8__batch_vle8__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle8__batch_vle8__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle8__batch_vle8__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle8__batch_vle8__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle_vse_hazards__batch_vle_vse_hazards__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle_vse_hazards__batch_vle_vse_hazards__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle_vse_hazards__batch_vle_vse_hazards__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vle_vse_hazards__batch_vle_vse_hazards__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxei__batch_vluxei__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxei__batch_vluxei__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxei__batch_vluxei__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxei__batch_vluxei__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxseg__batch_vluxseg__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxseg__batch_vluxseg__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxseg__batch_vluxseg__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vluxseg__batch_vluxseg__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__B",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__BOTH",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__M1",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__M2",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadc__batch_vmadc__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadc__batch_vmadc__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadc__batch_vmadc__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadc__batch_vmadc__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__B",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__BOTH",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__M1",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__M2",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmand__batch_vmand__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmand__batch_vmand__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmand__batch_vmand__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmand__batch_vmand__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmerge__batch_vmerge__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmerge__batch_vmerge__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmerge__batch_vmerge__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmerge__batch_vmerge__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmseq__batch_vmseq__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmseq__batch_vmseq__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmseq__batch_vmseq__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmseq__batch_vmseq__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmsne__batch_vmsne__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmsne__batch_vmsne__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmsne__batch_vmsne__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmsne__batch_vmsne__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmul__batch_vmul__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmul__batch_vmul__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmul__batch_vmul__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmul__batch_vmul__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulh__batch_vmulh__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulh__batch_vmulh__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulh__batch_vmulh__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulh__batch_vmulh__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhsu__batch_vmulhsu__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhsu__batch_vmulhsu__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhsu__batch_vmulhsu__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhsu__batch_vmulhsu__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhu__batch_vmulhu__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhu__batch_vmulhu__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhu__batch_vmulhu__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmulhu__batch_vmulhu__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmv__batch_vmv__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmv__batch_vmv__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmv__batch_vmv__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vmv__batch_vmv__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__B",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__BOTH",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__M1",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__M2",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__B",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__BOTH",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__M1",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__M2",
+      "status": "SCOPED_PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vor__batch_vor__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vor__batch_vor__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vor__batch_vor__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vor__batch_vor__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse16__batch_vse16__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse16__batch_vse16__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse16__batch_vse16__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse16__batch_vse16__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse32__batch_vse32__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse32__batch_vse32__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse32__batch_vse32__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse32__batch_vse32__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse64__batch_vse64__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse64__batch_vse64__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse64__batch_vse64__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse64__batch_vse64__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse8__batch_vse8__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse8__batch_vse8__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse8__batch_vse8__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vse8__batch_vse8__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvl__batch_vsetvl__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvl__batch_vsetvl__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvl__batch_vsetvl__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvl__batch_vsetvl__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvli__batch_vsetvli__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvli__batch_vsetvli__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvli__batch_vsetvli__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsetvli__batch_vsetvli__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsuxseg__batch_vsuxseg__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsuxseg__batch_vsuxseg__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsuxseg__batch_vsuxseg__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vsuxseg__batch_vsuxseg__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vxor__batch_vxor__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vxor__batch_vxor__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vxor__batch_vxor__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__batch_vxor__batch_vxor__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__context_original_vredsum__context_original_vredsum__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__context_original_vwredsum__context_original_vwredsum__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__context_original_vwredsumu__context_original_vwredsumu__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__rv32_output_derivative_vsetivli__rv32_output_derivative_vsetivli__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__rv32_output_derivative_vsetivli__rv32_output_derivative_vsetivli__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__rv32_output_derivative_vsetivli__rv32_output_derivative_vsetivli__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__rv32_output_derivative_vsetivli__rv32_output_derivative_vsetivli__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__width_scope_vfwcvt__width_scope_vfwcvt__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__width_scope_vfwcvt__width_scope_vfwcvt__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__width_scope_vfwcvt__width_scope_vfwcvt__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-remainder52__width_scope_vfwcvt__width_scope_vfwcvt__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vlsseg__TEST_CASE3_32_m__vlsseg__TEST_CASE3_32_m__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vlsseg__TEST_CASE3_32_m__vlsseg__TEST_CASE3_32_m__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vlsseg__TEST_CASE3_32_m__vlsseg__TEST_CASE3_32_m__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vlsseg__TEST_CASE3_32_m__vlsseg__TEST_CASE3_32_m__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vmsif__TEST_CASE2__vmsif__TEST_CASE2__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vmsif__TEST_CASE2__vmsif__TEST_CASE2__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vmsif__TEST_CASE2__vmsif__TEST_CASE2__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vmsif__TEST_CASE2__vmsif__TEST_CASE2__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE3__vnsra__TEST_CASE3__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE3__vnsra__TEST_CASE3__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE3__vnsra__TEST_CASE3__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE3__vnsra__TEST_CASE3__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE5__vnsra__TEST_CASE5__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE5__vnsra__TEST_CASE5__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE5__vnsra__TEST_CASE5__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsra__TEST_CASE5__vnsra__TEST_CASE5__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE3__vnsrl__TEST_CASE3__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE3__vnsrl__TEST_CASE3__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE3__vnsrl__TEST_CASE3__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE3__vnsrl__TEST_CASE3__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE5__vnsrl__TEST_CASE5__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE5__vnsrl__TEST_CASE5__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE5__vnsrl__TEST_CASE5__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vnsrl__TEST_CASE5__vnsrl__TEST_CASE5__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vredsum__TEST_CASE3__vredsum__TEST_CASE3__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vredsum__TEST_CASE3__vredsum__TEST_CASE3__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vredsum__TEST_CASE3__vredsum__TEST_CASE3__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vredsum__TEST_CASE3__vredsum__TEST_CASE3__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE1_64__vssseg__TEST_CASE1_64__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE1_64__vssseg__TEST_CASE1_64__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE1_64__vssseg__TEST_CASE1_64__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE1_64__vssseg__TEST_CASE1_64__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_16__vssseg__TEST_CASE4_16__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_16__vssseg__TEST_CASE4_16__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_16__vssseg__TEST_CASE4_16__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_16__vssseg__TEST_CASE4_16__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_64__vssseg__TEST_CASE4_64__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_64__vssseg__TEST_CASE4_64__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_64__vssseg__TEST_CASE4_64__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vssseg__TEST_CASE4_64__vssseg__TEST_CASE4_64__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsum__TEST_CASE3__vwredsum__TEST_CASE3__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsum__TEST_CASE3__vwredsum__TEST_CASE3__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsum__TEST_CASE3__vwredsum__TEST_CASE3__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsum__TEST_CASE3__vwredsum__TEST_CASE3__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsumu__TEST_CASE3__vwredsumu__TEST_CASE3__B",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsumu__TEST_CASE3__vwredsumu__TEST_CASE3__BOTH",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsumu__TEST_CASE3__vwredsumu__TEST_CASE3__M1",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    },
+    {
+      "id": "ara-source51__vwredsumu__TEST_CASE3__vwredsumu__TEST_CASE3__M2",
+      "status": "PASS",
+      "new_dut_calls": 1,
+      "reason": "unattempted after original adapter exception cancelled pending futures"
+    }
+  ],
+  "new_dut_calls": 221,
+  "new_reference_calls": 0,
+  "tool_sha256": "c9deb3cac89efe0fb39b142d45db24bb0214654a2316fc92cd9378c11f273a81",
+  "fixed_adapter_sha256": "c8bc18c02380feb79c66507b896ebbba1a998c94b3228fff92cee571a68448b9"
+}

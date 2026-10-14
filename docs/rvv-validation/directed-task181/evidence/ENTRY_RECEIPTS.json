@@ -1,0 +1,1430 @@
+[
+  {
+    "entry": "b145-000",
+    "batch": 145,
+    "original": "/home/vick/rvv-directed-task145/corpus",
+    "manifest_sha256": "8c5216675f9ed62a9d941a22efdd42561a283d388d8ab1f97ca95180e6862c38",
+    "accepted_cases": 9393,
+    "audit_summary_sha256": "66309b5e8a019998f336fc3859209072e72c80c7e3f650f2a0ac28cce8b0e6d2",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b145-000/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ec69d324b21f2219a0af976abbbf67307ead89258886ed2cde3c740f76588a0b",
+      "remaining": "37298419c76438e2ec89335ec92bb997fd6305476c10f2f71818487139d55350"
+    }
+  },
+  {
+    "entry": "b146-001",
+    "batch": 146,
+    "original": "/home/vick/rvv-directed-task146/corpus",
+    "manifest_sha256": "9d25ec8a18ae295f7ae2c30f639bb31e349ec249cea21b555380b92f30416001",
+    "accepted_cases": 54077,
+    "audit_summary_sha256": "d46fcf3224d7c32bf2ce38f685429252f99bfeb292e14e5211f4beb587e51c58",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b146-001/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "2faf2bc8bc564744d575a965ecb613831f2d4663427254c2492bb91f45448eb7",
+      "remaining": "1c6e0051dadf624dba1ada87a17a168e28bbdd238fc9062ef154dc5e28529439"
+    }
+  },
+  {
+    "entry": "b147-002",
+    "batch": 147,
+    "original": "/home/vick/rvv-directed-task147/corpus",
+    "manifest_sha256": "18be56f5574ed67a3e38dabd6b4193238337a1d35f6458a206e99e569920aaff",
+    "accepted_cases": 28238,
+    "audit_summary_sha256": "ca0e4290bc3c453672cb4807d3eefbeb1841f543c84053371037c52e6e4fd483",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b147-002/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b9ddf41ec606cc35d278866c8f95aa6b0f42b55ac33ce142764842fa9b608ed8",
+      "remaining": "b15c3a21db0cbb01fe859d6dd3224dedff9e3fd31a217febfaea97aff51653b0"
+    }
+  },
+  {
+    "entry": "b148-003",
+    "batch": 148,
+    "original": "/home/vick/rvv-directed-task147/corpus",
+    "manifest_sha256": "18be56f5574ed67a3e38dabd6b4193238337a1d35f6458a206e99e569920aaff",
+    "accepted_cases": 17824,
+    "audit_summary_sha256": "619b903e6629fce4c15f72f7339d673eaf252682008bd36d909b10cb324fc950",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b148-003/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "1af0a0db4b5c2114a9d88a0a9ebe02072ffa85b7643dce7f576d2f48232d68f0",
+      "remaining": "6c58ee449f7cb448f4ce59e094da1f3d549c39322dcc46186c6deec4d9938c86"
+    }
+  },
+  {
+    "entry": "b148-004",
+    "batch": 148,
+    "original": "/home/vick/rvv-directed-task148/delta/corpus",
+    "manifest_sha256": "56cdb6fcac95b7238408bc4293e33fe6a81a1ed589fd264bc1999668bef600a5",
+    "accepted_cases": 7008,
+    "audit_summary_sha256": "85e980ce7d0c5ae1ddab3fee54419b75d56184167c08391f5e8b8ee44691e38c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b148-004/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "e1a3ac0762d5b5987e3eced0e0c8a15c836ff6dc8c598e143f7ab927a77c689b",
+      "remaining": "c63a0ce8350819c04ea4fcdffcebc351a6cb686c48138664c69743f961888be3"
+    }
+  },
+  {
+    "entry": "b148-005",
+    "batch": 148,
+    "original": "/home/vick/rvv-directed-task148/shift/corpus",
+    "manifest_sha256": "dc6a92f9e4cee02784fd05e7eedfdcb4a0ec65c5535ef5976326533860076135",
+    "accepted_cases": 98365,
+    "audit_summary_sha256": "17a9fcb474b0f7a2915a6decd10c972113ca10fde03a168b2cf0a9d7e598ff93",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b148-005/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "133eead0b9954e2a7d5614ec36fd3209574ce425b107ce0887a2a3f41305b141",
+      "remaining": "3280ecbbbcf2b90f2c1f7eea2188693b8f88e92f8604654a1c22af74b1ade1ca"
+    }
+  },
+  {
+    "entry": "b149-006",
+    "batch": 149,
+    "original": "/home/vick/rvv-directed-task149/full/corpus",
+    "manifest_sha256": "207caca843b1c0430f9733c96d5b44e9b994a09241e2317449e7df920c6de972",
+    "accepted_cases": 93200,
+    "audit_summary_sha256": "da5cf02ee304c5676e20fb2b669071d13d72c6d99ef242b1d9e8cf39cfd530e2",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b149-006/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "c21fce144e58814c049be7fda249931a9e16198ed270e9fb673befd3e7eb1bfe",
+      "remaining": "5d31717e8490617c15752486ad60a4d46e1158b0f1bf83061a231ac9eb336f9b"
+    }
+  },
+  {
+    "entry": "b149-007",
+    "batch": 149,
+    "original": "/home/vick/rvv-directed-task149/zero-full/corpus",
+    "manifest_sha256": "cba5cf6c06a74117fae4856b6d75f9547096868eb613a4c8d1c7e8ad262436e3",
+    "accepted_cases": 1056,
+    "audit_summary_sha256": "bedc9c8d127a1fc3ec1bf6d2b4124689cb2f1adeeba2162f29f8c658eb8a8a55",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b149-007/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "cba9cbda38634ea21085ac6b754ba413d06803859f5f6c0a7bebaa2133cd7384",
+      "remaining": "8dbb731b63a69cfa79509876dc3923d42d3958d3e750c0e99759dc9c4d9e4946"
+    }
+  },
+  {
+    "entry": "b150-008",
+    "batch": 150,
+    "original": "/home/vick/rvv-directed-task150/full/corpus",
+    "manifest_sha256": "bbeb38cb071de238d21ea1cf54abfefb72f6ac37ace956a0c666241f5a8c620b",
+    "accepted_cases": 112659,
+    "audit_summary_sha256": "a7063d878f6cecbe449c4c53a63635973f68c48682bfe75edae7273a3dc28ef1",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b150-008/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "a242ff3fcd2da91883f36d8da4e88e91fca1ec6bae1e1821da8544d114d1eb25",
+      "remaining": "97ac1d5bd3a7eac6d304b84076657b901b8f40608ff60747466d92f9eeb7c2f5"
+    }
+  },
+  {
+    "entry": "b151-009",
+    "batch": 151,
+    "original": "/home/vick/rvv-directed-task151/full/corpus",
+    "manifest_sha256": "e99ce7041165678e45586f61909f4a79a37c5a9c608d6e9765a6f4153b7b9d47",
+    "accepted_cases": 36654,
+    "audit_summary_sha256": "1110bb4ac1f2da75fca52916a75ac96a27a445837abb33561cf83d87a079513c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b151-009/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "1c0b39a1c61039890a10a5f361e16ec5227e23a5dca2cb0379ff63bc1423b70b",
+      "remaining": "e5ee0595b7b66a361cac4f41dcfd54bf55584227eadf5a4e770eed73d06388b6"
+    }
+  },
+  {
+    "entry": "b152-010",
+    "batch": 152,
+    "original": "/home/vick/rvv-directed-task152/full/corpus",
+    "manifest_sha256": "e079eaab7203c1fb789d0163a8f7fad6e30267ee283e2eea458485526d566bc5",
+    "accepted_cases": 121652,
+    "audit_summary_sha256": "64373e64a4389fa07e8628c30a0069c365fb0704041c6f52b1a52fe89c63a23a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b152-010/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "986df13f2ecba3a392c27e8fc4a64a63cd8a73077ff1299455bac4795bfbd4a8",
+      "remaining": "92e78f0f2b4323d3d38866720ff18a3b73c35be5bea49c9a4c7b35ca4c1fd219"
+    }
+  },
+  {
+    "entry": "b153-011",
+    "batch": 153,
+    "original": "/home/vick/rvv-directed-task153/full/corpus",
+    "manifest_sha256": "56a86f0cbe274c3590c66d240d7dd337a3420efdde3609edbb9f31372dc318d9",
+    "accepted_cases": 107200,
+    "audit_summary_sha256": "98ecfb690c073350a2464bdf832526c45c5c000a0f07861dc730bccea9309c86",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b153-011/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "8e0233bb0753e5bf167a2b141f923817c20ea520f4c6b7c358ac38ff0c16dc09",
+      "remaining": "22f10a3f0b94e632204bb8e99d34635c038f86e047090f9357d708cd5c57c064"
+    }
+  },
+  {
+    "entry": "b153-012",
+    "batch": 153,
+    "original": "/home/vick/rvv-directed-task153/boundary/full/corpus",
+    "manifest_sha256": "7e5a6b01f1900d985019eb16cc8074c6f40b59aaad5a1eb63fd2605742f355f6",
+    "accepted_cases": 4200,
+    "audit_summary_sha256": "7c642819b2d015c2273305e4fef790d5dc86ffaad1153ed7a24561e8dafe4afa",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b153-012/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "c0ac6f92aa3887c10826aaee62d15cd80a4022f49876644c57773d49e3125677",
+      "remaining": "0ca4c98b02ddfe2e579f4740cc96bafd77747e18f728b96e43ec7fe93ea30a26"
+    }
+  },
+  {
+    "entry": "b154-013",
+    "batch": 154,
+    "original": "/home/vick/rvv-directed-task154/full/corpus",
+    "manifest_sha256": "e1198e33ad233f01b7b0e057f3fd7a912edf0959a18a0545fb21bbd2b368686b",
+    "accepted_cases": 38152,
+    "audit_summary_sha256": "3b22daca576a65f0b3abcfba8cfe85ecbfa2e0870f74cde5107fea15eaa79020",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b154-013/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "37184700a5a13bdd11d2eb713989fba568b09405c75269f6b6dbf73a58feaa84",
+      "remaining": "ddf2796fa079436c83c89b96b62dd01932d4bab8a083d31482380925517c272e"
+    }
+  },
+  {
+    "entry": "b155-014",
+    "batch": 155,
+    "original": "/home/vick/rvv-directed-task155/full/corpus",
+    "manifest_sha256": "6f287109a5e0000ddf0a40291ffcb8854329f5fcc00a92ecac8e73cec4927516",
+    "accepted_cases": 186400,
+    "audit_summary_sha256": "f378486aec8d932fa8f1ff2a7598e7b1e6fd577695bb92a122a73dcdb963fd29",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b155-014/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ed341e0604f4839c6683a35da681864a88c003eb43f42794bc31c59665e0cc4d",
+      "remaining": "254dde5b1fc71c783f4872744af28467b5d291dbf2d8b31f0804af5c5d134427"
+    }
+  },
+  {
+    "entry": "b159-015",
+    "batch": 159,
+    "original": "/home/vick/rvv-task159-full/mask/corpus",
+    "manifest_sha256": "c5f75a9c11b053474444912c2d9cedb1dae38d2fd551a17d31776ae14c7ccdb3",
+    "accepted_cases": 52336,
+    "audit_summary_sha256": "18da9369b42b27b1075f24106d4f6b55a76a909eb981b94c76fcf3f92b3fa355",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b159-015/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "2097b5ca26338aaf0f7ca23efe6727a5b63de7a8f6aa56641910919904d45d45",
+      "remaining": "b9bf9959585050a034ccc95c2b46ce10ee152deea95203d062619f40c921dc3b"
+    }
+  },
+  {
+    "entry": "b159-016",
+    "batch": 159,
+    "original": "/home/vick/rvv-task159-full/scaling/corpus",
+    "manifest_sha256": "55514b9feb3c8bc18036a54588359d1c7a2bbe0da49b881adaa8e46b46c30b99",
+    "accepted_cases": 243424,
+    "audit_summary_sha256": "ac63902e0ccff50fd589b0160ea1652146749327e3c54009fc0af8904b060f17",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b159-016/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "3375a583c43af65489b8470c4adcf9d54a2cc2007eb1a70095ae5365d6a1d2af",
+      "remaining": "c4ce9937e5140b01c750b3fd414092a765c0e950c969b795e955d44e423b0ff6"
+    }
+  },
+  {
+    "entry": "b159-017",
+    "batch": 159,
+    "original": "/home/vick/rvv-task159-full/narrowing/corpus",
+    "manifest_sha256": "9a4f89c334515ea5c972ee65a95a1b7a977d28b42584365c1857234751e55b53",
+    "accepted_cases": 175752,
+    "audit_summary_sha256": "557c64bf2bd7089ceac2b02adc6e7ab3c114a1b1861e799ac432537ccf946fc8",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b159-017/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "aac67dd6a510d9045205b15177728802c48ee1baaaf54085a2444d17250b4653",
+      "remaining": "7427dc7406ee1e610d2676983685e78b14908611725741c162793c8d0d20b9d1"
+    }
+  },
+  {
+    "entry": "b160-018",
+    "batch": 160,
+    "original": "/home/vick/rvv-directed-task157/fp-full-final/corpus",
+    "manifest_sha256": "94f190644fd7e6d67ff7eb71a9923616989e983347155c458a95dd52061b36a2",
+    "accepted_cases": 124942,
+    "audit_summary_sha256": "06f83ae4bde8045fe8e12d721dec067e24a367c577148a082e6ad975e2ad6aac",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b160-018/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "9dffe56519c7997fc7f5bb03b86eb63b2235bf9b1ae8a041526ec82e480345a5",
+      "remaining": "f1e97f9fb4214d4ef0f0f23596977985e1dd11e8b7eae859af3af2713a66159e"
+    }
+  },
+  {
+    "entry": "b161-019",
+    "batch": 161,
+    "original": "/home/vick/rvv-directed-task156/wmac-full2/corpus",
+    "manifest_sha256": "bec73619e88256b7a3ff36b6833ff2c52a87b8f4b4e469e623315d68958d9da4",
+    "accepted_cases": 23767,
+    "audit_summary_sha256": "99fcdbda6e052b1af671acdcfc7d943691166f6bcb9064d8025bd6443911520b",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b161-019/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "cad22bd30559a513ad9f1edeb8af1cc9297ce2dfb98b05c5a1097a27da7bd464",
+      "remaining": "d5d2dbd0f4dd329bc8dfa73fba7cac84f5b8bd063149d6f487dd0b9c3ba0f166"
+    }
+  },
+  {
+    "entry": "b161-020",
+    "batch": 161,
+    "original": "/home/vick/rvv-directed-task156/destchunk-full/corpus",
+    "manifest_sha256": "b44e7fa609030326a7b2a63422e7dee6185c766fe0444cbda3e920f7126f55a4",
+    "accepted_cases": 5103,
+    "audit_summary_sha256": "779f29b7edc5a1b3dfdd2aede92c6fbcceee202b292056be4a22d3902453d9fa",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b161-020/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ebf76d6d7ee105357a385cbf190877625c0abdd6085ff64b353c898aa8be452b",
+      "remaining": "1aff50b6615c93a5baddc8d41079a5661b6a180dc1db4ac68a32a9dbea02cc18"
+    }
+  },
+  {
+    "entry": "b161-021",
+    "batch": 161,
+    "original": "/home/vick/rvv-directed-task156/extend-full/corpus",
+    "manifest_sha256": "f37d64af46204517638855c7c8ef796a82b81de7609169f964e8e8fb849d2da4",
+    "accepted_cases": 9658,
+    "audit_summary_sha256": "a9c5b04f8c4bbe47a5c24cd9ab38e36fcb412e172567e15d651dce753e3e24c8",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b161-021/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b5c27a2a07807deac5e1c01ecdc272b065fc78ddf5631f865deb403cecd376c0",
+      "remaining": "b7ce3103a3815b44cd9170c666bea9f7d5f5b0415fe79ed69ad82cc67c3fe94b"
+    }
+  },
+  {
+    "entry": "b161-022",
+    "batch": 161,
+    "original": "/home/vick/rvv-directed-task154/widen-full/corpus",
+    "manifest_sha256": "68205693c67ed6fa284202660a517a25c1a5b01e12a955ebaa2e5710a592c71e",
+    "accepted_cases": 65236,
+    "audit_summary_sha256": "353a2888573c1bf0dbcc5c52feeb20d1d40cff3c1eb48976db1130cc0fd959c4",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b161-022/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "7e155572afa97344d72147cb6503fdf7248f7cc1d0fb09388febbb22b61f9153",
+      "remaining": "eabfe7b1df72c2a91724abbaa657320082465372fc475fc6a2c06c9d2e694fe7"
+    }
+  },
+  {
+    "entry": "b162-023",
+    "batch": 162,
+    "original": "/home/vick/rvv-task162/full/corpus",
+    "manifest_sha256": "3598cd40b8f08d1b06b319e9dc7b17a8af2642a398ef66219d979288df408a88",
+    "accepted_cases": 61268,
+    "audit_summary_sha256": "9137cb0bf9e3e8e669722c2d2773ffcda641b573e70b67ac216e70189d5ad2d7",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b162-023/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "011c1b687839b5cbfe28d6311f44f59d388cc23f42021f57279d401774df6b7e",
+      "remaining": "3a6b25569ca471a40ee3c6fade0793a7ee0fd1db432c23bc1d71f1a53d5b29e2"
+    }
+  },
+  {
+    "entry": "b163-024",
+    "batch": 163,
+    "original": "/home/vick/rvv-task163/full/corpus",
+    "manifest_sha256": "0a37e604eaae6d462ccfb9473b12c55dcae9808c710949e8c263ab5e00ddc5cb",
+    "accepted_cases": 93202,
+    "audit_summary_sha256": "204c788f16b9322b4073463799c13d214c444289be3a0122d8e76272818db373",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b163-024/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "e57ff864b3824f383ed9036a83d309914d50755c53435f43e9dd96b474925022",
+      "remaining": "4e868541ea6a0e0e1c9a9ea528011ceeba56ad462e3c0c69f9e01416693233a6"
+    }
+  },
+  {
+    "entry": "b165-025",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/pilot/corpus",
+    "manifest_sha256": "888f97a97a64dd6f8bec7e9caa78a448c3d90c242f1c7401366b2d7eacf5fa74",
+    "accepted_cases": 4201,
+    "audit_summary_sha256": "3358f76a500c1cc420f3add39036417ac357bf11613fbdb96eafa1d9a083fe5b",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-025/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "89731c6ecb69c53c12e00ccd35b18f50cb805c9813ad7c74931b1567f9287325",
+      "remaining": "00f5ea1e55aa407736d3aaee1f910b5d5270ddcc5859d79260dd9b07498e9a10"
+    }
+  },
+  {
+    "entry": "b165-026",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/w128/corpus",
+    "manifest_sha256": "fa60b347758b730f5942502530d3599e7580867921f4b4ca8513ffb77920371b",
+    "accepted_cases": 12165,
+    "audit_summary_sha256": "333f9c361fe31e5ede869428cb86d24bd7874e54776328dc50aaff3b39e06243",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-026/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "a8950c5a032f98c2e91bcf587277c9e2adb79f56e491456fc6d4f599d037e012",
+      "remaining": "4be24013f2cb41472388d462f31aa447e81f93a0c56e0c7ecf447d38e5d838ab"
+    }
+  },
+  {
+    "entry": "b165-027",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/w256/corpus",
+    "manifest_sha256": "b51e3121ecd602562190c23d275987e36dd83b678d4b77671202c97e7d5ab0c2",
+    "accepted_cases": 13277,
+    "audit_summary_sha256": "54916af56881f61eadd450f77fbfd40889c5b8ced2722ba2de34c6ddbacf2b18",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-027/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "0f1bda54fe590dd33204764569e98bb644a1049b0465a2c85b163176834b2440",
+      "remaining": "6bc75a8d7cf50ee28bb0fe0d1e7555f6411ca1c27956970b9dd769ccb3da5c0b"
+    }
+  },
+  {
+    "entry": "b165-028",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/w512/corpus",
+    "manifest_sha256": "d47e48ff6c9e648b882b95271121e5d6b240fb3d72efabc32191d5a565bbd6e3",
+    "accepted_cases": 13556,
+    "audit_summary_sha256": "393380e723a96fac4b00e6a8729c3561ec0db08c20cf48ed245ba4e0334ac66c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-028/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "c1c93820ecbec452b384f994bd4804ba79da7f97bdaf546bb63d463a967f8dcc",
+      "remaining": "ad176b89432d908359fc2c0a14b9e59662b3dc27ef08b42bcbca7839b1379f71"
+    }
+  },
+  {
+    "entry": "b165-029",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/w1024/corpus",
+    "manifest_sha256": "b55be9abe5a0b6ba8388d8c43db45391d0aff3bdd1527658317bb2fe0c78a715",
+    "accepted_cases": 14083,
+    "audit_summary_sha256": "c8d9fd42856833cae7ed04282c12cbfd8c3687bd50066ce483f1cbfad222d6b0",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-029/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "374d8c226dd1afe018b4ffc9833df6f63690a2fa7f66d8b9a7ff1f8fc19d0f93",
+      "remaining": "7a24df9ca006d6e18526d3b7b1a44c99f2bac5d4087737bf85e71a015c86b61c"
+    }
+  },
+  {
+    "entry": "b165-030",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/w2048/corpus",
+    "manifest_sha256": "fc6b154336cf40a060cd6b52893fa8a7a22544d164eda285af7f967dc1a9791e",
+    "accepted_cases": 14207,
+    "audit_summary_sha256": "a8d221d3641a9e067b63c41bc345f4b716491855d085936325130f255e00bd7a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-030/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "100f59e2e73ac26c578b80b7e60041a3ce7d5c1e120f85d7d5aa5920cb7335c6",
+      "remaining": "c8a4e0b0fec517036e45dc7c4c75866299aa13a0dfce92774bbabe68d77b18e8"
+    }
+  },
+  {
+    "entry": "b165-031",
+    "batch": 165,
+    "original": "/home/vick/rvv-task165/w4096/corpus",
+    "manifest_sha256": "b2d1f2c70fc1ca7c1834ee28b80a6ea346630d09fa6f834fdb6b4e5b69f2b844",
+    "accepted_cases": 14207,
+    "audit_summary_sha256": "a8d221d3641a9e067b63c41bc345f4b716491855d085936325130f255e00bd7a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b165-031/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "100f59e2e73ac26c578b80b7e60041a3ce7d5c1e120f85d7d5aa5920cb7335c6",
+      "remaining": "c8a4e0b0fec517036e45dc7c4c75866299aa13a0dfce92774bbabe68d77b18e8"
+    }
+  },
+  {
+    "entry": "b166-032",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/pilot/corpus",
+    "manifest_sha256": "02fa52fee350bd26e1951dc91bfa4e9b9c0bc8bbef1384790525d55380679860",
+    "accepted_cases": 8901,
+    "audit_summary_sha256": "af924e8784bf446a555e93aaf47e969895f23bd146e1d579f50cc9f36cecc747",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-032/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "e9cbf3e5bc9519ffcc122bcab269243dea75c6f747885a127780dc90bbd9976b",
+      "remaining": "b0642dc9d84056f8fe3f91904eea67fa343a465212fe5a6c1dd2d8d6a3974aed"
+    }
+  },
+  {
+    "entry": "b166-033",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/w128/corpus",
+    "manifest_sha256": "71467e834d45c284f87a73d86ce50cb001c68cf14b036a7914e2e677d3597901",
+    "accepted_cases": 1917,
+    "audit_summary_sha256": "06048f832f93538ed19d2557e05f155d26b57b10810bb5be74a050312adafc8b",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-033/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "335d696d581e0b4b104fe6328428f2cc78a979acd0a1fdcbdf39ee717586da8c",
+      "remaining": "f1a81a08438e48d52c2a50f3b4f2e7b0ac2910a1818cece4c5804aac1d570c8e"
+    }
+  },
+  {
+    "entry": "b166-034",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/w256/corpus",
+    "manifest_sha256": "f1b17c140752349519a7dcb3c2d34da85caa27d8075d3e088f8d7741487370aa",
+    "accepted_cases": 11010,
+    "audit_summary_sha256": "14da6d69d3ced3d8d3735da45b1d65f33b6a5465b3a6d4d7678f0af1e62f4c32",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-034/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ad5e75dcc9d197d45a456ce173f24ef6f13bc60b145066d30d6e361527d24721",
+      "remaining": "b7c5ee094bf9516c4d6138647e183d36a0d8d4b22ff7f5b986c0c516cccd4a98"
+    }
+  },
+  {
+    "entry": "b166-035",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/w512/corpus",
+    "manifest_sha256": "2a4b9b9bb6a862400e941efbc02033f813921a9f1977a9e633261afdccbcab4f",
+    "accepted_cases": 11266,
+    "audit_summary_sha256": "0d4206fbdb70961e6ec536bb93053c4713f992a7413fb91f3182659829dd761f",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-035/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "29b914bf4ba282e07ceb54490cec9ee1fdc1db9c08d5dc7f9b368936a7920f0e",
+      "remaining": "581b4e8b6e29826efdcb08d0cf343f244934f0d8eaf1b0d0516f287ee3356b58"
+    }
+  },
+  {
+    "entry": "b166-036",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/w1024/corpus",
+    "manifest_sha256": "a3cc1442005c01c392a623cdad45f90d3ad66d94e18bebf4f0c1d4d1a1c93e1c",
+    "accepted_cases": 11682,
+    "audit_summary_sha256": "38a5e92e6b25fd0740af2187bc112fd2ab4cd3201d01cce0efcb0e25edd13461",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-036/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "24ff062c8380259ec1d6fb4477ff985f11593e07ad03b4f6454bbbddd27f0859",
+      "remaining": "18c24f3614d1bd7f706c9176cc624ff7e3722adb27c8e5561a5293af2a742d21"
+    }
+  },
+  {
+    "entry": "b166-037",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/w2048/corpus",
+    "manifest_sha256": "46d77cdd8dbc0f622ca9bda2db863857573e4fa5a8e70772922bf6c0eb26d0ee",
+    "accepted_cases": 11778,
+    "audit_summary_sha256": "e1aaa7d65b2475109426fa37d332c6b979fb42c4557ecf1e7d48404573b7b24a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-037/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "eba634b1704c53b5c45bdc1397f8bbd2229f442291d20635269e57c87ab8dcb6",
+      "remaining": "177754e52ee5cdfe5e648ddd77144a37cad5ab8d22a5fc9252aa68c38859b92c"
+    }
+  },
+  {
+    "entry": "b166-038",
+    "batch": 166,
+    "original": "/home/vick/rvv-task166/w4096/corpus",
+    "manifest_sha256": "4dcbe4559217c8280ba76ceea13df90d8b46217891e561fb65a9da2660737648",
+    "accepted_cases": 11778,
+    "audit_summary_sha256": "e1aaa7d65b2475109426fa37d332c6b979fb42c4557ecf1e7d48404573b7b24a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b166-038/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "eba634b1704c53b5c45bdc1397f8bbd2229f442291d20635269e57c87ab8dcb6",
+      "remaining": "177754e52ee5cdfe5e648ddd77144a37cad5ab8d22a5fc9252aa68c38859b92c"
+    }
+  },
+  {
+    "entry": "b168-039",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/pilot/corpus",
+    "manifest_sha256": "c2530e7dd10826b76fefb1e40e789bc1f0432f155dda1f7171d52e2508c58b9f",
+    "accepted_cases": 2290,
+    "audit_summary_sha256": "51c098d9468d5b058bce55d29efe1317d8ef8269e14a18af74e42488c535f396",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-039/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "908de1cfe0e2bd5f7829789468e10654f1d0762764fa915e6101f0351c903898",
+      "remaining": "3355b900e59eecf2ac5978a93cffeba0dcab06d3673093c6744f70776326c69e"
+    }
+  },
+  {
+    "entry": "b168-040",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/w128/corpus",
+    "manifest_sha256": "67d1c30b3f48ec2dea921ae3fc2b5be2a8fac24e56355b23f5fff09ca34facff",
+    "accepted_cases": 5914,
+    "audit_summary_sha256": "7e199b74368dc8f84622eb8abb062c13d53d4f43ca3faf431068054babb07a08",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-040/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "dd1ef17c7fe177c5c0a1c604820b7751866b3432bcd696b687e6bae6124d3233",
+      "remaining": "f815385fe4ad58e3bf7214f5f24a3bd922449a3dccad5e25765c74fa5d50d20a"
+    }
+  },
+  {
+    "entry": "b168-041",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/w256/corpus",
+    "manifest_sha256": "89db4e3252171f5901edff1de146475bb6bba277752233421e9ccccbf582525a",
+    "accepted_cases": 7137,
+    "audit_summary_sha256": "008019450711bd0871f3a3d2c497f8a317f944ee34a3544bef81058fa695a756",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-041/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "4dfd960a3e87e076cc25e6d09bf0815aa8e42b38e0e903ac01ce6a560b43e93d",
+      "remaining": "836257ae53109fbadc43c7e7fa2b6133633a01e8ff3e5d20493f94b0a3d8feef"
+    }
+  },
+  {
+    "entry": "b168-042",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/w512/corpus",
+    "manifest_sha256": "3f145d05fdf55ae71c091e74dced4cf37877fd308d89815dfefa1af48cfcdb52",
+    "accepted_cases": 7241,
+    "audit_summary_sha256": "475f0d06cb94f0418e48fe5ed72ce06f56471b53b85ca1fc5681b81145f61e70",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-042/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "6c9464dabdc64cb93a8b15a8705b01d18c405ebbb49d3d9fc2a98c85ec6e730d",
+      "remaining": "296a01e00ce315b2a49e016c8303d6cd0d4dd1eb1e208062219e08a279bda851"
+    }
+  },
+  {
+    "entry": "b168-043",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/w1024/corpus",
+    "manifest_sha256": "187dd8e35c69ab220386a69406c13e2cbc93106c086ca950a2bcc9c9cbefb007",
+    "accepted_cases": 7383,
+    "audit_summary_sha256": "782dd0cdc145654dddffc232c9a72496ebde7b45c46903c8d9520432e971508b",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-043/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "fab8d4ffe0932b3227db238076bb9cdb27e3e6467c1efcfafb2a9ac9ad253794",
+      "remaining": "e37e5203da99e23274402176018bd0a4c1c1a2fee16c91aa9a9058f81c554d22"
+    }
+  },
+  {
+    "entry": "b168-044",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/w2048/corpus",
+    "manifest_sha256": "e11c21f0a4b537d7250980e4299e4ca3f2b69bff1fc9cf0810eb8427e09b4db2",
+    "accepted_cases": 7465,
+    "audit_summary_sha256": "88724c6aa2f8c872ed55881861f299310edd60a50bde02b2e64963f0c3878535",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-044/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "0b94d63b5622cb4d708a98c2a66daea24e6e6c5ef8ad01b2f71bbcc39df20424",
+      "remaining": "eeed34f36ecfb7dcb74d99da922f90f01b41a19f2944121cc9f1ecdc9b1bfa6c"
+    }
+  },
+  {
+    "entry": "b168-045",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/w4096/corpus",
+    "manifest_sha256": "f3d232ebf46330f97e7aba34a71d139281ad08593764b0c5d7de00a3e82d516f",
+    "accepted_cases": 6344,
+    "audit_summary_sha256": "a1c431ba48f55aad100eccf8a5b05c8d3d04118e017c3bed53a2748d7112d419",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-045/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b403a96e0e0336d0c3c6a657b0c8c04470f03fa028897d8187963f7f36bd3b28",
+      "remaining": "e19d559ef60d36b1659790e4f3310d0f7e89d1150c75c355bb987d43b5aed7dc"
+    }
+  },
+  {
+    "entry": "b168-046",
+    "batch": 168,
+    "original": "/home/vick/rvv-task168/policy/corpus",
+    "manifest_sha256": "ea3bb9d44b7028ba9542379f0dcdcbdf63aca8b4d6b1b8b32d65667813046b52",
+    "accepted_cases": 576,
+    "audit_summary_sha256": "efc7e57be5c667582219e9c097b11a9409172442509cd7fe3f6a2cac1d73a969",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b168-046/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "cfa990ef81dbaf66cfcda4969513c6446109b186a0a92446778b9c5db3dbb0a1",
+      "remaining": "de1b93ea0d1e715f4d44194feb771e54e1877405b0df0f4af17f3304bf31c017"
+    }
+  },
+  {
+    "entry": "b169-047",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/pilot/corpus",
+    "manifest_sha256": "e5b7206fac908824f165018e95ffbe280c68ab622fdb38f421f01c7e2d1914ad",
+    "accepted_cases": 1868,
+    "audit_summary_sha256": "ca435a94120f300a795888ebe37db14ce1bb0ae9018253eca88aa12d30ffe339",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-047/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "e9c3e97709ed82fe3b0748dc8aecb3ecc8d3f72b9daac3fd799fb336c09d00e1",
+      "remaining": "e34319efd8115014fef3577998db39cf709f0b2e6960613ec1b84743df182807"
+    }
+  },
+  {
+    "entry": "b169-048",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/w128/corpus",
+    "manifest_sha256": "cc79541afde63d4371a13a4d7988f20c33bb4d82732153716d875128fd7a6bdc",
+    "accepted_cases": 4762,
+    "audit_summary_sha256": "3aff8d47e044c0ef4315e7643c6f9a4213395c9fc3fdc23f78bc781b904a6d76",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-048/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "9e1fb6948feabc997e0acf1a64ca6211c21e3828ae6f5f5f1770b58bef36136a",
+      "remaining": "b954d3194444c8b2d7ff4732371902a41b0b32f6e5d71a3daa392066f0ee8d7a"
+    }
+  },
+  {
+    "entry": "b169-049",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/w256/corpus",
+    "manifest_sha256": "ddda6fe94ae695c921fe7cc8315e93bdfbd98f1a033e7d73a4960dc9e4702c30",
+    "accepted_cases": 5964,
+    "audit_summary_sha256": "7babc11bf11fbd04339dbb31bd5034650a1c5fcecc821e56bf884627d06b306f",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-049/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "32353d3115ea75d63ebe4d343bddae8dc0f6facd2293000327bde165d74ecf70",
+      "remaining": "d176a7f89f810f5d28138841a9461a8512374c93a7892b58a50dc5d8bd2c1de3"
+    }
+  },
+  {
+    "entry": "b169-050",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/w512/corpus",
+    "manifest_sha256": "f3541e6fa3e70b457d2bac06a121c28139704cdaad228c919ac0809901b4cb3c",
+    "accepted_cases": 6511,
+    "audit_summary_sha256": "f14dd36d877c2d93dde6a512887d8b8952e53c9d47f4f62274f1d6ddb76ba735",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-050/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "534b178ca2ffc753265173d6c2c48d3fa7157ed095113711f85d9ed7ea46dd79",
+      "remaining": "ecc5e2c5b55e7df53dedc2fd318115a069d924424534cc9c5ba49b2d2705b588"
+    }
+  },
+  {
+    "entry": "b169-051",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/w1024/corpus",
+    "manifest_sha256": "0b1a586b3835f5def51643212b883e55ed718decc5e4cca1cdf50f3a76e18b5b",
+    "accepted_cases": 7197,
+    "audit_summary_sha256": "e08d3e7cef32792411c9f1b795324059f03035daf474c832087a5cde3c66451d",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-051/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "e9b003606e305dac5ed7c04ee936dc6ea7547d2bb158dab7b6791920af5d1f39",
+      "remaining": "affa588fd1c9b58fa22152e90bbcd9136dc5427dd48801fc3e6b1e37c8279d79"
+    }
+  },
+  {
+    "entry": "b169-052",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/w2048/corpus",
+    "manifest_sha256": "3dda06c672c25eed98bbf5393b949c8821038a05001769eff97df640f18212a2",
+    "accepted_cases": 7812,
+    "audit_summary_sha256": "6cfcda5e12616b09b4c5690a4d5d237d60727fd29a08093e5332b5da2a7f5398",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-052/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "d5b37d220625ca5d91b5143172c377951a3227b5f18d42120ab62b4103c22f82",
+      "remaining": "8f7eba4d4aeb64be4c7db526f869d0901d8ead86c6e5941a0ad36e081c5221b4"
+    }
+  },
+  {
+    "entry": "b169-053",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/prefix/w4096/corpus",
+    "manifest_sha256": "c468adcf13726b57f021aeaf2670ae5b326f4012cc25cb2866d4d83e298c46ca",
+    "accepted_cases": 7376,
+    "audit_summary_sha256": "1f05358cc1ab83257f0bf6a817bd8c8e8197aaafd077b925aa286ce2e96bd9ff",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-053/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "83ce88816461fe237a113fb1dcee01b99affa585c32d3773370656863fa242a8",
+      "remaining": "e33d50c4eca2357f82d4fe629dfd61d57ad367666b7367c2f0b72b3ea2d1ced8"
+    }
+  },
+  {
+    "entry": "b169-054",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves/pilot/accepted-corpus",
+    "manifest_sha256": "2001c64f228551b88124bb2d1c95dad984987a0f50d25dc6137f3e44fb7eef0c",
+    "accepted_cases": 586,
+    "audit_summary_sha256": "2e6cad63238ae4c6936fabb6880b9bc7674f42dc36fc9cb43931a1786cacb228",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-054/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "75ada1aca073a906d577b345fc104fff692e693755b262e11b706d07fe4a42e0",
+      "remaining": "0c25fc1b6e8b84c7e1ef936d24b4cd45c2fb308d3be97772c45adde06b032aab"
+    }
+  },
+  {
+    "entry": "b169-055",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves-reviewed/w128/corpus",
+    "manifest_sha256": "cc3455d09bc5fa2b1ec1565e6e20f5bf41547e4dde38747ce471de083cc95ae4",
+    "accepted_cases": 1773,
+    "audit_summary_sha256": "d9448af89ccf0966662da7bdb9bf0ba304e7d24dd62c29ef83b960a92ca82a2c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-055/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "91c04fd05b95307870fdc471e385c47566f88a133407ed91d010a3d951e35e3d",
+      "remaining": "a5b4f5ef634cb1f525efa1268f588b13def100ba31534db13f9b8ac5ca8256df"
+    }
+  },
+  {
+    "entry": "b169-056",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves-reviewed/w256/corpus",
+    "manifest_sha256": "a7a26505752467ef0bee0f2ed69bfcc8d01dcae20327a69a38da2024d63eabda",
+    "accepted_cases": 2164,
+    "audit_summary_sha256": "de318bac36ae65e1723f09cfc81271a894bd812c34d3491f7724f6a40a2e2aa1",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-056/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "91c04fd05b95307870fdc471e385c47566f88a133407ed91d010a3d951e35e3d",
+      "remaining": "f096c11f88ca59ca9576a21bac841155cb77c90f0f8edc9abaa8b95a19c0546a"
+    }
+  },
+  {
+    "entry": "b169-057",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves-reviewed/w512/corpus",
+    "manifest_sha256": "4b6928dd0946801ccb9519b8e14f09f4410bc0844687350a4c99d38033905a8b",
+    "accepted_cases": 2032,
+    "audit_summary_sha256": "508cd07c22b2e7ad99b5fa5559d45bf3d735e0257f73118542cc48eef480059c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-057/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "91c04fd05b95307870fdc471e385c47566f88a133407ed91d010a3d951e35e3d",
+      "remaining": "d1e8d1320858d60e73bbd8bfcace492bea8a1476d391ff630ca24e8b50400083"
+    }
+  },
+  {
+    "entry": "b169-058",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves-reviewed/w1024/corpus",
+    "manifest_sha256": "844cab3f0f2a2827202a11eebe991393b5f711e9e798d0717356ccfc39eb0ca1",
+    "accepted_cases": 2296,
+    "audit_summary_sha256": "43bdb4f958596f84fd01b91a64db04ed42e4cf2f8a61d17b227c83f63d096c2f",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-058/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b731af12561dc64ae6e2bffd3527b5d9925c2360783825fd2a30848d09a26360",
+      "remaining": "ee5d233143efb91f92e9262a9593adf24e1de1d050b7b03b2523cf5090689626"
+    }
+  },
+  {
+    "entry": "b169-059",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves-reviewed/w2048/corpus",
+    "manifest_sha256": "94ff31356f6fb4e1044cfbdcb993849b562af3ba9ac45e0d52b9838fd3fb89fd",
+    "accepted_cases": 2296,
+    "audit_summary_sha256": "43bdb4f958596f84fd01b91a64db04ed42e4cf2f8a61d17b227c83f63d096c2f",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-059/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b731af12561dc64ae6e2bffd3527b5d9925c2360783825fd2a30848d09a26360",
+      "remaining": "ee5d233143efb91f92e9262a9593adf24e1de1d050b7b03b2523cf5090689626"
+    }
+  },
+  {
+    "entry": "b169-060",
+    "batch": 169,
+    "original": "/home/vick/rvv-task169/moves-reviewed/w4096/corpus",
+    "manifest_sha256": "bfbc2b02619e4958f06b653a9f6355b33e25e3d1e9a7d5c8d1afdf77e5691dfd",
+    "accepted_cases": 1983,
+    "audit_summary_sha256": "1e61d59a295d5cb7918c2c0f044abce831820bdacc9f6e69c8082a62d2e1a7fa",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b169-060/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b731af12561dc64ae6e2bffd3527b5d9925c2360783825fd2a30848d09a26360",
+      "remaining": "3537de307065b899d308bd5ba125d02419c1bc3865820afd6402ecb5c9837e29"
+    }
+  },
+  {
+    "entry": "b167-061",
+    "batch": 167,
+    "original": "/home/vick/rvv-directed-task167/full-review/corpus",
+    "manifest_sha256": "39ddaef0630739cea04e8d311f408c89b669c5a0a2d932c09c4eed1ce9f8b2a7",
+    "accepted_cases": 237664,
+    "audit_summary_sha256": "1fef741d0aef1cc5afbc1fb79b8c612488bcc656ce1c781bc3f34413000c8ca4",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b167-061/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "709bde0655dc313cd6d6fb24d20e63630006cc7581c29e251ebf35ae8f4836dd",
+      "remaining": "6ceb1f4bfd337deb006e8f6e7173cf8fd9c955c5679d664e5e8d6f976906792a"
+    }
+  },
+  {
+    "entry": "b170-062",
+    "batch": 170,
+    "original": "/home/vick/rvv-directed-task170/minmax-pilot/corpus",
+    "manifest_sha256": "da11fe16863c7b97d7bb5f520cf499b2cea0e7e81f818b45e1e37ba5c470d094",
+    "accepted_cases": 1256,
+    "audit_summary_sha256": "24614055380ecc6e16bede5c6b5175c0184ccab0da8c429a5ef34e43b7aefe85",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b170-062/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "caed06a58a68aa21776e2584511ba337c1671d83beb07dab2e6bccace979a07d",
+      "remaining": "c4391a792b6bc36d4a5beddfe27f7ecdc289641847a5a9ea0cfe32604d81f938"
+    }
+  },
+  {
+    "entry": "b170-063",
+    "batch": 170,
+    "original": "/home/vick/rvv-directed-task170/minmax-remaining/corpus",
+    "manifest_sha256": "5d93c8e4bf3558993a5ed44a308bdb39bbf3d5a996ee673d205e676904802466",
+    "accepted_cases": 16832,
+    "audit_summary_sha256": "da97203c59e6afd120df57ba4b6964bec1f03cbb8f90c645ee644274e27cfb09",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b170-063/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "fde5ada0224d167b58450fc9d4b0f9c2e7bd78a8bff9d2caf0009eee5ddfbd52",
+      "remaining": "b5f12b460d63e4eaed7b3c1bdd15120ab4e7cae7b39a67041271c037292015da"
+    }
+  },
+  {
+    "entry": "b170-064",
+    "batch": 170,
+    "original": "/home/vick/rvv-directed-task170/sign-pilot/corpus",
+    "manifest_sha256": "51f1ba13ca57ac2db6350d9c9da8c0a361e1cde8169d6588fe588931246a3530",
+    "accepted_cases": 1884,
+    "audit_summary_sha256": "49f0cd76c8149cc22500a110f404db6ef07777f732757a8c0ac1400c4aca2538",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b170-064/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "1e9b184a6591de68e138307bbef65ce58300360577d456c8e3f6b1a21a0d145b",
+      "remaining": "50f2f504ee8bc9f0f307478b600f4b8b189f591b2c55791eef5068489b57258f"
+    }
+  },
+  {
+    "entry": "b170-065",
+    "batch": 170,
+    "original": "/home/vick/rvv-directed-task170/sign-remaining/corpus",
+    "manifest_sha256": "4e673098e73dc460bad96f0dba581b6074cbc766085c98301636cb07f7b45adb",
+    "accepted_cases": 25248,
+    "audit_summary_sha256": "6be82254d6cbf02e4c0eea17855560972fbfe3404837ca61d66b859e3dd7bc27",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b170-065/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "894f4a62b739c68c3c856b443b026d4f009ccc70fbfae56eb4a26510e97a679e",
+      "remaining": "a16b0b995f38522b53dbc5ae739c515c7bb85c967bb24b362d0a34b5af41817e"
+    }
+  },
+  {
+    "entry": "b170-066",
+    "batch": 170,
+    "original": "/home/vick/rvv-directed-task170/compare-class-pilot-v2/corpus",
+    "manifest_sha256": "3db44df5e308f47fa62a70195284dd0172369edd7b98c07c9b8cd8247c07a82c",
+    "accepted_cases": 3581,
+    "audit_summary_sha256": "394987dbf81a28978e92a33966f2cae907ad66cfdfe0890f1a59c6f105e53463",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b170-066/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "77ecbe1812edef9fad4b480f82650fc71e519f036bd6fe780726687e8c37ff70",
+      "remaining": "364cfcf82d852eb1a2c575b04280979698090727ee7ff2d30d7daccce4bb4357"
+    }
+  },
+  {
+    "entry": "b170-067",
+    "batch": 170,
+    "original": "/home/vick/rvv-directed-task170/compare-class-remaining-v2/corpus",
+    "manifest_sha256": "9ef7a3715b1feab49c9bf18d6f82f638b5a887c6a212bddc3af4a3f21f33d676",
+    "accepted_cases": 47880,
+    "audit_summary_sha256": "76d0c2be5bac365c1d77b859fefec3e5174149faa1bdbbc2a71012d1b6bd6092",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b170-067/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b8b4c65c7715dbcd82caa57559de448b5f7c0efbe5b29e0b9bcc418eaee49577",
+      "remaining": "8e906b77be624995c6290037820b022efe174e50f511b7d3b24ecf0b6cb45337"
+    }
+  },
+  {
+    "entry": "b171-068",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/original38/corpus",
+    "manifest_sha256": "2c532137ef14ef996e2b4466a8e45e82bb471d8fbcd3d6b6180d88cb1c8c5ab3",
+    "accepted_cases": 38,
+    "audit_summary_sha256": "076ce7891298983ab37e273a578d6ea739e4194cb5a64aad5d3ed636ab0e5a7f",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-068/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "44ebfd08bb5c636b820589a521e5cfef888baa077648ab15ab5a345d866d15b8",
+      "remaining": "beb81c7e66445692a528b312121db0dfbe8ed803b0a28ee7a967cd1e3f8143da"
+    }
+  },
+  {
+    "entry": "b171-069",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/remaining/corpus",
+    "manifest_sha256": "f475164889bd9c72c9414acbc477bbcc4cf78671fe17ef1d666f802b672c9b41",
+    "accepted_cases": 700,
+    "audit_summary_sha256": "15fb140234245441f548b91ffa70bb31008511882f14b13f38b09521a8f3d30e",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-069/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "44ebfd08bb5c636b820589a521e5cfef888baa077648ab15ab5a345d866d15b8",
+      "remaining": "2e6557b1c8fca23c0a84a6cfa4f505915ed040a50e2e91ede2fd71bcd21c4fa5"
+    }
+  },
+  {
+    "entry": "b171-070",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-pilot/corpus",
+    "manifest_sha256": "6515ec8623a40e5930e18695788e42725015e75e66083af44c31a3e23f91ab7e",
+    "accepted_cases": 659,
+    "audit_summary_sha256": "b8658c60fd30a1faf30a52db4fec42848f276eb63072cf47993db324e5dc9a1c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-070/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "37608c982ca4c7739c28f98b3ffc6ec43bd379471407895f4972000c4de75ee2",
+      "remaining": "9c92468776cf27e6ff5dc7e1753d150b336f0754642d9e631473ca2bf92630b1"
+    }
+  },
+  {
+    "entry": "b171-071",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-w128/corpus",
+    "manifest_sha256": "6ae12b8c723f60c77c3592c9b091eb2b8925010776cbfa457204edf45118ad59",
+    "accepted_cases": 1620,
+    "audit_summary_sha256": "c62432a8125bbea5609475d1f38200846b16856b6ecaf42c3bd21876dbd421e6",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-071/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "06718991d16ddc228b7998843765447ec84fa6a9f0b13c69839e9bd04fb05970",
+      "remaining": "ebbc88dff629223251bb15d4d4c7b8a6c38d4f525b531a7ea1852986d7fc3676"
+    }
+  },
+  {
+    "entry": "b171-072",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-w256/corpus",
+    "manifest_sha256": "24d3aa2563c084662901c07ed60339ea2c1f48431734a659fbbfafcc9c5e3fe0",
+    "accepted_cases": 1985,
+    "audit_summary_sha256": "9e215a47f39c41ae57969e7a2f7b56e1ff2ee87cd695d7bdc64b4e89de2f1a40",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-072/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "06718991d16ddc228b7998843765447ec84fa6a9f0b13c69839e9bd04fb05970",
+      "remaining": "c7e71e444e6af67961f69c6f2b6c8af5ddb5c4040755af85a3105bfd092ed1e9"
+    }
+  },
+  {
+    "entry": "b171-073",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-w512/corpus",
+    "manifest_sha256": "c0b8a60cc78e71d75ab5a2cdc79700dafccad53c6fdc83a13c0438a3627dfaa1",
+    "accepted_cases": 1991,
+    "audit_summary_sha256": "1e79baa45c76016cf2cd298c6e09330232e1ba0d15e1a220f986e5ce60e5ad4b",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-073/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "06718991d16ddc228b7998843765447ec84fa6a9f0b13c69839e9bd04fb05970",
+      "remaining": "bf0e0340122baf220866ca9ae2eb2964695744aab4a5876a6cace48c2e6e0dca"
+    }
+  },
+  {
+    "entry": "b171-074",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-w1024/corpus",
+    "manifest_sha256": "16947f52279b557e88c42f72d7a5d715c762721aa052bf6fe0a80950b6b54585",
+    "accepted_cases": 1997,
+    "audit_summary_sha256": "8cb080bd5ac2d5ba8ec670f8b7f5dde9ba1870dfbac0c0c99ba40cd1c3ba53e2",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-074/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "06718991d16ddc228b7998843765447ec84fa6a9f0b13c69839e9bd04fb05970",
+      "remaining": "4ac88ba3a7ea2a92c5673da9cd99dee887b81275071749012526ee256c071095"
+    }
+  },
+  {
+    "entry": "b171-075",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-w2048/corpus",
+    "manifest_sha256": "0c7ea40c26589c2e38a6f81f798478219f12922f59c67e6159c695bc97c0cd56",
+    "accepted_cases": 2000,
+    "audit_summary_sha256": "ba9205b3d09b2cd02361802cbf9caef9777b454efc0be2d32d1ea02d52634f89",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-075/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "06718991d16ddc228b7998843765447ec84fa6a9f0b13c69839e9bd04fb05970",
+      "remaining": "4adeb2c9de90bb00409f4f2af0227a0309c549ad550f00c5d864bf43129612f2"
+    }
+  },
+  {
+    "entry": "b171-076",
+    "batch": 171,
+    "original": "/home/vick/rvv-task171/views/transfers-w4096/corpus",
+    "manifest_sha256": "a87562dd1021ff0ca36bc41be875c09c7dfe80d99d3da985c5bc6a0aaab1dfbc",
+    "accepted_cases": 1662,
+    "audit_summary_sha256": "17d0aeb56006164a9c48b5a9d093f19d1771e63e95d2b956b1d479f154b4fca4",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b171-076/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "06718991d16ddc228b7998843765447ec84fa6a9f0b13c69839e9bd04fb05970",
+      "remaining": "6917360b1a3d34414da02e030ecd680bd30ac0258dea12a0545ec8a7d00bab9c"
+    }
+  },
+  {
+    "entry": "b172-077",
+    "batch": 172,
+    "original": "/home/vick/rvv-directed-task172/same-pilot/corpus",
+    "manifest_sha256": "e5c55884b59615abe9298ab1aa270370eeb697cdd27c492770b5061744a0ea93",
+    "accepted_cases": 6686,
+    "audit_summary_sha256": "a5416982713d59aabb813b49ea4df0601a061af192deb768504dc0e807eee176",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b172-077/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "c6e557c1f450dfae9ef2a1a6359987fba49081db39c58556bb19a02a62828b03",
+      "remaining": "f5dea67dfb0b4ad38dd4e2bde6c33ffaf69dc16e7a8340d0e7c60783b8cb38f4"
+    }
+  },
+  {
+    "entry": "b172-078",
+    "batch": 172,
+    "original": "/home/vick/rvv-directed-task172/same-remaining/corpus",
+    "manifest_sha256": "00a880df027c97144368121a83585c143276bf6572fc778cec4ab383641d38e6",
+    "accepted_cases": 84448,
+    "audit_summary_sha256": "514bac9636d9427ba62425990946eeb75b2f30b6235b6bcbf7a3d64a0ab78e8c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b172-078/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "2180eab2607e0ef897041cca6961572a67ce9abf4f541f04f7e4bd62ca9d0d6e",
+      "remaining": "02de031919abf6d1851bb89451e82a9b3f8c35253dfdbabe9523b4329240ff9f"
+    }
+  },
+  {
+    "entry": "b172-079",
+    "batch": 172,
+    "original": "/home/vick/rvv-directed-task172/widen-pilot/corpus",
+    "manifest_sha256": "f4d437b08fb7799a560dfe35ad83808479a7cfd4baf2ab6817aa09641cd09a62",
+    "accepted_cases": 5393,
+    "audit_summary_sha256": "1d9c6b210ee8c7c9f1e8a7d58c38820d7c9f2e7df7b148e904b1ccce2f8a880e",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b172-079/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "17e5df82f24cffcd3e5f6691a62f8d9cc15fc71023e1df3c6fc0104591868a19",
+      "remaining": "9896039b3338359c6a2f2f0d027908e9716065cc9affb6e0297fcd8288c455f1"
+    }
+  },
+  {
+    "entry": "b172-080",
+    "batch": 172,
+    "original": "/home/vick/rvv-directed-task172/widen-remaining/corpus",
+    "manifest_sha256": "6cfc296739dfa9814742a87921408efd96ea2a7c078406ad678a0cc1990104bb",
+    "accepted_cases": 44688,
+    "audit_summary_sha256": "b1897ffae647a67b0bb5f9bcaa5a43358825ef5d9bffac4ce19dc3754c87b3a7",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b172-080/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ae3c853f4f2b9f9eee0918aea4dde7cd5a1a56390be67fe61d47bcf574fcfc3a",
+      "remaining": "3eb0f01cc5b851c066e679d3c5ee3249e775c84909de2db2671f55c9b9f2f46d"
+    }
+  },
+  {
+    "entry": "b172-081",
+    "batch": 172,
+    "original": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/corpus",
+    "manifest_sha256": "f9c84aa38689d2f847c4b90af11d31c0dfa61461378939001a494d6cf991e034",
+    "accepted_cases": 8280,
+    "audit_summary_sha256": "f6f58e720425be2f8e44fa43674f382a768b031782eb8ca06c2c494d2daea019",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b172-081/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "9be4f2e4a2fb591812d076b34d5e98d4907d9a10dde4b157d4f5e92467e1f137",
+      "remaining": "92d92df97a80481a6f9d47c5878955a1c4c20781560234e18975cc5e7bbd5aad"
+    }
+  },
+  {
+    "entry": "b172-082",
+    "batch": 172,
+    "original": "/home/vick/rvv-directed-task172/narrow-remaining-fixed/corpus",
+    "manifest_sha256": "9a90c352074461d4889ce588430de1eb0245bc1231488a08d95375a25a20893b",
+    "accepted_cases": 86644,
+    "audit_summary_sha256": "6b9e3bf45ac3a1aeed74376b05a719c45db59ce5cba4e0bc7914754f1c16801e",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b172-082/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "fdb669b9148e3da903a10f68f8bdc3a5140f9d00e81ad0ba94a78318bd502e5f",
+      "remaining": "303dbd327dc7c2a9facbd0688411e333fc9ce0257ad334e5a1a439a4aa58a2cc"
+    }
+  },
+  {
+    "entry": "b173-083",
+    "batch": 173,
+    "original": "/home/vick/rvv-task173/pilot",
+    "manifest_sha256": "7735ce97d23ecc36915058c1ac3cad907fd587299d43468bab0b229ed50af47a",
+    "accepted_cases": 6051,
+    "audit_summary_sha256": "b6342b6c90594851f8345869350f8fce13d7498f71e0545cd1bd1c322d06d7e3",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b173-083/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "d40cb36f57085e377f10e3feb09448dbd26c49ec9eac351eccebd652f6810a7b",
+      "remaining": "ad921667aee251a486e7aedbe6de3344842c6ef6ccb680d3d8d56ad1434c7d6e"
+    }
+  },
+  {
+    "entry": "b173-084",
+    "batch": 173,
+    "original": "/home/vick/rvv-task173/addsub",
+    "manifest_sha256": "accc90b6f7f4cf7c8f6751923c4bbc27245f62044c4c4847ef66f87e87cdbdc2",
+    "accepted_cases": 57580,
+    "audit_summary_sha256": "253cd151715a9520e4f873784e697585e7e8b99fdc6552f2510d0cd1708204d7",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b173-084/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "0ed7771194df9288c9455984991c57ed8a98701b9ca451bf0c3b9c3c878f171a",
+      "remaining": "34b9e1a30e819ffd11911501651e70e748dd04a4f88194bd90e2b884d41ac2a8"
+    }
+  },
+  {
+    "entry": "b173-085",
+    "batch": 173,
+    "original": "/home/vick/rvv-task173/mul",
+    "manifest_sha256": "00d35922298166f603340d6acd46c82a27369eb2644f87701ac7ac1cbf887e41",
+    "accepted_cases": 13711,
+    "audit_summary_sha256": "34c9f05960acced430068e640f1ad3bc7e87034d719d1b5cb82fe200e02f0d9a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b173-085/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "97156e11f009ef356e501caaf5532ab3ef81163702a1766bb7ed4c2a4a973b90",
+      "remaining": "c51ee68ed68c7facf7df71d893701fc9f3779f5ad5e33f55d376211b3b77709d"
+    }
+  },
+  {
+    "entry": "b173-086",
+    "batch": 173,
+    "original": "/home/vick/rvv-task173/fma",
+    "manifest_sha256": "5e5aa8dd38efbe1c48d82e3f6ff071ed8977cda6a852d6d12eb5ad9a85507b15",
+    "accepted_cases": 63808,
+    "audit_summary_sha256": "c3ec9ea6981fcabefced0a26a8582038fae027a7bf5bb11545a933876409e6ff",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b173-086/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "32f9f05d619e728fd7e0f36011368ff4f6c13eba500143ae7d73fc1d865fa77b",
+      "remaining": "5562db0982d3990680ee486d8fbbcbc9b921810633526c9179d441ba4f8119f2"
+    }
+  },
+  {
+    "entry": "b173-087",
+    "batch": 173,
+    "original": "/home/vick/rvv-task173/extra",
+    "manifest_sha256": "430431329cbaf7361557b3f8cebca403069da824f834eec7d31d96e9009235f8",
+    "accepted_cases": 29760,
+    "audit_summary_sha256": "32db2430c2e4cfb548ec03cc0a0decc2e95880c4c0e4f31c4130bd12a9826727",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b173-087/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "04ef2cabe55f1f59a7e055318d1d18f0a9143394ea7e9b45838e63507e6bd3b4",
+      "remaining": "e6cbc2da35597257e7bccf764792eb2fb2c84262a48ae3e904d8143fcbdf2b17"
+    }
+  },
+  {
+    "entry": "b174-088",
+    "batch": 174,
+    "original": "/home/vick/rvv-directed-task174/pilot/corpus",
+    "manifest_sha256": "5f6e0d862d8c57d7e0c33a4403e0f93f6a94ef8e9e184896948cd260b936bd43",
+    "accepted_cases": 6173,
+    "audit_summary_sha256": "301950d8714113e9090ad48ccfb2ffc3a128d4d66878acf156d643a8565743c9",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b174-088/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "b437c7f1b168790f174a54531b1581d7549126561deae8a7be23e70604a443a5",
+      "remaining": "921be5a42f3de099205fdb8235c4bde11493af2666ab6260dc31d7be6653966c"
+    }
+  },
+  {
+    "entry": "b174-089",
+    "batch": 174,
+    "original": "/home/vick/rvv-directed-task174/remaining/corpus",
+    "manifest_sha256": "0ef137357ae36f5998eb49ec3b59c189f3eb849802c0582b8eaac3e6f32ea2c9",
+    "accepted_cases": 78619,
+    "audit_summary_sha256": "4abbda0c8d8bcbc0e67d5ae9ca2374b2b540178f1322366b4bc31fec61808e8d",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b174-089/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ea30a067335738033d6b730317f513ea8d81441cb1d53b0a1959d64606d15041",
+      "remaining": "43dc28d8dc5771414251a09fd22b900b3c3294de6dc2d0a84a3ca5ad8728fdf9"
+    }
+  },
+  {
+    "entry": "b174-090",
+    "batch": 174,
+    "original": "/home/vick/rvv-directed-task174/overlap-supplement/corpus",
+    "manifest_sha256": "304e2d114373a60eeecf127fb653abdce54534fa57de04ae88ae28c114ff5389",
+    "accepted_cases": 1320,
+    "audit_summary_sha256": "9d10cdeb3e2b927a4087ddbb3c4cf99f867a7d0f725f04c5ebcd9ffa692e235c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b174-090/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "a50b8cfcb35dc988a982144fb259ce8626d5fa663fea21b6c3f6ebe9903d7729",
+      "remaining": "8cf0e072566a3d80c80ce5c7e5b2c995f4ebe4446d97dfa5c019cd0bdb0c6028"
+    }
+  },
+  {
+    "entry": "b175-091",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/fpmerge175/pilot/corpus",
+    "manifest_sha256": "81574e0b179f53329ec7b71402066ab2c9b3ca6be95f730a8787247604743d26",
+    "accepted_cases": 219,
+    "audit_summary_sha256": "d02a7eb42bfa2cf6f169f2ef7b4b19a49946857613297ed54001ac6857aa140c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-091/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "47e2364fb0944ecf3fc0edb774d2da5c0f6a9dd39253e54a4808fd40862a34c2",
+      "remaining": "44b31a04cad63c876b6a344bb285c31ae934e977fced993313f150be59560d02"
+    }
+  },
+  {
+    "entry": "b175-092",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/fpmerge175/remaining/corpus",
+    "manifest_sha256": "1fbccff5cf8e6262caf25b9a65e75707692aab0956679b672eeb24e518e9c979",
+    "accepted_cases": 2925,
+    "audit_summary_sha256": "f783b76ce3bb2b54f5d83823f329ce4dbf01260e20fbc800e29a5862b4c3038a",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-092/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "d0ca45977d560fc27d5c755efed6ae934e0bc3ea42b9af51844578101fbbd883",
+      "remaining": "6e7599e43b52977d11322ed2a9ba785d0bda57445b06e0916dad37cdbf636788"
+    }
+  },
+  {
+    "entry": "b175-093",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/fpslide175/pilot/corpus",
+    "manifest_sha256": "5b0902fe394b797c5f3360c5a2f784dd77983ff3cf304c8b6c695546e34235bc",
+    "accepted_cases": 418,
+    "audit_summary_sha256": "b7765c9cf9517eba5a57f1e3dbbd9ce624313a0c37361066fcb12b50442264aa",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-093/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ddfe75293bafc857ae81e217fadef735f38e741e498ee66dac59b90bca38b00e",
+      "remaining": "990219b3b2c9fbdad4df2eb26d722dc55faac6cb51c994522309b92ce3966837"
+    }
+  },
+  {
+    "entry": "b175-094",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/fpslide175/remaining/corpus",
+    "manifest_sha256": "b312812bdb95e0c49973c042cec79ac7c48f747e33a7165b15ed0fd78895bb65",
+    "accepted_cases": 5600,
+    "audit_summary_sha256": "dea9c4f03e27e266a28ec6fcab7f7a8f89c41ad838c87e01dcbdb4a66c0a45a3",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-094/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "f3cf989e33eea14dd1afd9b99e4089fe1a2879bf77ead799fbe38c11ee6e81db",
+      "remaining": "ac41736c7cb89ea927aa82742766b00e6486f2ba133cec92ae9527ea512b8431"
+    }
+  },
+  {
+    "entry": "b175-095",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/narrow175/pilot/corpus",
+    "manifest_sha256": "1e94b0fc7b2b5aabc376680e5b51880f03697c3fa5fe8308082c3bc50839d6dc",
+    "accepted_cases": 900,
+    "audit_summary_sha256": "bfa38d471a23a007645832e5d75bd0dbe766d2d1b91cded6c18356e0f326d84c",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-095/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "daed8514dc6088e045cf422560b227390512889a0be6390e065cc8ba6fe7cce6",
+      "recover": "43d76b213015b861d332108930f829703ad3a0406b34ade61be96bbf261ae792"
+    }
+  },
+  {
+    "entry": "b175-096",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/narrow175/remaining/corpus",
+    "manifest_sha256": "cc428e5e94cde849512b61d24ad8a65869cdfa6044ac87c56fd8614acbbd0314",
+    "accepted_cases": 20628,
+    "audit_summary_sha256": "9ff09f8426dacc5607f766584178218f2b2cc430d8ba4b0f2210cf94e6fe27ab",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-096/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "fb11f057cbcb49e1d973e53201c54337e46987d32a70e20762e7ba08fe213999",
+      "remaining": "b8e8fdfebe153b6f48c018fe6935d2a2a3b103c101d121b3b7c8bfc96c113ce8"
+    }
+  },
+  {
+    "entry": "b175-097",
+    "batch": 175,
+    "original": "/home/vick/rvv-directed-task175/supplement/corpus",
+    "manifest_sha256": "ff9180af5e134fce670b7b0a470b590edc59153625f8e1b5d4f5935fc17709e2",
+    "accepted_cases": 2700,
+    "audit_summary_sha256": "b03920e7c8e8398cc016b8f77d6a6e360786ed23ea232dfb4c60ec4b1ce34446",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b175-097/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "d745ce99680a7edbd011bc0e564527a34a40761db6a518c5e6f83b0963e365b6",
+      "remaining": "1e0bb1088e622ce8e7bf99de80690463a37d7582efb7543631eac039c6c9584e"
+    }
+  },
+  {
+    "entry": "b176-098",
+    "batch": 176,
+    "original": "/home/vick/rvv-task176/pilot",
+    "manifest_sha256": "02efabbc550231d7119cc72038857a0539bcf958033ee570e80e3b3745e76e0d",
+    "accepted_cases": 20415,
+    "audit_summary_sha256": "35ba27c881ee0bfc7d084d181c1ebf22bb8b9a775396ae44793940371f07c864",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b176-098/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "6d87a46a5d8e9dd3a7646fc9958d3ea903f84b40e8894b7cc2fc08d835f95e3e",
+      "remaining": "c63453d6fb4c0930cf9579566bdc29d62416b0a8086e3a7253026fa7572d7f87"
+    }
+  },
+  {
+    "entry": "b176-099",
+    "batch": 176,
+    "original": "/home/vick/rvv-task176/vfsqrt",
+    "manifest_sha256": "51ed0c19d36b53f09dadbffa8bdbe79c05030508ace522acbd094f10c8ed5d7d",
+    "accepted_cases": 21800,
+    "audit_summary_sha256": "b35ab9fea0fa0c4d4678ef37f8f196668aa09d6f43ef87379a38a61c8c3117f5",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b176-099/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "c71013018b33dbfc3c0cb701671350a5e711123033f62927009010413ee31103",
+      "remaining": "44167a0747a714778bf11edcf93fdf6de85e3a6b3939304e66a7c4f816b0921d"
+    }
+  },
+  {
+    "entry": "b176-100",
+    "batch": 176,
+    "original": "/home/vick/rvv-task176/vfrec7",
+    "manifest_sha256": "647029e4911ecb05a88e01c9abf507b101977c4c9bab98b1790fa318cf4886de",
+    "accepted_cases": 47680,
+    "audit_summary_sha256": "da462343cdd5d663fe63bff2138f0ff78f58c1c3a918c1d15b4e704149eeec04",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b176-100/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "055862b85bb12be6a83bf43e465a1c69354055c3a1215cc0e7ef044dd14cadec",
+      "remaining": "6581130db47bd78c52735d36163016f01b2cdc9403c51f9c65d098838dda3292"
+    }
+  },
+  {
+    "entry": "b176-101",
+    "batch": 176,
+    "original": "/home/vick/rvv-task176/vfrsqrt7",
+    "manifest_sha256": "b157ea13fb2f75929dd2fd2cc309de31d0a38316eabf82e61bff15007e52b4ef",
+    "accepted_cases": 30055,
+    "audit_summary_sha256": "22ef2ea3543d79fe38905ead7149930c37c5fd7d653861905db03cec642411c5",
+    "audit_namespace": "/home/vick/rvv-task181/directed/b176-101/audit",
+    "same179_reuse": false,
+    "execution_summaries": {
+      "pilot": "ae636fc1bd2c21d48cf8e73291aeb531d5e9707fc0f48692bd8344c99e80a368",
+      "remaining": "9779e708e55987278c50acad387c648be11fc9777406ccaa4072824d66ac4de1"
+    }
+  }
+]

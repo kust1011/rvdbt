@@ -1,0 +1,13 @@
+{
+  "samples": 4936,
+  "minimum_free_bytes": 20374302720,
+  "max_own_guests": 4,
+  "max_shared_guests": 7,
+  "nice_values": [
+    10
+  ],
+  "affinity": "none",
+  "build_calls": 0,
+  "offline_workers": "two own audit workers, serialized between directed/external audits; online packet checks share a process semaphore of two",
+  "monitor": "sampled process census; controller process counts differ from thread/worker allocation"
+}

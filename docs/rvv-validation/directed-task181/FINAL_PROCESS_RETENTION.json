@@ -1,0 +1,9 @@
+{
+  "final_complete": true,
+  "directed_complete": true,
+  "external_audit_complete": true,
+  "focused_complete": true,
+  "remaining_owned_processes": [],
+  "failed_remaining_raw_retained": true,
+  "source_or_reference_rebuilt": false
+}

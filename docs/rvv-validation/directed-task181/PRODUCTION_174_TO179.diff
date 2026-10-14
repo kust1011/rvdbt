@@ -1,0 +1,14 @@
+--- /home/vick/rvdbt-host512-task174-build/source/dbt/qmc/qcg/qemit.cpp	2026-10-14 03:15:52.170839364 +0800
++++ /home/vick/rvdbt-host512-task179-build/source/dbt/qmc/qcg/qemit.cpp	2026-10-14 04:44:05.732577929 +0800
+@@ -556,9 +556,9 @@
+ 
+ 		if (is_leaf) {
+ 			j.pop(asmjit::x86::rcx);
+-		} else {
+-			FrameDestroy();
+ 		}
++		// Tracing returns to this region. Keep its non-leaf frame intact for
++		// local successors and the eventual exit's single FrameDestroy().
+ 	}
+ }
+ 

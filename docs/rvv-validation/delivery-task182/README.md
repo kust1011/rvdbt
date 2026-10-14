@@ -19,13 +19,24 @@ output, source-only external record or pending run earns PASS.
 The [historical receipt map](../directed-task175/PER_FORM_BATCH_BUILD_RESULT.json)
 retains mixed build pins and 595 finite accepted forms. `receipt_read_command`
 uses exact Git revisions for committed session3 receipts that are not copied
-here. Task155's accepted raw receipt remains an external locator pending its
-owner's commit. The independent [full P3 trace0 receipt](../directed-task180/FINAL_TOTALS.json)
-has 2,418 cases/arm and 9,672 DUT checks on179. Full trace1 is not accepted.
-The index deliberately says `PENDING_TASK181_NOT_IMPORTED` for final179
-all-form/external results; no historical174 or older PASS is relabeled179.
-The 3,017,262 selected manifest rows describe the frozen queue inputs, not a new
-execution total or extra form credit.
+here. Task155's historical accepted raw receipt remains an external locator;
+final179 results have committed entry and per-form receipts. The independent [full P3 trace0 receipt](../directed-task180/FINAL_TOTALS.json)
+has 2,418 cases/arm and 9,672 DUT checks on 179. Full trace1 is not accepted.
+The index joins the amended [final plan](../directed-task181/DIRECTED_PLAN.json.gz)
+to actual [per-form results](../directed-task181/evidence/PER_FORM_RESULTS.json)
+and all 102 independently audited entry receipts. Frozen179 checks 3,017,262
+ordinary cases/arm,12,069,048 ordinary positive DUT packets, plus 2,256 focused
+positives (combined 12,071,304); 592 focused denial controls remain separate.
+Each row retains its ordinary/focused split, original case/manifest index,
+source and oracle pins, checked state, result and executable identity.
+The same build completes 21,316 external commands: CHIPS 11,532 positives +212
+controls, ACT 7,668,Ara 1,888 whole-file +16 TEST_CASE1/2 scoped results.
+Two ACT reference blockers and original Ara TEST_CASE3/4 failures remain retained.
+No historical174/older PASS is relabeled179. P3 remains a separate denominator;
+full all-form trace1 and returning guest-handler restart remain unverified.
+[Build provenance](../directed-task181/BUILD_MANIFEST_179.json) pins Release,
+host512 and run flags; rebuilding this checkout earns no frozen179 receipt credit.
+These changes are local delivery work, not a claim that they are already published.
 
 ## Select and inspect
 
@@ -222,20 +233,24 @@ Missing raw prerequisites and an unmatched configuration were also demonstrated
 as exit1; an existing output directory is rejected. No PASS result is written
 when execution/checking fails. Partial diagnostic directories may remain.
 
-Regenerate the index from the retained Task181 frozen **selection plan**, not
-its evolving results, and the accepted historical map. The generator verifies
-all manifest identities and per-entry selector counts. This is offline metadata
+Regenerate the index from the retained amended Task181 plan, actual final results
+and accepted historical map. The generator verifies all original manifest identities,
+per-entry selectors, final per-form counts, focused splits and build joins. This is offline metadata
 extraction, not another ISA suite:
 
 ```sh
 nice -n 10 python3 scripts/rvv_verify.py generate \
-  --plan /path/to/DIRECTED_PLAN.json \
+  --plan docs/rvv-validation/directed-task181/DIRECTED_PLAN.json.gz \
   --historical docs/rvv-validation/directed-task175/PER_FORM_BATCH_BUILD_RESULT.json \
+  --results docs/rvv-validation/directed-task181/evidence/PER_FORM_RESULTS.json \
+  --receipts docs/rvv-validation/directed-task181/evidence/ENTRY_RECEIPTS.json \
+  --build-manifest docs/rvv-validation/directed-task181/BUILD_MANIFEST_179.json \
+  --final-result docs/rvv-validation/directed-task181/evidence/FINAL_RESULT.json \
   --original-root /home/vick --raw-root "$RAW" --output /path/to/forms.json.gz
 ```
 
-The plan hash is in the index; the plan is an owner-managed raw prerequisite,
-not a copied48MiB dump. The gzip encoding is deterministic. Listed Git receipt
+The compressed plan and final evidence hashes are in the index; the compact
+plan is committed here, while original manifests remain retained raw prerequisites. The gzip encoding is deterministic. Listed Git receipt
 reads need the exact dependency commit available locally.
 
 ## Exception and semantic limits
@@ -273,7 +288,7 @@ Task183 actual bounded results and remaining gaps: [SESSION0_RESULT_183.md](../.
 Task184 updated the existing [author guide](../../rvv-author-guide.md) and the
 local bilingual thesis §3.6/§5.7 plus appendix generator. The author guide answers
 form indexing, compared state/oracles, original-case inspection/replay and the
-three semantic defects actually found. P3 is completed on179 trace0; full181
+three semantic defects actually found. P3 is completed on 179 trace0; full181
 all-form/external totals remain pending. Historical142 external21316 calls and
 performance records keep their original attribution. Exact prose replacements,
 evidence paths and completed documentation checks are recorded in

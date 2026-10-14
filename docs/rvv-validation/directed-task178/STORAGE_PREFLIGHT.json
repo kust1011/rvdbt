@@ -1,0 +1,15 @@
+{
+  "execution_host": "xbd",
+  "free_bytes": 35717509120,
+  "local_free_bytes": 1291045556224,
+  "retained_external_old_bytes": {
+    "chips": "26GiB",
+    "act": "3.5GiB",
+    "ara": "247MiB"
+  },
+  "estimated_new_compressed_output_bytes": 17179869184,
+  "reserve_bytes": 10737418240,
+  "method": "Stream gzip packets/stdout/stderr. New successful per-call fs/cache scratch logged then removed. Estimate conservatively budgets 12GiB directed packets plus 4GiB external logs/code maps; preflight each batch and transfer closed compressed evidence to local capacity if required.",
+  "cleanup_old_artifacts": [],
+  "inputs": "Immutable original ELF/reference packets in place; no old forest copy or recursive hashes"
+}

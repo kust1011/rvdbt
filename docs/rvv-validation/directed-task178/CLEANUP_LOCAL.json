@@ -1,0 +1,65 @@
+{
+  "reason": "new regenerable py_compile scratch only; Task155 scratch untouched",
+  "files": [
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/prepare.cpython-310.pyc",
+      "bytes": 7469,
+      "sha256": "8da47c77573e973ea886c82d8a2cafb42dee0507eae50fe8f9b8f9fd1871b541"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/storage149.cpython-310.pyc",
+      "bytes": 5503,
+      "sha256": "74967aabbcef2f6700515ee895e374918bd5c45fb55cf8bdabbcb1f010f61b9e"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/admission178.cpython-310.pyc",
+      "bytes": 3039,
+      "sha256": "5a2e06d9a1123243da8d23eed10f03d9d48e774ddd0446d5ba403ca9bce8099f"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/audit_external.cpython-310.pyc",
+      "bytes": 5577,
+      "sha256": "9f9ffae84510cbab5feee405cc6838445b1f62ec902f0aa43e7feeb840c9ef16"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/external.cpython-310.pyc",
+      "bytes": 10821,
+      "sha256": "6f507e813184e476c5c91cd5b21f7d4538558e5cbd7be26913156d56f7d28e1b"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/recover_external.cpython-310.pyc",
+      "bytes": 4676,
+      "sha256": "4fdc71779f5fd31cdb63fa8854b848eb94f0a2134bd63cf71fda3824354d5dae"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/replay.cpython-310.pyc",
+      "bytes": 12178,
+      "sha256": "ec3736852e29d4a1e5b024c49cc67ccb3c19d9f792ba04801b41453ca771014d"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/focused.cpython-310.pyc",
+      "bytes": 6377,
+      "sha256": "e1e6a6f4c0e3f14925a5d2bd7b264704554c2d43a4c49bf3a8def76082be423c"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/summarize.cpython-310.pyc",
+      "bytes": 8758,
+      "sha256": "9e4d2a676d736f924dd9a451857410635e4fa5db97fc4949d1cb1429675a288f"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/status.cpython-310.pyc",
+      "bytes": 660,
+      "sha256": "8da29d48c34c2329669f8393ca528a914b3e19df91854a436cb3b15d70e2f41e"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression178/__pycache__/run.cpython-310.pyc",
+      "bytes": 1248,
+      "sha256": "cef78ac559e67908fbd84a0686d7958c5d67f1a17cd7251140bf851c4ff435b9"
+    },
+    {
+      "path": "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/__pycache__/regression178.cpython-310.pyc",
+      "bytes": 1187,
+      "sha256": "c823d10e4f89acd65826440d3cb9dea316eb68387289756ecb8d33100490849b"
+    }
+  ]
+}

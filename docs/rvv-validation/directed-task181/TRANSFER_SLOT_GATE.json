@@ -1,0 +1,10 @@
+{
+  "previous_pid": 3938469,
+  "new_pid": 3938920,
+  "closed_archives_preserved": [
+    "b146-001.tar.gz",
+    "b145-000.tar.gz"
+  ],
+  "change": "remote compression shares offline audit lock and one common predicate slot; no new guest/reference/build calls",
+  "time": 1791930314.9290483
+}

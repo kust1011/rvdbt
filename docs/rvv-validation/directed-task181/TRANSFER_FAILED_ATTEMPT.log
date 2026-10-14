@@ -1,0 +1,12 @@
+TRANSFER b145-000 5800131 b076bfa2499270375598f9450f11c79f8d9746cca88214974d49bc04a5438407
+TRANSFER b146-001 28252162 8295722f8ea9c3a0e40316dbe5b0bc4d58ef04ed83a70fcaac550f2fe098e2f0
+TRANSFER b147-002 6163266 420fa9b89dfe36f53529e1f2fa4ae73ece512ea28c0ba9dcb4c26787522cf32a
+TRANSFER b148-003 5603402 6f08afee8fd4962a6aab4a1549ce2b17cdb78ad46a127352234b4d2b6024890f
+TRANSFER b148-004 1553873 c5ea5f51cd71f29032ccff9576d59ade9cc68518bf449c1feed7fa95342530fe
+TRANSFER b148-005 41759188 50a51557c626c865974777835a3a065f65e4afd22fa8bc5311f8b2e11a6f158c
+Traceback (most recent call last):
+  File "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression181/transfer.py", line 46, in <module>
+    subprocess.run(['ssh',a.host,'nice -n 10 python3 '+taskfile],input=json.dumps(receipt).encode(),check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ssh', 'xbd', 'nice -n 10 python3 /tmp/rvv-task181-transfer-record.py']' returned non-zero exit status 255.

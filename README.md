@@ -17,7 +17,9 @@ redistributed here.
 For finite per-form verification, compact selected-unit exports, and an executable
 clean-checkout vadd build/reference/DUT demonstration, use the
 [reviewer verification entry](docs/rvv-validation/delivery-task182/README.md).
-Its595-row index keeps historical mixed builds separate from final179 acceptance.
+Its595-row index joins actual frozen179 results to accepted cases and keeps
+historical mixed builds and the original performance executable separate. New
+builds do not inherit frozen receipts. The delivery changes remain local until published.
 
 See [the RVV QCG design and code map](docs/rvv-qcg.md) for the translation
 path, M1/M2 legality, and focused checks.

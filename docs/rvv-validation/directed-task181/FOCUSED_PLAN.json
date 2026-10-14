@@ -1,0 +1,47 @@
+[
+  {
+    "suite": "guard165",
+    "original": "/home/vick/rvv-task165/guard-pilot",
+    "summary_sha256": "18bfa167933a5ceb3d2af97ca1007bd9d05d2da9d34f94b00d3104c85ac49c0f",
+    "planned_commands": 128,
+    "planned_positive_checks": 80,
+    "planned_denial_controls": 48,
+    "new_reference_calls": 0
+  },
+  {
+    "suite": "guard166",
+    "original": "/home/vick/rvv-task166/guard-pilot",
+    "summary_sha256": "b3cf96ea5231129a6d7df824ec992099f664bb52bc3c541e2a601e022dac44dd",
+    "planned_commands": 160,
+    "planned_positive_checks": 96,
+    "planned_denial_controls": 64,
+    "new_reference_calls": 0
+  },
+  {
+    "suite": "faults",
+    "original": "/home/vick/rvv-task168/faults",
+    "summary_sha256": "186b27d190682be4ac1a9952fd73075a1d016adad4d44e597149a619c766354a",
+    "planned_commands": 1472,
+    "planned_positive_checks": 992,
+    "planned_denial_controls": 480,
+    "new_reference_calls": 0
+  },
+  {
+    "suite": "fof-startmask",
+    "original": "/home/vick/rvv-task168/fof-startmask",
+    "summary_sha256": "967e82c7f0c58b0913878a22e93257930b654bfff333e637029f1b7fe1b039eb",
+    "planned_commands": 128,
+    "planned_positive_checks": 128,
+    "planned_denial_controls": 0,
+    "new_reference_calls": 0
+  },
+  {
+    "suite": "vill",
+    "original": "/home/vick/rvv-task168/vill",
+    "summary_sha256": "c56430f0abc061426b1c1e97b0c002beb13d0d0912e5af22d142d77dd1007579",
+    "planned_commands": 960,
+    "planned_positive_checks": 960,
+    "planned_denial_controls": 0,
+    "new_reference_calls": 0
+  }
+]

@@ -31,8 +31,13 @@ Use the [delivery entry](rvv-validation/delivery-task182/README.md) and
 627-form catalog has 595 applicable forms and 32 profile exclusions; its directed
 index joins each applicable mnemonic/operand form to accepted manifest rows,
 selected dimensions, exact oracle scope, build/receipt identities and source/read
-commands. Historical family PASS is mixed-build evidence. Final179 all-form and
-external replay remain pending Task181; the selection plan is not an execution total.
+commands. Historical family PASS is mixed-build evidence; final acceptance is separately joined. The actual final179 results now join all 595 rows to the amended plan and 102
+entry receipts:3,017,262 ordinary cases/arm and 12,069,048 ordinary positive DUT
+checks, plus 2,256 focused positives and 592 focused denial controls separately.
+The same frozen179 completes 21,316 external commands (CHIPS11,532 positives +212
+controls, ACT 7,668,Ara 1,888 whole-file +16 scoped). Two ACT reference blockers and
+Ara TEST_CASE3/4 limitations remain. Original manifests, predicates, outputs and
+independent audits establish results; selection alone does not.
 
 Each directed case initializes prestate, runs the target and captures poststate.
 The checker runs outside the DUT and validates input/packet identities, full
@@ -56,7 +61,7 @@ insertion overwriting prestart element0 for nonzero vstart. Repairs retain old
 failures and unchanged predicates. Source and before/after pointers are in
 SESSION0_RESULT_167/172 and `73fc8e2:SESSION3_RESULT_171.md`;174 integrates the
 three fixes. The historical21316 external calls below and the original performance
-campaign retain their own identities. No later all-form PASS is inferred.
+campaign retain their own identities. The final replay has its own179 receipts; old family PASS is never relabeled.
 
 When writing about this result, distinguish four evidence classes:
 

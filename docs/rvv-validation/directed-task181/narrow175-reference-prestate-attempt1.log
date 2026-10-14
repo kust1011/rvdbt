@@ -1,0 +1,46 @@
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/concurrent/futures/process.py", line 263, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/process.py", line 212, in _process_chunk
+    return [fn(*args) for args in chunk]
+            ^^^^^^^^^
+  File "/home/vick/rvv-task181/tools/replay.py", line 140, in worker
+    try:return worker_impl(unit)
+               ^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-task181/tools/replay.py", line 92, in worker_impl
+    with admission.predicate_slot():v.check_isa(c,packet,0,False)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task175/tools-review175/vadd.py", line 229, in check_isa
+    return fp157.check_isa(c,raw,rc,timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task175/tools-review175/fp157.py", line 277, in check_isa
+    return gaps175.check_isa(c, raw, rc, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vick/rvv-directed-task175/tools-review175/gaps175.py", line 63, in check_isa
+    if before!=initial(c):raise ValueError('prestate')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: prestate
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vick/rvv-task181/tools/replay.py", line 146, in <module>
+    for unit,rows in zip(selected,pool.map(worker,selected)):
+  File "/usr/lib/python3.12/concurrent/futures/process.py", line 642, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: prestate

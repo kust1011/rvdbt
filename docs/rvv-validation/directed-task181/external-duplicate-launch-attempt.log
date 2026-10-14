@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "/home/vick/rvv-task181/tools/external.py", line 24, iPROGRESS {'chips': Counter({'PASS': 98}), 'act': Counter({'PASS': 1}), 'ara': Counter({'PASS': 1})}
+PROGRESS {'chips': Counter({'PASS': 198}), 'act': Counter({'PASS': 1}), 'ara': Counter({'PASS': 1})}

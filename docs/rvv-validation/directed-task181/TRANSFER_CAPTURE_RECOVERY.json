@@ -1,0 +1,14 @@
+{
+  "error": "multiplexed SSH255 during archive capture",
+  "incomplete_captures_retained": [
+    {
+      "path": "/home/user/research/materials/task181-common179-raw-20261014/b168-042.tar.gz.partial.capture-failed-original",
+      "bytes": 1638400,
+      "sha256": "2fa5e0eef2bc36a6a934f313c8d0402935d0c5003e269ad8c28a0db5ce0652c2"
+    }
+  ],
+  "original_raw_still_present": true,
+  "new_pid": 3942902,
+  "repair": "fresh non-multiplexed SSH/SCP connections; bounded transport retries; no guest/reference/build rerun",
+  "time": 1791940238.9500782
+}

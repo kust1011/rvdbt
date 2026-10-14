@@ -1290,3 +1290,7 @@ target_link_libraries(rv32_host_copy_linkage_test PRIVATE dbtstatic)
 add_executable(rv32_vector_fpconvert_test guest/rv32_vector_fpconvert_test.cpp)
 target_include_directories(rv32_vector_fpconvert_test PUBLIC "${PROJECT_SOURCE_DIR}")
 target_link_libraries(rv32_vector_fpconvert_test PUBLIC dbtstatic)
+
+add_executable(rv32_vector_scalar_insert_test guest/rv32_vector_scalar_insert_test.cpp)
+target_include_directories(rv32_vector_scalar_insert_test PUBLIC "${PROJECT_SOURCE_DIR}")
+target_link_libraries(rv32_vector_scalar_insert_test PUBLIC dbtstatic)

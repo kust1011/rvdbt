@@ -1,0 +1,55 @@
+TRANSFER b145-000 5800131 b076bfa2499270375598f9450f11c79f8d9746cca88214974d49bc04a5438407
+TRANSFER b146-001 28252162 8295722f8ea9c3a0e40316dbe5b0bc4d58ef04ed83a70fcaac550f2fe098e2f0
+TRANSFER b147-002 6163266 420fa9b89dfe36f53529e1f2fa4ae73ece512ea28c0ba9dcb4c26787522cf32a
+TRANSFER b148-003 5603402 6f08afee8fd4962a6aab4a1549ce2b17cdb78ad46a127352234b4d2b6024890f
+TRANSFER b148-004 1553873 c5ea5f51cd71f29032ccff9576d59ade9cc68518bf449c1feed7fa95342530fe
+TRANSFER b148-005 41759188 50a51557c626c865974777835a3a065f65e4afd22fa8bc5311f8b2e11a6f158c
+Traceback (most recent call last):
+  File "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression181/transfer.py", line 46, in <module>
+    subprocess.run(['ssh',a.host,'nice -n 10 python3 '+taskfile],input=json.dumps(receipt).encode(),check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ssh', 'xbd', 'nice -n 10 python3 /tmp/rvv-task181-transfer-record.py']' returned non-zero exit status 255.
+RECOVERED_TRANSFER b149-006 ec5123ce29db3212aaebe0734efdc544e5a58ab6ac7804827c363e3a64559471
+TRANSFER b149-007 830721 ba6ada467ac8f0c5136b6434263982f12301b698783e280b143e78467c88c754
+TRANSFER b150-008 40102061 b2d57cf9ee53d9301319ffbbeb53c4818de0cf7ee18aec8d18be9557898476f3
+TRANSFER b151-009 14536973 f0be3dd73444a2e6ab56a6dcb3e90a425a01a7e5b53170b71bf617c2938aa3d8
+TRANSFER b152-010 48225040 5adb1abccde32956545778f662eee5d50657b16b1769b9cda8f693138bed1ad3
+TRANSFER b153-011 35062957 c55be1f1ba982e89fe554ce086acb7886c771c40d1eaae65b29ac56ddde9fc66
+TRANSFER b153-012 2744836 329cb90944cab0977ab7e2fd0cb979396ac431fb1b0f13dca79b0fe3e5e50067
+TRANSFER b154-013 18155906 f2492d0f6ccc1e88ac9f15f1b10cc114f1b6b72e5338fc1643d6c22d61c6b092
+TRANSFER b155-014 79596780 161e310d7c69658747848380418dd621baaf5c27f6f80d64e2a85c6163596cd3
+mux_client_request_session: read from master failed: Broken pipe
+TRANSFER b159-015 20970310 57acc510f9ba13eb397557c711e94dc91cead2367a2879974401a696fcb8c281
+TRANSFER b159-016 66846840 7f4f57e91f1246dc78a1a02d7b745673255f5b30a135f6a7a8e03919480933a8
+TRANSFER b159-017 46923365 250c0f9ed64027ee9fd27a5cfd2c030c7ef52bce04b39343c114498a0c96c392
+TRANSFER b160-018 70389905 a37de1a40e1bc2f3ac7c993e201c82a296ce4784f4c23a9faf2be41d32fcd239
+TRANSFER b161-019 11338777 519afbd3b51cd35888ade7dfa360d55b9b704fbb34cc9d3808e5244f184ab6b1
+TRANSFER b161-020 6041659 24513517f1e01ef69fe2c8e711f6739629add05f0cd455c7dc34937bde83ebb1
+TRANSFER b161-021 5622729 ea0701fc327beadc82497d2b67bd81e5b44115cfbe57802df021611f3e24e68a
+TRANSFER b161-022 34843703 5f44e368e7f9748d02f5d4e48629f8e87b8f89a482cfbfddcfaed0fc4e21360b
+TRANSFER b162-023 31131483 3b14d300acce634f40c731f29e1f77af511407d814b9d18a1cea9e101fcc5070
+TRANSFER b163-024 24553565 43a280417302609ff54ff4033c7a972cc81be8c671bece78d3ca0d2f9f0340f2
+TRANSFER b165-025 3733045 7f3a2346df854c36ae0562167f0688a6090d56a213077738f034cab521bdec1c
+TRANSFER b165-026 4263223 7882e3b64da75242a0a616126f1f5f25ff144beecab0dc272b89624709d8b651
+TRANSFER b165-027 4885700 3372a5909ac9e97bfdc777b1bcabba043c03b698db146d7bdac58938c2b3e9b8
+TRANSFER b165-028 5776326 166c7a9af70a7217ea1c5aeabc6126fee5bf063bcfb2099ce541f1026d7a073a
+TRANSFER b165-029 9113832 1ab98f160dd5e9d889fd4bbb5133f1b8cc0981ed3d8dedf7ceeadcb0e3401d9d
+TRANSFER b165-030 14767369 08ae20d5e3f25c7809106e4c23d1cf1b8fb86ae40cef8f114d8694e4e66c61f3
+TRANSFER b165-031 46339099 bd4698ad9c704f425ffafb855057baab41c7fea3772b8c43111458213d2f7cab
+TRANSFER b166-032 2981222 a2107abb347d37b8039c5f0d35949a4d2389e7cb8fd5984ab0d76ee0b74b9fc8
+TRANSFER b166-033 994414 9bc8c0719c419f6d430a46c767da2510e69bb3dd06c446a1f2fdc15df0a6f74a
+TRANSFER b166-034 4175966 0d36f56c3d7d55d59b876aa89c9fbdb5222da620e4d3c82fd5cb5f769fb97bdd
+TRANSFER b166-035 5676165 e88af5998aa6c0ab505156d471bda97faf3ea897bfdf0c802cce351df3d9abf4
+TRANSFER b166-036 9972632 bb8f7d154c922133b3caca03b1d1e661893914a94194063eb2e249460ff650af
+TRANSFER b166-037 15588030 1facffee269f2ffc0bc8cdd8c85403f2574766024ea764231a2741eca5f40ae2
+TRANSFER b166-038 50127028 3a062ba0f5b9c3efbec73398498f0f3e84e54c278acc3f18b4c5ae59dd7e394e
+TRANSFER b168-039 1919790 f16fbb71e622428a4785dcf04a60a3240b73e074c75e0edfe2731f34e1eafed2
+TRANSFER b168-040 1891606 a8ef3168a7411181363e725b3d2e4d0f981b7a95067fcf53f30c114fe793944e
+TRANSFER b168-041 2364803 f753f5178ac847b8de2cfb290e1402a6e167e515a4dcbc73677f560c96ef6abe
+Traceback (most recent call last):
+  File "/home/user/research/materials/rvdbt-directed-session3-20261013/scripts/rvv/regression181/transfer.py", line 37, in <module>
+    with part.open('wb') as f:subprocess.run(['ssh',a.host,command],stdout=f,check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ssh', 'xbd', 'cd /home/vick/rvv-task181/tools && nice -n 10 env PYTHONDONTWRITEBYTECODE=1 python3 -c \'import fcntl,subprocess,admission181 as a\nlock=open(\'"\'"\'/tmp/rvv-task181-offline.lock\'"\'"\',\'"\'"\'a\'"\'"\');fcntl.flock(lock,fcntl.LOCK_EX)\nwith a.predicate_slot():subprocess.run([\'"\'"\'tar\'"\'"\', \'"\'"\'-C\'"\'"\', \'"\'"\'/home/vick/rvv-task181/directed/b168-042\'"\'"\', \'"\'"\'-czf\'"\'"\', \'"\'"\'-\'"\'"\', \'"\'"\'pilot/runs\'"\'"\', \'"\'"\'remaining/runs\'"\'"\'],check=True)\n\'']' returned non-zero exit status 255.

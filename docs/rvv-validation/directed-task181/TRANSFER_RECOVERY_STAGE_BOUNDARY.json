@@ -1,0 +1,5 @@
+{
+  "pid": 3942902,
+  "action": "stop own idle transfer controller at closed archive boundary before adding recovery stage support",
+  "raw_deleted": 0
+}

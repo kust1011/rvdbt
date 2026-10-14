@@ -1,0 +1,20 @@
+{
+  "classification": "HARNESS_STALE_CHECKER_BINDING_BEFORE_179_GUEST",
+  "entry": "b175-095",
+  "old_tools": "/home/vick/rvv-directed-task175/tools-review175",
+  "correct_tools": "/home/vick/rvv-directed-task175/tools-next",
+  "old_gaps_sha256": "98019f2f1411178a11ef34b5cacc390fb7296615f507e0cee1302a20ea834cf2",
+  "correct_gaps_sha256": "aadcb04d993921235971bb62b30a421343bff7b30dc33493ad2d5f0a22fa698c",
+  "old_original_packets_checked": {
+    "Reference": 900,
+    "B": 900,
+    "M1": 900,
+    "M2": 900,
+    "BOTH": 900
+  },
+  "original_elf_or_reference_changed": false,
+  "new_reference_calls": 0,
+  "new_guest_calls": 0,
+  "reason": "review175 prestate model omits existing declared shift_values; exact original tools-next honors input values and preserves all predicate expressions",
+  "supplement_entry": "/home/vick/rvv-directed-task175/tools-supp-v2"
+}

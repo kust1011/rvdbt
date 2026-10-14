@@ -1,0 +1,617 @@
+{
+  "differences": [],
+  "joins": [
+    {
+      "entry": "b145-000",
+      "original_record": "/home/vick/rvv-directed-task145/corpus/runs/w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task145/corpus/runs/w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b146-001",
+      "original_record": "/home/vick/rvv-directed-task146/corpus/runs/vsub-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task146/corpus/runs/vsub-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b147-002",
+      "original_record": "/home/vick/rvv-directed-task147/corpus/runs/w128-e8-mf8-vsetvl-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task147/corpus/runs/w128-e8-mf8-vsetvl-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b148-003",
+      "original_record": "/home/vick/rvv-directed-task147/corpus/runs/w128-e8-mf8-vsetvli-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task147/corpus/runs/w128-e8-mf8-vsetvli-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b148-004",
+      "original_record": "/home/vick/rvv-directed-task148/delta/corpus/runs/delta148-w128-vsetvli-p00-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task148/delta/corpus/runs/delta148-w128-vsetvli-p00-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b148-005",
+      "original_record": "/home/vick/rvv-directed-task148/shift/corpus/runs/vsll-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task148/shift/corpus/runs/vsll-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b149-006",
+      "original_record": "/home/vick/rvv-directed-task149/full/corpus/runs/vmul-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task149/full/corpus/runs/vmul-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b149-007",
+      "original_record": "/home/vick/rvv-directed-task149/zero-full/corpus/runs/zerozero149-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task149/zero-full/corpus/runs/zerozero149-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b150-008",
+      "original_record": "/home/vick/rvv-directed-task150/full/corpus/runs/vadc-w128-e8-mf8-vvm-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task150/full/corpus/runs/vadc-w128-e8-mf8-vvm-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b151-009",
+      "original_record": "/home/vick/rvv-directed-task151/full/corpus/runs/vmerge-w128-e8-mf8-vvm-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task151/full/corpus/runs/vmerge-w128-e8-mf8-vvm-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b152-010",
+      "original_record": "/home/vick/rvv-directed-task152/full/corpus/runs/vmseq-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task152/full/corpus/runs/vmseq-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b153-011",
+      "original_record": "/home/vick/rvv-directed-task153/full/corpus/runs/vsadd-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task153/full/corpus/runs/vsadd-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b153-012",
+      "original_record": "/home/vick/rvv-directed-task153/boundary/full/corpus/runs/vsadd-w128-e8-mf8-vv-boundary-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task153/boundary/full/corpus/runs/vsadd-w128-e8-mf8-vv-boundary-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b154-013",
+      "original_record": "/home/vick/rvv-directed-task154/full/corpus/runs/vmacc-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task154/full/corpus/runs/vmacc-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b155-014",
+      "original_record": "/home/vick/rvv-directed-task155/full/corpus/runs/vaadd-w128-e8-mf8-vv-zero-rm0/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task155/full/corpus/runs/vaadd-w128-e8-mf8-vv-zero-rm0/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b159-015",
+      "original_record": "/home/vick/rvv-task159-full/mask/corpus/runs/vmand-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task159-full/mask/corpus/runs/vmand-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b159-016",
+      "original_record": "/dev/shm/rvv-task158-fixedpoint-full/scaling/corpus/runs/vssra-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task159-full/scaling/corpus/runs/vssra-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b159-017",
+      "original_record": "/dev/shm/rvv-task158-fixedpoint-full/narrowing/corpus/runs/vnclip-w128-e8-mf8-wv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task159-full/narrowing/corpus/runs/vnclip-w128-e8-mf8-wv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b160-018",
+      "original_record": "/home/vick/rvv-directed-task157/fp-full-final/corpus/runs/vfadd-vv-rm0-w128-e32-mf2-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task157/fp-full-final/corpus/runs/vfadd-vv-rm0-w128-e32-mf2-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b161-019",
+      "original_record": "/home/vick/rvv-directed-task156/wmac-full2/corpus/runs/vwmaccu-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task156/wmac-full2/corpus/runs/vwmaccu-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b161-020",
+      "original_record": "/home/vick/rvv-directed-task156/destchunk-full/corpus/runs/vwmaccu-w128-e8-m2-vv-destchunk-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task156/destchunk-full/corpus/runs/vwmaccu-w128-e8-m2-vv-destchunk-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b161-021",
+      "original_record": "/home/vick/rvv-directed-task156/extend-full/corpus/runs/vzext-w128-e16-mf4-vf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task156/extend-full/corpus/runs/vzext-w128-e16-mf4-vf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b161-022",
+      "original_record": "/home/vick/rvv-directed-task154/widen-full/corpus/runs/vwaddu-w128-e8-mf8-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task154/widen-full/corpus/runs/vwaddu-w128-e8-mf8-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b162-023",
+      "original_record": "/home/vick/rvv-task162/full/corpus/runs/vslideup-vx-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task162/full/corpus/runs/vslideup-vx-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b163-024",
+      "original_record": "/home/vick/rvv-task163/full/corpus/runs/vredsum-vs-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task163/full/corpus/runs/vredsum-vs-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-025",
+      "original_record": "/home/vick/rvv-task165/pilot/corpus/runs/vle8.v-w128-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/pilot/corpus/runs/vle8.v-w128-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-026",
+      "original_record": "/home/vick/rvv-task165/w128/corpus/runs/vle16.v-w128-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/w128/corpus/runs/vle16.v-w128-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-027",
+      "original_record": "/home/vick/rvv-task165/w256/corpus/runs/vle16.v-w256-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/w256/corpus/runs/vle16.v-w256-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-028",
+      "original_record": "/home/vick/rvv-task165/w512/corpus/runs/vle16.v-w512-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/w512/corpus/runs/vle16.v-w512-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-029",
+      "original_record": "/home/vick/rvv-task165/w1024/corpus/runs/vle16.v-w1024-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/w1024/corpus/runs/vle16.v-w1024-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-030",
+      "original_record": "/home/vick/rvv-task165/w2048/corpus/runs/vle16.v-w2048-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/w2048/corpus/runs/vle16.v-w2048-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b165-031",
+      "original_record": "/home/vick/rvv-task165/w4096/corpus/runs/vle16.v-w4096-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task165/w4096/corpus/runs/vle16.v-w4096-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-032",
+      "original_record": "/home/vick/rvv-task166/pilot/corpus/runs/vluxei8.v-w128-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task166/pilot/corpus/runs/vluxei8.v-w128-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-033",
+      "original_record": "/home/vick/rvv-task166/w128/corpus/runs/vluxei16.v-w128-start/B/packets.bin",
+      "command": "/home/vick/rvv-task166/w128/corpus/runs/vluxei16.v-w128-start/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-034",
+      "original_record": "/home/vick/rvv-task166/w256/corpus/runs/vluxei8.v-w256-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task166/w256/corpus/runs/vluxei8.v-w256-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-035",
+      "original_record": "/home/vick/rvv-task166/w512/corpus/runs/vluxei8.v-w512-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task166/w512/corpus/runs/vluxei8.v-w512-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-036",
+      "original_record": "/home/vick/rvv-task166/w1024/corpus/runs/vluxei8.v-w1024-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task166/w1024/corpus/runs/vluxei8.v-w1024-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-037",
+      "original_record": "/home/vick/rvv-task166/w2048/corpus/runs/vluxei8.v-w2048-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task166/w2048/corpus/runs/vluxei8.v-w2048-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b166-038",
+      "original_record": "/home/vick/rvv-task166/w4096/corpus/runs/vluxei8.v-w4096-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task166/w4096/corpus/runs/vluxei8.v-w4096-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-039",
+      "original_record": "/home/vick/rvv-task168/pilot/corpus/runs/vl1re64.v-w128-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/pilot/corpus/runs/vl1re64.v-w128-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-040",
+      "original_record": "/home/vick/rvv-task168/w128/corpus/runs/vl1re8.v-w128-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/w128/corpus/runs/vl1re8.v-w128-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-041",
+      "original_record": "/home/vick/rvv-task168/w256/corpus/runs/vl1re8.v-w256-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/w256/corpus/runs/vl1re8.v-w256-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-042",
+      "original_record": "/home/vick/rvv-task168/w512/corpus/runs/vl1re8.v-w512-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/w512/corpus/runs/vl1re8.v-w512-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-043",
+      "original_record": "/home/vick/rvv-task168/w1024/corpus/runs/vl1re8.v-w1024-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/w1024/corpus/runs/vl1re8.v-w1024-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-044",
+      "original_record": "/home/vick/rvv-task168/w2048/corpus/runs/vl1re8.v-w2048-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/w2048/corpus/runs/vl1re8.v-w2048-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-045",
+      "original_record": "/home/vick/rvv-task168/w4096/corpus/runs/vl1re8.v-w4096-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task168/w4096/corpus/runs/vl1re8.v-w4096-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b168-046",
+      "original_record": "/home/vick/rvv-task168/policy/corpus/runs/vle8ff-policy-w128/B/packets.bin",
+      "command": "/home/vick/rvv-task168/policy/corpus/runs/vle8ff-policy-w128/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-047",
+      "original_record": "/home/vick/rvv-task169/prefix/pilot/corpus/runs/vmsbf-w128-e8-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/pilot/corpus/runs/vmsbf-w128-e8-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-048",
+      "original_record": "/home/vick/rvv-task169/prefix/w128/corpus/runs/vmsbf-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/w128/corpus/runs/vmsbf-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-049",
+      "original_record": "/home/vick/rvv-task169/prefix/w256/corpus/runs/vmsbf-w256-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/w256/corpus/runs/vmsbf-w256-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-050",
+      "original_record": "/home/vick/rvv-task169/prefix/w512/corpus/runs/vmsbf-w512-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/w512/corpus/runs/vmsbf-w512-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-051",
+      "original_record": "/home/vick/rvv-task169/prefix/w1024/corpus/runs/vmsbf-w1024-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/w1024/corpus/runs/vmsbf-w1024-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-052",
+      "original_record": "/home/vick/rvv-task169/prefix/w2048/corpus/runs/vmsbf-w2048-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/w2048/corpus/runs/vmsbf-w2048-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-053",
+      "original_record": "/home/vick/rvv-task169/prefix/w4096/corpus/runs/vmsbf-w4096-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/prefix/w4096/corpus/runs/vmsbf-w4096-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-054",
+      "original_record": "/home/vick/rvv-task169/moves/pilot/corpus/runs/vmv1r-v-w128-e8-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves/pilot/corpus/runs/vmv1r-v-w128-e8-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-055",
+      "original_record": "/home/vick/rvv-task169/moves-reviewed/w128/corpus/runs/vmv1r-v-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves-reviewed/w128/corpus/runs/vmv1r-v-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-056",
+      "original_record": "/home/vick/rvv-task169/moves-reviewed/w256/corpus/runs/vmv1r-v-w256-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves-reviewed/w256/corpus/runs/vmv1r-v-w256-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-057",
+      "original_record": "/home/vick/rvv-task169/moves-reviewed/w512/corpus/runs/vmv1r-v-w512-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves-reviewed/w512/corpus/runs/vmv1r-v-w512-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-058",
+      "original_record": "/home/vick/rvv-task169/moves-reviewed/w1024/corpus/runs/vmv1r-v-w1024-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves-reviewed/w1024/corpus/runs/vmv1r-v-w1024-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-059",
+      "original_record": "/home/vick/rvv-task169/moves-reviewed/w2048/corpus/runs/vmv1r-v-w2048-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves-reviewed/w2048/corpus/runs/vmv1r-v-w2048-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b169-060",
+      "original_record": "/home/vick/rvv-task169/moves-reviewed/w4096/corpus/runs/vmv1r-v-w4096-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task169/moves-reviewed/w4096/corpus/runs/vmv1r-v-w4096-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b167-061",
+      "original_record": "/home/vick/rvv-directed-task167/full/runs/vfmacc-vv-rm0-w128-e32-mf2-vv-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task167/full/runs/vfmacc-vv-rm0-w128-e32-mf2-vv-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b170-062",
+      "original_record": "/home/vick/rvv-directed-task170/minmax-pilot/corpus/runs/vfmin-vv-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task170/minmax-pilot/corpus/runs/vfmin-vv-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b170-063",
+      "original_record": "/home/vick/rvv-directed-task170/minmax-remaining/corpus/runs/vfmin-vv-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task170/minmax-remaining/corpus/runs/vfmin-vv-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b170-064",
+      "original_record": "/home/vick/rvv-directed-task170/sign-pilot/corpus/runs/vfsgnj-vv-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task170/sign-pilot/corpus/runs/vfsgnj-vv-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b170-065",
+      "original_record": "/home/vick/rvv-directed-task170/sign-remaining/corpus/runs/vfsgnj-vv-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task170/sign-remaining/corpus/runs/vfsgnj-vv-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b170-066",
+      "original_record": "/home/vick/rvv-directed-task170/compare-class-pilot/corpus/runs/vmfeq-vv-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task170/compare-class-pilot/corpus/runs/vmfeq-vv-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b170-067",
+      "original_record": "/home/vick/rvv-directed-task170/compare-class-remaining-v2/corpus/runs/vmfeq-vv-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task170/compare-class-remaining-v2/corpus/runs/vmfeq-vv-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-068",
+      "original_record": "/home/vick/rvv-task171/pilot/runs/vmv-s-x-w128-e8-m1-start/B/packets.bin",
+      "command": "/home/vick/rvv-task171/pilot/runs/vmv-s-x-w128-e8-m1-start/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-069",
+      "original_record": "/home/vick/rvv-task171/remaining/runs/vmv-s-x-w128-e8-mf8-start/B/packets.bin",
+      "command": "/home/vick/rvv-task171/remaining/runs/vmv-s-x-w128-e8-mf8-start/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-070",
+      "original_record": "/home/vick/rvv-task171/transfers-pilot/runs/vmv-x-s-w128-e8-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-pilot/runs/vmv-x-s-w128-e8-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-071",
+      "original_record": "/home/vick/rvv-task171/transfers-w128/runs/vmv-x-s-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-w128/runs/vmv-x-s-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-072",
+      "original_record": "/home/vick/rvv-task171/transfers-w256/runs/vmv-x-s-w256-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-w256/runs/vmv-x-s-w256-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-073",
+      "original_record": "/home/vick/rvv-task171/transfers-w512/runs/vmv-x-s-w512-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-w512/runs/vmv-x-s-w512-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-074",
+      "original_record": "/home/vick/rvv-task171/transfers-w1024/runs/vmv-x-s-w1024-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-w1024/runs/vmv-x-s-w1024-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-075",
+      "original_record": "/home/vick/rvv-task171/transfers-w2048/runs/vmv-x-s-w2048-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-w2048/runs/vmv-x-s-w2048-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b171-076",
+      "original_record": "/home/vick/rvv-task171/transfers-w4096/runs/vmv-x-s-w4096-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task171/transfers-w4096/runs/vmv-x-s-w4096-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b172-077",
+      "original_record": "/home/vick/rvv-directed-task172/same-pilot/corpus/runs/vfcvt-xu-f-v-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task172/same-pilot/corpus/runs/vfcvt-xu-f-v-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b172-078",
+      "original_record": "/home/vick/rvv-directed-task172/same-remaining/corpus/runs/vfcvt-xu-f-v-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task172/same-remaining/corpus/runs/vfcvt-xu-f-v-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b172-079",
+      "original_record": "/home/vick/rvv-directed-task172/widen-pilot/corpus/runs/vfwcvt-xu-f-v-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task172/widen-pilot/corpus/runs/vfwcvt-xu-f-v-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b172-080",
+      "original_record": "/home/vick/rvv-directed-task172/widen-remaining/corpus/runs/vfwcvt-xu-f-v-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task172/widen-remaining/corpus/runs/vfwcvt-xu-f-v-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b172-081",
+      "original_record": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/replay/runs/vfncvt-xu-f-w-w128-e16-mf4-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/replay/runs/vfncvt-xu-f-w-w128-e16-mf4-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b172-082",
+      "original_record": "/home/vick/rvv-directed-task172/narrow-remaining-fixed/corpus/runs/vfncvt-xu-f-w-w128-e16-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task172/narrow-remaining-fixed/corpus/runs/vfncvt-xu-f-w-w128-e16-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b173-083",
+      "original_record": "/home/vick/rvv-task173/pilot/runs/vfwadd-vv-w128-mf2-rm0-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task173/pilot/runs/vfwadd-vv-w128-mf2-rm0-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b173-084",
+      "original_record": "/home/vick/rvv-task173/addsub/runs/vfwadd-vv-w128-m1-rm0-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task173/addsub/runs/vfwadd-vv-w128-m1-rm0-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b173-085",
+      "original_record": "/home/vick/rvv-task173/mul/runs/vfwmul-vv-w128-m1-rm0-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task173/mul/runs/vfwmul-vv-w128-m1-rm0-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b173-086",
+      "original_record": "/home/vick/rvv-task173/fma/runs/vfwmacc-vv-w128-m1-rm0-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task173/fma/runs/vfwmacc-vv-w128-m1-rm0-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b173-087",
+      "original_record": "/home/vick/rvv-task173/extra/runs/extra-vfwadd-vv-w128-mf2-rm0-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task173/extra/runs/extra-vfwadd-vv-w128-mf2-rm0-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b174-088",
+      "original_record": "/home/vick/rvv-directed-task174/pilot/corpus/runs/vfredosum-vs-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task174/pilot/corpus/runs/vfredosum-vs-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b174-089",
+      "original_record": "/home/vick/rvv-directed-task174/remaining/corpus/runs/vfredosum-vs-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task174/remaining/corpus/runs/vfredosum-vs-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b174-090",
+      "original_record": "/home/vick/rvv-directed-task174/overlap-supplement/corpus/runs/vfredosum-vs-w128-e32-mf2-extra/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task174/overlap-supplement/corpus/runs/vfredosum-vs-w128-e32-mf2-extra/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-091",
+      "original_record": "pilot/corpus/runs/vfmerge-vfm-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/fpmerge175/pilot/corpus/runs/vfmerge-vfm-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-092",
+      "original_record": "remaining/corpus/runs/vfmerge-vfm-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/fpmerge175/remaining/corpus/runs/vfmerge-vfm-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-093",
+      "original_record": "pilot/corpus/runs/vfslide1up-vf-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/fpslide175/pilot/corpus/runs/vfslide1up-vf-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-094",
+      "original_record": "remaining/corpus/runs/vfslide1up-vf-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/fpslide175/remaining/corpus/runs/vfslide1up-vf-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-095",
+      "original_record": "pilot/corpus/runs/vnsrl-wv-w128-e8-mf8-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/narrow175/pilot/corpus/runs/vnsrl-wv-w128-e8-mf8-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-096",
+      "original_record": "remaining/corpus/runs/vnsrl-wv-w128-e8-mf4-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/narrow175/remaining/corpus/runs/vnsrl-wv-w128-e8-mf4-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b175-097",
+      "original_record": "corpus/runs/supp-vfslide1up-vf-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-directed-task175/supplement/corpus/runs/supp-vfslide1up-vf-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b176-098",
+      "original_record": "/home/vick/rvv-task176/pilot/runs/vfsqrt-v-w128-e32-mf2-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task176/pilot/runs/vfsqrt-v-w128-e32-mf2-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b176-099",
+      "original_record": "/home/vick/rvv-task176/vfsqrt/runs/vfsqrt-v-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task176/vfsqrt/runs/vfsqrt-v-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b176-100",
+      "original_record": "/home/vick/rvv-task176/vfrec7/runs/vfrec7-v-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task176/vfrec7/runs/vfrec7-v-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    },
+    {
+      "entry": "b176-101",
+      "original_record": "/home/vick/rvv-task176/vfrsqrt7/runs/vfrsqrt7-v-w128-e32-m1-zero/B/packets.bin",
+      "command": "/home/vick/rvv-task176/vfrsqrt7/runs/vfrsqrt7-v-w128-e32-m1-zero/B/command.json",
+      "flags_equal": true
+    }
+  ]
+}

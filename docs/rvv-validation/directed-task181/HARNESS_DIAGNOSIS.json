@@ -1,0 +1,27 @@
+{
+  "classification": "HARNESS_FAILURES_RECOVERED_ON_ORIGINAL174_OUTPUTS",
+  "b146": {
+    "error": "IndentationError importing admission178 before audit namespace creation",
+    "new_guest_calls_for_recovery": 0,
+    "checked_dut_packets": 216308
+  },
+  "ara": {
+    "error": "original vset path parser requires stdout; gzip producer only materialized stderr",
+    "repair": "materialize both original compressed streams only for original observer",
+    "new_guest_calls_for_captured_receipts": 0,
+    "previously_unattempted_executions": 221,
+    "independent_external_checked_calls": 21316
+  },
+  "evidence": {
+    "/home/vick/rvv-task178/DIRECTED_STOPPED-attempt1.json": "856be6a5fd7369ef0e88667b96fdc106924900daa8ab9e90bdeb2fafbba56c89",
+    "/home/vick/rvv-task178/directed/b146-001/audit-attempt1.log": "bad3a6dc32ce7b00d2931e4adc2f85697074f0bcbf41d4fc163f6ad155e3eb3b",
+    "/home/vick/rvv-task178/directed/b146-001/audit/summary.json": "f4d65a9c8ac101a9137e766275aa204f09126cff04fde593f8e99651c91fc26c",
+    "/home/vick/rvv-task178/external.log": "55a335ed41f33de3c61f2a20f9eb7caae69090050af2d7dd1115fdeaadcb5bd9",
+    "/home/vick/rvv-task178/external-recovery.log": "66000689263767fb65a9b1d8675caac94dd7a624a069032e79f3c55c4fd8e690",
+    "/home/vick/rvv-task178/external-recovery-attempt2.log": "214924bbbf3b85df8525de1199e76cc24fbd376b67b5391ba4feefa4b9d53190",
+    "/home/vick/rvv-task178/external/audit/SUMMARY.json": "015922824720ac68b5c1cef56381a47001b975608f0fbb1034f2211f88b2cf17",
+    "/home/vick/rvv-task178/external/audit/EXACT_JOINS.json.gz": "1b6924b2a290dd718186b4e849e38fd9c2629b008a358891edc94ffee776dc15"
+  },
+  "isa_failures_identified": 0,
+  "old_logs_deleted": 0
+}

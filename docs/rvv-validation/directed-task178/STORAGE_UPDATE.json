@@ -1,0 +1,13 @@
+{
+  "initial_estimate_gib": 16,
+  "closed_measured_allocations": {
+    "b145-000": "164MiB / 9393 legal cases per arm",
+    "b146-001": "713MiB / 54077 legal cases per arm",
+    "external": "1.1GiB / 21316 calls"
+  },
+  "revised_conservative_budget_gib": 60,
+  "local_free_gib": "over 1200",
+  "strategy": "At execution-host free<22GiB, move closed successful NEW pilot/remaining runs to local compressed archives; verify archive CRC, SHA256, member extent and compressed storage receipts before source removal. Leave all summaries/audits/inputs and all raw failures in place. Reserve10GiB; guest admission waits below11GiB.",
+  "transfer_root": "/home/user/research/materials/task178-common-raw-20261014",
+  "ledger": "xbd:/home/vick/rvv-task178/TRANSFERS.jsonl"
+}

@@ -1,0 +1,45 @@
+{
+  "generator": "scripts/rvv_verify.py",
+  "generator_sha256": "7b8376906bc1ccb6f93b8427ac2f1fbfdde215377b0434a26e6174d79b516068",
+  "index_sha256": "8773016fd59dedc3a0b966ebeef61499dfb05f2d2be3c5d5e5b821e0f02a7200",
+  "source_commit": "8c851d5953bc26eb14279522e10a8d6a3f795a81",
+  "source": "actual original retained /home/vick manifests read over ssh xbd; no guest/build/reference runs",
+  "plan_gzip_sha256": "1babad06672ef4e9661bf740c7eaad1933812176ee80db74e418d42f709315b8",
+  "plan_decoded_sha256": "6a57de0fb7c149ea865a62a27055db1a438610336fa6bb34b9c185e91e6ad929",
+  "final_evidence_pins": {
+    "PER_FORM_RESULTS.json": "665cc2eb02270c6048917864865f982ae191bd29c73c01ebe3d0f6e1c184ab6c",
+    "ENTRY_RECEIPTS.json": "70a6e4ec3315acfdd563416977e2cc8107a2d8ce7673291d852632fcc6fed184",
+    "BUILD_MANIFEST_179.json": "8ff1b79b85a429cf92f342026fa5de369e6cf598cb9a3c783135bf08e951f239",
+    "FINAL_RESULT.json": "ec9395f6e9602271e9f366941ac22da726141a8edeffe6b1c558cc6d26946db5"
+  },
+  "result": {
+    "result": "PASS_FINITE_SCOPE",
+    "build_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "library_sha256": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+    "build_configuration": {
+      "build_jobs": 4,
+      "nice": 10,
+      "affinity": "none",
+      "host_chunk_bits": 512,
+      "compiler": "clang22",
+      "build_type": "Release",
+      "rvdbt_census": true,
+      "rvdbt_fast_stats": true,
+      "fp_contract_off": true,
+      "host_fma": false,
+      "fround_impl": 2
+    },
+    "build_manifest": "docs/rvv-validation/directed-task181/BUILD_MANIFEST_179.json",
+    "cases_per_arm": 3017262,
+    "ordinary_positive_dut_checks": 12069048,
+    "focused_positive_dut_checks": 2256,
+    "focused_denial_controls": 592,
+    "P3_separate": true,
+    "rebuilt_executable_receipt_credit": false
+  },
+  "per_form_rows": 595,
+  "entry_receipts": 102,
+  "all_accepted_ranges_verified": true,
+  "ordinary_focused_partition_verified": true,
+  "final_current_generator_repeat_byte_identical": true
+}

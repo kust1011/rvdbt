@@ -1,0 +1,18 @@
+{
+  "task": 181,
+  "original_task178_build": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+  "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+  "original_plan_sha256": "82b20b40d5bef24e931eaa8cdf73b43c170e94ba3eeae176e9c77ab4b460ae88",
+  "final_plan_sha256": "6a57de0fb7c149ea865a62a27055db1a438610336fa6bb34b9c185e91e6ad929",
+  "build": {
+    "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "forms": 595,
+  "cases_per_arm": 3017262,
+  "same179_dut_reuse": 0,
+  "new_reference_calls": 0,
+  "new_build_calls": 0,
+  "initial_final_plan_sha256": "05a7fb68cdca1bd3a26ed9be2ff631421fff6fb0c4fc61320c1801be64a3838b",
+  "plan_amendment": "PLAN_AMENDMENT.json"
+}

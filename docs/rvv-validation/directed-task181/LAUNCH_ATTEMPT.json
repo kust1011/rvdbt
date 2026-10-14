@@ -1,0 +1,8 @@
+{
+  "error": "initial background ssh retained its shell stdout; after first run returned it reached external launch already independently started; duplicate rejected existing root before guest execution",
+  "raw_unchanged": true,
+  "duplicate_guest_calls": 0,
+  "live_external_pid": 1245982,
+  "log": "external-duplicate-launch-attempt.log",
+  "progress_source": "actual per-call result/execution receipts and pilot receipts; do not infer counts from overwritten log"
+}

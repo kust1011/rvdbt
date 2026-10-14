@@ -1,0 +1,169 @@
+import os
+"""Replay or audit one frozen entry; original ELFs/references are never rebuilt."""
+import time,multiprocessing,fcntl,argparse,collections,concurrent.futures,gzip,hashlib,importlib,json,os,shutil,sys,threading
+from pathlib import Path
+import admission181 as admission
+import storage149 as storage
+B=Path(os.environ.get('RVV_TASK181_ROOT','/home/vick/rvv-task181'));ENGINE=Path('/home/vick/rvdbt-host512-task179-build/build/bin/elfrun');LIB=ENGINE.parent.parent/'lib/libdbtjitshared.so'
+PINS={str(ENGINE):'8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281',str(LIB):'79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af'}
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+read=lambda p:json.loads(Path(p).read_text())
+def save(p,x):
+ p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2)+'\n')
+def gz(p,x):Path(p).write_bytes(gzip.compress(json.dumps(x,separators=(',',':')).encode(),mtime=0))
+def pins():assert all(sha(p)==h for p,h in PINS.items())
+p=argparse.ArgumentParser();p.add_argument('action',choices=['pilot','remaining','recover','reuse','audit']);p.add_argument('entry');a=p.parse_args()
+offline_lock=None
+if a.action=='audit':
+ offline_lock=open('/tmp/rvv-task181-offline.lock','a');fcntl.flock(offline_lock,fcntl.LOCK_EX)
+ while sum(r['kind']=='offline' and not r['own'] and r.get('role')!='controller' for r in admission.census())>2:time.sleep(2)
+plan=read(B/'DIRECTED_PLAN.json');e=next(e for e in plan['entries'] if e['id']==a.entry)
+data_pins=read(B/'PREDICATE_DATA_PINS.json').get(str(e['batch']),{})
+assert all(sha(p)==h for p,h in data_pins.items())
+original=Path(e['original']);tools=Path(e['tools']);sys.path.insert(0,str(tools))
+import vadd as v
+if not hasattr(v,'check_isa'):
+ _decode=v.decode;_decoded=threading.local()
+ def cached_decode(c,raw):
+  cache=getattr(_decoded,'cache',None)
+  if cache is None:_decoded.cache=cache={}
+  key=(c['id'],raw)
+  if key not in cache:
+   if len(cache)>=4:cache.clear()
+   cache[key]=_decode(c,raw)
+  return cache[key]
+ v.decode=cached_decode
+ v.check_isa=lambda c,raw,rc=0,timeout=False:v.check(c,raw,rc,timeout)
+ v.check_reference=lambda c,raw,ref:v.check(c,raw,0,False,ref)
+if e['install']:importlib.import_module(e['install']).install(v)
+os.environ['RVV_COMPRESS']='1';pins()
+assert sha(original/'manifest.json')==e['manifest_sha256']
+assert sha(original/'build-commands.json')==e['build_commands_sha256']
+assert all(sha(p)==h for p,h in e['tool_pins'].items())
+manifest=read(original/'manifest.json');allcases=manifest['cases'];accepted={allcases[i]['id']:allcases[i] for i in e['accepted_indices']}
+groups=collections.defaultdict(list)
+for i,c in enumerate(allcases):
+ if c['unit'] in e['units']:groups[c['unit']].append((i,c))
+# A bounded per-entry pilot includes both initialized-start and zero units,
+# and at most one representative per owned form (maximum eight units).
+selected=[]
+for key in sorted(groups,key=lambda u:(allcases[groups[u][0][0]]['vlen'],u)):
+ if any(c['id'] in accepted for _,c in groups[key]):
+  if not selected or bool(groups[key][0][1]['vstart'])!=bool(groups[selected[0]][0][1]['vstart']):selected.append(key)
+ if len(selected)>=2:break
+if len(selected)<2:selected=list(groups)[:2]
+output=B/'directed'/e['id'];output.mkdir(parents=True,exist_ok=True)
+if a.action=='pilot':save(output/'PILOT_UNITS.json',selected)
+elif a.action in ('remaining','recover'):
+ assert read(output/'pilot/summary.json')['failed']==0 and (output/'pilot/COMPLETE').exists()
+ selected=[u for u in groups if u not in read(output/'PILOT_UNITS.json')]
+else:selected=list(groups)
+root=output/a.action
+assert not root.exists();root.mkdir()
+(root/'RUNNER_SNAPSHOT.py').write_bytes(Path(__file__).read_bytes())
+for module in (admission,storage):
+ (root/Path(module.__file__).name).write_bytes(Path(module.__file__).read_bytes())
+save(root/'LINEAGE.json',dict(entry=e,plan_sha256=sha(B/'DIRECTED_PLAN.json'),flags_sha256=sha(e['flags']),build=PINS,action=a.action,runner_sha256=sha(__file__),predicate_data_pins=data_pins,jobs=8 if a.action!='audit' else 2,reference_guest_calls=0,new_build_calls=0))
+flags=read(e['flags']);assert set(flags)=={'B','M1','M2','BOTH'}
+buildrows=read(original/'build-commands.json')
+elfpins={Path(r['command'][-1]).parent.name:r['elf_sha256'] for r in buildrows if Path(r['command'][-1]).name=='test.elf'}
+results=read(original/'results.json');oldrefs={r['case']:r for r in results if r['arm']=='Reference'}
+oldarms={(r['case'],r['arm']):r for r in results}
+def packet_path(r,c,arm):
+ path=Path(r['raw'])
+ if storage.physical(path).exists():return path
+ relocated=original/'runs'/c['unit']/arm/'packets.bin'
+ assert storage.physical(relocated).exists(),(path,relocated)
+ return relocated
+CHECKLOCK=multiprocessing.BoundedSemaphore(2)
+def validate(c,packet,ref,rec):
+ with admission.predicate_slot():
+  v.check_isa(c,packet,rec['returncode'],rec['timeout']);v.check_reference(c,packet,ref)
+def worker_impl(unit):
+ cs=groups[unit];size=v.packet_size(cs[0][1]);legal=[(j,c) for j,(_,c) in enumerate(cs) if c['id'] in accepted]
+ elf=storage.verify(original/unit/'test.elf');assert hashlib.sha256(elf).hexdigest()==elfpins[unit]
+ refs={};refpins={}
+ for j,c in legal:
+  r=oldrefs[c['id']];assert r['status']=='PASS',(c['id'],r)
+  path=packet_path(r,c,'Reference');key=str(path)
+  if key not in refs:
+   refs[key]=storage.verify(path);rec=read(path.parent/'execution.json');assert rec['returncode']==0 and not rec['timeout'];refpins[key]=hashlib.sha256(refs[key]).hexdigest()
+  assert r['size']==size
+  packet=refs[key][r['offset']:r['offset']+size]
+  with admission.predicate_slot():v.check_isa(c,packet,0,False)
+ save(root/(unit+'-REUSE.json'),dict(elf_sha256=elfpins[unit],reference_packets=refpins,cases=len(legal)))
+ rows=[]
+ for arm,fsflags in flags.items():
+  ref=None
+  recover_dir=output/'remaining/runs'/unit/arm
+  recover_existing=a.action=='recover' and (recover_dir/'execution.json').exists()
+  if recover_existing:
+   oldlineage=read(output/'remaining/LINEAGE.json')
+   assert oldlineage['build']==PINS and oldlineage['flags_sha256']==sha(e['flags'])
+   for key in ('original','manifest_sha256','build_commands_sha256','accepted_indices','units'):assert oldlineage['entry'][key]==e[key],key
+   d=recover_dir;rec=read(d/'execution.json');cmd=read(d/'command.json');raw=storage.verify(d/'packets.bin')
+  elif a.action in ('reuse','audit'):
+   if a.action=='reuse':
+    sample=oldarms[(legal[0][1]['id'],arm)];d=packet_path(sample,legal[0][1],arm).parent
+    identity=read(original/'identities-before.json')
+    assert identity.get(str(ENGINE))==PINS[str(ENGINE)] and identity.get(str(LIB))==PINS[str(LIB)],identity
+   else:
+    d=next((output/stage/'runs'/unit/arm for stage in ('pilot','remaining','recover','reuse') if (output/stage/'runs'/unit/arm/'execution.json').exists()),None)
+    if d is None and e['reuse_same179']:d=packet_path(oldarms[(legal[0][1]['id'],arm)],legal[0][1],arm).parent
+    assert d is not None,unit
+   rec=read(d/'execution.json');cmd=read(d/'command.json');raw=storage.verify(d/'packets.bin')
+  else:
+   d=root/'runs'/unit/arm;work=root/'work'/unit/arm;(work/'fs').mkdir(parents=True);(work/'cache').mkdir()
+   # No persistent input copy: compressed old ELFs are materialized only in NEW scratch.
+   guest=work/'fs/t.elf';guest.write_bytes(elf)
+   cmd=[str(ENGINE),*[f'--vlen={cs[0][1]["vlen"]}' if f.startswith('--vlen=') else f for f in fsflags],f'--dump-tbmap={d}/tbmap',f'--fsroot={work}/fs',f'--cache={work}/cache','--','/t.elf']
+   rec=storage.execute(cmd,d,dict(os.environ,LD_LIBRARY_PATH=str(LIB.parent)+':/home/vick/boost_vendor/lib'),120)
+   raw=storage.verify(d/'stdout');storage.write(d/'packets.bin',raw,alias=d/'stdout');storage.compress(d/'tbmap')
+  assert storage.verify(d/'stdout')==raw
+  assert hashlib.sha256(raw).hexdigest()==rec['stdout_sha256']
+  assert hashlib.sha256(storage.verify(d/'stderr')).hexdigest()==rec['stderr_sha256']
+  assert str(cmd[0])==str(ENGINE),(unit,cmd[0])
+  original_cmd=read(packet_path(oldarms[(legal[0][1]['id'],arm)],legal[0][1],arm).parent/'command.json')
+  original_normalized=[f for f in original_cmd[1:] if not f.startswith(('--dump-tbmap=','--dump-tbcode=','--fsroot=','--cache='))]
+  normalized=[f for f in cmd[1:] if not f.startswith(('--dump-tbmap=','--dump-tbcode=','--fsroot=','--cache='))]
+  expected=[f'--vlen={cs[0][1]["vlen"]}' if f.startswith('--vlen=') else f for f in fsflags]+['--','/t.elf']
+  assert normalized==expected==original_normalized,(normalized,expected,original_normalized)
+  checks=[]
+  for j,c in legal:
+   error=None;r=oldrefs[c['id']];reference=refs[str(packet_path(r,c,'Reference'))][r['offset']:r['offset']+size]
+   try:
+    assert len(raw)==size*len(cs),'packet extent'
+    validate(c,raw[j*size:(j+1)*size],reference,rec)
+   except (AssertionError,ValueError) as ex:error=str(ex)
+   checks.append(dict(case=c['id'],form=c.get('mnemonic','vadd') if c.get('mnemonic','') in plan['owners'] else c.get('mnemonic','vadd')+'.'+c['form'],arm=arm,status='FAIL' if error else 'PASS',error=error,raw=str(d/'packets.bin'),offset=j*size,size=size,original_reference_record_raw=r['raw'],reference_raw=str(packet_path(r,c,'Reference')),reference_offset=r['offset'],original_elf=str(original/unit/'test.elf'),elf_sha256=elfpins[unit],command_sha256=sha(d/'command.json'),execution_sha256=sha(d/'execution.json'),packet_sha256=hashlib.sha256(raw[j*size:(j+1)*size]).hexdigest()))
+  gz(root/(unit+'-'+arm+'-checks.json.gz'),checks);rows.extend(checks)
+  if any(r['status']!='PASS' for r in checks):
+   save(B/'STOP_NEW_GUESTS.json',dict(entry=e['id'],unit=unit,arm=arm,failures=[r for r in checks if r['status']!='PASS']));raise RuntimeError('DUT predicate failure; all final scheduling stopped')
+  if a.action not in ('audit','reuse') and not recover_existing and all(r['status']=='PASS' for r in checks):
+   with admission.LOCK,(B/'CLEANUP.jsonl').open('a') as f:f.write(json.dumps(dict(reason='new successful regenerable work/cache only',files=[dict(path=str(p),bytes=p.stat().st_size) for p in work.rglob('*') if p.is_file()]))+'\n')
+   shutil.rmtree(work)
+ return rows
+def worker(unit):
+ if (B/'STOP_NEW_GUESTS.json').exists():raise RuntimeError('final queue stopped')
+ try:return worker_impl(unit)
+ except BaseException as ex:
+  if not (B/'STOP_NEW_GUESTS.json').exists():save(B/'STOP_NEW_GUESTS.json',dict(entry=e['id'],unit=unit,action=a.action,error=repr(ex),classification='requires raw diagnosis'))
+  raise
+capture_paths=set();new_capture_paths=set()
+counts=collections.Counter();forms=collections.defaultdict(collections.Counter);failures=[];completed=0
+with concurrent.futures.ProcessPoolExecutor(max_workers=2 if a.action=='audit' else 8,mp_context=multiprocessing.get_context('fork')) as pool:
+ for unit,rows in zip(selected,pool.map(worker,selected)):
+  completed+=1
+  for r in rows:
+   if a.action not in ('audit','reuse'):
+    capture_paths.add(r['raw'])
+    if r['raw'].startswith(str(root/'runs')+'/'):new_capture_paths.add(r['raw'])
+   counts[r['status']]+=1;forms[r['form']][r['status']]+=1
+   if r['status']!='PASS':failures.append(r)
+  if completed%100==0:print(e['id'],a.action,completed,len(selected),dict(counts),flush=True)
+pins();assert all(sha(p)==h for p,h in e['tool_pins'].items());assert all(sha(p)==h for p,h in data_pins.items())
+save(root/'summary.json',dict(accepted_cases=sum(sum(c['id'] in accepted for _,c in groups[u]) for u in selected),units=len(selected),completed=completed,checks=sum(counts.values()),counts=dict(counts),failed=len(failures),forms={f:dict(c) for f,c in forms.items()},build=PINS,new_dut_calls=len(new_capture_paths),recovered_same181_dut_calls=len(capture_paths)-len(new_capture_paths) if a.action=='recover' else 0))
+save(root/'FAILURES.json',failures)
+if failures:raise SystemExit(1)
+(root/'COMPLETE').write_text('PASS\n')
+print('COMPLETE',e['id'],a.action,dict(counts),flush=True)

@@ -1,0 +1,784 @@
+{
+  "status": "PASS_FINITE_SCOPE",
+  "build_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+  "forms": 595,
+  "directed_families": [
+    {
+      "batch": 145,
+      "forms": 3,
+      "planned": 37572,
+      "completed": 37572,
+      "passed": 37572,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 37572,
+      "reused_same179": 0
+    },
+    {
+      "batch": 146,
+      "forms": 13,
+      "planned": 216308,
+      "completed": 216308,
+      "passed": 216308,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 216308,
+      "reused_same179": 0
+    },
+    {
+      "batch": 147,
+      "forms": 1,
+      "planned": 112952,
+      "completed": 112952,
+      "passed": 112952,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 112952,
+      "reused_same179": 0
+    },
+    {
+      "batch": 148,
+      "forms": 19,
+      "planned": 492788,
+      "completed": 492788,
+      "passed": 492788,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 492788,
+      "reused_same179": 0
+    },
+    {
+      "batch": 149,
+      "forms": 16,
+      "planned": 377024,
+      "completed": 377024,
+      "passed": 377024,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 377024,
+      "reused_same179": 0
+    },
+    {
+      "batch": 150,
+      "forms": 15,
+      "planned": 450636,
+      "completed": 450636,
+      "passed": 450636,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 450636,
+      "reused_same179": 0
+    },
+    {
+      "batch": 151,
+      "forms": 6,
+      "planned": 146616,
+      "completed": 146616,
+      "passed": 146616,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 146616,
+      "reused_same179": 0
+    },
+    {
+      "batch": 152,
+      "forms": 20,
+      "planned": 486608,
+      "completed": 486608,
+      "passed": 486608,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 486608,
+      "reused_same179": 0
+    },
+    {
+      "batch": 153,
+      "forms": 10,
+      "planned": 445600,
+      "completed": 445600,
+      "passed": 445600,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 445600,
+      "reused_same179": 0
+    },
+    {
+      "batch": 154,
+      "forms": 8,
+      "planned": 152608,
+      "completed": 152608,
+      "passed": 152608,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 152608,
+      "reused_same179": 0
+    },
+    {
+      "batch": 155,
+      "forms": 8,
+      "planned": 745600,
+      "completed": 745600,
+      "passed": 745600,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 745600,
+      "reused_same179": 0
+    },
+    {
+      "batch": 159,
+      "forms": 24,
+      "planned": 1886048,
+      "completed": 1886048,
+      "passed": 1886048,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 1886048,
+      "reused_same179": 0
+    },
+    {
+      "batch": 160,
+      "forms": 10,
+      "planned": 499768,
+      "completed": 499768,
+      "passed": 499768,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 499768,
+      "reused_same179": 0
+    },
+    {
+      "batch": 161,
+      "forms": 35,
+      "planned": 415056,
+      "completed": 415056,
+      "passed": 415056,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 415056,
+      "reused_same179": 0
+    },
+    {
+      "batch": 162,
+      "forms": 11,
+      "planned": 245072,
+      "completed": 245072,
+      "passed": 245072,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 245072,
+      "reused_same179": 0
+    },
+    {
+      "batch": 163,
+      "forms": 10,
+      "planned": 372808,
+      "completed": 372808,
+      "passed": 372808,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 372808,
+      "reused_same179": 0
+    },
+    {
+      "batch": 165,
+      "forms": 128,
+      "planned": 342864,
+      "completed": 342864,
+      "passed": 342864,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 342864,
+      "reused_same179": 0
+    },
+    {
+      "batch": 166,
+      "forms": 96,
+      "planned": 273424,
+      "completed": 273424,
+      "passed": 273424,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 273424,
+      "reused_same179": 0
+    },
+    {
+      "batch": 167,
+      "forms": 16,
+      "planned": 950656,
+      "completed": 950656,
+      "passed": 950656,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 950656,
+      "reused_same179": 0
+    },
+    {
+      "batch": 168,
+      "forms": 54,
+      "planned": 179480,
+      "completed": 179480,
+      "passed": 179480,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 179480,
+      "reused_same179": 0
+    },
+    {
+      "batch": 169,
+      "forms": 9,
+      "planned": 218480,
+      "completed": 218480,
+      "passed": 218480,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 218480,
+      "reused_same179": 0
+    },
+    {
+      "batch": 170,
+      "forms": 21,
+      "planned": 386724,
+      "completed": 386724,
+      "passed": 386724,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 386724,
+      "reused_same179": 0
+    },
+    {
+      "batch": 171,
+      "forms": 5,
+      "planned": 50608,
+      "completed": 50608,
+      "passed": 50608,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 50608,
+      "reused_same179": 0
+    },
+    {
+      "batch": 172,
+      "forms": 21,
+      "planned": 944556,
+      "completed": 944556,
+      "passed": 944556,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 944556,
+      "reused_same179": 0
+    },
+    {
+      "batch": 173,
+      "forms": 18,
+      "planned": 683640,
+      "completed": 683640,
+      "passed": 683640,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 683640,
+      "reused_same179": 0
+    },
+    {
+      "batch": 174,
+      "forms": 6,
+      "planned": 344448,
+      "completed": 344448,
+      "passed": 344448,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 344448,
+      "reused_same179": 0
+    },
+    {
+      "batch": 175,
+      "forms": 9,
+      "planned": 133560,
+      "completed": 133560,
+      "passed": 133560,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 133560,
+      "reused_same179": 0
+    },
+    {
+      "batch": 176,
+      "forms": 3,
+      "planned": 479800,
+      "completed": 479800,
+      "passed": 479800,
+      "failed": 0,
+      "blocked": 0,
+      "new_dut": 479800,
+      "reused_same179": 0
+    }
+  ],
+  "directed_dut_packets": 12071304,
+  "new_directed_dut_packets": 12071304,
+  "reused_exact_same179_dut_packets": 0,
+  "external": {
+    "suites": {
+      "chips": {
+        "planned": 11744,
+        "completed": 11744,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 11744
+        },
+        "controls": 212
+      },
+      "act": {
+        "planned": 7668,
+        "completed": 7668,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 7668
+        },
+        "controls": 0
+      },
+      "ara": {
+        "planned": 1904,
+        "completed": 1904,
+        "failed": 0,
+        "blocked": 0,
+        "counts": {
+          "PASS": 1888,
+          "SCOPED_PASS": 16
+        },
+        "controls": 0
+      }
+    },
+    "build": {
+      "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+      "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+    },
+    "original_blockers": [
+      "Vf32-vfmv.f.s",
+      "Vf64-vfmv.f.s"
+    ],
+    "new_reference_calls": 0,
+    "exact_joins": 21316
+  },
+  "focused": [
+    {
+      "suite": "guard165",
+      "cases": 32,
+      "checks": 128,
+      "counts": {
+        "PASS": 80,
+        "EXPECTED_DENIAL_CONTROL": 48
+      },
+      "forms": {
+        "vle8.v": {
+          "PASS": 8,
+          "EXPECTED_DENIAL_CONTROL": 4
+        },
+        "vse64.v": {
+          "PASS": 8,
+          "EXPECTED_DENIAL_CONTROL": 4
+        },
+        "vlse16.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vsse32.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vlseg8e8.v": {
+          "PASS": 8,
+          "EXPECTED_DENIAL_CONTROL": 4
+        },
+        "vsseg8e64.v": {
+          "PASS": 8,
+          "EXPECTED_DENIAL_CONTROL": 4
+        },
+        "vlsseg3e32.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vssseg5e16.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        }
+      },
+      "failed": 0,
+      "new_reference_calls": 0,
+      "audit_namespace": "/home/vick/rvv-task181/focused/guard165/audit",
+      "audit_summary_sha256": "50aefe8bc6682d2a66d5950189041ac8472b8ce4bb327138b65651ba5ea1120c"
+    },
+    {
+      "suite": "guard166",
+      "cases": 40,
+      "checks": 160,
+      "counts": {
+        "PASS": 96,
+        "EXPECTED_DENIAL_CONTROL": 64
+      },
+      "forms": {
+        "vluxei8.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vloxei32.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vsuxei16.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vsoxei8.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vluxseg8ei8.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vloxseg3ei16.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vsuxseg5ei32.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vsoxseg8ei16.v": {
+          "PASS": 12,
+          "EXPECTED_DENIAL_CONTROL": 8
+        }
+      },
+      "failed": 0,
+      "new_reference_calls": 0,
+      "audit_namespace": "/home/vick/rvv-task181/focused/guard166/audit",
+      "audit_summary_sha256": "b4f73ad9128057d854e8e9d3bee47b2e76960efc3b7e9517dafff0f1596dac0a"
+    },
+    {
+      "suite": "faults",
+      "cases": 368,
+      "checks": 1472,
+      "counts": {
+        "PASS": 992,
+        "EXPECTED_DENIAL_CONTROL": 480
+      },
+      "forms": {
+        "vle8ff.v": {
+          "PASS": 24,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vle16ff.v": {
+          "PASS": 24,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vle32ff.v": {
+          "PASS": 24,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vle64ff.v": {
+          "PASS": 24,
+          "EXPECTED_DENIAL_CONTROL": 8
+        },
+        "vlseg2e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg2e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg2e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg2e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg3e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg3e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg3e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg3e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg4e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg4e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg4e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg4e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg5e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg5e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg5e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg5e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg6e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg6e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg6e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg6e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg7e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg7e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg7e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg7e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg8e8ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg8e16ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg8e32ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        },
+        "vlseg8e64ff.v": {
+          "PASS": 32,
+          "EXPECTED_DENIAL_CONTROL": 16
+        }
+      },
+      "failed": 0,
+      "new_reference_calls": 0,
+      "audit_namespace": "/home/vick/rvv-task181/focused/faults/audit",
+      "audit_summary_sha256": "b6d43cb8008e310f33e44bd3079310def770f8766338f971bd835005f4e54e58"
+    },
+    {
+      "suite": "fof-startmask",
+      "cases": 32,
+      "checks": 128,
+      "counts": {
+        "PASS": 128
+      },
+      "forms": {
+        "vle8ff.v": {
+          "PASS": 16
+        },
+        "vle16ff.v": {
+          "PASS": 16
+        },
+        "vle32ff.v": {
+          "PASS": 16
+        },
+        "vle64ff.v": {
+          "PASS": 16
+        },
+        "vlseg8e8ff.v": {
+          "PASS": 16
+        },
+        "vlseg8e16ff.v": {
+          "PASS": 16
+        },
+        "vlseg8e32ff.v": {
+          "PASS": 16
+        },
+        "vlseg8e64ff.v": {
+          "PASS": 16
+        }
+      },
+      "failed": 0,
+      "new_reference_calls": 0,
+      "audit_namespace": "/home/vick/rvv-task181/focused/fof-startmask/audit",
+      "audit_summary_sha256": "30ce6b9beff3a45acfe0542f5275772b7516f32ba8a76479af16171e0cddc66c"
+    },
+    {
+      "suite": "vill",
+      "cases": 240,
+      "checks": 960,
+      "counts": {
+        "PASS": 960
+      },
+      "forms": {
+        "vl1re8.v": {
+          "PASS": 48
+        },
+        "vl1re16.v": {
+          "PASS": 48
+        },
+        "vl1re32.v": {
+          "PASS": 48
+        },
+        "vl1re64.v": {
+          "PASS": 48
+        },
+        "vs1r.v": {
+          "PASS": 48
+        },
+        "vl2re8.v": {
+          "PASS": 48
+        },
+        "vl2re16.v": {
+          "PASS": 48
+        },
+        "vl2re32.v": {
+          "PASS": 48
+        },
+        "vl2re64.v": {
+          "PASS": 48
+        },
+        "vs2r.v": {
+          "PASS": 48
+        },
+        "vl4re8.v": {
+          "PASS": 48
+        },
+        "vl4re16.v": {
+          "PASS": 48
+        },
+        "vl4re32.v": {
+          "PASS": 48
+        },
+        "vl4re64.v": {
+          "PASS": 48
+        },
+        "vs4r.v": {
+          "PASS": 48
+        },
+        "vl8re8.v": {
+          "PASS": 48
+        },
+        "vl8re16.v": {
+          "PASS": 48
+        },
+        "vl8re32.v": {
+          "PASS": 48
+        },
+        "vl8re64.v": {
+          "PASS": 48
+        },
+        "vs8r.v": {
+          "PASS": 48
+        }
+      },
+      "failed": 0,
+      "new_reference_calls": 0,
+      "audit_namespace": "/home/vick/rvv-task181/focused/vill/audit",
+      "audit_summary_sha256": "fc7b6972610719eed8866b3c8c29f9739e93416a1f1fb61e5735d785e706493f"
+    }
+  ],
+  "resource": {
+    "samples": 4936,
+    "minimum_free_bytes": 20374302720,
+    "max_own_guests": 4,
+    "max_shared_guests": 7,
+    "nice_values": [
+      10
+    ],
+    "affinity": "none",
+    "build_calls": 0,
+    "offline_workers": "two own audit workers, serialized between directed/external audits; online packet checks share a process semaphore of two",
+    "monitor": "sampled process census; controller process counts differ from thread/worker allocation"
+  },
+  "new_reference_calls": 0,
+  "new_build_calls": 0,
+  "failures": [],
+  "remaining_p4_gaps": [
+    "Task180 completes full P3 actual-path validation separately on the same179 build; the595-form table does not infer per-target native admission from requested flags",
+    "No handler return, mapping repair, same-PC retry or general trap/restart proof",
+    "Finite matrices do not exhaust arbitrary operand/mask/register/policy Cartesian products",
+    "Original two ACT reference blockers are outside accepted queue",
+    "Ara sixteen scoped MAC calls preserve TEST_CASE3/4 failures; whole-file PASS is not claimed",
+    "Task179 arbitrary inexact unordered sums remain outside the accepted finite oracle",
+    "Per-target optimized admission is not inferred from requested arm flags"
+  ],
+  "recovered_same181_dut_commands": 1,
+  "recovery_credit_scope": "exact same181 captures independently rechecked after harness recovery; counted once; no historical174/179 DUT credit",
+  "P4_complete": true,
+  "new_directed_dut_commands": 380968,
+  "focused_dut_commands": 2848,
+  "focused_denial_controls": 592,
+  "external_dut_commands": 21316,
+  "original_vs_final_provenance_sha256": "657cac1ed15c6ebc47d7e2501a6659d0a730e9a28168bd3c390f82bb8a8fcda5",
+  "resource_transition_limitation": {
+    "scope": "initial174 command drain overlapped first181 pilot/remainder startup",
+    "old_controller": 967939,
+    "old_replay": 1141509,
+    "new_controller": 1240806,
+    "new_replay": 1241839,
+    "old_predicate_gate": "private multiprocessing semaphore2 inherited174",
+    "new_predicate_gate": "cross-controller flock slots2",
+    "guest_gate": "181 census includes174; inherited174 census only counts174 as own; common shared-launch lock used by both",
+    "limitation": "Combined cross-version predicate occupancy and continuous guest occupancy during drain are not proven. No audit queue was active for174 during this overlap. After174 drained/stopped, all181 controllers share the two-slot predicate gate and combined guest census. This is a resource-accounting limitation; retained ISA checks are not relabeled or discarded.",
+    "sampled_own_guest_peak_at_review": 3,
+    "sampled_shared_guest_peak_at_review": 7
+  },
+  "P3_task180": {
+    "status": "PASS_FINITE_FULL177_MATRIX_ON179_TRACE0",
+    "cases_per_arm": 2418,
+    "checks": 12090,
+    "DUT_checks": 9672,
+    "units": 660,
+    "DUT_commands": 2640,
+    "original_reference_units": 660,
+    "new_DUT_checks": 9456,
+    "reused_DUT_checks": 216,
+    "new_DUT_commands": 2596,
+    "reused_DUT_commands": 44,
+    "reference_executions": 0,
+    "ELF_rebuilds": 0,
+    "target_pc_arm_rows": 30456,
+    "multi_frames": 1824,
+    "native_multi_frames": 1472,
+    "component_completion_frames": 542,
+    "candidate_sha256": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "full_trace1_matrix": "NOT_RUN; focused179 retained",
+    "P4": "Session3 explicit179 namespace; historical174 never relabeled",
+    "all_form_replay": "NOT_RUN",
+    "external_replay": "NOT_RUN"
+  }
+}

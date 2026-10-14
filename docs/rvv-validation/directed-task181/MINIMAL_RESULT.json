@@ -1,0 +1,20 @@
+{
+  "accepted_cases": 21,
+  "units": 2,
+  "completed": 2,
+  "checks": 84,
+  "counts": {
+    "PASS": 84
+  },
+  "failed": 0,
+  "forms": {
+    "vadd.vi": {
+      "PASS": 84
+    }
+  },
+  "build": {
+    "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "new_dut_calls": 8
+}

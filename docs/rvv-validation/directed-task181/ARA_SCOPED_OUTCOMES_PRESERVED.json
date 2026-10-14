@@ -1,0 +1,295 @@
+{
+  "calls": [
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__B",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+      "old_result_sha256": "7650bbf21160d5fb9548c47efc6e8795475483a63d53f1b8b71d28bbd9df439b",
+      "new_result_sha256": "b3c73e76bd3fe68a5d4eebb38fbf3302f78cfe8aa0d33a3fe6e3040613fdd2a8",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__BOTH",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+      "old_result_sha256": "fc8e03614645a051eb46b33be67e19c3de13f218fefd239864b0bcbbb44a8263",
+      "new_result_sha256": "b19df74d248f92c5385ecfd7b04f076540e886b67268b5f99fd54e0517b3b019",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__M1",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+      "old_result_sha256": "4401058d54c4f161311ec96ea4d24ea83d7353ef911d5cf59766ed879412d341",
+      "new_result_sha256": "3aa95465177da6bda6339adbdce56c599bee98cce2a67eab8c8d42954bc7a5b8",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmacc__batch_vmacc__M2",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "899a62efeb197cff160664a5268f3b245ce4fce31ba944f95c328787ffe4c7ea",
+      "old_result_sha256": "65cb038fcc54206f212572a10c029255ed111d0abd57f0e46a16cbf8eead0b22",
+      "new_result_sha256": "f070cf830df612fc9d448df357f69c87a8c49c1d1fa19f1727317d3a6908a66e",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__B",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+      "old_result_sha256": "5885cfad852dbbb261c0ef9e6123d3b4f52bf85d9fbcfdca4b3d9981384951be",
+      "new_result_sha256": "4b1ae2b884424121d7ccccd3c09d56db9bee5dce977684a4f858ffa31f97e3ab",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__BOTH",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+      "old_result_sha256": "9b3ce21237d07c9dd5242c501c651037aa52df20c853c0c2843aa91fabdc28c3",
+      "new_result_sha256": "da98ed3bf2f8e2e4691febe066791f222d3ec7c994afbf0388484936857d9b3d",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__M1",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+      "old_result_sha256": "3638314a892195b5c7e2ca73673fb10d92b8664827b27f62cc440c5fb760ddbb",
+      "new_result_sha256": "352e32e5cec4263147f254f22be3541d13605f31e4132cd8617d53eedc20775b",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vmadd__batch_vmadd__M2",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "ae498b241c6ddbfedaa5ed97fa4482bc0d764e6f46b5829abd76138ecf13898b",
+      "old_result_sha256": "d5ab1f31dcd0719b549d10e97037a5b635ceb4305cee54e3aad5695cfe99afd0",
+      "new_result_sha256": "4464ccc0cdbb1b1d961340269f6c14dad4254dc0cee3d5316632d0e1d9f2744c",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__B",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+      "old_result_sha256": "c45a3200969c1cdf98f310298a0a5b5ddd28fd8508a978cf3267bce19ffdfc5f",
+      "new_result_sha256": "5b3518b7d56435674f1791a970585a4dbca789ce9bbe553ed622e3edd8731374",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__BOTH",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+      "old_result_sha256": "b1ebca0d930f7bc1a03ee415cb9f28d53b5960d41e63ab89ca8ebd69a5d1f2c5",
+      "new_result_sha256": "8d7e867a415279d82e0164b96ee380d6d0ebfbf6b84552fd3e618d8544a15e1e",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__M1",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+      "old_result_sha256": "75bea59117d2ef4235b839754060d89b7565f57189c9f8f8155dfe76b6ebb6af",
+      "new_result_sha256": "9f0b63d7e514fbc8fb08d7a2769c53faa98af05d97afbac37520aaf873fe7893",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsac__batch_vnmsac__M2",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "1cde29e22be8d540149c26d65d330f8883b6d9939401f7b9d6cfbb07531ea1d6",
+      "old_result_sha256": "212a861e4af48152934551ed6c59622d494895ac4a8565f4bbabbf5b30e0653a",
+      "new_result_sha256": "c4467e7597bfaae66bd1922bd9e8963b55d9b3678c992c1debba0eec6cba6305",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__B",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+      "old_result_sha256": "daabeee73412e1134d39bc3576726c3d309d9da7b7576948c6ef7b8188706d6d",
+      "new_result_sha256": "9f1d533618be8e53d59cc5c4344f3722a7a462e1996ebae9b59d131a4f706fc3",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__BOTH",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+      "old_result_sha256": "f7dea85c4c8ad5b5f5082dbe24057094c5d9ff26cb2a4ac30d8de88fda8e01f1",
+      "new_result_sha256": "7957caec1a9ab23421931c34601bbd8654f28d9cf50d3589f2d0e568996ab4ef",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__M1",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+      "old_result_sha256": "df2aec0ba627fe4ae7dd09b150b45fcd1d2a1ed5ebd84a30b21b8c9015a1d94c",
+      "new_result_sha256": "c9081da2063cd2e219f88dbfd288a446faa312fb8c845fd85e901c4d1d219ebd",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    },
+    {
+      "id": "ara-remainder52__batch_vnmsub__batch_vnmsub__M2",
+      "scope": "TEST_CASE1_2_ONLY",
+      "old_build": {
+        "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+        "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "new_build": {
+        "/home/vick/rvdbt-host512-task179-build/build/bin/elfrun": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+        "/home/vick/rvdbt-host512-task179-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+      },
+      "same_stdout_sha256": "31c67516892e11a519fcec9b5e74e52c9c8756e7e6e0f0dd736d39fd1825187d",
+      "old_result_sha256": "6d67d52d688262c78b1879dfe4667c8f3acc6d4365ce2b21fba7708e0252340f",
+      "new_result_sha256": "e6a42cb7c3b3f61d9a436f943aab29114aeed4655a7fd579f35deeef6e1a4d9f",
+      "new_dut_execution": true,
+      "old_result_credit": false,
+      "whole_file_pass": false
+    }
+  ],
+  "checked": 16,
+  "old174_credit": 0,
+  "statement": "Fresh179 stdout retains the exact original174 TEST_CASE3/4 failure payloads; accepted scope remains TEST_CASE1/2 only."
+}

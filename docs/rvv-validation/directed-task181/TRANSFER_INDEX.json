@@ -1,0 +1,1539 @@
+{
+  "entries": [
+    {
+      "entry": "b145-000",
+      "original_namespace": "/home/vick/rvv-task181/directed/b145-000",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b145-000.tar.gz",
+      "archive_bytes": 5800131,
+      "archive_sha256": "b076bfa2499270375598f9450f11c79f8d9746cca88214974d49bc04a5438407",
+      "storage_receipts_verified": 12672,
+      "receipt_sha256": "c86964dd22d1a9b6cb00cfe3fca08b1f93619ccc36a819fccb727fb4e853e080",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": null
+    },
+    {
+      "entry": "b146-001",
+      "original_namespace": "/home/vick/rvv-task181/directed/b146-001",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b146-001.tar.gz",
+      "archive_bytes": 28252162,
+      "archive_sha256": "8295722f8ea9c3a0e40316dbe5b0bc4d58ef04ed83a70fcaac550f2fe098e2f0",
+      "storage_receipts_verified": 54912,
+      "receipt_sha256": "80a9091ea726bf5f84e4298597a8dc1dd047eed47a0b72de4aa758a6a263fd39",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": null
+    },
+    {
+      "entry": "b147-002",
+      "original_namespace": "/home/vick/rvv-task181/directed/b147-002",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b147-002.tar.gz",
+      "archive_bytes": 6163266,
+      "archive_sha256": "420fa9b89dfe36f53529e1f2fa4ae73ece512ea28c0ba9dcb4c26787522cf32a",
+      "storage_receipts_verified": 4224,
+      "receipt_sha256": "fc0a596bfb37cd8d4f15b269a2e8994bcf3fc3256b375cdf2bf3edd6f84eb1d1",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f0abf9c617350b92164bd85c709b13649cc1759e8dfc84976c2da3550941952a"
+    },
+    {
+      "entry": "b148-003",
+      "original_namespace": "/home/vick/rvv-task181/directed/b148-003",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b148-003.tar.gz",
+      "archive_bytes": 5603402,
+      "archive_sha256": "6f08afee8fd4962a6aab4a1549ce2b17cdb78ad46a127352234b4d2b6024890f",
+      "storage_receipts_verified": 8448,
+      "receipt_sha256": "434040c095ab242df5111bdb3c42a8f6aa76156c931046bb23003567716d4d91",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f0abf9c617350b92164bd85c709b13649cc1759e8dfc84976c2da3550941952a"
+    },
+    {
+      "entry": "b148-004",
+      "original_namespace": "/home/vick/rvv-task181/directed/b148-004",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b148-004.tar.gz",
+      "archive_bytes": 1553873,
+      "archive_sha256": "c5ea5f51cd71f29032ccff9576d59ade9cc68518bf449c1feed7fa95342530fe",
+      "storage_receipts_verified": 1536,
+      "receipt_sha256": "f1ab974cfd535407773d6d51c848649c1aad68fcf24307cfbef570ac2b6308bc",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f0abf9c617350b92164bd85c709b13649cc1759e8dfc84976c2da3550941952a"
+    },
+    {
+      "entry": "b148-005",
+      "original_namespace": "/home/vick/rvv-task181/directed/b148-005",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b148-005.tar.gz",
+      "archive_bytes": 41759188,
+      "archive_sha256": "50a51557c626c865974777835a3a065f65e4afd22fa8bc5311f8b2e11a6f158c",
+      "storage_receipts_verified": 71808,
+      "receipt_sha256": "63c163ac34cae2225630a0082637a4ba83da7ff78407df4625f9f60c7fb503d5",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f0abf9c617350b92164bd85c709b13649cc1759e8dfc84976c2da3550941952a"
+    },
+    {
+      "entry": "b149-006",
+      "original_namespace": "/home/vick/rvv-task181/directed/b149-006",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b149-006.tar.gz",
+      "archive_bytes": 39407721,
+      "archive_sha256": "ec5123ce29db3212aaebe0734efdc544e5a58ab6ac7804827c363e3a64559471",
+      "storage_receipts_verified": 67584,
+      "receipt_sha256": "ecc01f7d4a01a3f2640e116e7fbb31e6436b9e86c41f2db7784beb10aed6e431",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f0abf9c617350b92164bd85c709b13649cc1759e8dfc84976c2da3550941952a"
+    },
+    {
+      "entry": "b149-007",
+      "original_namespace": "/home/vick/rvv-task181/directed/b149-007",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b149-007.tar.gz",
+      "archive_bytes": 830721,
+      "archive_sha256": "ba6ada467ac8f0c5136b6434263982f12301b698783e280b143e78467c88c754",
+      "storage_receipts_verified": 2112,
+      "receipt_sha256": "47924fe72080b7ce93694699659e7c3ab2104e35bff7424f0d8d76de844c6a31",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b150-008",
+      "original_namespace": "/home/vick/rvv-task181/directed/b150-008",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b150-008.tar.gz",
+      "archive_bytes": 40102061,
+      "archive_sha256": "b2d57cf9ee53d9301319ffbbeb53c4818de0cf7ee18aec8d18be9557898476f3",
+      "storage_receipts_verified": 63360,
+      "receipt_sha256": "5fcf26f150937c8cda7fdeef4feb667cdfa1ca70d681a746f3fe929d39e0ca65",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b151-009",
+      "original_namespace": "/home/vick/rvv-task181/directed/b151-009",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b151-009.tar.gz",
+      "archive_bytes": 14536973,
+      "archive_sha256": "f0be3dd73444a2e6ab56a6dcb3e90a425a01a7e5b53170b71bf617c2938aa3d8",
+      "storage_receipts_verified": 25344,
+      "receipt_sha256": "c0206157986fb9c16c1b276b7f7553f2cbc93df978c207937f48517414e06eae",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b152-010",
+      "original_namespace": "/home/vick/rvv-task181/directed/b152-010",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b152-010.tar.gz",
+      "archive_bytes": 48225040,
+      "archive_sha256": "5adb1abccde32956545778f662eee5d50657b16b1769b9cda8f693138bed1ad3",
+      "storage_receipts_verified": 84480,
+      "receipt_sha256": "ae697a5d0099cc558e466b6eebfbcd91e1f119a95b19b974378d9b0168bd5179",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b153-011",
+      "original_namespace": "/home/vick/rvv-task181/directed/b153-011",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b153-011.tar.gz",
+      "archive_bytes": 35062957,
+      "archive_sha256": "c55be1f1ba982e89fe554ce086acb7886c771c40d1eaae65b29ac56ddde9fc66",
+      "storage_receipts_verified": 42240,
+      "receipt_sha256": "cf176ddf354b03b3bf989e8b0e39fe170b90739871137ae8f40ef47bea49eaff",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b153-012",
+      "original_namespace": "/home/vick/rvv-task181/directed/b153-012",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b153-012.tar.gz",
+      "archive_bytes": 2744836,
+      "archive_sha256": "329cb90944cab0977ab7e2fd0cb979396ac431fb1b0f13dca79b0fe3e5e50067",
+      "storage_receipts_verified": 6720,
+      "receipt_sha256": "f5d610d25c97a6dc5e445fa37b0f680683c2d1a3fe60bf05de6709ed2779c8d7",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b154-013",
+      "original_namespace": "/home/vick/rvv-task181/directed/b154-013",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b154-013.tar.gz",
+      "archive_bytes": 18155906,
+      "archive_sha256": "f2492d0f6ccc1e88ac9f15f1b10cc114f1b6b72e5338fc1643d6c22d61c6b092",
+      "storage_receipts_verified": 33792,
+      "receipt_sha256": "2cbbadf8929116616422cafc1ddcddf947694140aa187ce5aa8a6b2a3397722a",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b155-014",
+      "original_namespace": "/home/vick/rvv-task181/directed/b155-014",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b155-014.tar.gz",
+      "archive_bytes": 79596780,
+      "archive_sha256": "161e310d7c69658747848380418dd621baaf5c27f6f80d64e2a85c6163596cd3",
+      "storage_receipts_verified": 135168,
+      "receipt_sha256": "396f85027bc6a2f79dcc93a33c049b9ee4aaadfb8ac9c20f0501339014b239f2",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b159-015",
+      "original_namespace": "/home/vick/rvv-task181/directed/b159-015",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b159-015.tar.gz",
+      "archive_bytes": 20970310,
+      "archive_sha256": "57acc510f9ba13eb397557c711e94dc91cead2367a2879974401a696fcb8c281",
+      "storage_receipts_verified": 38016,
+      "receipt_sha256": "f10b80889879786908b8d977d3ec62212b02aff5e0383afb93ac92e6f3770ada",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b159-016",
+      "original_namespace": "/home/vick/rvv-task181/directed/b159-016",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b159-016.tar.gz",
+      "archive_bytes": 66846840,
+      "archive_sha256": "7f4f57e91f1246dc78a1a02d7b745673255f5b30a135f6a7a8e03919480933a8",
+      "storage_receipts_verified": 33792,
+      "receipt_sha256": "015a31202da921a9b6bafcd2a25e714611982bb7a9895ef0a7540d6567910e6e",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b159-017",
+      "original_namespace": "/home/vick/rvv-task181/directed/b159-017",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b159-017.tar.gz",
+      "archive_bytes": 46923365,
+      "archive_sha256": "250c0f9ed64027ee9fd27a5cfd2c030c7ef52bce04b39343c114498a0c96c392",
+      "storage_receipts_verified": 17280,
+      "receipt_sha256": "0bb43478bb23ec215d3c4e87b6230b3e875170c0c5e77ede1cd42e59af31ecdc",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b160-018",
+      "original_namespace": "/home/vick/rvv-task181/directed/b160-018",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b160-018.tar.gz",
+      "archive_bytes": 70389905,
+      "archive_sha256": "a37de1a40e1bc2f3ac7c993e201c82a296ce4784f4c23a9faf2be41d32fcd239",
+      "storage_receipts_verified": 146880,
+      "receipt_sha256": "729ebf6cb033f6ab9b90729d9b6f1cca8e36c1ae31962cb7c8d189c5bffdfb6d",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b161-019",
+      "original_namespace": "/home/vick/rvv-task181/directed/b161-019",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b161-019.tar.gz",
+      "archive_bytes": 11338777,
+      "archive_sha256": "519afbd3b51cd35888ade7dfa360d55b9b704fbb34cc9d3808e5244f184ab6b1",
+      "storage_receipts_verified": 20160,
+      "receipt_sha256": "d9e197f12c519676db44527f838058c59f6a506ba2c38f802a725fc553179ff8",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b161-020",
+      "original_namespace": "/home/vick/rvv-task181/directed/b161-020",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b161-020.tar.gz",
+      "archive_bytes": 6041659,
+      "archive_sha256": "24513517f1e01ef69fe2c8e711f6739629add05f0cd455c7dc34937bde83ebb1",
+      "storage_receipts_verified": 15904,
+      "receipt_sha256": "5924d5c9354c9894287a7b6305fa8de4c0879b375da15461514cc3f593878019",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b161-021",
+      "original_namespace": "/home/vick/rvv-task181/directed/b161-021",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b161-021.tar.gz",
+      "archive_bytes": 5622729,
+      "archive_sha256": "ea0701fc327beadc82497d2b67bd81e5b44115cfbe57802df021611f3e24e68a",
+      "storage_receipts_verified": 10752,
+      "receipt_sha256": "8c670f857e74e7ff6d31c7fe88096307b68cd223657379ddb6d6d2dd4ece26c6",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b161-022",
+      "original_namespace": "/home/vick/rvv-task181/directed/b161-022",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b161-022.tar.gz",
+      "archive_bytes": 34843703,
+      "archive_sha256": "5f44e368e7f9748d02f5d4e48629f8e87b8f89a482cfbfddcfaed0fc4e21360b",
+      "storage_receipts_verified": 63360,
+      "receipt_sha256": "b33ca1d3a606a9ea5fff8742c360ab8d78aa6758ceddbe1c116419b4678647ab",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b162-023",
+      "original_namespace": "/home/vick/rvv-task181/directed/b162-023",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b162-023.tar.gz",
+      "archive_bytes": 31131483,
+      "archive_sha256": "3b14d300acce634f40c731f29e1f77af511407d814b9d18a1cea9e101fcc5070",
+      "storage_receipts_verified": 44160,
+      "receipt_sha256": "e6f88df50c1cfe942e0b58dc010c450193d18f9ebbf6b6f3f793bace2e631cf2",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b163-024",
+      "original_namespace": "/home/vick/rvv-task181/directed/b163-024",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b163-024.tar.gz",
+      "archive_bytes": 24553565,
+      "archive_sha256": "43a280417302609ff54ff4033c7a972cc81be8c671bece78d3ca0d2f9f0340f2",
+      "storage_receipts_verified": 20352,
+      "receipt_sha256": "c9dbe8f0ca71bb1e6ebbbfab43c1485220d900fd2183b65b2c24b65d357be255",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-025",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-025",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-025.tar.gz",
+      "archive_bytes": 3733045,
+      "archive_sha256": "7f3a2346df854c36ae0562167f0688a6090d56a213077738f034cab521bdec1c",
+      "storage_receipts_verified": 1024,
+      "receipt_sha256": "0ad31aac42391925c81aad42aac2e2d74793ca5244f65e72ba1408b69a14a5c7",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-026",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-026",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-026.tar.gz",
+      "archive_bytes": 4263223,
+      "archive_sha256": "7882e3b64da75242a0a616126f1f5f25ff144beecab0dc272b89624709d8b651",
+      "storage_receipts_verified": 3712,
+      "receipt_sha256": "c107ec2aead69282bfa21927b6623f5c9f58efce194d822f6136738e02e3786f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-027",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-027",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-027.tar.gz",
+      "archive_bytes": 4885700,
+      "archive_sha256": "3372a5909ac9e97bfdc777b1bcabba043c03b698db146d7bdac58938c2b3e9b8",
+      "storage_receipts_verified": 3968,
+      "receipt_sha256": "9c9acee42e814109df23c8542deda9e620fe057f8768a64dc15eaaf0fa40f3a3",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-028",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-028",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-028.tar.gz",
+      "archive_bytes": 5776326,
+      "archive_sha256": "166c7a9af70a7217ea1c5aeabc6126fee5bf063bcfb2099ce541f1026d7a073a",
+      "storage_receipts_verified": 3968,
+      "receipt_sha256": "9f4386bbc27b660ea0f3dd63e9a733e4aab198dac3eb649003121ed53dddbed7",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-029",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-029",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-029.tar.gz",
+      "archive_bytes": 9113832,
+      "archive_sha256": "1ab98f160dd5e9d889fd4bbb5133f1b8cc0981ed3d8dedf7ceeadcb0e3401d9d",
+      "storage_receipts_verified": 3968,
+      "receipt_sha256": "19381fb7b2fa8f8698b3296a11d22f43bb870e9f91327449738d3a190730d46e",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-030",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-030",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-030.tar.gz",
+      "archive_bytes": 14767369,
+      "archive_sha256": "08ae20d5e3f25c7809106e4c23d1cf1b8fb86ae40cef8f114d8694e4e66c61f3",
+      "storage_receipts_verified": 3968,
+      "receipt_sha256": "419d8ea79ea50500074753ebb5301f8455475984ca0faa9e0fe5c764fd3fe2de",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b165-031",
+      "original_namespace": "/home/vick/rvv-task181/directed/b165-031",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b165-031.tar.gz",
+      "archive_bytes": 46339099,
+      "archive_sha256": "bd4698ad9c704f425ffafb855057baab41c7fea3772b8c43111458213d2f7cab",
+      "storage_receipts_verified": 3968,
+      "receipt_sha256": "1106fabe296718a22695c14a274b03cb7e8e90c926bf0e733f5ffd663b04567d",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-032",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-032",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-032.tar.gz",
+      "archive_bytes": 2981222,
+      "archive_sha256": "a2107abb347d37b8039c5f0d35949a4d2389e7cb8fd5984ab0d76ee0b74b9fc8",
+      "storage_receipts_verified": 1600,
+      "receipt_sha256": "d04e08bc837094c65aa1eadcc8573cef57c329a349faefe8303e684063d62703",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-033",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-033",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-033.tar.gz",
+      "archive_bytes": 994414,
+      "archive_sha256": "9bc8c0719c419f6d430a46c767da2510e69bb3dd06c446a1f2fdc15df0a6f74a",
+      "storage_receipts_verified": 1472,
+      "receipt_sha256": "bbbabd9734f8d8d3d64ce9c749635b2dee4690ca5af1c86d67ca4b78d2fba50d",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-034",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-034",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-034.tar.gz",
+      "archive_bytes": 4175966,
+      "archive_sha256": "0d36f56c3d7d55d59b876aa89c9fbdb5222da620e4d3c82fd5cb5f769fb97bdd",
+      "storage_receipts_verified": 3072,
+      "receipt_sha256": "2aa12369b5ccc45fcb31ef74e7451fa6a550d9b8c573d2c3da412998d9aa3404",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-035",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-035",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-035.tar.gz",
+      "archive_bytes": 5676165,
+      "archive_sha256": "e88af5998aa6c0ab505156d471bda97faf3ea897bfdf0c802cce351df3d9abf4",
+      "storage_receipts_verified": 3072,
+      "receipt_sha256": "235188591819c97e39001c4176527e3594aa5f3e2b3ec06ca1c004178d447d63",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-036",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-036",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-036.tar.gz",
+      "archive_bytes": 9972632,
+      "archive_sha256": "bb8f7d154c922133b3caca03b1d1e661893914a94194063eb2e249460ff650af",
+      "storage_receipts_verified": 3072,
+      "receipt_sha256": "6c4ead46c7946501d4b22516843b91b9bbc839cb64a8360e2f9cfff3144acd2f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-037",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-037",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-037.tar.gz",
+      "archive_bytes": 15588030,
+      "archive_sha256": "1facffee269f2ffc0bc8cdd8c85403f2574766024ea764231a2741eca5f40ae2",
+      "storage_receipts_verified": 3072,
+      "receipt_sha256": "fe51df894ca70e7682bf72f0bd941ee9c3585bc2531c1a77c1a49035831a9cb1",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b166-038",
+      "original_namespace": "/home/vick/rvv-task181/directed/b166-038",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b166-038.tar.gz",
+      "archive_bytes": 50127028,
+      "archive_sha256": "3a062ba0f5b9c3efbec73398498f0f3e84e54c278acc3f18b4c5ae59dd7e394e",
+      "storage_receipts_verified": 3072,
+      "receipt_sha256": "af41306b393cfe734c911623183d3335905c852a4c010db2d915a50bcbfd87da",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b168-039",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-039",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-039.tar.gz",
+      "archive_bytes": 1919790,
+      "archive_sha256": "f16fbb71e622428a4785dcf04a60a3240b73e074c75e0edfe2731f34e1eafed2",
+      "storage_receipts_verified": 512,
+      "receipt_sha256": "2a95308749b7953d6d7f55ca542dd00c23d8815ee95a307da67ce884e57c374b",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b168-040",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-040",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-040.tar.gz",
+      "archive_bytes": 1891606,
+      "archive_sha256": "a8ef3168a7411181363e725b3d2e4d0f981b7a95067fcf53f30c114fe793944e",
+      "storage_receipts_verified": 1472,
+      "receipt_sha256": "91e4daabebc8aa5304972a4b1f54b92c4a1ca5fc2253ed9034db129cbf8480cd",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b168-041",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-041",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-041.tar.gz",
+      "archive_bytes": 2364803,
+      "archive_sha256": "f753f5178ac847b8de2cfb290e1402a6e167e515a4dcbc73677f560c96ef6abe",
+      "storage_receipts_verified": 1728,
+      "receipt_sha256": "f20280f2eb1c723e8481771ebef249d32772ddfa88926a6dd07e34731efe74c4",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d95314aca11bcf0ea2ec71308a6f33570cda9f4ce9394244a8adbd30c0e34d01"
+    },
+    {
+      "entry": "b168-042",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-042",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-042.tar.gz",
+      "archive_bytes": 2724877,
+      "archive_sha256": "739e0e356a5f510b1dcffb02e3cf6bf19868ffff7d399294274a869feb298345",
+      "storage_receipts_verified": 1728,
+      "receipt_sha256": "a990ad0ede48b978fb017bdcd3ba7eaf1848370fd2bc77699b2be17288451262",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b168-043",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-043",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-043.tar.gz",
+      "archive_bytes": 3510586,
+      "archive_sha256": "1386c8231c6bae8f6cfa0763e1cecb3b310e7aa94233e0cfef3d41b079f06304",
+      "storage_receipts_verified": 1728,
+      "receipt_sha256": "0b67c6465281c1516472f322cf7d4ea3645ea8ab403b0fd42a62dde9f203d92c",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b168-044",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-044",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-044.tar.gz",
+      "archive_bytes": 4967163,
+      "archive_sha256": "2efdc33c44278de2d71754ebc70f7c45d0fef555d9bd98bfce275c0e51ac5046",
+      "storage_receipts_verified": 1728,
+      "receipt_sha256": "8381c335e4e72e20a82c20b87ed5b7590e8433af3e53bb888deb473bcfc82189",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b168-045",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-045",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-045.tar.gz",
+      "archive_bytes": 13274159,
+      "archive_sha256": "6b51a32f0e3d0b9687e02bd972624ace4d856810ff879b4712e1abebc79bd543",
+      "storage_receipts_verified": 1472,
+      "receipt_sha256": "f96f83e2808d5ae74e78a565f21f69e153168a3269481ecab254b8c9c3c4bd5a",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b168-046",
+      "original_namespace": "/home/vick/rvv-task181/directed/b168-046",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b168-046.tar.gz",
+      "archive_bytes": 1383856,
+      "archive_sha256": "de01986ef112f01feef1e712d73b82897c186ca9ec7f9c3e5b9cc93fc97196cf",
+      "storage_receipts_verified": 3072,
+      "receipt_sha256": "4c5bde2ca8a6b176dadb0a764fb7687970d36ada802b7ebd0c5c2a68a05c36c7",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-047",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-047",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-047.tar.gz",
+      "archive_bytes": 963847,
+      "archive_sha256": "cabe6ad7f88c87e0425a2f0c0c48941ad4e60c7cfc289da22ba44a9c6d2e156e",
+      "storage_receipts_verified": 576,
+      "receipt_sha256": "1cebea5adcf28f25d3a18a0b59f2a6a4d0cfc323a95250c62d766acefd0c6020",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-048",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-048",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-048.tar.gz",
+      "archive_bytes": 1252322,
+      "archive_sha256": "a032bcdcaa471faec001d3986c563adbc71b5e8985003212bd7e46066bf19731",
+      "storage_receipts_verified": 1824,
+      "receipt_sha256": "ba22ef426b26b2d1587a67c1387570863ad7300475fae47d2b6b8377de95cb9c",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-049",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-049",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-049.tar.gz",
+      "archive_bytes": 1550465,
+      "archive_sha256": "c016905be8e14c3fe7ecd414fa35d453c8b1c090f79adcbd9b0d19e7ba052141",
+      "storage_receipts_verified": 2112,
+      "receipt_sha256": "ebbf3718ea97f2ba326546e1b7b16097ff9e148114b58ec3691794027a2d3a6c",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-050",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-050",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-050.tar.gz",
+      "archive_bytes": 1662033,
+      "archive_sha256": "7937e5ea56552df7960dee32d7557f7c5116c975e6f32d569f47c2522dc8a117",
+      "storage_receipts_verified": 2112,
+      "receipt_sha256": "1d5f4c9063d1a865b6290167094011f11bcd74c06bfd1612f6c67d6a7c08dab4",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-051",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-051",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-051.tar.gz",
+      "archive_bytes": 1965812,
+      "archive_sha256": "98709d616a9795fd355b5991a1f5b6e4c05965003f5f7291adcfb7009cacfc1d",
+      "storage_receipts_verified": 2112,
+      "receipt_sha256": "2478396528b5316d7ba2129d67d6006dc74e22536ff95072cbfa47f6fdd40961",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-052",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-052",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-052.tar.gz",
+      "archive_bytes": 3199225,
+      "archive_sha256": "6311fbe48cf011d371e08d50f43d580234f346faf76be3b9f8050ad0e8cda781",
+      "storage_receipts_verified": 2112,
+      "receipt_sha256": "18bc4bbf04e7db10a54c769df049b4f4d15519c33b13ed943776ae412fa68665",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-053",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-053",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-053.tar.gz",
+      "archive_bytes": 6258574,
+      "archive_sha256": "40ff84869f4e217dd5c17afabcad23abe440fd40ff86d4aaa709afc2e344da31",
+      "storage_receipts_verified": 1824,
+      "receipt_sha256": "5aad488280e9d0eaf8cc70037613e07d031a9238fd640a065f981d52414401d5",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-054",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-054",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-054.tar.gz",
+      "archive_bytes": 397919,
+      "archive_sha256": "e151a8b5ea01d40c98dd13f9d8369dab3319d82718eefa3bae5d796a4bddb508",
+      "storage_receipts_verified": 768,
+      "receipt_sha256": "49ab8bf9742c457a1a7134dfdf37e2b6f66eaea5fd1c465c284ac3b34a7e81a9",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-055",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-055",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-055.tar.gz",
+      "archive_bytes": 1099882,
+      "archive_sha256": "57a9e2a6a56ee2107b8acae9ded1e1c5a99f8ce661058ff6d940b8759e77a970",
+      "storage_receipts_verified": 2432,
+      "receipt_sha256": "1f9e881cb302a82e2b667541e1498403ff70a5f31fdfc7b0b2c899f178795e30",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-056",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-056",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-056.tar.gz",
+      "archive_bytes": 1290696,
+      "archive_sha256": "705882e350d8b1885a011cf785dd4f342354386ce428ebd649bb4ad46c3e30d5",
+      "storage_receipts_verified": 2816,
+      "receipt_sha256": "b66fe5367530d243c99751f45565ca01a3dc0cda8e4e39ac82a4a4e45de5019d",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-057",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-057",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-057.tar.gz",
+      "archive_bytes": 1298990,
+      "archive_sha256": "bb029a379bc8beaa07cff2d34ac01694ced0338b3a7ebe169bdabe551c54a8c7",
+      "storage_receipts_verified": 2816,
+      "receipt_sha256": "02916e5269c793825818b98f83dc87c03de42fcf1a24aa5fa4d78555b94f20c4",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-058",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-058",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-058.tar.gz",
+      "archive_bytes": 1364382,
+      "archive_sha256": "32a7e198bb6c729ad7217cc5da0a4e8da36f291ec48ee9a3d686a0f006bb4ceb",
+      "storage_receipts_verified": 2816,
+      "receipt_sha256": "5fed75a49ad007001095e37097d07770e0dc156b2d0ac6f62d2a82dd1d8bfb5b",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-059",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-059",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-059.tar.gz",
+      "archive_bytes": 1385260,
+      "archive_sha256": "a4456d6c4c4a9eea98b692e0e16363aad4a4e02c30d23fff4899b28689de71ac",
+      "storage_receipts_verified": 2816,
+      "receipt_sha256": "0bf20b6113b7072bbb0ee046f062caee9a953c7cf31012f842a380218233335b",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b169-060",
+      "original_namespace": "/home/vick/rvv-task181/directed/b169-060",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b169-060.tar.gz",
+      "archive_bytes": 1390049,
+      "archive_sha256": "b19fd1d01e4874bd23f93b8139bf20b089d1d5cca5b850a1b7eed701258da18c",
+      "storage_receipts_verified": 2432,
+      "receipt_sha256": "89cacc902708cd2b05bdc18eb2a90e7367cd4094be9eb70a2411b79df9156e78",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b167-061",
+      "original_namespace": "/home/vick/rvv-task181/directed/b167-061",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b167-061.tar.gz",
+      "archive_bytes": 97352958,
+      "archive_sha256": "837a8ada00c558ff932d8d88bc4515f98741e362facc4d16a1dead285227c0ee",
+      "storage_receipts_verified": 165888,
+      "receipt_sha256": "cfaa5eeb3ff6b7a004fe49b516536279189a83612c22b46fed6cb1a92e3f9087",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b170-062",
+      "original_namespace": "/home/vick/rvv-task181/directed/b170-062",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b170-062.tar.gz",
+      "archive_bytes": 430424,
+      "archive_sha256": "ef8544c0185edf952e1c299423188c7b9877862ebdc2e5535da8160818bf447f",
+      "storage_receipts_verified": 512,
+      "receipt_sha256": "c460d2c9497273fd72a3d87e6a3959956aab102ec26b8e7b4d281c209717204f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b170-063",
+      "original_namespace": "/home/vick/rvv-task181/directed/b170-063",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b170-063.tar.gz",
+      "archive_bytes": 5685587,
+      "archive_sha256": "ad05106f23b9ea66949b011f7d6c608c26ee7c6669b5d62ad52f1536be30f0cd",
+      "storage_receipts_verified": 6400,
+      "receipt_sha256": "e264b23f3c1a70e829117f2e9cbcd8c69c7e1647a39960aced9e0bd19d581bc1",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b170-064",
+      "original_namespace": "/home/vick/rvv-task181/directed/b170-064",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b170-064.tar.gz",
+      "archive_bytes": 628320,
+      "archive_sha256": "c9eb73c7f2e06fd0f335551103fd8bcc2249eecc04ac6cb2a30f550156fbc468",
+      "storage_receipts_verified": 768,
+      "receipt_sha256": "6a1e3b57abec5c732f4fa923737900de527213a11c1990ca2380ec907786f7e1",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b170-065",
+      "original_namespace": "/home/vick/rvv-task181/directed/b170-065",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b170-065.tar.gz",
+      "archive_bytes": 8495220,
+      "archive_sha256": "93037bd575862a58880744e48913b31ed38428c5f48d385cd7de12f7c031d117",
+      "storage_receipts_verified": 9600,
+      "receipt_sha256": "cf9d205a7dce1114dec1493dd311610151f38e83e6b70c5ad8f48f8ad52dc3cb",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b170-066",
+      "original_namespace": "/home/vick/rvv-task181/directed/b170-066",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b170-066.tar.gz",
+      "archive_bytes": 1076651,
+      "archive_sha256": "34f84025f2ea993f388cf42ac5ac6e0af14defd0f6241839d7fb736ff4b0f391",
+      "storage_receipts_verified": 1408,
+      "receipt_sha256": "1ccc081414f5fdf1081b7c1a52d43566afc5291165916092f04185ae1e83c150",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b170-067",
+      "original_namespace": "/home/vick/rvv-task181/directed/b170-067",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b170-067.tar.gz",
+      "archive_bytes": 15214924,
+      "archive_sha256": "53440d8a3cd09fc8cfa6d3db78757d67e770b6edd3919e8945b099b753f38f1f",
+      "storage_receipts_verified": 17600,
+      "receipt_sha256": "0cd59b7505bd569f8fb4ff41bb2f1a554c188144c1c53d5efcba2a4bcb371486",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-068",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-068",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-068.tar.gz",
+      "archive_bytes": 56754,
+      "archive_sha256": "5f4cc35c78083835ee324ef07d7a1878cae84b7cf6b7d49ef1a05732775bb633",
+      "storage_receipts_verified": 160,
+      "receipt_sha256": "b7b42dfffd48b4c4f50263aa1bdddc996b459ed1cb6b5d8db738401f0cf928ce",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-069",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-069",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-069.tar.gz",
+      "archive_bytes": 1054641,
+      "archive_sha256": "979e3b0ccf006ff0065a668a8890bac40e7edd406b54dfb70c68aa3a35a3d4b7",
+      "storage_receipts_verified": 2816,
+      "receipt_sha256": "980a46c87245382ce84db7412d04e0fc256a86b716773b672a2f0b36130a3b5f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-070",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-070",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-070.tar.gz",
+      "archive_bytes": 358476,
+      "archive_sha256": "d7ab3b0b53bb262336e46376d032a341b26c80cfd434bfbf07907cc36fcd0915",
+      "storage_receipts_verified": 608,
+      "receipt_sha256": "e4b4cb1dc554145b0d37e493ba7d5c6248fcd7b5f370150dee161b528259cda0",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-071",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-071",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-071.tar.gz",
+      "archive_bytes": 793554,
+      "archive_sha256": "1a21784392afbb4c41e76aa5553bd680fa22f397f875b65f4a8e637f26984e8e",
+      "storage_receipts_verified": 1472,
+      "receipt_sha256": "ccc785fb1c30a8ba35c792d5d72e712ccfd3a8d15f950f993aaf64f31054c17d",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-072",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-072",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-072.tar.gz",
+      "archive_bytes": 960726,
+      "archive_sha256": "3fba072e44e3245a2227618e7dda38595838a75e66ae4870f9986611630336b3",
+      "storage_receipts_verified": 1776,
+      "receipt_sha256": "27242a458381ed7942b2af0d45d25fb39971c6422b107fa03e586ec77ed654f9",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-073",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-073",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-073.tar.gz",
+      "archive_bytes": 970868,
+      "archive_sha256": "7d2b89ab33aa05dc22638ad5221ff0b724c1677b48228ee6990f55a2365224a5",
+      "storage_receipts_verified": 1776,
+      "receipt_sha256": "8d4486dfa29fc3e7c73bddbb6ce977eb8462cd8a4e40fae8caeda6050150ae3f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-074",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-074",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-074.tar.gz",
+      "archive_bytes": 998052,
+      "archive_sha256": "6332dc35372bb2e0f9695dbe044445bfa5be48872abb07c8b0bc094fc537bb34",
+      "storage_receipts_verified": 1776,
+      "receipt_sha256": "a914d4cbe3ad2b750f46d83b5d458cc7893fc81ed4d689c8c0ca3e497245d7ab",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-075",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-075",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-075.tar.gz",
+      "archive_bytes": 1024734,
+      "archive_sha256": "de775c0377418a2eb93ce25bbe305be1070dabbe52c1a74610e24a27b6ed6079",
+      "storage_receipts_verified": 1776,
+      "receipt_sha256": "396566581647635937ffbb7c20c2af21cfcda2698134006b703f7586705e5103",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b171-076",
+      "original_namespace": "/home/vick/rvv-task181/directed/b171-076",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b171-076.tar.gz",
+      "archive_bytes": 946506,
+      "archive_sha256": "a26ad7afbcdedfec0e61410428d249bb39b7903158a1b57e607b3f95a065be40",
+      "storage_receipts_verified": 1472,
+      "receipt_sha256": "889d082b8485668c886af6593c4836dc66d6eb075c329d3134edf9ff9bbb0066",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b172-077",
+      "original_namespace": "/home/vick/rvv-task181/directed/b172-077",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b172-077.tar.gz",
+      "archive_bytes": 1700689,
+      "archive_sha256": "2dc0e6d1684578040f7c1b499af0c7f263458f558552619a7e95456c4e27b750",
+      "storage_receipts_verified": 768,
+      "receipt_sha256": "ccf8d86952e11c9023347f6349a45190790211df1b86d46a8bf845968c0b813c",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b172-078",
+      "original_namespace": "/home/vick/rvv-task181/directed/b172-078",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b172-078.tar.gz",
+      "archive_bytes": 21796110,
+      "archive_sha256": "9774a2370610fb2711cc18edfd203b53af812c1c0852fcb7ac83d5e3d9232225",
+      "storage_receipts_verified": 9600,
+      "receipt_sha256": "dd925ceca9543fbd4d2da1c9faefcde74a7060e09f0e5e69294a026244b79c2f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b172-079",
+      "original_namespace": "/home/vick/rvv-task181/directed/b172-079",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b172-079.tar.gz",
+      "archive_bytes": 1547613,
+      "archive_sha256": "4b481fae659ee259fc794cf655f5015443e6517eefea7e3a67a287b25028e51a",
+      "storage_receipts_verified": 736,
+      "receipt_sha256": "7427b9c265436fdae710c57a52e089a7270188305edc4688d2c58a2dd9dc3fdd",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b172-080",
+      "original_namespace": "/home/vick/rvv-task181/directed/b172-080",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b172-080.tar.gz",
+      "archive_bytes": 11874594,
+      "archive_sha256": "367792419f849078b050302bde899308deea3dcb5e44160d7fa61e739a053e87",
+      "storage_receipts_verified": 6560,
+      "receipt_sha256": "ee76ce3be4c39b75259c834b480a58e224520abccf68653749c8970ec633bcab",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b172-081",
+      "original_namespace": "/home/vick/rvv-task181/directed/b172-081",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b172-081.tar.gz",
+      "archive_bytes": 2228075,
+      "archive_sha256": "18409bde7875a2fe9631a4d84fce6af65253ab7f839bea3dc747a735ec357cdf",
+      "storage_receipts_verified": 896,
+      "receipt_sha256": "4596d67e906d89edb5c77d95640fc6ff2f06ee26f2abd6b7807f9c33df162ff2",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b172-082",
+      "original_namespace": "/home/vick/rvv-task181/directed/b172-082",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b172-082.tar.gz",
+      "archive_bytes": 22128461,
+      "archive_sha256": "0e157f19801fb8af44fa6387448e2484461c5b5ed138dacd153c0ca2c5a701ba",
+      "storage_receipts_verified": 9088,
+      "receipt_sha256": "58e1f98d796412b5c9975e56e8f254f04486dbcc6b91fec94ba84b3054b0800b",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b173-083",
+      "original_namespace": "/home/vick/rvv-task181/directed/b173-083",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b173-083.tar.gz",
+      "archive_bytes": 2039525,
+      "archive_sha256": "19d5092f375198276acfb3c638bf7d792c8232cd5e0cd7db1f7e0b226a8d6081",
+      "storage_receipts_verified": 3456,
+      "receipt_sha256": "a6e97f6e18ed3e3b9253c8346df32e6f2c4a01a9eda1d5dae98571f317633d99",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b173-084",
+      "original_namespace": "/home/vick/rvv-task181/directed/b173-084",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b173-084.tar.gz",
+      "archive_bytes": 20144288,
+      "archive_sha256": "e82a03dcb66687189729ba901490f7ca2fd4bac6082fd0f360200e43cdabac6b",
+      "storage_receipts_verified": 29184,
+      "receipt_sha256": "82032d5432c5118fcc3a6e902d2fccab4bd92416db2156df2ef1ab221f1dfc50",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b173-085",
+      "original_namespace": "/home/vick/rvv-task181/directed/b173-085",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b173-085.tar.gz",
+      "archive_bytes": 4921389,
+      "archive_sha256": "9f632577f9f0171d971570472317fcb013b91b61fcc7faa6adb770c9767e8ada",
+      "storage_receipts_verified": 7296,
+      "receipt_sha256": "4b8980b7def952889169a367d1ed4d56a26b64048cdde9ccb2901784d0d18f56",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b173-086",
+      "original_namespace": "/home/vick/rvv-task181/directed/b173-086",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b173-086.tar.gz",
+      "archive_bytes": 21270922,
+      "archive_sha256": "5cff078173740aad038c72589148deefa916c0150638d62612a9156f7043ff3a",
+      "storage_receipts_verified": 29184,
+      "receipt_sha256": "51be53bec1303963edb6e49ddcccfed5c8bed07c0f5f2b8140dc767dd64847fe",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b173-087",
+      "original_namespace": "/home/vick/rvv-task181/directed/b173-087",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b173-087.tar.gz",
+      "archive_bytes": 21055411,
+      "archive_sha256": "04c8a3af9f2ef779929bccfbc803245f7fcd3c59e341ef93ac4fc6eac70e3a17",
+      "storage_receipts_verified": 49920,
+      "receipt_sha256": "90d19ebc46e9c7fbf610ac12bef9ef196e0bd381610d70740e30a4909cac2f3a",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b174-088",
+      "original_namespace": "/home/vick/rvv-task181/directed/b174-088",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b174-088.tar.gz",
+      "archive_bytes": 1487424,
+      "archive_sha256": "33f21d25cef1e4d51e52bc1ec56422de40def193c386551bfff4bbd507fc8944",
+      "storage_receipts_verified": 352,
+      "receipt_sha256": "51f367c601489407f9203f97e2f51cdec2990aa877e2825f21b74847efb8ce00",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b174-089",
+      "original_namespace": "/home/vick/rvv-task181/directed/b174-089",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b174-089.tar.gz",
+      "archive_bytes": 17990460,
+      "archive_sha256": "d39804af51628cfa1c284d3fe2a20d0df036ea7043cbe46ddd61fa5b7a58d480",
+      "storage_receipts_verified": 4064,
+      "receipt_sha256": "351a73e4a85878fb4edcd1c8b20d2b7545a85bb6a7f96b79605a65a7706b6d3f",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b174-090",
+      "original_namespace": "/home/vick/rvv-task181/directed/b174-090",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b174-090.tar.gz",
+      "archive_bytes": 1622187,
+      "archive_sha256": "c8441fb0da59ef8e8a0be5fb1ceffdb1b94e2899b83dadee267edd2a543c8272",
+      "storage_receipts_verified": 4416,
+      "receipt_sha256": "d39085a2f0a7c5a1830d291bc0e5c81ca0f2c74938955add37ef4ada28117cf0",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b175-091",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-091",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-091.tar.gz",
+      "archive_bytes": 107573,
+      "archive_sha256": "848d872c7e3b9a8529cfa2e070bc029f5404d0364ff4e0842bdb8477feb8582f",
+      "storage_receipts_verified": 128,
+      "receipt_sha256": "5537fd665b76fd98d494ad507dfbf20b6a6b247e9b8ecde1871bf56b5b726fb6",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b175-092",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-092",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-092.tar.gz",
+      "archive_bytes": 1167209,
+      "archive_sha256": "355402ff796785ba5fa700181bece5de45679ec06cb29959db5fea92904b30ce",
+      "storage_receipts_verified": 1600,
+      "receipt_sha256": "68171b4db838676b36431b811628b5e849ce53a122d9e8addf8dcbc8a731e6a1",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b175-093",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-093",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-093.tar.gz",
+      "archive_bytes": 186109,
+      "archive_sha256": "20c5bfd58a804e58e73214a03a79202d2fb975b58a46f467a1264112951e6754",
+      "storage_receipts_verified": 256,
+      "receipt_sha256": "51545fabef12807d4c93f547dca14a0cf8e592b40d22d1590058e69fe1462763",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b175-094",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-094",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-094.tar.gz",
+      "archive_bytes": 2159549,
+      "archive_sha256": "6550d037d45b14d6421336dfb4300bb499976c1a3d790979b9fe61080f487721",
+      "storage_receipts_verified": 3200,
+      "receipt_sha256": "c4efd689821538e34034ff5f86a21636ceadd25ebbde0ffe4afb4beccd65eff6",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "184560ab368875c0458341292cf8e5ff55f2dfe701c7ae3f122fe7af7f19274e"
+    },
+    {
+      "entry": "b175-095",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-095",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-095.tar.gz",
+      "archive_bytes": 609060,
+      "archive_sha256": "64cbffcd2142a6d55244d0daa53432e74780e17f9952c4aa526ed85d3609dbd3",
+      "storage_receipts_verified": 764,
+      "receipt_sha256": "6127792b6eee98d3f980ab1d8cf306f5fa1eab489e9dd1ef84a1b044fdac0ba8",
+      "moved_stages": [
+        "pilot",
+        "recover"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d649a61e84e65cc9c8244feb78e10145dc4bcead897c77fb5efa2c4f4d56f6e5"
+    },
+    {
+      "entry": "b175-096",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-096",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-096.tar.gz",
+      "archive_bytes": 12343049,
+      "archive_sha256": "d2f4be3c1c90ee24c21abc76bf5122abd63836a3efef9856d783d37f4d354810",
+      "storage_receipts_verified": 16512,
+      "receipt_sha256": "7882ffbd66157aec94aae79456941d35df9878e7e0fca851f3f32a71e6940c97",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d649a61e84e65cc9c8244feb78e10145dc4bcead897c77fb5efa2c4f4d56f6e5"
+    },
+    {
+      "entry": "b175-097",
+      "original_namespace": "/home/vick/rvv-task181/directed/b175-097",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b175-097.tar.gz",
+      "archive_bytes": 5409729,
+      "archive_sha256": "e5affe2de13adaeec23b3da5d42528717855a8a682011c9e82a1d8974e101784",
+      "storage_receipts_verified": 13824,
+      "receipt_sha256": "27005af8a823a8468ffd0a0cd8144849eb9a02e3a8bd6258ab2d4ff4619ddcc5",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d649a61e84e65cc9c8244feb78e10145dc4bcead897c77fb5efa2c4f4d56f6e5"
+    },
+    {
+      "entry": "b176-098",
+      "original_namespace": "/home/vick/rvv-task181/directed/b176-098",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b176-098.tar.gz",
+      "archive_bytes": 3611739,
+      "archive_sha256": "629c7a5555bfba2c3bb18aa8300dd80721fe54be6945f5b1f8c082840f282a8e",
+      "storage_receipts_verified": 192,
+      "receipt_sha256": "274c6e68e297e616442037885900d6916a156e4f99826e0fedbe48ebcf860a62",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d649a61e84e65cc9c8244feb78e10145dc4bcead897c77fb5efa2c4f4d56f6e5"
+    },
+    {
+      "entry": "b176-099",
+      "original_namespace": "/home/vick/rvv-task181/directed/b176-099",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b176-099.tar.gz",
+      "archive_bytes": 7331446,
+      "archive_sha256": "48468466995d1d6f8a79432a44f83e268e2cce149a33ef8dc27824c814f0ddb2",
+      "storage_receipts_verified": 1664,
+      "receipt_sha256": "1d1b1975b083896fb60f1665fc376f75e4cb22f6c44c61ab16d872be7ae78f53",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "d649a61e84e65cc9c8244feb78e10145dc4bcead897c77fb5efa2c4f4d56f6e5"
+    },
+    {
+      "entry": "b176-100",
+      "original_namespace": "/home/vick/rvv-task181/directed/b176-100",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b176-100.tar.gz",
+      "archive_bytes": 15867305,
+      "archive_sha256": "a6e20947b829e4a3721372118de847be49d0f198ce80734d05374b532da65fd7",
+      "storage_receipts_verified": 1664,
+      "receipt_sha256": "77896ae2a67e5f945b03f8ed608a9d07dad8441f10221b90909c6799a898c9b1",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f21cc8b453970e792875801a62ce5fc2eb0ce4d233c1a453d43aa54ddb001106"
+    },
+    {
+      "entry": "b176-101",
+      "original_namespace": "/home/vick/rvv-task181/directed/b176-101",
+      "archive": "/home/user/research/materials/task181-common179-raw-20261014/b176-101.tar.gz",
+      "archive_bytes": 10054055,
+      "archive_sha256": "bacb51f8e8574f33566e581ae63c50c34034a3b1a53122cfa09f3da8c323b5e8",
+      "storage_receipts_verified": 1664,
+      "receipt_sha256": "d28b2a1bcf37f43e3e00b67215929d736f7d0139864c49bde7442d516c66fca8",
+      "moved_stages": [
+        "pilot",
+        "remaining"
+      ],
+      "failed_attempt_raw_moved": false,
+      "transfer_tool_sha256": "f21cc8b453970e792875801a62ce5fc2eb0ce4d233c1a453d43aa54ddb001106"
+    }
+  ],
+  "archives": 102,
+  "archive_bytes": 1268670066,
+  "full_ledger": "/home/vick/rvv-task181/TRANSFERS.jsonl",
+  "historical_inputs_moved": 0,
+  "old174_raw_moved": 0
+}

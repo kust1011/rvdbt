@@ -1,0 +1,2047 @@
+[
+  {
+    "entry": "b145-000",
+    "batch": 145,
+    "family": "vadd145",
+    "original": "/home/vick/rvv-directed-task145/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task145/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "8c5216675f9ed62a9d941a22efdd42561a283d388d8ab1f97ca95180e6862c38",
+    "original_build_commands_sha256": "8c97717647f6fd4fc23dafc299b2e8ae46667c8a6b6bb7ecc5d2cc54a0b9b7e0",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b146-001",
+    "batch": 146,
+    "family": "integer146",
+    "original": "/home/vick/rvv-directed-task146/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task146/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "9d25ec8a18ae295f7ae2c30f639bb31e349ec249cea21b555380b92f30416001",
+    "original_build_commands_sha256": "628149c30809c2c393dd57c816307af7ca6253def261ffcad3ad1e9563d3799d",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b147-002",
+    "batch": 147,
+    "family": "configuration147",
+    "original": "/home/vick/rvv-directed-task147/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task147/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "18be56f5574ed67a3e38dabd6b4193238337a1d35f6458a206e99e569920aaff",
+    "original_build_commands_sha256": "f8b71572bba24bb1646872f6d992eeb178f7fd2a0e7094b848e0bb5ac31f54a5",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b148-003",
+    "batch": 148,
+    "family": "configuration147",
+    "original": "/home/vick/rvv-directed-task147/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task147/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "18be56f5574ed67a3e38dabd6b4193238337a1d35f6458a206e99e569920aaff",
+    "original_build_commands_sha256": "f8b71572bba24bb1646872f6d992eeb178f7fd2a0e7094b848e0bb5ac31f54a5",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b148-004",
+    "batch": 148,
+    "family": "configuration148",
+    "original": "/home/vick/rvv-directed-task148/delta/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task148/delta/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "56cdb6fcac95b7238408bc4293e33fe6a81a1ed589fd264bc1999668bef600a5",
+    "original_build_commands_sha256": "19c2ae5fa24b5ee1d4decd3a14489817e59d771314a1f4654cf88de2f3b7678a",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b148-005",
+    "batch": 148,
+    "family": "shiftminmax148",
+    "original": "/home/vick/rvv-directed-task148/shift/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task148/shift/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "dc6a92f9e4cee02784fd05e7eedfdcb4a0ec65c5535ef5976326533860076135",
+    "original_build_commands_sha256": "fd968716ffc76b88f013dfe021b628d83e8aec66cb64a2faf24a5484c4911c1b",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b149-006",
+    "batch": 149,
+    "family": "muldiv149",
+    "original": "/home/vick/rvv-directed-task149/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task149/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "207caca843b1c0430f9733c96d5b44e9b994a09241e2317449e7df920c6de972",
+    "original_build_commands_sha256": "9681acb4ce22edb413fc5104e0fbdb8a52a6b64ef28c6466576fef8465c5446f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b149-007",
+    "batch": 149,
+    "family": "muldiv149",
+    "original": "/home/vick/rvv-directed-task149/zero-full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task149/zero-full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "cba5cf6c06a74117fae4856b6d75f9547096868eb613a4c8d1c7e8ad262436e3",
+    "original_build_commands_sha256": "153ab502cc36acf223cfe4e259b4e5c766a4c0bbb3984c55624317dcaff96f8d",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b150-008",
+    "batch": 150,
+    "family": "carry150",
+    "original": "/home/vick/rvv-directed-task150/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task150/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "bbeb38cb071de238d21ea1cf54abfefb72f6ac37ace956a0c666241f5a8c620b",
+    "original_build_commands_sha256": "faa6eda126fe4ff7cf50dcb0a1b7e2cd2094983ffb1f23d1d4741098e557b5d5",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b151-009",
+    "batch": 151,
+    "family": "mergemove151",
+    "original": "/home/vick/rvv-directed-task151/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task151/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "e99ce7041165678e45586f61909f4a79a37c5a9c608d6e9765a6f4153b7b9d47",
+    "original_build_commands_sha256": "e08f396bd1f340122d16b427480c5a511625ecb97fc594b7e6ef888c6b267349",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b152-010",
+    "batch": 152,
+    "family": "compare152",
+    "original": "/home/vick/rvv-directed-task152/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task152/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "e079eaab7203c1fb789d0163a8f7fad6e30267ee283e2eea458485526d566bc5",
+    "original_build_commands_sha256": "785f4e330c1f347647d846d2b58c658171acd6664c6a0a9e372e5e094178dff6",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b153-011",
+    "batch": 153,
+    "family": "saturation153",
+    "original": "/home/vick/rvv-directed-task153/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task153/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "56a86f0cbe274c3590c66d240d7dd337a3420efdde3609edbb9f31372dc318d9",
+    "original_build_commands_sha256": "064d1f8eb30bcf9aa38d5c768d76eff34949e8524f14e797c42a441542db78a0",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b153-012",
+    "batch": 153,
+    "family": "saturation153-boundary",
+    "original": "/home/vick/rvv-directed-task153/boundary/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task153/boundary/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "7e5a6b01f1900d985019eb16cc8074c6f40b59aaad5a1eb63fd2605742f355f6",
+    "original_build_commands_sha256": "3fb8eccf591081b1de86658999fd1fd4a3bf8eff8c4928061ccfa98277d54cc3",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b154-013",
+    "batch": 154,
+    "family": "mac154",
+    "original": "/home/vick/rvv-directed-task154/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task154/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "e1198e33ad233f01b7b0e057f3fd7a912edf0959a18a0545fb21bbd2b368686b",
+    "original_build_commands_sha256": "2c85bfc0fa47e1a52bf93211d18bdc4d850bc3c3c1aa53e5ac8aa0b16d7dc08c",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b155-014",
+    "batch": 155,
+    "family": "rounding153-next",
+    "original": "/home/vick/rvv-directed-task155/full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task155/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "6f287109a5e0000ddf0a40291ffcb8854329f5fcc00a92ecac8e73cec4927516",
+    "original_build_commands_sha256": "a43ce42c3870e71f815b17f06987e73301029e7345cbf55e41ecde14cb0c9f45",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b159-015",
+    "batch": 159,
+    "family": "mask158",
+    "original": "/home/vick/rvv-task159-full/mask/corpus",
+    "original_identity_record": "/home/vick/rvv-task159-full/mask/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "c5f75a9c11b053474444912c2d9cedb1dae38d2fd551a17d31776ae14c7ccdb3",
+    "original_build_commands_sha256": "392d7f5b836c8b68679cff3c1c6db5f3612f52da9e43c1b902338e62ff7794f1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b159-016",
+    "batch": 159,
+    "family": "scaling155-next",
+    "original": "/home/vick/rvv-task159-full/scaling/corpus",
+    "original_identity_record": "/home/vick/rvv-task159-full/scaling/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "55514b9feb3c8bc18036a54588359d1c7a2bbe0da49b881adaa8e46b46c30b99",
+    "original_build_commands_sha256": "a3943e4e5ea54085f49217e047e309c3a24274b6bc4346aeae647eba7256f6ee",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b159-017",
+    "batch": 159,
+    "family": "narrowing155-next",
+    "original": "/home/vick/rvv-task159-full/narrowing/corpus",
+    "original_identity_record": "/home/vick/rvv-task159-full/narrowing/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "9a4f89c334515ea5c972ee65a95a1b7a977d28b42584365c1857234751e55b53",
+    "original_build_commands_sha256": "d2a54cc91d65b921b867ac50cf973ffed1e3bc6215028785c9b2e21ab07fe8ea",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b160-018",
+    "batch": 160,
+    "family": "fp157",
+    "original": "/home/vick/rvv-directed-task157/fp-full-final/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task157/fp-full-final/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "94f190644fd7e6d67ff7eb71a9923616989e983347155c458a95dd52061b36a2",
+    "original_build_commands_sha256": "3ccc572c957da7400a7c4d63dcf1533ace2c06bfa9f0d776571baff2f57a6b98",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b161-019",
+    "batch": 161,
+    "family": "wmac156",
+    "original": "/home/vick/rvv-directed-task156/wmac-full2/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task156/wmac-full2/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "bec73619e88256b7a3ff36b6833ff2c52a87b8f4b4e469e623315d68958d9da4",
+    "original_build_commands_sha256": "7fb4d6fa9e35094654cc455d6d6e8bb8be4134ce10a5e54c8d7e3177869608e3",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b161-020",
+    "batch": 161,
+    "family": "wmac156chunk",
+    "original": "/home/vick/rvv-directed-task156/destchunk-full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task156/destchunk-full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "b44e7fa609030326a7b2a63422e7dee6185c766fe0444cbda3e920f7126f55a4",
+    "original_build_commands_sha256": "a1b0b3e4d8847a5d80bfa63394bf89f06ebdad9054e6e9e68678530e2fbf3686",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b161-021",
+    "batch": 161,
+    "family": "extend156",
+    "original": "/home/vick/rvv-directed-task156/extend-full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task156/extend-full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "f37d64af46204517638855c7c8ef796a82b81de7609169f964e8e8fb849d2da4",
+    "original_build_commands_sha256": "3c3287971e2fa99b2252c03d23b5fa5979a01feb64da286065694b9ede1870b8",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b161-022",
+    "batch": 161,
+    "family": "widen154",
+    "original": "/home/vick/rvv-directed-task154/widen-full/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task154/widen-full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "68205693c67ed6fa284202660a517a25c1a5b01e12a955ebaa2e5710a592c71e",
+    "original_build_commands_sha256": "40fbdf555b8dace5867c826307696b3b0dc2519df50b8843a869c7f60627d319",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b162-023",
+    "batch": 162,
+    "family": "permute162",
+    "original": "/home/vick/rvv-task162/full/corpus",
+    "original_identity_record": "/home/vick/rvv-task162/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "3598cd40b8f08d1b06b319e9dc7b17a8af2642a398ef66219d979288df408a88",
+    "original_build_commands_sha256": "9a9c498d990b2ef7c9b2f49655a39ae65630685538990f2d85214b35bd041c4b",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b163-024",
+    "batch": 163,
+    "family": "reduction163",
+    "original": "/home/vick/rvv-task163/full/corpus",
+    "original_identity_record": "/home/vick/rvv-task163/full/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "0a37e604eaae6d462ccfb9473b12c55dcae9808c710949e8c263ab5e00ddc5cb",
+    "original_build_commands_sha256": "4780adca4a547b5ad66ccd4fecdec615d3536af10c617ae120b29e86e4b4938b",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-025",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "888f97a97a64dd6f8bec7e9caa78a448c3d90c242f1c7401366b2d7eacf5fa74",
+    "original_build_commands_sha256": "dd6469ec7d6bf761bd95a1e6437d3a0431609455ac63a2191094b6451419f872",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-026",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/w128/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/w128/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "fa60b347758b730f5942502530d3599e7580867921f4b4ca8513ffb77920371b",
+    "original_build_commands_sha256": "784dd0f0dea2222e00108d8cd165b3bc5f31b1e782f8f866ee3f92157d9a0748",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-027",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/w256/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/w256/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "b51e3121ecd602562190c23d275987e36dd83b678d4b77671202c97e7d5ab0c2",
+    "original_build_commands_sha256": "c7a004cb3a4b2d53b07a07b2ce5073336ed51ed08ad9a39f42a397f5de1d44e2",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-028",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/w512/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/w512/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "d47e48ff6c9e648b882b95271121e5d6b240fb3d72efabc32191d5a565bbd6e3",
+    "original_build_commands_sha256": "97f671d3dd12dbc7dac458c4c92b20fe5a2ece54412e543b0a2339c7da215c6d",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-029",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/w1024/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/w1024/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "b55be9abe5a0b6ba8388d8c43db45391d0aff3bdd1527658317bb2fe0c78a715",
+    "original_build_commands_sha256": "4ee7920aa425e675e65e05ffa7e13265fb8116da19151ca17eaf9c7fbfa97197",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-030",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/w2048/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/w2048/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "fc6b154336cf40a060cd6b52893fa8a7a22544d164eda285af7f967dc1a9791e",
+    "original_build_commands_sha256": "c33f6adc0ed3764ef19c781210d1610b1ab79b4f848ec0d62a42082b457d41c6",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b165-031",
+    "batch": 165,
+    "family": "memory165",
+    "original": "/home/vick/rvv-task165/w4096/corpus",
+    "original_identity_record": "/home/vick/rvv-task165/w4096/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "b2d1f2c70fc1ca7c1834ee28b80a6ea346630d09fa6f834fdb6b4e5b69f2b844",
+    "original_build_commands_sha256": "18429fd01a90fb7e35b474924a2591b79e5fae7501de9c0f2d226057a6e7cf10",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-032",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "02fa52fee350bd26e1951dc91bfa4e9b9c0bc8bbef1384790525d55380679860",
+    "original_build_commands_sha256": "b29eeeec47ee5c247c79c43d0236c799e9dec23887c456bed5dc958ef9b3d816",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-033",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/w128/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/w128/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "71467e834d45c284f87a73d86ce50cb001c68cf14b036a7914e2e677d3597901",
+    "original_build_commands_sha256": "99723e4c90eb721a37725f59ab349c8958291be1c198a1147b329d3b285c3bc0",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-034",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/w256/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/w256/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "f1b17c140752349519a7dcb3c2d34da85caa27d8075d3e088f8d7741487370aa",
+    "original_build_commands_sha256": "c07d4a62130edd2905ed98951b50b19dcb9452d3ee8a8f8710caa608790f3f1e",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-035",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/w512/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/w512/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "2a4b9b9bb6a862400e941efbc02033f813921a9f1977a9e633261afdccbcab4f",
+    "original_build_commands_sha256": "4aeccfd41fcc18b5f1a9d64f86debdad27de100de457920851dabf74e526ebd1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-036",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/w1024/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/w1024/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "a3cc1442005c01c392a623cdad45f90d3ad66d94e18bebf4f0c1d4d1a1c93e1c",
+    "original_build_commands_sha256": "82ad7573476c39f43fe86e86a10256a9dd31e92d7c697ecb89f148a7cc6108fd",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-037",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/w2048/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/w2048/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "46d77cdd8dbc0f622ca9bda2db863857573e4fa5a8e70772922bf6c0eb26d0ee",
+    "original_build_commands_sha256": "89a49b627b9de7b6da0fb3bd2713dcb0733a63be0367ed197d2cb7c02e456f60",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b166-038",
+    "batch": 166,
+    "family": "indexed166",
+    "original": "/home/vick/rvv-task166/w4096/corpus",
+    "original_identity_record": "/home/vick/rvv-task166/w4096/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "4dcbe4559217c8280ba76ceea13df90d8b46217891e561fb65a9da2660737648",
+    "original_build_commands_sha256": "728430bb920d489d16f00092eb93b3bfa3b137b9612247c742ba03204718edd6",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-039",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "c2530e7dd10826b76fefb1e40e789bc1f0432f155dda1f7171d52e2508c58b9f",
+    "original_build_commands_sha256": "926393353402cfc48f30d2b79a06e818ddfcf4613b007fe19e921aa229e34353",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-040",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/w128/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/w128/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "67d1c30b3f48ec2dea921ae3fc2b5be2a8fac24e56355b23f5fff09ca34facff",
+    "original_build_commands_sha256": "48691174c2aefc311ba57f133a186bed5453fc92a03e3a31a8bf87a246eb3a1c",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-041",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/w256/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/w256/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "89db4e3252171f5901edff1de146475bb6bba277752233421e9ccccbf582525a",
+    "original_build_commands_sha256": "f2289c9357824792c797938c7d5cc6adfc90ef469f5b4afd989be39dc5ae0303",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-042",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/w512/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/w512/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "3f145d05fdf55ae71c091e74dced4cf37877fd308d89815dfefa1af48cfcdb52",
+    "original_build_commands_sha256": "c9390a91ea2aef6027cb1c8e951dfd71f536317369f329da22d7c39a2df7a80e",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-043",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/w1024/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/w1024/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "187dd8e35c69ab220386a69406c13e2cbc93106c086ca950a2bcc9c9cbefb007",
+    "original_build_commands_sha256": "6b30f1bc659ccccabab65d537fc07b49465b58e3f36295dd76d6c26e5551b9e1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-044",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/w2048/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/w2048/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "e11c21f0a4b537d7250980e4299e4ca3f2b69bff1fc9cf0810eb8427e09b4db2",
+    "original_build_commands_sha256": "787f66c9b35b2a654baa7299d50a0bd7e0b5fa18a6a9938577f49dd34f8c3fe7",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-045",
+    "batch": 168,
+    "family": "memory168",
+    "original": "/home/vick/rvv-task168/w4096/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/w4096/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "f3d232ebf46330f97e7aba34a71d139281ad08593764b0c5d7de00a3e82d516f",
+    "original_build_commands_sha256": "1ec5d397ec67bd74b6530e8ed8c409bf0510488c2e238b4a71028c5e09d87109",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b168-046",
+    "batch": 168,
+    "family": "policy168",
+    "original": "/home/vick/rvv-task168/policy/corpus",
+    "original_identity_record": "/home/vick/rvv-task168/policy/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "ea3bb9d44b7028ba9542379f0dcdcbdf63aca8b4d6b1b8b32d65667813046b52",
+    "original_build_commands_sha256": "9740d0072bbb28e33b5eaf1ed1dd08b9f1c5ee5d15a06342aa8f9f25fbc068cb",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-047",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "e5b7206fac908824f165018e95ffbe280c68ab622fdb38f421f01c7e2d1914ad",
+    "original_build_commands_sha256": "c5c4588ef9a860eab1f43bbc454a8eceb5915a4f8142299b779b5c39ac6f2f05",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-048",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/w128/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/w128/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "cc79541afde63d4371a13a4d7988f20c33bb4d82732153716d875128fd7a6bdc",
+    "original_build_commands_sha256": "051aa35b5262258588b17519409d63901006d724751606dbfdfbfcd0c994a5c3",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-049",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/w256/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/w256/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "ddda6fe94ae695c921fe7cc8315e93bdfbd98f1a033e7d73a4960dc9e4702c30",
+    "original_build_commands_sha256": "2dec39e0ae11cb9e3bf05ffb57bf77b9fb23b4db815cb9323f32e39efa8d7090",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-050",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/w512/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/w512/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "f3541e6fa3e70b457d2bac06a121c28139704cdaad228c919ac0809901b4cb3c",
+    "original_build_commands_sha256": "8e501cb9da716e9ac768cb1590dc0657eee1b3e4211f6d07ad09c580edafac36",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-051",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/w1024/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/w1024/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "0b1a586b3835f5def51643212b883e55ed718decc5e4cca1cdf50f3a76e18b5b",
+    "original_build_commands_sha256": "1bcaeb4710ca50e4926307e49c388a9bd6c56662d5481d3bf84d44872439172b",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-052",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/w2048/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/w2048/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "3dda06c672c25eed98bbf5393b949c8821038a05001769eff97df640f18212a2",
+    "original_build_commands_sha256": "30d0ceb9928536894899c508f23b380a6d7802dcdbca3dfd28c8e26e0c5b9415",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-053",
+    "batch": 169,
+    "family": "prefix169",
+    "original": "/home/vick/rvv-task169/prefix/w4096/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/prefix/w4096/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "c468adcf13726b57f021aeaf2670ae5b326f4012cc25cb2866d4d83e298c46ca",
+    "original_build_commands_sha256": "257561ee33856837b145713e76e68eef68f8cd3f66bc1d2b6ec217433f979e39",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-054",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves/pilot/accepted-corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves/pilot/accepted-corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "2001c64f228551b88124bb2d1c95dad984987a0f50d25dc6137f3e44fb7eef0c",
+    "original_build_commands_sha256": "76706006e41e581717888efb61b1cf632498f32445534b9d0905bef960577369",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-055",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves-reviewed/w128/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves-reviewed/w128/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "cc3455d09bc5fa2b1ec1565e6e20f5bf41547e4dde38747ce471de083cc95ae4",
+    "original_build_commands_sha256": "ef9b25bff9885f11ef4b524503be2ec3b52db9a103b01b3bc4d809e548507ce1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-056",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves-reviewed/w256/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves-reviewed/w256/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "a7a26505752467ef0bee0f2ed69bfcc8d01dcae20327a69a38da2024d63eabda",
+    "original_build_commands_sha256": "0a5333823d71e8fdc19d59af03396ea20765b9be56ebb319b78a6d9ec9a6d41f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-057",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves-reviewed/w512/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves-reviewed/w512/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "4b6928dd0946801ccb9519b8e14f09f4410bc0844687350a4c99d38033905a8b",
+    "original_build_commands_sha256": "beea77f7480d4e38d3196bbbffdb50cfd1edc0ffb5f8aedff525a225fefbc0e4",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-058",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves-reviewed/w1024/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves-reviewed/w1024/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "844cab3f0f2a2827202a11eebe991393b5f711e9e798d0717356ccfc39eb0ca1",
+    "original_build_commands_sha256": "2db05b48e5a82a20148be6e4bf04f423759e23cb3ee13acd403a96b0761a5fc7",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-059",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves-reviewed/w2048/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves-reviewed/w2048/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "94ff31356f6fb4e1044cfbdcb993849b562af3ba9ac45e0d52b9838fd3fb89fd",
+    "original_build_commands_sha256": "51be64c73b84e0814c76dd3dcf82c5e533e29a668bb7e962f0e765d888305766",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b169-060",
+    "batch": 169,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task169/moves-reviewed/w4096/corpus",
+    "original_identity_record": "/home/vick/rvv-task169/moves-reviewed/w4096/corpus/identities-before.json",
+    "original_identity_record_sha256": "203aa0c76a3e88dd5be65adb18104ae564bee89b9eb9ee52fb06ca59c8c786df",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task142-build/build/bin/elfrun": "e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b",
+      "/home/vick/rvdbt-host512-task142-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "bfbc2b02619e4958f06b653a9f6355b33e25e3d1e9a7d5c8d1afdf77e5691dfd",
+    "original_build_commands_sha256": "d74a86d7a761b5b6216bcc0dea6e1b59d53c946e75aee040aa318716d7c53ec1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b167-061",
+    "batch": 167,
+    "family": "fma164",
+    "original": "/home/vick/rvv-directed-task167/full-review/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task167/full-review/corpus/identities-before.json",
+    "original_identity_record_sha256": "325eafb6d87b5e5242381595d2bc46dbae26b23cf6fff009a5ff9e022680337e",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+    },
+    "original_manifest_sha256": "39ddaef0630739cea04e8d311f408c89b669c5a0a2d932c09c4eed1ce9f8b2a7",
+    "original_build_commands_sha256": "37ca5888eafe81fd14dd0937b8d0160a854008ae2a879aa25b641af375f69ebb",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b170-062",
+    "batch": 170,
+    "family": "fpcompare170",
+    "original": "/home/vick/rvv-directed-task170/minmax-pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task170/minmax-pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "da11fe16863c7b97d7bb5f520cf499b2cea0e7e81f818b45e1e37ba5c470d094",
+    "original_build_commands_sha256": "0c050118b0204bf10c0bc324e826148f16b70dd0aea0591135547fb39de1dafe",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b170-063",
+    "batch": 170,
+    "family": "fpcompare170",
+    "original": "/home/vick/rvv-directed-task170/minmax-remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task170/minmax-remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "5d93c8e4bf3558993a5ed44a308bdb39bbf3d5a996ee673d205e676904802466",
+    "original_build_commands_sha256": "b6665d3efd4b9114bb1f72f6e6052444c4298bc71953842a5cfab5fd0adc2ef1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b170-064",
+    "batch": 170,
+    "family": "fpcompare170",
+    "original": "/home/vick/rvv-directed-task170/sign-pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task170/sign-pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "51f1ba13ca57ac2db6350d9c9da8c0a361e1cde8169d6588fe588931246a3530",
+    "original_build_commands_sha256": "75de6f219dff098ff938185bb592d3a6fe2bc30a67b31254b68aa7cb2b7a1c64",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b170-065",
+    "batch": 170,
+    "family": "fpcompare170",
+    "original": "/home/vick/rvv-directed-task170/sign-remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task170/sign-remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "4e673098e73dc460bad96f0dba581b6074cbc766085c98301636cb07f7b45adb",
+    "original_build_commands_sha256": "2e155910cb422362339c10d1b94a9e152c79a421cfb63d98e842c21c0ae1cc5b",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b170-066",
+    "batch": 170,
+    "family": "fpcompare170",
+    "original": "/home/vick/rvv-directed-task170/compare-class-pilot-v2/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task170/compare-class-pilot-v2/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "3db44df5e308f47fa62a70195284dd0172369edd7b98c07c9b8cd8247c07a82c",
+    "original_build_commands_sha256": "ea8e6dbf9c701404bc1ea734c2bc2ba4bbffc771ce520f5318c23c4de38df83e",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b170-067",
+    "batch": 170,
+    "family": "fpcompare170",
+    "original": "/home/vick/rvv-directed-task170/compare-class-remaining-v2/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task170/compare-class-remaining-v2/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "9ef7a3715b1feab49c9bf18d6f82f638b5a887c6a212bddc3af4a3f21f33d676",
+    "original_build_commands_sha256": "75c23b0fac3a3407250cf33471a6679f4589b92048f90e281bfee3425cc921f7",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b171-068",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/original38/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/pilot/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "2c532137ef14ef996e2b4466a8e45e82bb471d8fbcd3d6b6180d88cb1c8c5ab3",
+    "original_build_commands_sha256": "12b6a99163908c605241064251152151cc35c6673a84654943dc9fab4c4abb7f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/pilot/runs/vmv-s-x-w128-e8-m1-start/B/packets.bin"
+  },
+  {
+    "entry": "b171-069",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/remaining/identities-before.json",
+    "original_identity_record_sha256": "2ddcecac363364922ec368ec1724d3a94e27f10451677b9c71359f4955d8552b",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "f475164889bd9c72c9414acbc477bbcc4cf78671fe17ef1d666f802b672c9b41",
+    "original_build_commands_sha256": "d55b7fa24e0dc02a8ec81df352fcbd47670fb10d129140f0f434c98dcd8badca",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/remaining/runs/vmv-s-x-w128-e8-mf8-start/B/packets.bin"
+  },
+  {
+    "entry": "b171-070",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-pilot/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "6515ec8623a40e5930e18695788e42725015e75e66083af44c31a3e23f91ab7e",
+    "original_build_commands_sha256": "725652a8502d8063888df24d5d609f3a357cdbc7e36bc171e718543a0b11046f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-pilot/runs/vmv-x-s-w128-e8-m1-zero/B/packets.bin"
+  },
+  {
+    "entry": "b171-071",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-w128/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-w128/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "6ae12b8c723f60c77c3592c9b091eb2b8925010776cbfa457204edf45118ad59",
+    "original_build_commands_sha256": "e56fee7f50fe2f0032f571587741a8939672b9434a54c3204c67d7c26290feb6",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-w128/runs/vmv-x-s-w128-e8-mf8-zero/B/packets.bin"
+  },
+  {
+    "entry": "b171-072",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-w256/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-w256/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "24d3aa2563c084662901c07ed60339ea2c1f48431734a659fbbfafcc9c5e3fe0",
+    "original_build_commands_sha256": "03a8bdd5dbfbc480cabaf4fc91762c5847ad73027fe614aed9e1111df821add4",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-w256/runs/vmv-x-s-w256-e8-mf8-zero/B/packets.bin"
+  },
+  {
+    "entry": "b171-073",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-w512/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-w512/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "c0b8a60cc78e71d75ab5a2cdc79700dafccad53c6fdc83a13c0438a3627dfaa1",
+    "original_build_commands_sha256": "a4574d9308658d22d555a0cba9610b5705cca69476b1752c997a2d5e354ec6b7",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-w512/runs/vmv-x-s-w512-e8-mf8-zero/B/packets.bin"
+  },
+  {
+    "entry": "b171-074",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-w1024/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-w1024/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "16947f52279b557e88c42f72d7a5d715c762721aa052bf6fe0a80950b6b54585",
+    "original_build_commands_sha256": "bda744b61cb273d2d4e87dd2e72e03c41b009a679c7e94dbb953f51ac0420fe1",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-w1024/runs/vmv-x-s-w1024-e8-mf8-zero/B/packets.bin"
+  },
+  {
+    "entry": "b171-075",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-w2048/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-w2048/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "0c7ea40c26589c2e38a6f81f798478219f12922f59c67e6159c695bc97c0cd56",
+    "original_build_commands_sha256": "425534d223a30eecd10d56fb076365209765244279c52748aa8f1daf8b4fa70c",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-w2048/runs/vmv-x-s-w2048-e8-mf8-zero/B/packets.bin"
+  },
+  {
+    "entry": "b171-076",
+    "batch": 171,
+    "family": "moves169",
+    "original": "/home/vick/rvv-task171/views/transfers-w4096/corpus",
+    "original_identity_record": "/home/vick/rvv-task171/transfers-w4096/identities-before.json",
+    "original_identity_record_sha256": "3a9c4f5e6ec625a7c60418a0afcb808c96fd71ff1708c7478e92adff1310337a",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_scalar_insert_test": "cad4bbb64d983d026f2a175d07c738114de80941d10e43c4c28764a8f38e0997",
+      "/home/vick/rvdbt-host512-task171-build/build/bin/rv32_vector_fma_invalid_test": "0758019c70f1c5d6e9074ea1b8694ffa715c87f348e0db7c730988d5095332d9"
+    },
+    "original_manifest_sha256": "a87562dd1021ff0ca36bc41be875c09c7dfe80d99d3da985c5bc6a0aaab1dfbc",
+    "original_build_commands_sha256": "5a2e68d359abc01ff3cd63992aa8eccb87b60bfb3c6756d2d22c46bd3ffef7af",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit",
+    "identity_scope": "Task171 corrected view inherits accepted replay identity; view result records retain raw paths under this replay root",
+    "view_original_dut_raw_witness": "/home/vick/rvv-task171/transfers-w4096/runs/vmv-x-s-w4096-e8-mf8-zero/B/packets.bin"
+  },
+  {
+    "entry": "b172-077",
+    "batch": 172,
+    "family": "fpconvert172",
+    "original": "/home/vick/rvv-directed-task172/same-pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task172/same-pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "e5c55884b59615abe9298ab1aa270370eeb697cdd27c492770b5061744a0ea93",
+    "original_build_commands_sha256": "4e2f24be04740c2a56c83e6d222b5a5c8423bbe5266fa624b7c9b81f98400d52",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b172-078",
+    "batch": 172,
+    "family": "fpconvert172",
+    "original": "/home/vick/rvv-directed-task172/same-remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task172/same-remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "00a880df027c97144368121a83585c143276bf6572fc778cec4ab383641d38e6",
+    "original_build_commands_sha256": "788714c60a04c5114023db1f496dffc7caf1adc80f841c7139aa6c02b528c7ab",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b172-079",
+    "batch": 172,
+    "family": "fpconvert172",
+    "original": "/home/vick/rvv-directed-task172/widen-pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task172/widen-pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "f4d437b08fb7799a560dfe35ad83808479a7cfd4baf2ab6817aa09641cd09a62",
+    "original_build_commands_sha256": "e21ea29b090f1a5a55bd0b1df571a0cbc61546943b5f05adc00116ad8c943a5f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b172-080",
+    "batch": 172,
+    "family": "fpconvert172",
+    "original": "/home/vick/rvv-directed-task172/widen-remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task172/widen-remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "7a17e1e4d4c09489f9534e0af7ec24340615f3dd972daace8c223944521b2259",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task167-build/build/bin/elfrun": "da4dec6bfc5e28c0574dd659d0c84762e6b1b9e3b07cd7571cce0f73b835bb96",
+      "/home/vick/rvdbt-host512-task167-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "6cfc296739dfa9814742a87921408efd96ea2a7c078406ad678a0cc1990104bb",
+    "original_build_commands_sha256": "1ffcba35170b376d5aa9ab45691d1cf09eb6ec86e88c99f250067c9f35a54f2d",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b172-081",
+    "batch": 172,
+    "family": "fpconvert172",
+    "original": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task172/narrow-pilot-fixed/corpus/identities-before.json",
+    "original_identity_record_sha256": "3abc321eb45d4fdcc27eb90597d6f89d9627307e8fb09183fb02d33fcb280ea7",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task172-build/build/bin/elfrun": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+      "/home/vick/rvdbt-host512-task172-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvdbt-host512-task172-build/build/bin/rv32_vector_fpconvert_test": "c5ecf6cf45a6544f802756bbc25af955be158f25724e95c44cc4b528e7490aaa"
+    },
+    "original_manifest_sha256": "f9c84aa38689d2f847c4b90af11d31c0dfa61461378939001a494d6cf991e034",
+    "original_build_commands_sha256": "cf78cef00442bd45a250078edad23fdf12ebfb59c6cce10508cec57ea64106bb",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b172-082",
+    "batch": 172,
+    "family": "fpconvert172",
+    "original": "/home/vick/rvv-directed-task172/narrow-remaining-fixed/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task172/narrow-remaining-fixed/corpus/identities-before.json",
+    "original_identity_record_sha256": "779acf9a87e9e07c2ca0750136b1227b740d432cfd627387400814e2b7bbe1d2",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task172-build/build/bin/elfrun": "80fc0a102921a43f0cb590c85c21671244304003c3e94620e900ebfcb42656ff",
+      "/home/vick/rvdbt-host512-task172-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "9a90c352074461d4889ce588430de1eb0245bc1231488a08d95375a25a20893b",
+    "original_build_commands_sha256": "e74c128dbd1a5b9939635e9eb606b1ea8cac0d8ea594dd13be8c832ebbde0151",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b173-083",
+    "batch": 173,
+    "family": "fpwiden173",
+    "original": "/home/vick/rvv-task173/pilot",
+    "original_identity_record": "/home/vick/rvv-task173/pilot/identities-before.json",
+    "original_identity_record_sha256": "2ddcecac363364922ec368ec1724d3a94e27f10451677b9c71359f4955d8552b",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "7735ce97d23ecc36915058c1ac3cad907fd587299d43468bab0b229ed50af47a",
+    "original_build_commands_sha256": "c6e95d59767273a954ec90b4e3b89d4b6cbadfe6a8b678b2552ec728fc6601b5",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b173-084",
+    "batch": 173,
+    "family": "fpwiden173",
+    "original": "/home/vick/rvv-task173/addsub",
+    "original_identity_record": "/home/vick/rvv-task173/addsub/identities-before.json",
+    "original_identity_record_sha256": "2ddcecac363364922ec368ec1724d3a94e27f10451677b9c71359f4955d8552b",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "accc90b6f7f4cf7c8f6751923c4bbc27245f62044c4c4847ef66f87e87cdbdc2",
+    "original_build_commands_sha256": "37871746a78ca45c386b85211254929341027d0d7f839a7be09239ccac4e148f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b173-085",
+    "batch": 173,
+    "family": "fpwiden173",
+    "original": "/home/vick/rvv-task173/mul",
+    "original_identity_record": "/home/vick/rvv-task173/mul/identities-before.json",
+    "original_identity_record_sha256": "2ddcecac363364922ec368ec1724d3a94e27f10451677b9c71359f4955d8552b",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "00d35922298166f603340d6acd46c82a27369eb2644f87701ac7ac1cbf887e41",
+    "original_build_commands_sha256": "003c3a24ebb4a038947c7251f2da54121253503a78f932e47ad6c874d77b8b6c",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b173-086",
+    "batch": 173,
+    "family": "fpwiden173",
+    "original": "/home/vick/rvv-task173/fma",
+    "original_identity_record": "/home/vick/rvv-task173/fma/identities-before.json",
+    "original_identity_record_sha256": "2ddcecac363364922ec368ec1724d3a94e27f10451677b9c71359f4955d8552b",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "5e5aa8dd38efbe1c48d82e3f6ff071ed8977cda6a852d6d12eb5ad9a85507b15",
+    "original_build_commands_sha256": "24f46a5d3a7002dd8d44063b7ec6d6505512f419730023c6daa3d297f10f70ca",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b173-087",
+    "batch": 173,
+    "family": "fpwiden173-extra",
+    "original": "/home/vick/rvv-task173/extra",
+    "original_identity_record": "/home/vick/rvv-task173/extra/identities-before.json",
+    "original_identity_record_sha256": "2ddcecac363364922ec368ec1724d3a94e27f10451677b9c71359f4955d8552b",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task171-build/build/bin/elfrun": "7ae5086aef815fa7863a839e86ab0a617be783036fef9085f6518b2d1538ee60",
+      "/home/vick/rvdbt-host512-task171-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "430431329cbaf7361557b3f8cebca403069da824f834eec7d31d96e9009235f8",
+    "original_build_commands_sha256": "931d47fd32ce7c4a1aedddd5ba5e44bc6456ecc5d22b0afad2dbcf1ded60f597",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b174-088",
+    "batch": 174,
+    "family": "fpreduce174",
+    "original": "/home/vick/rvv-directed-task174/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task174/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "5f6e0d862d8c57d7e0c33a4403e0f93f6a94ef8e9e184896948cd260b936bd43",
+    "original_build_commands_sha256": "e64058c209ac463e6206ba8970eb156e7f44d03be8f0870e0fe8b1de3c00e99c",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b174-089",
+    "batch": 174,
+    "family": "fpreduce174",
+    "original": "/home/vick/rvv-directed-task174/remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task174/remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "0ef137357ae36f5998eb49ec3b59c189f3eb849802c0582b8eaac3e6f32ea2c9",
+    "original_build_commands_sha256": "7e1d245982b1119911851b902b086c44f4bd1bf401aec7965768e98aabb1a4f8",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b174-090",
+    "batch": 174,
+    "family": "fpreduce174",
+    "original": "/home/vick/rvv-directed-task174/overlap-supplement/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task174/overlap-supplement/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "304e2d114373a60eeecf127fb653abdce54534fa57de04ae88ae28c114ff5389",
+    "original_build_commands_sha256": "5762f34bb423f05988e48949fe20de803f15562ff0a3dbd86e685eaee18393dd",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-091",
+    "batch": 175,
+    "family": "fpmerge175",
+    "original": "/home/vick/rvv-directed-task175/fpmerge175/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/fpmerge175/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "81574e0b179f53329ec7b71402066ab2c9b3ca6be95f730a8787247604743d26",
+    "original_build_commands_sha256": "b3dba7e547db6f80d34e98e9b0a712163b1c3846f33d5fcdc365ccd0b7e38ab7",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-092",
+    "batch": 175,
+    "family": "fpmerge175",
+    "original": "/home/vick/rvv-directed-task175/fpmerge175/remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/fpmerge175/remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "1fbccff5cf8e6262caf25b9a65e75707692aab0956679b672eeb24e518e9c979",
+    "original_build_commands_sha256": "30808c946929a5083ec6263505f3424b535f785d02e27a8b47edd7a8a4ea11db",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-093",
+    "batch": 175,
+    "family": "fpslide175",
+    "original": "/home/vick/rvv-directed-task175/fpslide175/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/fpslide175/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "5b0902fe394b797c5f3360c5a2f784dd77983ff3cf304c8b6c695546e34235bc",
+    "original_build_commands_sha256": "7b5200bdebe9b52259428a4232072146e0005c14b26edb9401e8d37742511cc0",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-094",
+    "batch": 175,
+    "family": "fpslide175",
+    "original": "/home/vick/rvv-directed-task175/fpslide175/remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/fpslide175/remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "b312812bdb95e0c49973c042cec79ac7c48f747e33a7165b15ed0fd78895bb65",
+    "original_build_commands_sha256": "478f7b6e0169ec908cd3de2b6d27618628aa17f7c6567bebd2af35ec89b2027a",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-095",
+    "batch": 175,
+    "family": "narrow175",
+    "original": "/home/vick/rvv-directed-task175/narrow175/pilot/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/narrow175/pilot/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "1e94b0fc7b2b5aabc376680e5b51880f03697c3fa5fe8308082c3bc50839d6dc",
+    "original_build_commands_sha256": "d0e9f38c159f92cf65f4e5b5313cf790af8295ec8b0e9531d4aaa0a5fb948449",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-096",
+    "batch": 175,
+    "family": "narrow175",
+    "original": "/home/vick/rvv-directed-task175/narrow175/remaining/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/narrow175/remaining/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "cc428e5e94cde849512b61d24ad8a65869cdfa6044ac87c56fd8614acbbd0314",
+    "original_build_commands_sha256": "dc2f569810136fbb17b8e2d72aaf8876197b9ae9cb89175185e79a2f0f31cc0f",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b175-097",
+    "batch": 175,
+    "family": "fpslide175",
+    "original": "/home/vick/rvv-directed-task175/supplement/corpus",
+    "original_identity_record": "/home/vick/rvv-directed-task175/supplement/corpus/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "ff9180af5e134fce670b7b0a470b590edc59153625f8e1b5d4f5935fc17709e2",
+    "original_build_commands_sha256": "6e0926de084543a7ecc1cf9bd1b53f9006b835edda0ddddd575556e10a0a22ef",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b176-098",
+    "batch": 176,
+    "family": "fpunary176",
+    "original": "/home/vick/rvv-task176/pilot",
+    "original_identity_record": "/home/vick/rvv-task176/pilot/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "02efabbc550231d7119cc72038857a0539bcf958033ee570e80e3b3745e76e0d",
+    "original_build_commands_sha256": "86df5dca72c6c4d8951920b90b053c8cd2b1235863b574e99da9704eebf01875",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b176-099",
+    "batch": 176,
+    "family": "fpunary176",
+    "original": "/home/vick/rvv-task176/vfsqrt",
+    "original_identity_record": "/home/vick/rvv-task176/vfsqrt/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "51ed0c19d36b53f09dadbffa8bdbe79c05030508ace522acbd094f10c8ed5d7d",
+    "original_build_commands_sha256": "a6538c3d51b9dd069f5539432230d1767e32d180cfa94f403bc0192e6ebdb018",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b176-100",
+    "batch": 176,
+    "family": "fpunary176",
+    "original": "/home/vick/rvv-task176/vfrec7",
+    "original_identity_record": "/home/vick/rvv-task176/vfrec7/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "647029e4911ecb05a88e01c9abf507b101977c4c9bab98b1790fa318cf4886de",
+    "original_build_commands_sha256": "7e47dcbf4cd137cdcdb2487a3e0dc434cfba01ea08900cb55195679be9b486df",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  },
+  {
+    "entry": "b176-101",
+    "batch": 176,
+    "family": "fpunary176",
+    "original": "/home/vick/rvv-task176/vfrsqrt7",
+    "original_identity_record": "/home/vick/rvv-task176/vfrsqrt7/identities-before.json",
+    "original_identity_record_sha256": "db6d597ebf4c2379456e8feed7b0ee1b0a21f1c09165b64c8f22104df22d2ba9",
+    "original_identities": {
+      "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+      "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af",
+      "/home/vick/rvv-directed-task145/deps/spike": "cddd7a406bd92836f220e929aca0f4925542e80d0b2246b8920e6f49648a6994",
+      "/home/vick/rvv-directed-task145/deps/pk": "30f4e5906b13264ff98a8fa36dfea848f8504a65c028e96930329668f1f564ad",
+      "/home/vick/rvv-act4-tools/bin/sail_riscv_sim": "4ccc3bb600387165323f8812bf534e91740f51d1c05ebf6184afb4f6f2a9d2a9"
+    },
+    "original_manifest_sha256": "b157ea13fb2f75929dd2fd2cc309de31d0a38316eabf82e61bff15007e52b4ef",
+    "original_build_commands_sha256": "2044fb4e402670ef94a824f3f45f796b4b7f40641405c1d8840772a843bbf2e7",
+    "final_build": "8a468967852b8f16225b359fce99c0d22ab286d6314cb90a79934a7376207281",
+    "same179_reuse": false,
+    "reference_and_elf_join": "per-unit REUSE receipts, per-case compressed checks and stage LINEAGE; new DUT command/execution hashes joined by independent audit"
+  }
+]

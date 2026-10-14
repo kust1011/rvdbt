@@ -1,0 +1,12 @@
+{
+  "pid": 970845,
+  "command": "python3 -c import sys;sys.path.insert(0,\"tools\");import admission178;admission178.monitor() ",
+  "cwd": "/home/vick/rvv-task178",
+  "stat": "970845 (python3) S 1 970844 970844 0 -1 4194304 2172 0 0 0 1445 791 0 0 30 10 1 0 54881899 25092096 3319 18446744073709551615 4325376 7352253 140727503462768 0 0 0 0 16781319 0 1 0 0 17 26 0 0 0 0 0 10653128 12216448 111915008 140727503469887 140727503469979 140727503469979 140727503470567 0\n",
+  "action": "SIGTERM own obsolete174 resource monitor after completed JSONL sample",
+  "ledger": "/home/vick/rvv-task178/RESOURCES.jsonl",
+  "last_sample_sha256": "eabda63ccd40efa94cac899eef536209c00af0897abf0f1fa3b2284356285c26",
+  "raw_deleted": 0,
+  "guest_signals": 0,
+  "time": 1791929323.6732576
+}

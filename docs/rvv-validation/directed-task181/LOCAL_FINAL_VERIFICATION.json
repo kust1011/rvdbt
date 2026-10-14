@@ -1,0 +1,12 @@
+{
+  "forms": 595,
+  "positive_directed_checked": 12071304,
+  "failed": 0,
+  "blocked_accepted": 0,
+  "plan_amendment_only_checker_bindings": true,
+  "plan_sha256": "6a57de0fb7c149ea865a62a27055db1a438610336fa6bb34b9c185e91e6ad929",
+  "compact_export_artifact_hashes_verified": 13,
+  "dirty155_hashes_preserved": true,
+  "new_reference_calls": 0,
+  "new_build_calls": 0
+}

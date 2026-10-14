@@ -1,0 +1,45 @@
+{
+  "suites": {
+    "chips": {
+      "planned": 11744,
+      "completed": 11744,
+      "failed": 0,
+      "blocked": 0,
+      "counts": {
+        "PASS": 11744
+      },
+      "controls": 212
+    },
+    "act": {
+      "planned": 7668,
+      "completed": 7668,
+      "failed": 0,
+      "blocked": 0,
+      "counts": {
+        "PASS": 7668
+      },
+      "controls": 0
+    },
+    "ara": {
+      "planned": 1904,
+      "completed": 1904,
+      "failed": 0,
+      "blocked": 0,
+      "counts": {
+        "PASS": 1888,
+        "SCOPED_PASS": 16
+      },
+      "controls": 0
+    }
+  },
+  "build": {
+    "/home/vick/rvdbt-host512-task174-build/build/bin/elfrun": "18521de85c7ba352b0dbc6155f26d96c25522b6a6bc81cb26fb38c4c0b1f79a4",
+    "/home/vick/rvdbt-host512-task174-build/build/lib/libdbtjitshared.so": "79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af"
+  },
+  "original_blockers": [
+    "Vf32-vfmv.f.s",
+    "Vf64-vfmv.f.s"
+  ],
+  "new_reference_calls": 0,
+  "exact_joins": 21316
+}

@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 INDEX=ROOT/'docs/rvv-validation/delivery-task182/forms.json.gz'
 GENERATORS={'vadd145':'vadd','integer146':'vadd','configuration147':'config','configuration148':'config148','shiftminmax148':'shift148','muldiv149':'muldiv149','carry150':'carry149_next','mergemove151':'mergemove150_next','compare152':'compare151_next','saturation153':'saturation153','saturation153-boundary':'saturation153','rounding153-next':'rounding153_next','scaling155-next':'scaling155_next','narrowing155-next':'narrowing155_next','mac154':'mac152_next','widen154':'widen154_next','wmac156':'wmac156','extend156':'extend156_next','wmac156chunk':'wmac156','fp157':'fp157','fma164':'fma164','fpcompare170':'fpcompare170','fpconvert172':'fpconvert172','fpreduce174':'fpreduce174','fpmerge175':'gaps175','fpslide175':'gaps175','narrow175':'gaps175','fpwiden173':'fpwiden173','fpwiden173-extra':'fpwiden173','fpunary176':'fpunary176'}
-FIELDS=('sew','lmul','vlen','mask','vl','vlmax','vstart','ta','ma','emul','frm')
+FIELDS=('sew','lmul','vlen','mask','vl','vlmax','vstart','ta','ma','emul','frm','vd','vs1','vs2','overlap','nf','eew','index_eew')
 def sha(b):return hashlib.sha256(b).hexdigest()
 def load(p):
  p=Path(p);return json.loads(gzip.decompress(p.read_bytes()) if p.suffix=='.gz' else p.read_bytes())
@@ -59,7 +59,7 @@ def select(index,row,a):
 def compile_index(a):
  plan=load(a.plan);historical=load(a.historical);rows={r[0]:r for r in historical['rows']}
  assert len(rows)==595 and set(rows)==set(plan['owners'])
- agg={f:dict(form=f,origin='project-authored agent-generated directed tests',historical=dict(batch=r[1],build_sha256=r[2],result=r[3],receipt=historical['receipts'][r[4]],counts=r[5]),final179='PENDING_TASK181_NOT_IMPORTED',entries=[],case_count=0,dimensions={k:set() for k in FIELDS},missing_fields=collections.Counter(),length_classes=collections.Counter()) for f,r in rows.items()}
+ agg={f:dict(form=f,origin='project-authored agent-generated directed tests',historical=dict(batch=r[1],build_sha256=r[2],result=r[3],receipt=historical['receipts'][r[4]],counts=r[5]),final179=None,entries=[],case_count=0,dimensions={k:set() for k in FIELDS},missing_fields=collections.Counter(),length_classes=collections.Counter()) for f,r in rows.items()}
  entries={}
  for e in plan['entries']:
   p=relocated(e['original'],a.original_root,a.raw_root)/'manifest.json';raw=p.read_bytes()
@@ -75,7 +75,7 @@ def compile_index(a):
    cl='UNKNOWN'
    if 'vl' in c and 'vlmax' in c:cl='zero' if c['vl']==0 else 'full' if c['vl']==c['vlmax'] else 'partial' if 0<c['vl']<c['vlmax'] else 'outside_vlmax'
    r['length_classes'][cl]+=1
-   sample.setdefault(f,{k:c.get(k) for k in ('id','unit',*FIELDS)})
+   sample.setdefault(f,dict(manifest_index=i,**{k:c.get(k) for k in ('id','unit',*FIELDS)}))
   if dict(counts)!=e['forms']:raise ValueError('form selector count mismatch '+e['id'])
   entries[e['id']]={k:e[k] for k in ('batch','original','tools','install','family','manifest_sha256','build_commands_sha256','flags','tool_pins')}
   entries[e['id']]['generator_module']=e['install'] or GENERATORS.get(e['family'],'UNKNOWN')
@@ -89,7 +89,7 @@ def compile_index(a):
   if receipt.startswith('../rvdbt-directed-session3-20261013/'):
    receipt=receipt.split('../rvdbt-directed-session3-20261013/',1)[1];r['historical']['receipt_read_command']='git show 481bfb56362952551be7367fc12d48abb198074b:'+receipt
   elif receipt.startswith('../'):
-   r['historical']['receipt_read_command']='EXTERNAL_ACCEPTED_RAW_LOCATOR; Task155 committed delivery pending'
+   r['historical']['receipt_read_command']='EXTERNAL_ACCEPTED_RAW_LOCATOR; retained original Task155 receipt; final179 entry receipt joined'
   else:r['historical']['receipt_read_command']='git show 9b768b6:'+receipt
   r['dimensions']={k:sorted([json.loads(x) for x in v],key=lambda x:(str(type(x)),x)) if v else None for k,v in r['dimensions'].items()}
   r['missing_fields']=dict(r['missing_fields']);r['length_classes']=dict(r['length_classes'])
@@ -97,8 +97,34 @@ def compile_index(a):
   r['independent_oracle']={'reference':'retained executed Spike/Sail packets; exact per-unit command and execution.json required','source':'batch review and source records; no DUT-derived golden','configuration':'entry-specific reference command; nonzero vstart is not a universal Spike claim'}
   r['external_original_cases']={'reader':'scripts/rvv_scope_report.py --navigation docs/rvv-validation/all-form-records/navigation.json.gz --form '+f+' --output OUT','index':'docs/rvv-validation/all-form-records/navigation.json.gz','result':'separate external acceptance; no PASS inferred from project receipt'}
   r['replay_command']='python3 scripts/rvv_verify.py command --form '+f+' --raw-root RAW --tools TOOLS --dut DUT --output NEW'
- out={'schema':1,'forms':595,'historical_scope':'finite mixed builds only','P3':'docs/rvv-validation/directed-task180/FINAL_TOTALS.json','final179':'PENDING_TASK181_NOT_IMPORTED','selection_plan_sha256':sha(Path(a.plan).read_bytes()),'original_root':str(a.original_root),'dimension_interpretation':'exact marginal values of selected manifest rows; NOT a Cartesian product or runtime-observed configuration; missing fields remain unknown','entries':entries,'rows':[agg[f] for f in sorted(agg)]}
+ out={'schema':1,'forms':595,'historical_scope':'finite mixed builds only','P3':'docs/rvv-validation/directed-task180/FINAL_TOTALS.json','final179':None,'selection_plan_sha256':sha(Path(a.plan).read_bytes()),'original_root':str(a.original_root),'dimension_interpretation':'exact marginal values of selected manifest rows; NOT a Cartesian product or runtime-observed configuration; missing fields remain unknown','entries':entries,'rows':[agg[f] for f in sorted(agg)]}
+ join_final(out,plan,a.results,a.receipts,a.build_manifest,a.final_result)
  Path(a.output).write_bytes(gzip.compress(json.dumps(out,separators=(',',':')).encode(),mtime=0));print('generated 595 forms;',sum(r['case_count'] for r in agg.values()),'selected manifest cases')
+def join_final(index,plan,results_path,receipts_path,build_path,final_path):
+ results=load(results_path);receipts=load(receipts_path);build=load(build_path);final=load(final_path)
+ focused=collections.Counter();denials=collections.Counter()
+ for suite in final['focused']:
+  for f,counts in suite['forms'].items():
+   focused[f]+=counts.get('PASS',0);denials[f]+=counts.get('EXPECTED_DENIAL_CONTROL',0)
+ by_form={r['form']:r for r in results};by_entry={r['entry']:r for r in receipts}
+ if len(by_form)!=595 or len(results)!=595 or set(by_form)!={r['form'] for r in index['rows']}:raise ValueError('final form coverage')
+ if len(by_entry)!=102 or len(receipts)!=102 or set(by_entry)!=set(index['entries']):raise ValueError('final entry coverage')
+ executable=build['artifacts']['build/bin/elfrun']
+ if executable!=plan['build'] or executable!=final['build_sha256'] or final['status']!='PASS_FINITE_SCOPE':raise ValueError('final build identity')
+ if sum(r['passed'] for r in results)!=final['directed_dut_packets']:raise ValueError('final positive total')
+ for e in plan['entries']:
+  receipt=by_entry[e['id']]
+  if receipt['manifest_sha256']!=e['manifest_sha256'] or receipt['accepted_cases']!=len(e['accepted_indices']) or receipt['original']!=e['original']:raise ValueError('final entry identity '+e['id'])
+  index['entries'][e['id']]['final179_receipt']=receipt
+ for row in index['rows']:
+  r=by_form[row['form']]
+  if r['build_sha256']!=executable or r['result']!='PASS_FINITE_SCOPE' or r['failed'] or r['blocked']:raise ValueError('final result '+row['form'])
+  if 4*r['cases_per_arm']!=4*row['case_count']+focused[row['form']] or not r['completed']==r['passed']==r['planned']==4*row['case_count']+focused[row['form']]:raise ValueError('final count '+row['form'])
+  if sorted(e for e in r['source_entries'] if not e.startswith('focused:'))!=sorted(e['entry'] for e in row['entries']):raise ValueError('final selector join '+row['form'])
+  row['final179']=dict(r,ordinary_cases_per_arm=row['case_count'],ordinary_positive_dut_checks=4*row['case_count'],focused_positive_dut_checks=focused[row['form']],focused_denial_controls=denials[row['form']])
+ index['final179']={'result':'PASS_FINITE_SCOPE','build_sha256':executable,'library_sha256':build['artifacts']['build/lib/libdbtjitshared.so'],'build_configuration':build['configuration'],'build_manifest':'docs/rvv-validation/directed-task181/BUILD_MANIFEST_179.json','cases_per_arm':sum(r['case_count'] for r in index['rows']),'ordinary_positive_dut_checks':4*sum(r['case_count'] for r in index['rows']),'focused_positive_dut_checks':sum(focused.values()),'focused_denial_controls':sum(denials.values()),'P3_separate':True,'rebuilt_executable_receipt_credit':False}
+ index['final_evidence_pins']={str(p):sha(Path(p).read_bytes()) for p in (results_path,receipts_path,build_path,final_path)}
+
 def export_unit(index,row,entry_id,e,original,group,a):
  # Verify the large source once; the resulting selected package is independently usable.
  sys.path.insert(0,str(a.checkout/'scripts/rvv/directed'));import storage149 as storage
@@ -166,10 +192,10 @@ def validate_packets(v,group,out,ref,rec):
  return result
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['generate','list','show','command','smoke','export','preflight']);p.add_argument('--index',type=Path,default=INDEX);p.add_argument('--checkout',type=Path,default=ROOT);p.add_argument('--form');p.add_argument('--entry');p.add_argument('--unit');p.add_argument('--sew',type=int);p.add_argument('--lmul');p.add_argument('--vl',type=int);p.add_argument('--length',choices=['zero','partial','full']);p.add_argument('--vlen',type=int);p.add_argument('--mask');p.add_argument('--vstart',type=int)
- for k in ('plan','historical','raw-root','original-root','tools','dut','dut-lib','spike','pk','sail','compiler','link','output'):p.add_argument('--'+k,type=Path)
+ for k in ('plan','historical','results','receipts','build-manifest','final-result','raw-root','original-root','tools','dut','dut-lib','spike','pk','sail','compiler','link','output'):p.add_argument('--'+k,type=Path)
  p.add_argument('--library-path',default='');p.add_argument('--arm',choices=['B','M1','M2','BOTH'],default='B');p.add_argument('--timeout',type=int,default=60);a=p.parse_args()
  if a.action=='generate':
-  if not all((a.plan,a.historical,a.raw_root,a.original_root,a.output)):p.error('generate requires plan/historical/raw-root/original-root/output')
+  if not all((a.plan,a.historical,a.raw_root,a.original_root,a.output,a.results,a.receipts,a.build_manifest,a.final_result)):p.error('generate requires plan/historical/raw-root/original-root/output/results/receipts/build-manifest/final-result')
   compile_index(a);return
  index=load(a.index)
  if a.action=='list':print('\n'.join(r['form'] for r in index['rows']));return
