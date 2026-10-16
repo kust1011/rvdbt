@@ -2,11 +2,9 @@
 //
 // WHAT THIS FILE HAS TO PROVE, AND WHY EACH SECTION EXISTS
 //
-//   [1] FLAG OFF CHANGES NO GENERATED CODE. Not a self-comparison: the goldens below are pinned
-//       normalized disassemblies captured from the ACCEPTED R1A.3a tree (commit 8ce794a87) with
-//       production source unmodified, and preserved in the checkpoint's raw/ directory. If any
-//       R1A.3b change perturbed the flag-off path, these hashes move. Task137 retains that
-//       contract with the separately explained memory-safety/layout updates below.
+//   [1] FLAG-OFF SEQUENCE REGRESSION. Exact sizes and normalized disassemblies pin reviewed
+//       singleton code, including current guard reuse, span admission and CPUState layout.
+//       The emitter control and independent protocol checks behind updates are described below.
 //
 //   [2] ONE FRAME, GENERIC IN THE OPERATIONS. All 36 ordered pairs over the six accepted typed
 //       integer ALU routes, at both VLENs, become ONE guarded frame whose shape depends only on the
@@ -24,7 +22,8 @@
 //       correctness property of the admission bound rather than a quality metric.
 //
 //   [5] THE EMITTED CODE ITSELF, read back from objdump:
-//         * exactly ONE guard -- three compares, all jumping to the SAME fallback label, and every
+//         * exactly ONE guard -- three compares without setup, two with inline setup proving
+//           vtype, all jumping to the SAME fallback label, and every
 //           vector instruction of the body before that label, so the guard covers the whole run;
 //         * exactly `|live_in| * k` ZMM loads at the live-in windows and `|live_out| * k` ZMM
 //           stores at the final live-out windows, and NOTHING between two members' lane operations;
@@ -44,7 +43,6 @@
 // HOST NOTE. This file never executes what it emits, so the six QCG routes' AVX-512F admission
 // probes are bypassed with their audit `force-emit` switches and the codegen is exercised on hosts
 // without AVX-512. The xbd execution package uses NO force-emit switch anywhere.
-
 #include "dbt/arena.h"
 #include "dbt/config.h"
 #include "dbt/guest/rv32_cpu.h"
@@ -138,11 +136,8 @@ constexpr u32 W_ADDI = 0x00150513u;	     // addi a0,a0,1
 
 constexpr u32 ST_VREG_BASE = (u32)(offsetof(CPUState, vec) + offsetof(dbt::rv32::VectorState, vreg));
 constexpr u32 ST_IP = (u32)offsetof(CPUState, ip);
-// The guard's first compare reads this. FirstGuardIndex below used to look for the literal
-// `[r13+0x10d0]`, which was this offset while VLEN_MAX was 1024 and silently stopped being it when
-// HM.2a raised the reservation to 4096: the helper then found no guard, returned insns.size(), and
-// made "the prologue is identical across arms" compare whole functions instead of prologues.
-// Derived from the declaration for the same reason ST_IP and ChunkOffs are.
+// Guard fields are declaration-derived. Inline setup can prove vtype, leaving VL/vstart
+// as the first emitted compare; runtime-entry fixtures still require the complete guard.
 constexpr u32 ST_VTYPE =
     (u32)(offsetof(CPUState, vec) + offsetof(dbt::rv32::VectorState, vtype));
 
@@ -378,9 +373,8 @@ std::string NormalizedDisasm(std::vector<std::string> const &lines, unsigned *n_
 // Re-pinning alone would replace a checked claim with an unchecked one. This second hash is what
 // keeps it checked: it is invariant under any CPUState layout change, so an identical value on the
 // old tree and the new one says the instruction sequence, the register allocation, the immediates
-// and the control flow are unchanged and ONLY the displacements moved. The values in
-// `hash_nodisp` below were harvested from a scratch build of the parent commit `13d8b17bd` and
-// then required, unchanged, here.
+// and the control flow are unchanged and ONLY the displacements moved. Real emitter changes
+// require separate sequence review and semantic checks, as described beside Goldens().
 std::string NormalizedDisasmNoDisp(std::vector<std::string> const &lines, unsigned *n_lines)
 {
 	std::string const src = NormalizedDisasm(lines, n_lines);
@@ -770,7 +764,7 @@ Emitted ReadEmitted(Built &b)
 }
 
 // ---------------------------------------------------------------------------------------------
-// [1] Flag-off goldens, pinned from the accepted R1A.3a tree.
+// [1] Reviewed flag-off sequence goldens.
 // ---------------------------------------------------------------------------------------------
 
 struct GoldenRow {
@@ -779,8 +773,8 @@ struct GoldenRow {
 	u32 vlen;
 	size_t bytes;
 	unsigned lines;
-	u64 hash;	 // pinned against THIS tree's CPUState layout
-	u64 hash_nodisp; // pinned against the parent commit's; layout-invariant
+	u64 hash;        // exact current layout and instruction sequence
+	u64 hash_nodisp; // same sequence with CPUState displacements normalized
 };
 
 std::vector<GoldenRow> Goldens()
@@ -794,54 +788,41 @@ std::vector<GoldenRow> Goldens()
 	std::vector<u32> const no_setvli = {W_VADD_V3_V1_V2, W_VSUB_V4_V3_V2};
 	std::vector<u32> const overlap = {W_VSETVLI_E32M1, W_VADD_V3_V3_V2, W_VSUB_V3_V3_V2};
 	std::vector<u32> const scalar = {W_ADDI, W_ADDI, W_ADDI};
-	// HM.2a RE-PINNED THE `hash` COLUMN AND ONLY THAT COLUMN. Raising VLEN_MAX from 1024 to 4096
-	// moved every CPUState displacement in this code, so 14 of the 16 literal hashes moved with
-	// it; the two `scalar only` rows did not, because they touch no vector register, which is the
-	// first corroboration that the cause is the layout and not the code.
-	//
-	// `bytes`, `lines` and `hash_nodisp` were NOT re-pinned: they carried over from the parent
-	// commit `13d8b17bd` unchanged, harvested from a scratch build of it with this same file.
-	// Identical byte counts, identical line counts and an identical displacement-invariant hash
-	// together say the instruction sequence, register allocation, immediates and control flow are
-	// the same code, relabelled. That is the claim the `hash` column was protecting, and it is
-	// still checked -- by `hash_nodisp` -- rather than replaced by a fresh unchecked number.
-	//
-	// `overlap chain` sharing `add;sub`'s nodisp hash, and the two `scalar only` rows sharing one
-	// at both widths, are both expected: the first differs from add;sub only in which registers
-	// the displacements name, and the second emits no width-dependent code at all.
-	// Task137: isolated c2084aa host512 control reproduces every prior constant. Twelve ALU
-	// rows change ONLY hit/fallback displacements a500/a508 -> a528/a530: five appended
-	// runtime stubs enlarge the embedded table by 40 bytes. Their bytes/lines/nodisp stay pinned.
-	// The two memory rows add permission preflight (mov rdi; mov esi; call; test; je) and a
-	// terminal cold exit (jmp join; pop rcx; mov rdi; xor esi; jmp fault), +40 bytes/+10 lines.
-	// At VLEN1024 chunk0 publishes before chunk1's load; registers and windows stay identical.
-	// Preflight/fallback/cold targets are checked symbolically below, independent of ASLR.
-	// Prior constants, exact QIR/x86 diffs and measured control are retained in Task137 evidence.
-	// Task179: the returning trace observer no longer consumes the region frame.
-	// Original174 goldens pass unchanged (16 rows); paired normalized disassembly
-	// differs only by the removed non-leaf pop and code-padding decode. Scalar
-	// leaf rows stay pinned. Exact old/new diffs are retained in Task179 evidence.
+	// Reviewed against the 56eccf7 emitter control using the current headers/library:
+	// all 16 old sizes, line counts and nodisp hashes reproduce exactly. The appended
+	// span stub shifts hit/fallback offsets by 8; it does not change scalar-only rows.
+	// Current ALU diffs remove only dominated vtype cmp/jne pairs, retarget branches
+	// and change decoded alignment padding. No-setup rows retain sizes/lines/nodisp.
+	// Memory diffs replace generic preflight with page proof, span admission and a
+	// checked-denial edge. MemoryGoldenProtocolMatches pins helper identity, arguments
+	// and denial dispatch independently of normalized absolute addresses.
+	// The only host-width difference in these memory rows is the span chunk argument;
+	// its immediate encoding has the same size at all three supported widths.
+	constexpr u64 mem_hash[][2] = {
+	    {0x1cf400dadff6aaf6ull, 0xd3fdd14d240a97fbull},
+	    {0x1b2884619d56a9b5ull, 0xb8aaf9550a9c59a0ull},
+	    {0x6654dc0ace7fe8ffull, 0xc722b99713fba9e2ull}};
+	constexpr u64 mem_nodisp[][2] = {
+	    {0x69081840453f4b96ull, 0xc504f2292ab1e7e9ull},
+	    {0xe5cd3aaf1b0cdd15ull, 0x028bd7c09a4ecc9aull},
+	    {0x116647a1740f164bull, 0xe907262c001cf6a0ull}};
+	constexpr unsigned host = RVV_HOST_CHUNK_BITS == 512 ? 2 : RVV_HOST_CHUNK_BITS == 256 ? 1 : 0;
 	return {
-	    {"add;sub", add_sub, 512, 416u, 64u, 0x62b90003dc201bf6ull, 0x153f3531e3bee649ull},
-	    {"add;sub", add_sub, 1024, 488u, 72u, 0x60027d710db29bceull, 0x33686871cb45963bull},
-	    {"mul;xor", mul_xor, 512, 424u, 62u, 0x7ee2dd2479a8503bull, 0x6ac099aba900308bull},
-	    {"mul;xor", mul_xor, 1024, 496u, 70u, 0x87f98422fdde0d75ull, 0x0a48996c32eeae52ull},
-	    {"or;and", or_and, 512, 416u, 64u, 0x6c9aa0ce7b8ae793ull, 0x077c1fa049c642aeull},
-	    {"or;and", or_and, 1024, 488u, 72u, 0x7083ee2ec2c49608ull, 0x715c909c9cc9d50bull},
-	    {"six ops", six, 512, 928u, 132u, 0x6c5f1e29e9a8ec8eull, 0x9387585ad690330dull},
-	    {"six ops", six, 1024, 1144u, 156u, 0x3b39b811403a89a6ull, 0xb6cde7cac98e60cbull},
-	    // A13-FIX (2026-09-05): the vle32.v frame in this kernel now carries the base-range guard
-	    // (`mov eax,[r13+gpr]; cmp eax,2^32-VLEN/8; ja fallback`, +16 bytes / +1 line at 512, +8
-	    // bytes / +4 lines at 1024), so these two rows were RE-PINNED from the fixed tree; the
-	    // pre-A13-FIX bytes (528/81, 624/90 and the hashes 0xf41d90cbafac7c1c / 0x4ae0180549aceb33,
-	    // 0xee03fcbb1c3981f6 / 0xa0862f9371876d89) carried a host-pointer window that could leave
-	    // the guest space and were deliberately not preserved. The other rows are unchanged.
-	    {"add;vle;add", with_mem, 512, 584u, 91u, 0x421ffaa907a2d062ull, 0x8a00b08c537cba18ull},
-	    {"add;vle;add", with_mem, 1024, 672u, 104u, 0x1c31642dbf5a3ff2ull, 0x9f0e1ae25219581cull},
-	    {"no vsetvli add;sub", no_setvli, 512, 344u, 52u, 0xf51c7f6875d54104ull, 0x2b130251b6bb8590ull},
-	    {"no vsetvli add;sub", no_setvli, 1024, 416u, 60u, 0x47f33526809ce7a0ull, 0xec2821dbe065928eull},
-	    {"overlap chain", overlap, 512, 416u, 64u, 0x76c1a8369a8abed8ull, 0x153f3531e3bee649ull},
-	    {"overlap chain", overlap, 1024, 488u, 72u, 0x508157cf847d8952ull, 0x33686871cb45963bull},
+	    {"add;sub", add_sub, 512, 384u, 61u, 0xe7a7a3fd2f87074aull, 0x7ce86f0a87927f5dull},
+	    {"add;sub", add_sub, 1024, 456u, 69u, 0x11065e424ecabfddull, 0xc5b2d338db5bbe50ull},
+	    {"mul;xor", mul_xor, 512, 384u, 59u, 0x97177f50e4bae584ull, 0x9c06ae3aedf2136eull},
+	    {"mul;xor", mul_xor, 1024, 456u, 67u, 0xb186b0f1affeebc3ull, 0xa4df1d10b5c04a88ull},
+	    {"or;and", or_and, 512, 384u, 61u, 0xf474c7fdd0208869ull, 0x3f8f056f44648398ull},
+	    {"or;and", or_and, 1024, 456u, 69u, 0xe7719321f056d07full, 0xc3ee5669482c1a70ull},
+	    {"six ops", six, 512, 824u, 119u, 0x75f61092d313f8e5ull, 0x865671a863f90fa0ull},
+	    {"six ops", six, 1024, 1040u, 143u, 0xdc535df378ad9073ull, 0xa477039be433eb8eull},
+	    // The independent protocol oracle below also pins the exact RV32 base limit.
+	    {"add;vle;add", with_mem, 512, 680u, 116u, mem_hash[host][0], mem_nodisp[host][0]},
+	    {"add;vle;add", with_mem, 1024, 776u, 125u, mem_hash[host][1], mem_nodisp[host][1]},
+	    {"no vsetvli add;sub", no_setvli, 512, 344u, 52u, 0x9412d1e812afb8bcull, 0x2b130251b6bb8590ull},
+	    {"no vsetvli add;sub", no_setvli, 1024, 416u, 60u, 0x775b19cc8b96e8a0ull, 0xec2821dbe065928eull},
+	    {"overlap chain", overlap, 512, 384u, 61u, 0xe820d33e1ec9093cull, 0x7ce86f0a87927f5dull},
+	    {"overlap chain", overlap, 1024, 456u, 69u, 0x071a0371afa087529ull, 0xc5b2d338db5bbe50ull},
 	    {"scalar only", scalar, 512, 112u, 22u, 0x7adb91d6d25b35a8ull, 0x79649824b01d18f4ull},
 	    {"scalar only", scalar, 1024, 112u, 22u, 0x7adb91d6d25b35a8ull, 0x79649824b01d18f4ull},
 	};
@@ -852,27 +833,63 @@ std::vector<GoldenRow> Goldens()
 bool MemoryGoldenProtocolMatches(Built const &b, u32 vlen)
 {
 	std::vector<uptr> calls;
-	unsigned cold_jumps = 0, limits = 0;
+	unsigned cold_jumps = 0, limits = 0, span_args = 0, checked_args = 0, fallback_args = 0;
+	unsigned page_envelopes = 0, page_edges = 0, read_permissions = 0;
 	uptr const base = (uptr)b.cr.buf.data();
 	auto const *tab = RuntimeStubTab::GetGlobal();
-	for (auto const &l : ParseLines(b.lines)) {
-		if (l.mnem == "call" && l.ops.starts_with("0x"))
-			calls.push_back(base + strtoull(l.ops.c_str(), nullptr, 0));
+	auto const lines = ParseLines(b.lines);
+	for (size_t i = 0; i < lines.size(); ++i) {
+		auto const &l = lines[i];
+		if (l.mnem == "call" && l.ops.starts_with("0x")) {
+			auto const target = base + strtoull(l.ops.c_str(), nullptr, 0);
+			calls.push_back(target);
+			if (target == (*tab)[RuntimeStubId::id_rv32_native_memory_span] && i >= 4) {
+				char chunk[48];
+				snprintf(chunk, sizeof(chunk), "ecx,0x%x",
+				    std::min(vlen / 8u, u32(RVV_HOST_CHUNK_BITS / 8)));
+				char address[48];
+				snprintf(address, sizeof(address), "esi,DWORD PTR [r13+0x%x]",
+				    (unsigned)(offsetof(CPUState, gpr) + 11u * sizeof(u32)));
+				span_args += lines[i-4].mnem == "mov" && lines[i-4].ops == "rdi,r13" &&
+				    lines[i-3].mnem == "mov" && lines[i-3].ops == address &&
+				    lines[i-2].mnem == "mov" && lines[i-2].ops == chunk &&
+				    lines[i-1].mnem == "mov" && lines[i-1].ops == "r8d,0x0";
+			}
+			if (target == (*tab)[RuntimeStubId::id_rv32_native_memory_fault] && i >= 2) {
+				char descriptor[48];
+				snprintf(descriptor, sizeof(descriptor), "esi,0x%x", W_VLE32 | (1u << 28) | (1u << 6));
+				checked_args += lines[i-2].mnem == "mov" && lines[i-2].ops == "rdi,r13" &&
+				    lines[i-1].mnem == "mov" && lines[i-1].ops == descriptor;
+				snprintf(descriptor, sizeof(descriptor), "rsi,0x%x", W_VLE32);
+				fallback_args += lines[i-2].mnem == "mov" && lines[i-2].ops == "rdi,r13" &&
+				    lines[i-1].mnem == "mov" && lines[i-1].ops == descriptor;
+			}
+		}
 		if (l.mnem == "jmp" && base + strtoull(l.ops.c_str(), nullptr, 0) ==
 		    (*tab)[RuntimeStubId::id_rv32_native_memory_fault]) ++cold_jumps;
 		if (l.mnem == "cmp" && l.ops.compare(0, 4, "eax,") == 0 &&
 		    strtoull(l.ops.c_str() + 4, nullptr, 0) == 0x100000000ull - vlen / 8) ++limits;
+		if (l.mnem == "cmp" && l.ops.starts_with("eax,")) {
+			auto const value = strtoull(l.ops.c_str() + 4, nullptr, 0);
+			page_envelopes += value == 4096u - vlen / 8u;
+			page_edges += value == 4096u;
+		}
+		read_permissions += l.mnem == "test" && l.ops == "BYTE PTR [rax+rcx*1],0x1";
 	}
 	return calls == std::vector<uptr>{(*tab)[RuntimeStubId::id_rv32_vadd_vv],
-	    (*tab)[RuntimeStubId::id_rv32_native_memory_safe],
+	    (*tab)[RuntimeStubId::id_rv32_native_memory_span],
+	    (*tab)[RuntimeStubId::id_rv32_native_memory_fault],
 	    (*tab)[RuntimeStubId::id_rv32_native_memory_fault],
 	    (*tab)[RuntimeStubId::id_rv32_vadd_vv],
-	    (*tab)[RuntimeStubId::id_trace_cache]} && cold_jumps == 1 && limits == 1;
+	    (*tab)[RuntimeStubId::id_trace_cache]} && cold_jumps == 1 && limits == 1 &&
+	    span_args == 1 && checked_args == 1 && fallback_args == 1 &&
+	    page_envelopes == 1 && page_edges == 1 &&
+	    read_permissions == 1;
 }
 
 void CheckFlagOffGoldens()
 {
-	printf("[1] flag off: pinned accepted code plus reviewed Task137 memory-safety/layout updates\n");
+	printf("[1] flag off: reviewed layout, guard-reuse and span-admission goldens\n");
 	unsigned row = 0;
 	for (auto const &g : Goldens()) {
 		Built b;
@@ -913,6 +930,25 @@ void CheckFlagOffGoldens()
 			CHECK(!MemoryGoldenProtocolMatches(b, g.vlen));
 			CHECK_EQ(Fnv1a(NormalizedDisasm(b.lines, nullptr)), h);
 			b.lines = original;
+			for (auto &line : b.lines) {
+				if (line.find("mov    ecx,0x") != std::string::npos) {
+					line.back() = line.back() == '0' ? '1' : '0';
+					break;
+				}
+			}
+			CHECK(!MemoryGoldenProtocolMatches(b, g.vlen));
+			b.lines = original;
+			char raw_argument[48];
+			snprintf(raw_argument, sizeof(raw_argument), "mov    rsi,0x%x", W_VLE32);
+			for (auto &line : b.lines) {
+				if (line.find(raw_argument) != std::string::npos) {
+					line.back() = line.back() == '0' ? '1' : '0';
+					break;
+				}
+			}
+			CHECK(!MemoryGoldenProtocolMatches(b, g.vlen));
+			CHECK_EQ(Fnv1a(NormalizedDisasm(b.lines, nullptr)), h);
+			b.lines = original;
 			unsigned call = 0;
 			for (auto &line : b.lines) {
 				auto const at = line.find("call ");
@@ -934,8 +970,7 @@ void CheckFlagOffGoldens()
 		CHECK_EQ(n, g.lines);
 		CHECK_EQ(n2, g.lines);
 		CHECK_EQ(h, g.hash);
-		// Layout-independent sequence oracle. Only the two reviewed memory rows change it;
-		// all other rows retain their historical value, byte count and line count.
+		// Keep exact byte/line counts and both sequence oracles, including no-setup controls.
 		CHECK_EQ(h2, g.hash_nodisp);
 		// Structural half of the same claim: with the switch off no frame may cover more than
 		// one guest instruction, whatever the hash says.
@@ -1333,9 +1368,16 @@ void CheckEmitted()
 			auto const e = ReadEmitted(b);
 
 			// ---- ONE GUARD, COVERING BOTH MEMBERS -----------------------------------
-			// Three architectural compares, all jumping to the SAME label. A second
-			// frame would contribute a second triple and a second label.
-			CHECK_EQ(e.jne_targets.size(), (size_t)3);
+			// Inline setup proves vtype, but full VL and vstart still require checks.
+			CHECK_EQ(e.jne_targets.size(), (size_t)2);
+			// Without the producer, all three checks must remain. This paired control
+			// prevents accepting unconditional vtype-guard removal.
+			Built entry;
+			Build(entry, {r.w0, r.w1}, vlen, true);
+			auto const unknown = ReadEmitted(entry);
+			CHECK_EQ(unknown.jne_targets.size(), (size_t)3);
+			for (auto t : unknown.jne_targets)
+				CHECK(t == unknown.jne_targets[0]);
 			bool one_target = !e.jne_targets.empty();
 			for (auto t : e.jne_targets)
 				one_target &= t == e.jne_targets[0];
@@ -1748,7 +1790,7 @@ std::string MnemonicSeq(std::vector<Ins> const &insns, size_t from, size_t to)
 	return out;
 }
 
-// Index of the first instruction of the first typed frame: the guard's vtype compare.
+// Index of the first remaining configuration guard, including setup-dominated frames.
 //
 // A NOT-FOUND RESULT IS A HARD FAILURE, not `insns.size()`. Returning the end silently turned the
 // two prologue-equality checks in CheckArmLedger into whole-function comparisons -- which happen to
@@ -1756,12 +1798,20 @@ std::string MnemonicSeq(std::vector<Ins> const &insns, size_t from, size_t to)
 // pass vacuously. The caller has already established that a frame exists.
 size_t FirstGuardIndex(std::vector<Ins> const &insns)
 {
-	char want[48];
-	snprintf(want, sizeof(want), "[r13+0x%x]", (unsigned)ST_VTYPE);
-	for (size_t i = 0; i < insns.size(); ++i)
-		if (StartsWith(insns[i].text, "cmp ") && Has(insns[i].text, want))
-			return i;
-	fprintf(stderr, "  FAIL FirstGuardIndex: no `cmp ... %s` in %zu instructions\n", want,
+	u32 const fields[] = {ST_VTYPE,
+	    (u32)(offsetof(CPUState, vec) + offsetof(dbt::rv32::VectorState, vl)),
+	    (u32)(offsetof(CPUState, vec) + offsetof(dbt::rv32::VectorState, vstart)),
+	    (u32)(offsetof(CPUState, vec) + offsetof(dbt::rv32::VectorState, vlenb))};
+	for (size_t i = 0; i + 1 < insns.size(); ++i) {
+		if (!StartsWith(insns[i].text, "cmp ") || !StartsWith(insns[i + 1].text, "j"))
+			continue;
+		for (u32 field : fields) {
+			char want[48];
+			snprintf(want, sizeof(want), "[r13+0x%x]", field);
+			if (Has(insns[i].text, want)) return i;
+		}
+	}
+	fprintf(stderr, "  FAIL FirstGuardIndex: no configuration compare/branch in %zu instructions\n",
 		insns.size());
 	++g_failures;
 	return insns.size();
@@ -2319,12 +2369,16 @@ std::vector<LedgerCase> RegisteredSequences()
 	};
 }
 
-void CheckArmLedger()
+void CheckArmLedger(bool setup)
 {
-	printf("[12] emitted ledger with the counter off: A-B = 7 and B-C = k\n");
+	unsigned const guard_fields = setup ? 2u : 3u;
+	unsigned const guard_delta = 2u * guard_fields + 1u;
+	printf("[12] counter-off ledger, inline setup=%d: A-B = %u and B-C = k\n", setup, guard_delta);
 	for (u32 vlen : {512u, 1024u}) {
 		unsigned const k = vlen / 512u;
 		for (auto const &c : RegisteredSequences()) {
+			auto words = c.words;
+			if (!setup) words.erase(words.begin());
 			// First pin the dataflow this claim depends on, from the admission scan.
 			std::vector<u32> mem = {c.words[1], c.words[2]};
 			ApplyConfig(vlen, true);
@@ -2335,9 +2389,9 @@ void CheckArmLedger()
 			CHECK_EQ((unsigned)__builtin_popcount(d.live_out_mask), 2u);
 
 			ArmBuild a, b, cc;
-			BuildArm(a, c.words, vlen, 0, false);
-			BuildArm(b, c.words, vlen, 1, false);
-			BuildArm(cc, c.words, vlen, 2, false);
+			BuildArm(a, words, vlen, 0, false);
+			BuildArm(b, words, vlen, 1, false);
+			BuildArm(cc, words, vlen, 2, false);
 			CHECK_EQ(a.spans.size(), (size_t)2);
 			CHECK_EQ(b.spans.size(), (size_t)1);
 			CHECK_EQ(cc.spans.size(), (size_t)1);
@@ -2346,7 +2400,7 @@ void CheckArmLedger()
 			unsigned const na = NonFallbackCount(a.insns, a.spans);
 			unsigned const nb = NonFallbackCount(b.insns, b.spans);
 			unsigned const nc = NonFallbackCount(cc.insns, cc.spans);
-			CHECK_EQ(na - nb, 7u);
+			CHECK_EQ(na - nb, guard_delta);
 			CHECK_EQ(nb - nc, k);
 			CHECK_EQ(CountText(a.insns, HitIncText()), 0u);
 			CHECK_EQ(CountText(b.insns, HitIncText()), 0u);
@@ -2369,8 +2423,7 @@ void CheckArmLedger()
 			      SpanText(b.insns, 0, FirstGuardIndex(b.insns)));
 			CHECK(SpanText(b.insns, 0, FirstGuardIndex(b.insns)) ==
 			      SpanText(cc.insns, 0, FirstGuardIndex(cc.insns)));
-			// And the A-B difference really is one guard plus its jmp, not something else
-			// that happens to sum to seven.
+			// The A-B difference is exactly the remaining guard plus its join jump.
 			unsigned ca = 0, cb = 0, ja = 0, jb = 0;
 			for (auto const &i : a.insns) {
 				ca += StartsWith(i.text, "cmp ");
@@ -2380,21 +2433,21 @@ void CheckArmLedger()
 				cb += StartsWith(i.text, "cmp ");
 				jb += StartsWith(i.text, "jne ");
 			}
-			CHECK_EQ(ca - cb, 3u);
-			CHECK_EQ(ja - jb, 3u);
+			CHECK_EQ(ca - cb, guard_fields);
+			CHECK_EQ(ja - jb, guard_fields);
 			printf("    ok  %-8s vlen=%-4u A=%u B=%u C=%u  A-B=%u  B-C=%u  (k=%u)\n",
 			       c.name, vlen, na, nb, nc, na - nb, nb - nc, k);
 		}
 	}
 
-	// The general form, over all 36 ordered pairs at both widths: A - B is always 7, and B - C
-	// is always what the descriptor's own dataflow predicts.
+	// All 36 ordered pairs: A-B is the remaining guard/join, while B-C follows dataflow.
 	unsigned pairs = 0;
 	for (u32 vlen : {512u, 1024u}) {
 		unsigned const k = vlen / 512u;
 		for (auto const &ra : kRoutes) {
 			for (auto const &rc : kRoutes) {
-				std::vector<u32> const words = {W_VSETVLI_E32M1, ra.word, rc.word};
+				std::vector<u32> words = {ra.word, rc.word};
+				if (setup) words.insert(words.begin(), W_VSETVLI_E32M1);
 				std::vector<u32> mem = {ra.word, rc.word};
 				ApplyConfig(vlen, true);
 				auto const d = qir::rv32::RV32Translator::RvvAdmitVectorRun(
@@ -2409,15 +2462,15 @@ void CheckArmLedger()
 				unsigned const na = NonFallbackCount(a.insns, a.spans);
 				unsigned const nb = NonFallbackCount(b.insns, b.spans);
 				unsigned const nc = NonFallbackCount(cc.insns, cc.spans);
-				CHECK_EQ(na - nb, 7u);
+				CHECK_EQ(na - nb, guard_delta);
 				CHECK_EQ(nb - nc, want_bc);
 				++pairs;
 			}
 		}
 	}
-	printf("    ok  %u ordered pairs x VLEN: A-B = 7 always; B-C matches the descriptor's own "
+	printf("    ok  %u ordered pairs x VLEN: A-B = %u; B-C matches the descriptor's own "
 	       "dataflow every time\n",
-	       pairs);
+	       pairs, guard_delta);
 }
 
 // [13] A spill inside an open group is a Panic, not a slowdown, so "no allocator move" is a
@@ -4053,13 +4106,18 @@ void P6C_CheckExtendedFamilyOrderIdentity()
 						CHECK_EQ(depth, 16u); CHECK_EQ(refs, 5u); depth = 0;
 					} else if (Has(t, "rsp")) {
 						CHECK_EQ(depth, 16u);
-						CHECK(Has(t, "[rsp]") &&
+						bool const scratch = Has(t, "[rsp]") &&
 							((StartsWith(t, "mov ") &&
 							(Has(t, "QWORD PTR [rsp],0x0") ||
 							Has(t, "DWORD PTR [rsp],0x7f800000") ||
 							Has(t, "QWORD PTR [rsp],rax"))) ||
-							((StartsWith(t, "vpcmpeqd ") || StartsWith(t, "vpcmpeqq ")) &&
-							Has(t, "BCST [rsp]"))));
+							// Binutils spells the same EVEX broadcast as BCST or {1toN}.
+							(StartsWith(t, "vpcmpeqd ") &&
+								(Has(t, "DWORD BCST [rsp]") || Has(t, "DWORD PTR [rsp]{1to16}"))) ||
+							(StartsWith(t, "vpcmpeqq ") &&
+								(Has(t, "QWORD BCST [rsp]") || Has(t, "QWORD PTR [rsp]{1to8}"))));
+						if (!scratch) fprintf(stderr, "  unexpected FP scratch access: %s\n", t.c_str());
+						CHECK(scratch);
 						++refs;
 					}
 					if (depth) {
@@ -4138,7 +4196,8 @@ int main(int argc, char **argv)
 	CheckHitCounterScope();
 	CheckFrameCensusScope();
 	CheckLiveSplitDepth1Probe();
-	CheckArmLedger();
+	CheckArmLedger(true);
+	CheckArmLedger(false);
 	CheckMaterializeAllocation();
 	CheckMaterializeOverlap();
 	CheckDefaultsUnchanged();
@@ -4154,12 +4213,11 @@ int main(int argc, char **argv)
 	if (argc > 2 && std::string(argv[1]) == "--dump-arms")
 		DumpArms((u32)atoi(argv[2]));
 
+	M2F_CheckMaterializeDeclarationNotTruncated();
 	if (g_failures) {
 		fprintf(stderr, "\nFAILED: %d check(s)\n", g_failures);
 		return 1;
 	}
-	M2F_CheckMaterializeDeclarationNotTruncated();
-
 	printf("\nALL CHECKS PASSED\n");
 	return 0;
 }

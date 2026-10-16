@@ -1,7 +1,9 @@
-python3 examples/benchmarks.py \
-    --rvdbt-build-dir $(pwd)/build-llvm-$1 \
-    --libriscv-build-dir /home/wendell/libriscv/emulator \
-    --prebuilts $(pwd)/prebuilts \
+#!/bin/sh
+set -eu
+
+exec python3 examples/benchmarks.py \
+    --rvdbt-build-dir "${RVDBT_BUILD_DIR:-$(pwd)/build-llvm-${1:?LLVM version required}}" \
+    --prebuilts "${RVDBT_PREBUILTS:-$(pwd)/prebuilts}" \
     --riscv32-gcc riscv32-unknown-elf-gcc \
     --rvdbt-jit \
     --rvdbt-llvmaot-1000 \

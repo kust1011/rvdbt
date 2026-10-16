@@ -5,7 +5,8 @@
 //       guard kind VTypeVlVstartBaseLimit, base_limit == 2^32 - VLEN/8, base_offs == the rs1 slot,
 //       n_typed == 2k, k vchunkload (or vstatechunkload) values of the chunk width and k state
 //       windows at rd*slot + c*chunk; host bytes: 2k `vmovdqu64` of the chunk class (xmm/ymm/zmm,
-//       two zmm at 1024), the guard's `cmp eax,<limit>` + `ja`, no VEX, no add/sub on the base.
+//       two zmm at 1024), the guard's `cmp eax,<limit>` + `ja`. Span admission may
+//       calculate a page envelope before the transfers; transfers keep base+chunk offsets.
 //   [2] switch OFF: the e64 words keep the helper (no frame, one hcall); the e32 frame carries the
 //       base-range guard whether the switch is on or off (A13-FIX: the guard is the frame's
 //       contract, not an e64 feature) and is otherwise the S1/P7N-D frame.
@@ -27,6 +28,7 @@
 #include "dbt/qmc/qcg/qcg.h"
 #include "dbt/qmc/qir.h"
 
+#include <algorithm>
 #include <cerrno>
 #include <cstdio>
 #include <cstdlib>
@@ -180,6 +182,13 @@ std::vector<std::string> Body(std::vector<std::string> const &ls)
 	return std::vector<std::string>(ls.begin(), ls.begin() + (last ? last + 1 : 0));
 }
 std::string Hex(u32 v) { char b[32]; snprintf(b, sizeof b, "0x%x", v); return b; }
+bool HasRangeEdge(std::vector<std::string> const &dis, u32 limit)
+{
+	for (size_t i = 0; i + 1 < dis.size(); ++i)
+		if (dis[i].find("cmp    eax," + Hex(limit)) != std::string::npos)
+			return dis[i+1].find("ja ") != std::string::npos;
+	return false;
+}
 unsigned ChunkBytes(u32 vlen) { return vlen / 8 > 64 ? 64 : vlen / 8; }
 unsigned Chunks(u32 vlen) { return (vlen / 8) / ChunkBytes(vlen); }
 u32 GprOffs(u32 r) { return (u32)(offsetof(CPUState, gpr) + 4u * r); }
@@ -244,10 +253,18 @@ void CheckFrame(char const *tag, u32 vlen, bool store, u32 setvli, u32 word, boo
 	for (u32 other : {16u, 32u, 64u}) if (other != cb) CHECK_EQ(Count(dis, Cls(other)), 0u);
 	// the guard
 	CHECK_EQ(Count(dis, "cmp    eax," + Hex(0u - vlen / 8u)), base_guard ? 1u : 0u);
-	CHECK_EQ(Count(dis, "ja "), base_guard ? 1u : 0u);
+	CHECK_EQ(HasRangeEdge(dis, 0u - vlen / 8u), base_guard);
 	CHECK_EQ(Count(dis, "mov    eax,DWORD PTR [r13+" + Hex(GprOffs(BASE)) + "]"), k + (base_guard ? 1u : 0u));
-	// no address arithmetic on the base, no VEX (c4/c5) vector moves
-	CHECK_EQ(Count(dis, "add    eax") + Count(dis, "add    rax") + Count(dis, "sub    eax") + Count(dis, "sub    rax") + Count(dis, "lea    "), 0u);
+	// Span/page admission may calculate an envelope before SIMD. The actual
+	// transfer body still uses the unmodified base plus each checked chunk disp.
+	auto first_transfer = std::find_if(dis.begin(), dis.end(), [](auto const &line) {
+		return line.find("vmovdqu64") != std::string::npos;
+	});
+	std::vector<std::string> transfers(first_transfer, dis.end());
+	CHECK(!transfers.empty());
+	CHECK_EQ(Count(transfers, "add    eax") + Count(transfers, "add    rax") +
+	         Count(transfers, "sub    eax") + Count(transfers, "sub    rax") +
+	         Count(transfers, "lea    "), 0u);
 	fprintf(stderr, "    %-22s VLEN %4u k=%u chunk=%2u %s guard=%s ok\n", tag, vlen, k, cb, Cls(cb), base_guard ? "vtype/vl/vstart/base" : "vtype/vl/vstart");
 }
 
@@ -290,7 +307,7 @@ void Section2_SwitchOffAndE32()
 				CHECK_EQ(f[0].begin->n_typed, (u16)(2 * Chunks(vlen)));
 				Emit(b); auto dis = Body(Disassemble(b.code));
 				CHECK_EQ(Count(dis, "cmp    eax," + Hex(0u - vlen / 8u)), 1u);
-				CHECK_EQ(Count(dis, "ja "), 1u);
+				CHECK(HasRangeEdge(dis, 0u - vlen / 8u));
 				CHECK_EQ(Count(dis, "vmovdqu64"), 2 * Chunks(vlen));
 			}
 		}

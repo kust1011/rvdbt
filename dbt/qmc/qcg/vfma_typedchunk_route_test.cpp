@@ -1370,6 +1370,39 @@ void LaneSet(std::array<u8, 64> &z, unsigned lane, unsigned sew, double v)
 	memcpy(z.data() + lane * 4, &b, 4);
 }
 
+// Intel SDM VFPCLASSPS/PD: imm bits 1/2 select +/-zero, 3/4 select +/-infinity.
+// The emitted classifier only uses these categories, with DAZ cleared. Compare
+// integer encodings so subnormals and sNaNs neither become zeros nor raise flags.
+bool ClassifyZeroInf(u64 bits, unsigned bytes, u32 imm)
+{
+	u64 const sign = u64{1} << (bytes * 8 - 1);
+	u64 const magnitude = bits & (sign - 1);
+	u64 const infinity = bytes == 4 ? 0x7f800000ull : 0x7ff0000000000000ull;
+	if (magnitude == 0)
+		return imm & (bits & sign ? 4u : 2u);
+	if (magnitude == infinity)
+		return imm & (bits & sign ? 16u : 8u);
+	return false;
+}
+
+void CheckClassifyZeroInf()
+{
+	for (unsigned bytes : {4u, 8u}) {
+		u64 const sign = u64{1} << (bytes * 8 - 1);
+		u64 const inf = bytes == 4 ? 0x7f800000ull : 0x7ff0000000000000ull;
+		u64 const one = bytes == 4 ? 0x3f800000ull : 0x3ff0000000000000ull;
+		for (u32 imm = 0; imm < 32; imm += 2) {
+			CHECK_EQ(ClassifyZeroInf(0, bytes, imm), (imm & 2u) != 0);
+			CHECK_EQ(ClassifyZeroInf(sign, bytes, imm), (imm & 4u) != 0);
+			CHECK_EQ(ClassifyZeroInf(inf, bytes, imm), (imm & 8u) != 0);
+			CHECK_EQ(ClassifyZeroInf(sign | inf, bytes, imm), (imm & 16u) != 0);
+			for (u64 bits : {u64{1}, sign | 1, one, sign | one, inf | 1, sign | inf | 1,
+			                 inf | (u64{1} << (bytes == 4 ? 22 : 51))})
+				CHECK(!ClassifyZeroInf(bits, bytes, imm));
+		}
+	}
+}
+
 // Interpret [lo,hi] of the decoded stream. `sew` is only used to size FP lanes; every instruction's
 // element width comes from its own mnemonic suffix, so a ps/pd mismatch is a hard error, not a
 // silent reinterpretation.
@@ -1416,7 +1449,24 @@ void Interpret(Machine &M, std::vector<Insn> const &v, size_t lo, size_t hi)
 		};
 		bool const movdqu = m.compare(0, 7, "vmovdqu") == 0;
 		unsigned const mov_lane = m == "vmovdqu32" ? 4u : 8u;
-		if ((m == "vpslld" || m == "vpsrld" || m == "vpsllq" || m == "vpsrlq") &&
+		if ((m == "vfpclassps" || m == "vfpclasspd") && o.size() == 3 &&
+		    o[0].kind == Operand::Kind::KREG && o[1].kind == Operand::Kind::ZMM &&
+		    o[2].kind == Operand::Kind::IMM) {
+			if (o[2].imm & ~0x1eull) {
+				fail("unmodeled vfpclass category: " + n.text);
+				return;
+			}
+			unsigned const sw = sew_of(m), nl = lanes_of(m);
+			u32 const mask = o[0].kmask ? M.k[o[0].kmask] : 0xffffffffu;
+			u32 classified = 0;
+			for (unsigned lane = 0; lane < nl; ++lane) {
+				u64 bits = 0;
+				memcpy(&bits, M.zmm[o[1].reg].data() + lane * sw, sw);
+				if ((mask & (1u << lane)) && ClassifyZeroInf(bits, sw, o[2].imm))
+					classified |= 1u << lane;
+			}
+			M.k[o[0].reg] = classified;
+		} else if ((m == "vpslld" || m == "vpsrld" || m == "vpsllq" || m == "vpsrlq") &&
 		    o.size() == 3 && o[0].kind == Operand::Kind::ZMM && o[1].kind == Operand::Kind::ZMM && o[2].kind == Operand::Kind::IMM) {
 			unsigned sw = m.back() == 'd' ? 4 : 8;
 			for (unsigned lane=0; lane<64/sw; ++lane) {
@@ -2029,6 +2079,7 @@ int main()
 	Section6_FailClosed();
 	Section7_EmittedBytes();
 	Section7b_FflagsAccrual();
+	CheckClassifyZeroInf();
 	Section8_ValueDifferential();
 	Section9_MaskPrologueIdentity();
 	Section_N2_Control();

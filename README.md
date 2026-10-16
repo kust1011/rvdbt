@@ -14,81 +14,85 @@ experimental AOT/tiering paths; their presence does not make them evaluated
 thesis results. Benchmark guest binaries and restricted input datasets are not
 redistributed here.
 
-## Current implementation and validation
+## Build, run and check RVV
 
-The current correctness replay covers **595 applicable instruction forms** in
-the RV32/ELEN64 profile, using one executable with the semantic and QIR allocator
-fixes included. B, M1, M2 and Both are each tested. The 627-form catalogue also
-identifies the 32 indexed-memory forms excluded from this execution profile.
+Start with the [public portable replay](docs/rvv-validation/portable-external.md).
+It provides configurable DUT, host/guest toolchains, dependency location, isolated
+cache and output directories, then builds and checks one complete adapted Ara
+file and one retained RVVTS sequence in B/M1/M2/BOTH against Spike. It requires
+a compatible AVX-512 Linux host and the documented tools, not a private host.
+The checked build includes diagnostics and is **not a performance recipe**.
 
-| Validation | Completed checks or calls |
-| --- | ---: |
-| Per-form directed matrix, four configurations combined | 12,069,048 positive comparisons |
-| Focused checks | 2,256 positive checks; 592 denial controls |
-| CHIPS, Architectural Tests and Ara | 21,316 calls, including expected-failure controls and explicitly scoped cases |
-| Multi-instruction sequences | 9,888 DUT checks |
+The complete 595-form retained replay uses the same public runner, but requires
+separately supplied input ELFs, original checker snapshots and independent
+references. Start with its [retained-corpus commands and bundle prerequisites](docs/rvv-validation/portable-external.md#retained-directed-corpus).
+**There is not yet a public download of that complete bundle.** The committed
+index and two runnable samples are not substitutes for the missing data.
 
-Start with the [latest results and executable identity](docs/rvv-validation/final-task197/README.md)
-and [595-row per-form results](docs/rvv-validation/final-task197/PER_FORM_RESULTS.csv).
-For test sources, checked states, independent references and replay instructions,
-read the [author and reviewer guide](docs/rvv-author-guide.md) and
-[case index and clean-checkout demonstration](docs/rvv-validation/delivery-task182/README.md).
-The latter retains historical case metadata; the latest execution results are
-in the former result table.
+The stable reading path is:
 
-These are finite test matrices, not exhaustive input coverage. Original external
-exclusions remain recorded; complete guest-handler return and faulting-instruction
-restart remains unverified. Performance data retains its original executable.
-The compact results are committed here; the latest full raw archives remain in
-local research storage, as documented in the result guide. Earlier public archives
-below are historical results, not substitutes for the latest replay.
+- [Architecture and code map](docs/rvv-qcg.md): QCG translation, M1/M2 legality,
+  helpers and allocator boundaries.
+- [Support and evidence guide](docs/rvv-author-guide.md): accepted scope,
+  formal/diagnostic/oracle inventory and missing evidence.
+- [Public build/run/check](docs/rvv-validation/portable-external.md): fresh
+  execution and explicit receipt reuse.
+- [627-form scope](docs/rvv-current-scope.md) and
+  [original-case navigation](docs/rvv-validation/all-form-records/README.md):
+  per-form source/assertion/package selectors.
 
-See [the RVV QCG design and code map](docs/rvv-qcg.md) for the translation
-path, M1/M2 legality, and focused checks.
+## Validation evidence
 
-For an x86 host with AVX-512 and an installed LLVM 20 toolchain:
+The [measured d252 replay](docs/rvv-validation/delivery-task182/README.md#measured-d252-replay)
+has its own [result](docs/rvv-validation/delivery-task182/MEASURED_D252_RESULT.json)
+and [595-form ordinary CSV](docs/rvv-validation/delivery-task182/MEASURED_D252_PER_FORM.csv):
+95,242 units / 380,968 four-arm calls / 12,069,048 selected checks, plus separately
+classified focused, external and sequence results. It uses the measured
+executable/library with correctness diagnostics enabled, not identical timing
+flags. Independent reference executions are retained, not regenerated.
+
+The RV32/ELEN64 catalogue has **595 applicable mnemonic/operand forms** and
+32 excluded ei64 indexed-memory forms. The
+[frozen correctness replay](docs/rvv-validation/final-task197/README.md) records
+B/M1/M2/Both results for all 595 applicable forms on its pinned executable:
+12,069,048 ordinary comparisons, 2,256 focused positives, 592 denial controls,
+21,316 external calls and 9,888 sequence DUT checks. The
+[historical 595-row CSV](docs/rvv-validation/final-task197/PER_FORM_RESULTS.csv) joins those
+compact results; it does not make the complete raw inputs/results public.
+
+For a form's selected dimensions and original answer predicate, then its concrete
+source/assertion/reference locators, run from the repository root:
 
 ```sh
-git submodule update --init dbt/third_party/asmjit dbt/third_party/elfio
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_C_COMPILER=clang-20 -DCMAKE_CXX_COMPILER=clang++-20 \
-  -DLLVM_PATH=/usr/lib/llvm-20 -DRVV_HOST_CHUNK_BITS=512
-ninja -C build -j2 elfrun
+python3 scripts/rvv_verify.py show --form vadd.vv
+python3 scripts/rvv_scope_report.py \
+  --navigation docs/rvv-validation/all-form-records/navigation.json.gz \
+  --form vadd.vv --output /absolute/path/to/new-form-records
 ```
 
-The AVX-512 host option is for running the emitted-code tests on a compatible
-machine. The same source also contains narrower host-chunk routes; do not run
-an AVX-512 build on a host without the required CPU features. See the existing
-design notes below for the base translator; the RVV work extends rather than
-replaces that architecture.
+These are evidence readers, not new executions. Follow the per-form records to
+the original oracle/checker; no universal synthetic expected-output generator is
+provided. Research session logs, temporary builds and experiment queues are not
+required by the public sample entry.
 
-## RVV correctness tests: start here
+That historical replay used fresh DUT execution with retained ELFs and independent
+references, not fresh oracle execution. Complete latest raw/runner archives remain
+in research storage with no public download; selected older CHIPS/ACT/Ara
+inspection packages are linked in the support guide. A new build has a new
+identity and does not inherit those results. The public two-fixture replay is
+independently usable but cannot reproduce or replace the full matrix.
 
-Read [which external suites test which behaviors, and what each script does](docs/rvv-validation.md#test-suites-and-checkers).
-The suite tests are distinct from Python unit tests of the runner. The current
-inventory has 595 applicable instruction forms with result-checked records;
-this is not exhaustive coverage of every form's configurations and fault behavior.
+Finite form counts are not full RVV conformance, a tested VLEN/SEW/LMUL Cartesian
+product, or proof that M1/M2 admitted every target. General precise fault/retry
+and guest-handler repair/return remain unverified. Older performance results
+retain their original executable/configuration.
 
-Start with the [current 627-form table](docs/rvv-current-scope.md) and
-[real four-configuration CHIPS smoke records/workflow](docs/rvv-validation/smoke-task80/README.md).
-The [portable Ara and RVVTS replay](docs/rvv-validation/portable-external.md)
-builds and checks a complete external test file and a vector instruction sequence
-against Spike, with separate checks for actual optimized-path execution.
-The [licensed Ara inspection archive](docs/rvv-validation/ara-review-task91/README.md)
-provides accepted source/assertion/raw joins and an offline producer-parser check.
-The [primary CHIPS inspection guide](docs/rvv-validation/chips-review-task93/README.md)
-records the primary source/result package, available with the ACT primary data in
-[the public validation release](https://github.com/kust1011/rvdbt/releases/tag/rvv-validation-20261012).
-The later [ACT execution and replay guide](docs/rvv-validation/act-db2-task110/README.md)
-links a separate published source/signature/result archive.
-The compact view can be regenerated from committed inputs; the complete historical
-evidence tree is not bundled. See
-[validation and reproducibility](docs/rvv-validation.md) and the
-[author guide](docs/rvv-author-guide.md) for checked form scope, external evidence
-dependencies and unresolved source/signal/fault limits.
+## Inherited scalar examples
 
-## My progress and todo
-https://hackmd.io/iDSBjMJTSTiiBJ8ODpPvTQ?both
+The following material is retained from upstream for context. Its historical
+LLVM versions, scalar scope and AOT examples are not the supported RVV replay
+recipe or an RVV-AOT validation claim.
+
 ## RISCV-TESTS
 To test prebuilt of `rv32ui` and `rv32um`, run
 ```shell

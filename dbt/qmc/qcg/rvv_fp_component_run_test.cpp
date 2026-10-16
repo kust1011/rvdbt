@@ -414,9 +414,9 @@ std::vector<std::string> Disassemble(std::vector<u8> const &code)
 	return out;
 }
 
-// The only thing that legitimately differs between two Built objects is the rel32 of the fallback
-// arm's `call`, which is relative to whatever heap address the code buffer landed at. That is a
-// property of the harness, not of the code generator, so it is normalised away -- and ONLY it.
+// Normalize fallback call relocations between independently allocated Built objects.
+// This deliberately does not normalize jumps: native-memory fault tail jumps also
+// relocate, so the memory-barrier row checks frame boundaries instead of identity.
 std::vector<std::string> NormalizeCallTargets(std::vector<std::string> const &lines)
 {
 	std::vector<std::string> out;
@@ -557,7 +557,7 @@ void Check1_MembershipIsTheRoutePredicate()
 			Env e;
 			e.vlen_bits = vlen;
 			unsigned admitted = 0, unsafe = 0, unexplained = 0;
-			unsigned by_generic_family = 0, by_masked_fp = 0;
+			unsigned by_generic_family = 0, by_masked_fp = 0, by_widening_fp = 0;
 			for (u32 f6 = 0; f6 < 64; ++f6)
 				for (u32 f3 = 0; f3 < 8; ++f3)
 					for (u32 vm = 0; vm < 2; ++vm) {
@@ -584,7 +584,7 @@ void Check1_MembershipIsTheRoutePredicate()
 						}
 						if (!want || got)
 							continue;
-						// (b) EVERY REFUSAL IS ONE OF THE TWO DOCUMENTED
+						// (b) EVERY REFUSAL IS ONE OF THE CLASSIFIED
 						// CAUSES below. Anything else is a coverage
 						// regression and fails right here.
 						rvg::VType const vt{s.vtype};
@@ -600,6 +600,16 @@ void Check1_MembershipIsTheRoutePredicate()
 							       GuardKind::VTypePartialVlVstartFrmHost &&
 							   (masked || !vt.vta())) {
 							++by_masked_fp;
+						} else if (s.vtype == 0xd0u && !cls.present &&
+							   g_last_single_kind == GuardKind::VTypePartialVlVstartFrmHost &&
+							   (f3 == 1 || f3 == 5) &&
+							   (f6 == 48 || f6 == 50 || f6 == 52 || f6 == 54 || f6 == 56 ||
+							    f6 == 60 || f6 == 61 || f6 == 62 || f6 == 63)) {
+							// Widening arithmetic has a single-instruction route, but
+							// no equal-width run member. Keep this distinct from a
+							// route-table row whose own admission unexpectedly fails.
+							CHECK_EQ(d.cut, CutReason::UnsupportedVector);
+							++by_widening_fp;
 						} else {
 							fprintf(stderr,
 								"  FAIL [unexplained %s vlen%u] "
@@ -616,6 +626,7 @@ void Check1_MembershipIsTheRoutePredicate()
 					}
 			CHECK_EQ(unsafe, 0u);
 			CHECK_EQ(unexplained, 0u);
+			CHECK_EQ(by_widening_fp, s.vtype == 0xd0u ? 36u : 0u);
 			CHECK(admitted > 0);
 			CHECK(by_generic_family > 0);
 			CHECK(by_masked_fp > 0);
@@ -978,30 +989,18 @@ void Check5_FrameScopeFpBracket()
 			CHECK(f.body.front()->GetOpcode() == Op::_rvvqcgfpbegin);
 			CHECK(f.body.back()->GetOpcode() == Op::_rvvqcgfpend);
 
-			// In the emitted bytes: THREE stmxcsr/ldmxcsr for the whole three-member
-			// frame, not two, and the third pair is required rather than tolerated.
-			//
-			// `Emit_rvvqcgfpbegin` (qemit.cpp:4575) emits a CONDITIONAL PRE-CLOSE ahead of
-			// the bracket it opens:
-			//     cmpb $0, [fround_run_open] ; je fresh ; <EmitCloseRvvFpBracket> ; fresh:
-			// A preceding SCALAR FP instruction with an explicit rm can leave a bracket open
-			// (rv32_fpu.h FRound under --rvv-scalar-fround-run), holding its exceptions in
-			// MXCSR and not yet in fcsr; the `and eax, ~(0x3f|0x6000|0x8040)` two
-			// instructions later would wipe them. So the emitted count is one pre-close pair
-			// plus the bracket's own open and close = 3, EMITTED unconditionally and taken at
-			// run time only when a bracket is actually open.
-			//
-			// This is not an inferred expectation. FFLAGS_PRECLOSE_CHECK.md (2026-09-08)
-			// deleted exactly this `EmitCloseRvvFpBracket()` call and ran the result on xbd:
-			// the mutant loses the scalar instruction's DZ/NV/NX in 6 of 30 oracle lines at
-			// both VLENs and both run modes, while 16 unmutated arms stay byte-identical to
-			// QEMU. Two is the count of a build that would drop those exceptions.
+			// Incoming exceptions still require a conditional harvest. The opener
+			// coalesces restore/save of the same saved host environment, with no
+			// intervening guest work: three emitted STMXCSR, two LDMXCSR. A fresh
+			// entry executes two of each; an inherited run executes two STMXCSR
+			// and two LDMXCSR over opener+epilogue. The old scalar flag-loss
+			// mutant is still rejected by the mandatory harvest and sticky ORs.
 			auto const lines = Disassemble(b.code);
 			CHECK(!lines.empty());
 			CHECK_EQ(CountMnemonic(lines, "stmxcsr"), 3u);
-			CHECK_EQ(CountMnemonic(lines, "ldmxcsr"), 3u);
+			CHECK_EQ(CountMnemonic(lines, "ldmxcsr"), 2u);
 			fprintf(stderr,
-				"    ok  VLEN %-4u %-11s 1 bracket + 1 pre-close, 3 stmxcsr / 3 ldmxcsr\n",
+				"    ok  VLEN %-4u %-11s 1 bracket + incoming harvest, 3 stmxcsr / 2 ldmxcsr\n",
 				vlen, materialize ? "materialize" : "ssa");
 		}
 	}
@@ -1129,11 +1128,13 @@ void Check7_FailClosed()
 	auto off_falu = [] {
 		Env e;
 		e.falu = false;
+		e.int_routes = false;
 		return e;
 	};
 	auto off_fma = [] {
 		Env e;
 		e.fma = false;
+		e.int_routes = false;
 		return e;
 	};
 	auto verify = [] {
@@ -1157,7 +1158,7 @@ void Check7_FailClosed()
 		return e;
 	};
 	Row const rows[] = {
-	    // The route's OWN switch. The A1 contract: nothing else in the substrate can admit it.
+	    // QCG enables FP via generic || family; disable both to test refusal.
 	    {"--rvv-qcg-typed-chunk-falu off", off_falu(), fp_pair, 0xd8u, 0,
 	     CutReason::RouteNotAdmitted},
 	    // With the FMA route off, the first member is still admitted and the run TRUNCATES --
@@ -1201,6 +1202,15 @@ void Check7_FailClosed()
 		CHECK_EQ(d.cut, r.want_cut);
 		fprintf(stderr, "    ok  %-32s -> %u member(s), %s\n", r.name, r.want_members,
 			rvvrun::CutReasonName(r.want_cut));
+	}
+	// Disabling only a family must retain the explicitly enabled generic route.
+	for (bool fused : {false, true}) {
+		Env e;
+		e.falu = fused;
+		e.fma = !fused;
+		auto const d = Admit(fused ? fused_pair : fp_pair, e, 0xd8u);
+		CHECK_EQ((unsigned)d.n_members, 2u);
+		CHECK_EQ(d.cut, CutReason::InsnBudget);
 	}
 
 	{
@@ -1388,6 +1398,7 @@ void Check9_DefaultOffByteIdentity()
 		std::vector<u32> words;
 		u32 vsetvli;
 		bool expect_identical;
+		bool boundary_only = false;
 	};
 	Row const rows[] = {
 	    // A run IS admitted here, so the flag MUST change the emitted bytes. If this row went
@@ -1395,8 +1406,10 @@ void Check9_DefaultOffByteIdentity()
 	    // below would be vacuous.
 	    {"two FP members", {MW_VFSUB_VV, MW_VFDIV_VF}, VSETVLI_E64M1, false},
 	    {"fused chain", {MW_VFDIV_VF, MW_VFNMSUB_VF}, VSETVLI_E64M1, false},
-	    // No two-member run can be admitted: the flag must not touch one byte.
-	    {"FP, barrier, FP", {MW_VFSUB_VV, W_VLE64, MW_VFDIV_VF}, VSETVLI_E64M1, true},
+	    // Memory must separate singleton frames. Identity is neither required nor
+	    // forbidden: its native-memory fault tail jump is not call-normalized.
+	    {"FP, barrier, FP", {MW_VFSUB_VV, W_VLE64, MW_VFDIV_VF}, VSETVLI_E64M1, false, true},
+	    // These other non-run cases retain exact byte identity.
 	    {"FP, vsetvl, FP", {MW_VFSUB_VV, W_VSETVL, MW_VFDIV_VF}, VSETVLI_E64M1, true},
 	    {"single FP member", {MW_VFDIV_VF}, VSETVLI_E64M1, true},
 	    {"unadmitted SEW", {MW_VFSUB_VV, MW_VFDIV_VF}, VSETVLI_E16M1, true},
@@ -1417,12 +1430,33 @@ void Check9_DefaultOffByteIdentity()
 			auto const la = NormalizeCallTargets(Disassemble(a.code));
 			auto const lb = NormalizeCallTargets(Disassemble(b.code));
 			CHECK(!la.empty());
-			CHECK_EQ(la == lb, r.expect_identical);
-			if (r.expect_identical)
+			if (r.boundary_only) {
+				// A memory barrier forbids cross-instruction reuse. An external
+				// fault-stub relocation is not a run-admission assertion.
+				auto const af = FindFrames(a.region), bf = FindFrames(b.region);
+				CHECK_EQ(af.size(), 3u);
+				CHECK_EQ(bf.size(), af.size());
+				CHECK(RunFrame(bf).begin == nullptr);
+				for (size_t i = 0; i < std::min(af.size(), bf.size()); ++i) {
+					CHECK_EQ(af[i].begin->raw, bf[i].begin->raw);
+					CHECK_EQ(af[i].begin->stub, bf[i].begin->stub);
+					CHECK_EQ(af[i].end->n_members, bf[i].end->n_members);
+					CHECK_EQ(af[i].body.size(), bf[i].body.size());
+				}
+				if (std::getenv("RVDBT_TEST_DUMP_BARRIER")) {
+					fprintf(stderr, "BARRIER VLEN=%u OFF\n", vlen);
+					for (auto const &line : la) fprintf(stderr, "%s\n", line.c_str());
+					fprintf(stderr, "BARRIER VLEN=%u ON\n", vlen);
+					for (auto const &line : lb) fprintf(stderr, "%s\n", line.c_str());
+				}
+			}
+			if (!r.boundary_only) CHECK_EQ(la == lb, r.expect_identical);
+			if (!r.boundary_only && r.expect_identical)
 				CHECK_EQ(a.code.size(), b.code.size());
 		}
 		fprintf(stderr, "    ok  %-20s run off vs on: %s\n", r.name,
-			r.expect_identical ? "byte-identical" : "differs (a run was admitted)");
+			r.boundary_only ? "singleton boundaries" :
+			(r.expect_identical ? "byte-identical" : "emission differs"));
 	}
 }
 
@@ -1557,9 +1591,9 @@ void Check10_CapacityAndPressure()
 //     the FP members' stubs (`rv32_vfalu` / `rv32_vfma`) are new to a run.
 //
 // AND THE STICKY-FFLAGS SEMANTICS, which is the whole justification for hoisting the bracket to
-// the frame. Every close must ACCRUE: five conditional `or` of a guest flag bit into
-// CPUState::fpu.fcsr, and no write that REPLACES fcsr. A frame emits TWO closes (the conditional
-// pre-close in `Emit_rvvqcgfpbegin` and `Emit_rvvqcgfpend`), so ten ORs. An implementation that assigned instead of
+// the frame. Every harvest must ACCRUE: five conditional `or` of a guest flag bit into
+// CPUState::fpu.fcsr, and no write that REPLACES fcsr. A frame emits TWO harvests (the conditional
+// incoming harvest in `Emit_rvvqcgfpbegin` and `Emit_rvvqcgfpend`), so ten ORs. An implementation that assigned instead of
 // OR-ing would pass every structural check above and would clear flags the guest had already
 // accumulated -- and it would be invisible until a workload read fflags.
 // ---------------------------------------------------------------------------------------------
@@ -1619,14 +1653,9 @@ void Check11_OrderedFallbackAndStickyFlags()
 					continue;
 				(i < fb_at ? mxcsr_before : mxcsr_after) += 1;
 			}
-			// SIX, not four. `Emit_rvvqcgfpbegin` opens with a CONDITIONAL
-			// `EmitCloseRvvFpBracket()` -- if a preceding scalar instruction left a
-			// bracket open with an explicit rounding mode, its exceptions are folded
-			// before MXCSR is reprogrammed for the guest frm. That pre-close carries its
-			// own stmxcsr+ldmxcsr, on top of the open's pair and the real close's pair.
-			// It is skipped at run time when fround_run_open == 0, but it is EMITTED
-			// unconditionally, and this counter counts emitted instructions.
-			CHECK_EQ(mxcsr_before, 6u); // pre-close(2) + open(2) + close(2)
+			// Conditional incoming harvest plus fresh save/setup and final close.
+			// The incoming path skips the fresh save; restore/save is coalesced.
+			CHECK_EQ(mxcsr_before, 5u); // harvest(1) + open(2) + close(2)
 			CHECK_EQ(mxcsr_after, 0u);
 
 			// ONE HELPER CALL PER MEMBER, IN GUEST ORDER, EACH WITH ITS OWN PC AND ITS
@@ -1697,7 +1726,7 @@ void Check11_OrderedFallbackAndStickyFlags()
 				if (l.compare(0, fcsr_write.size(), fcsr_write) == 0)
 					++mov_fcsr;
 			}
-			// TEN, not five: the frame emits TWO closes -- the conditional pre-close inside
+			// TEN, not five: the frame emits TWO harvests -- the conditional incoming harvest inside
 			// `Emit_rvvqcgfpbegin` (see the mxcsr count above) and the real
 			// `Emit_rvvqcgfpend` -- and each is five conditional ORs (NV, DZ, OF, UF, NX).
 			// Accrual is idempotent, so ORing a bit twice is the same architectural result;

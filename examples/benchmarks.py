@@ -7,6 +7,19 @@ import sys
 import time
 from typing import Type
 import glob
+import signal
+import math
+
+EXECUTION_TIMEOUT = 600
+
+
+def collect_output(process):
+    try:
+        return process.communicate(timeout=EXECUTION_TIMEOUT)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGKILL)
+        process.communicate()
+        raise
 
 class BaseExec:
     def __init__(self):
@@ -35,6 +48,7 @@ class QEMUExec(BaseExec):
     bin_path = "qemu-riscv32"
 
     def __init__(self):
+        super().__init__()
         self.name = "qemu"
         self.aot_size = 0
         self.aot_time = 0
@@ -42,19 +56,15 @@ class QEMUExec(BaseExec):
     def run(self):
         pargs = [QEMUExec.bin_path] + self.args
         self.print_dir()
-        print(f"{" ".join(pargs)}")
+        print(" ".join(pargs))
         timer = time.time()
         p = subprocess.Popen(pargs, cwd=self.root,
-                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        self.out, self.err = p.communicate()
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        self.out, self.err = collect_output(p)
         timer = time.time() - timer
         self.rc = p.returncode
         self.time = timer
         
-        # Store output if ofile is set
-        if hasattr(self, 'ofile') and self.ofile:
-            with open(self.ofile, 'wb') as f:
-                f.write(self.out)
 
 class LIBRISCVExec(BaseExec):
     build_dir = None
@@ -81,15 +91,15 @@ class LIBRISCVExec(BaseExec):
         p = subprocess.Popen(pargs, cwd=LIBRISCVExec.build_dir,
                            env=env,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-        self.out, self.err = p.communicate()
+                           stderr=subprocess.PIPE, start_new_session=True)
+        self.out, self.err = collect_output(p)
         self.rc = p.returncode
         self.setup_ok = self.rc == 0
 
     def run(self):
         pargs = [LIBRISCVExec.build_dir + "/rvlinux"] + self.args
         self.print_dir()
-        print(f"{" ".join(pargs)}")
+        print(" ".join(pargs))
         env = os.environ.copy()
         
         if self.mode == "interp":
@@ -99,8 +109,8 @@ class LIBRISCVExec(BaseExec):
         p = subprocess.Popen(pargs, cwd=self.root,
                            env=env,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-        self.out, self.err = p.communicate()
+                           stderr=subprocess.PIPE, start_new_session=True)
+        self.out, self.err = collect_output(p)
         timer = time.time() - timer
         self.rc = p.returncode
         self.time = timer
@@ -144,8 +154,8 @@ class RVDBTExec(BaseExec):
         print(" ".join(pargs))
         start_time = time.time()
         p = subprocess.Popen(pargs, cwd=RVDBTExec.build_dir,
-                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        self.out, self.err = p.communicate()
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        self.out, self.err = collect_output(p)
         self.aot_time = time.time() - start_time
         print(f"AOT time: {self.aot_time:.2f} seconds")
         self.rc = p.returncode
@@ -163,11 +173,11 @@ class RVDBTExec(BaseExec):
         pargs += ["--"] + self.args
         
         self.print_dir()
-        print(f"{" ".join(pargs)}")
+        print(" ".join(pargs))
         timer = time.time()
         p = subprocess.Popen(pargs, cwd=RVDBTExec.build_dir,
-                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        self.out, self.err = p.communicate()
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        self.out, self.err = collect_output(p)
         timer = time.time() - timer
         self.rc = p.returncode
         self.time = timer
@@ -198,7 +208,7 @@ def get_latest_prof_hash():
     return os.path.basename(latest_prof).split(".")[0]
 
 class Benchmark:
-    def __init__(self, root, args, cmp_out=False, ofile=None, name=None, prof=None):
+    def __init__(self, root, args, cmp_out=False, ofile=None, name=None, prof=None, expected_rc=0):
         self.name = name
         if self.name is None:
             self.name = args[0]
@@ -207,6 +217,7 @@ class Benchmark:
         self.cmp_out = cmp_out  
         self.ofile = self.root + "/" + ofile if ofile is not None else None
         self.prof = prof
+        self.expected_rc = expected_rc
 
     def get_ofile(self, exec):
         assert (self.ofile is not None)
@@ -216,11 +227,19 @@ class Benchmark:
         self.ofile = self.root + "/" + ofile
 
     def launch_with(self, exec: BaseExec):
+        # A failed run must not inherit a previous run's output file.
+        if self.ofile:
+            for path in (self.ofile, self.get_ofile(exec)):
+                if os.path.isfile(path):
+                    os.remove(path)
         if "rvdbt-llvmaot" in exec.name and self.prof != None:
             # cp old prof file named by name to prof hash stored in exec.prof
             os.system(f"cp {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.name}.prof {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.prof}.prof")
             print(f"cp {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.name}.prof {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.prof}.prof")
         exec.setup(self.root, self.args)
+        if not getattr(exec, 'setup_ok', True):
+            exec.failure = "setup-failed"
+            return exec
         if self.ofile:
             exec.ofile = self.ofile
 
@@ -233,6 +252,7 @@ class Benchmark:
                 aot_so_hash = get_latest_aot_so_hash()
             except FileNotFoundError:
                 print("No .aot.so files found in the cache directory")
+                exec.failure = "aot-missing"
                 return exec
             cache_path = RVDBTExec.build_dir + "/" + RVDBTExec.cache_dir + "/" + aot_so_hash + ".aot.so"
             assert os.path.isfile(cache_path), f"AOT file {cache_path} does not exist"
@@ -251,13 +271,24 @@ class Benchmark:
         return exec
 
     def verify(self, exec: BaseExec, exec_ref: BaseExec):
-        if exec_ref.rc != exec.rc:
+        if getattr(exec_ref, 'failure', None) or exec_ref.rc != self.expected_rc:
+            return "reference-failed"
+        if getattr(exec, 'failure', None):
+            return exec.failure
+        if exec.rc != self.expected_rc:
+            return "execution-failed"
+        if self.cmp_out and (exec_ref.out is None or exec.out is None):
+            return "stdout-missing"
+        if self.cmp_out and exec_ref.out != exec.out:
             return "stdout"
 
         if self.ofile is not None:
+            if not os.path.isfile(self.get_ofile(exec_ref)):
+                return "reference-outfile-missing"
             if not os.path.isfile(self.get_ofile(exec)):
                 return "outfile-missing"
-            if not filecmp.cmp(self.get_ofile(exec_ref), self.get_ofile(exec)):
+            filecmp.clear_cache()
+            if not filecmp.cmp(self.get_ofile(exec_ref), self.get_ofile(exec), shallow=False):
                 return "outfile-diff"
 
         return None
@@ -271,15 +302,13 @@ class Benchmark:
             self.aot_time = aot_time
 
     def result(self, exec: BaseExec, exec_ref: BaseExec = None) -> Result:
-        is_ref = ((exec == exec_ref) or (exec_ref is None))
-        if is_ref:
-            res = "ok"
-        else:
-            res = self.verify(exec, exec_ref)
-            res = (res, "ok")[res is None]
+        exec_ref = exec if exec_ref is None else exec_ref
+        res = self.verify(exec, exec_ref) or "ok"
+        passed = res == "ok"
         res += ":" + str(exec.rc)
         score = None
-        if exec.time is not None:
+        if (passed and exec.time is not None and math.isfinite(exec.time) and exec.time > 0
+                and exec_ref.time is not None and math.isfinite(exec_ref.time) and exec_ref.time > 0):
             score = f"{exec_ref.time / exec.time:.3f}"
         return Benchmark.Result(res, exec.time, score, aot_size=exec.aot_size, aot_time=exec.aot_time)
 
@@ -514,72 +543,20 @@ def GetBenchmarks(opts):
 
 
 def compile_benchmark(gcc_path: str, root_dir: str, target: str) -> bool:
-    """
-    Compile all source files in the benchmark directory.
-    
-    Args:
-        gcc_path: Path to RISC-V GCC
-        root_dir: Directory containing source files
-        target: Output binary name
-    Returns:
-        bool: True if compilation succeeded
-    """
-    # Common flags including standard headers
-    # TODO: we should compile before benchmark here, so maybe just check exist
-    #       then run and remove the nasty code below.
-    if os.path.exists(f"{root_dir}/{target}"):
+    """Require an explicitly built guest; never silently rebuild with other flags."""
+    if os.path.isfile(f"{root_dir}/{target}"):
         print(f"Executable of workload {root_dir}/{target} already exists, skip compiling and jump into execution")
         return True
-    assert False, "TODO: we should compile before benchmark here, so maybe just check exist then run and remove the nasty code below."
-    # Temp avoid
-    common_flags = "-Wno-implicit-int -Wno-implicit-function-declaration"
-    # temporarily just do not compile here to avoid mistracking compilation flags
-    if os.path.exists(f"{root_dir}/Makefile"):
-        print(f"Found Makefile in {root_dir}, using make with RISC-V GCC")
-        # Read and modify Makefile content
-        with open(f"{root_dir}/Makefile", 'r') as f:
-            makefile_content = f.read()
-        
-        # Create a temporary Makefile with gcc replaced and added flags
-        # if using CC=gcc, only replace gcc
-        if 'riscv32' not in makefile_content:
-            makefile_content = makefile_content.replace('gcc', f'{gcc_path} {common_flags}')
-        with open(f"{root_dir}/Makefile.tmp", 'w') as f:
-            f.write(makefile_content)
-        
-        # Use the temporary Makefile
-        cmd: str = f"cd {root_dir} && make -f Makefile.tmp"
-        print(f"Compiling command: {cmd}")
-        ret = os.system(cmd)
-        
-        # Clean up
-        # os.remove(f"{root_dir}/Makefile.tmp")
-        
-        if ret != 0:
-            print(f"Make failed with return code {ret}")
-            return False
-        return True
-    
-    # If no Makefile, compile directly
-    source_files = glob.glob(f"{root_dir}/*.c")
-    if not source_files:
-        print(f"No source files found in {root_dir}")
-        return False
-        
-    source_list = " ".join(source_files)
-    # all O2 static linking only
-
-    cmd: str = f"{gcc_path} {source_list} -o {root_dir}/{target} -march=rv32i -static -O2 -lm {common_flags}"
-    print(f"Compiling command: {cmd}")
-    ret = os.system(cmd)
-    if ret != 0:
-        print(f"Compilation failed with return code {ret}")
-        return False
-    return True
+    print(f"Missing prebuilt executable: {root_dir}/{target}", file=sys.stderr)
+    return False
 
 
 def RunTests(opts):
     benchmarks = GetBenchmarks(opts)
+    failures = 0
+    if not benchmarks:
+        print("No benchmarks selected", file=sys.stderr)
+        return 1
 
     # Modified to use opts
     def get_execs(): 
@@ -629,6 +606,9 @@ def RunTests(opts):
     #     benchmarks = [b for b in benchmarks if b.cmp_out]
 
     score_csvtab = [["benchmark-name"] + list(map(lambda e: e.name, get_execs()))]
+    if not get_execs():
+        print("No execution engines selected", file=sys.stderr)
+        return 1
     time_csvtab = [["benchmark-name"] + list(map(lambda e: e.name, get_execs()))]
     total_time_csvtab = [["benchmark-name"] + list(map(lambda e: e.name, get_execs()))]
 
@@ -641,7 +621,8 @@ def RunTests(opts):
     for b in benchmarks:
         print(f"\nCompiling benchmark under: {b.root}")
         if not compile_benchmark(opts.riscv32_gcc, b.root, b.args[0]):
-            print(f"Skipping benchmark due to compilation failure: {b.root}")
+            print(f"FAIL: missing or failed benchmark build: {b.root}")
+            failures += 1
             continue
 
         print(f"\nRunning benchmark:")
@@ -654,29 +635,40 @@ def RunTests(opts):
         total_times = [b.name]
         for e in execs:
             print(f"Running {b.name} with {e.name}")
-            b.launch_with(e)
+            try:
+                b.launch_with(e)
+            except (OSError, subprocess.SubprocessError) as error:
+                e.failure = "timeout" if isinstance(error, subprocess.TimeoutExpired) else "launch-failed"
+                e.rc = None
+                e.time = None
+                e.err = str(error)
             res = b.result(e, ref_exec)
+            passed = res.res.startswith("ok:")
+            failures += not passed
             print(f"  Result: {res.res}")
             print(f"  Time: {res.time}")
             print(f"  Score: {res.score}")
             print(f"  Return code: {e.rc}") # if the return code is 0, then below is logs
             print(f"  Error output or logs: {e.err}") # E.g., [aot] is log_aot
             scores += [res.score]
-            times += [res.time]
+            times += [res.time if passed else None]
             if e.name.startswith("rvdbt-llvmaot"):  
                 aot_sizes += [res.aot_size]
                 aot_times += [res.aot_time]
-                total_times += [res.time + res.aot_time]
+                total_times += [res.time + res.aot_time if passed and res.time is not None else None]
             else:
-                total_times += [res.time]
+                total_times += [res.time if passed else None]
         score_csvtab += [scores]    
         time_csvtab += [times]
         aot_size_csvtab += [aot_sizes]
         aot_time_csvtab += [aot_times]
         total_time_csvtab += [total_times]
         # move the prof file to another name to avoid the same name being used by different commands with the same args[0]
-        if opts.rvdbt_jit or opts.rvdbt_jit_merge_ls: # Move JIT to avoid diff task with same base args[0]
-            aot_so_hash = get_latest_prof_hash()
+        if (opts.rvdbt_jit or opts.rvdbt_jit_merge_ls) and opts.objective != "test":
+            try:
+                aot_so_hash = get_latest_prof_hash()
+            except FileNotFoundError:
+                continue
             prof_path = RVDBTExec.cache_full_dir + "/" + aot_so_hash + ".prof"
             print(f"move {prof_path} to")
             print(f"{RVDBTExec.cache_full_dir}/{b.name}.prof")
@@ -692,15 +684,18 @@ def RunTests(opts):
     csv.writer(sys.stdout).writerows(aot_time_csvtab)
     print("Total time:")
     csv.writer(sys.stdout).writerows(total_time_csvtab)
+    return 1 if failures else 0
 
 
 def main():
+    global EXECUTION_TIMEOUT
     op = optparse.OptionParser()
     op.add_option("--riscv32-gcc", dest="riscv32_gcc")
     op.add_option("--rvdbt-build-dir", dest="rvdbt_build_dir")
     op.add_option("--cache-dir", dest="cache_dir", default="dbtcache", help="Cache the frequency profile under rvdbt-build-dir. Note if the cache dir not exists, it will err")
     op.add_option("--libriscv-build-dir", dest="libriscv_build_dir")
     op.add_option("--prebuilts", dest="prebuilts_dir")
+    op.add_option("--timeout", type="float", default=600, help="Per-process timeout in seconds (default: 600)")
     # Add new options for execution modes
     op.add_option("--no-qemu", action="store_true", dest="no_qemu", default=False)
     op.add_option("--rvdbt-jit", action="store_true", dest="rvdbt_jit", default=False)
@@ -722,8 +717,13 @@ def main():
                  help="Set the objective: 'benchmark' or 'test'")
 
     (opts, args) = op.parse_args()
-    if not opts.rvdbt_build_dir or not opts.libriscv_build_dir or not opts.prebuilts_dir:
+    if not opts.rvdbt_build_dir or not opts.prebuilts_dir or (opts.libriscv and not opts.libriscv_build_dir):
         op.error("usage")
+    if not math.isfinite(opts.timeout) or opts.timeout <= 0:
+        op.error("--timeout must be positive")
+    if opts.objective == "test" and opts.no_qemu:
+        op.error("test requires the QEMU reference; --no-qemu is benchmark-only")
+    EXECUTION_TIMEOUT = opts.timeout
     os.makedirs(opts.rvdbt_build_dir + "/" + opts.cache_dir, exist_ok=True)
     os.makedirs(opts.rvdbt_build_dir + "/logs", exist_ok=True)
 
@@ -731,7 +731,8 @@ def main():
     LIBRISCVExec.build_dir = opts.libriscv_build_dir
     RVDBTExec.cache_dir = opts.cache_dir
     RVDBTExec.cache_full_dir = opts.rvdbt_build_dir + "/" + opts.cache_dir
-    RunTests(opts)
+    return RunTests(opts)
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())

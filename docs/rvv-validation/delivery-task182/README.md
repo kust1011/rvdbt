@@ -1,14 +1,54 @@
 # Review and replay the finite RVV matrices
 
-## Current complete replay
+## Measured d252 Replay
+
+The 2026-10-16 replay closes the selected matrices on measured executable
+`d252ef99ca083a784c25972c6091218d82de7ba5827a524e47befe1e65ef37ac`
+and library `79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af`.
+[This run's result](MEASURED_D252_RESULT.json) and
+[595-form ordinary CSV](MEASURED_D252_PER_FORM.csv) are independently recounted
+from this campaign's manifests, execution/check receipts and original pinned
+predicates, not copied from the historical 197 totals.
+
+| Scope | Units | DUT calls | Checked outcomes |
+| --- | ---: | ---: | --- |
+| Ordinary directed, 595 selected forms / 102 entries | 95,242 | 380,968 | 12,069,048 selected case/arm checks |
+| Focused | 712 | 2,848 | 2,256 positives + 592 denial controls |
+| External CHIPS / ACT / Ara | Suite-specific definitions in result | 21,316 | 21,088 positive acceptances + 212 expected-exit controls + 16 scoped acceptances |
+| Sequence | 671 | 2,684 | 9,888 original auditor checks |
+
+Ordinary B/M1/M2/BOTH each have 95,242 calls. The CSV counts selected cases per
+form and arm; multi-form unit/call counts overlap and cannot be summed as a
+campaign denominator. External acceptances are not an inferred assertion count.
+
+Fresh-DUT captures use retained independent references, not new oracle execution.
+Final ordinary entry invocations launched 357,548 calls and rechecked 23,420
+prior same-campaign captures without rerunning them. Actual configurations are
+in the result: ordinary validation enables hit/route/stats diagnostics and
+M1/BOTH frame census; formal timing disables them. Sequence auditors retain
+additional trace/code diagnostics. Same executable does not mean identical flags.
+Formal benchmark output checks are separate from these semantic predicates.
+
+All 102 entries exited zero. Actual unit/arm keys, output presence, required
+checker bindings and before/after executable/library identities were checked.
+Original per-call checks/hash receipts remain retained; no additional full raw
+rehash was performed. The owner exited, no measured guest remained, and the
+functional replay left frequency/cpuset settings unchanged. These finite inputs
+do not establish complete conformance, intermediate/access state or handler
+restart. Historical results below retain their original identities.
+
+## Historical Complete Replay
 
 The [fixed192 replay](../final-task197/README.md) is complete and independently
 reviewed: 595 forms, 102 directed entries, 12,069,048 ordinary comparisons,
 2,256 focused positive checks and 592 denial controls. It also includes
 21,316 CHIPS/ACT/Ara calls and 9,888 sequence checks on that executable.
 The [per-form results](../final-task197/PER_FORM_RESULTS.csv) and
-[entry receipts](../final-task197/ENTRY_RECEIPTS.json.gz) give the current
-build's results. The historical index below remains useful for the unchanged
+[entry receipts](../final-task197/ENTRY_RECEIPTS.json.gz) give that fixed
+build's results, not complete correctness of measured d252 or a new build.
+For the maintained public commands and full-bundle availability, use the
+[portable entry](../portable-external.md#retained-directed-corpus).
+The historical index below remains useful for the unchanged
 case definitions and replay commands; its old execution receipts are not
 relabeled. No new DUT failures or pending units remain in this replay.
 

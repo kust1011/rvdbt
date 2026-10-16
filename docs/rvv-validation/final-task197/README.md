@@ -1,4 +1,21 @@
-# Task197 fixed192 correctness replay
+# Frozen correctness replay (fixed192)
+
+For a new checkout, use the [public build/run/check entry](../portable-external.md).
+This page describes a historical fixed-executable campaign, not a portable
+regression command. It executed the DUT anew against retained independent
+references; it did not execute the references again. Compact result files below
+are available in Git, but complete raw inputs/results and adapted runner archives
+have no public download URL. The two-fixture public replay does not supply them.
+See the [evidence map](../../rvv-author-guide.md#find-evidence-for-a-form) before
+interpreting the 595-form count or trying to rebuild the full campaign.
+
+This executable predates the later memory/FP performance changes. Its complete
+595-form result is not a complete replay on the measured `d252ef99` executable,
+nor on a new counter-off build. See [build identities](../../build-profiles.md#measured-thesis-configuration)
+and the [current review status](../../rvv-author-guide.md#review-status).
+The local [retained-corpus adapter](../../../scripts/run_rvv_retained.py) can
+inventory supplied inputs and replay bounded units using the existing predicates;
+it does not supply the missing full archive or replace the external/sequence audits.
 
 Completed finite-scope PASS:595 forms,102 directed entries,12,069,048 ordinary
 checks,2,848 focused checks,21,316 external calls and9,888 sequence DUT checks.
@@ -29,19 +46,13 @@ compressed storage-hash joins and archive SHA256 before remote removal.
 Closed successful per-unit receipt files are separately archived to avoid
 small-file allocation overhead. Original inputs and failures remain retained.
 
-The initial budget records 18,686,681,088 remote free bytes, a 10 GiB reserve,
-6 GiB conservative retention allowance and 512 MiB scratch allowance. Per-entry
-offload reduces the live footprint; guest admission requires at least 11 GiB
-free and stream capture enforces the 10 GiB reserve. All jobs inherit nice10
-and affinity; no CPU pin is assigned. Shared admission caps own guests at eight.
-Initially online/offline predicates shared two slots. After the external,
-focused and sequence queues completed, a host with 32 logical CPUs at load4.46 with 34.97 GB
-available memory justified eight directed checking workers under the user's
-eight-worker authorization. Later directed stages use eight predicate slots
-and at most eight worker processes, with unchanged predicates. Resource
-sampling does not establish continuous occupancy.
+## Historical operations and provenance
 
-The local entry is [replay197.py](../../../scripts/rvv/replay197.py).
+Resource budgets, worker counts and transport history are recorded in
+[SESSION0_RESULT_197](../../../SESSION0_RESULT_197.md) and retained raw logs;
+they are not prerequisites for the public replay.
+
+The archived research entry is [replay197.py](../../../scripts/rvv/replay197.py).
 `prepare` authenticates inputs and stages adaptations; `run` resumes directed
 stages from receipts; `external-resume` checks existing Task197 captures before
 launching pending calls; `stage-sequence` stages the original trace runner and

@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {"major": 3, "minor": 21, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "performance",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/performance",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "RVDBT_BUILD_PROFILE": "performance",
+        "RVV_HOST_CHUNK_BITS": "128",
+        "RVDBT_HOST_FMA": "OFF",
+        "RVDBT_FAST_STATS": "OFF",
+        "RVDBT_CENSUS": "OFF",
+        "RVDBT_RA_STATS": "OFF",
+        "RVDBT_FP_CONTRACT_OFF": "ON",
+        "RVDBT_FROUND_IMPL": "2",
+        "RVDBT_FROUND_DIAG_NOP": "OFF",
+        "DBT_ASAN": "OFF",
+        "BUILD_TESTING": "ON",
+        "RVDBT_NATIVE_REQUIRED": "OFF"
+      }
+    },
+    {
+      "name": "diagnostic",
+      "inherits": "performance",
+      "binaryDir": "${sourceDir}/build/diagnostic",
+      "cacheVariables": {
+        "RVDBT_BUILD_PROFILE": "diagnostic",
+        "RVDBT_FAST_STATS": "ON",
+        "RVDBT_CENSUS": "ON",
+        "RVDBT_RA_STATS": "ON"
+      }
+    },
+    {
+      "name": "performance-host512",
+      "inherits": "performance",
+      "binaryDir": "${sourceDir}/build/performance-host512",
+      "cacheVariables": {"RVV_HOST_CHUNK_BITS": "512", "RVDBT_HOST_FMA": "ON"}
+    }
+  ]
+}

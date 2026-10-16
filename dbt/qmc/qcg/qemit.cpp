@@ -1516,41 +1516,13 @@ void QEmit::Emit_vmstore4(qir::InstVMStore4 *ins)
 }
 
 // ---------------------------------------------------------------------------------------------
-// RVV direct lowering: inline SSE2 for vadd.vv, with a runtime guard and a helper fallback.
+// Optional execution counter shared by direct RVV emitters. The configuration
+// switch is read during translation: disabling it omits this INC from generated
+// code rather than adding a runtime branch. Callers place it on the direct path,
+// including the typed-frame join and the legacy inline SSE2 path.
 //
-// This is the ONE place in the RVV work where guest vector arithmetic becomes host SIMD inside
-// JIT-EMITTED code rather than inside a C++ helper. It is deliberately narrow:
-//
-//   * The vtype is a translation-time constant (taken from a vsetvli in the same basic block),
-//     so SEW, LMUL, EMUL, group legality and the chunk count are all decided at compile time
-//     and no validation logic is duplicated into emitted assembly.
-//   * The inline path handles ONLY vl == VLMAX with vstart == 0. Every other case -- a partial
-//     tail, a different vtype at run time, a non-zero vstart -- branches to the helper, which
-//     is the already-verified reference/chunked implementation. That is what keeps this small:
-//     no emitted loop, no emitted tail handling, all offsets constant.
-//   * Vector values never enter QIR's SSA world: they are read and written straight out of
-//     CPUState::vec.vreg via the state register. Hence no QIR vector type and no register
-//     allocator change. xmm0/xmm1 are fixed scratch, the same convention Emit_vmload4 uses.
-//
-// The guard is what makes it sound: even if this block were reached without executing the
-// in-block vsetvli, the run-time vtype/vl would not match and the helper would run.
-// R1A.3d. THE ONE PLACE THE RESEARCH HIT COUNTER IS EMITTED.
-//
-// `CPUState::rvv_direct_hits` is incremented by emitted code at the join of every typed frame --
-// one `inc` per frame, on the TIMED fast path -- and until R1A.3d there was no way to build
-// without it. R1A.3c therefore had to report that instrumentation as part of its measured delta.
-//
-// Routing all three fast-arm increments through one function is what makes "this build is
-// counter-free" a property of a SINGLE decision. A per-site copy is a per-site chance to forget
-// one, and forgetting one would leave a timing arm quietly carrying instrumentation.
-//
-// THE GUARD-MISS `rvv_direct_fallbacks` INCREMENTS ARE DELIBERATELY NOT ROUTED THROUGH HERE. They
-// sit after the fallback label, so a guard-hit arm never executes them and they cost a timing arm
-// nothing; keeping them unconditional is what lets a counter-free arm still assert
-// `guard_fallbacks == 0` on every single invocation. Removing them would trade a real validity
-// gate for no saving at all.
-//
-// Default TRUE (config.h), so every accepted pinned golden keeps its exact bytes.
+// Guard-miss counters are emitted separately on fallback paths. This switch
+// therefore controls direct-hit instrumentation, not all RVV statistics.
 void QEmit::EmitRvvHitCount()
 {
 	namespace x86 = asmjit::x86;

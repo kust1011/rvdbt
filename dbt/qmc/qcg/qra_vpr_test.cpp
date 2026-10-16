@@ -1,7 +1,6 @@
 // Mechanism tests for the QCG vector register class (qir::RegClass::VPR / AVX-512 ZMM).
 //
-// SCOPE.  These test the register class and nothing else.  No guest instruction is routed to a
-// VPR anywhere in the tree; the regions below are hand-built QIR whose only vector op is `mov`,
+// SCOPE. These allocator tests use hand-built QIR whose only vector op is `mov`,
 // which is exactly the op QRegAlloc itself creates for a copy, a spill and a fill.  Nothing here
 // says anything about RVV lowering, about vadd.vv, or about performance.
 //

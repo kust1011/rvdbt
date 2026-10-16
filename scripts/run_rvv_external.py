@@ -44,9 +44,22 @@ def check_reused_command(saved, current, reference=False):
     if execution_contract(saved, reference) != execution_contract(current, reference):
         raise ValueError('changed execution options in reused receipt')
 
+def prepare_output(output, cache=None):
+    out = output.resolve()
+    cache_root = cache.resolve() if cache is not None else out/'work'
+    if cache is not None and (out == cache_root or out in cache_root.parents or cache_root in out.parents):
+        raise ValueError('cache and output must be separate, non-overlapping directories')
+    for path in ([out, cache_root] if cache is not None else [out]):
+        if path.exists():
+            raise ValueError('output/cache directory already exists: '+str(path))
+    out.mkdir(parents=True, exist_ok=False)
+    cache_root.mkdir(parents=True, exist_ok=False)
+    return out, cache_root
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for n in ['output','rvvts','engine','library-dir','spike','pk','libgcc']:p.add_argument('--'+n,type=Path,required=True)
+    p.add_argument('--cache-dir',type=Path,help='new, separate scratch root for per-fixture/arm filesystems and caches (default: OUTPUT/work)')
     p.add_argument('--reuse-successful-from',type=Path);p.add_argument('--build-only',action='store_true');p.add_argument('--compiler',default='clang-22');p.add_argument('--llc',default='llc-22');p.add_argument('--timeout',type=int,default=120)
     a=p.parse_args();verify_fixtures()
     lock=json.loads((F.parent/'sources.lock.json').read_text())['sources']['rvvts']
@@ -57,7 +70,7 @@ def main():
     for x in [a.compiler,a.llc]:
         if not shutil.which(x):raise ValueError('missing compiler tool: '+x)
     sys.path.insert(0,str(a.rvvts.resolve()));from rvvts_packet import decode,audit_input_unchanged,compare_packet
-    out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    out,cache_root=prepare_output(a.output,a.cache_dir)
     ids={str(x.resolve()):digest(x) for x in [a.engine,a.library_dir/'libdbtjitshared.so',a.spike,a.pk,a.libgcc]}
     save(out/'identity.json',dict(LD_LIBRARY_PATH=str(a.library_dir.resolve())+os.pathsep+os.environ.get('LD_LIBRARY_PATH',''),files=ids,rvvts_revision=rev,compiler=subprocess.check_output([a.compiler,'--version'],text=True),host=list(os.uname()),argv=sys.argv,runner_sha256=digest(__file__),checker_sha256=digest(F.parent/'rvvts_packet.py'),flags_sha256=digest(F/'external-flags.json')))
     ar=F/'ara-vredsum';rv=F/'rvvts-20261089';build=out/'guests';build.mkdir()
@@ -76,7 +89,7 @@ def main():
     for name,elf,vl in [('ara',araelf,1024),('rvvts',rvelse,2048)]:
         ref=None
         for arm in ['Spike','B','M1','M2','BOTH']:
-            d=out/'runs'/name/arm;work=out/'work'/name/arm;(work/'fs').mkdir(parents=True);(work/'cache').mkdir();shutil.copyfile(elf,work/'fs/t.elf')
+            d=out/'runs'/name/arm;work=cache_root/name/arm;(work/'fs').mkdir(parents=True);(work/'cache').mkdir();shutil.copyfile(elf,work/'fs/t.elf')
             if arm=='Spike':cmd=[a.spike,f'--isa=rv32gcv_zvl{vl}b',a.pk,elf]
             else:
                 fs=[f'--vlen={vl}' if x.startswith('--vlen=') else x for x in flags[arm]]

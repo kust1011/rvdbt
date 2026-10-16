@@ -256,7 +256,12 @@ void QRegAlloc::EmitSpill(RTrack *v)
 	}
 	auto preg = MakePhysOperand(v->cls, v->type, v->p);
 	qb.Create_mov(qir::VOperand::MakeSlot(v->is_global, v->type, v->spill_offs), preg);
-	dbt::config::g_spill_emit++; dbt::config::g_spill_store++; if (v->is_global) dbt::config::g_spill_global++; else dbt::config::g_spill_local++; // diag-only
+#if RVDBT_RA_STATS
+	++dbt::config::g_spill_emit;
+	++dbt::config::g_spill_store;
+	if (v->is_global) ++dbt::config::g_spill_global;
+	else ++dbt::config::g_spill_local;
+#endif
 }
 
 void QRegAlloc::EmitFill(RTrack *v)
@@ -264,7 +269,12 @@ void QRegAlloc::EmitFill(RTrack *v)
 	assert(v->spill_offs != RTrack::NO_SPILL);
 	auto preg = MakePhysOperand(v->cls, v->type, v->p);
 	qb.Create_mov(preg, qir::VOperand::MakeSlot(v->is_global, v->type, v->spill_offs));
-	dbt::config::g_spill_emit++; dbt::config::g_spill_fill++; if (v->is_global) dbt::config::g_spill_global++; else dbt::config::g_spill_local++; // diag-only
+#if RVDBT_RA_STATS
+	++dbt::config::g_spill_emit;
+	++dbt::config::g_spill_fill;
+	if (v->is_global) ++dbt::config::g_spill_global;
+	else ++dbt::config::g_spill_local;
+#endif
 }
 
 void QRegAlloc::EmitMov(qir::VOperand dst, qir::VOperand src)
@@ -325,9 +335,9 @@ void QRegAlloc::Spill(RTrack *v)
 		RefuseInsideChunkGroup("vector spill");
 	}
 	// A retired value has no reachable consumer left in the region, so storing it would write
-	// bytes nothing can load -- and, because AllocFrameSlot is a bump pointer with no free list,
-	// that store would permanently own 64 of the 1024-byte frame.  Drop it instead: no `mov` is
-	// emitted, no slot is taken, and Release below turns the track DEAD rather than MEM.
+	// bytes nothing can load and needlessly occupy a width-sized frame slot. Drop it instead:
+	// no `mov` is emitted, no new slot is taken, and Release below turns the track DEAD rather
+	// than MEM, returning any existing slot to the size-bucket free list.
 	if (!v->retired) {
 		SyncSpill(v);
 	}
@@ -806,10 +816,9 @@ void QRegAlloc::RegionBoundary()
 // a mask bit there means "GPR n", and reading it as "zmm n" would be nonsense.
 //
 // Substituting VPR_POOL wholesale is only sound for an op whose constraint is "any register of the
-// operand's own class".  Verify that rather than assume it: today the only op that can carry a
-// vector operand is `mov` (CT r_ri, cr == GPR_ALL), emitted by spill/fill/copy.  A future
-// constrained vector op must gain a real per-class constraint table instead of silently
-// inheriting this one, and until it does it fails loudly here.
+// operand's own class". Copies, spills/fills and typed vector arithmetic use this unconstrained
+// mask. Any vector operand requiring a narrower mask needs a per-class constraint table;
+// until then it fails loudly here rather than interpreting GPR mask bits as VPR constraints.
 static RegMask VPRConstraint(RAOpCt const &ct)
 {
 	if (ct.cr.GetData() != ArchTraits::GPR_ALL.GetData()) {
