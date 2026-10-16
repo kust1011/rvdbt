@@ -167,11 +167,14 @@ counter-off profile have distinct identities; do not relabel one as another.
 
 The measured ordinary key/receipt recount and external/focused/sequence joins
 are complete in [this run's result](rvv-validation/delivery-task182/MEASURED_D252_RESULT.json).
-Remaining delivery gates are the bundle's final read-only verifier review,
-publication/license clearance and final review of the explicit source diff.
+The private bundle's final read-only verifier passed against its existing seal
+without replacing data goldens or its sealed driver. Source diff review is
+complete: production/archive correspondence and subsequent maintenance were
+reviewed separately and published in `2c7464f`. Bundle publication/license
+clearance remains separate.
 The two `MEASURED_D252_*` result files in `docs/rvv-validation/delivery-task182/`
-are compact result staging candidates, separate from runtime changes and raw.
-None of these gates requires a new performance run.
+are published compact results, separate from runtime changes and raw.
+No new performance run is required for bundle publication clearance.
 
 ### Retained Candidate Test Repairs
 

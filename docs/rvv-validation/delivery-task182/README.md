@@ -37,6 +37,15 @@ functional replay left frequency/cpuset settings unchanged. These finite inputs
 do not establish complete conformance, intermediate/access state or handler
 restart. Historical results below retain their original identities.
 
+The complete selected ordinary input/reference bundle is prepared privately as
+`f3-local-bundle-20261016`; its final read-only verifier passed against the
+existing seal (no regenerated goldens or new guest calls). Mixed-license and
+generated-data grants remain unresolved for public distribution. Use the
+[portable entry](../portable-external.md#retained-directed-corpus) with the
+bundle's additive `scripts/run_rvv_retained_audited.py` for corrected
+module-binding checks. Keep `VERIFIER_UPDATE.json` and the unchanged original
+seal together; the historical sealed driver is not the audited entry.
+
 ## Historical Complete Replay
 
 The [fixed192 replay](../final-task197/README.md) is complete and independently

@@ -220,6 +220,22 @@ completed with an actual full key/receipt recount. The bundle's separate one-uni
 relocation pilot made four calls / 268 checks outside the original host paths;
 it is not a second full native replay. Publication still needs mixed-license and
 generated-data permission clearance, with full metadata/checksum verification.
+The final private-bundle verifier passed under Python `-O` against the existing
+seal, with five corruption/missing/invariance tooling tests; this is integrity
+checking, not more ISA execution. Its sealed original driver is unchanged.
+The separate `VERIFIER_UPDATE.json` identifies the corrected verifier and
+additive `scripts/run_rvv_retained_audited.py`; retain that amendment and the
+original seal together. For a received bundle, set `B` to its extraction root:
+
+```sh
+python3 "$B/scripts/run_rvv_retained_audited.py" preflight \
+  --index "$B/metadata/forms.json.gz" \
+  --raw-root "$B/data" --reference-root "$B/data"
+```
+
+Use that same audited driver for `run`, `campaign` and `audit`, with the DUT,
+output/cache options above; the checkout entry remains `scripts/run_rvv_retained.py`.
+Do not use the historical sealed driver's audit or regenerate baselines.
 This adapter covers ordinary directed units,
 not the historical focused denials, external suites or sequence supplements.
 

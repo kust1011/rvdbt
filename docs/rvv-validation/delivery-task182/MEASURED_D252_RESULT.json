@@ -1687,6 +1687,34 @@
     },
     "environment_disposition": "unchanged: no global frequency/cpuset reservation was altered by functional replay"
   },
+  "data_bundle": {
+    "name": "f3-local-bundle-20261016",
+    "status": "LOCAL_READY_PRIVATE_NOT_PUBLISHED",
+    "verification": "PASS_READ_ONLY_EXISTING_SEAL",
+    "original_seal_sha256": "190668df980ae7c9db412881b90e81ef85dd7092a51baad5c2773738f2bfb212",
+    "full_read_verifier_sha256": "73806df049b009ee3a1e019bf7f445ed5b76e00644623124dee13502d38cedd1",
+    "forms": 595,
+    "entries": 102,
+    "units": 95242,
+    "accepted_cases": 3017262,
+    "new_guest_calls": 0,
+    "new_reference_calls": 0,
+    "data_goldens_regenerated": false,
+    "sealed_driver_replaced": false,
+    "audited_driver_amendment": {
+      "status": "PASS_ADDITIVE_AUDITED_DRIVER",
+      "entry": "scripts/run_rvv_retained_audited.py",
+      "driver_sha256": "528722f9ccc0e92c7bd784dd2e34492adad742c290220a5b032b0e2d8eceddaf",
+      "verifier_sha256": "492191f0ccb2e0a41d4504066d42d87f57f099b9b0df1eaa150d6ececf1440be",
+      "amendment": "VERIFIER_UPDATE.json",
+      "amendment_sha256": "88e7adb38c25f7ab0bd562a95e756f719eda3d7fdb6932cf4f77bf661be5e354",
+      "receipt_sha256": "12bec8db6696eb591fc508ede264db001df9ac201f1db846005c8004be6209e4",
+      "tool_tests": 13,
+      "full_bundle_body_reads": 0,
+      "dut_calls": 0
+    },
+    "limits": "Integrity against supplied seal, not an independent signature. Additive audited driver and verifier are identified separately; original seal/driver and prior full-read receipt remain unchanged. Publication awaits license/data grants."
+  },
   "configuration_boundary": "Same d252/79d0 executable/library as timing; ordinary correctness hit-counter/route-census/stats=1 and M1/BOTH frame-census=1, while formal timing disables these diagnostics. Supplements retain their actual recorded configurations separately, including sequence audit diagnostics; absent flags are not treated as explicit zero. Not identical runtime flags.",
   "scope": "Finite original selected inputs and original independent oracle/predicates; no complete RVV conformance or full intermediate/access/restart proof. External calls are classifier outcomes, not an inferred embedded assertion total. Failed controls and scoped results are separate from positives. No full raw rehash."
 }
