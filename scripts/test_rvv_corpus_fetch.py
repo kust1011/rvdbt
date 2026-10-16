@@ -114,8 +114,11 @@ class AcquisitionTests(unittest.TestCase):
         path.unlink()
         response = io.BytesIO(payload)
         response.geturl = lambda: 'https://example.invalid/tests.tar.gz'
-        with mock.patch.object(fetch.urllib.request, 'urlopen', return_value=response):
+        with mock.patch.object(fetch.urllib.request, 'urlopen', return_value=response) as opened:
             self.assertEqual(fetch.fetch(manifest['archives'][0], self.cache).read_bytes(), payload)
+            request = opened.call_args.args[0]
+            self.assertEqual(request.full_url, manifest['archives'][0]['url'])
+            self.assertEqual(request.get_header('User-agent'), 'rvdbt-corpus-fetch/1.0')
 
     def test_bad_download_not_published_to_cache(self):
         manifest = self.manifest()

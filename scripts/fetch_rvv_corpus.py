@@ -62,7 +62,8 @@ def fetch(part, cache):
     try:
         total = 0
         h = hashlib.sha256()
-        with os.fdopen(fd, 'wb') as out, urllib.request.urlopen(part['url'], timeout=120) as response:
+        request = urllib.request.Request(part['url'], headers={'User-Agent': 'rvdbt-corpus-fetch/1.0'})
+        with os.fdopen(fd, 'wb') as out, urllib.request.urlopen(request, timeout=120) as response:
             if urllib.parse.urlsplit(response.geturl()).scheme != 'https':
                 raise ValueError('download redirected outside HTTPS')
             while True:
