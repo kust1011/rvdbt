@@ -24,6 +24,8 @@ def require_single_execution(frame_count,tb_count):
 
 
 def main(argv=None):
+ if not __debug__:
+  raise RuntimeError('admission audit requires assertions; run without -O')
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--results',type=Path,required=True);p.add_argument('--source',type=Path,required=True);a=p.parse_args(argv);rows=[]
  for arm in ['M1','BOTH']:
   d=a.results/'runs/rvvts'/arm;text=(d/'stderr').read_text()

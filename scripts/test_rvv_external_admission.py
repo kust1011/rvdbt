@@ -1,4 +1,7 @@
 """Diagnostic-receipt controls only; no synthetic ISA oracle or guest execution."""
+from pathlib import Path
+import subprocess
+import sys
 import unittest
 
 from audit_rvv_external_admission import require_single_execution, target_frame
@@ -12,6 +15,13 @@ RVV_RUN_FRAME 000125a0,1,4,4,1
 
 
 class AdmissionReceiptTests(unittest.TestCase):
+    def test_optimized_mode_rejected_before_argument_processing(self):
+        script = Path(__file__).with_name('audit_rvv_external_admission.py')
+        result = subprocess.run([sys.executable, '-B', '-O', str(script), '--help'],
+                                capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('admission audit requires assertions; run without -O', result.stderr)
+
     def test_global_fallbacks_preserved_not_target_failure(self):
         form, frame, fallbacks = target_frame(TEXT)
         self.assertEqual(form[:2], ('000125bc', '000125c8'))
