@@ -65,6 +65,7 @@ public:
 #define OP(name, cls, flags)                                                                                 \
 	void visit_##name(qir::cls *ins)                                                                     \
 	{                                                                                                    \
+		cg->ce->BeforeInstruction(ins); \
 		cg->ce->Emit_##name(ins);                                                                    \
 	}
 	QIR_OPS_LIST(OP)

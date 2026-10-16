@@ -641,6 +641,18 @@ inline bool memory_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
 	return true;
 }
 
+// A register-slot suffix is contiguous in guest byte order, including RV32
+// wrap. FirstDenied walks pages in that same order. A denial inside an element
+// excludes the entire element, exactly as the per-element permission query did.
+// Callers bound count*eew by one register slot (at most VLEN_MAX_BYTES).
+inline u32 unit_stride_permitted(u32 address, u32 eew, u32 count, bool store,
+                                 u32 &denied)
+{
+	if (mmu::FirstDenied(address, count * eew, store, denied))
+		return (u32)(denied - address) / eew;
+	return count;
+}
+
 inline bool unit_stride_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
                                 u32 vlen, u32 vl, u32 eew, bool vm, bool store,
                                 u32 &denied)
@@ -657,9 +669,8 @@ inline bool unit_stride_checked(VectorState &vs, u32 reg, u8 *vmem, u32 base,
 	u32 const per_reg = vlen / (8 * eew);
 	for (u32 e = vs.vstart; e < vl;) {
 		u32 const end = std::min(vl, e + per_reg - e % per_reg);
-		u32 count = 0;
-		while (e + count < end &&
-		       !mmu::FirstDenied(base + (e + count) * eew, eew, store, denied)) ++count;
+		u32 const count = unit_stride_permitted(base + e * eew, eew, end - e,
+		                                         store, denied);
 		vs.vstart = e;
 		if (count) {
 			u32 completed;

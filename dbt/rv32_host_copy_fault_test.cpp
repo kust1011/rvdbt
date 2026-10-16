@@ -16,13 +16,18 @@ extern "C" char rvv_bulk_read_pc_byte[], rvv_bulk_write_pc_byte[];
 extern "C" char rvv_bulk_read_pc_word[], rvv_bulk_write_pc_word[];
 extern "C" char rvv_bulk_read_pc_dword[], rvv_bulk_write_pc_dword[];
 extern "C" char rvv_bulk_read_pc_qword[], rvv_bulk_write_pc_qword[];
+#define UNROLL_DECL(n) \
+extern "C" char rvv_bulk_read_pc_##n##_0[], rvv_bulk_read_pc_##n##_1[], rvv_bulk_read_pc_##n##_2[], rvv_bulk_read_pc_##n##_3[]; \
+extern "C" char rvv_bulk_write_pc_##n##_0[], rvv_bulk_write_pc_##n##_1[], rvv_bulk_write_pc_##n##_2[], rvv_bulk_write_pc_##n##_3[];
+UNROLL_DECL(byte) UNROLL_DECL(word) UNROLL_DECL(dword) UNROLL_DECL(qword)
+#undef UNROLL_DECL
 static volatile sig_atomic_t probe_width, probe_store, probe_count, probe_errors, probe_bulk;
 static void width_callback(int sig, siginfo_t *info, void *frame)
 {
  auto *uc=(ucontext_t*)frame;
  if(probe_bulk) {
-  char *reads[]={rvv_bulk_read_pc_byte,rvv_bulk_read_pc_word,rvv_bulk_read_pc_dword,rvv_bulk_read_pc_qword};
-  char *writes[]={rvv_bulk_write_pc_byte,rvv_bulk_write_pc_word,rvv_bulk_write_pc_dword,rvv_bulk_write_pc_qword};
+  char *reads[]={rvv_bulk_read_pc_byte_3,rvv_bulk_read_pc_word_3,rvv_bulk_read_pc_dword_3,rvv_bulk_read_pc_qword_3};
+  char *writes[]={rvv_bulk_write_pc_byte_3,rvv_bulk_write_pc_word_3,rvv_bulk_write_pc_dword_3,rvv_bulk_write_pc_qword_3};
   unsigned idx=probe_bulk==8?3:probe_bulk==4?2:probe_bulk==2?1:0;
   if((uptr)uc->uc_mcontext.gregs[REG_RIP]!=(uptr)(probe_store?writes[idx]:reads[idx]) ||
      uc->uc_mcontext.gregs[REG_R8]!=3) ++probe_errors;
@@ -34,6 +39,11 @@ static void width_callback(int sig, siginfo_t *info, void *frame)
   if(rvv_host_copy::HandleSignal(sig,info,&copy)) ++probe_errors;
   copy=*uc;copy.uc_mcontext.gregs[REG_RIP]=(greg_t)(probe_store?reads[idx]:writes[idx]);
   if(rvv_host_copy::HandleSignal(sig,info,&copy)) ++probe_errors;
+  char *read_lane2[]={rvv_bulk_read_pc_byte_2,rvv_bulk_read_pc_word_2,rvv_bulk_read_pc_dword_2,rvv_bulk_read_pc_qword_2};
+  char *write_lane2[]={rvv_bulk_write_pc_byte_2,rvv_bulk_write_pc_word_2,rvv_bulk_write_pc_dword_2,rvv_bulk_write_pc_qword_2};
+  copy=*uc;copy.uc_mcontext.gregs[REG_RIP]=(greg_t)(probe_store?write_lane2[idx]:read_lane2[idx]);
+  if(rvv_host_copy::HandleSignal(sig,info,&copy)) ++probe_errors;
+
  }
  if(probe_width) {
   char *reads[]={rvv_copy_read_pc,rvv_copy_read_pc_word,rvv_copy_read_pc_dword,rvv_copy_read_pc_qword};
@@ -118,6 +128,37 @@ static void widths()
  ::munmap(base,space);
 }
 
+// Independent byte patterns and actual faults cover all four unrolled PCs,
+// subsequent groups and the scalar tail. No DUT-derived expected snapshots.
+static void unrolled_bulk()
+{
+ for (u32 width : {1u,2u,4u,8u}) for (bool store : {false,true}) {
+  check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE)!=MAP_FAILED,"unrolled normal map");
+  auto *memory=(u8*)mmu::g2h(data);
+  for(u32 count=0;count<=17;++count) {
+   memset(memory,0x3a,8192);u8 elements[160];memset(elements,0xc7,sizeof(elements));
+   u32 completed=99,denied=99;
+   check(rvv_host_copy::CopyElements(elements,(u8*)mmu::g2h(0),data,width,count,store,completed,denied) && completed==count,"unrolled normal and tail frontier");
+   for(u32 b=0;b<160;++b) {
+    check(elements[b]==(!store && b<count*width?0x3a:0xc7),"unrolled bounded destination");
+    check(memory[b]==(store && b<count*width?0xc7:0x3a),"unrolled bounded store");
+   }
+  }
+  for(bool bus:{false,true}) for(u32 prefix=0;prefix<=9;++prefix) {
+   int fd=-1;
+   if(bus) {FILE *file=tmpfile();check(file!=nullptr,"unrolled backing file");fd=dup(fileno(file));fclose(file);check(fd>=0 && ftruncate(fd,8192)==0,"unrolled backing length");}
+   check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_FIXED|(bus?0:MAP_ANONYMOUS),fd)!=MAP_FAILED,"unrolled fault map");
+   memory=(u8*)mmu::g2h(data);memset(memory,0x3a,4096);
+   if(bus){check(ftruncate(fd,4096)==0,"unrolled real truncate");close(fd);}
+   else check(::mprotect(memory+4096,4096,PROT_NONE)==0,"unrolled real protection");
+   u8 elements[160];memset(elements,0xc7,sizeof(elements));u32 completed=99,denied=99;
+   check(!rvv_host_copy::CopyElements(elements,(u8*)mmu::g2h(0),data+4096-prefix*width,width,prefix+1,store,completed,denied) && completed==prefix && denied==data+4096,"unrolled every fault frontier");
+   check(rvv_host_copy::LastFault().signal==(bus?SIGBUS:SIGSEGV),"unrolled signal kind");
+   for(u32 b=0;b<160;++b)check(elements[b]==(!store && b<prefix*width?0x3a:0xc7),"unrolled failed element never published");
+   for(u32 b=0;b<prefix*width;++b)check(memory[4096-prefix*width+b]==(store?0xc7:0x3a),"unrolled completed stores retained");
+  }
+ }
+}
 static void bulk()
 {
  for (u32 width : {1u,2u,4u,8u}) for (bool store : {false,true}) for (bool bus : {false,true}) {
@@ -160,6 +201,47 @@ static void bulk()
    check(vs.elem_ptr(8,e,width,128)[b]==(!store&&e>=1&&e<3?0x3a:0xad),
          "checked bulk prefix completed suffix and fault publication");
  }
+}
+
+// Compare the page predicate with the original element enumeration AND a
+// byte oracle derived from the fixture permissions, never from DUT output.
+static void permission_prefix()
+{
+ unsigned cases=0;
+ auto compare=[&](u32 address,u32 width,u32 count,bool store,auto allowed) {
+  u32 expected=count, expected_denied=0xdeadbeef;
+  for(u32 e=0;e<count;++e) {
+   bool stop=false;
+   for(u32 b=0;b<width;++b)if(!allowed((u32)(address+e*width+b),store)) {
+    expected=e;expected_denied=address+e*width+b;stop=true;break;
+   }
+   if(stop)break;
+  }
+  u32 old_denied=0xdeadbeef,old_count=0;
+  while(old_count<count && !mmu::FirstDenied(address+old_count*width,width,store,old_denied))++old_count;
+  u32 denied=0xdeadbeef;
+  u32 actual=rv32::rvv_ref::unit_stride_permitted(address,width,count,store,denied);
+  check(old_count==expected && old_denied==expected_denied,"original enumeration matches fixture byte oracle");
+  check(actual==expected && denied==expected_denied,"page prefix exact count and first denied byte");
+  ++cases;
+ };
+ for(int first:{PROT_NONE,PROT_READ,PROT_WRITE,PROT_READ|PROT_WRITE})
+ for(int second:{PROT_NONE,PROT_READ,PROT_WRITE,PROT_READ|PROT_WRITE}) {
+  check(mmu::mmap(data,4096,first)!=MAP_FAILED && mmu::mmap(data+4096,4096,second)!=MAP_FAILED,"predicate permission pair");
+  auto allowed=[&](u32 a,bool store) {return ((a<data+4096?first:second)&(store?PROT_WRITE:PROT_READ))!=0;};
+  for(u32 width:{1u,2u,4u,8u})for(bool store:{false,true})
+  for(u32 offset=0;offset<4096;++offset)for(u32 count:{0u,1u,3u,512/width})
+   compare(data+offset,width,count,store,allowed);
+ }
+ for(int prot:{PROT_NONE,PROT_READ,PROT_WRITE,PROT_READ|PROT_WRITE}) {
+  check(mmu::mmap(0xfffff000u,4096,prot)!=MAP_FAILED,"predicate high RV32 page");
+  auto allowed=[&](u32 a,bool store) {return a>=0xfffff000u && (prot&(store?PROT_WRITE:PROT_READ));};
+  for(u32 width:{1u,2u,4u,8u})for(bool store:{false,true})
+  for(u32 offset=4096-520;offset<4096;++offset)for(u32 count:{0u,1u,3u,512/width})
+   compare(0xfffff000u+offset,width,count,store,allowed);
+ }
+ check(mmu::munmap(0xfffff000u,4096)==0,"predicate high page cleanup");
+ printf("PERMISSION_PREFIX_PASS cases=%u byte_oracle_and_original_enumeration\n",cases);
 }
 
 static void filters()
@@ -302,7 +384,7 @@ int main()
  config::vlen_bits=128;config::rvv_lowering=0;config::rvv_verify=false;
  check(mmu::mmap(pc&~4095u,4096,PROT_READ|PROT_EXEC,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"delivery code mapping");
  check(mmu::mmap(0x25000000,32768,PROT_READ|PROT_WRITE,MAP_FIXED|MAP_PRIVATE|MAP_ANON)!=MAP_FAILED,"delivery stack mapping");
- filters();widths();bulk();
+ permission_prefix();filters();widths();bulk();unrolled_bulk();
  for(bool bus:{false,true})for(bool store:{false,true})for(bool split:{false,true})helper(s,store,bus,split);
  segment(s);fof(s,data+4092);fof(s,data+4096);threads();
  // An unrelated real host fault must retain fatal handling, not produce a captured event.

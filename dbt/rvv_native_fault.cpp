@@ -25,6 +25,17 @@ static thread_local std::atomic<u32> element __attribute__((tls_model("initial-e
 static thread_local volatile sig_atomic_t fault_signal __attribute__((tls_model("initial-exec")));
 static thread_local volatile sig_atomic_t fault_code __attribute__((tls_model("initial-exec")));
 
+PublicationOffsets GetPublicationOffsets() {
+    static_assert(sizeof(owner) == sizeof(uptr) && alignof(decltype(owner)) >= alignof(uptr));
+    static_assert(sizeof(membase) == sizeof(uptr));
+    auto offset = [](void *slot) {
+        auto const delta = (iptr)slot - (iptr)__builtin_thread_pointer();
+        if (delta != (i32)delta) Panic("native publication TLS offset outside disp32");
+        return (i32)delta;
+    };
+    return {offset(&membase), offset(&owner)};
+}
+
 void Arm(CPUState *state) {
     membase.store((uptr)mmu::base, std::memory_order_relaxed);
     owner.store((uptr)state, std::memory_order_relaxed);
@@ -39,6 +50,8 @@ void Register(std::span<u8> code, std::span<NativeMemorySite const> sites)
             (site.scalar_loop && (site.bytes != site.eew_bytes || site.displacement ||
                 site.address_reg != 7 || site.data_reg != 1 || site.mask_reg != 0xff ||
                 !site.nf || site.nf > 8 || site.field >= site.nf)) ||
+            (site.backing_bus_load && (site.store || site.scalar_loop ||
+                (site.raw & 0x7f) != 7 || ((site.raw >> 20) & 31u) != 0)) ||
             (site.mask_reg == 7 && site.eew_bytes < 4) ||
             (site.mask_reg != 7 && site.mask_reg != 0xff))
             Panic("native fault exit outside code allocation");
@@ -60,7 +73,8 @@ void Clear()
 bool HandleSignal(int signal, siginfo_t const *info, ucontext_t *context)
 {
     // Scalar sites own synchronous SEGV data #PF and BUS backing errors.
-    // Chunk sites retain their existing SEGV-only codec. No CPUState reads here.
+    // Ordinary chunk loads also own synchronous backing #PF/SIGBUS.
+    // Stores and whole-register chunks remain SEGV-only. No CPUState reads here.
     auto const *r = context->uc_mcontext.gregs;
     if (pending || !owner.load(std::memory_order_relaxed) ||
         (uptr)r[REG_R13] != owner.load(std::memory_order_relaxed)) return false;
@@ -71,8 +85,11 @@ bool HandleSignal(int signal, siginfo_t const *info, ucontext_t *context)
         (info->si_code == SEGV_MAPERR || info->si_code == SEGV_ACCERR) &&
         r[REG_TRAPNO] == 14 && (r[REG_ERR] & 4) && !(r[REG_ERR] & ~greg_t(7)) &&
         bool(r[REG_ERR] & 2) == entry->site.store;
-    bool const bus_fault = entry->site.scalar_loop && signal == SIGBUS &&
-        (info->si_code == BUS_ADRERR || info->si_code == BUS_OBJERR);
+    bool const backing_pf = r[REG_TRAPNO] == 14 && (r[REG_ERR] & 4) &&
+        !(r[REG_ERR] & ~greg_t(7)) && bool(r[REG_ERR] & 2) == entry->site.store;
+    bool const bus_fault = signal == SIGBUS &&
+        (info->si_code == BUS_ADRERR || info->si_code == BUS_OBJERR) &&
+        (entry->site.scalar_loop || (entry->site.backing_bus_load && backing_pf));
     if (!page_fault && !bus_fault) return false;
     auto const &site = entry->site;
     uptr const memory = membase.load(std::memory_order_relaxed);

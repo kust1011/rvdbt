@@ -23,6 +23,8 @@ struct NativeMemorySite {
 	// address is live in EDI. Other sites retain their chunk codec.
 	bool scalar_loop{};
 	u8 field{}, nf{1};
+	// Ordinary contiguous load only: cold exit skips faulting-chunk publication.
+	bool backing_bus_load{};
 };
 
 struct CompilerRuntime {

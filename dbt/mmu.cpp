@@ -45,11 +45,14 @@ bool mmu::DetailedMetadataEnabled()
 	return page_details != nullptr;
 }
 
+std::array<u8, (1u << 20)> mmu::native_access_pages{};
+
 void mmu::Init()
 {
 	mapped_pages.reset();
 	ordinary_ram_pages.reset();
 	native_copy_ram_pages.reset();
+	native_access_pages.fill(0);
 	readable_pages.reset();
 	writable_pages.reset();
 	executable_pages.reset();
@@ -131,6 +134,7 @@ void mmu::MarkUnmapped(u32 pvaddr, u32 plen)
 		mapped_pages.reset(p);
 		ordinary_ram_pages.reset(p);
 		native_copy_ram_pages.reset(p);
+		native_access_pages[p] = 0;
 		readable_pages.reset(p);
 		writable_pages.reset(p);
 		executable_pages.reset(p);
@@ -143,6 +147,8 @@ void mmu::MarkReadable(u32 pvaddr, u32 plen, int prot)
 {
 	bool const readable = (prot & PROT_READ) != 0;
 	for (u32 p = pvaddr; p < pvaddr + plen && p < (ASPACE_SIZE >> PAGE_BITS); ++p) {
+		native_access_pages[p] = u8((ordinary_ram_pages[p] && readable ? 1 : 0) |
+		    (native_copy_ram_pages[p] && (prot & PROT_WRITE) ? 2 : 0));
 		writable_pages.set(p, (prot & PROT_WRITE) != 0);
 		executable_pages.set(p, (prot & PROT_EXEC) != 0);
 		if (readable)

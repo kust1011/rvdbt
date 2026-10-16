@@ -164,16 +164,18 @@ struct RVDBT_UTHREAD_ALIGNAS uthread {
 // Tasks115/117/118 append admission stubs to the embedded runtime table. Architectural
 // offsets stay fixed; Task118 moves FP to42280 and CPUStateImpl to42704 bytes. The existing
 // Task131 appends two native-boundary stubs: FP is42296, CPUState42720.
+// Memory span admission appends one slot: FP is42304, CPUState42736;
+// CPUStateImpl remains42720 because its trailing padding absorbs the slot.
 // The layout signature therefore rejects old AOT images instead of executing their
 // unchecked ordinary memory bodies (even if the guest ELF/cache key is unchanged).
 static_assert(sizeof(rv32::CPUStateImpl) == 42720, "CPUStateImpl size changed -- AOT ABI moved");
-static_assert(sizeof(CPUState) == 42720, "CPUState size changed -- AOT ABI moved");
+static_assert(sizeof(CPUState) == 42736, "CPUState size changed -- AOT ABI moved");
 static_assert(alignof(CPUState) == 16, "CPUState's own alignment changed");
 static_assert(sizeof(rv32::VectorState) == 16432, "VectorState size changed -- AOT ABI moved");
 static_assert(sizeof(rv32::FPUState) == 408, "FPUState size changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, vec) == 208, "vec offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, gpr) == 56, "gpr offset changed -- AOT ABI moved");
-static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42296, "fpu offset changed -- AOT ABI moved");
+static_assert(offsetof(rv32::CPUStateImpl, fpu) == 42304, "fpu offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, ip) == 184, "ip offset changed -- AOT ABI moved");
 static_assert(offsetof(rv32::CPUStateImpl, trapno) == 192, "trapno offset changed -- AOT ABI moved");
 #if RVDBT_UTHREAD_PAGE_ALIGN

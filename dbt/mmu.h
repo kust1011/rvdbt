@@ -3,6 +3,7 @@
 #include "dbt/util/allocator.h"
 #include "dbt/util/logger.h"
 #include <algorithm>
+#include <array>
 #include <bitset>
 #include <cstdint>
 #include <memory>
@@ -15,6 +16,9 @@ namespace dbt
 {
 
 struct mmu {
+private:
+	static std::array<u8, (1u << 20)> native_access_pages;
+public:
 	enum class BackingType : u8 { None, Anonymous, File };
 	struct PageInfo {
 		bool mapped{};
@@ -42,6 +46,16 @@ struct mmu {
 	static bool QueryPage(u32 gaddr, PageInfo &out);
 	// Native singleton page-fault ownership excludes truncatable file backing.
 	static bool page_native_copy_ram(u32 address) { return native_copy_ram_pages[address >> PAGE_BITS]; }
+	// Owned ordinary chunk capabilities: page-contained loads can recover
+	// synchronous backing #PF/SIGBUS; stores retain anonymous-only backing.
+	static bool page_native_chunk(u32 address, bool store) {
+		return store ? page_native_copy_ram(address) : page_ordinary_ram(address);
+	}
+	// Stable live bytes for JIT-only single-page admission. Bit 0 permits an
+	// ordinary chunk load, bit 1 an anonymous chunk store. Updated with every successful
+	// mmap/mprotect/munmap; no per-translation permission snapshot. The existing
+	// serialized mapping/execution model is required, as for the bitsets below.
+	static u8 const *NativeAccessPages() { return native_access_pages.data(); }
 	static bool page_ordinary_ram(u32 address) { return ordinary_ram_pages[address >> PAGE_BITS]; }
 	// Admission for unowned host loads: readable anonymous RAM only. Regular
 	// files can SIGBUS despite permission; ordinary_ram includes those files.

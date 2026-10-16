@@ -651,6 +651,10 @@ add_executable(rvv_fp_component_run_test qmc/qcg/rvv_fp_component_run_test.cpp)
 target_include_directories(rvv_fp_component_run_test PUBLIC "${PROJECT_SOURCE_DIR}")
 target_link_libraries(rvv_fp_component_run_test PUBLIC dbtstatic)
 
+add_executable(rvv_fp_environment_adjacency_test qmc/qcg/rvv_fp_environment_adjacency_test.cpp)
+target_include_directories(rvv_fp_environment_adjacency_test PUBLIC "${PROJECT_SOURCE_DIR}")
+target_link_libraries(rvv_fp_environment_adjacency_test PUBLIC dbtstatic)
+
 # P7M-A soft gate: the SAME test source and the SAME translator source, rebuilt with
 # -DRVV_FP_FORCE_SOFT. In that build the exact softfloat core is the reference implementation, so
 # both FP routes must be unreachable -- and therefore no FP run may form. A run substrate that

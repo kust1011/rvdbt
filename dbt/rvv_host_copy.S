@@ -110,6 +110,8 @@ rvv_copy_write_pc_qword:
 .size rvv_copy_write_qword,.-rvv_copy_write_qword
 // R8 is the completed-element frontier at every owned PC. The guest access
 // remains exactly EEW; publication/source PCs are outside callback ownership.
+// Four-element groups reduce branches; indexed host buffers remove one add per
+// element. At every exported guest PC, RDI and R8 still name that exact element.
 .macro BULK name, suffix, size, reg
 .globl rvv_bulk_read_\name
 .hidden rvv_bulk_read_\name
@@ -117,17 +119,34 @@ rvv_copy_write_pc_qword:
 rvv_bulk_read_\name:
     endbr64
     xorl %r8d, %r8d
-.Lread_\name:
+    movl %edx, %r9d
+    andl $-4, %r9d
+    jz .Lread_tail_\name
+.Lread_four_\name:
+.irp lane, 0,1,2,3
+.globl rvv_bulk_read_pc_\name\()_\lane
+.hidden rvv_bulk_read_pc_\name\()_\lane
+rvv_bulk_read_pc_\name\()_\lane:
+    mov\suffix (%rdi), %\reg
+    mov\suffix %\reg, (%rsi,%r8,\size)
+    addq $\size, %rdi
+    incl %r8d
+.endr
+    cmpl %r9d, %r8d
+    jb .Lread_four_\name
+    cmpl %edx, %r8d
+    jae .Lread_done_\name
+.Lread_tail_\name:
 .globl rvv_bulk_read_pc_\name
 .hidden rvv_bulk_read_pc_\name
 rvv_bulk_read_pc_\name:
     mov\suffix (%rdi), %\reg
-    mov\suffix %\reg, (%rsi)
+    mov\suffix %\reg, (%rsi,%r8,\size)
     addq $\size, %rdi
-    addq $\size, %rsi
     incl %r8d
     cmpl %edx, %r8d
-    jb .Lread_\name
+    jb .Lread_tail_\name
+.Lread_done_\name:
     movl $1, %eax
     ret
 .size rvv_bulk_read_\name,.-rvv_bulk_read_\name
@@ -137,17 +156,34 @@ rvv_bulk_read_pc_\name:
 rvv_bulk_write_\name:
     endbr64
     xorl %r8d, %r8d
-.Lwrite_\name:
-    mov\suffix (%rsi), %\reg
+    movl %edx, %r9d
+    andl $-4, %r9d
+    jz .Lwrite_tail_\name
+.Lwrite_four_\name:
+.irp lane, 0,1,2,3
+    mov\suffix (%rsi,%r8,\size), %\reg
+.globl rvv_bulk_write_pc_\name\()_\lane
+.hidden rvv_bulk_write_pc_\name\()_\lane
+rvv_bulk_write_pc_\name\()_\lane:
+    mov\suffix %\reg, (%rdi)
+    addq $\size, %rdi
+    incl %r8d
+.endr
+    cmpl %r9d, %r8d
+    jb .Lwrite_four_\name
+    cmpl %edx, %r8d
+    jae .Lwrite_done_\name
+.Lwrite_tail_\name:
+    mov\suffix (%rsi,%r8,\size), %\reg
 .globl rvv_bulk_write_pc_\name
 .hidden rvv_bulk_write_pc_\name
 rvv_bulk_write_pc_\name:
     mov\suffix %\reg, (%rdi)
     addq $\size, %rdi
-    addq $\size, %rsi
     incl %r8d
     cmpl %edx, %r8d
-    jb .Lwrite_\name
+    jb .Lwrite_tail_\name
+.Lwrite_done_\name:
     movl $1, %eax
     ret
 .size rvv_bulk_write_\name,.-rvv_bulk_write_\name

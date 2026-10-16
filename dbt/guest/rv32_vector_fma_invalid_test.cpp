@@ -107,6 +107,7 @@ void emitted()
 {
   qcg::ArchTraits::init();
   config::rvv_qcg_hit_counter = true;
+  for (bool rne_guard : {false, true})
   for (u32 width : {16u, 32u, 64u})
     for (u32 sew : {4u, 8u})
       for (u32 f6 = 40; f6 < 48; ++f6)
@@ -122,7 +123,10 @@ void emitted()
                 using G = InstRVVTypedChunkBegin::GuardKind;
                 // Both full-VL and runtime active masks enter the
                 // real production frame.
-                if (full)
+                if (rne_guard)
+                  b.Create_rvvtypedchunkbegin(vtype, lanes, 0u, RuntimeStubId::id_rv32_vfma, shared ? 8 : 7,
+                      full ? G::VTypeVlVstartFrmRNE : G::VTypePartialVlVstartFrmRNE);
+                else if (full)
                   b.Create_rvvtypedchunkbegin(vtype, lanes, 0u, RuntimeStubId::id_rv32_vfma, shared ? 8 : 7);
                 else
                   b.Create_rvvtypedchunkbegin(vtype, lanes, 0u, RuntimeStubId::id_rv32_vfma, shared ? 8 : 7,
@@ -179,6 +183,11 @@ void emitted()
                         for (bool invalid : {false, true})
                           for (bool unboxed : {false, true})
                             for (u32 initial : {0u, 1u, 16u, 31u}) {
+                              // Preserve every original dynamic-rounding case. The
+                              // additional guard-proven-RNE arm must be admitted;
+                              // non-RNE and zero-VL fallback cases belong to the
+                              // existing frontend/guard tests.
+                              if (rne_guard && (rm != 0 || (!full && (suppress || prestart)))) continue;
                               CPUState state(nullptr);
                               state.vec.Reset(width * 8);
                               state.vec.vtype = vtype;

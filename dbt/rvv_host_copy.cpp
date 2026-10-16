@@ -23,7 +23,9 @@ extern char rvv_copy_failed[];
 #define BULK_DECL(n) \
 int rvv_bulk_read_##n(void *, void *, u32); \
 int rvv_bulk_write_##n(void *, void *, u32); \
-extern char rvv_bulk_read_pc_##n[], rvv_bulk_write_pc_##n[];
+extern char rvv_bulk_read_pc_##n[], rvv_bulk_write_pc_##n[]; \
+extern char rvv_bulk_read_pc_##n##_0[], rvv_bulk_read_pc_##n##_1[], rvv_bulk_read_pc_##n##_2[], rvv_bulk_read_pc_##n##_3[]; \
+extern char rvv_bulk_write_pc_##n##_0[], rvv_bulk_write_pc_##n##_1[], rvv_bulk_write_pc_##n##_2[], rvv_bulk_write_pc_##n##_3[];
 BULK_DECL(byte) BULK_DECL(word) BULK_DECL(dword) BULK_DECL(qword)
 #undef BULK_DECL
 }
@@ -35,11 +37,13 @@ static thread_local volatile sig_atomic_t signo __attribute__((tls_model("initia
 static thread_local volatile sig_atomic_t code __attribute__((tls_model("initial-exec")));
 static thread_local std::atomic<uptr> expected __attribute__((tls_model("initial-exec")));
 static thread_local std::atomic<uptr> expected_pc __attribute__((tls_model("initial-exec")));
+static thread_local std::atomic<char *const *> bulk_pcs __attribute__((tls_model("initial-exec")));
 static thread_local volatile sig_atomic_t width __attribute__((tls_model("initial-exec")));
 static thread_local volatile sig_atomic_t fault_offset __attribute__((tls_model("initial-exec")));
 static thread_local volatile sig_atomic_t bulk_count __attribute__((tls_model("initial-exec")));
 static thread_local volatile sig_atomic_t bulk_completed __attribute__((tls_model("initial-exec")));
 static_assert(std::atomic<uptr>::is_always_lock_free);
+static_assert(std::atomic<char *const *>::is_always_lock_free);
 void ResetFault() { signo = 0; code = 0; }
 Fault LastFault() { return {signo, code}; }
 
@@ -59,7 +63,14 @@ bool HandleSignal(int signal, siginfo_t const *info, ucontext_t *context)
     uptr const fault = (uptr)info->si_addr;
     // Linux may report any byte of a multi-byte access. Subtraction avoids
     // overflowing an end address. Match this invocation's direction and width.
-    if (pc != expected_pc.load(std::memory_order_relaxed) ||
+    // Match an exact directional PC AND its unrolled lane, never a code range.
+    // The immutable table is published before armed and outlives every call.
+    bool const tail_pc = pc == expected_pc.load(std::memory_order_relaxed) &&
+        (armed != 2 || completed >= (uptr)(bulk_count & ~3));
+    bool const group_pc = armed == 2 &&
+        pc == (uptr)bulk_pcs.load(std::memory_order_relaxed)[completed & 3] &&
+        completed < (uptr)(bulk_count & ~3);
+    if ((!tail_pc && !group_pc) ||
         fault - base >= (uptr)width ||
         (uptr)context->uc_mcontext.gregs[REG_RDI] != base)
         return false;
@@ -128,18 +139,23 @@ bool CopyElements(u8 *elements, u8 *memory, u32 address, u32 bytes, u32 count,
     }
     int (*leaf)(void *, void *, u32);
     char *pc;
+    char *const *pcs;
 #define BULK_SELECT(n) \
     leaf = store ? rvv_bulk_write_##n : rvv_bulk_read_##n; \
-    pc = store ? rvv_bulk_write_pc_##n : rvv_bulk_read_pc_##n
+    pc = store ? rvv_bulk_write_pc_##n : rvv_bulk_read_pc_##n; \
+    static char *const reads[] = {rvv_bulk_read_pc_##n##_0, rvv_bulk_read_pc_##n##_1, rvv_bulk_read_pc_##n##_2, rvv_bulk_read_pc_##n##_3}; \
+    static char *const writes[] = {rvv_bulk_write_pc_##n##_0, rvv_bulk_write_pc_##n##_1, rvv_bulk_write_pc_##n##_2, rvv_bulk_write_pc_##n##_3}; \
+    pcs = store ? writes : reads
     switch (bytes) {
-    case 1: BULK_SELECT(byte); break;
-    case 2: BULK_SELECT(word); break;
-    case 4: BULK_SELECT(dword); break;
-    default: BULK_SELECT(qword); break;
+    case 1: { BULK_SELECT(byte); break; }
+    case 2: { BULK_SELECT(word); break; }
+    case 4: { BULK_SELECT(dword); break; }
+    default: { BULK_SELECT(qword); break; }
     }
 #undef BULK_SELECT
     expected.store((uptr)(memory + address), std::memory_order_relaxed);
     expected_pc.store((uptr)pc, std::memory_order_relaxed);
+    bulk_pcs.store(pcs, std::memory_order_relaxed);
     width = bytes;
     bulk_count = count;
     bulk_completed = 0;

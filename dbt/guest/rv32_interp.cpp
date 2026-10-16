@@ -11,6 +11,7 @@
 #include "dbt/guest/rv32_vector_fast.h"
 #include "dbt/mmu.h"
 #include "dbt/rvv_native_fault.h"
+#include "dbt/guest/rv32_memory_admission.h"
 #include "dbt/config.h"
 #include "dbt/ukernel.h"
 #include <atomic>
@@ -547,14 +548,140 @@ extern "C" u32 qcgstub_rv32_unit_memory_safe(CPUState *s, u32 raw)
 	return !mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied);
 }
 
+// Internal QCG contract: emitted guards have proved vlenb/vtype/vl/vstart
+// and the translation supplies base, active byte count and host chunk size.
+// No guest access; permissions/backing remain live at every instruction.
+extern "C" u32 qcgstub_rv32_native_memory_span(CPUState *s, u32 base, u32 bytes,
+                                             u32 chunk, u32 store)
+{
+	if ((u64)base + bytes > mmu::ASPACE_SIZE) return 0;
+	u32 const first_page_bytes = mmu::PAGE_SIZE - (base & (mmu::PAGE_SIZE - 1));
+	if (bytes > first_page_bytes && (base & (chunk - 1))) return 0;
+	for (u32 address = base, left = bytes; left;) {
+		u32 const step = std::min(left, u32(mmu::PAGE_SIZE) - (address & u32(mmu::PAGE_SIZE - 1)));
+		u32 denied;
+		if (!mmu::page_native_chunk(address, store) || mmu::FirstDenied(address, step, store, denied)) return 0;
+		address += step;
+		left -= step;
+	}
+	rvv_native_fault::Arm(s);
+	return 1;
+}
+
 // Only annotated ordinary/whole-register singleton QCG producers invoke this admission.
 // Cross-page active chunks use the checked element helper BEFORE any SIMD body.
 extern "C" u32 qcgstub_rv32_scalar_memory_safe(CPUState *, u32);
+// Owned ordinary affine singleton contract. Producer guards prove geometry and
+// legality. A nonwrapping page envelope is a sufficient superset proof,
+// including masked accesses; failure keeps exact live active-field enumeration.
+// One algorithm specializes the established nf1/unmasked shape at compile time.
+// No guest access or cached permission; Arm remains instruction-local.
+template<bool SingleUnmasked>
+static NOINLINE u32 affine_memory_tail(CPUState *s, u32 base, u32 stride,
+                                      u32 eew, u32 store, u32 shape)
+{
+	u32 const start = s->vec.vstart, vl = s->vec.vl;
+	u32 const nf = SingleUnmasked ? 1u : memory_admission::fields(shape);
+	bool const masked = !SingleUnmasked && memory_admission::masked(shape);
+	if (start < vl) {
+		i64 const step = (i32)stride;
+		i64 const first = (i64)base + (i64)start * step;
+		i64 const last = (i64)base + (i64)(vl - 1u) * step;
+		i64 const low = std::min(first, last), high = std::max(first, last) + nf * eew - 1u;
+		if (low >= 0 && high < (i64)mmu::ASPACE_SIZE &&
+		           ((base | stride) & (eew - 1u)) == 0) {
+			// EEW is a producer-proven power of two dividing PAGE_SIZE.
+			// Aligned base/stride and f*EEW align every field, so no field
+			// can split a page. The envelope may include inactive holes.
+			u32 const first_page = (u32)low >> mmu::PAGE_BITS;
+			u32 const last_page = (u32)high >> mmu::PAGE_BITS;
+			// Bound speculative work by exact geometry, never by a workload
+			// threshold. Sparse huge strides must not scan their whole span.
+			if ((u64)last_page - first_page + 1u <= (u64)(vl - start) * nf) {
+				bool safe = true;
+				for (u32 page = first_page; page <= last_page; ++page) {
+					u32 const address = page << mmu::PAGE_BITS;
+					u32 denied;
+					if (!mmu::page_ordinary_ram(address) ||
+					    mmu::FirstDenied(address, 1, store, denied)) {
+						safe = false;
+						break;
+					}
+				}
+				if (safe) {
+					rvv_native_fault::Arm(s);
+					return 1;
+				}
+				// Failed superset proof is not a fault: even unmasked sparse
+				// strides can skip forbidden pages. Keep exact enumeration.
+			}
+		}
+	}
+	for (u32 e = start; e < vl; ++e) {
+		if (masked && !s->vec.mask_get(0, e)) continue;
+		for (u32 f = 0; f < nf; ++f) {
+			u32 const address = base + e * stride + f * eew;
+			u32 denied;
+			if (!mmu::page_ordinary_ram(address) ||
+			    (address & (mmu::PAGE_SIZE - 1)) + eew > mmu::PAGE_SIZE ||
+			    mmu::FirstDenied(address, eew, store, denied)) return 0;
+		}
+	}
+	rvv_native_fault::Arm(s);
+	return 1;
+}
+
+template<bool SingleUnmasked>
+static inline u32 affine_memory_span(CPUState *s, u32 base, u32 stride,
+                                    u32 eew, u32 store, u32 shape)
+{
+	u32 const start = s->vec.vstart, vl = s->vec.vl;
+	u32 const nf = SingleUnmasked ? 1u : memory_admission::fields(shape);
+	bool const masked = !SingleUnmasked && memory_admission::masked(shape);
+	if (start < vl) {
+		i64 const step = (i32)stride;
+		i64 const first = (i64)base + (i64)start * step;
+		i64 const last = (i64)base + (i64)(vl - 1u) * step;
+		i64 const low = std::min(first, last), high = std::max(first, last) + nf * eew - 1u;
+		if (low >= 0 && high < (i64)mmu::ASPACE_SIZE &&
+		    (low >> mmu::PAGE_BITS) == (high >> mmu::PAGE_BITS)) {
+			u32 denied;
+			if (mmu::page_ordinary_ram((u32)low) &&
+			    !mmu::FirstDenied((u32)low, (u32)(high - low + 1), store, denied)) {
+				rvv_native_fault::Arm(s);
+				return 1;
+			}
+			// An inaccessible inactive field is not an instruction fault.
+			// Only an unmasked envelope denial proves admission must fail.
+			if (!masked) return 0;
+		}
+	}
+	return affine_memory_tail<SingleUnmasked>(s, base, stride, eew, store, shape);
+}
+
+extern "C" u32 qcgstub_rv32_affine_memory_span(CPUState *, u32, u32, u32, u32, u32);
 extern "C" u32 qcgstub_rv32_native_memory_safe(CPUState *s, u32 raw)
 {
+	// Combine descriptor/tag/shape dispatch for the established unmasked nf1
+	// strided shape. The same template owns its envelope and exact semantics.
+	constexpr u32 simple_mask = memory_admission::tag | (7u << 25) | 2u | 4u;
+	if ((raw & simple_mask) == memory_admission::tag)
+		return affine_memory_span<true>(s, s->gpr[(raw >> 15) & 31u],
+		    s->gpr[(raw >> 20) & 31u], memory_admission::eew(raw), raw & 1u, 0);
 	// Private guard-call tag in reserved MEW; architectural/site/helper raw stays
 	// unchanged. Reuse the existing runtime slot to preserve CPUState/AOT layout.
-	if (raw & (1u << 28)) return qcgstub_rv32_scalar_memory_safe(s, raw & ~(1u << 28));
+	if (raw & (1u << 28)) {
+		// The shared descriptor carries only translation-known affine geometry.
+		// Architectural/site/helper raw and fault ownership stay unchanged.
+		if (raw & (1u << 6)) {
+			u32 const eew = memory_admission::eew(raw), shape = memory_admission::shape(raw);
+			u32 const stride = raw & 4u ? memory_admission::fields(shape) * eew
+			                           : s->gpr[(raw >> 20) & 31u];
+			return qcgstub_rv32_affine_memory_span(s, s->gpr[(raw >> 15) & 31u],
+			    stride, eew, raw & 1u, shape);
+		}
+		return qcgstub_rv32_scalar_memory_safe(s, raw & ~(1u << 28));
+	}
 	bool const whole = ((raw >> 20) & 31u) == 8u;
 	if (whole) {
 		u32 const width = (raw >> 12) & 7u;
@@ -564,22 +691,30 @@ extern "C" u32 qcgstub_rv32_native_memory_safe(CPUState *s, u32 raw)
 		    s->vec.vlenb != config::vlen_bits / 8u || s->vec.vstart ||
 		    !whole_reg_group_legal((raw >> 7) & 31u, ((raw >> 29) & 7u) + 1u) ||
 		    (store ? width != 0 : eew_log2_from_width(width) < 0)) return 0;
-	} else if (!qcgstub_rv32_unit_memory_safe(s, raw)) return 0;
+	} else {
+		u32 const width = (raw >> 12) & 7u;
+		if (width != 0 && width != 5 && width != 6 && width != 7) return 0;
+		// This table is generated from vtype_supported/compute_vlmax. Check
+		// high bits before indexing: vill and reserved bits must not alias it.
+		auto const *table = vlmax_table_for(config::vlen_bits);
+		if (!table || s->vec.vlenb != config::vlen_bits / 8u ||
+		    (s->vec.vtype & ~0xffu) || s->vec.vstart) return 0;
+		u32 const vlmax = (*table)[s->vec.vtype];
+		if (!vlmax || s->vec.vl > vlmax) return 0;
+	}
 	u32 const width = (raw >> 12) & 7;
 	u32 const eew = width == 0 ? 1 : 1u << (width - 4);
 	u32 const base = s->gpr[(raw >> 15) & 31];
 	u32 const bytes = whole ? (((raw >> 29) & 7u) + 1u) * s->vec.vlenb : s->vec.vl * eew;
 	if ((u64)base + bytes > mmu::ASPACE_SIZE) return 0;
-	u32 denied;
-	if (whole && mmu::FirstDenied(base, bytes, (raw & 0x7f) == 0x27, denied)) return 0;
-	u32 const chunk = std::min(s->vec.vlenb, u32(RVV_HOST_CHUNK_BITS / 8));
-	for (u32 off = 0; off < bytes; off += chunk) {
-		u32 const active = std::min(chunk, bytes - off);
-		if (((base + off) & (mmu::PAGE_SIZE - 1)) + active > mmu::PAGE_SIZE ||
-		    !mmu::page_native_copy_ram(base + off)) return 0;
+	// Whole-register sites keep their existing SEGV-only backing contract.
+	if (whole) for (u32 off = 0; off < bytes;) {
+		u32 const address = base + off;
+		if (!mmu::page_native_copy_ram(address)) return 0;
+		off += std::min(bytes - off, u32(mmu::PAGE_SIZE) - (address & u32(mmu::PAGE_SIZE - 1)));
 	}
-	rvv_native_fault::Arm(s);
-	return 1;
+	u32 const chunk = std::min(s->vec.vlenb, u32(RVV_HOST_CHUNK_BITS / 8));
+	return qcgstub_rv32_native_memory_span(s, base, bytes, chunk, (raw & 0x7f) == 0x27);
 }
 
 // Family preflight: no guest access/state mutation, before native frame bodies.
@@ -654,6 +789,25 @@ extern "C" u32 qcgstub_rv32_scalar_memory_safe(CPUState *s, u32 raw)
 		}
 	}
 	u32 const stride = mop == 2 ? s->gpr[index] : (whole ? eew : nf * eew);
+	// For unmasked affine accesses, the endpoint envelope includes every field
+	// byte. Signed wide arithmetic proves no RV32 wrap and a single page; a
+	// failed proof retains exact enumeration (including modular addresses).
+	if (vm && !ieew && s->vec.vstart < evl) {
+		i64 const step = mop == 2 ? (i64)(i32)stride : (i64)stride;
+		i64 const base = s->gpr[(raw >> 15) & 31u];
+		i64 const first = base + (i64)s->vec.vstart * step;
+		i64 const last = base + (i64)(evl - 1u) * step;
+		i64 const low = std::min(first, last);
+		i64 const high = std::max(first, last) + (whole ? eew : nf * eew) - 1u;
+		if (low >= 0 && high < (i64)mmu::ASPACE_SIZE &&
+		    (low >> mmu::PAGE_BITS) == (high >> mmu::PAGE_BITS)) {
+			u32 denied;
+			if (!mmu::page_ordinary_ram((u32)low) ||
+			    mmu::FirstDenied((u32)low, (u32)(high - low + 1), store, denied)) return 0;
+			rvv_native_fault::Arm(s);
+			return 1;
+		}
+	}
 	for (u32 e = s->vec.vstart; e < evl; ++e) {
 		if (!vm && !s->vec.mask_get(0, e)) continue;
 		u32 const base = rvv_ref::memory_element_base(s->vec, s->gpr[(raw >> 15) & 31],
@@ -668,6 +822,13 @@ extern "C" u32 qcgstub_rv32_scalar_memory_safe(CPUState *s, u32 raw)
 	}
 	rvv_native_fault::Arm(s);
 	return 1;
+}
+
+extern "C" u32 qcgstub_rv32_affine_memory_span(CPUState *s, u32 base, u32 stride,
+                                             u32 eew, u32 store, u32 shape)
+{
+	if (!shape) return affine_memory_span<true>(s, base, stride, eew, store, 0);
+	return affine_memory_span<false>(s, base, stride, eew, store, shape);
 }
 
 // Mask/whole-register EVL is independent of ordinary SEW/VL geometry.
@@ -765,10 +926,39 @@ HANDLER(vse)
 	s->vec.vstart = 0;
 }
 
+// Keep the guarded setup separate from the general handler's register/shape
+// machinery, and inline the established header-only suffix loop here. The
+// external checked CopyElements leaf remains the same fault owner.
+static __attribute__((noinline, flatten)) void ExecuteGuardedCheckedUnitMemory(CPUState *state, u32 raw)
+{
+	u32 const width = (raw >> 12) & 7u;
+	u32 const eew = width ? 1u << (width - 4) : 1u;
+	bool const store = (raw & 0x7f) == 0x27;
+	u32 denied = 0;
+	if (!rvv_ref::unit_stride_checked(state->vec, (raw >> 7) & 31u, mmu::base,
+	    state->gpr[(raw >> 15) & 31u], state->vec.vlenb * 8u,
+	    state->vec.vl, eew, true, store, denied)) {
+		QueueOrdinaryMemoryFault(state, state->ip, raw, denied, eew, store);
+		FinishHelperMemoryFault(state);
+	}
+	state->ip += 4;
+}
+
 // Selected before any native access when a singleton guard misses. All helper
 // entries now use checked copies, including wholly permission-admitted suffixes.
 void ExecuteCheckedUnitMemory(CPUState *state, u32 raw)
 {
+	// The emitter owns this private ordinary-unit descriptor. It is sent only
+	// from a failed span admission after live geometry guards passed, never
+	// from the shared geometry/vstart/illegal-form rejection label. Keep all
+	// diagnostic handler hooks by routing those invocations through H_vle/vse.
+	bool const guarded = (raw & ((1u << 28) | (1u << 6))) == ((1u << 28) | (1u << 6));
+	if (guarded) raw &= ~((1u << 28) | (1u << 6));
+	if (guarded && !seqtrace::kEnabled && !config::rvv_probe && !config::rvv_census &&
+	    !config::rvv_route_census && !config::rvv_pc_census) {
+		ExecuteGuardedCheckedUnitMemory(state, raw);
+		return;
+	}
 	u32 gip = state->ip;
 	if ((raw & 0x7f) == 0x27) H_vse(state, gip, mmu::base, raw);
 	else H_vle(state, gip, mmu::base, raw);

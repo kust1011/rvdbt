@@ -2,6 +2,10 @@
 #include "dbt/guest/rv32_cpu.h"
 #include "dbt/guest/rv32_frame_semantics.h"
 #include "dbt/execute.h"
+#include "dbt/mmu.h"
+#include "dbt/rvv_native_fault.h"
+#include "dbt/guest/rv32_memory_admission.h"
+#include "dbt/guest/rv32_vector_lower.h"
 
 // Z4B. The two gather-census counters, declared in rv32_cpu.h and defined here -- in the same
 // translation unit as the emitter that bakes their address into generated code, so there is exactly
@@ -1933,6 +1937,72 @@ void QEmit::Emit_rvvdiagchunkend(qir::InstRVVDiagChunkEnd *ins)
 // the typed chunk ops themselves.  `TypedChunkAccount` is called by each typed emitter and
 // Emit_mov Panics while a group is open, which is what turns a future allocator change from a
 // silent fallback-path miscompile into a loud translation failure.
+// A local dominance fact, established only by an executed inline immediate
+// vsetvl. Never inferred from translation hints or from a guard's successful
+// arm: a guard's helper arm would not establish the same fact at the join.
+// Only ordinary singleton unit transfers and typed arithmetic preserve it.
+// Their emitted bodies,
+// admission and checked/general helpers do not write vtype/VL/vlenb; faults
+// leave through the terminal dispatcher, which re-enters at a block label.
+// vstart, addresses, permissions and fault ownership are deliberately excluded.
+void QEmit::BeforeInstruction(qir::Inst *ins)
+{
+	if (rvv_typed_chunk_open) return; // producer-checked unit body, including end
+	switch (ins->GetOpcode()) {
+	case qir::Op::_rvvsetvl:
+		// Emit_rvvsetvl installs the fact after emitting the actual stores.
+		rvv_config_known = false;
+		return;
+	case qir::Op::_rvvtypedchunkbegin: {
+		auto *frame = static_cast<qir::InstRVVTypedChunkBegin *>(ins);
+		bool unit = frame->n_members == 1 && !frame->native_memory_scalar &&
+		    (frame->stub == RuntimeStubId::id_rv32_vle || frame->stub == RuntimeStubId::id_rv32_vse) &&
+		    ((frame->raw >> 20) & 0xfffu) == 0x20u;
+		bool arithmetic = true;
+		for (u8 m = 0; m < frame->n_members; ++m) {
+			u32 raw = frame->n_members == 1 ? frame->raw : frame->run_members[m].raw;
+			// All OP-V arithmetic helpers preserve configuration on normal
+			// return. funct3=7 is vector setup and is explicitly excluded.
+			// Fault-only-first memory (which can trim VL) is not OP-V.
+			if (frame->n_members > 1 && frame->run_members[m].scalar_passthrough) {
+				// EmitRvvRunScalarRaw accepts only addi/add/sub GPR updates.
+				continue;
+			}
+			if ((raw & 0x7fu) != 0x57u || ((raw >> 12) & 7u) == 7u)
+				arithmetic = false;
+		}
+		if (!unit && !arithmetic) rvv_config_known = false;
+		return;
+	}
+	case qir::Op::_mov: {
+		auto dst = static_cast<qir::InstUnop *>(ins)->o(0);
+		// Allocator copies and scalar/IP sync are harmless. Arbitrary state
+		// stores must be disjoint from the complete configuration window.
+		if (dst.IsGSlot()) {
+			u32 lo = offsetof(CPUState, vec) + offsetof(rv32::VectorState, vtype);
+			u32 hi = offsetof(CPUState, vec) + offsetof(rv32::VectorState, vlenb) + sizeof(u32);
+			if (dst.GetSlotOffs() < hi && dst.GetSlotOffs() + qir::VTypeToSize(dst.GetType()) > lo)
+				rvv_config_known = false;
+		}
+		return;
+	}
+	case qir::Op::_add:
+	case qir::Op::_sub:
+	case qir::Op::_and:
+	case qir::Op::_or:
+	case qir::Op::_xor:
+	case qir::Op::_sra:
+	case qir::Op::_srl:
+	case qir::Op::_sll:
+	case qir::Op::_mul:
+		// EmitInstBinop writes only a physical GPR, with no call or branch.
+		return;
+	default:
+		// Includes every branch, runtime vsetvl, CSR write and unknown call.
+		rvv_config_known = false;
+	}
+}
+
 void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 {
 	namespace x86 = asmjit::x86;
@@ -1955,10 +2025,13 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	    ins->guard_kind ==
 		qir::InstRVVTypedChunkBegin::GuardKind::VTypeVlOrPartialVstartBaseLimit;
 	rvv_typed_chunk_open = true;
+	rvv_typed_chunk_frm_rne = false;
 	native_memory_pc = ins->n_members == 1 ? ins->native_memory_pc : qir::RVVRunMember::PC_UNUSED;
 	native_memory_raw = ins->raw;
 	native_memory_scalar = ins->n_members == 1 && ins->native_memory_scalar;
 	native_memory_cold = j.newLabel();
+	native_memory_checked = j.newLabel();
+	native_memory_checked_raw = 0;
 	native_memory_frame_sites = native_memory_sites.size();
 	// Pins remain resident at CallOp. Commit their runtime values unconditionally.
 	if (native_memory_pc != qir::RVVRunMember::PC_UNUSED)
@@ -1985,6 +2058,142 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	rvv_typed_chunk_vl_guarded =
 	    qir::InstRVVTypedChunkBegin::GuardBoundsVlByVlmax(ins->guard_kind);
 
+	// Owned ordinary singleton frames can defer live span admission until the
+	// geometry guards below have passed. Other producers retain generic admission.
+	using Guard = qir::InstRVVTypedChunkBegin::GuardKind;
+	u32 const width = (ins->raw >> 12) & 7u;
+	rv32::VType const memory_vtype{ins->vtype};
+	bool const span_memory = native_memory_pc != qir::RVVRunMember::PC_UNUSED &&
+	    !native_memory_scalar && ins->n_members == 1 &&
+	    (ins->stub == RuntimeStubId::id_rv32_vle || ins->stub == RuntimeStubId::id_rv32_vse) &&
+	    (ins->guard_kind == Guard::VTypeVlVstartBaseLimit ||
+	     ins->guard_kind == Guard::VTypeVlOrPartialVstartBaseLimit) &&
+	    (width == 0 || width == 5 || width == 6 || width == 7) &&
+	    (ins->raw & 0x7fu) == (ins->stub == RuntimeStubId::id_rv32_vse ? 0x27u : 7u) &&
+	    !memory_vtype.vill() && rv32::vtype_supported(memory_vtype, config::vlen_bits) &&
+	    rv32::vlen_supported(config::vlen_bits) &&
+	    rv32::vmemory_registers_legal(memory_vtype, width, 0, (ins->raw >> 7) & 31u,
+	        0, ins->stub == RuntimeStubId::id_rv32_vse, true) &&
+	    ins->vlmax == rv32::compute_vlmax(memory_vtype, config::vlen_bits) &&
+	    ins->base_limit == 0u - config::vlen_bits / 8u &&
+	    ((ins->raw >> 20) & 0xfffu) == 0x20u && // vm=1, unit stride, nf=0, mew=0
+	    ins->base_state_offs == offsetof(CPUState, gpr) + 4u * ((ins->raw >> 15) & 31u);
+	// Private descriptor bits MEW and bit6 are zero in this proven ordinary
+	// opcode. Only a span denial AFTER all geometry/vstart/base guards may
+	// reach this edge. Geometry and illegal-form rejection keep guest raw.
+	if (span_memory) native_memory_checked_raw = ins->raw | (1u << 28) | (1u << 6);
+	// The same owned affine contract covers ordinary unit/strided frames,
+	// masked or segmented. Indexed addresses and special EVL transfers retain
+	// general admission. Translation owns shape/legality; the emitted scalar
+	// body and the consumer both read the live mask/operands and restart state.
+	u32 const mop = (ins->raw >> 26) & 3u, index = (ins->raw >> 20) & 31u;
+	bool const store = (ins->raw & 0x7fu) == 0x27u, vm = ins->raw & (1u << 25);
+	auto const affine_shape = rv32::vseg_shape(width, mop, (ins->raw >> 29) & 7u, memory_vtype);
+	bool const affine_memory = native_memory_pc != qir::RVVRunMember::PC_UNUSED &&
+	    native_memory_scalar && ins->n_members == 1 && ins->guard_kind == Guard::VTypeInteger &&
+	    (mop == 2 || (mop == 0 && index == 0)) && !(ins->raw & (1u << 28)) &&
+	    (ins->raw & 0x7fu) == (store ? 0x27u : 7u) &&
+	    (store ? (ins->stub == RuntimeStubId::id_rv32_vse ||
+	              ins->stub == RuntimeStubId::id_rv32_vsse || ins->stub == RuntimeStubId::id_rv32_vsseg)
+	           : (ins->stub == RuntimeStubId::id_rv32_vle ||
+	              ins->stub == RuntimeStubId::id_rv32_vlse || ins->stub == RuntimeStubId::id_rv32_vlseg)) &&
+	    rv32::vlen_supported(config::vlen_bits) &&
+	    rv32::vtype_supported(memory_vtype, config::vlen_bits) &&
+	    ins->vlmax == rv32::compute_vlmax(memory_vtype, config::vlen_bits) && affine_shape.valid &&
+	    (affine_shape.nf > 1
+	        ? rv32::vseg_registers_legal(affine_shape, (ins->raw >> 7) & 31u, index, !store, vm)
+	        : rv32::vmemory_registers_legal(memory_vtype, width, mop,
+	              (ins->raw >> 7) & 31u, index, store, vm));
+	auto admit_affine = [&] {
+		if (!affine_memory) return;
+		u32 const descriptor = rv32::memory_admission::encode((ins->raw >> 15) & 31u,
+		    index, affine_shape.data_eew, affine_shape.nf, store, !vm, mop == 0);
+		j.mov(x86::rdi, R_STATE);
+		j.mov(x86::esi, descriptor);
+		j.emit(x86::Inst::kIdCall, make_stubcall_target(RuntimeStubId::id_rv32_native_memory_safe));
+		j.test(x86::eax, x86::eax);
+		j.jz(rvv_typed_chunk_fallback);
+	};
+	auto admit_span = [&] {
+		if (!span_memory) return;
+		// The preceding geometry guards prove VL <= vlmax. Use that static
+		// envelope on the common path instead of deriving active bytes again.
+		// At a page edge use the exact inline proof before calling the stub,
+		// so a partial tail does not introduce another admission call.
+		u32 const maximum_bytes = ins->vlmax * (width ? 1u << (width - 4) : 1u);
+		// Absolute process-local metadata/function addresses are JIT-only. The
+		// relocatable route retains the runtime-table span call below. Geometry
+		// and RV32 range guards already passed; a single-page active envelope
+		// cannot split a host chunk. The exact slow path admits zero work
+		// without requiring backing or permission.
+		auto admitted = j.newLabel(), call_arguments = j.newLabel();
+		if (jit_mode) {
+			auto slow = j.newLabel(), exact = j.newLabel(), permission = j.newLabel();
+			j.mov(x86::ecx, x86::dword_ptr(R_STATE, (int32_t)ins->base_state_offs));
+			j.mov(x86::eax, x86::ecx);
+			j.and_(x86::eax, u32(mmu::PAGE_SIZE - 1));
+			if (maximum_bytes > mmu::PAGE_SIZE) {
+				j.jmp(exact);
+			} else {
+				j.cmp(x86::eax, u32(mmu::PAGE_SIZE) - maximum_bytes);
+				j.ja(exact);
+			}
+			j.bind(permission);
+			j.shr(x86::ecx, mmu::PAGE_BITS);
+			j.mov(x86::rax, (uptr)mmu::NativeAccessPages());
+			j.test(x86::byte_ptr(x86::rax, x86::rcx), ins->stub == RuntimeStubId::id_rv32_vse ? 2 : 1);
+			j.jz(slow);
+			// Same two relaxed, aligned x86 stores as Arm(), at the same
+			// admission point. Initial-exec offsets follow the executing thread's
+			// FS, even when translation happened on another thread. Reload the
+			// live base; publish owner LAST. No ownership publication is hoisted.
+			// Relocatable backends and slow admission keep their runtime calls.
+			auto const tls = rvv_native_fault::GetPublicationOffsets();
+			auto base_slot = x86::qword_ptr(tls.membase);
+			auto owner_slot = x86::qword_ptr(tls.owner);
+			base_slot.setSegment(x86::fs);
+			owner_slot.setSegment(x86::fs);
+			j.mov(x86::rax, (uptr)&mmu::base);
+			j.mov(x86::rax, x86::qword_ptr(x86::rax));
+			j.mov(base_slot, x86::rax);
+			j.mov(owner_slot, R_STATE);
+			j.jmp(admitted);
+			j.bind(exact);
+			// ECX still names the live base, EAX its page offset. Exact
+			// containment uses only active bytes, including zero work.
+			j.mov(x86::edx, x86::dword_ptr(R_STATE, vec_off + offsetof(rv32::VectorState, vl)));
+			if (width) j.shl(x86::edx, width - 4);
+			j.add(x86::eax, x86::edx);
+			j.cmp(x86::eax, u32(mmu::PAGE_SIZE));
+			j.ja(call_arguments);
+			j.jmp(permission);
+			j.bind(slow);
+		}
+		// Only an exact page-edge proof or a slow call derives active bytes. It is still
+		// bounded by the same geometry guards on every incoming edge.
+		j.mov(x86::edx, x86::dword_ptr(R_STATE, vec_off + offsetof(rv32::VectorState, vl)));
+		if (width) j.shl(x86::edx, width - 4);
+		j.bind(call_arguments);
+		j.mov(x86::rdi, R_STATE);
+		j.mov(x86::esi, x86::dword_ptr(R_STATE, (int32_t)ins->base_state_offs));
+		j.mov(x86::ecx, std::min(config::vlen_bits / 8u, u32(RVV_HOST_CHUNK_BITS / 8)));
+		j.mov(x86::r8d, ins->stub == RuntimeStubId::id_rv32_vse ? 1 : 0);
+		j.emit(x86::Inst::kIdCall, make_stubcall_target(RuntimeStubId::id_rv32_native_memory_span));
+		j.test(x86::eax, x86::eax);
+		j.jz(native_memory_checked);
+		j.bind(admitted);
+	};
+	// A non-span split frame consumes the VL comparison flags to choose its
+	// partial arm. Retain its complete guard, including that flags producer.
+	bool const reuse_config = (!rvv_typed_chunk_has_partial || span_memory) && rvv_config_known &&
+	    rvv_config_vtype == ins->vtype && rvv_config_vlenb == config::vlen_bits / 8u &&
+	    rvv_config_vlmax <= ins->vlmax;
+	if ((span_memory || affine_memory) && !reuse_config) {
+		j.cmp(x86::dword_ptr(R_STATE, vec_off + offsetof(rv32::VectorState, vlenb)),
+		      config::vlen_bits / 8u);
+		j.jne(rvv_typed_chunk_fallback);
+	}
+
 	// Runs may begin with arithmetic; admit every memory member before any body access.
 	for (u8 member = 0; member < ins->n_members; ++member) {
 		u32 const raw = ins->n_members == 1 ? ins->raw : ins->run_members[member].raw;
@@ -1997,6 +2206,7 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		bool const special_memory =
 		    stub == RuntimeStubId::id_rv32_vlm || stub == RuntimeStubId::id_rv32_vsm ||
 		    stub == RuntimeStubId::id_rv32_vlNre || stub == RuntimeStubId::id_rv32_vsNr;
+		if (span_memory || affine_memory) continue;
 		if (unit_memory || family_memory || special_memory) {
 			// Multi-instruction bodies have no prior-member recovery map. In particular,
 			// component-major ordering and overlapping destinations cannot use the
@@ -2065,7 +2275,7 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vtype)), 0xd9);
 		j.jne(rvv_typed_chunk_fallback);
 		j.bind(vtype_ok);
-	} else {
+	} else if (!reuse_config) {
 		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vtype)),
 		      (int32_t)ins->vtype);
 		j.jne(rvv_typed_chunk_fallback);
@@ -2088,6 +2298,7 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 			j.cmp(x86::dword_ptr(R_STATE,vec_off+offsetof(rv32::VectorState,vstart)),0);
 			j.jne(rvv_typed_chunk_fallback);
 		}
+		admit_affine();
 		if (ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VTypeIntegerTwoArm) {
 			j.jne(rvv_typed_chunk_partial);
 			j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vstart)), 0);
@@ -2124,26 +2335,28 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		}
 		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vstart)), 0);
 		j.jne(rvv_typed_chunk_fallback);
-		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vl)),
-		      (int32_t)ins->vlmax);
-		j.ja(rvv_typed_chunk_fallback);
+		if (!reuse_config) {
+			j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vl)),
+			      (int32_t)ins->vlmax);
+			j.ja(rvv_typed_chunk_fallback);
+		}
+		admit_span();
+		// Calls clobber flags: select the partial arm again from live VL.
+		if (span_memory)
+			j.cmp(x86::dword_ptr(R_STATE, vec_off + offsetof(rv32::VectorState, vl)), (int32_t)ins->vlmax);
 		j.jne(rvv_typed_chunk_partial);
 		return;
 	} else {
-		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vl)),
-		      (int32_t)ins->vlmax);
-		// A13: VTypeVlVstartBaseLimit takes the `jne` arm too (vl == VLMAX exactly); its
-		// extra base-range test is emitted after the vstart check below.
-		// P7M-A: `VTypeVlVstartFrmRNE` deliberately takes the `jne` arm. It is the kind a run
-		// containing BOTH an integer and an FP member gets, and the integer members' host
-		// chunk operations are unmasked and full width, so `vl == VLMAX` is exactly what they
-		// need; only the frm test below is added.
-		if (ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VTypePartialVlVstartFrmRNE ||
-		    ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VTypeFpNoRestart ||
-		    ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VTypePartialVlVstartFrmHost)
-			j.ja(rvv_typed_chunk_fallback);
-		else
-			j.jne(rvv_typed_chunk_fallback);
+		bool const upper_bound = ins->guard_kind == Guard::VTypePartialVlVstartFrmRNE ||
+		    ins->guard_kind == Guard::VTypeFpNoRestart ||
+		    ins->guard_kind == Guard::VTypePartialVlVstartFrmHost;
+		// Inline setup proves an unsigned upper bound, never full-VL equality.
+		if (!upper_bound || !reuse_config) {
+			j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vl)),
+			      (int32_t)ins->vlmax);
+			if (upper_bound) j.ja(rvv_typed_chunk_fallback);
+			else j.jne(rvv_typed_chunk_fallback);
+		}
 	}
 	if (ins->guard_kind != qir::InstRVVTypedChunkBegin::GuardKind::VTypePartialVlVstartFrmHost) {
 		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vstart)), 0);
@@ -2175,6 +2388,7 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 	    ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VTypeVlVstartFrmRNE ||
 	    ins->guard_kind == qir::InstRVVTypedChunkBegin::GuardKind::VTypeVlVstartFrmRNEBaseMask ||
 	    dynamic_falu) {
+		rvv_typed_chunk_frm_rne = true;
 		auto const fcsr_off = (int32_t)offsetof(CPUState, fpu) +
 			(int32_t)offsetof(rv32::FPUState, fcsr);
 		j.test(x86::dword_ptr(R_STATE, fcsr_off), 0xe0);
@@ -2196,6 +2410,7 @@ void QEmit::Emit_rvvtypedchunkbegin(qir::InstRVVTypedChunkBegin *ins)
 		j.cmp(x86::dword_ptr(R_STATE, vec_off + (int32_t)offsetof(rv32::VectorState, vl)), 0);
 		j.je(rvv_typed_chunk_fallback);
 	}
+	admit_span();
 }
 
 // R1A.3b. The join, the hit counter and the ORDERED fallback arm.
@@ -2361,6 +2576,16 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 	EmitRvvActiveChunkCensusAdd(&rv32::g_rvv_chunks_executed, ins->census_prefix_units);
 	j.jmp(rvv_typed_chunk_done);
 
+	if (native_memory_checked_raw) {
+		j.bind(native_memory_checked);
+		j.inc(x86::qword_ptr(R_STATE, (int32_t)offsetof(CPUState, rvv_direct_fallbacks)));
+		EmitRunMemberIp(ins->members[0].pc);
+		j.mov(x86::rdi, R_STATE);
+		j.mov(x86::esi, native_memory_checked_raw);
+		j.emit(x86::Inst::kIdCall, make_stubcall_target(RuntimeStubId::id_rv32_native_memory_fault));
+		j.jmp(rvv_typed_chunk_done);
+	}
+
 	// Fallback: the already-verified helpers, in GUEST ORDER, reached from the guard in begin.
 	// The call boundary was placed before that guard (HAS_CALLS on begin -> QRegAlloc::CallOp),
 	// so every call-clobbered register and every dirty global was dealt with on both paths, and
@@ -2399,6 +2624,7 @@ void QEmit::Emit_rvvtypedchunkend(qir::InstRVVTypedChunkEnd *ins)
 	}
 	j.bind(rvv_typed_chunk_done);
 	rvv_typed_chunk_open = false;
+	rvv_typed_chunk_frm_rne = false;
 	native_memory_pc = qir::RVVRunMember::PC_UNUSED;
 	rvv_typed_chunk_expected = 0;
 	rvv_typed_chunk_seen = 0;
@@ -4551,6 +4777,7 @@ void QEmit::NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
 	native_memory_sites.push_back({(u32)j.offset(), native_memory_pc, native_memory_raw,
 	    disp, base_offs, bytes, eew, ArchTraits::AX, data_reg,
 	    (u8)(active_sew ? 7 : 0xff), store});
+	native_memory_sites.back().backing_bus_load = !whole && !store;
 }
 
 void QEmit::Emit_vchunkload(qir::InstVChunkLoad *ins)
@@ -5225,35 +5452,51 @@ void QEmit::Emit_rvvqcgfpbegin(qir::InstRVVQCGFPBegin *)
 	auto const open = fpu + (int32_t)offsetof(rv32::FPUState, fround_run_open);
 	auto const saved = fpu + (int32_t)offsetof(rv32::FPUState, fround_run_saved_mxcsr);
 	auto const cur = fpu + (int32_t)offsetof(rv32::FPUState, qcg_current_mxcsr);
-	auto fresh = j.newLabel();
+	auto fresh = j.newLabel(), setup = j.newLabel();
 	j.cmp(x86::byte_ptr(R_STATE, open), 0);
 	j.je(fresh);
 	// A preceding scalar instruction may have used an explicit rounding mode.
-	// Fold its exceptions before replacing the host environment with guest frm.
-	EmitCloseRvvFpBracket();
+	// Publish its exceptions before replacing the host environment with guest frm.
+	// The close/open pair restores saved MXCSR only to save that exact value again,
+	// with no intervening guest work or join. Reuse the saved slot instead. Keep
+	// run_open true so asynchronous signal/fault cleanup still owns that original
+	// host environment throughout setup. Rounding and flag clearing below are
+	// mandatory even when the incoming run used the same frm.
+	EmitAccrueRvvFpFlags();
+	j.mov(x86::eax, x86::dword_ptr(R_STATE, saved));
+	j.jmp(setup);
 	j.bind(fresh);
 	j.stmxcsr(x86::dword_ptr(R_STATE, saved));
 	j.mov(x86::eax, x86::dword_ptr(R_STATE, saved));
+	j.bind(setup);
 	// Exceptions clear, gradual underflow, retain exception masks. RVV and MXCSR
 	// encode their rounding modes differently: 0,1,2,3 -> 0,3,1,2.
 	j.and_(x86::eax, ~(0x3fu | 0x6000u | 0x8040u));
-	j.mov(x86::edx, x86::dword_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fcsr)));
-	j.shr(x86::edx, 5); j.and_(x86::edx, 7);
-	// Guards exclude RMM for rounding-sensitive operations. Exact widening and
-	// explicit-rounding conversions can use RNE as a harmless host environment.
-	// Never shift guest-only modes into unrelated MXCSR control bits.
-	auto host_mode = j.newLabel();
-	j.cmp(x86::edx, 4); j.jb(host_mode);
-	j.xor_(x86::edx, x86::edx);
-	j.bind(host_mode);
-	auto mode_ready = j.newLabel(), directed = j.newLabel();
-	j.test(x86::edx, x86::edx); j.jz(mode_ready);
-	j.cmp(x86::edx, 1); j.jne(directed);
-	j.mov(x86::edx, 3); j.jmp(mode_ready);
-	j.bind(directed); j.dec(x86::edx);
-	j.bind(mode_ready); j.shl(x86::edx, 13); j.or_(x86::eax, x86::edx);
+	if (rvv_typed_chunk_open && rvv_typed_chunk_frm_rne) {
+		// The guard dominates this entire typed body and proved frm == RNE.
+		// Only typed operations execute here: none can change frm or call a
+		// helper. Incoming flag accrual ORs only bits 0..4. Clearing RC above
+		// therefore constructs the exact requested host mode.
+		j.mov(x86::dword_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fround_run_rc)), 0);
+	} else {
+		j.mov(x86::edx, x86::dword_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fcsr)));
+		j.shr(x86::edx, 5); j.and_(x86::edx, 7);
+		// Guards exclude RMM for rounding-sensitive operations. Exact widening and
+		// explicit-rounding conversions can use RNE as a harmless host environment.
+		// Never shift guest-only modes into unrelated MXCSR control bits.
+		auto host_mode = j.newLabel();
+		j.cmp(x86::edx, 4); j.jb(host_mode);
+		j.xor_(x86::edx, x86::edx);
+		j.bind(host_mode);
+		auto mode_ready = j.newLabel(), directed = j.newLabel();
+		j.test(x86::edx, x86::edx); j.jz(mode_ready);
+		j.cmp(x86::edx, 1); j.jne(directed);
+		j.mov(x86::edx, 3); j.jmp(mode_ready);
+		j.bind(directed); j.dec(x86::edx);
+		j.bind(mode_ready); j.shl(x86::edx, 13); j.or_(x86::eax, x86::edx);
+		j.mov(x86::dword_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fround_run_rc)), x86::edx);
+	}
 	j.mov(x86::dword_ptr(R_STATE, cur), x86::eax);
-	j.mov(x86::dword_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fround_run_rc)), x86::edx);
 	j.ldmxcsr(x86::dword_ptr(R_STATE, cur));
 	j.mov(x86::byte_ptr(R_STATE, open), 1);
 }
@@ -5566,6 +5809,18 @@ void QEmit::Emit_vchunkfma(qir::InstVChunkFMA *ins)
 	// signalling and signs, and intersecting with kact suppresses inactive lanes.
 	auto product_x = ins->funct6 < 0b101100 ? dold : a;
 	auto classify = [&](x86::Vec x, x86::Gp zero, x86::Gp inf) {
+		if (__builtin_cpu_supports("avx512dq") &&
+		    (chunk_w == 64 || __builtin_cpu_supports("avx512vl"))) {
+			// FPBegin clears DAZ, so subnormals are not classified as zeros.
+			// VFPCLASS does not raise floating-point exceptions, including on sNaN.
+			if (sew == 4) j.vfpclassps(kscr, x, 0x06);
+			else j.vfpclasspd(kscr, x, 0x06);
+			j.kmovw(zero, kscr);
+			if (sew == 4) j.vfpclassps(kscr, x, 0x18);
+			else j.vfpclasspd(kscr, x, 0x18);
+			j.kmovw(inf, kscr);
+			return;
+		}
 		if (sew == 4) {
 			j.vpslld(scratch(), x, 1); j.vpsrld(scratch(), scratch(), 1);
 		} else {
@@ -5920,6 +6175,15 @@ void QEmit::EmitCloseRvvFpBracket()
 	namespace x86 = asmjit::x86;
 	auto const fpu = (int32_t)offsetof(CPUState, fpu);
 	auto const saved = fpu + (int32_t)offsetof(rv32::FPUState, fround_run_saved_mxcsr);
+	EmitAccrueRvvFpFlags();
+	j.ldmxcsr(x86::dword_ptr(R_STATE, saved));
+	j.mov(x86::byte_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fround_run_open)), 0);
+}
+
+void QEmit::EmitAccrueRvvFpFlags()
+{
+	namespace x86 = asmjit::x86;
+	auto const fpu = (int32_t)offsetof(CPUState, fpu);
 	auto const cur = fpu + (int32_t)offsetof(rv32::FPUState, qcg_current_mxcsr);
 	auto const fcsr = fpu + (int32_t)offsetof(rv32::FPUState, fcsr);
 	auto flag = [&](u32 host, u32 guest) {
@@ -5931,8 +6195,6 @@ void QEmit::EmitCloseRvvFpBracket()
 	j.mov(x86::eax, x86::dword_ptr(R_STATE, cur));
 	flag(1u << 0, 0x10); flag(1u << 2, 0x08); flag(1u << 3, 0x04);
 	flag(1u << 4, 0x02); flag(1u << 5, 0x01);
-	j.ldmxcsr(x86::dword_ptr(R_STATE, saved));
-	j.mov(x86::byte_ptr(R_STATE, fpu + (int32_t)offsetof(rv32::FPUState, fround_run_open)), 0);
 }
 
 // T7S direct-QCG vector setup. Ordinary vsetvli and vsetivli forms use this straight-line sequence;
@@ -6096,6 +6358,12 @@ void QEmit::Emit_rvvsetvl(qir::InstRVVSetVL *ins)
 	j.mov(x86::dword_ptr(R_STATE, vstart_off), asmjit::imm(0));
 	if (ins->vlmax)
 		j.mov(x86::dword_ptr(R_STATE, vlenb_off), asmjit::imm(ins->vlenb));
+	// The keep-VL path returned above: its reserved arm does not establish
+	// this configuration. Unsupported immediates likewise establish no fact.
+	rvv_config_known = ins->vlmax != 0;
+	rvv_config_vtype = ins->vtype;
+	rvv_config_vlmax = ins->vlmax;
+	rvv_config_vlenb = ins->vlenb;
 }
 
 // P is an LLVM-AOT substrate.  Reaching any typed vector-SSA instruction in

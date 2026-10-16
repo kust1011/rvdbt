@@ -41,8 +41,8 @@ static void terminal(CPUState *s, bool whole, bool store, bool bus, u32 eew,
  check(!mmu::FirstDenied(data+off,evl*eew,store,denied),"entire span permission-admitted");
  if(whole)check(qcgstub_rv32_special_memory_safe(s,raw)==0,"unowned whole SIMD refused");
  if(bus && !whole && !masked && !start) {
-  auto base=s->gpr[5];s->gpr[5]=data+128; // Page-contained: backing, not a crossing, refuses it.
-  check(qcgstub_rv32_native_memory_safe(s,raw)==0,"file backing refuses native singleton before truncation");
+  auto base=s->gpr[5];s->gpr[5]=data+128; // Page-contained: load capability differs from store capability.
+  check(qcgstub_rv32_native_memory_safe(s,raw)==u32(!store),"file singleton admits load only before truncation");
   s->gpr[5]=base;
  }
  if(bus) {check(ftruncate(fd,4096)==0,"truncate after admission");close(fd);}
@@ -110,7 +110,7 @@ static void admission_only(CPUState *s)
  u32 denied;
  check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE,MAP_FIXED|MAP_PRIVATE,fd)!=MAP_FAILED,"file admission map");close(fd);
  check(!mmu::FirstDenied(data+128,64,false,denied) && mmu::page_ordinary_ram(data+128),"file page permitted and ordinary");
- check(!mmu::page_native_copy_ram(data+128) && qcgstub_rv32_native_memory_safe(s,word(4,false))==0,"page-contained file refuses native without access");
+ check(!mmu::page_native_copy_ram(data+128) && qcgstub_rv32_native_memory_safe(s,word(4,false))==1 && qcgstub_rv32_native_memory_safe(s,word(4,true))==0,"page-contained file admits owned load only without anonymous identity");
  check(mmu::mmap(data,8192,PROT_READ|PROT_WRITE)!=MAP_FAILED,"replace with anonymous backing");
  check(mmu::page_native_copy_ram(data+128) && qcgstub_rv32_native_memory_safe(s,word(4,false))==1,"anonymous replacement preserves owned SIMD admission");
  check(mmu::munmap(data,8192)==0 && !mmu::page_native_copy_ram(data+128),"unmap clears native backing fact");

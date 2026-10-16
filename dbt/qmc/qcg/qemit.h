@@ -15,6 +15,7 @@ struct QEmit {
 
 	void SetBlock(qir::Block *bb_)
 	{
+		rvv_config_known = false; // Every block label is a possible runtime entry.
 		bb = bb_;
 		j.bind(labels[bb->GetId()]);
 		EmitBlockArrivalCounter();
@@ -28,6 +29,7 @@ struct QEmit {
 	std::span<u8> EmitCode();
 	static void DumpCode(std::span<u8> const &code);
 
+	void BeforeInstruction(qir::Inst *ins);
 	void Prologue(u32 ip);
 	// T5d2a3 (--loop-tier-side-exit): bind and emit every out-of-line exit block Emit_Cache asked
 	// for while the blocks were being generated. Called ONCE by QCodegen::Run after the last
@@ -95,10 +97,13 @@ private:
 	bool EmitRvvStridedGather(qir::InstVMemory *ins, asmjit::Label const &done);
 	void EmitRvvGatherCensus(unsigned long long *counter); // Z4B; no-op unless the switch is on
 	void EmitCloseRvvFpBracket();
+	void EmitAccrueRvvFpFlags();
 	void NoteNativeMemorySite(u16 base_offs, u32 disp, u8 bytes, u8 data_reg,
                            u8 active_sew, bool store);
 	u32 native_memory_pc{qir::RVVRunMember::PC_UNUSED}, native_memory_raw{};
 	bool native_memory_scalar{};
+	u32 native_memory_checked_raw{};
+	asmjit::Label native_memory_checked;
 	std::vector<NativeMemorySite> native_memory_sites;
 	asmjit::Label native_memory_cold;
 	size_t native_memory_frame_sites{};
@@ -172,6 +177,8 @@ private:
 	bool rvv_diag_chunk_open{false};
 	u8 rvv_diag_chunk_next_index{0};
 
+	bool rvv_config_known{};
+	u32 rvv_config_vtype{}, rvv_config_vlmax{}, rvv_config_vlenb{};
 	// Typed chunk group (Emit_rvvtypedchunkbegin/rvvtypedchunkend). Same label discipline, plus
 	// the invariant described on InstRVVTypedChunkBegin in qir.h: while a group is open the ONLY
 	// instructions QEmit may emit are the typed chunk ops, because everything between the guard
@@ -208,6 +215,9 @@ private:
 	// `Vlenb*` whole-register frame clears it, and a bound landing in one is a Panic rather than an
 	// early exit driven by a register the transfer's EVL does not depend on.
 	bool rvv_typed_chunk_vl_guarded{false};
+	// Set only by a guard that emitted frm == RNE; no guest CSR write or helper
+	// can execute inside its typed body. Cleared at the frame's end.
+	bool rvv_typed_chunk_frm_rne{false};
 	// G11-A: this frame's own guard proved `vl == VLMAX && vstart == 0`
 	// (qir::InstRVVTypedChunkBegin::GuardProvesFullVl) and the switch is on. Set by
 	// `begin`, cleared by `end` and by `rvvtypedchunkpartial` -- code after the partial

@@ -456,13 +456,15 @@ void CheckAdmittedQir(Route const &r, u32 vlen)
 			CHECK_EQ(store->offs, ChunkOffs(VD_REG, c));
 		}
 	} else {
-		// The memory frames: k transfers at 64-byte displacements 0..(k-1)*64, then k CPUState
-		// window accesses at that register's own chunk offsets. The displacement is the value
+		// The memory frames: k transfers at 64-byte displacements 0..(k-1)*64
+		// and k CPUState window accesses at that register's own chunk offsets.
+		// Owned QCG loads publish each chunk before the next guest access;
+		// stores still load the source group before the guest writes. The displacement is the value
 		// qir.h used to refuse past 192, so at k=8 this is also the check that the node bound
 		// was widened with the predicate.
 		for (u32 c = 0; c < k; ++c) {
-			Inst *mem = f.body[r.family == Family::Load ? c : k + c];
-			Inst *st = f.body[r.family == Family::Load ? k + c : c];
+			Inst *mem = f.body[r.family == Family::Load ? 2 * c : k + c];
+			Inst *st = f.body[r.family == Family::Load ? 2 * c + 1 : c];
 			u32 disp;
 			if (r.family == Family::Load) {
 				auto *ld = static_cast<InstVChunkLoad *>(mem);
