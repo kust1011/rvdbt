@@ -37,14 +37,14 @@ functional replay left frequency/cpuset settings unchanged. These finite inputs
 do not establish complete conformance, intermediate/access state or handler
 restart. Historical results below retain their original identities.
 
-The complete selected ordinary input/reference bundle is prepared privately as
-`f3-local-bundle-20261016`; its final read-only verifier passed against the
-existing seal (no regenerated goldens or new guest calls). Mixed-license and
-generated-data grants remain unresolved for public distribution. Use the
-[portable entry](../portable-external.md#retained-directed-corpus) with the
-bundle's additive `scripts/run_rvv_retained_audited.py` for corrected
-module-binding checks. Keep `VERIFIER_UPDATE.json` and the unchanged original
-seal together; the historical sealed driver is not the audited entry.
+The complete selected ordinary inputs and retained references are available in
+the [corpus release](https://github.com/kust1011/rvdbt/releases/tag/rvv-corpus-20261016).
+The release retains the original seal, checker snapshots and answers, and adds
+source/license notices for distribution. Follow the
+[portable entry](../portable-external.md#retained-directed-corpus): use the
+checkout's `scripts/run_rvv_retained.py --bundle "$B"` with an action such as
+`preflight`, `run` or `audit`. Drivers inside the bundle are historical snapshots,
+not the maintained replay interface.
 
 ## Historical Complete Replay
 
