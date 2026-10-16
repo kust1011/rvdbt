@@ -109,6 +109,12 @@ python3 scripts/verify_rvv_external_elf.py --elf "$OUT/guests/rvvts.elf" \
 python3 scripts/audit_rvv_external_admission.py --results "$OUT" --source .
 ```
 
+Admission checks target the retained three-member frame: one native-only frame
+count and one containing-TB invocation establish its fast-path execution.
+The whole-program fallback counter is reported separately, not required to be
+zero; it does not identify which other frame used a helper. The original
+width-two load/operation/store ordering checks remain required.
+
 Packet controls need the real pinned API and recorded packet; without them they
 SKIP, not PASS. Ara compares retained upstream literals/observations; RVVTS
 compares its full declared packet against the new Spike output using the original
