@@ -23,11 +23,11 @@ file and one retained RVVTS sequence in B/M1/M2/BOTH against Spike. It requires
 a compatible AVX-512 Linux host and the documented tools, not a private host.
 The checked build includes diagnostics and is **not a performance recipe**.
 
-The complete 595-form retained replay uses the same public runner, but requires
-separately supplied input ELFs, original checker snapshots and independent
-references. Start with its [retained-corpus commands and bundle prerequisites](docs/rvv-validation/portable-external.md#retained-directed-corpus).
-**There is not yet a public download of that complete bundle.** The committed
-index and two runnable samples are not substitutes for the missing data.
+For all 595 forms, use the [retained-corpus replay](docs/rvv-validation/portable-external.md#retained-directed-corpus).
+Its separately downloadable corpus contains the test assembly/ELFs, original
+checker snapshots, retained independent references and source/license notices.
+The same entry supports listing forms, inspecting cases and running selected
+configurations or the complete ordinary directed corpus.
 
 The [documentation index](docs/README.md) groups the current architecture,
 build and testing instructions separately from historical evidence. Start with:
@@ -65,23 +65,27 @@ For a form's selected dimensions and original answer predicate, then its concret
 source/assertion/reference locators, run from the repository root:
 
 ```sh
-python3 scripts/rvv_verify.py show --form vadd.vv
+python3 scripts/run_rvv_retained.py list
+python3 scripts/run_rvv_retained.py show --form vadd.vv
 python3 scripts/rvv_scope_report.py \
   --navigation docs/rvv-validation/all-form-records/navigation.json.gz \
   --form vadd.vv --output /absolute/path/to/new-form-records
 ```
 
-These are evidence readers, not new executions. Follow the per-form records to
+`list/show` read the case catalogue, not a historical or fresh PASS. They expose
+selected case counts, configuration dimensions and original checker/source pins;
+the [same entry](docs/rvv-validation/portable-external.md#retained-directed-corpus)
+provides per-form `preflight`, `run` and `audit` with a received local bundle.
+Follow the per-form records to
 the original oracle/checker; no universal synthetic expected-output generator is
 provided. Research session logs, temporary builds and experiment queues are not
 required by the public sample entry.
 
-That historical replay used fresh DUT execution with retained ELFs and independent
-references, not fresh oracle execution. Complete latest raw/runner archives remain
-in research storage with no public download; selected older CHIPS/ACT/Ara
-inspection packages are linked in the support guide. A new build has a new
-identity and does not inherit those results. The public two-fixture replay is
-independently usable but cannot reproduce or replace the full matrix.
+Retained-corpus replay executes the DUT against saved independent reference
+outputs; the external fixture entry instead runs fresh Spike comparisons.
+A new build receives its own identity and results. The corpus download contains
+inputs/references for ordinary directed replay, not every historical DUT output
+or every external-suite campaign.
 
 Finite form counts are not full RVV conformance, a tested VLEN/SEW/LMUL Cartesian
 product, or proof that M1/M2 admitted every target. General precise fault/retry

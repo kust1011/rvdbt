@@ -6,6 +6,8 @@ import gzip
 import json
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
 from unittest import mock
 from types import SimpleNamespace
 import unittest
@@ -14,6 +16,117 @@ import run_rvv_retained as replay
 
 
 class RetainedChecks(unittest.TestCase):
+    def test_catalogue_does_not_silently_ignore_configuration_filter(self):
+        with self.assertRaises(SystemExit) as error, contextlib.redirect_stderr(io.StringIO()):
+            replay.main(['show', '--form', 'vadd.vv', '--sew', '32'])
+        self.assertEqual(error.exception.code, 2)
+
+    def test_catalogue_without_private_data_or_historical_imports(self):
+        script = Path(replay.__file__).resolve()
+        result = subprocess.run([sys.executable, '-B', str(script), 'list'],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        catalogue = list(csv.DictReader(io.StringIO(result.stdout), delimiter='\t'))
+        forms = [r['form'] for r in catalogue]
+        self.assertEqual(len(forms), 595)
+        self.assertEqual(len(set(forms)), 595)
+        self.assertIn('vadd.vv', forms)
+        self.assertTrue(all(int(r['cases_per_arm']) > 0 for r in catalogue))
+        result = subprocess.run([sys.executable, '-B', str(script), 'show', '--form', 'vadd.vv'],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        shown = json.loads(result.stdout)
+        self.assertEqual(shown['form'], 'vadd.vv')
+        self.assertEqual(shown['status'], 'CASE_CATALOGUE_ONLY')
+        self.assertGreater(shown['cases_per_arm'], 0)
+        self.assertNotIn('historical', shown)
+        self.assertNotIn('final179', shown)
+        self.assertNotIn('/home/vick', result.stdout)
+        probe = subprocess.run([sys.executable, '-B', '-c',
+            'import json, sys; import run_rvv_retained; '
+            'print(json.dumps(sorted(sys.modules)))'], cwd=script.parent,
+            capture_output=True, text=True)
+        self.assertEqual(probe.returncode, 0, probe.stderr)
+        imported = json.loads(probe.stdout)
+        self.assertNotIn('rvv_verify', imported)
+        self.assertNotIn('rvv.directed.storage149', imported)
+
+    def test_optimized_predicates_refused(self):
+        result = subprocess.run([sys.executable, '-B', '-O', replay.__file__, 'list'],
+                                capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('retained predicates require assertions', result.stderr)
+
+    def test_selection_intersects_original_accepted_cases(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); index, u = self.fixture(root)
+            cases = [dict(id=str(i), unit='u', mnemonic=op, form='vv', sew=sew,
+                          vlen=128, lmul='m1', mask='none', vl=1, vstart=0)
+                     for i, (op, sew) in enumerate([('vadd', 8), ('vadd', 16), ('vsub', 8)])]
+            raw = json.dumps(dict(cases=cases)).encode()
+            (u['original']/'manifest.json').write_bytes(raw)
+            e = index['entries']['entry']
+            e.update(manifest_sha256=replay.verify.sha(raw), accepted_ranges=[[0, 2]],
+                     accepted_selector_sha256=replay.verify.sha(b'[0,1]'))
+            a = SimpleNamespace(raw_root=root/'inputs', reference_root=root/'refs',
+                                form='vadd.vv', sew=8, max_units=1)
+            selected = list(replay.selected_units(index, 'entry', a))
+            self.assertEqual(len(selected), 1)
+            self.assertEqual(selected[0]['selected'], [0])
+            self.assertEqual(selected[0]['cases'], cases)  # ELF/packet extent unchanged
+            a.form = 'vsub.vv'
+            self.assertEqual(list(replay.selected_units(index, 'entry', a)), [])
+            a.form = 'vadd.vv'; a.sew = 32
+            self.assertEqual(list(replay.selected_units(index, 'entry', a)), [])
+
+    def test_bundle_missing_data_never_executes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with mock.patch.object(replay.storage, 'execute') as execute:
+                with self.assertRaises(FileNotFoundError):
+                    replay.main(['preflight', '--bundle', tmp, '--form', 'vadd.vv'])
+                execute.assert_not_called()
+
+    def test_empty_configuration_preflight_is_not_pass(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); index, _ = self.fixture(root)
+            index['rows'] = [dict(form='vadd.vv', entries=[dict(entry='entry')])]
+            path = root/'index.json'; replay.save(path, index)
+            with mock.patch.object(replay.storage, 'execute') as execute:
+                with self.assertRaisesRegex(ValueError, 'empty selection'):
+                    replay.main(['preflight', '--index', str(path),
+                        '--raw-root', str(root/'inputs'), '--reference-root', str(root/'refs'),
+                        '--form', 'vadd.vv', '--sew', '128'])
+                execute.assert_not_called()
+
+    def test_unknown_form_and_wrong_owner_rejected(self):
+        index = dict(entries={'a': {}, 'b': {}},
+                     rows=[dict(form='vadd.vv', entries=[dict(entry='a')])])
+        for form, entry, message in [('not-an-op', None, 'unknown form'),
+                                     ('vadd.vv', 'b', 'does not own form')]:
+            with self.subTest(form=form, entry=entry):
+                with self.assertRaisesRegex(ValueError, message):
+                    replay.selected_entries(index, SimpleNamespace(form=form, entry=entry))
+
+    def test_resume_rejects_changed_selection_before_execution(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); index, _ = self.fixture(root)
+            index['rows'] = [dict(form='vadd.vv', entries=[dict(entry='entry')])]
+            path = root/'index.json'; replay.save(path, index)
+            engine = root/'elfrun'; engine.write_bytes(b'dut')
+            library = root/'libdbtjitshared.so'; library.write_bytes(b'library')
+            out = root/'out'; out.mkdir()
+            replay.save(out/'identity.json', dict(entry='entry',
+                files={str(p.resolve()): replay.digest(p) for p in (engine, library)},
+                index_sha256=replay.digest(path), selection=dict(form='vadd.vv', sew=16)))
+            with mock.patch.object(replay, 'checker', return_value=(None, {})), \
+                    mock.patch.object(replay.storage, 'execute') as execute:
+                with self.assertRaisesRegex(ValueError, 'changed resume selection'):
+                    replay.main(['run', '--index', str(path), '--raw-root', str(root/'inputs'),
+                        '--reference-root', str(root/'refs'), '--form', 'vadd.vv', '--sew', '8',
+                        '--engine', str(engine), '--library-dir', str(root),
+                        '--output', str(out), '--resume'])
+                execute.assert_not_called()
+
     def fixture(self, root):
         corpus = root/'inputs/corpus'
         ref = root/'refs/corpus/runs/u/Reference'
@@ -197,6 +310,11 @@ class RetainedChecks(unittest.TestCase):
             self.assertEqual(len(rows),1)
             self.assertEqual([rows[0][k] for k in ('units','calls','checks','B_checks')],['1','4','4','1'])
             self.assertIn('--rvv-stats=1',result['method_configurations']['B'][0]['options'])
+            original_binding = replay.verify.load(entry/'identity.json')
+            replay.save(entry/'identity.json', dict(original_binding, selection=dict(form='vsub.vv')))
+            with self.assertRaisesRegex(ValueError, 'audit selection differs'):
+                replay.audit(args, index)
+            replay.save(entry/'identity.json', original_binding)
             for missing in ({}, {'vadd':bindings['vadd']}, {'family':bindings['family']}):
                 with self.subTest(modules=list(missing)):
                     replay.save(entry/'checker-bindings.json',dict(resolved_modules=missing))

@@ -1,0 +1,152 @@
+{
+  "schema": "rvv-corpus-release-1",
+  "max_members": 1484287,
+  "max_files": 1484287,
+  "max_unpacked_bytes": 22301494158,
+  "archives": [
+    {
+      "name": "f3-ordinary595-001.tar.zst",
+      "format": "tar.zst",
+      "sha256": "d726c3983e309829d64e57294cbfeca3e4a81398e2582507bfd12b51ba4c7e09",
+      "bytes": 35352160,
+      "unpacked_files": 22638,
+      "unpacked_bytes": 1484986802,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-001.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-002.tar.zst",
+      "format": "tar.zst",
+      "sha256": "f271b90e3a7a87e39a47242c6c03a3c6d602dbce26d8cbc8c08e25e533b1313e",
+      "bytes": 4005712,
+      "unpacked_files": 20467,
+      "unpacked_bytes": 1487269791,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-002.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-003.tar.zst",
+      "format": "tar.zst",
+      "sha256": "fdf7f8fe42c75bfb2143eadbd1def22b3b583fd95cc65a477499741b5fed0e94",
+      "bytes": 3841271,
+      "unpacked_files": 4424,
+      "unpacked_bytes": 1499819577,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-003.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-004.tar.zst",
+      "format": "tar.zst",
+      "sha256": "e5fa1586570baf63c4d09754219263f7337b42914ed8b6922dbb14e4f2a10c6a",
+      "bytes": 5734000,
+      "unpacked_files": 6775,
+      "unpacked_bytes": 1497851576,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-004.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-005.tar.zst",
+      "format": "tar.zst",
+      "sha256": "3dc2eb90fde5a5884df13b7a266806b118657ca1618956f5b7a07deccb48de47",
+      "bytes": 3808318,
+      "unpacked_files": 3027,
+      "unpacked_bytes": 1496829329,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-005.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-006.tar.zst",
+      "format": "tar.zst",
+      "sha256": "1218cc921f07b5418d46f4b6128b56dd85ba1d385e9f2e6d4185f58b8c70dc4f",
+      "bytes": 4054249,
+      "unpacked_files": 1623,
+      "unpacked_bytes": 1488227861,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-006.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-007.tar.zst",
+      "format": "tar.zst",
+      "sha256": "8df9820c0c79833c58605503051135e14959c013dfc324d3df3817cdaf87fc35",
+      "bytes": 5919996,
+      "unpacked_files": 23287,
+      "unpacked_bytes": 1485239897,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-007.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-008.tar.zst",
+      "format": "tar.zst",
+      "sha256": "91327b4f78d5ac8e88876c56e62a7fd6f1ddcbc97e33ebf61b273ecb2d471428",
+      "bytes": 4040595,
+      "unpacked_files": 19431,
+      "unpacked_bytes": 1487588007,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-008.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-009.tar.zst",
+      "format": "tar.zst",
+      "sha256": "c3467ec5017454e7416214802931a180b9876f8546e224fe76e1e1d7b9662a58",
+      "bytes": 3903580,
+      "unpacked_files": 3519,
+      "unpacked_bytes": 1499516836,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-009.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-010.tar.zst",
+      "format": "tar.zst",
+      "sha256": "f967006f0978e0a7ce9156ef538feb2d626d8a707920a9a8bf6febab526744c8",
+      "bytes": 4038546,
+      "unpacked_files": 3204,
+      "unpacked_bytes": 1500574823,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-010.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-011.tar.zst",
+      "format": "tar.zst",
+      "sha256": "e939186e90c54bf1d38c197aefa8d579ae6f609755e143a50051966937021fc5",
+      "bytes": 38500630,
+      "unpacked_files": 65631,
+      "unpacked_bytes": 1446349539,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-011.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-012.tar.zst",
+      "format": "tar.zst",
+      "sha256": "71f2b8ce5df176eaf24724ecec86f829992f0592f1db35237f80f9119dc7114b",
+      "bytes": 214773261,
+      "unpacked_files": 325254,
+      "unpacked_bytes": 1112722507,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-012.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-013.tar.zst",
+      "format": "tar.zst",
+      "sha256": "85bc6e3321dc8dbb5f1743b75d8dbfafa35c0a48892f5df94f56a9b2e7be0e64",
+      "bytes": 189768773,
+      "unpacked_files": 363476,
+      "unpacked_bytes": 1046724173,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-013.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-014.tar.zst",
+      "format": "tar.zst",
+      "sha256": "7be34f0a6c3bbcb657ccc6a40b3b2b5b1051b43a62d5a557e1242fe392625a03",
+      "bytes": 216927838,
+      "unpacked_files": 229357,
+      "unpacked_bytes": 1143793880,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-014.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-015.tar.zst",
+      "format": "tar.zst",
+      "sha256": "ee649ca46d2bff829094e3dcd426668b196b70a5f9b1f577d6fdf82af5ba2674",
+      "bytes": 204065292,
+      "unpacked_files": 182950,
+      "unpacked_bytes": 1348340112,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-015.tar.zst"
+    },
+    {
+      "name": "f3-ordinary595-016.tar.zst",
+      "format": "tar.zst",
+      "sha256": "9020ef33fa42036ec1ae19b41fc9984aaa198a25f2b70131bb88cf80a8de1d03",
+      "bytes": 236626415,
+      "unpacked_files": 209224,
+      "unpacked_bytes": 1275659448,
+      "url": "https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/f3-ordinary595-016.tar.zst"
+    }
+  ]
+}

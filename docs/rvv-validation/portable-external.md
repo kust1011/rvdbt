@@ -126,23 +126,73 @@ in its fixture reader.
 
 ### Retained Directed Corpus
 
-For the existing all-form directed index, `run_rvv_retained.py` reuses
-`rvv_verify` selectors and each entry's original hash-pinned packet predicates. Supply the
+The maintained entry is `scripts/run_rvv_retained.py`. It uses the original
+accepted index selectors and each entry's hash-pinned packet predicates. Its
+index/storage helpers live in `scripts/rvv/retained_{index,storage}.py`; it does
+not import the historical generators or campaign owners in `rvv/directed/` or
+`rvv_verify.py`. The old index and checker snapshots remain unchanged.
+
+Inspect all 595 catalogue rows without an input bundle or host toolchain:
+
+```sh
+python3 scripts/run_rvv_retained.py list
+python3 scripts/run_rvv_retained.py show --form vadd.vv
+```
+
+`list` prints form, accepted cases per arm and owning entries. `show` prints the
+case count, marginal SEW/LMUL/VLEN/mask/vstart (and other) dimensions, checked
+state, oracle scope, source locators and original checker/data hashes. It is
+`CASE_CATALOGUE_ONLY`, not a new PASS or the historical build's result; the
+measured d252 per-form CSV is linked separately. Dimensions are not a Cartesian
+product. `preflight --max-units 1` resolves actual selected case rows, ELF/source,
+reference location and recorded four-method/reference commands without executing
+any of those historical paths.
+
+Acquire the [corpus release](https://github.com/kust1011/rvdbt/releases/tag/rvv-corpus-20261016)
+with the maintained fetcher (default manifest: `docs/rvv-validation/corpus-release.json`):
+
+```sh
+python3 scripts/fetch_rvv_corpus.py --output /new/corpus --cache-dir /download-cache
+```
+
+Acquisition is **ACQUIRED**, not ISA PASS. Set `B` to the received bundle root,
+containing `metadata/forms.json.gz`, `data/`, `scripts/`, `docs/` and `licenses/`.
+Use the checkout runner below, not an old sealed bundle driver. Alternatively supply the
 retained input tree and independently retained reference tree separately, each
 with paths relative to the index's original root. They may point to the same
 read-only extraction when the package contains both. No SSH, source rewriting,
 golden generation or immutable historical DUT pin is used:
 
 ```sh
-python3 scripts/run_rvv_retained.py preflight \
-  --raw-root "$INPUTS" --reference-root "$REFERENCES"
-python3 scripts/run_rvv_retained.py run --entry b145-000 --max-units 1 \
-  --raw-root "$INPUTS" --reference-root "$REFERENCES" \
-  --engine "$DUT" --library-dir "$DUT_LIB" --output "$OUT" --cache-dir "$CACHE"
+python3 scripts/run_rvv_retained.py preflight --bundle "$B" \
+  --form vadd.vv --sew 8 --lmul m1 --vlen 128 --max-units 1
+python3 scripts/run_rvv_retained.py run --bundle "$B" \
+  --form vadd.vv --sew 8 --lmul m1 --vlen 128 --max-units 1 \
+  --engine "$DUT" --library-dir "$DUT_LIB" \
+  --output "$OUT/b145-000" --cache-dir "$CACHE/b145-000"
+python3 scripts/run_rvv_retained.py audit --bundle "$B" --entry b145-000 \
+  --form vadd.vv --sew 8 --lmul m1 --vlen 128 --max-units 1 \
+  --engine "$DUT" --library-dir "$DUT_LIB" --output "$OUT"
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p test_rvv_retained.py
 ```
 
-Preflight inventories every indexed entry by default; a missing manifest, ELF,
+`--bundle` supplies index/input/reference defaults; `--index`, `--raw-root` and
+`--reference-root` can override them for separately delivered read-only trees.
+The old host prefix is a relocation key, not a fallback input root. Recorded
+engine/Spike/PK commands are provenance, not commands executed by preflight.
+Optional exact selectors are `--form`, `--unit`, `--sew`, `--lmul`, `--vlen`,
+`--mask`, `--vl` and `--vstart`; unsupported combinations fail as empty selection.
+The complete original unit/ELF still executes, with only matching originally
+accepted cases checked/credited. Packet extent, original checker pins and
+retained oracle verification are unchanged. A form with multiple owning entries
+requires `--entry` for a bounded run; a single owner is selected automatically.
+All four B/M1/M2/BOTH configurations use the original recorded semantic flags;
+they are not interchangeable with performance flags. Resume/audit must use the
+same selectors. For bounded audit, repeat `--max-units`; without it audit checks
+all matching units. `run` stores output under the explicitly supplied entry path;
+`audit` takes the parent campaign output and `--entry`.
+
+Preflight inventories every matching indexed entry by default; a missing manifest, ELF,
 reference or command fails. It is not execution or an all-raw hash audit. Run
 defaults to one unit/four arms, in one entry per process to isolate family adapters.
 `--max-units` explicitly raises that bound. Fresh DUT packets must pass both the
@@ -192,6 +242,12 @@ python3 scripts/run_rvv_retained.py audit \
   --engine "$DUT" --library-dir "$DUT_LIB" --output "$OUT"
 ```
 
+Campaigns may use the same form/configuration selectors to execute all matching
+units across owning entries; `--all-units` remains required. Do not pass
+`--max-units` to campaign. Python `-O`/`-OO` is rejected because original pinned
+predicates use assertions. Predicate dependencies (for example NumPy) must be
+installed in the replay environment; missing imports fail, never skip or PASS.
+
 `AUDIT.json` reports forms, units, calls, selected checks and actual method
 options; `AUDIT_PER_FORM.csv` gives the directly recounted per-form result and
 four-arm call/check counts. Calls containing several forms appear in each
@@ -200,52 +256,38 @@ This performs no guest calls or full raw rehash: it relies on the
 original per-call checks/hash receipts and verifies output presence. Correctness
 diagnostic options are recorded, not equated with formal timing options.
 
-The 2026-10-16 bounded checks ran the measured d252/79d0 pair on one unit each
-from Task155, Task171 and Task176, covering compressed checks, legacy ledgers
-and the delivered FP unary predicate. All four arms passed for each. Resuming
-the FP unary capture made zero new DUT calls and rechecked four captures.
-The thirteen adapter unit tests check tooling contracts, including receipt
-recount rejection controls, not ISA execution.
+The corpus contains 95,242 ordinary directed ELF units and their retained
+independent references, covering 595 forms. The
+[release manifest](corpus-release.json) fixes each archive's URL, size and SHA256.
+The fetcher rejects damaged archives, path traversal, links, duplicate files
+and extraction beyond the declared limits. Install `zstd` and allow 40 GiB
+of space and at least 1.5 million free inodes for extraction and replay work.
 
-The real-packet rejection script is a CLI, **not** a unittest discovery test:
+Source attributions and third-party license notices accompany the corpus.
+Original checker snapshots, manifests and seals are preserved; release notices
+describe their distribution separately from historical preparation labels.
+Use the checkout's maintained runner, not a historical driver inside the bundle.
+
+Run the tooling rejection tests with:
+
+```sh
+python3 -m unittest discover -s scripts -p test_rvv_retained.py
+python3 -m unittest discover -s scripts -p test_rvv_corpus_fetch.py
+```
+
+These test the runner and acquisition contracts, not ISA execution. For the
+separate real-packet rejection check:
 
 ```sh
 python3 scripts/test_rvv_verify.py --checkout "$PWD" \
-  --raw "$INPUTS/rvv-directed-task145/corpus" --output "$CONTROLS_JSON"
+  --raw "$B/data/rvv-directed-task145/corpus" --output "$CONTROLS_JSON"
 ```
 
-Its separately run receipt accepted 17 original packets and rejected missing,
-truncated, nonzero-exit, timeout and corrupted-CSR outputs. Discovery success
-alone does not establish these controls, nor does this offline check run a DUT.
+The retained adapter covers ordinary directed units. Focused denial controls,
+external suites and instruction-sequence supplements have separate runners and
+results; downloading the ordinary corpus does not reproduce those campaigns.
 
-**The complete input/reference bundle is not yet publicly packaged.**
-The 102-entry/595-form index alone is insufficient. A private selected bundle
-has now been prepared (95,242 units, original checker pins and retained reference
-transport), and the [measured d252 replay](delivery-task182/README.md#measured-d252-replay)
-completed with an actual full key/receipt recount. The bundle's separate one-unit
-relocation pilot made four calls / 268 checks outside the original host paths;
-it is not a second full native replay. Publication still needs mixed-license and
-generated-data permission clearance, with full metadata/checksum verification.
-The final private-bundle verifier passed under Python `-O` against the existing
-seal, with five corruption/missing/invariance tooling tests; this is integrity
-checking, not more ISA execution. Its sealed original driver is unchanged.
-The separate `VERIFIER_UPDATE.json` identifies the corrected verifier and
-additive `scripts/run_rvv_retained_audited.py`; retain that amendment and the
-original seal together. For a received bundle, set `B` to its extraction root:
-
-```sh
-python3 "$B/scripts/run_rvv_retained_audited.py" preflight \
-  --index "$B/metadata/forms.json.gz" \
-  --raw-root "$B/data" --reference-root "$B/data"
-```
-
-Use that same audited driver for `run`, `campaign` and `audit`, with the DUT,
-output/cache options above; the checkout entry remains `scripts/run_rvv_retained.py`.
-Do not use the historical sealed driver's audit or regenerate baselines.
-This adapter covers ordinary directed units,
-not the historical focused denials, external suites or sequence supplements.
-
-### Execution Modes
+### External-Fixture Execution Modes
 
 - Default replay: new guest builds, fresh Spike references and fresh DUT runs;
   frozen input/body and upstream expected literals, no new input generation.
@@ -256,13 +298,9 @@ not the historical focused denials, external suites or sequence supplements.
   Each reused output is checked again. Read `new_calls` and `reused_receipts`.
 - Offline package inspection: reruns predicates on saved outputs, no guest runs.
   See [original-case navigation](all-form-records/README.md).
-- [Frozen 595-form replay](final-task197/README.md): fresh DUT executions at
-  that historical build, retained ELFs/oracles and no fresh reference execution.
-  Full raw/runner archives are not publicly downloadable.
 
 Archiving a new run should include the lock, fixture licenses/hashes, effective
 build options, tools/provenance, guest ELFs and complete raw/checker receipts.
-Bulky distributable data belongs in a licensed archive with a checksum and
-retrieval/rebuild instructions. No such public archive is currently available
-for the full latest matrix. Two fixture passes cannot fill that gap or establish
-general fault/retry, signal delivery or complete ISA coverage.
+Keep newly captured outputs separate from retained inputs and references.
+Record the executable and options used for each result; the external fixture
+checks and the full ordinary directed replay have distinct coverage.

@@ -10,6 +10,7 @@ import csv
 import functools
 import fcntl
 import importlib
+import itertools
 import json
 import os
 from pathlib import Path
@@ -18,11 +19,55 @@ import subprocess
 import sys
 import time
 
-import rvv_verify as verify
+from rvv import retained_index as verify
 from run_rvv_external import execution_contract, prepare_output
 from rvv_tests import digest, save
-from rvv.directed import storage149 as storage
+from rvv import retained_storage as storage
 READER = 'original-tool-pins-v1'
+FILTERS = ('form', 'unit', 'sew', 'lmul', 'vlen', 'mask', 'vl', 'vstart')
+
+
+def selection(a):
+    return {k: getattr(a, k) for k in FILTERS if getattr(a, k, None) is not None}
+
+
+def selected_entries(index, a):
+    if getattr(a, 'entry', None):
+        if a.entry not in index['entries']:
+            raise ValueError('unknown entry: '+a.entry)
+        entries = [a.entry]
+    else:
+        entries = list(index['entries'])
+    if getattr(a, 'form', None):
+        row = next((r for r in index['rows'] if r['form'] == a.form), None)
+        if row is None:
+            raise ValueError('unknown form: '+a.form)
+        owners = {r['entry'] for r in row['entries']}
+        entries = [e for e in entries if e in owners]
+        if not entries:
+            raise ValueError('entry does not own form')
+    return entries
+
+
+def selected_units(index, entry, a):
+    filters = selection(a)
+    count = 0
+    for unit in corpus_units(index, entry, a.raw_root, a.reference_root):
+        chosen = [i for i in unit['selected'] if all(
+            (verify.form(unit['cases'][i]) if k == 'form' else unit['cases'][i].get(k)) == v
+            for k, v in filters.items())]
+        if not chosen:
+            continue
+        limit = getattr(a, 'max_units', None)
+        if limit is not None and count >= limit:
+            break
+        # Execute the original complete ELF; never rewrite packets or selectors.
+        yield dict(unit, selected=chosen)
+        count += 1
+
+
+def selection_arguments(a):
+    return [x for k, v in selection(a).items() for x in ('--'+k, str(v))]
 
 
 def atomic_save(path, value):
@@ -240,6 +285,12 @@ def campaign(a, index):
     binding = dict(engine=digest(a.engine), library=digest(a.library_dir/'libdbtjitshared.so'),
                    index=digest(a.index), inputs=str(a.raw_root.resolve()),
                    references=str(a.reference_root.resolve()))
+    if selection(a):
+        binding['selection'] = selection(a)
+    if getattr(a, 'entry', None):
+        binding['entry'] = a.entry
+    if getattr(a, 'max_units', None) is not None:
+        raise ValueError('campaign uses all selected units; use run for --max-units')
     manifest = out/'campaign.json'
     if manifest.exists():
         if not a.resume or verify.load(manifest)['binding'] != binding:
@@ -247,13 +298,18 @@ def campaign(a, index):
         plan = verify.load(manifest)['entries']
     else:
         plan = {}
-        for entry in index['entries']:
+        form_names = set()
+        for entry in selected_entries(index, a):
             units = cases = 0
-            for u in corpus_units(index, entry, a.raw_root, a.reference_root):
+            for u in selected_units(index, entry, a):
                 units += 1
                 cases += len(u['selected'])
-            plan[entry] = dict(units=units, cases_per_arm=cases)
-        save(manifest, dict(binding=binding, entries=plan, forms=len(index['rows']),
+                form_names.update(verify.form(u['cases'][i]) for i in u['selected'])
+            if units:
+                plan[entry] = dict(units=units, cases_per_arm=cases)
+        if not plan:
+            raise ValueError('empty selection')
+        save(manifest, dict(binding=binding, entries=plan, forms=len(form_names),
                             units=sum(e['units'] for e in plan.values()),
                             calls=sum(e['units']*4 for e in plan.values()),
                             checks=sum(e['cases_per_arm']*4 for e in plan.values())))
@@ -267,7 +323,7 @@ def campaign(a, index):
                    '--index', str(a.index), '--engine', str(a.engine), '--library-dir', str(a.library_dir),
                    '--output', str(out/entry), '--cache-dir', str(scratch/entry),
                    '--max-units', str(plan[entry]['units']), '--timeout', str(a.timeout),
-                   '--stop-file', str(stop)]
+                   '--stop-file', str(stop), *selection_arguments(a)]
             log = (out/(entry+'.log')).open('ab')
             active[entry] = (subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT), log)
         for entry, (proc, log) in list(active.items()):
@@ -318,19 +374,27 @@ def audit(a, index):
         raise ValueError('audit requires engine/library/output')
     identity = {str(p.resolve()): digest(p) for p in
                 (a.engine, a.library_dir/'libdbtjitshared.so')}
-    entries = [a.entry] if a.entry else list(index['entries'])
+    entries = selected_entries(index, a)
     forms = collections.Counter()
     methods = {arm: collections.Counter() for arm in ('B', 'M1', 'M2', 'BOTH')}
     per_form = {}
     seen = set()
     units = cases = 0
+    checked_entries = 0
     new_calls = reused_calls = 0
     index_hash = digest(a.index)
     for entry in entries:
+        iterator = iter(selected_units(index, entry, a))
+        first = next(iterator, None)
+        if first is None:
+            continue
+        checked_entries += 1
         out = a.output/entry
         binding = verify.load(out/'identity.json')
         if binding['files'] != identity or binding['index_sha256'] != index_hash:
             raise ValueError('audit DUT/library/index identity: '+entry)
+        if binding.get('selection', {}) != selection(a):
+            raise ValueError('audit selection differs: '+entry)
         pins = predicate_sources(index['entries'][entry], a.raw_root, index['original_root'])
         modules = verify.load(out/'checker-bindings.json')['resolved_modules']
         definition = index['entries'][entry]
@@ -362,7 +426,7 @@ def audit(a, index):
         if len(declared) != len(summary['results']):
             raise ValueError('duplicate summary key: '+entry)
         actual = set()
-        for u in corpus_units(index, entry, a.raw_root, a.reference_root):
+        for u in itertools.chain([first], iterator):
             units += 1
             selected_forms = collections.Counter(verify.form(u['cases'][i]) for i in u['selected'])
             for form in selected_forms:
@@ -411,10 +475,13 @@ def audit(a, index):
             raise ValueError('missing/extra actual unit/arm keys: '+entry)
     if identity != {p: digest(Path(p)) for p in identity}:
         raise ValueError('DUT/library changed during audit')
+    if not seen:
+        raise ValueError('empty selection')
     result = dict(status='PASS_ACTUAL_RECEIPT_RECOUNT', reader=READER,
                   scope='ordinary directed only; supplements remain separate',
+                  selection=selection(a), max_units=getattr(a, 'max_units', None),
                   index_sha256=index_hash, audit_runner_sha256=digest(__file__),
-                  binding=identity, entries=len(entries), forms=len(forms),
+                  binding=identity, entries=checked_entries, forms=len(forms),
                   units=units, calls=len(seen), checks=cases,
                   new_calls_in_final_entry_invocations=new_calls,
                   rechecked_captures_in_final_entry_invocations=reused_calls,
@@ -437,39 +504,91 @@ def audit(a, index):
 
 
 def main(argv=None):
+    if not __debug__:
+        raise RuntimeError('retained predicates require assertions; run without -O')
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('action', choices=['preflight', 'run', 'campaign', 'audit'])
-    p.add_argument('--index', type=Path, default=verify.INDEX)
-    p.add_argument('--raw-root', type=Path, required=True)
-    p.add_argument('--reference-root', type=Path, required=True)
+    p.add_argument('action', choices=['list', 'show', 'preflight', 'run', 'campaign', 'audit'])
+    p.add_argument('--index', type=Path)
+    p.add_argument('--bundle', type=Path, help='local received bundle: metadata/forms.json.gz and data/')
+    p.add_argument('--raw-root', type=Path)
+    p.add_argument('--reference-root', type=Path)
     p.add_argument('--entry', choices=None, help='one existing index entry (isolated checker process)')
+    p.add_argument('--form', help='exact catalogue mnemonic/operand form, e.g. vadd.vv')
+    p.add_argument('--unit', help='exact original unit ID; complete ELF still executes')
+    for name in ('sew', 'vlen', 'vl', 'vstart'):
+        p.add_argument('--'+name, type=int)
+    for name in ('lmul', 'mask'):
+        p.add_argument('--'+name, help='exact manifest value; see show')
     p.add_argument('--engine', type=Path)
     p.add_argument('--library-dir', type=Path)
     p.add_argument('--output', type=Path)
     p.add_argument('--cache-dir', type=Path)
-    p.add_argument('--max-units', type=int, default=1, help='run cap; default 1; preflight inventories all')
+    p.add_argument('--max-units', type=int, help='per-entry limit; run defaults to 1, preflight/audit to all')
     p.add_argument('--timeout', type=int, default=120)
     p.add_argument('--resume', action='store_true', help='audit/skip captured calls, never repeat a launch')
     p.add_argument('--stop-file', type=Path, help='drain before the next unit when this file exists')
     p.add_argument('--all-units', action='store_true', help='explicitly authorize the indexed ordinary campaign')
     p.add_argument('--jobs', type=int, default=2, help='campaign entry processes, 1..4 (not timing lanes)')
     a = p.parse_args(argv)
-    if not 1 <= a.timeout <= 600 or a.max_units < 1 or not 1 <= a.jobs <= 4:
+    if not 1 <= a.timeout <= 600 or (a.max_units is not None and a.max_units < 1) or not 1 <= a.jobs <= 4:
         p.error('timeout must be 1..600 and max-units positive')
+    if a.bundle:
+        a.index = a.index or a.bundle/'metadata/forms.json.gz'
+        a.raw_root = a.raw_root or a.bundle/'data'
+        a.reference_root = a.reference_root or a.bundle/'data'
+    a.index = a.index or verify.INDEX
     index = verify.load(a.index)
+    entries = selected_entries(index, a)
+    if a.action in ('list', 'show') and any(k != 'form' for k in selection(a)):
+        p.error('list/show describe the catalogue; use preflight for configuration selectors')
+    if a.action == 'list':
+        print('form\tcases_per_arm\tentries')
+        for row in index['rows']:
+            owners = [e for e in row['entries'] if e['entry'] in entries]
+            if owners and (not a.form or row['form'] == a.form):
+                print(row['form'], sum(e['cases'] for e in owners),
+                      ';'.join(e['entry'] for e in owners), sep='\t')
+        return 0
+    if a.action == 'show':
+        if not a.form:
+            p.error('show requires --form')
+        row = next(r for r in index['rows'] if r['form'] == a.form)
+        sources = {}
+        for entry in entries:
+            definition = index['entries'][entry]
+            sources[entry] = {k: definition[k] for k in (
+                'family', 'generator_module', 'source_test', 'install',
+                'manifest_sha256', 'build_commands_sha256', 'accepted_selector_sha256')}
+            sources[entry]['cases_per_arm'] = next(e['cases'] for e in row['entries'] if e['entry'] == entry)
+            for name in ('original', 'tools'):
+                sources[entry][name+'_relative'] = str(Path(definition[name]).relative_to(index['original_root']))
+            sources[entry]['tool_pins'] = {str(Path(n).relative_to(index['original_root'])): h
+                                          for n, h in definition['tool_pins'].items()}
+        print(json.dumps(dict(status='CASE_CATALOGUE_ONLY', form=a.form,
+            cases_per_arm=sum(s['cases_per_arm'] for s in sources.values()),
+            index_sha256=digest(a.index),
+            definitions={k: row[k] for k in ('origin', 'dimensions', 'missing_fields',
+                'length_classes', 'checked_state', 'independent_oracle')},
+            entries=sources,
+            measured_result='docs/rvv-validation/delivery-task182/MEASURED_D252_PER_FORM.csv',
+            replay='run --form '+a.form+' --entry ENTRY --bundle BUNDLE --engine DUT '
+                   '--library-dir LIB --output NEW --cache-dir NEW_CACHE',
+            limits='catalogue, not a new execution or historical PASS credit; dimensions are '
+                   'marginals, not a Cartesian product; preflight resolves actual cases'), indent=2))
+        return 0
+    if not all((a.raw_root, a.reference_root)):
+        p.error('requires --bundle or both --raw-root and --reference-root')
     if a.action == 'audit':
         return audit(a, index)
     if a.action == 'campaign':
         return campaign(a, index)
-    entries = [a.entry] if a.entry else list(index['entries'])
-    if any(e not in index['entries'] for e in entries):
-        p.error('unknown entry')
     if a.action == 'preflight':
         counts = collections.Counter()
         units = 0
+        details = []
         for entry in entries:
             predicate_sources(index['entries'][entry], a.raw_root, index['original_root'])
-            for u in corpus_units(index, entry, a.raw_root, a.reference_root):
+            for u in selected_units(index, entry, a):
                 # No guest, checker import, ELF decompression or all-raw hashing here.
                 for path in (u['elf'], u['reference']/'packets.bin'):
                     if not path.is_file() and not Path(str(path)+'.gz').is_file():
@@ -482,10 +601,23 @@ def main(argv=None):
                     verify.load(u['original']/'runs'/u['unit']/arm/'command.json')
                 counts.update(verify.form(u['cases'][i]) for i in u['selected'])
                 units += 1
+                if a.max_units is not None:
+                    details.append(dict(entry=entry, unit=u['unit'], elf=str(u['elf']),
+                        test_source=str(u['elf'].with_name('test.S')),
+                        elf_sha256=u['elf_sha256'], reference=str(u['reference']),
+                        selected_cases=[u['cases'][i] for i in u['selected']],
+                        recorded_method_commands={arm: verify.load(u['original']/'runs'/u['unit']/arm/'command.json')
+                                         for arm in ('B', 'M1', 'M2', 'BOTH')},
+                        reference_command=verify.load(u['reference']/'command.json')))
+        if not units:
+            raise ValueError('empty selection: no accepted manifest cases match')
         print(json.dumps(dict(status='INPUT_INVENTORY_ONLY', entries=len(entries),
                               units=units, forms=len(counts), cases_per_arm=sum(counts.values()),
+                              selection=selection(a), details=details,
                               new_dut_calls=0, fresh_reference_calls=0)))
         return 0
+    if not a.entry and a.form and len(entries) == 1:
+        a.entry = entries[0]
     if not all((a.entry, a.engine, a.library_dir, a.output)):
         p.error('run requires --entry --engine --library-dir --output')
     engine = a.engine.resolve()
@@ -495,6 +627,7 @@ def main(argv=None):
     definition = index['entries'][a.entry]
     v, predicate_pins = checker(definition, a.raw_root, index['original_root'])
     binding = dict(files=identity, index_sha256=digest(a.index), entry=a.entry,
+                                  selection=selection(a),
                                   runner_sha256=digest(__file__),
                                   scope='fresh DUT; retained independent reference; ordinary directed only')
     if a.resume and a.output.exists():
@@ -505,6 +638,8 @@ def main(argv=None):
             raise ValueError('changed resume DUT/library/index')
         if previous.get('entry', a.entry) != a.entry:
             raise ValueError('changed resume entry')
+        if previous.get('selection', {}) != selection(a):
+            raise ValueError('changed resume selection')
         # Recheck retained captures with the current predicates, not old PASS rows.
         save(out/('invocation-'+str(time.time_ns())+'.json'), binding)
     else:
@@ -517,8 +652,8 @@ def main(argv=None):
     results = []
     new_calls = 0
     env = dict(os.environ, LD_LIBRARY_PATH=str(library.parent)+os.pathsep+os.environ.get('LD_LIBRARY_PATH',''))
-    for n, u in enumerate(corpus_units(index, a.entry, a.raw_root, a.reference_root)):
-        if n >= a.max_units:
+    for n, u in enumerate(selected_units(index, a.entry, a)):
+        if n >= (a.max_units or 1):
             break
         if a.stop_file and a.stop_file.exists():
             print('DRAINED before '+u['unit'])
@@ -580,6 +715,7 @@ def main(argv=None):
     save(out/'checker-bindings.json', dict(resolved_modules=modules,
          verified_pins={str(p):h for p,h in predicate_pins.items()}))
     save(out/'summary.json', dict(status='PASS_SELECTED_UNITS', results=results,
+                                  selection=selection(a), max_units=a.max_units or 1,
                                   reader=READER,
                                   new_dut_calls=new_calls, reused_captures=len(results)-new_calls,
                                   fresh_reference_calls=0,
