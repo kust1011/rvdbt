@@ -1,4 +1,4 @@
-Task128 actual Release host512 evidence after Task127; see [report](../../../SESSION0_RESULT_128.md).
+Task128 actual Release host512 evidence after Task127; see [report](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_128.md).
 
 The original Task125 call objects, guest VLEN1024, execution flags, source/ELFs/checkers and acceptance predicates are retained. This directory contains new build IDs, exact receipts/source-assertion bindings, cache/compiled-flag audit, target-PC emitted-code inspection, focused/exit-only results, failed-attempt notes and the independent local raw audit. These are finite correctness/admission observations; switches/aggregate counters are not target optimization evidence.
 

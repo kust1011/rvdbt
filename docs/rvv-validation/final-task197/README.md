@@ -22,7 +22,7 @@ checks,2,848 focused checks,21,316 external calls and9,888 sequence DUT checks.
 There are no pending units or new DUT failures. Original external exclusions
 remain unchanged. [Result](RESULT197.json), [per-form CSV](PER_FORM_RESULTS.csv),
 [entry receipts](ENTRY_RECEIPTS.json.gz), and [retention index](RETENTION_VERIFIED197.json)
-are the compact review packet; [SESSION0_RESULT_197](../../../SESSION0_RESULT_197.md)
+are the compact review packet; [SESSION0_RESULT_197](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_197.md)
 records counts, limitations and setup/transport history.
 
 Task197 starts at `4ad13da7a0a973623e8e51c683b2328bfba47f1b` and reuses
@@ -49,7 +49,7 @@ small-file allocation overhead. Original inputs and failures remain retained.
 ## Historical operations and provenance
 
 Resource budgets, worker counts and transport history are recorded in
-[SESSION0_RESULT_197](../../../SESSION0_RESULT_197.md) and retained raw logs;
+[SESSION0_RESULT_197](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_197.md) and retained raw logs;
 they are not prerequisites for the public replay.
 
 The archived research entry is [replay197.py](../../../scripts/rvv/replay197.py).

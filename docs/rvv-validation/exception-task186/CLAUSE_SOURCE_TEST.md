@@ -36,7 +36,7 @@ claim of supervisor CSR emulation or complete V conformance.
 No code in frozen179/delivery/W3 or thesis was changed. Session3's independent
 specification/scope audit is separate and is not counted as this task's test
 acceptance. See [RESULT_SUMMARY.json](RESULT_SUMMARY.json) and
-[SESSION0_RESULT_186.md](../../../SESSION0_RESULT_186.md) for actual runs, build
+[SESSION0_RESULT_186.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_186.md) for actual runs, build
 identity, resource correction, and retained raw paths.
 
 ## Cost accounting

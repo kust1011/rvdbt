@@ -1,6 +1,6 @@
 # Task142 final signal-copy build regression
 
-[Result](../../../SESSION0_RESULT_142.md) · [counts](combined/SUMMARY.json) · [forms](combined/FORMS.md) · [original-predicate audit](AUDIT.json) · [partition](PARTITION.json) · [build pins](BUILD_SUCCESS.json) · [host checks](TEST_SUCCESS.json).
+[Result](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_142.md) · [counts](combined/SUMMARY.json) · [forms](combined/FORMS.md) · [original-predicate audit](AUDIT.json) · [partition](PARTITION.json) · [build pins](BUILD_SUCCESS.json) · [host checks](TEST_SUCCESS.json).
 
 Task142 uses source `8111040faad84ded7f84fc5bd34d10461bfc50ca`, including reviewed signal-copy correction `ad5e3c8`. Actual build: `xbd:/home/vick/rvdbt-host512-task142-build/build/`, Clang22/LLVM22.1.6, Release, RV32/ELEN64, `RVV_HOST_CHUNK_BITS=512`. [Configuration match](CONFIGURATION_MATCH_137.json) checks 44 relevant options against Task137; [source](SOURCE_EQUALITY.json) and [dependencies](DEPENDENCY_EQUALITY.json) authenticate 297/442 files. The final executable is `e2559c5cd930e919503c79b44af219c243041e86f5b83a157bec860814e8336b`; library `79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af`.
 

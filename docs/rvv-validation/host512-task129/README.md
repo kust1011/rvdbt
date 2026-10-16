@@ -1,6 +1,6 @@
 # Retained external corpus on the exact Task128 host512 executable
 
-[Task129 report](../../../SESSION0_RESULT_129.md) · [combined host512 summary](combined/SUMMARY.md) · [machine counts](combined/SUMMARY.json) · [per-form table](combined/FORMS.md) · [exact-call partition](PARTITION.json) · [attempts](ATTEMPTS.md)
+[Task129 report](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_129.md) · [combined host512 summary](combined/SUMMARY.md) · [machine counts](combined/SUMMARY.json) · [per-form table](combined/FORMS.md) · [exact-call partition](PARTITION.json) · [attempts](ATTEMPTS.md)
 
 Task128's 5,904 memory calls and Task129's 15,412 remaining calls form an exact disjoint union of the original 21,316 calls: CHIPS Task120 11,744, ACT Task121 7,668 and Ara Task122 1,904. Full original call objects, including ELF identity, configuration and original acceptance scope, are subtracted. No opcode-name filtering is used in Task129. All calls use `/home/vick/rvdbt-host512-task128/build/bin/elfrun`, SHA256 `849e6dd0a11e78d19319a2d04b93a644f4dd04e9fbc86dd8b350288392d655a3`, with library `79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af`.
 

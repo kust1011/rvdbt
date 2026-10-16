@@ -69,7 +69,7 @@ on unchanged fixed192. The observer checks the target, exception cause and
 preserved architectural state, rather than accepting an exit code alone. This
 adds a semantic dimension, not instruction forms or a full-matrix replay.
 
-[External adjudication](../../../SESSION3_RESULT_198.md) resolves the two ACT
+[External adjudication](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION3_RESULT_198.md) resolves the two ACT
 privileged-state setup blockers and Ara's RV64-specific scalar assertions.
 Their original failures and restricted acceptance remain recorded; no assertion
 was replaced to turn an original test into a pass. The complete fixed192
@@ -81,7 +81,7 @@ A legal VLEN-4096, SEW-32, LMUL-4 sequence exposed the fixed 2,048-entry
 virtual-register tracking limit. The allocator now sizes stable tracking storage
 from the completed QIR region. Independent source review accepted this change
 for ordinary QCG translation; physical-register and spill-frame budgets remain
-unchanged. [Task195](../../../SESSION0_RESULT_195.md) records 54 long-vector cases
+unchanged. [Task195](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_195.md) records 54 long-vector cases
 and 216 checks on the fixed executable, plus ten integration fixtures and forty
 unchanged ACT/CHIPS test executions. Two stale fixtures were repaired without
 changing production code; their three failed attempts remain in the records.
@@ -98,7 +98,7 @@ Chapter 31 (V version 1.0). The earlier `3570f998` vector-spec source is a froze
 public-review text; historical references to that revision remain unchanged.
 The published manual additionally reserves reading one vector register with
 different source EEWs within an instruction, counting a mask source as EEW 1.
-[Task193](../../../SESSION3_RESULT_193.md) checks this difference against actual
+[Task193](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION3_RESULT_193.md) checks this difference against actual
 source predicates and retained final181 selections: 86 reserved declarations
 are already excluded, with 86 legal neighbours included. It does not change
 the accepted form totals. Reserved decoding is not a universal requirement to
@@ -118,7 +118,7 @@ not been measured. This is not a fresh full-form matrix on that executable.
 
 [Exact denial adjudication](../denial-task188/README.md) checks all 592 retained
 179 controls against target/setup and captured fault state, rather than keywords.
-[Inexact reductions](../../../SESSION3_RESULT_190.md) add 360 cases and 1,440 DUT
+[Inexact reductions](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION3_RESULT_190.md) add 360 cases and 1,440 DUT
 checks on immutable179, using independent rational rounding and legal-tree
 witnesses. Both remain separately identified from the original full matrix.
 The complete fault-to-resumed-execution composition remains unverified because
@@ -409,7 +409,7 @@ external, focused-fault and resource receipts; then main-owned thesis/PDF,
 author guide and reply draft updates. This local code/test delivery does not
 publish, email, or close those dependencies.
 
-Task183 actual bounded results and remaining gaps: [SESSION0_RESULT_183.md](../../../SESSION0_RESULT_183.md).
+Task183 actual bounded results and remaining gaps: [SESSION0_RESULT_183.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_183.md).
 
 ## Thesis and author handoff
 

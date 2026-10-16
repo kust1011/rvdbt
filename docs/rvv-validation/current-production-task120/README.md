@@ -18,7 +18,7 @@ target/checker bindings. Prior candidate/receipt fields remain explicitly
 historical. There are 11,920 navigation rows, including 11,544 positive aliases
 and 2,886 distinct positive source cases; these are not execution counts.
 [FILES.json](FILES.json) pins these artifacts. Full details are in
-[SESSION0_RESULT_120.md](../../../SESSION0_RESULT_120.md).
+[SESSION0_RESULT_120.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_120.md).
 
 Raw remains at `xbd:/home/vick/chips-current120/raw`, with original fresh work
 and cache directories. The local immutable raw copy and transport hash are

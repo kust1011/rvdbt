@@ -2,7 +2,7 @@
 
 Two additive families use the existing runner, packets, observer and fixed
 host512 e2559c5c with B/M1/M2/Both. Task145–147 executions and evidence are
-untouched. See [Task148 result](../../../SESSION0_RESULT_148.md) for current
+untouched. See [Task148 result](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_148.md) for current
 execution/audit status; per-form declarations and results are in `delta/` and
 `shift/`, with [delta results](delta/PER_FORM_RESULTS.json) and
 [shift results](shift/PER_FORM_RESULTS.json). Commands are in [COMMANDS.json](COMMANDS.json) and the two launch scripts.

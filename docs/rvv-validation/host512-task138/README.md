@@ -1,6 +1,6 @@
 # Final retained corpus on the Task137 executable
 
-[Task138 report](../../../SESSION0_RESULT_138.md) · [suite/method summary](combined/SUMMARY.md) · [counts](combined/SUMMARY.json) · [forms](combined/FORMS.md) · [same-build partition](PARTITION.json) · [original-predicate audit](AUDIT.json)
+[Task138 report](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_138.md) · [suite/method summary](combined/SUMMARY.md) · [counts](combined/SUMMARY.json) · [forms](combined/FORMS.md) · [same-build partition](PARTITION.json) · [original-predicate audit](AUDIT.json)
 
 Every one of the 21,316 retained CHIPS/ACT/Ara calls has a fresh Task138 receipt on `/home/vick/rvdbt-goldens-task137/current/build/bin/elfrun`, SHA256 `da5209ae488403f3eb2a15af8bf0376df4844eefb46b9525c8a0834f8e3f4d5e`, with library `79d0ba2a9ddea24d49d7282012fdc373b92a26756bb5452c1f41c66d533887af`. Three unchanged original pilots plus 21,313 disjoint original calls form the full same-build queue. Prior-build execution credit is zero.
 
@@ -12,7 +12,7 @@ The supplement is **staged for main's review, not uploaded**. Its exact identity
 and intended release URL are in [TASK139_ARCHIVES.json](TASK139_ARCHIVES.json).
 Until main publishes that asset, public acquisition of current raw receipts is
 incomplete. Local review can copy the staged archive named in
-[Task139's result](../../../SESSION0_RESULT_139.md). No author directory or xbd
+[Task139's result](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_139.md). No author directory or xbd
 mount is used by the following checks.
 
 Use a repository snapshot containing Task139's reader and these Task138 docs.

@@ -1,6 +1,6 @@
 # Task125 retained production integration
 
-See [SESSION0_RESULT_125.md](../../../SESSION0_RESULT_125.md) for results and limits.
+See [SESSION0_RESULT_125.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_125.md) for results and limits.
 `RECEIPTS.json.gz` contains every new call, unchanged original call metadata,
 complete new command, build pins, result, available counters and raw file hashes.
 `form-bindings.json.gz` joins each new receipt to its explicitly older-build

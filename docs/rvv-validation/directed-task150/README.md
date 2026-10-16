@@ -1,7 +1,7 @@
 # Task150 evidence
 
 Task149 is completed separately from retained raw records in
-[SESSION0_RESULT_149.md](../../../SESSION0_RESULT_149.md), including compressed
+[SESSION0_RESULT_149.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_149.md), including compressed
 ELF alias repair. [Copied original records](task149-completion/) earn no new
 execution credit; old snapshots and completed batches are unchanged.
 

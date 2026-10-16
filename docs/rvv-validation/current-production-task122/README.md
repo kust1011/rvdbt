@@ -70,4 +70,4 @@ These finite original comparisons do not close full-state, suppression/history,
 overlap/configuration completeness, per-PC optimized admission, fault/restart,
 concurrent-mapping, native-host-fault or blocked P4-04 obligations. No reference
 run, golden regeneration, performance/global changes, push or issue closure.
-Launcher owns completion signaling. See [SESSION0_RESULT_122.md](../../../SESSION0_RESULT_122.md).
+Launcher owns completion signaling. See [SESSION0_RESULT_122.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_122.md).

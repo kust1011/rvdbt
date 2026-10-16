@@ -1,6 +1,6 @@
 # Task126 receipts
 
-Code/tests commit `173fce8`. [Report](../../../SESSION0_RESULT_126.md),
+Code/tests commit `173fce8`. [Report](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_126.md),
 [bounded commands](COMMANDS.md), [raw audit](LOCAL_RAW_AUDIT.json),
 [build/source pins](SOURCE_IDENTITY.json), [eight original calls](SUMMARY.json).
 Final test streams and compressed configure/build/object evidence are adjacent.

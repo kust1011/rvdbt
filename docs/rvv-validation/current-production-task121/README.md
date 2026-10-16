@@ -80,4 +80,4 @@ all register/CSR/memory state, suppression/history, all overlap/configurations,
 per-PC optimized admission, fault cause/address, concurrent mapping changes,
 complete handler/return/restart or blocked P4-04 obligations. The two whole-file
 FS/mstatus blockers, missing upstream EFFEW32 `vfwcvt.f.f.v`, privileged vset and
-profile exclusions remain separate. See [SESSION0_RESULT_121.md](../../../SESSION0_RESULT_121.md).
+profile exclusions remain separate. See [SESSION0_RESULT_121.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_121.md).

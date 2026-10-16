@@ -10,3 +10,10 @@ logs
 prebuilts/*/*/*.*
 prebuilts/*/*.*
 prebuilts/*.*
+
+# Local Python caches and agent work reports are not project documentation.
+__pycache__/
+*.py[cod]
+/SESSION*_RESULT_*.md
+/*_RESULT.md
+/*-evidence/

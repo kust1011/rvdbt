@@ -1,4 +1,4 @@
-## RVV thesis continuation
+# rvdbt: RISC-V Vector Dynamic Binary Translation
 
 This repository continues [Wendell Lin's rvdbt](https://github.com/Wendell-Lin/rvdbt)
 and retains its Git history and original MIT license. The RVV research snapshot
@@ -29,7 +29,8 @@ references. Start with its [retained-corpus commands and bundle prerequisites](d
 **There is not yet a public download of that complete bundle.** The committed
 index and two runnable samples are not substitutes for the missing data.
 
-The stable reading path is:
+The [documentation index](docs/README.md) groups the current architecture,
+build and testing instructions separately from historical evidence. Start with:
 
 - [Architecture and code map](docs/rvv-qcg.md): QCG translation, M1/M2 legality,
   helpers and allocator boundaries.

@@ -32,7 +32,7 @@ and 86 output-child checks**, **256 FRM roundtrips / 192 badframes**, and
 These checks are distinct from external corpus coverage: no external fixtures
 or corpus were rerun, and no external expected values changed. Raw builds,
 original fatal witnesses, the copy-only EFAULT failure and final results are in
-[Task141 receipt](../../../SESSION0_RESULT_141.md).
+[Task141 receipt](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_141.md).
 
 Generic scalar/atomic lowering, optional gather/LLVM ownership and general
 syscall marshalling are outside this correction. Broad issue #1 remains open.
@@ -488,5 +488,5 @@ Task126 adds no sigprocmask, allocation or longjmp to that callback. Frame
 allocation remains on the normal dispatcher stack after helper scopes close.
 Unrelated host faults remain fatal. Native, permitted bulk, gather, mapping-race
 and guest restart limitations remain; this is no general OS signal subsystem.
-See [Task126 report](../../../SESSION0_RESULT_126.md) for the new build/tests;
+See [Task126 report](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_126.md) for the new build/tests;
 historical Task113–125 receipt identities and results above remain unchanged.

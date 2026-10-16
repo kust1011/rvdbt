@@ -1,5 +1,5 @@
 Task191 retains a bounded production integration, not a full matrix replay.
-See [SESSION0_RESULT_191.md](../../../SESSION0_RESULT_191.md) for scope and remaining obligations.
+See [SESSION0_RESULT_191.md](https://github.com/kust1011/rvdbt/blob/9dfc020b2aa7e98d068d954555b5902082538702/SESSION0_RESULT_191.md) for scope and remaining obligations.
 
 `raw-receipts.tar.gz` is the verified `task191/` tree from isolated186. It contains
 all per-command captures, binary terminal snapshots, independent expected grouped
