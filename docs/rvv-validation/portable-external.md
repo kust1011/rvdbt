@@ -263,6 +263,13 @@ The fetcher rejects damaged archives, path traversal, links, duplicate files
 and extraction beyond the declared limits. Install `zstd` and allow 40 GiB
 of space and at least 1.5 million free inodes for extraction and replay work.
 
+Release acquisition was checked by anonymously downloading all 16 archives and
+extracting 1,484,287 files. From that extraction, the bounded `vadd.vv` command
+above executed 17 cases in each of B/M1/M2/BOTH: four new DUT calls and 68 checks
+passed, followed by receipt audit. The [download/replay records and raw outputs](https://github.com/kust1011/rvdbt/releases/download/rvv-corpus-20261016/public-download-validation.tar.gz)
+record runner revision `478f36c` and measured d252 executable identity. This is
+an acquisition/replay check, separate from the complete measured-build results.
+
 Source attributions and third-party license notices accompany the corpus.
 Original checker snapshots, manifests and seals are preserved; release notices
 describe their distribution separately from historical preparation labels.
