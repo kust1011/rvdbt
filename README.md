@@ -103,6 +103,18 @@ To test prebuilt of `rv32ui` and `rv32um`, run
 ```shell
 bash scripts/prebuilt-riscv-tests.sh
 ```
+Both scalar runners locate inputs relative to their own repository. Their
+optional build-directory argument defaults to `build-llvm-19`; relative paths
+are resolved from the repository root, and absolute paths may be used:
+```sh
+bash scripts/prebuilt-riscv-tests.sh "build with spaces"
+bash scripts/riscv-tests.sh /absolute/path/to/build
+```
+The selected build must contain executable `bin/elfrun`. The runners create
+`troot` and `tcache` there, reject missing inputs and failed copies, and return
+nonzero if any test fails. These inherited scalar checks use guest exit status;
+they are separate from the RVV validation above.
+
 Or to test `rv32ui` and `rv32um` built from `riscv-tests`, patch and run script as follow.
 ```shell
 cd riscv-tests

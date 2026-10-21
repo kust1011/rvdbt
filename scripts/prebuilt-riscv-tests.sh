@@ -9,8 +9,23 @@ ORANGE="\e[33m"
 CYAN="\e[36m"
 NOCOLOR="\e[0m"
 
-# Change to build directory where elfrun is located
-cd ~/rvdbt/build-llvm-19
+if (( $# > 1 )); then
+    echo "Usage: $0 [build-directory]" >&2
+    exit 2
+fi
+repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd) || exit 1
+build_dir=${1:-build-llvm-19}
+case "$build_dir" in
+    /*) ;;
+    *) build_dir="$repo_dir/$build_dir" ;;
+esac
+input_dir="$repo_dir/prebuilts/riscv-tests"
+if [[ ! -d "$build_dir" || ! -f "$build_dir/bin/elfrun" || ! -x "$build_dir/bin/elfrun" ]]; then
+    echo "Missing build directory or executable elfrun: $build_dir" >&2
+    exit 1
+fi
+cd -- "$build_dir" || exit 1
+mkdir -p -- troot tcache || exit 1
 
 declare -a isa_RV32UI_p=( "add" "addi" "and" "andi" "auipc" "beq" "bge" "bgeu" "blt" "bltu" "bne" "jal" "jalr" "lb" "lbu" "lh" "lhu" "lui" "lw" "or" 
  "ori" "sb" "sh" "sll" "simple" "slli" "slt" "slti" "sltiu" "sltu" "sra" "srai" "srl" "srli" "sub" "sw" "xor" "xori" )
@@ -26,12 +41,15 @@ fail_rv32um=0
 total_rv32um=0
 
 echo "Now test rv32ui for RVDBT!!"
-for isa_RV32UI in ${isa_RV32UI_p[@]}
+for isa_RV32UI in "${isa_RV32UI_p[@]}"
 do
     echo testing instruction ${isa_RV32UI}
-    cp ~/rvdbt/prebuilts/riscv-tests/rv32ui-p-${isa_RV32UI} ~/rvdbt/build-llvm-19/troot/
-    ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- rv32ui-p-${isa_RV32UI}
-    if [ $? -eq 0 ]
+    input="$input_dir/rv32ui-p-${isa_RV32UI}"
+    if [[ ! -f "$input" || ! -r "$input" ]]; then
+        echo "Missing or unreadable input: $input" >&2
+        fail_rv32ui=$((fail_rv32ui+1))
+    elif cp -- "$input" troot/ &&
+         ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- "rv32ui-p-${isa_RV32UI}"
     then 
         suss_rv32ui=$(($suss_rv32ui+1))
     else 
@@ -44,12 +62,15 @@ done
 echo
 
 echo "Now test rv32um for RVDBT!!"
-for isa_RV32UM in ${isa_RV32UM_p[@]}
+for isa_RV32UM in "${isa_RV32UM_p[@]}"
 do
     echo testing instruction ${isa_RV32UM}
-    cp ~/rvdbt/prebuilts/riscv-tests/rv32um-p-${isa_RV32UM} ~/rvdbt/build-llvm-19/troot/
-    ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- rv32um-p-${isa_RV32UM}
-    if [ $? -eq 0 ]
+    input="$input_dir/rv32um-p-${isa_RV32UM}"
+    if [[ ! -f "$input" || ! -r "$input" ]]; then
+        echo "Missing or unreadable input: $input" >&2
+        fail_rv32um=$((fail_rv32um+1))
+    elif cp -- "$input" troot/ &&
+         ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- "rv32um-p-${isa_RV32UM}"
     then 
         suss_rv32um=$(($suss_rv32um+1))
     else 
@@ -78,5 +99,7 @@ then
     echo -e "${CYAN}Pass rv32um-p testing! ${NOCOLOR}"
 else
     echo -e "${CYAN}Fail rv32um-p testing! ${NOCOLOR}"
-fi    
+fi
 echo "=============================="
+
+(( fail_rv32ui == 0 && fail_rv32um == 0 ))
