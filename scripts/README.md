@@ -1,21 +1,47 @@
-# Scritps
-This directory collects the scripts to build, test, and benchmark, to avoid polluting the parent directory.
-But to run these scripts, please be at parent diretory and specified llvm version like following examples. The CI/CD Jenkins also use these scripts.
+# Build and validation scripts
+
+Run commands from the repository root. Use the maintained entries below for
+RVV development. Numbered campaign scripts reproduce historical experiments;
+their paths remain stable because recorded manifests refer to them.
+
+## Current entry points
+
+| Task | Entry | Result |
+|---|---|---|
+| Build and focused C++ tests | [Build profiles](../docs/build-profiles.md) | Structural and hardware-dependent native checks |
+| External guest tests | [Portable replay](../docs/rvv-validation/portable-external.md) | Documented Ara and RVVTS fixture results |
+| Directed instruction tests | `run_rvv_retained.py` | Selected cases compared with retained independent references |
+| Per-form external coverage | `rvv_scope_report.py` | Source cases, comparison sites and recorded outcomes |
+
+Host-side runner and checker tests require no new performance campaign:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p 'test_rvv*.py'
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/rvv/directed -p 'test_*.py'
+```
+
+These commands test host tools, not RVV execution. Catalogue `list` and `show`
+commands likewise do not execute guest tests. Follow the portable replay guide
+for dependencies and actual execution; diagnostic replay is not a timing recipe.
+
+## Inherited build scripts
+
+The scripts below are retained for the upstream scalar workflow. Prefer the
+build profiles above for RVV configurations. The current Jenkins job uses LLVM 20.
 
 ## Build
-Note that this only builds developing llvm version. There is no need to build earlier llvm version after building from forked repo.
 ```bash
-~/rvdbt$ bash scripts/build.sh 19 
+bash scripts/build.sh 20
 ```
 
 ## Test
 ```bash
-~/rvdbt$ bash scripts/test.sh 19
+bash scripts/test.sh 20
 ```
 
 ## Benchmark
 ```bash
-~/rvdbt$ bash scripts/benchmark.sh 19
+bash scripts/benchmark.sh 20
 ```
 
 ## RVV validation tools

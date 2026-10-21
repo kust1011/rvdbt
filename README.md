@@ -101,7 +101,7 @@ recipe or an RVV-AOT validation claim.
 ## RISCV-TESTS
 To test prebuilt of `rv32ui` and `rv32um`, run
 ```shell
-bash scripts/prebuilts-riscv-tests.sh
+bash scripts/prebuilt-riscv-tests.sh
 ```
 Or to test `rv32ui` and `rv32um` built from `riscv-tests`, patch and run script as follow.
 ```shell

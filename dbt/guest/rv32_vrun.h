@@ -774,13 +774,11 @@ constexpr u8 RvvRunPeakLiveBound(u8 touched_registers, u8 nchunks, u8 n_fbroadca
 	return v > 255u ? (u8)255u : (u8)v;
 }
 
-// P7O-1 STAGE 1. THE SAME MODEL FOR A COMPONENT-RESIDENT SCHEDULE, and the one term that differs.
-//
-// THE SCHEDULE IT BOUNDS (not emitted yet; Stage 3's business) is
+// Peak-live bound for a component-resident schedule:
 //
 //     for c in 0 .. k-1 { pass1(c); pass2(all members, component c); pass3(c) }
 //
-// instead of today's `pass1(all c); pass2(all members, all c); pass3(all c)`. Under the P1-P11
+// instead of `pass1(all c); pass2(all members, all c); pass3(all c)`. Under the P1-P11
 // predicate that RvvRunComponentSeparable() decides, no member reads a lane belonging to a
 // component other than its own, so component `c`'s values are dead once its pass 3 has stored
 // them, and at most ONE component's working set is live at any point. That is the whole content

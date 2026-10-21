@@ -23,7 +23,9 @@ Key source locations:
 |---|---|
 | Translation-loop dispatch | `dbt/guest/rv32_qir.cpp`, `RvvScanVectorRun`, `RvvTranslateVectorRun` |
 | Run membership and dataflow | `dbt/guest/rv32_vrun.cpp`, `FormRun` |
+| Chunk batch sizing and residency bounds | `dbt/guest/rv32_vrun.h`, `RvvRunBatchWidth`, `RvvRunPeakLiveBound` |
 | Typed QIR frame | `dbt/qmc/qir.h`, `InstRVVTypedChunkBegin/End` |
+| Physical register allocation and temporary retirement | `dbt/qmc/qcg/qra.cpp`, `QRegAlloc::Run`, `AnalyzeVPRRetirement` |
 | x86 guards and lane operations | `dbt/qmc/qcg/qemit.cpp`, `Emit_rvvtypedchunkbegin`, `Emit_vchunkadd` |
 | Active-chunk planning and frame legality | `dbt/guest/rv32_active_chunk_plan.h`, `dbt/guest/rv32_frame_semantics.h` |
 
@@ -67,6 +69,31 @@ component-first emission. General floating-point grouped early-exit options
 are disabled in that configuration. Separate focused tests of that available
 path must not be used to describe every floating-point run in the measured
 Both configuration.
+
+## Register allocation and resource limits
+
+Run formation, chunk batching and register allocation have separate roles.
+`FormRun` estimates residency before accepting another instruction. Exceeding
+the applicable register budget ends that run; the remaining instructions are
+translated separately. For eligible routes, `RvvRunBatchWidth` selects a bounded
+number of chunks to process together. Neither operation is the allocator
+splitting a guest translation block.
+
+`QRegAlloc::Run` walks the already constructed QIR blocks and assigns physical
+registers subject to operand constraints. `AnalyzeVPRRetirement` first identifies
+last uses of local vector temporaries confined to one QIR block. After allocating
+the last consumer, `RetireAt` marks the temporary retired. Its physical register
+can subsequently be reclaimed without saving a value that has no remaining
+consumer. Cross-block values are excluded from this early-retirement analysis.
+This is block-local last-use analysis, not global live-interval allocation.
+
+Architectural state publication remains a QIR use: retiring a temporary after
+its final store does not discard the RISC-V register value in `CPUState`.
+Promotion can increase register pressure; batching and shorter temporary
+lifetimes bound that increase rather than guaranteeing fewer registers than
+the per-instruction baseline. Guarded chunk groups also restrict spill insertion,
+so admission checks cannot be replaced by an assumption that RA will spill any
+excess live values.
 
 ## Focused checks
 
