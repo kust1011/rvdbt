@@ -1,13 +1,7 @@
-python3 examples/benchmarks.py \
-    --rvdbt-build-dir $(pwd)/build-llvm-$1 \
-    --libriscv-build-dir /home/wendell/libriscv/emulator \
-    --prebuilts $(pwd)/prebuilts \
-    --riscv32-gcc riscv32-unknown-elf-gcc \
-    --rvdbt-jit \
-    --rvdbt-llvmaot \
-    --rvdbt-llvmaot-hotspot \
-    --benchmark SPEC2017RateTest
-    # --rvdbt-llvmaot \
-    # --rvdbt-llvmaot-hotspot \
-    # --rvdbt-qcgaot \
-    # --libriscv
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo 'SPEC2017RateTest has no workload definition in examples/benchmarks.py.' >&2
+echo 'This legacy entry cannot run until test-input commands are defined.' >&2
+echo 'ref.sh and train.sh use different input sets; neither substitutes for test.' >&2
+exit 2

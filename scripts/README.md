@@ -17,6 +17,7 @@ Host-side runner and checker tests require no new performance campaign:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p 'test_rvv*.py'
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p 'test_legacy_*.py'
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/rvv/directed -p 'test_*.py'
 ```
 
@@ -43,6 +44,18 @@ bash scripts/test.sh 20
 ```bash
 bash scripts/benchmark.sh 20
 ```
+
+The inherited `hotspot.sh`, `test-rv32emu-im.sh`, `rv32emu-not-freq.sh`,
+`spec2017/ref.sh`, `spec2017/ref-no-prop.sh` and `spec2017/train.sh` select
+specific scalar experiment modes. They resolve paths from this checkout and
+accept an optional LLVM major version (default 20), independent of the caller's
+working directory. They require the corresponding build and prebuilt inputs;
+SPEC inputs must be obtained under their own license.
+
+`spec2017/test.sh` exits with an error: the inherited `SPEC2017RateTest` selector
+has no workload definition. Reference and training inputs are not substitutes
+for that missing test configuration. These scripts are not the thesis's RVV
+performance matrix runner.
 
 ## Experimental AOT controller
 
