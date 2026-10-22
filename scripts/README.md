@@ -30,6 +30,13 @@ for dependencies and actual execution; diagnostic replay is not a timing recipe.
 The scripts below are retained for the upstream scalar workflow. Prefer the
 build profiles above for RVV configurations. The current Jenkins job uses LLVM 20.
 
+`build.sh`, `test.sh`, `benchmark.sh` and `rvdbt_benchmark.sh` resolve paths from
+the checkout, accept an optional LLVM major version (default 20), and honor
+`RVDBT_BUILD_DIR`. Build also accepts `LLVM_PATH`, `CC`, `CXX` and `RVDBT_JOBS`
+(default 4); test/benchmark accept `RVDBT_PREBUILTS` and `RISCV32_GCC`.
+Relative directory overrides are relative to the checkout, not the caller's
+working directory. Build remains the inherited Debug profile.
+
 ### Build
 ```bash
 bash scripts/build.sh 20
@@ -56,6 +63,29 @@ SPEC inputs must be obtained under their own license.
 has no workload definition. Reference and training inputs are not substitutes
 for that missing test configuration. These scripts are not the thesis's RVV
 performance matrix runner.
+
+### Scalar benchmark results
+
+`examples/benchmarks.py` and `examples/benchmarks_nofreq.py` share the execution
+and result checker; the latter retains its distinct workload catalogue. New
+runs use a unique `benchmark-run-*` directory under the build, or a new directory
+specified with `--output-dir`. Per-mode caches and captured outputs are kept
+there; existing result directories and declared guest output files are not
+overwritten. Run only with disposable workload working directories: programs
+may also write files not declared by their catalogue entry.
+
+By default, results are compared with QEMU using the selected case's output
+checks and expected exit status. `--no-qemu` remains available for benchmark
+timing only: results say `exit-status-only` and do not include a speedup score or
+claim an output comparison. `--objective test` requires QEMU. A failed process,
+missing input, timeout or failed comparison produces a failing command status
+and no valid time in the result table.
+
+AOT consumes a profile from a preceding JIT run of the same case or a supplied
+seed profile directory (`--cache-dir`, relative to the build unless absolute).
+It does not select the newest unrelated profile or compiled artifact. Existing
+profiles and historical outputs are preserved. The runner does not build missing
+benchmark inputs; it reports the missing prebuilt instead.
 
 ## Experimental AOT controller
 

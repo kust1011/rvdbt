@@ -6,7 +6,9 @@ import filecmp
 import sys
 import time
 from typing import Type
-import glob
+import hashlib
+import shutil
+import tempfile
 import signal
 import math
 
@@ -88,11 +90,13 @@ class LIBRISCVExec(BaseExec):
         # Run setup compilation if needed
         pargs = [LIBRISCVExec.build_dir + "/rvlinux", self.root + "/" + self.args[0]]
         self.bin_path = LIBRISCVExec.build_dir + "/rvlinux"
+        start_time = time.time()
         p = subprocess.Popen(pargs, cwd=LIBRISCVExec.build_dir,
                            env=env,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE, start_new_session=True)
         self.out, self.err = collect_output(p)
+        self.aot_time = time.time() - start_time
         self.rc = p.returncode
         self.setup_ok = self.rc == 0
 
@@ -118,6 +122,8 @@ class LIBRISCVExec(BaseExec):
 class RVDBTExec(BaseExec):
     build_dir = None
     cache_dir = None
+    cache_full_dir = None
+    profile_dir = None
 
     def __init__(self, aot, llvm=False, hotspot_threshold=0, jit_merge_ls=False, llvmopt=False, not_freq=False, noprop=False):
         super().__init__()
@@ -145,11 +151,11 @@ class RVDBTExec(BaseExec):
         # make sure dbtcache exists
         pargs = [RVDBTExec.build_dir + "/bin/elfaot",
                  "--propagate-exec-count=" + ("on", "off")[self.noprop],
-                 "--cache=" + RVDBTExec.cache_dir,
+                 "--cache=" + self.cache_path,
                  "--llvm=" + ("off", "on")[self.llvm],
                  "--threshold=" + str(self.hotspot_threshold),
                  "--elf=" + self.root + "/" + self.args[0],
-                 "--mgdump=" + RVDBTExec.cache_dir,
+                 "--mgdump=" + self.cache_path,
                  "--llvmopt=" + ("off", "on")[self.llvmopt]]
         print(" ".join(pargs))
         start_time = time.time()
@@ -165,7 +171,7 @@ class RVDBTExec(BaseExec):
         if not self.setup_ok:
             return
         pargs = [RVDBTExec.build_dir + "/bin/elfrun",
-                 "--cache=" + RVDBTExec.cache_dir,
+                 "--cache=" + self.cache_path,
                  "--fsroot=" + self.root,
                  "--not-freq=" + ("off", "on")[self.not_freq],
                  "--aot=" + ("off", "on")[self.aot],
@@ -182,30 +188,13 @@ class RVDBTExec(BaseExec):
         self.rc = p.returncode
         self.time = timer
 
-def get_latest_aot_so_hash():
-    """Get the filename without extension of the most recently created .aot.so file in the cache directory."""
-    
-    # Get the cache directory
-    cache_dir = RVDBTExec.build_dir + "/" + RVDBTExec.cache_dir + "/"
-    
-    # Find all .aot.so files
-    aot_so_files = glob.glob(os.path.join(cache_dir, "*.aot.so"))
-    
-    if not aot_so_files:
-        raise FileNotFoundError("No .aot.so files found in the cache directory")
-    
-    latest_aot_so = max(aot_so_files, key=os.path.getmtime)
-    
-    return os.path.basename(latest_aot_so).split(".")[0]
-
-def get_latest_prof_hash():
-    """Get the filename without extension of the most recently created .prof file in the cache directory."""
-    cache_dir = RVDBTExec.build_dir + "/" + RVDBTExec.cache_dir + "/"
-    prof_files = glob.glob(os.path.join(cache_dir, "*.prof"))
-    if not prof_files:
-        raise FileNotFoundError("No .prof files found in the cache directory")
-    latest_prof = max(prof_files, key=os.path.getmtime)
-    return os.path.basename(latest_prof).split(".")[0]
+def guest_hash(root, target):
+    # Match FileChecksum::FromFile; MD5 is an artifact key, not authentication.
+    digest = hashlib.md5()
+    with open(os.path.join(root, target), "rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
 class Benchmark:
     def __init__(self, root, args, cmp_out=False, ofile=None, name=None, prof=None, expected_rc=0):
@@ -215,12 +204,19 @@ class Benchmark:
         self.root = root
         self.args = args
         self.cmp_out = cmp_out  
+        # These legacy cases already retained the -o file per engine, but never checked it.
+        if ofile is None and self.name.startswith("gcc") and "-o" in args:
+            ofile = args[args.index("-o") + 1]
         self.ofile = self.root + "/" + ofile if ofile is not None else None
         self.prof = prof
         self.expected_rc = expected_rc
+        self.output_dir = None
+        self.profile_path = None
 
     def get_ofile(self, exec):
         assert (self.ofile is not None)
+        if self.output_dir:
+            return os.path.join(self.output_dir, os.path.basename(self.ofile) + "." + exec.name)
         return self.ofile + "." + exec.name
     
     def set_ofile(self, ofile):
@@ -229,13 +225,21 @@ class Benchmark:
     def launch_with(self, exec: BaseExec):
         # A failed run must not inherit a previous run's output file.
         if self.ofile:
+            if self.output_dir and os.path.lexists(self.ofile):
+                raise FileExistsError("Refusing to overwrite guest output: " + self.ofile)
             for path in (self.ofile, self.get_ofile(exec)):
                 if os.path.isfile(path):
                     os.remove(path)
-        if "rvdbt-llvmaot" in exec.name and self.prof != None:
-            # cp old prof file named by name to prof hash stored in exec.prof
-            os.system(f"cp {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.name}.prof {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.prof}.prof")
-            print(f"cp {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.name}.prof {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{self.prof}.prof")
+        if isinstance(exec, RVDBTExec) and hasattr(exec, "aot"):
+            identity = guest_hash(self.root, self.args[0])
+            exec.cache_path = tempfile.mkdtemp(prefix="arm-", dir=RVDBTExec.cache_full_dir)
+            if exec.aot:
+                source = self.profile_path
+                if source is None:
+                    if self.prof is not None and self.prof != identity:
+                        raise OSError("Historical profile hint does not match guest ELF; select a JIT mode first to reprofile")
+                    source = os.path.join(RVDBTExec.profile_dir, (self.name if self.prof else identity) + ".prof")
+                shutil.copyfile(source, os.path.join(exec.cache_path, identity + ".prof"))
         exec.setup(self.root, self.args)
         if not getattr(exec, 'setup_ok', True):
             exec.failure = "setup-failed"
@@ -243,30 +247,19 @@ class Benchmark:
         if self.ofile:
             exec.ofile = self.ofile
 
-        if "rvdbt-llvmaot" in exec.name: # if setup with elfaot and success, then change the modulegraph.gv into name
-            new_base_name = self.name + "_" + exec.name
-            new_name = new_base_name + ".gv"
-            print(f"Renaming modulegraph.gv `to {new_name}")
-            os.rename(RVDBTExec.build_dir + "/" + RVDBTExec.cache_dir + "/modulegraph.gv", RVDBTExec.build_dir + "/" + RVDBTExec.cache_dir + "/" + new_name)
-            try:
-                aot_so_hash = get_latest_aot_so_hash()
-            except FileNotFoundError:
-                print("No .aot.so files found in the cache directory")
-                exec.failure = "aot-missing"
-                return exec
-            cache_path = RVDBTExec.build_dir + "/" + RVDBTExec.cache_dir + "/" + aot_so_hash + ".aot.so"
-            assert os.path.isfile(cache_path), f"AOT file {cache_path} does not exist"
-            os.system(f"cp {cache_path} {RVDBTExec.build_dir}/{RVDBTExec.cache_dir}/{new_base_name}.aot.so")
+        if isinstance(exec, RVDBTExec) and getattr(exec, "aot", False):
+            # The legacy commands use the runtime's default VLEN=128.
+            cache_path = os.path.join(exec.cache_path, identity + ".v128.aot.so")
             exec.aot_size = os.path.getsize(cache_path)
             print(f"AOT size: {exec.aot_size} bytes")
-            # also copy the prof file to avoid re-running the profiler
         
         exec.run()
         if self.ofile is not None and os.path.isfile(self.ofile):
             os.rename(self.ofile, self.get_ofile(exec))
-        if len(self.name) > 3 and self.name[:4] == "gcc":
-            # I only name gcc outputs to ref, so I need to rename the output file with the exec as postfix
-            os.rename(self.root + "/" + self.args[-1], self.root + "/" + self.args[-1] + "." + exec.name)
+        if isinstance(exec, RVDBTExec) and hasattr(exec, "cache_path") and not exec.aot and exec.rc == self.expected_rc:
+            profile = os.path.join(exec.cache_path, identity + ".prof")
+            if os.path.isfile(profile):
+                self.profile_path = profile
 
         return exec
 
@@ -301,9 +294,17 @@ class Benchmark:
             self.aot_size = aot_size
             self.aot_time = aot_time
 
-    def result(self, exec: BaseExec, exec_ref: BaseExec = None) -> Result:
+    def result(self, exec: BaseExec, exec_ref: BaseExec = None, exit_status_only=False) -> Result:
         exec_ref = exec if exec_ref is None else exec_ref
-        res = self.verify(exec, exec_ref) or "ok"
+        if exit_status_only:
+            res = getattr(exec, "failure", None)
+            if not res and exec.rc != self.expected_rc:
+                res = "execution-failed"
+            if not res and self.ofile and not os.path.isfile(self.get_ofile(exec)):
+                res = "outfile-missing"
+            res = res or "exit-status-only"
+        else:
+            res = self.verify(exec, exec_ref) or "ok"
         passed = res == "ok"
         res += ":" + str(exec.rc)
         score = None
@@ -551,9 +552,14 @@ def compile_benchmark(gcc_path: str, root_dir: str, target: str) -> bool:
     return False
 
 
-def RunTests(opts):
-    benchmarks = GetBenchmarks(opts)
+def RunTests(opts, catalogue=None):
+    benchmarks = (catalogue or GetBenchmarks)(opts)
     failures = 0
+    if opts.no_qemu and opts.objective == "test":
+        print("Test objective requires the QEMU reference", file=sys.stderr)
+        return 1
+    if opts.no_qemu:
+        print("No QEMU: exit-status-only; outputs are not reference-validated; no relative scores")
     if not benchmarks:
         print("No benchmarks selected", file=sys.stderr)
         return 1
@@ -613,13 +619,16 @@ def RunTests(opts):
     total_time_csvtab = [["benchmark-name"] + list(map(lambda e: e.name, get_execs()))]
 
     def get_aot_execs():
-        return [e for e in get_execs() if e.name.startswith("rvdbt-llvmaot")]
+        return [e for e in get_execs() if getattr(e, "aot", False) or e.name == "rvlinux-bt"]
 
     aot_size_csvtab = [["benchmark-name"] + list(map(lambda e: e.name, get_aot_execs()))]
     aot_time_csvtab = [["benchmark-name"] + list(map(lambda e: e.name, get_aot_execs()))]
 
-    for b in benchmarks:
-        print(f"\nCompiling benchmark under: {b.root}")
+    for index, b in enumerate(benchmarks):
+        if getattr(opts, "output_dir", None):
+            b.output_dir = os.path.join(opts.output_dir, str(index))
+            os.mkdir(b.output_dir)
+        print(f"\nChecking prebuilt benchmark under: {b.root}")
         if not compile_benchmark(opts.riscv32_gcc, b.root, b.args[0]):
             print(f"FAIL: missing or failed benchmark build: {b.root}")
             failures += 1
@@ -642,8 +651,12 @@ def RunTests(opts):
                 e.rc = None
                 e.time = None
                 e.err = str(error)
-            res = b.result(e, ref_exec)
-            passed = res.res.startswith("ok:")
+            if b.output_dir:
+                for suffix, data in (("stdout", e.out), ("stderr", e.err)):
+                    with open(os.path.join(b.output_dir, e.name + "." + suffix), "wb") as stream:
+                        stream.write(data if isinstance(data, bytes) else str(data or "").encode())
+            res = b.result(e, ref_exec, exit_status_only=opts.no_qemu)
+            passed = res.res.startswith(("ok:", "exit-status-only:"))
             failures += not passed
             print(f"  Result: {res.res}")
             print(f"  Time: {res.time}")
@@ -652,7 +665,7 @@ def RunTests(opts):
             print(f"  Error output or logs: {e.err}") # E.g., [aot] is log_aot
             scores += [res.score]
             times += [res.time if passed else None]
-            if e.name.startswith("rvdbt-llvmaot"):  
+            if getattr(e, "aot", False) or e.name == "rvlinux-bt":
                 aot_sizes += [res.aot_size]
                 aot_times += [res.aot_time]
                 total_times += [res.time + res.aot_time if passed and res.time is not None else None]
@@ -663,16 +676,7 @@ def RunTests(opts):
         aot_size_csvtab += [aot_sizes]
         aot_time_csvtab += [aot_times]
         total_time_csvtab += [total_times]
-        # move the prof file to another name to avoid the same name being used by different commands with the same args[0]
-        if (opts.rvdbt_jit or opts.rvdbt_jit_merge_ls) and opts.objective != "test":
-            try:
-                aot_so_hash = get_latest_prof_hash()
-            except FileNotFoundError:
-                continue
-            prof_path = RVDBTExec.cache_full_dir + "/" + aot_so_hash + ".prof"
-            print(f"move {prof_path} to")
-            print(f"{RVDBTExec.cache_full_dir}/{b.name}.prof")
-            os.system(f"mv {prof_path} {RVDBTExec.cache_full_dir}/{b.name}.prof")
+        # Profiles remain in fresh per-arm caches, bound to this workload/ELF.
 
     print("Score:")
     csv.writer(sys.stdout).writerows(score_csvtab)
@@ -687,15 +691,16 @@ def RunTests(opts):
     return 1 if failures else 0
 
 
-def main():
+def main(catalogue=None):
     global EXECUTION_TIMEOUT
     op = optparse.OptionParser()
     op.add_option("--riscv32-gcc", dest="riscv32_gcc")
     op.add_option("--rvdbt-build-dir", dest="rvdbt_build_dir")
-    op.add_option("--cache-dir", dest="cache_dir", default="dbtcache", help="Cache the frequency profile under rvdbt-build-dir. Note if the cache dir not exists, it will err")
+    op.add_option("--cache-dir", dest="cache_dir", default="dbtcache", help="Historical seed-profile directory, read-only (relative to rvdbt-build-dir unless absolute); NOT an output cache destination")
     op.add_option("--libriscv-build-dir", dest="libriscv_build_dir")
     op.add_option("--prebuilts", dest="prebuilts_dir")
     op.add_option("--timeout", type="float", default=600, help="Per-process timeout in seconds (default: 600)")
+    op.add_option("--output-dir", help="New result directory, including cache/arm-* with generated/copied profiles and AOT artifacts; defaults to a unique directory under the build")
     # Add new options for execution modes
     op.add_option("--no-qemu", action="store_true", dest="no_qemu", default=False)
     op.add_option("--rvdbt-jit", action="store_true", dest="rvdbt_jit", default=False)
@@ -721,17 +726,45 @@ def main():
         op.error("usage")
     if not math.isfinite(opts.timeout) or opts.timeout <= 0:
         op.error("--timeout must be positive")
-    if opts.objective == "test" and opts.no_qemu:
+    if args:
+        op.error("unexpected positional arguments")
+    if opts.no_qemu and opts.objective == "test":
         op.error("test requires the QEMU reference; --no-qemu is benchmark-only")
     EXECUTION_TIMEOUT = opts.timeout
-    os.makedirs(opts.rvdbt_build_dir + "/" + opts.cache_dir, exist_ok=True)
-    os.makedirs(opts.rvdbt_build_dir + "/logs", exist_ok=True)
+    opts.rvdbt_build_dir = os.path.abspath(opts.rvdbt_build_dir)
+    opts.prebuilts_dir = os.path.abspath(opts.prebuilts_dir)
+    for directory in (opts.rvdbt_build_dir, opts.prebuilts_dir):
+        if not os.path.isdir(directory):
+            op.error("missing directory: " + directory)
+    modes = [key for key, value in vars(opts).items() if key.startswith("rvdbt_") and key != "rvdbt_build_dir" and value]
+    if not modes and not opts.libriscv:
+        op.error("select at least one DUT execution mode")
+    tools = [] if opts.no_qemu else [QEMUExec.bin_path]
+    if modes:
+        tools.append(os.path.join(opts.rvdbt_build_dir, "bin", "elfrun"))
+    if any("aot" in mode for mode in modes):
+        tools.append(os.path.join(opts.rvdbt_build_dir, "bin", "elfaot"))
+    if opts.libriscv:
+        opts.libriscv_build_dir = os.path.abspath(opts.libriscv_build_dir)
+        tools.append(os.path.join(opts.libriscv_build_dir, "rvlinux"))
+    for tool in tools:
+        if shutil.which(tool) is None:
+            op.error("missing executable: " + tool)
+    profile_dir = os.path.abspath(os.path.join(opts.rvdbt_build_dir, opts.cache_dir))
+    if opts.output_dir:
+        opts.output_dir = os.path.abspath(opts.output_dir)
+        os.makedirs(opts.output_dir, exist_ok=False)
+    else:
+        opts.output_dir = tempfile.mkdtemp(prefix="benchmark-run-", dir=opts.rvdbt_build_dir)
+    print("Results: " + opts.output_dir)
 
     RVDBTExec.build_dir = opts.rvdbt_build_dir
     LIBRISCVExec.build_dir = opts.libriscv_build_dir
-    RVDBTExec.cache_dir = opts.cache_dir
-    RVDBTExec.cache_full_dir = opts.rvdbt_build_dir + "/" + opts.cache_dir
-    return RunTests(opts)
+    RVDBTExec.profile_dir = profile_dir
+    RVDBTExec.cache_dir = os.path.join(opts.output_dir, "cache")
+    RVDBTExec.cache_full_dir = RVDBTExec.cache_dir
+    os.mkdir(RVDBTExec.cache_full_dir)
+    return RunTests(opts, catalogue=catalogue)
 
 
 if __name__ == "__main__":
