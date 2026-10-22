@@ -45,6 +45,11 @@ DEPS=/absolute/path/to/new-dependencies
 python3 scripts/fetch_rvv_external.py --output "$DEPS"
 ```
 
+The fetcher stages downloads and publishes `DEPS` only after its pinned input,
+checkout and license checks succeed. Errors remove the staging directory; an
+existing destination is never replaced. Publication uses Linux `renameat2`
+with no-replace support. Acquisition does not execute or validate RVV instructions.
+
 [sources.lock.json](../../scripts/rvv/sources.lock.json) separates pinned source
 URLs/revisions/licenses from the runner. Fetch Spike and PK using their
 `spike_replay` and `pk_replay` entries:
