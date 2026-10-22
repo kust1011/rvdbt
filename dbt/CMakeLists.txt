@@ -98,12 +98,10 @@ target_include_directories(dbtstatic SYSTEM PUBLIC "${PROJECT_SOURCE_DIR}/dbt/th
 
 target_link_libraries(dbtstatic PUBLIC dbtjitshared asmjit::asmjit ${Boost_LIBRARIES} m md ssl crypto)
 
-# X4g1: the in-run single-run/descent builder script, baked from THIS source tree so a checkout is
-# self-contained. aot_boot.cpp previously hardcoded an absolute path into a different working copy,
-# which meant a branch could edit its own sr_builder.sh and change nothing about what ran. The
-# script is tracked in this repository; aot_boot.cpp #errors if this definition is missing.
+# Resolve the background AOT builder from the same checkout as the runtime.
+# aot_boot.cpp requires this definition when launching the builder.
 target_compile_definitions(dbtstatic PUBLIC
-	DBT_SR_BUILDER_SH="${PROJECT_SOURCE_DIR}/experiments/2026-06-28-0840-spare-core-gate-pass/scripts/sr_builder.sh")
+	DBT_SR_BUILDER_SH="${PROJECT_SOURCE_DIR}/scripts/aot/sr_builder.sh")
 
 # if major version is defined, find the specific path
 set(LLVM_DIR ${LLVM_PATH}/lib/cmake/llvm)

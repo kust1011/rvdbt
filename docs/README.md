@@ -8,6 +8,7 @@
   implementation boundaries and how to interpret the tests.
 - [Build profiles](build-profiles.md): performance and diagnostic builds.
 - [Original rvdbt architecture](rvdbt.md): inherited system design.
+- [Scalar examples and inherited AOT workflow](scalar-examples.md).
 
 ## Running and inspecting tests
 

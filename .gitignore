@@ -17,3 +17,7 @@ __pycache__/
 /SESSION*_RESULT_*.md
 /*_RESULT.md
 /*-evidence/
+
+# Local exploration stays out of the published source tree. Reusable tools belong
+# under scripts/; retained validation evidence belongs under docs/rvv-validation/.
+/experiments/

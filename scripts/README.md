@@ -29,19 +29,39 @@ for dependencies and actual execution; diagnostic replay is not a timing recipe.
 The scripts below are retained for the upstream scalar workflow. Prefer the
 build profiles above for RVV configurations. The current Jenkins job uses LLVM 20.
 
-## Build
+### Build
 ```bash
 bash scripts/build.sh 20
 ```
 
-## Test
+### Test
 ```bash
 bash scripts/test.sh 20
 ```
 
-## Benchmark
+### Benchmark
 ```bash
 bash scripts/benchmark.sh 20
+```
+
+## Experimental AOT controller
+
+`aot/sr_builder.sh` is the background compiler controller used by the experimental
+in-run tiering path in `dbt/aot/aot_boot.cpp`. CMake supplies its path through
+`DBT_SR_BUILDER_SH`; it is not a standalone build or test command. The runtime
+passes the compiler, input ELF, cache directories, scheduling parameters, active
+VLEN and RVV route options to the script.
+
+The script was relocated from the dated `experiments/` directory without changing
+its contents. Historical build manifests retain the original path. Reconfigure
+and rebuild an existing build tree to embed the new location; previously built
+executables still reference their original checkout. Keep measured snapshots
+intact. AOT/tiering experiments are separate from the evaluated QCG path.
+
+Check the runtime-to-compiler option contract without executing a guest:
+
+```sh
+python3 scripts/vlen_propagation_audit.py .
 ```
 
 ## RVV validation tools

@@ -39,7 +39,7 @@ FROZEN_SPAWNS = {                                 # file -> total production spa
 FROZEN_DIRECT = 3      # C++ sites that exec elfaot themselves
 FROZEN_INDIRECT = 1    # C++ sites that hand the elfaot path to a script
 FROZEN_SCRIPTS = {     # script -> (elfaot shell var, expected execution count)
-    "experiments/2026-06-28-0840-spare-core-gate-pass/scripts/sr_builder.sh": ("EA", 6),
+    "scripts/aot/sr_builder.sh": ("EA", 6),
 }
 # Production source names the builder script through this macro, defined by the build from
 # ${PROJECT_SOURCE_DIR} so a checkout is self-contained.  G6 resolves and checks it.
