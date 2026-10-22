@@ -9,8 +9,55 @@ ORANGE="\e[33m"
 CYAN="\e[36m"
 NOCOLOR="\e[0m"
 
-# Change to build directory where elfrun is located
-cd ~/rvdbt/build-llvm-19
+if (( $# > 1 )); then
+    echo "Usage: $0 [build-directory] (SPIKE selects the Spike executable)" >&2
+    exit 2
+fi
+repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd) || exit 1
+build_dir=${1:-build-llvm-19}
+case "$build_dir" in
+    /*) ;;
+    *) build_dir="$repo_dir/$build_dir" ;;
+esac
+input_dir="$repo_dir/riscv-tests/isa"
+if [[ ! -d "$build_dir" || ! -f "$build_dir/bin/elfrun" || ! -x "$build_dir/bin/elfrun" ]]; then
+    echo "Missing build directory or executable elfrun: $build_dir" >&2
+    exit 1
+fi
+if ! spike=$(command -v -- "${SPIKE:-spike}") || [[ ! -f "$spike" || ! -x "$spike" ]]; then
+    echo "Missing executable Spike: ${SPIKE:-spike}" >&2
+    exit 1
+fi
+case "$spike" in
+    /*) ;;
+    *) spike="$PWD/$spike" ;;
+esac
+cd -- "$build_dir" || exit 1
+mkdir -p -- troot tcache || exit 1
+
+# This checks successful exits only, not architectural-state equivalence.
+run_case() {
+    local guest=$1
+    local input="$input_dir/$guest"
+    local spike_result elfrun_result
+    if [[ ! -f "$input" || ! -r "$input" ]]; then
+        echo "Missing or unreadable input: $input" >&2
+        return 1
+    fi
+    cp -- "$input" troot/ || return 1
+    "$spike" --isa=RV32IM "troot/$guest"
+    spike_result=$?
+    echo "Spike result: $spike_result"
+    ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- "$guest"
+    elfrun_result=$?
+    echo "Elfrun result: $elfrun_result"
+    if (( spike_result == 0 && elfrun_result == 0 )); then
+        echo -e "${GREEN}Both exit-status checks passed${NOCOLOR}"
+        return 0
+    fi
+    echo -e "${RED}Exit-status check failed${NOCOLOR}" >&2
+    return 1
+}
 
 declare -a isa_RV32UI_p=( "add" "addi" "and" "andi" "auipc" "beq" "bge" "bgeu" "blt" "bltu" "bne" "jal" "jalr" "lb" "lbu" "lh" "lhu" "lui" "lw" "or" 
  "ori" "sb" "sh" "sll" "simple" "slli" "slt" "slti" "sltiu" "sltu" "sra" "srai" "srl" "srli" "sub" "sw" "xor" "xori" )
@@ -26,27 +73,14 @@ fail_rv32um=0
 total_rv32um=0
 
 echo "Now test rv32ui for RVDBT!!"
-for isa_RV32UI in ${isa_RV32UI_p[@]}
+for isa_RV32UI in "${isa_RV32UI_p[@]}"
 do
     echo testing instruction ${isa_RV32UI}
-    cp ~/rvdbt/riscv-tests/isa/rv32ui-p-${isa_RV32UI} ~/rvdbt/build-llvm-19/troot/
-    # Run spike first as reference
-    spike --isa=RV32IM troot/rv32ui-p-${isa_RV32UI}
-    spike_result=$?
-    echo "Spike result: $spike_result"
-    
-    # Run elfrun and compare
-    ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- rv32ui-p-${isa_RV32UI}
-    elfrun_result=$?
-    echo "Elfrun result: $elfrun_result"
-    
-    if [ $elfrun_result -eq $spike_result ]
+    if run_case "rv32ui-p-${isa_RV32UI}"
     then 
         suss_rv32ui=$(($suss_rv32ui+1))
-        echo -e "${GREEN}Match with spike${NOCOLOR}"
     else 
         fail_rv32ui=$(($fail_rv32ui+1))
-        echo -e "${RED}Mismatch with spike${NOCOLOR}"
     fi
     total_rv32ui=$(($total_rv32ui+1))
     echo
@@ -55,27 +89,14 @@ done
 echo
 
 echo "Now test rv32um for RVDBT!!"
-for isa_RV32UM in ${isa_RV32UM_p[@]}
+for isa_RV32UM in "${isa_RV32UM_p[@]}"
 do
     echo testing instruction ${isa_RV32UM}
-    cp ~/rvdbt/riscv-tests/isa/rv32um-p-${isa_RV32UM} ~/rvdbt/build-llvm-19/troot/
-    # Run spike first with RV32IM
-    spike --isa=RV32IM troot/rv32um-p-${isa_RV32UM}
-    spike_result=$?
-    echo "Spike result: $spike_result"
-    
-    # Run elfrun and compare
-    ./bin/elfrun --fsroot troot --cache tcache --logs dbt -- rv32um-p-${isa_RV32UM}
-    elfrun_result=$?
-    echo "Elfrun result: $elfrun_result"
-    
-    if [ $elfrun_result -eq $spike_result ]
+    if run_case "rv32um-p-${isa_RV32UM}"
     then 
         suss_rv32um=$(($suss_rv32um+1))
-        echo -e "${GREEN}Match with spike${NOCOLOR}"
     else 
         fail_rv32um=$(($fail_rv32um+1))
-        echo -e "${RED}Mismatch with spike${NOCOLOR}"
     fi
     total_rv32um=$(($total_rv32um+1))
     echo
@@ -100,5 +121,7 @@ then
     echo -e "${CYAN}Pass rv32um-p testing! ${NOCOLOR}"
 else
     echo -e "${CYAN}Fail rv32um-p testing! ${NOCOLOR}"
-fi    
+fi
 echo "=============================="
+
+(( fail_rv32ui == 0 && fail_rv32um == 0 ))

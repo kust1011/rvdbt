@@ -30,6 +30,17 @@ make rv32ui rv32um
 cd ../..
 bash scripts/riscv-tests.sh
 ```
+
+To run the same scalar tests with both Spike and rvdbt:
+
+```sh
+SPIKE=/absolute/path/to/spike bash scripts/riscv-tests-spike.sh /absolute/path/to/build
+```
+
+`SPIKE` defaults to `spike` on `PATH`. A case passes only when both programs
+exit successfully; equal nonzero exits are failures. This runner checks the
+tests' exit status, not a comparison of their complete architectural state.
+
 ## Original build and execution example
 
 See the [original architecture](rvdbt.md) for the inherited system design.
